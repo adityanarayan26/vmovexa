@@ -1,6 +1,6 @@
-# vmovexa
+# VMOVEXA
 
-Production-ready VMOVEXA marketing site built with Next.js, TypeScript, Tailwind CSS, Framer Motion, GSAP, and Lenis.
+Premium, responsive Next.js website for VMOVEXA's intelligent connected mobility platform.
 
 ## Development
 
