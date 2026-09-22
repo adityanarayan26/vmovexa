@@ -1,10 +1,12 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { FiArrowRight, FiCpu, FiZap, FiUsers, FiGlobe } from "react-icons/fi";
 import { EditorialMaskText, EditorialLine } from "@/components/animations/editorial-text";
 import { MagneticElement, GsapScrollReveal } from "@/components/animations/gsap-scroll-fx";
 import { MediaSlot } from "@/components/ui/media-slot";
 import { CompanyClient } from "./company-client";
+import { PatentsAndCerts } from "@/components/visuals/patents-and-certs";
 
 export const metadata: Metadata = {
   title: "About VMOVEXA | Deep-Tech Mobility Technology Company",
@@ -23,37 +25,53 @@ export default function CompanyPage() {
   return (
     <main className="min-h-screen bg-black text-white">
       {/* 01 — HERO (Mockup Screen 07: COMPANY) */}
-      <section className="relative pt-36 pb-20 overflow-hidden border-b border-white/[0.08] bg-black">
+      <section className="relative min-h-[90vh] pt-36 pb-20 overflow-hidden border-b border-white/[0.08] bg-black flex flex-col justify-center">
+        {/* Background Earth Orbit Visual behind 'Building intelligence into movement.' */}
+        <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
+          <Image
+            src="/images/vmovexa-company-earth-space.png"
+            alt="VMOVEXA Earth From Space - Global Mobility Intelligence Horizon"
+            fill
+            priority
+            quality={95}
+            className="object-cover object-bottom opacity-70 select-none"
+          />
+          {/* Cinematic Vignette Overlays for readability */}
+          <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-black/85 z-10" />
+          <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-transparent to-black/60 z-10" />
+          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_30%,rgba(0,0,0,0.85)_90%)] z-10" />
+        </div>
+
         <div className="container relative z-10 max-w-7xl mx-auto px-6">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start mb-12">
             <div className="lg:col-span-10">
               <EditorialLine>
-                <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/[0.04] border border-white/15 backdrop-blur-md mb-8">
-                  <span className="w-2 h-2 rounded-full bg-cyan-400" />
-                  <span className="font-mono text-xs uppercase tracking-[0.2em] text-white/80">
+                <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/[0.06] border border-white/20 backdrop-blur-md mb-8 shadow-[0_0_20px_rgba(0,0,0,0.8)]">
+                  <span className="w-2 h-2 rounded-full bg-cyan-400 animate-pulse" />
+                  <span className="font-mono text-xs uppercase tracking-[0.2em] text-white/90">
                     About VMOVEXA
                   </span>
                 </div>
               </EditorialLine>
 
               <EditorialLine delay={0.15}>
-                <h1 className="text-5xl sm:text-7xl lg:text-8xl font-bold tracking-tight leading-[1.04] max-w-5xl mb-6 text-white">
+                <h1 className="text-5xl sm:text-7xl lg:text-8xl font-bold tracking-tight leading-[1.04] max-w-5xl mb-6 text-white drop-shadow-[0_4px_30px_rgba(0,0,0,0.9)]">
                   Building intelligence into movement.
                 </h1>
               </EditorialLine>
 
               <EditorialLine delay={0.3}>
-                <p className="text-xl sm:text-2xl text-white/70 font-normal leading-relaxed max-w-3xl mb-10">
+                <p className="text-xl sm:text-2xl text-white/80 font-normal leading-relaxed max-w-3xl mb-10 drop-shadow-[0_2px_15px_rgba(0,0,0,0.8)]">
                   VMOVEXA is a deep-tech mobility technology company focused on the convergence of physical mobility and digital intelligence.
                 </p>
               </EditorialLine>
 
               <EditorialLine delay={0.4}>
-                <div className="flex items-center gap-4 mb-10">
+                <div className="flex items-center gap-4 mb-6">
                   <MagneticElement strength={0.3}>
                     <Link
                       href="#company-details"
-                      className="inline-flex items-center gap-2.5 px-8 py-4 rounded-full bg-white text-black font-semibold text-sm tracking-wide transition-all duration-300 hover:scale-[1.03] active:scale-[0.98] shadow-[0_0_25px_rgba(255,255,255,0.3)]"
+                      className="inline-flex items-center gap-2.5 px-8 py-4 rounded-full bg-white text-black font-semibold text-sm tracking-wide transition-all duration-300 hover:scale-[1.03] active:scale-[0.98] shadow-[0_0_30px_rgba(255,255,255,0.35)]"
                     >
                       <span className="text-black font-semibold">Our Story</span>
                       <FiArrowRight size={16} className="text-black" />
@@ -64,7 +82,7 @@ export default function CompanyPage() {
             </div>
 
             {/* Right Side Vertical Floating Tags (Screen 07) */}
-            <div className="hidden lg:flex lg:col-span-2 flex-col items-end gap-5 pt-16 font-mono text-[11px] text-white/40 tracking-[0.25em] uppercase">
+            <div className="hidden lg:flex lg:col-span-2 flex-col items-end gap-5 pt-16 font-mono text-[11px] text-white/60 tracking-[0.25em] uppercase drop-shadow-[0_2px_10px_rgba(0,0,0,0.8)]">
               <span className="hover:text-cyan-400 transition-colors cursor-default">PEOPLE</span>
               <span className="hover:text-cyan-400 transition-colors cursor-default">TECHNOLOGY</span>
               <span className="hover:text-cyan-400 transition-colors cursor-default">PARTNERSHIPS</span>
@@ -72,25 +90,10 @@ export default function CompanyPage() {
             </div>
           </div>
 
-          {/* Central Space Earth Orbit Visual (Mockup Screen 07) */}
-          <GsapScrollReveal delay={0.3}>
-            <div className="relative group mb-14">
-              <MediaSlot
-                type="image"
-                src="/images/vmovexa-company-earth-space.png"
-                alt="VMOVEXA Earth From Space - Global Mobility Intelligence Horizon"
-                badge="Global Perspective • Connected Planet"
-                caption="Building Intelligence Into Movement — Cloud-to-Edge Infrastructure"
-                aspectRatio="21/9"
-                priority
-              />
-            </div>
-          </GsapScrollReveal>
-
           {/* 3 Columns: OUR VISION, OUR MISSION, OUR BELIEF (Mockup Screen 07) */}
           <GsapScrollReveal delay={0.4}>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 py-8 border-t border-white/10">
-              <div className="p-6 rounded-2xl bg-white/[0.02] border border-white/10 hover:border-cyan-500/30 transition-colors">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 pt-10 border-t border-white/15">
+              <div className="p-6 rounded-2xl bg-black/40 backdrop-blur-xl border border-white/15 hover:border-cyan-500/40 hover:bg-black/60 transition-all shadow-xl group">
                 <span className="font-mono text-xs uppercase tracking-widest text-cyan-400 block mb-2">
                   Our Vision
                 </span>
@@ -99,7 +102,7 @@ export default function CompanyPage() {
                 </h3>
               </div>
 
-              <div className="p-6 rounded-2xl bg-white/[0.02] border border-white/10 hover:border-indigo-500/30 transition-colors">
+              <div className="p-6 rounded-2xl bg-black/40 backdrop-blur-xl border border-white/15 hover:border-indigo-500/40 hover:bg-black/60 transition-all shadow-xl group">
                 <span className="font-mono text-xs uppercase tracking-widest text-indigo-400 block mb-2">
                   Our Mission
                 </span>
@@ -108,7 +111,7 @@ export default function CompanyPage() {
                 </h3>
               </div>
 
-              <div className="p-6 rounded-2xl bg-white/[0.02] border border-white/10 hover:border-purple-500/30 transition-colors">
+              <div className="p-6 rounded-2xl bg-black/40 backdrop-blur-xl border border-white/15 hover:border-purple-500/40 hover:bg-black/60 transition-all shadow-xl group">
                 <span className="font-mono text-xs uppercase tracking-widest text-purple-400 block mb-2">
                   Our Belief
                 </span>
@@ -154,6 +157,9 @@ export default function CompanyPage() {
           <CompanyClient />
         </div>
       </section>
+      
+      {/* 03 — PATENTS & CERTIFICATIONS */}
+      <PatentsAndCerts />
     </main>
   );
 }

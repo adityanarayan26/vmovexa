@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 import { FiArrowRight, FiArrowUpRight, FiCompass, FiUsers, FiZap, FiShield } from "react-icons/fi";
 import { RiBusLine, RiFlightTakeoffLine, RiBuilding4Line, RiGovernmentLine, RiTruckLine, RiToolsLine } from "react-icons/ri";
 import { EditorialMaskText, EditorialLine } from "@/components/animations/editorial-text";
@@ -138,77 +139,76 @@ export default function IndustriesPage() {
             {[
               {
                 title: "Public Transport",
-                desc: "Connected & efficient",
-                img: "/images/vmovexa-fleet-twilight.png",
+                img: "/images/industry-public-transport.png",
                 id: "public-transport",
               },
               {
                 title: "Private Fleets",
-                desc: "Operate smarter",
                 img: "/images/industry-private-fleets.png",
                 id: "private-fleets",
               },
               {
                 title: "Airport Mobility",
-                desc: "The moving extension",
                 img: "/images/industry-airport-mobility.png",
                 id: "airport-mobility",
               },
               {
                 title: "Employee Transport",
-                desc: "Safer. Smarter. Connected.",
                 img: "/images/industry-employee-transport.png",
                 id: "employee-transport",
               },
               {
                 title: "School Transport",
-                desc: "Safety with intelligence",
                 img: "/images/industry-school-transport.png",
                 id: "school-transport",
               },
               {
                 title: "Tourism Mobility",
-                desc: "Journeys that inform",
                 img: "/images/industry-tourism-mobility.png",
                 id: "tourism",
               },
               {
                 title: "Electric Mobility",
-                desc: "Ready for tomorrow",
                 img: "/images/industry-electric-mobility.png",
                 id: "electric-mobility",
+                active: true,
               },
               {
                 title: "Logistics & Cargo",
-                desc: "Intelligence beyond people",
                 img: "/images/industry-logistics-cargo.png",
                 id: "logistics",
               },
             ].map((ind, i) => (
-              <GsapScrollReveal key={ind.title} delay={i * 0.05}>
+              <GsapScrollReveal key={ind.title} delay={i * 0.05} className="h-full flex flex-col">
                 <MagneticElement strength={0.03} className="w-full h-full block">
                   <Link
                     href={`#${ind.id}`}
-                    className="group block rounded-2xl overflow-hidden border border-white/10 bg-black hover:border-cyan-500/40 transition-all duration-500 shadow-[0_10px_30px_rgba(0,0,0,0.5)] hover:shadow-[0_15px_40px_rgba(34,211,238,0.15)] h-full relative"
+                    className={`group block rounded-2xl overflow-hidden border ${
+                      ind.active
+                        ? "border-cyan-500/80 shadow-[0_0_25px_rgba(6,182,212,0.25)]"
+                        : "border-white/10 hover:border-cyan-500/40"
+                    } bg-[#0c0d12] transition-all duration-300 shadow-lg h-full flex flex-col justify-between relative`}
                   >
-                    <div className="absolute inset-0 bg-gradient-to-t from-cyan-900/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-10 pointer-events-none" />
-                    <div className="relative h-44 w-full overflow-hidden">
-                      <div
-                        className="absolute inset-0 bg-cover bg-center transition-transform duration-700 ease-out group-hover:scale-110"
-                        style={{ backgroundImage: `url('${ind.img}')` }}
+                    <div className="relative h-48 w-full overflow-hidden bg-black/40">
+                      <Image
+                        src={ind.img}
+                        alt={ind.title}
+                        fill
+                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw"
+                        className="object-cover"
                       />
-                      {/* Clean subtle bottom gradient for seamless card blend */}
-                      <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent pointer-events-none z-10" />
+                      <div className="absolute inset-0 bg-gradient-to-t from-[#0c0d12] via-transparent to-transparent opacity-60 pointer-events-none z-10" />
                     </div>
-                    <div className="p-4 flex items-center justify-between relative z-20 bg-black">
-                      <div>
-                        <h4 className="text-sm font-semibold text-white group-hover:text-cyan-400 transition-colors duration-300">
-                          {ind.title}
-                        </h4>
-                        <p className="text-[11px] text-white/50 mt-0.5 group-hover:text-white/80 transition-colors duration-300">{ind.desc}</p>
-                      </div>
-                      <div className="w-8 h-8 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-white/60 group-hover:bg-cyan-400 group-hover:text-black group-hover:border-cyan-400 group-hover:scale-110 transition-all duration-300 shrink-0 shadow-[0_0_10px_rgba(34,211,238,0)] group-hover:shadow-[0_0_15px_rgba(34,211,238,0.4)]">
-                        <FiArrowRight size={13} />
+                    <div className="px-5 py-4 flex items-center justify-between relative z-20 bg-[#0c0d12]">
+                      <h4
+                        className={`text-sm font-semibold tracking-wide transition-colors duration-300 ${
+                          ind.active ? "text-cyan-400" : "text-white group-hover:text-cyan-400"
+                        }`}
+                      >
+                        {ind.title}
+                      </h4>
+                      <div className="w-8 h-8 rounded-full bg-white text-black flex items-center justify-center group-hover:bg-cyan-400 group-hover:scale-110 transition-all duration-300 shrink-0 shadow-md">
+                        <FiArrowRight size={13} className="text-black" />
                       </div>
                     </div>
                   </Link>

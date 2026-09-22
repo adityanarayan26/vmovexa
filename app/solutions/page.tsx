@@ -113,7 +113,7 @@ export default function SolutionsPage() {
                   >
                     {/* Card Background Image */}
                     <div
-                      className="absolute inset-0 bg-cover bg-center transition-transform duration-700 ease-out group-hover:scale-105 group-hover:brightness-110"
+                      className="absolute inset-0 bg-cover bg-center transition-all duration-700 ease-out group-hover:brightness-110"
                       style={{ backgroundImage: `url('${card.img}')` }}
                     />
                     {/* Clean subtle bottom scrim gradient for title legibility */}
@@ -258,19 +258,29 @@ export default function SolutionsPage() {
               </EditorialLine>
             </div>
 
-            <div className="lg:col-span-6 lg:order-1">
+            <div className="lg:col-span-6 lg:order-1 space-y-3">
               <GsapScrollReveal delay={0.2}>
                 <div className="relative group">
                   <MediaSlot
                     type="video"
                     src="/videos/vmovexa-transit-demo.mp4"
                     poster="/images/VMOVEXA FOLDER DESIGN MOCKUP.PNG"
-                    badge="Transit DOOH • Moving Inventory"
-                    caption="Location-Triggered Media Execution with Microsecond Synchrony"
                     aspectRatio="16/9"
+                    hideBadge
                   />
                 </div>
               </GsapScrollReveal>
+
+              {/* Separated & Compact Metadata displayed on the left side */}
+              <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 pt-2 px-1 border-t border-white/[0.08]">
+                <div className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-purple-500/10 border border-purple-500/20 text-purple-300 text-[11px] font-mono uppercase tracking-wider w-fit">
+                  <span className="w-1.5 h-1.5 rounded-full bg-purple-400 animate-pulse" />
+                  Transit DOOH • Moving Inventory
+                </div>
+                <div className="text-[11px] sm:text-xs text-white/50 font-mono tracking-tight">
+                  Location-Triggered Media Execution with Microsecond Synchrony
+                </div>
+              </div>
             </div>
           </div>
         </div>

@@ -52,11 +52,11 @@ export function SiteFooter() {
           <div className="space-y-4 max-w-md">
             <Link href="/" className="inline-block">
               <Image
-                src="/logos/vmovexa-horizontal-dark.svg"
+                src="/logos/vmovexa-vertical.svg"
                 alt="VMOVEXA"
-                width={130}
-                height={34}
-                className="h-8 w-auto brightness-110"
+                width={180}
+                height={100}
+                className="h-24 w-auto brightness-110 object-contain drop-shadow-2xl"
               />
             </Link>
             <div className="font-mono text-xs tracking-widest text-cyan-400 uppercase">

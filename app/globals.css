@@ -1,9 +1,18 @@
 @import "tailwindcss";
 
+@theme {
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-jetbrains), ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  --font-heading: var(--font-custom-heading), ui-sans-serif, system-ui, sans-serif;
+}
+
 @layer base {
   :root {
     --font-apple: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "SF Pro", "Helvetica Neue", Helvetica, Arial, sans-serif;
     --font-apple-mono: "SF Mono", SFMono-Regular, ui-monospace, Menlo, Monaco, Consolas, monospace;
+    --font-sans: var(--font-inter), var(--font-apple);
+    --font-heading: var(--font-custom-heading), var(--font-apple);
+    --font-mono-custom: var(--font-jetbrains), var(--font-apple-mono);
     --bg-black: #000000;
     --bg-base: #000000;
     --bg-card: rgba(8, 16, 32, 0.72);
@@ -25,10 +34,9 @@
     --radius-sm: 0.75rem;
   }
 
-
   *, *::before, *::after {
     box-sizing: border-box;
-    font-family: var(--font-apple);
+    font-family: var(--font-sans);
   }
 
   html {
@@ -45,12 +53,19 @@
     background-attachment: fixed;
     color: var(--text-primary);
     min-height: 100vh;
-    font-family: var(--font-apple);
+    font-family: var(--font-sans);
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     text-rendering: optimizeLegibility;
     overflow-x: hidden;
     transition: background-color 0.8s ease, color 0.8s ease, background 0.8s ease;
+  }
+
+  h1, h2, h3, h4, h5, h6, .brand-link, .eyebrow, .button, .nav-link, .wordmark {
+    font-family: var(--font-heading);
+    text-transform: uppercase;
+    font-weight: 700;
+    letter-spacing: -0.02em;
   }
 
   a {
@@ -64,7 +79,7 @@
   }
 
   code, pre, kbd, samp, .font-mono {
-    font-family: var(--font-apple-mono) !important;
+    font-family: var(--font-mono-custom) !important;
   }
 }
 
@@ -233,6 +248,30 @@ main {
   box-shadow: 0 10px 35px rgba(0, 0, 0, 0.85);
 }
 
+/* Light mode header override when page is in light mode (e.g., /platform) */
+.site-header--light {
+  background: rgba(255, 255, 255, 0.88) !important;
+  backdrop-filter: blur(20px) saturate(180%) !important;
+  -webkit-backdrop-filter: blur(20px) saturate(180%) !important;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08) !important;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04) !important;
+  color: #000 !important;
+}
+
+.site-header--light-scrolled {
+  background: rgba(255, 255, 255, 0.96) !important;
+  backdrop-filter: blur(24px) saturate(180%) !important;
+  -webkit-backdrop-filter: blur(24px) saturate(180%) !important;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.12) !important;
+  box-shadow: 0 4px 25px rgba(0, 0, 0, 0.08) !important;
+  color: #000 !important;
+}
+
+.site-header--light .mobile-nav {
+  background: #ffffff !important;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1) !important;
+}
+
 .nav-shell {
   display: flex;
   align-items: center;
@@ -381,14 +420,6 @@ main {
 .button--light:hover {
   background: #e4e4e7;
   color: #000000;
-}
-
-.text-black {
-  color: #000000 !important;
-}
-
-.text-black * {
-  color: inherit;
 }
 
 .text-link {

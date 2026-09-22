@@ -12,12 +12,16 @@ interface MediaSlotProps {
   alt?: string;
   badge?: string;
   caption?: string;
-  aspectRatio?: "16/9" | "21/9" | "4/3" | "1/1" | "auto";
+  aspectRatio?: "16/9" | "21/9" | "4/3" | "1/1" | "3/2" | "auto";
   className?: string;
   priority?: boolean;
   hudOverlay?: boolean;
   fade?: "all" | "left" | "right" | "bottom" | "top" | "x" | "y" | "radial" | "none";
   objectFit?: "cover" | "contain";
+  theme?: "dark" | "light" | "transparent";
+  parallax?: boolean;
+  allowPause?: boolean;
+  hideBadge?: boolean;
 }
 
 export function MediaSlot({
@@ -33,6 +37,10 @@ export function MediaSlot({
   hudOverlay = false,
   fade = "all",
   objectFit = "cover",
+  theme = "dark",
+  parallax = true,
+  allowPause = true,
+  hideBadge = false,
 }: MediaSlotProps) {
   const [isPlaying, setIsPlaying] = useState(true);
   const [isMuted, setIsMuted] = useState(true);
@@ -45,7 +53,7 @@ export function MediaSlot({
   };
 
   const togglePlay = () => {
-    if (!videoRef.current) return;
+    if (!videoRef.current || !allowPause) return;
     if (videoRef.current.paused) {
       videoRef.current.play();
       setIsPlaying(true);
@@ -60,6 +68,8 @@ export function MediaSlot({
       ? "aspect-[21/9]"
       : aspectRatio === "16/9"
       ? "aspect-[16/9]"
+      : aspectRatio === "3/2"
+      ? "aspect-[3/2]"
       : aspectRatio === "4/3"
       ? "aspect-[4/3]"
       : aspectRatio === "1/1"
@@ -87,19 +97,21 @@ export function MediaSlot({
 
   return (
     <div
-      className={`relative w-full rounded-3xl overflow-hidden bg-black group transition-all duration-500 hover:scale-[1.01] ${ratioClass} ${className}`}
+      className={`relative w-full rounded-3xl overflow-hidden ${theme === "transparent" ? "bg-transparent" : theme === "light" ? "bg-black/[0.03] border border-black/10" : "bg-black"} group transition-all duration-500 ${ratioClass} ${className}`}
     >
       {/* Top Media Tag / Badge */}
-      <div className="preserve-dark absolute top-4 left-4 z-20 flex items-center gap-2 px-3 py-1.5 rounded-full bg-black/80 backdrop-blur-md border border-white/20 text-[11px] font-mono tracking-wider !text-white uppercase shadow-lg">
-        {type === "video" ? (
-          <FiFilm className="w-3.5 h-3.5 text-cyan-400 animate-pulse" />
-        ) : type === "image" ? (
-          <FiImage className="w-3.5 h-3.5 text-indigo-400" />
-        ) : (
-          <FiZap className="w-3.5 h-3.5 text-purple-400" />
-        )}
-        <span className="!text-white font-medium">{badge || (type === "video" ? "Video Showcase" : type === "image" ? "High-Res Visual" : "Media Slot Reserved")}</span>
-      </div>
+      {!hideBadge && (
+        <div className="preserve-dark absolute top-4 left-4 z-20 flex items-center gap-2 px-3 py-1.5 rounded-full bg-black/80 backdrop-blur-md border border-white/20 text-[11px] font-mono tracking-wider !text-white uppercase shadow-lg">
+          {type === "video" ? (
+            <FiFilm className="w-3.5 h-3.5 text-cyan-400 animate-pulse" />
+          ) : type === "image" ? (
+            <FiImage className="w-3.5 h-3.5 text-indigo-400" />
+          ) : (
+            <FiZap className="w-3.5 h-3.5 text-purple-400" />
+          )}
+          <span className="!text-white font-medium">{badge || (type === "video" ? "Video Showcase" : type === "image" ? "High-Res Visual" : "Media Slot Reserved")}</span>
+        </div>
+      )}
 
       {/* Content Rendering */}
       {type === "video" && src ? (
@@ -117,9 +129,13 @@ export function MediaSlot({
             />
           </GsapParallax>
           {/* Ambient Video Glow Overlay - Feathers completely into black page */}
-          <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-black pointer-events-none z-10 opacity-90" />
-          <div className="absolute inset-0 bg-gradient-to-r from-black via-transparent to-black pointer-events-none z-10 opacity-90" />
-          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_40%,rgba(0,0,0,0.85)_80%,#000000_98%)] pointer-events-none z-10" />
+          {theme === "dark" && (
+            <>
+              <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-black pointer-events-none z-10 opacity-90" />
+              <div className="absolute inset-0 bg-gradient-to-r from-black via-transparent to-black pointer-events-none z-10 opacity-90" />
+              <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_40%,rgba(0,0,0,0.85)_80%,#000000_98%)] pointer-events-none z-10" />
+            </>
+          )}
 
           {/* Futuristic HUD Reticle Corners & Telemetry Overlay */}
           {hudOverlay && (
@@ -159,31 +175,48 @@ export function MediaSlot({
             >
               {isMuted ? <FiVolumeX className="w-4 h-4 text-white/70" /> : <FiVolume2 className="w-4 h-4 text-cyan-300" />}
             </button>
-            <button
-              onClick={togglePlay}
-              aria-label={isPlaying ? "Pause Video" : "Play Video"}
-              className="p-2.5 rounded-full bg-black/70 backdrop-blur-md border border-white/20 text-white/90 hover:text-white hover:bg-cyan-500/20 hover:border-cyan-400/50 hover:scale-105 transition-all cursor-pointer shadow-lg"
-            >
-              {isPlaying ? <FiPause className="w-4 h-4" /> : <FiPlay className="w-4 h-4 ml-0.5" />}
-            </button>
+            {allowPause && (
+              <button
+                onClick={togglePlay}
+                aria-label={isPlaying ? "Pause Video" : "Play Video"}
+                className="p-2.5 rounded-full bg-black/70 backdrop-blur-md border border-white/20 text-white/90 hover:text-white hover:bg-cyan-500/20 hover:border-cyan-400/50 hover:scale-105 transition-all cursor-pointer shadow-lg"
+              >
+                {isPlaying ? <FiPause className="w-4 h-4" /> : <FiPlay className="w-4 h-4 ml-0.5" />}
+              </button>
+            )}
           </div>
         </div>
       ) : type === "image" && src ? (
         <div className={`absolute inset-0 w-full h-full group ${fadeClass}`}>
-          <GsapParallax speed={0.15} className="absolute inset-0 w-full h-full z-0">
+          {parallax ? (
+            <GsapParallax speed={0.15} className="absolute inset-0 w-full h-full z-0">
+              <Image
+                src={src}
+                alt={alt}
+                fill
+                priority={priority}
+                sizes="(max-width: 1200px) 100vw, 1200px"
+                className={`${objectFit === "contain" ? "object-contain" : "object-cover"} transition-transform duration-700 ease-out`}
+              />
+            </GsapParallax>
+          ) : (
             <Image
               src={src}
               alt={alt}
               fill
               priority={priority}
               sizes="(max-width: 1200px) 100vw, 1200px"
-              className={`${objectFit === "contain" ? "object-contain" : "object-cover"} transition-transform duration-700 ease-out group-hover:scale-[1.02]`}
+              className={`${objectFit === "contain" ? "object-contain" : "object-cover"} transition-transform duration-700 ease-out z-0 absolute inset-0`}
             />
-          </GsapParallax>
+          )}
           {/* Seamless perimeter feathering into pure black page background */}
-          <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-black pointer-events-none z-10 opacity-90" />
-          <div className="absolute inset-0 bg-gradient-to-r from-black via-transparent to-black pointer-events-none z-10 opacity-90" />
-          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_40%,rgba(0,0,0,0.85)_80%,#000000_98%)] pointer-events-none z-10" />
+          {theme === "dark" && (
+            <>
+              <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-black pointer-events-none z-10 opacity-90" />
+              <div className="absolute inset-0 bg-gradient-to-r from-black via-transparent to-black pointer-events-none z-10 opacity-90" />
+              <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_40%,rgba(0,0,0,0.85)_80%,#000000_98%)] pointer-events-none z-10" />
+            </>
+          )}
         </div>
       ) : (
         /* Explicit Placeholder / Space Reserved for future media */

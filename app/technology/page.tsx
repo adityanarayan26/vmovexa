@@ -133,6 +133,7 @@ export default function TechnologyPage() {
               <div className="lg:col-span-10 relative group">
                 {/* Visual Image */}
                 <MediaSlot
+                  theme="transparent"
                   type="image"
                   src="/images/vmovexa-technology-bus-xray.png"
                   alt="VMOVEXA Deep-Tech Smart Bus Blueprint & Architecture"
@@ -224,6 +225,7 @@ export default function TechnologyPage() {
                 </div>
                 <div className="lg:col-span-6 relative">
                   <MediaSlot
+                    theme="transparent"
                     type="image"
                     src="/images/vmovexa-speed-trails.png"
                     alt="VMOVEXA Speed & Motion Blur"
@@ -280,6 +282,7 @@ export default function TechnologyPage() {
               <GsapScrollReveal delay={0.3}>
                 <div className="relative group">
                   <MediaSlot
+                    theme="transparent"
                     type="image"
                     src="/images/VMOVEXA FOLDER DESIGN MOCKUP4.PNG"
                     alt="VMOVEXA Edge Computing Node Setup"
@@ -326,6 +329,7 @@ export default function TechnologyPage() {
             <div className="relative group overflow-hidden rounded-[2.5rem]">
                <div className="absolute inset-0 bg-gradient-to-r from-cyan-900/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700 z-10 pointer-events-none" />
               <MediaSlot
+                theme="transparent"
                 type="placeholder"
                 badge="Space Reserved • Programmable Geofencing & Map Video"
                 caption="Sub-Meter GPS Trajectories & Real-Time Polygon Boundary Triggers"
