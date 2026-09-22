@@ -1,44 +1,57 @@
 import type { Metadata } from "next";
-import localFont from "next/font/local";
 import "./globals.css";
 import { SmoothScroll } from "@/components/animations/smooth-scroll";
 import { SiteFooter } from "@/components/layout/site-footer";
 import { SiteHeader } from "@/components/layout/site-header";
+import { ThemeSwitcher } from "@/components/animations/theme-switcher";
+import { BackgroundGradient } from "@/components/visuals/background-gradient";
 import { site } from "@/lib/site";
 
-const geist = localFont({
-  src: "../node_modules/next/dist/next-devtools/server/font/geist-latin.woff2",
-  variable: "--font-geist",
-  display: "swap",
-});
 
 export const metadata: Metadata = {
   metadataBase: new URL(site.url),
   title: {
-    default: "VMOVEXA | Intelligent Connected Mobility",
+    default: "VMOVEXA | Cloud-to-Edge Mobility Intelligence Platform",
     template: "%s | VMOVEXA",
   },
   description: site.description,
   keywords: [
-    "connected mobility",
-    "smart transport",
+    "mobility intelligence platform",
+    "connected mobility platform",
+    "vehicle edge computing",
+    "cloud-to-edge mobility",
+    "smart mobility technology",
+    "connected vehicle platform",
     "fleet intelligence",
-    "transparent OLED",
-    "mobility AI",
+    "mobility technology",
+    "DOOH platform India",
+    "digital transit media",
+    "vehicle telemetry platform",
+    "geofencing platform",
   ],
   openGraph: {
     type: "website",
     siteName: site.name,
-    title: "VMOVEXA | Intelligent Connected Mobility",
+    title: "VMOVEXA | Cloud-to-Edge Mobility Intelligence Platform",
     description: site.description,
     url: site.url,
   },
   twitter: {
     card: "summary_large_image",
-    title: "VMOVEXA | Intelligent Connected Mobility",
+    title: "VMOVEXA | Cloud-to-Edge Mobility Intelligence Platform",
     description: site.description,
   },
+  icons: {
+    icon: [
+      { url: "/favicon.ico" },
+      { url: "/logos/vmovexa-icon-dark.svg", type: "image/svg+xml" },
+    ],
+    apple: [
+      { url: "/apple-icon.png", sizes: "180x180", type: "image/png" },
+    ],
+  },
 };
+
 
 export default function RootLayout({
   children,
@@ -60,9 +73,12 @@ export default function RootLayout({
   };
   return (
     <html lang="en">
-      <body className={geist.variable}>
+      <body>
         <SmoothScroll />
+        <ThemeSwitcher />
+        <BackgroundGradient />
         <SiteHeader />
+
         <main>{children}</main>
         <SiteFooter />
         <script

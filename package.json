@@ -12,16 +12,18 @@
   },
   "dependencies": {
     "@gsap/react": "latest",
+    "framer-motion": "latest",
     "gsap": "latest",
     "lenis": "latest",
     "lucide-react": "latest",
     "next": "latest",
     "react": "latest",
     "react-dom": "latest",
-    "framer-motion": "latest"
+    "react-icons": "^5.7.0"
   },
   "devDependencies": {
     "@eslint/eslintrc": "latest",
+    "@tailwindcss/postcss": "^4.3.3",
     "@types/node": "latest",
     "@types/react": "latest",
     "@types/react-dom": "latest",
