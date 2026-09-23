@@ -17,7 +17,7 @@ import {
 } from "react-icons/fi";
 import { RiCarLine, RiDashboard3Line } from "react-icons/ri";
 import { EditorialMaskText, EditorialLine } from "@/components/animations/editorial-text";
-import { MagneticElement, GsapScrollReveal } from "@/components/animations/gsap-scroll-fx";
+import { MagneticElement, GsapScrollReveal, ParallaxElement } from "@/components/animations/gsap-scroll-fx";
 import { MediaSlot } from "@/components/ui/media-slot";
 import { TelemetryTicker } from "@/components/visuals/telemetry-ticker";
 import { FleetConsoleSimulator } from "@/components/visuals/fleet-console-simulator";
@@ -154,14 +154,14 @@ export default function HomePage() {
 
               {/* Headline */}
               <EditorialLine delay={0.15}>
-                <h1 className="text-5xl sm:text-7xl lg:text-8xl font-bold tracking-tight leading-[1.04] max-w-5xl mb-8 drop-shadow-lg text-white">
-                  Intelligence in Motion.
+                <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight leading-[1.1] max-w-4xl mb-6 drop-shadow-lg text-white">
+                  Intelligence in <span className="gradient-text">Motion.</span>
                 </h1>
               </EditorialLine>
 
               {/* Subtitle */}
               <EditorialLine delay={0.3}>
-                <p className="text-lg sm:text-xl text-white/80 font-normal leading-relaxed max-w-3xl mb-10 drop-shadow-md">
+                <p className="text-base sm:text-lg text-white/80 font-normal leading-relaxed max-w-2xl mb-8 drop-shadow-md">
                   A cloud-to-edge mobility intelligence platform connecting vehicles, people, places and possibilities.
                 </p>
               </EditorialLine>
@@ -172,10 +172,10 @@ export default function HomePage() {
                   <MagneticElement strength={0.3}>
                     <Link
                       href="/platform"
-                      className="inline-flex items-center gap-2.5 px-8 py-4 rounded-full bg-white font-semibold text-sm tracking-wide transition-all duration-300 hover:scale-[1.03] active:scale-[0.98] shadow-[0_0_30px_rgba(255,255,255,0.3)] hover:shadow-[0_0_40px_rgba(255,255,255,0.6)]"
+                      className="inline-flex items-center gap-2.5 px-7 py-3.5 rounded-full bg-white font-semibold text-sm tracking-wide transition-all duration-300 hover:scale-[1.03] active:scale-[0.98] shadow-[0_0_30px_rgba(255,255,255,0.3)] hover:shadow-[0_0_40px_rgba(255,255,255,0.6)]"
                       style={{ color: "#000000" }}
                     >
-                      <span className="text-black font-semibold">Explore the Platform</span>
+                      <span className="text-black font-semibold">Explore Platform</span>
                       <FiArrowRight size={16} className="text-black" />
                     </Link>
                   </MagneticElement>
@@ -183,11 +183,20 @@ export default function HomePage() {
                     <Link
                       href="/videos/vmovexa-transit-demo.mp4"
                       target="_blank"
-                      className="inline-flex items-center gap-2.5 px-8 py-4 rounded-full bg-white/[0.08] backdrop-blur-md border border-white/25 text-white font-semibold text-sm tracking-wide transition-all duration-300 hover:bg-white/15 hover:border-cyan-400/50 hover:shadow-[0_0_25px_rgba(34,211,238,0.2)]"
+                      className="inline-flex items-center gap-2.5 px-7 py-3.5 rounded-full bg-white/[0.08] backdrop-blur-md border border-white/25 text-white font-semibold text-sm tracking-wide transition-all duration-300 hover:bg-white/15 hover:border-cyan-400/50 hover:shadow-[0_0_25px_rgba(34,211,238,0.2)]"
                     >
                       <span className="w-2.5 h-2.5 rounded-full bg-cyan-400 animate-pulse" />
                       Watch Video
                     </Link>
+                  </MagneticElement>
+                  <MagneticElement strength={0.3}>
+                    <a
+                      href="/docs/VMOVEXA-Brochure.pdf"
+                      download="VMOVEXA-Brochure.pdf"
+                      className="inline-flex items-center gap-2 px-6 py-3.5 rounded-full bg-white/[0.04] border border-white/15 text-white/80 hover:text-white hover:border-white/30 text-xs font-mono tracking-wider transition-all duration-300"
+                    >
+                      Download Brochure
+                    </a>
                   </MagneticElement>
                 </div>
               </EditorialLine>
@@ -243,13 +252,13 @@ export default function HomePage() {
         <div className="container max-w-7xl mx-auto px-6">
           <div className="text-center max-w-3xl mx-auto mb-12">
             <EditorialLine>
-              <div className="font-mono text-xs tracking-widest text-white/60 mb-3">
+              <div className="font-mono text-xs tracking-widest text-cyan-400/80 mb-3">
                 Beyond Transportation
               </div>
             </EditorialLine>
             <EditorialLine delay={0.1}>
-              <h2 className="text-3xl sm:text-5xl font-bold tracking-tight text-white leading-tight">
-                A vehicle can be more.
+              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight text-white leading-tight">
+                A vehicle can be <span className="gradient-text">more.</span>
               </h2>
             </EditorialLine>
           </div>
@@ -292,11 +301,11 @@ export default function HomePage() {
                 System Topology
               </div>
             </EditorialLine>
-            <h2 className="text-4xl sm:text-6xl font-bold tracking-tight text-white mb-5">
-              From Cloud to Moving Edge.
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight text-white mb-4">
+              From Cloud to <span className="gradient-text">Moving Edge.</span>
             </h2>
             <EditorialLine delay={0.2}>
-              <p className="text-lg text-white/70 max-w-2xl mx-auto font-light">
+              <p className="text-base text-white/70 max-w-2xl mx-auto font-light">
                 VMOVEXA connects centralized cloud infrastructure with computing capability inside the vehicle.
               </p>
             </EditorialLine>
@@ -383,16 +392,18 @@ export default function HomePage() {
 
           {/* Media Space for Cloud-to-Edge Architecture Visual */}
           <GsapScrollReveal delay={0.3}>
-            <div className="relative group">
-              <MediaSlot
-                type="image"
-                src="/images/vmovexa-cloud-edge-architecture.png"
-                alt="VMOVEXA Cloud-to-Edge Multi-Layer Architecture"
-                badge="3D Architecture • Cloud & Edge Hierarchy"
-                caption="Centralized Cloud Orchestration ↔ In-Vehicle Edge Runtime"
-                aspectRatio="21/9"
-              />
-            </div>
+            <ParallaxElement offset={30}>
+              <div className="relative group">
+                <MediaSlot
+                  type="image"
+                  src="/images/vmovexa-cloud-edge-architecture.png"
+                  alt="VMOVEXA Cloud-to-Edge Multi-Layer Architecture"
+                  badge="3D Architecture • Cloud & Edge Hierarchy"
+                  caption="Centralized Cloud Orchestration ↔ In-Vehicle Edge Runtime"
+                  aspectRatio="21/9"
+                />
+              </div>
+            </ParallaxElement>
           </GsapScrollReveal>
         </div>
       </section>
@@ -408,12 +419,12 @@ export default function HomePage() {
               </div>
             </EditorialLine>
             <EditorialLine delay={0.1}>
-              <h2 className="text-3xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-white leading-[1.1] mb-5">
-                Experience the connected moving edge.
+              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight text-white leading-[1.15] mb-4">
+                Experience the <span className="gradient-text">connected moving edge.</span>
               </h2>
             </EditorialLine>
             <EditorialLine delay={0.2}>
-              <p className="text-base sm:text-lg text-white/70 leading-relaxed font-normal max-w-2xl">
+              <p className="text-sm sm:text-base text-white/70 leading-relaxed font-normal max-w-2xl">
                 Switch connected vehicle presets, trigger real-time geofenced DOOH ad swaps, and simulate zero-loss edge caching during network dropouts.
               </p>
             </EditorialLine>
@@ -436,8 +447,8 @@ export default function HomePage() {
                 Core Capabilities
               </div>
             </EditorialLine>
-            <h2 className="text-3xl sm:text-5xl font-bold tracking-tight text-white leading-tight mb-4">
-              One architecture. Multiple intelligence layers.
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight text-white leading-tight mb-4">
+              One architecture. <span className="gradient-text">Multiple intelligence layers.</span>
             </h2>
             <EditorialLine delay={0.2}>
               <p className="text-sm text-white/55 font-mono leading-relaxed">
@@ -482,12 +493,12 @@ export default function HomePage() {
                 </div>
               </EditorialLine>
 
-              <h2 className="text-4xl sm:text-5xl font-bold tracking-tight text-white leading-tight">
-                Not digital signage.
+              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight text-white leading-tight">
+                Not digital <span className="gradient-text">signage.</span>
               </h2>
 
               <EditorialLine delay={0.2}>
-                <p className="text-lg text-white/75 leading-relaxed font-light">
+                <p className="text-base sm:text-lg text-white/75 leading-relaxed font-light">
                   Digital signage displays content.
                 </p>
               </EditorialLine>
@@ -512,12 +523,12 @@ export default function HomePage() {
               </GsapScrollReveal>
 
               <EditorialLine delay={0.4}>
-                <p className="text-base text-white/70 leading-relaxed">
+                <p className="text-sm sm:text-base text-white/70 leading-relaxed">
                   That changes the role of the screen. It becomes part of a programmable mobility infrastructure.
                 </p>
-                <div className="mt-6 p-5 rounded-2xl bg-white/[0.03] border border-white/10 font-medium text-base text-white/90 leading-snug">
+                <div className="mt-6 p-5 rounded-2xl bg-white/[0.03] border border-white/10 font-medium text-sm sm:text-base text-white/90 leading-snug">
                   &ldquo;The screen is only what you see. <br />
-                  <span className="text-white font-semibold">
+                  <span className="gradient-text font-semibold">
                     The intelligence is everything behind it.&rdquo;
                   </span>
                 </div>
@@ -552,8 +563,8 @@ export default function HomePage() {
               Market Macro Thesis
             </div>
           </EditorialLine>
-          <h2 className="text-3xl sm:text-5xl font-bold tracking-tight text-white max-w-3xl mx-auto leading-tight mb-8">
-            The world is becoming software-defined.
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight text-white max-w-3xl mx-auto leading-tight mb-8">
+            The world is becoming <span className="gradient-text">software-defined.</span>
           </h2>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 max-w-5xl mx-auto mb-12">
@@ -599,11 +610,11 @@ export default function HomePage() {
               VMOVEXA Platform
             </div>
           </EditorialLine>
-          <h2 className="text-4xl sm:text-6xl font-bold tracking-tight text-white leading-tight mb-6">
-            The world moves. Intelligence should move with it.
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight text-white leading-tight mb-6">
+            The world moves. <span className="gradient-text">Intelligence should move with it.</span>
           </h2>
           <EditorialLine delay={0.3}>
-            <p className="text-lg text-white/75 max-w-2xl mx-auto mb-10 leading-relaxed font-light">
+            <p className="text-base sm:text-lg text-white/75 max-w-2xl mx-auto mb-10 leading-relaxed font-light">
               A cloud-to-edge mobility intelligence platform connecting vehicles, computing, digital infrastructure and the connected world.
             </p>
           </EditorialLine>

@@ -30,6 +30,15 @@
     --accent-cyan: #22d3ee;
     --accent-indigo: #818cf8;
     --accent-purple: #c084fc;
+    --primary-color: #2f7bff;
+    --secondary-color: #6a4cff;
+    --accent-color: #d946ef;
+    --danger-color: #ef4444;
+    --gradient-primary: linear-gradient(90deg, #2f7bff 0%, #6a4cff 50%, #d946ef 100%);
+    --gradient-brand: linear-gradient(90deg, #3b9eff 0%, #a855f7 50%, #ec4899 100%);
+    --gradient-tagline: linear-gradient(90deg, #3b9eff 0%, #a855f7 50%, #ec4899 100%);
+    --gradient-subtle: linear-gradient(90deg, #3b9eff 0%, #a855f7 100%);
+    --gradient-danger: linear-gradient(90deg, #ef4444 0%, #f97316 100%);
     --radius: 1.25rem;
     --radius-sm: 0.75rem;
   }
@@ -1441,4 +1450,153 @@ a.brand-link:focus-visible {
 .preserve-dark * {
   color: #ffffff !important;
 }
+
+/* ==========================================================================
+   VMOVEXA.COM LIVE BRAND GRADIENTS & EMERGENCY BROADCASTING ANIMATIONS
+   ========================================================================== */
+
+.gradient-text,
+.gradient-tagline {
+  background: linear-gradient(90deg, #3b9eff 0%, #a855f7 50%, #ec4899 100%) !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  background-clip: text !important;
+  display: inline-block;
+}
+
+.gradient-text-subtle {
+  background: linear-gradient(90deg, #3b9eff 0%, #a855f7 100%) !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  background-clip: text !important;
+  display: inline-block;
+}
+
+.gradient-text-live {
+  background: linear-gradient(90deg, #2f7bff 0%, #6a4cff 50%, #d946ef 100%) !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  background-clip: text !important;
+  display: inline-block;
+}
+
+/* Emergency Operations Section & Animated Cards */
+.emergency-section {
+  background: #000000;
+  position: relative;
+}
+
+.emergency-card {
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 1.25rem;
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  align-items: center;
+  gap: 1.25rem;
+  padding: 1.5rem;
+  display: flex;
+  position: relative;
+  overflow: hidden;
+}
+
+.emergency-card:hover {
+  border-color: rgba(239, 68, 68, 0.45);
+  transform: translateY(-4px);
+  box-shadow: 0 16px 40px rgba(239, 68, 68, 0.15);
+  background: rgba(239, 68, 68, 0.04);
+}
+
+.emergency-card-image {
+  background: rgba(239, 68, 68, 0.08);
+  border: 1px solid rgba(239, 68, 68, 0.25);
+  border-radius: 1rem;
+  width: 70px;
+  min-width: 70px;
+  height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  padding: 12px;
+  flex-shrink: 0;
+}
+
+.emergency-card-image img {
+  object-fit: contain;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.4s ease;
+}
+
+.emergency-card:hover .emergency-card-image img {
+  transform: scale(1.15);
+}
+
+.emergency-pulse {
+  border: 2px solid #ef4444;
+  opacity: 0;
+  border-radius: 1rem;
+  width: 100%;
+  height: 100%;
+  animation: 1.4s infinite emergencyPulse;
+  position: absolute;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+}
+
+@keyframes emergencyPulse {
+  0% {
+    opacity: 0.8;
+    transform: scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(1.4);
+  }
+}
+
+.emergency-card-content {
+  flex: 1;
+  min-width: 0;
+}
+
+.emergency-card-content h3,
+.emergency-card-content h4 {
+  margin-bottom: 0.35rem;
+  font-size: 1.05rem;
+  font-weight: 700;
+  transition: color 0.3s ease;
+  color: #ffffff;
+  letter-spacing: -0.01em;
+}
+
+.emergency-card:hover .emergency-card-content h3,
+.emergency-card:hover .emergency-card-content h4 {
+  color: #f87171;
+}
+
+.emergency-card-content p {
+  color: rgba(255, 255, 255, 0.6);
+  margin: 0;
+  font-size: 0.85rem;
+  line-height: 1.4;
+  font-weight: 400;
+}
+
+.emergency-border {
+  background: linear-gradient(90deg, #ef4444, #f97316);
+  width: 0;
+  height: 3px;
+  transition: width 0.4s ease;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
+.emergency-card:hover .emergency-border {
+  width: 100%;
+}
+
 

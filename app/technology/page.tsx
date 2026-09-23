@@ -16,7 +16,7 @@ import {
   FiActivity,
 } from "react-icons/fi";
 import { EditorialMaskText, EditorialLine } from "@/components/animations/editorial-text";
-import { MagneticElement, GsapScrollReveal } from "@/components/animations/gsap-scroll-fx";
+import { MagneticElement, GsapScrollReveal, ParallaxElement } from "@/components/animations/gsap-scroll-fx";
 import { MediaSlot } from "@/components/ui/media-slot";
 
 export const metadata: Metadata = {
@@ -84,26 +84,35 @@ export default function TechnologyPage() {
               </EditorialLine>
 
               <EditorialLine delay={0.15}>
-                <h1 className="text-5xl sm:text-7xl lg:text-8xl font-bold tracking-tight leading-[1.04] max-w-5xl mb-8 text-white">
-                  Built for the moving edge.
+                <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight leading-[1.1] max-w-4xl mb-6 text-white">
+                  Built for the <span className="gradient-text">moving edge.</span>
                 </h1>
               </EditorialLine>
 
               <EditorialLine delay={0.3}>
-                <p className="text-xl sm:text-2xl text-white/70 font-normal leading-relaxed max-w-3xl mb-10">
+                <p className="text-base sm:text-lg text-white/70 font-normal leading-relaxed max-w-2xl mb-8">
                   A deep-tech architecture combining cloud, edge, connectivity, sensors and intelligent software — engineered for the real world.
                 </p>
               </EditorialLine>
 
               <EditorialLine delay={0.4}>
-                <div className="flex items-center gap-4 mb-10">
+                <div className="flex flex-wrap items-center gap-4 mb-10">
                   <MagneticElement strength={0.3}>
                     <Link
                       href="#disciplines"
-                      className="inline-flex items-center gap-2.5 px-8 py-4 rounded-full bg-white text-black font-semibold text-sm tracking-wide transition-transform duration-200 hover:scale-[1.03] active:scale-[0.98] shadow-[0_0_25px_rgba(255,255,255,0.3)]"
+                      className="inline-flex items-center gap-2.5 px-7 py-3.5 rounded-full bg-white text-black font-semibold text-sm tracking-wide transition-transform duration-200 hover:scale-[1.03] active:scale-[0.98] shadow-[0_0_25px_rgba(255,255,255,0.3)]"
                     >
                       Explore VMOVEXA CORE <FiArrowRight size={16} />
                     </Link>
+                  </MagneticElement>
+                  <MagneticElement strength={0.3}>
+                    <a
+                      href="/docs/VMOVEXA-Brochure.pdf"
+                      download="VMOVEXA-Brochure.pdf"
+                      className="inline-flex items-center gap-2 px-6 py-3.5 rounded-full bg-white/[0.04] border border-white/15 text-white/80 hover:text-white hover:border-white/30 text-xs font-mono tracking-wider transition-all duration-300"
+                    >
+                      Download Tech Brief
+                    </a>
                   </MagneticElement>
                 </div>
               </EditorialLine>
@@ -131,18 +140,19 @@ export default function TechnologyPage() {
 
               {/* Wireframe Bus Blueprint Showcase */}
               <div className="lg:col-span-10 relative group">
-                {/* Visual Image */}
-                <MediaSlot
-                  theme="transparent"
-                  type="image"
-                  src="/images/vmovexa-technology-bus-xray.png"
-                  alt="VMOVEXA Deep-Tech Smart Bus Blueprint & Architecture"
-                  badge="Deep-Tech Bus Architecture • Wireframe Blueprint"
-                  caption="Integrated Moving Edge System: Edge Computing, Sensors, Displays, Telemetry & 5G Gateway"
-                  aspectRatio="16/9"
-                  objectFit="contain"
-                  priority
-                />
+                <ParallaxElement offset={25}>
+                  <MediaSlot
+                    theme="transparent"
+                    type="image"
+                    src="/images/vmovexa-technology-bus-xray.png"
+                    alt="VMOVEXA Deep-Tech Smart Bus Blueprint & Architecture"
+                    badge="Deep-Tech Bus Architecture • Wireframe Blueprint"
+                    caption="Integrated Moving Edge System: Edge Computing, Sensors, Displays, Telemetry & 5G Gateway"
+                    aspectRatio="16/9"
+                    objectFit="contain"
+                    priority
+                  />
+                </ParallaxElement>
               </div>
             </div>
           </GsapScrollReveal>
@@ -215,9 +225,9 @@ export default function TechnologyPage() {
               <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center relative z-10">
                 <div className="lg:col-span-6 space-y-4">
                   <span className="font-mono text-xs uppercase tracking-widest text-cyan-400 block group-hover:text-cyan-300 transition-colors">Performance Benchmark</span>
-                  <h3 className="text-3xl sm:text-4xl font-semibold tracking-tight text-white">
+                  <h3 className="text-2xl sm:text-3xl font-semibold tracking-tight text-white">
                     Cloud Scale. <br />
-                    <span className="text-cyan-400">Edge Speed.</span>
+                    <span className="gradient-text">Edge Speed.</span>
                   </h3>
                   <p className="text-sm text-white/70 leading-relaxed font-light">
                     The right intelligence. In the right place. At the right time. Synchronizing high-throughput centralized orchestration with sub-millisecond edge triggering directly on moving transit fleets.
@@ -251,12 +261,12 @@ export default function TechnologyPage() {
                 </div>
               </EditorialLine>
               <EditorialLine delay={0.1}>
-                <h2 className="text-4xl sm:text-5xl font-bold tracking-tight text-white leading-tight">
-                  Two worlds. One architecture.
+                <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight text-white leading-tight">
+                  Two worlds. <span className="gradient-text">One architecture.</span>
                 </h2>
               </EditorialLine>
               <EditorialLine delay={0.2}>
-                <p className="text-lg text-white/70 leading-relaxed pt-2">
+                <p className="text-base sm:text-lg text-white/70 leading-relaxed pt-2">
                   Cloud infrastructure provides centralized coordination. Edge infrastructure provides localized execution. Together they create a distributed computing model designed for mobility.
                 </p>
               </EditorialLine>
@@ -277,18 +287,20 @@ export default function TechnologyPage() {
               </div>
             </div>
 
-            {/* Reserved Space for Edge Node Visual / Mockup */}
+            {/* Visual: Hierarchical Topology Diagram (new2.PNG) */}
             <div className="lg:col-span-6">
               <GsapScrollReveal delay={0.3}>
-                <div className="relative group">
+                <div className="relative group rounded-3xl p-2 bg-gradient-to-b from-white/[0.04] to-transparent border border-white/10 hover:border-cyan-500/30 transition-all duration-500 shadow-2xl">
                   <MediaSlot
                     theme="transparent"
                     type="image"
-                    src="/images/VMOVEXA FOLDER DESIGN MOCKUP4.PNG"
-                    alt="VMOVEXA Edge Computing Node Setup"
-                    badge="Edge Infrastructure • Hardware Runtime"
-                    caption="Integrated Computing, Telemetry & Multi-Screen Controllers"
-                    aspectRatio="16/9"
+                    src="/images/new2.PNG"
+                    alt="VMOVEXA Three-Tier Topology: Cloud Control, VMOVEXA CORE Edge Execution, and Moving Fleet Intelligence"
+                    badge="Distributed Topology • Cloud to Moving Edge"
+                    caption="Hierarchical Execution: Cloud Orchestration → VMOVEXA CORE Edge Runtime → Moving Fleets → Data Insights"
+                    aspectRatio="3/2"
+                    objectFit="contain"
+                    fade="none"
                   />
                 </div>
               </GsapScrollReveal>
@@ -307,36 +319,59 @@ export default function TechnologyPage() {
               </div>
             </EditorialLine>
             <EditorialLine delay={0.1}>
-              <h2 className="text-4xl sm:text-6xl font-bold tracking-tight text-white leading-tight mb-4">
-                Make geography programmable.
+              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight text-white leading-tight mb-4">
+                Make geography <span className="gradient-text">programmable.</span>
               </h2>
             </EditorialLine>
             <EditorialLine delay={0.2}>
-              <p className="text-lg text-white/70 leading-relaxed mb-6">
+              <p className="text-base sm:text-lg text-white/70 leading-relaxed mb-6">
                 Location can become an operational input. VMOVEXA can associate mobility infrastructure with defined geographic zones and use those contexts within platform operations.
               </p>
             </EditorialLine>
             <GsapScrollReveal delay={0.3}>
               <div className="p-4 rounded-xl bg-white/[0.03] border border-white/10 font-mono text-sm inline-block shadow-[inset_0_1px_0_rgba(255,255,255,0.05)] hover:border-cyan-500/30 transition-colors">
                 <span className="text-white/60">Coordinates become context. </span>
-                <span className="text-cyan-400 font-semibold">Context becomes logic.</span>
+                <span className="gradient-text font-semibold">Context becomes logic.</span>
               </div>
             </GsapScrollReveal>
           </div>
 
-          {/* Reserved Space for Geofencing & Real-Time Map Video */}
+          {/* Visual: Satellite GPS & In-Vehicle Edge Architecture (new3.PNG) */}
           <GsapScrollReveal delay={0.4}>
-            <div className="relative group overflow-hidden rounded-[2.5rem]">
-               <div className="absolute inset-0 bg-gradient-to-r from-cyan-900/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700 z-10 pointer-events-none" />
+            <div className="relative group overflow-hidden rounded-[2.5rem] border border-white/10 bg-gradient-to-b from-white/[0.03] to-transparent p-2 hover:border-cyan-500/30 transition-all duration-500 shadow-2xl">
               <MediaSlot
                 theme="transparent"
-                type="placeholder"
-                badge="Space Reserved • Programmable Geofencing & Map Video"
-                caption="Sub-Meter GPS Trajectories & Real-Time Polygon Boundary Triggers"
-                aspectRatio="21/9"
+                type="image"
+                src="/images/new3.PNG"
+                alt="VMOVEXA Satellite GPS & In-Chassis Edge Computing Architecture"
+                badge="Dual-Satellite GPS & In-Vehicle Edge Processor"
+                caption="Real-Time Orbital GPS Positioning, In-Chassis VMOVEXA Hardware & Dynamic Polygon Geofence Triggers"
+                aspectRatio="16/9"
+                objectFit="contain"
+                fade="none"
               />
             </div>
           </GsapScrollReveal>
+
+          {/* Spatial Capabilities Specs below diagram */}
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-8">
+            <div className="p-4 rounded-xl bg-white/[0.02] border border-white/5 text-center">
+              <div className="text-xs font-mono text-cyan-400 uppercase tracking-wider mb-1">&lt; 1.0 m</div>
+              <div className="text-xs text-white/60">Sub-Meter Precision</div>
+            </div>
+            <div className="p-4 rounded-xl bg-white/[0.02] border border-white/5 text-center">
+              <div className="text-xs font-mono text-indigo-400 uppercase tracking-wider mb-1">Multi-Polygon</div>
+              <div className="text-xs text-white/60">Spatial Boundary Logic</div>
+            </div>
+            <div className="p-4 rounded-xl bg-white/[0.02] border border-white/5 text-center">
+              <div className="text-xs font-mono text-purple-400 uppercase tracking-wider mb-1">Directional</div>
+              <div className="text-xs text-white/60">Corridor Heading Triggers</div>
+            </div>
+            <div className="p-4 rounded-xl bg-white/[0.02] border border-white/5 text-center">
+              <div className="text-xs font-mono text-emerald-400 uppercase tracking-wider mb-1">Zero Latency</div>
+              <div className="text-xs text-white/60">In-Chassis Autonomous Cache</div>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -350,7 +385,7 @@ export default function TechnologyPage() {
                 <div className="absolute -inset-x-full top-0 h-[1px] bg-gradient-to-r from-transparent via-cyan-400/30 to-transparent group-hover:animate-[shimmer_2s_infinite]" />
                 <div className="relative z-10">
                   <div className="font-mono text-xs uppercase tracking-widest text-cyan-400 mb-2">Telemetry</div>
-                  <h3 className="text-3xl font-semibold text-white mb-4">The vehicle speaks in data.</h3>
+                  <h3 className="text-2xl font-semibold text-white mb-3">The vehicle speaks in <span className="gradient-text">data.</span></h3>
                   <p className="text-sm text-white/70 leading-relaxed mb-6">
                     Connected systems generate operational information continuously. VMOVEXA&apos;s architecture incorporates telemetry as a core part of the vehicle-edge environment.
                   </p>
@@ -375,11 +410,11 @@ export default function TechnologyPage() {
                  <div className="absolute -inset-x-full top-0 h-[1px] bg-gradient-to-r from-transparent via-purple-400/30 to-transparent group-hover:animate-[shimmer_2s_infinite]" />
                 <div className="relative z-10">
                   <div className="font-mono text-xs uppercase tracking-widest text-purple-400 mb-2">Multi-Screen</div>
-                  <h3 className="text-3xl font-semibold text-white mb-4">One edge. Many digital surfaces.</h3>
+                  <h3 className="text-2xl font-semibold text-white mb-3">One edge. <span className="gradient-text">Many digital surfaces.</span></h3>
                   <p className="text-sm text-white/70 leading-relaxed mb-6">
                     The vehicle can become a coordinated display environment rather than a collection of independent screens.
                   </p>
-                  <div className="p-5 rounded-xl bg-white/[0.02] border border-white/5 space-y-3 text-xs font-mono text-white/80 mb-6 shadow-[inset_0_1px_0_rgba(255,255,255,0.02)]">
+                  <div className="p-5 rounded-xl bg-white/[0.02] border border-white/5 space-y-3 text-xs font-mono text-white/80 mb-6 shadow-[inset_0_1px_0_rgba(255,255,200,0.02)]">
                     <div className="text-white font-semibold">Supported Display Modes:</div>
                     <div className="flex flex-wrap gap-2 text-cyan-400">
                       {['Independent', 'Mirrored', 'Synchronized', 'Split-Zone', 'Multi-Zone'].map(mode => (
@@ -394,6 +429,72 @@ export default function TechnologyPage() {
               </div>
             </GsapScrollReveal>
           </div>
+
+          {/* 04.B — FULL-STACK FLEET TELEMETRY & SERVICE FABRIC (new1.PNG) */}
+          <GsapScrollReveal delay={0.3}>
+            <div className="mt-16 pt-16 border-t border-white/10">
+              <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-6 mb-8">
+                <div>
+                  <span className="font-mono text-xs uppercase tracking-widest text-cyan-400 block mb-2">
+                    End-to-End Synchronization
+                  </span>
+                  <h3 className="text-2xl sm:text-3xl font-bold tracking-tight text-white">
+                    From Central Cloud to <span className="gradient-text">Moving Edge Fleets.</span>
+                  </h3>
+                  <p className="text-sm text-white/60 max-w-2xl mt-2 leading-relaxed font-light">
+                    A unified multi-tier operational stack connecting cloud data fabrics, containerized microservices, distributed edge racks, and high-frequency in-transit vehicle clusters.
+                  </p>
+                </div>
+                
+                {/* Capability Indicators */}
+                <div className="flex flex-wrap items-center gap-3">
+                  <div className="px-3.5 py-1.5 rounded-full bg-white/[0.04] border border-white/10 text-xs font-mono text-cyan-300 flex items-center gap-2">
+                    <span className="w-2 h-2 rounded-full bg-cyan-400 animate-pulse" />
+                    <span>Microsecond Triggers</span>
+                  </div>
+                  <div className="px-3.5 py-1.5 rounded-full bg-white/[0.04] border border-white/10 text-xs font-mono text-indigo-300 flex items-center gap-2">
+                    <span className="w-2 h-2 rounded-full bg-indigo-400" />
+                    <span>Offline-First Fault Tolerance</span>
+                  </div>
+                </div>
+              </div>
+
+              {/* Visual Container for new1.PNG */}
+              <div className="relative group rounded-3xl p-2 bg-gradient-to-b from-white/[0.04] to-transparent border border-white/10 hover:border-cyan-500/30 transition-all duration-500 shadow-2xl overflow-hidden mb-8">
+                <MediaSlot
+                  theme="transparent"
+                  type="image"
+                  src="/images/new1.PNG"
+                  alt="VMOVEXA End-to-End Fleet Architecture: Cloud Datacenter, Microservice Tier, Edge Servers, and Connected Fleet"
+                  badge="Full-Stack Fleet Telemetry & Orchestration Fabric"
+                  caption="End-to-End Pipeline: Global & Regional Cloud Analytics ↔ Microservice Tier ↔ Edge Hardware ↔ High-Frequency Vehicle Bus Fleet"
+                  aspectRatio="3/2"
+                  objectFit="contain"
+                  fade="none"
+                />
+              </div>
+
+              {/* 4 Feature Spec Pillars below the diagram */}
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+                <div className="p-5 rounded-2xl bg-white/[0.02] border border-white/5 hover:border-cyan-500/20 transition-colors">
+                  <div className="text-xs font-mono text-cyan-400 uppercase tracking-wider mb-1.5 font-semibold">01 • Cloud Orchestration</div>
+                  <div className="text-xs text-white/60 leading-relaxed">Multi-tenant fleet management, campaign rules, and unified national telemetry aggregation.</div>
+                </div>
+                <div className="p-5 rounded-2xl bg-white/[0.02] border border-white/5 hover:border-indigo-500/20 transition-colors">
+                  <div className="text-xs font-mono text-indigo-400 uppercase tracking-wider mb-1.5 font-semibold">02 • Microservices Tier</div>
+                  <div className="text-xs text-white/60 leading-relaxed">Decoupled APIs for real-time routing, DOOH playback logs, spatial queries, and security.</div>
+                </div>
+                <div className="p-5 rounded-2xl bg-white/[0.02] border border-white/5 hover:border-purple-500/20 transition-colors">
+                  <div className="text-xs font-mono text-purple-400 uppercase tracking-wider mb-1.5 font-semibold">03 • Distributed Edge</div>
+                  <div className="text-xs text-white/60 leading-relaxed">Depot and in-vehicle edge nodes providing localized decisioning even during network loss.</div>
+                </div>
+                <div className="p-5 rounded-2xl bg-white/[0.02] border border-white/5 hover:border-emerald-500/20 transition-colors">
+                  <div className="text-xs font-mono text-emerald-400 uppercase tracking-wider mb-1.5 font-semibold">04 • In-Transit Fleet</div>
+                  <div className="text-xs text-white/60 leading-relaxed">Sub-meter GPS, multi-screen sync, and CAN bus sensor stream ingest across commercial routes.</div>
+                </div>
+              </div>
+            </div>
+          </GsapScrollReveal>
         </div>
       </section>
 
@@ -407,12 +508,12 @@ export default function TechnologyPage() {
               </div>
             </EditorialLine>
             <EditorialLine delay={0.1}>
-              <h2 className="text-4xl sm:text-6xl font-bold tracking-tight leading-tight mb-4 text-white">
-                Built to Connect.
+              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight leading-tight mb-4 text-white">
+                Built to <span className="gradient-text">Connect.</span>
               </h2>
             </EditorialLine>
             <EditorialLine delay={0.2}>
-              <p className="text-lg text-white/70 leading-relaxed">
+              <p className="text-base sm:text-lg text-white/70 leading-relaxed">
                 VMOVEXA is designed to operate within broader enterprise and mobility ecosystems. The architecture anticipates APIs spanning fleet data, mobility data, screen availability, campaigns and analytics.
               </p>
             </EditorialLine>
@@ -431,6 +532,23 @@ export default function TechnologyPage() {
               </GsapScrollReveal>
             ))}
           </div>
+
+          {/* Visual: Central Fleet Network Operations & Command Grid (new.PNG) */}
+          <GsapScrollReveal delay={0.2}>
+            <div className="mb-16 relative group rounded-3xl p-2 bg-gradient-to-b from-white/[0.04] to-transparent border border-white/10 hover:border-cyan-500/30 transition-all duration-500 shadow-2xl overflow-hidden">
+              <MediaSlot
+                theme="transparent"
+                type="image"
+                src="/images/new.PNG"
+                alt="VMOVEXA Network Operations Center (NOC) and Distributed Fleet Edge Network"
+                badge="Centralized Fleet Network Operations & Command Grid"
+                caption="Real-Time Network Operations: Multi-City Fleet Telemetry NOC ↔ Edge Gateway Communication ↔ Depot Hubs"
+                aspectRatio="16/9"
+                objectFit="contain"
+                fade="none"
+              />
+            </div>
+          </GsapScrollReveal>
 
           {/* Security & Resilience banner */}
           <GsapScrollReveal delay={0.3}>
@@ -466,8 +584,8 @@ export default function TechnologyPage() {
             <div className="font-mono text-xs uppercase tracking-widest text-cyan-400 mb-3">Engineered for Motion</div>
           </EditorialLine>
           <EditorialLine delay={0.1}>
-            <h2 className="text-3xl sm:text-5xl font-semibold tracking-tight mb-8 text-white">
-              Explore the Technology In Depth.
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-semibold tracking-tight mb-8 text-white">
+              Explore the Technology <span className="gradient-text">In Depth.</span>
             </h2>
           </EditorialLine>
           <EditorialLine delay={0.2}>

@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { FiArrowRight, FiArrowUpRight, FiMonitor, FiMapPin, FiBarChart2, FiCheckCircle } from "react-icons/fi";
 import { EditorialMaskText, EditorialLine } from "@/components/animations/editorial-text";
-import { MagneticElement, GsapScrollReveal } from "@/components/animations/gsap-scroll-fx";
+import { MagneticElement, GsapScrollReveal, ParallaxElement } from "@/components/animations/gsap-scroll-fx";
 import { MediaSlot } from "@/components/ui/media-slot";
 
 export const metadata: Metadata = {
@@ -59,13 +59,13 @@ export default function MediaPage() {
               </EditorialLine>
 
               <EditorialLine delay={0.15}>
-                <h1 className="text-5xl sm:text-7xl lg:text-8xl font-bold tracking-tight leading-[1.04] max-w-5xl mb-6 text-white">
-                  Media that moves.
+                <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight leading-[1.1] max-w-4xl mb-6 text-white uppercase">
+                  Media that <span className="gradient-text">moves.</span>
                 </h1>
               </EditorialLine>
 
               <EditorialLine delay={0.3}>
-                <p className="text-xl sm:text-2xl text-white/70 font-normal leading-relaxed max-w-3xl mb-10">
+                <p className="text-base sm:text-lg text-white/70 font-normal leading-relaxed max-w-2xl mb-8">
                   A new era of Digital Out-of-Home — powered by movement, location and intelligence.
                 </p>
               </EditorialLine>
@@ -75,7 +75,7 @@ export default function MediaPage() {
                   <MagneticElement strength={0.3}>
                     <Link
                       href="#inventory-object"
-                      className="inline-flex items-center gap-2.5 px-8 py-4 rounded-full bg-white text-black font-semibold text-sm tracking-wide transition-all duration-300 hover:scale-[1.02] active:scale-[0.98] shadow-[0_0_25px_rgba(255,255,255,0.3)]"
+                      className="inline-flex items-center gap-2.5 px-7 py-3.5 rounded-full bg-white text-black font-semibold text-sm tracking-wide transition-all duration-300 hover:scale-[1.02] active:scale-[0.98] shadow-[0_0_25px_rgba(255,255,255,0.3)]"
                     >
                       <span className="text-black font-semibold">Explore Mobility Media</span>
                       <FiArrowRight size={16} className="text-black" />
@@ -84,10 +84,19 @@ export default function MediaPage() {
                   <MagneticElement strength={0.3}>
                     <Link
                       href="/contact"
-                      className="inline-flex items-center gap-2.5 px-8 py-4 rounded-full bg-white/[0.08] border border-white/20 text-white font-semibold text-sm tracking-wide transition-all duration-300 hover:bg-white/15 hover:border-cyan-400/40"
+                      className="inline-flex items-center gap-2.5 px-7 py-3.5 rounded-full bg-white/[0.08] border border-white/20 text-white font-semibold text-sm tracking-wide transition-all duration-300 hover:bg-white/15 hover:border-cyan-400/40"
                     >
                       <span className="text-white font-semibold">For Brands</span>
                     </Link>
+                  </MagneticElement>
+                  <MagneticElement strength={0.3}>
+                    <a
+                      href="/docs/VMOVEXA-Brochure.pdf"
+                      download="VMOVEXA-Brochure.pdf"
+                      className="inline-flex items-center gap-2 px-6 py-3.5 rounded-full bg-white/[0.04] border border-white/15 text-white/80 hover:text-white hover:border-white/30 text-xs font-mono tracking-wider transition-all duration-300"
+                    >
+                      Media Kit PDF
+                    </a>
                   </MagneticElement>
                 </div>
               </EditorialLine>
@@ -174,7 +183,7 @@ export default function MediaPage() {
                   <div className="flex items-center gap-2 text-cyan-400 font-mono text-xs uppercase tracking-wider mb-2">
                     <FiMonitor size={16} /> Inventory Object
                   </div>
-                  <h3 className="text-3xl font-semibold uppercase mb-4">The Screen as an Inventory Object</h3>
+                  <h3 className="text-xl sm:text-2xl font-semibold uppercase mb-4">The Screen as an <span className="gradient-text">Inventory Object</span></h3>
                   <p className="text-sm text-white/70 leading-relaxed mb-6 group-hover:text-white/90 transition-colors">
                     In traditional media, screens are fixed in place. In connected mobility, the screen moves through the physical world.
                   </p>
@@ -199,7 +208,7 @@ export default function MediaPage() {
                   <div className="flex items-center gap-2 text-purple-400 font-mono text-xs uppercase tracking-wider mb-2">
                     <FiMapPin size={16} /> Contextual Delivery
                   </div>
-                  <h3 className="text-3xl font-semibold uppercase mb-4">Where + When Targeting</h3>
+                  <h3 className="text-xl sm:text-2xl font-semibold uppercase mb-4">Where + When <span className="gradient-text">Targeting</span></h3>
                   <p className="text-sm text-white/70 leading-relaxed mb-6 group-hover:text-white/90 transition-colors">
                     Contextual delivery happens at the intersection of geographical polygon rules and temporal dayparting:
                   </p>
@@ -226,7 +235,7 @@ export default function MediaPage() {
                 <div className="flex items-center gap-2 text-cyan-400 font-mono text-xs uppercase tracking-wider">
                   <FiBarChart2 size={16} className="group-hover:scale-110 transition-transform" /> Verifiable Measurement
                 </div>
-                <h3 className="text-2xl font-semibold uppercase">Display is Not Enough.</h3>
+                <h3 className="text-xl sm:text-2xl font-semibold uppercase mb-2">Display is <span className="gradient-text">Not Enough.</span></h3>
                 <p className="text-sm text-white/70 leading-relaxed max-w-3xl font-light">
                   VMOVEXA&apos;s architecture includes media analytics around playback, completion, campaign performance and location performance. This establishes a foundation for more measurable, audit-ready mobility media.
                 </p>
@@ -246,12 +255,12 @@ export default function MediaPage() {
               </div>
             </EditorialLine>
             <EditorialLine delay={0.1}>
-              <h2 className="text-4xl sm:text-6xl font-bold tracking-tight text-white leading-tight mb-4">
-                The road is your media network.
+              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight text-white leading-tight mb-4">
+                The road is your <span className="gradient-text">media network.</span>
               </h2>
             </EditorialLine>
             <EditorialLine delay={0.2}>
-              <p className="text-lg text-white/70 leading-relaxed">
+              <p className="text-base sm:text-lg text-white/70 leading-relaxed">
                 VMOVEXA provides a technology foundation for digital out-of-home media distributed across moving fleets, delivering high-impact programmatic exposure.
               </p>
             </EditorialLine>
@@ -304,8 +313,8 @@ export default function MediaPage() {
                 </div>
               </EditorialLine>
               <EditorialLine delay={0.1}>
-                <h2 className="text-4xl sm:text-5xl font-bold tracking-tight text-white leading-tight">
-                  From creative to moving screen.
+                <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight text-white leading-tight">
+                  From creative to <span className="gradient-text">moving screen.</span>
                 </h2>
               </EditorialLine>
               <EditorialLine delay={0.2}>
@@ -349,8 +358,8 @@ export default function MediaPage() {
             <div className="font-mono text-xs uppercase tracking-widest text-cyan-400 mb-3">Media CTA</div>
           </EditorialLine>
           <EditorialLine delay={0.1}>
-            <h2 className="text-3xl sm:text-5xl font-bold tracking-tight mb-8 text-white">
-              Don&apos;t just buy a screen. Buy a moment in motion.
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight mb-6 text-white">
+              Don&apos;t just buy a screen. <span className="gradient-text">Buy a moment in motion.</span>
             </h2>
           </EditorialLine>
           <EditorialLine delay={0.3}>

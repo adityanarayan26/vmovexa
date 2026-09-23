@@ -113,13 +113,13 @@ export default function IndustriesPage() {
               </EditorialLine>
 
               <EditorialLine delay={0.15}>
-                <h1 className="text-5xl sm:text-7xl lg:text-8xl font-bold tracking-tight leading-[1.04] max-w-5xl mb-6 text-white">
-                  One technology. Many mobility environments.
+                <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight leading-[1.1] max-w-4xl mb-6 text-white">
+                  One technology. <span className="gradient-text">Many mobility environments.</span>
                 </h1>
               </EditorialLine>
 
               <EditorialLine delay={0.3}>
-                <p className="text-xl sm:text-2xl text-white/70 font-normal leading-relaxed max-w-3xl mb-10">
+                <p className="text-base sm:text-lg text-white/70 font-normal leading-relaxed max-w-2xl mb-8">
                   VMOVEXA is designed for diverse mobility ecosystems — from public transport to airport mobility, from tourism to logistics.
                 </p>
               </EditorialLine>
@@ -262,8 +262,8 @@ export default function IndustriesPage() {
               </div>
             </EditorialLine>
             <EditorialLine delay={0.1}>
-              <h2 className="text-3xl sm:text-5xl font-bold tracking-tight leading-tight text-white">
-                Where movement meets intelligence.
+              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight leading-tight text-white">
+                Where movement meets <span className="gradient-text">intelligence.</span>
               </h2>
             </EditorialLine>
           </div>
@@ -303,8 +303,8 @@ export default function IndustriesPage() {
             <div className="font-mono text-xs uppercase tracking-widest text-cyan-400 mb-3">Architecture Deployment</div>
           </EditorialLine>
           <EditorialLine delay={0.1}>
-            <h2 className="text-3xl sm:text-5xl font-semibold tracking-tight mb-8 text-white">
-              Deploy across your environment.
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-semibold tracking-tight mb-8 text-white">
+              Deploy across your <span className="gradient-text">environment.</span>
             </h2>
           </EditorialLine>
           <EditorialLine delay={0.2}>

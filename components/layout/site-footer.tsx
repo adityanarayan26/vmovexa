@@ -36,147 +36,213 @@ const footerNavigation = {
   company: [
     { label: "About", href: "/company#vision" },
     { label: "Deep Tech", href: "/company#thesis" },
+    { label: "Careers", href: "/careers" },
+    { label: "FAQ", href: "/faq" },
     { label: "Partners", href: "/company#partners" },
     { label: "Investors", href: "/company#investors" },
-    { label: "Careers", href: "/company#careers" },
     { label: "Contact", href: "/contact" },
   ],
 };
 
+const socialLinks = [
+  { name: "LinkedIn", icon: "/images/social/linkedin.png", href: "https://www.linkedin.com/company/vmovexa" },
+  { name: "Instagram", icon: "/images/social/instagram.png", href: "https://www.instagram.com/vmovexa" },
+  { name: "Facebook", icon: "/images/social/facebook.png", href: "https://www.facebook.com/vmovexa" },
+  { name: "X", icon: "/images/social/twitter.png", href: "https://x.com/vmovexa" },
+  { name: "YouTube", icon: "/images/social/youtube.png", href: "https://www.youtube.com/@vmovexa" },
+];
+
 export function SiteFooter() {
   return (
-    <footer className="border-t border-white/10 bg-black text-white pt-16 pb-12">
+    <footer className="border-t border-white/10 bg-black text-white pt-12 pb-8">
       <div className="container mx-auto px-6 md:px-12 max-w-7xl">
-        {/* Brand Core Row */}
-        <div className="flex flex-col md:flex-row md:items-start justify-between gap-8 pb-12 border-b border-white/10">
-          <div className="space-y-4 max-w-md">
+        {/* Main Footer Grid: Brand & CTAs (Left 4 cols) + Navigation (Right 8 cols) */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-8 pb-10 border-b border-white/10">
+          {/* Brand Info & Action CTAs */}
+          <div className="lg:col-span-4 space-y-5">
             <Link href="/" className="inline-block">
               <Image
                 src="/logos/vmovexa-vertical.svg"
                 alt="VMOVEXA"
-                width={180}
-                height={100}
-                className="h-24 w-auto brightness-110 object-contain drop-shadow-2xl"
+                width={150}
+                height={80}
+                className="h-16 w-auto brightness-110 object-contain drop-shadow-2xl"
               />
             </Link>
-            <div className="font-mono text-xs tracking-widest text-cyan-400 uppercase">
-              INTELLIGENCE IN MOTION.
-            </div>
-            <p className="text-sm text-white/50 leading-relaxed font-light">
-              Cloud-to-Edge Mobility Intelligence Platform connecting vehicles, edge computing, digital displays, and urban intelligence layers.
-            </p>
-          </div>
 
-          <div className="flex items-center gap-3">
-            <Link
-              href="/contact"
-              className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-white/5 border border-white/15 text-sm font-medium text-white hover:bg-white/10 hover:border-white/30 transition-all group"
-            >
-              <span>Initiate Deployment</span>
-              <FiArrowUpRight className="w-4 h-4 text-cyan-400 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
-            </Link>
-          </div>
-        </div>
-
-        {/* Minimal Link Columns (Chapter 17 Specification) */}
-        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-8 py-12 text-sm">
-          <div>
-            <div className="font-mono text-xs tracking-wider uppercase text-white/40 mb-4">
-              Platform
+            <div className="space-y-1.5">
+              <div className="font-mono text-[11px] tracking-widest text-cyan-400 uppercase font-semibold">
+                INTELLIGENCE IN MOTION.
+              </div>
+              <p className="text-xs text-white/50 leading-relaxed font-light max-w-sm">
+                Cloud-to-Edge Mobility Intelligence Platform connecting vehicles, edge computing, digital displays, and urban intelligence layers.
+              </p>
             </div>
-            <ul className="space-y-2.5">
-              {footerNavigation.platform.map((item) => (
-                <li key={item.label}>
-                  <Link
-                    href={item.href}
-                    className="text-white/60 hover:text-white transition-colors block text-xs tracking-wide"
+
+            {/* Quick Action CTAs */}
+            <div className="flex flex-wrap items-center gap-2 pt-1">
+              <a
+                href="https://wa.me/919999999999?text=Hello!%20I%20would%20like%20to%20know%20more%20about%20VMOVEXA."
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-xs font-mono font-medium text-emerald-400 hover:bg-emerald-500/20 hover:border-emerald-400 transition-all hover:scale-[1.02]"
+              >
+                <span>WhatsApp</span>
+                <FiArrowUpRight className="w-3.5 h-3.5" />
+              </a>
+
+              <a
+                href="/docs/VMOVEXA-Brochure.pdf"
+                download="VMOVEXA-Brochure.pdf"
+                className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-cyan-500/10 border border-cyan-500/30 text-xs font-mono font-medium text-cyan-400 hover:bg-cyan-500/20 hover:border-cyan-400 transition-all hover:scale-[1.02]"
+              >
+                <span>Brochure</span>
+                <FiArrowUpRight className="w-3.5 h-3.5" />
+              </a>
+
+              <Link
+                href="/contact"
+                className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-white text-black text-xs font-semibold hover:bg-zinc-200 transition-all hover:scale-[1.02] shadow-sm"
+              >
+                <span>Initiate Deployment</span>
+                <FiArrowUpRight className="w-3.5 h-3.5 text-black" />
+              </Link>
+            </div>
+
+            {/* Social Media Icons */}
+            <div className="pt-1">
+              <div className="text-[10px] font-mono text-white/40 uppercase tracking-widest mb-2.5">
+                Follow VMOVEXA
+              </div>
+              <div className="flex items-center gap-2.5">
+                {socialLinks.map((s) => (
+                  <a
+                    key={s.name}
+                    href={s.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={s.name}
+                    className="w-9 h-9 rounded-full bg-white/[0.04] border border-white/10 flex items-center justify-center p-2 hover:bg-white/[0.1] hover:border-cyan-400/50 hover:scale-110 transition-all shadow-sm group"
                   >
-                    {item.label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
+                    <Image
+                      src={s.icon}
+                      alt={s.name}
+                      width={18}
+                      height={18}
+                      className="object-contain filter group-hover:brightness-125 transition-all"
+                    />
+                  </a>
+                ))}
+              </div>
+            </div>
           </div>
 
-          <div>
-            <div className="font-mono text-xs tracking-wider uppercase text-white/40 mb-4">
-              Technology
+          {/* Navigation Columns (Right 8 cols) */}
+          <div className="lg:col-span-8 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-6 lg:gap-4 text-sm">
+            <div>
+              <div className="font-mono text-xs tracking-wider uppercase text-cyan-400 mb-3.5 font-semibold">
+                Platform
+              </div>
+              <ul className="space-y-2">
+                {footerNavigation.platform.map((item) => (
+                  <li key={item.label}>
+                    <Link
+                      href={item.href}
+                      className="text-white/60 hover:text-white transition-colors block text-xs tracking-wide"
+                    >
+                      {item.label}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
             </div>
-            <ul className="space-y-2.5">
-              {footerNavigation.technology.map((item) => (
-                <li key={item.label}>
-                  <Link
-                    href={item.href}
-                    className="text-white/60 hover:text-white transition-colors block text-xs tracking-wide"
-                  >
-                    {item.label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
 
-          <div>
-            <div className="font-mono text-xs tracking-wider uppercase text-white/40 mb-4">
-              Solutions
+            <div>
+              <div className="font-mono text-xs tracking-wider uppercase text-indigo-400 mb-3.5 font-semibold">
+                Technology
+              </div>
+              <ul className="space-y-2">
+                {footerNavigation.technology.map((item) => (
+                  <li key={item.label}>
+                    <Link
+                      href={item.href}
+                      className="text-white/60 hover:text-white transition-colors block text-xs tracking-wide"
+                    >
+                      {item.label}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
             </div>
-            <ul className="space-y-2.5">
-              {footerNavigation.solutions.map((item) => (
-                <li key={item.label}>
-                  <Link
-                    href={item.href}
-                    className="text-white/60 hover:text-white transition-colors block text-xs tracking-wide"
-                  >
-                    {item.label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
 
-          <div>
-            <div className="font-mono text-xs tracking-wider uppercase text-white/40 mb-4">
-              Industries
+            <div>
+              <div className="font-mono text-xs tracking-wider uppercase text-purple-400 mb-3.5 font-semibold">
+                Solutions
+              </div>
+              <ul className="space-y-2">
+                {footerNavigation.solutions.map((item) => (
+                  <li key={item.label}>
+                    <Link
+                      href={item.href}
+                      className="text-white/60 hover:text-white transition-colors block text-xs tracking-wide"
+                    >
+                      {item.label}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
             </div>
-            <ul className="space-y-2.5">
-              {footerNavigation.industries.map((item) => (
-                <li key={item.label}>
-                  <Link
-                    href={item.href}
-                    className="text-white/60 hover:text-white transition-colors block text-xs tracking-wide"
-                  >
-                    {item.label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
 
-          <div>
-            <div className="font-mono text-xs tracking-wider uppercase text-white/40 mb-4">
-              Company
+            <div>
+              <div className="font-mono text-xs tracking-wider uppercase text-pink-400 mb-3.5 font-semibold">
+                Industries
+              </div>
+              <ul className="space-y-2">
+                {footerNavigation.industries.map((item) => (
+                  <li key={item.label}>
+                    <Link
+                      href={item.href}
+                      className="text-white/60 hover:text-white transition-colors block text-xs tracking-wide"
+                    >
+                      {item.label}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
             </div>
-            <ul className="space-y-2.5">
-              {footerNavigation.company.map((item) => (
-                <li key={item.label}>
-                  <Link
-                    href={item.href}
-                    className="text-white/60 hover:text-white transition-colors block text-xs tracking-wide"
-                  >
-                    {item.label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
+
+            <div>
+              <div className="font-mono text-xs tracking-wider uppercase text-emerald-400 mb-3.5 font-semibold">
+                Company
+              </div>
+              <ul className="space-y-2">
+                {footerNavigation.company.map((item) => (
+                  <li key={item.label}>
+                    <Link
+                      href={item.href}
+                      className="text-white/60 hover:text-white transition-colors block text-xs tracking-wide"
+                    >
+                      {item.label}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
           </div>
         </div>
 
         {/* Bottom Legal Row */}
-        <div className="pt-8 border-t border-white/5 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-white/40 font-mono">
+        <div className="pt-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-white/40 font-mono">
           <div>
             © {new Date().getFullYear()} VMOVEXA. All rights reserved.
           </div>
-          <div className="flex items-center gap-6">
+          <div className="flex flex-wrap items-center gap-6">
+            <Link href="/faq" className="hover:text-cyan-400 transition-colors">
+              FAQ
+            </Link>
+            <Link href="/careers" className="hover:text-cyan-400 transition-colors">
+              Careers
+            </Link>
             <Link href="/privacy" className="hover:text-white/80 transition-colors">
               Privacy Policy
             </Link>

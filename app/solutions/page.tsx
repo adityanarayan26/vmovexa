@@ -5,17 +5,19 @@ import { RiBusLine, RiMegaphoneLine, RiBuilding4Line } from "react-icons/ri";
 import { EditorialMaskText, EditorialLine } from "@/components/animations/editorial-text";
 import { MagneticElement, GsapScrollReveal } from "@/components/animations/gsap-scroll-fx";
 import { MediaSlot } from "@/components/ui/media-slot";
+import { EmergencyBroadcasting } from "@/components/solutions/emergency-broadcasting";
 
 export const metadata: Metadata = {
   title: "VMOVEXA Mobility Solutions | Fleet, Media & Smart City Technology",
   description:
-    "Explore VMOVEXA mobility solutions across Fleet Operators, Mobility Media, Smart Cities, Enterprise Mobility, and Connected Infrastructure.",
+    "Explore VMOVEXA mobility solutions across Fleet Operators, Mobility Media, Smart Cities, Emergency Broadcasting, Enterprise Mobility, and Connected Infrastructure.",
   keywords: [
     "smart mobility solutions",
     "connected fleet technology",
     "fleet digital transformation",
     "mobility media solutions",
     "smart city mobility platform",
+    "emergency broadcasting transit",
   ],
 };
 
@@ -42,7 +44,6 @@ export default function SolutionsPage() {
     <main className="min-h-screen bg-black text-white">
       {/* 01 — HERO (Mockup Screen 04: SOLUTIONS) */}
       <section className="relative pt-36 pb-20 overflow-hidden border-b border-white/[0.08] bg-black">
-
         <div className="container relative z-10 max-w-7xl mx-auto px-6">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start mb-14">
             <div className="lg:col-span-10">
@@ -56,13 +57,13 @@ export default function SolutionsPage() {
               </EditorialLine>
 
               <EditorialLine delay={0.15}>
-                <h1 className="text-5xl sm:text-7xl lg:text-8xl font-bold tracking-tight leading-[1.04] max-w-5xl mb-6 text-white">
-                  Technology that moves with the world.
+                <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight leading-[1.1] max-w-4xl mb-6 text-white uppercase">
+                  Technology that moves with <span className="gradient-text">the world.</span>
                 </h1>
               </EditorialLine>
 
               <EditorialLine delay={0.3}>
-                <p className="text-xl sm:text-2xl text-white/70 font-normal leading-relaxed max-w-3xl mb-8">
+                <p className="text-base sm:text-lg text-white/70 font-normal leading-relaxed max-w-3xl mb-8">
                   VMOVEXA enables connected mobility solutions for fleets, brands, cities and enterprises — built for real-world impact.
                 </p>
               </EditorialLine>
@@ -163,38 +164,39 @@ export default function SolutionsPage() {
       </section>
 
       {/* SOLUTION 01 — FLEET OPERATORS */}
-      <section id="fleet-operators" className="py-24 border-b border-white/[0.08] relative overflow-hidden bg-black">
+      <section id="fleet-operators" className="py-20 border-b border-white/[0.08] relative overflow-hidden bg-black">
         <div className="container max-w-6xl mx-auto px-6 relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-            <div className="lg:col-span-6 space-y-6">
+            <div className="lg:col-span-6 space-y-5">
               <EditorialLine>
                 <div className="flex items-center gap-2 text-cyan-400 font-mono text-xs uppercase tracking-wider">
-                  <RiBusLine size={18} /> Solution 01
+                  <RiBusLine size={17} /> Solution 01
                 </div>
               </EditorialLine>
               <EditorialLine delay={0.1}>
-                <h2 className="text-4xl sm:text-5xl font-bold tracking-tight text-white leading-tight">
-                  Digitalize the fleet.
+                <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight text-white leading-tight uppercase">
+                  Digitalize the <span className="gradient-text">fleet.</span>
                 </h2>
               </EditorialLine>
               <EditorialLine delay={0.2}>
-                <p className="text-lg text-white/70 leading-relaxed pt-2">
+                <p className="text-base text-white/70 leading-relaxed">
                   Connect vehicles, displays, edge computing, positioning, telemetry and centralized management through a common architecture.
                 </p>
               </EditorialLine>
               <EditorialLine delay={0.3}>
-                <p className="text-sm text-white/50 leading-relaxed font-mono">
+                <p className="text-xs text-white/50 leading-relaxed font-mono">
                   Transform raw mechanical fleets into software-defined, connected networks with full operational observability.
                 </p>
               </EditorialLine>
               <EditorialLine delay={0.4}>
-                <div className="pt-4">
+                <div className="pt-2">
                   <MagneticElement strength={0.2}>
                     <Link
                       href="/contact"
-                      className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-white text-black font-semibold text-xs uppercase tracking-wider hover:scale-105 active:scale-95 transition-transform shadow-[0_5px_15px_rgba(255,255,255,0.1)]"
+                      className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-white text-black font-semibold text-xs uppercase tracking-wider hover:scale-105 active:scale-95 transition-transform shadow-[0_5px_15px_rgba(255,255,255,0.1)] hover:bg-zinc-200"
                     >
-                      Explore Fleet Technology <FiArrowRight size={14} />
+                      <span>Explore Fleet Technology</span>
+                      <FiArrowRight size={14} />
                     </Link>
                   </MagneticElement>
                 </div>
@@ -220,38 +222,39 @@ export default function SolutionsPage() {
       </section>
 
       {/* SOLUTION 02 — MOBILITY MEDIA */}
-      <section id="mobility-media" className="py-24 border-b border-white/[0.08] relative overflow-hidden bg-black">
+      <section id="mobility-media" className="py-20 border-b border-white/[0.08] relative overflow-hidden bg-black">
         <div className="container max-w-6xl mx-auto px-6 relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-            <div className="lg:col-span-6 lg:order-2 space-y-6">
+            <div className="lg:col-span-6 lg:order-2 space-y-5">
               <EditorialLine>
                 <div className="flex items-center gap-2 text-purple-400 font-mono text-xs uppercase tracking-wider">
-                  <RiMegaphoneLine size={18} /> Solution 02
+                  <RiMegaphoneLine size={17} /> Solution 02
                 </div>
               </EditorialLine>
               <EditorialLine delay={0.1}>
-                <h2 className="text-4xl sm:text-5xl font-bold tracking-tight text-white leading-tight">
-                  Turn moving screens into digital inventory.
+                <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight text-white leading-tight uppercase">
+                  Turn moving screens into <span className="gradient-text">digital inventory.</span>
                 </h2>
               </EditorialLine>
               <EditorialLine delay={0.2}>
-                <p className="text-lg text-white/70 leading-relaxed pt-2">
+                <p className="text-base text-white/70 leading-relaxed">
                   Transform vehicle displays into centrally managed, location-aware digital media infrastructure.
                 </p>
               </EditorialLine>
               <EditorialLine delay={0.3}>
-                <p className="text-sm text-white/50 leading-relaxed font-mono">
+                <p className="text-xs text-white/50 leading-relaxed font-mono">
                   Move beyond static posters. Program dynamic campaigns triggered by geographic zones, time of day, passenger demographics, and road routes with verifiable proof-of-play.
                 </p>
               </EditorialLine>
               <EditorialLine delay={0.4}>
-                <div className="pt-4">
+                <div className="pt-2">
                   <MagneticElement strength={0.2}>
                     <Link
                       href="/media"
-                      className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-white text-black font-semibold text-xs uppercase tracking-wider hover:scale-105 active:scale-95 transition-transform shadow-[0_5px_15px_rgba(255,255,255,0.1)]"
+                      className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-white text-black font-semibold text-xs uppercase tracking-wider hover:scale-105 active:scale-95 transition-transform shadow-[0_5px_15px_rgba(255,255,255,0.1)] hover:bg-zinc-200"
                     >
-                      Explore Mobility Media <FiArrowRight size={14} />
+                      <span>Explore Mobility Media</span>
+                      <FiArrowRight size={14} />
                     </Link>
                   </MagneticElement>
                 </div>
@@ -286,29 +289,30 @@ export default function SolutionsPage() {
         </div>
       </section>
 
-      {/* SOLUTION 03 — SMART CITIES */}
-      <section id="smart-cities" className="py-24 border-b border-white/[0.08]">
-        <div className="container max-w-6xl mx-auto px-6">
+      {/* SOLUTION 03 — SMART CITIES & EMERGENCY BROADCASTING */}
+      <section id="smart-cities" className="py-20 border-b border-white/[0.08] bg-black">
+        <div className="container max-w-6xl mx-auto px-6 space-y-16">
+          {/* Smart Cities Overview Grid */}
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
-            <div className="lg:col-span-6 space-y-6">
+            <div className="lg:col-span-6 space-y-5">
               <EditorialLine>
                 <div className="flex items-center gap-2 text-indigo-400 font-mono text-xs uppercase tracking-wider">
-                  <RiBuilding4Line size={18} /> Solution 03
+                  <RiBuilding4Line size={17} /> Solution 03
                 </div>
               </EditorialLine>
               <EditorialLine delay={0.1}>
-                <h2 className="text-4xl sm:text-5xl font-bold tracking-tight text-white leading-tight">
-                  Let the city communicate through mobility.
+                <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight text-white leading-tight uppercase">
+                  Let the city communicate through <span className="gradient-text">mobility.</span>
                 </h2>
               </EditorialLine>
               <EditorialLine delay={0.2}>
-                <p className="text-lg text-white/70 leading-relaxed pt-2">
-                  Connected vehicles can become distributed information endpoints across urban environments.
+                <p className="text-base text-white/70 leading-relaxed">
+                  Connected vehicles become distributed information endpoints across urban environments, linking government agencies with moving citizen channels.
                 </p>
               </EditorialLine>
               <EditorialLine delay={0.3}>
-                <p className="text-xs text-white/50 font-mono p-4 rounded-xl bg-white/[0.03] border border-white/10 shadow-[inset_0_1px_0_rgba(255,255,255,0.05)]">
-                  <span className="text-white/80 font-semibold block mb-1">Stakeholders:</span>
+                <p className="text-xs text-white/60 font-mono p-4 rounded-xl bg-white/[0.03] border border-white/10 shadow-[inset_0_1px_0_rgba(255,255,255,0.05)]">
+                  <span className="text-cyan-400 font-semibold block mb-1">Key Stakeholders:</span>
                   Municipalities, smart cities, transport departments, disaster-management authorities and tourism departments.
                 </p>
               </EditorialLine>
@@ -316,13 +320,13 @@ export default function SolutionsPage() {
 
             <div className="lg:col-span-6">
               <GsapScrollReveal delay={0.2}>
-                <div className="p-8 rounded-2xl bg-white/[0.02] border border-white/10 space-y-4 hover:border-indigo-500/30 hover:bg-white/[0.03] transition-all duration-500 group relative overflow-hidden shadow-[inset_0_1px_0_rgba(255,255,255,0.02)]">
+                <div className="p-7 rounded-2xl bg-white/[0.02] border border-white/10 space-y-3.5 hover:border-indigo-500/30 hover:bg-white/[0.03] transition-all duration-500 group relative overflow-hidden shadow-[inset_0_1px_0_rgba(255,255,255,0.02)]">
                   <div className="absolute -inset-x-full top-0 h-[1px] bg-gradient-to-r from-transparent via-indigo-400/30 to-transparent group-hover:animate-[shimmer_2s_infinite]" />
                   <div className="relative z-10">
-                    <h4 className="text-xs font-mono uppercase tracking-widest text-cyan-400 mb-5">Civic & Urban Applications</h4>
-                    <div className="space-y-4">
+                    <h4 className="text-xs font-mono uppercase tracking-widest text-cyan-400 mb-4">Civic & Urban Applications</h4>
+                    <div className="space-y-3">
                       {smartCityApps.map((app, i) => (
-                        <div key={i} className="flex items-center gap-3 text-sm text-white/80 group/item cursor-default">
+                        <div key={i} className="flex items-center gap-3 text-xs sm:text-sm text-white/80 group/item cursor-default">
                           <FiCheckCircle className="w-4 h-4 text-indigo-400 flex-shrink-0 group-hover/item:scale-125 group-hover/item:text-cyan-400 transition-all" />
                           <span className="group-hover/item:text-white transition-colors">{app}</span>
                         </div>
@@ -333,28 +337,35 @@ export default function SolutionsPage() {
               </GsapScrollReveal>
             </div>
           </div>
+
+          {/* Emergency Operations & Broadcasting Component with vmovexa.com animations */}
+          <GsapScrollReveal delay={0.3}>
+            <div className="pt-8 border-t border-white/10">
+              <EmergencyBroadcasting />
+            </div>
+          </GsapScrollReveal>
         </div>
       </section>
 
       {/* SOLUTION 04 & 05 — ENTERPRISE MOBILITY & CONNECTED INFRASTRUCTURE */}
-      <section id="enterprise-mobility" className="py-24 border-b border-white/[0.08]">
+      <section id="enterprise-mobility" className="py-20 border-b border-white/[0.08] bg-black">
         <div className="container max-w-6xl mx-auto px-6">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
             {/* Enterprise Mobility */}
             <GsapScrollReveal>
-              <div className="p-8 rounded-2xl bg-white/[0.02] border border-white/10 h-full flex flex-col justify-between space-y-6 hover:bg-white/[0.04] hover:border-cyan-500/20 transition-all duration-500 group relative overflow-hidden shadow-[inset_0_1px_0_rgba(255,255,255,0.02)]">
+              <div className="p-7 rounded-2xl bg-white/[0.02] border border-white/10 h-full flex flex-col justify-between space-y-5 hover:bg-white/[0.04] hover:border-cyan-500/20 transition-all duration-500 group relative overflow-hidden shadow-[inset_0_1px_0_rgba(255,255,255,0.02)]">
                 <div className="absolute -inset-x-full top-0 h-[1px] bg-gradient-to-r from-transparent via-cyan-400/30 to-transparent group-hover:animate-[shimmer_2s_infinite]" />
                 <div className="relative z-10">
-                  <div className="flex items-center gap-2 text-cyan-400 font-mono text-xs uppercase tracking-wider mb-3">
+                  <div className="flex items-center gap-2 text-cyan-400 font-mono text-xs uppercase tracking-wider mb-2.5">
                     <FiBriefcase size={16} /> Solution 04
                   </div>
-                  <h3 className="text-3xl font-semibold leading-tight mb-4 group-hover:text-cyan-50 transition-colors text-white">
-                    Connect the Enterprise to the Moving World.
+                  <h3 className="text-xl sm:text-2xl font-semibold leading-tight mb-3 text-white uppercase">
+                    Connect the Enterprise to <span className="gradient-text">the Moving World.</span>
                   </h3>
-                  <p className="text-sm text-white/70 leading-relaxed mb-6 group-hover:text-white/90 transition-colors">
+                  <p className="text-xs sm:text-sm text-white/70 leading-relaxed mb-5">
                     Create technology infrastructure that connects enterprise operations with physical mobility. Applications span:
                   </p>
-                  <div className="space-y-3">
+                  <div className="space-y-2.5">
                     {enterpriseApps.map((ea, i) => (
                       <div key={i} className="flex items-center gap-3 text-xs text-white/75 font-mono group/item">
                         <span className="text-cyan-400 group-hover/item:translate-x-1 transition-transform">→</span>
@@ -368,23 +379,23 @@ export default function SolutionsPage() {
 
             {/* Connected Infrastructure */}
             <GsapScrollReveal delay={0.2}>
-              <div className="p-8 rounded-2xl bg-white/[0.02] border border-white/10 h-full flex flex-col justify-between space-y-6 hover:bg-white/[0.04] hover:border-indigo-500/20 transition-all duration-500 group relative overflow-hidden shadow-[inset_0_1px_0_rgba(255,255,255,0.02)]">
+              <div className="p-7 rounded-2xl bg-white/[0.02] border border-white/10 h-full flex flex-col justify-between space-y-5 hover:bg-white/[0.04] hover:border-indigo-500/20 transition-all duration-500 group relative overflow-hidden shadow-[inset_0_1px_0_rgba(255,255,255,0.02)]">
                 <div className="absolute -inset-x-full top-0 h-[1px] bg-gradient-to-r from-transparent via-indigo-400/30 to-transparent group-hover:animate-[shimmer_2s_infinite]" />
                 <div className="relative z-10">
-                  <div className="flex items-center gap-2 text-indigo-400 font-mono text-xs uppercase tracking-wider mb-3">
+                  <div className="flex items-center gap-2 text-indigo-400 font-mono text-xs uppercase tracking-wider mb-2.5">
                     <FiShare2 size={16} /> Solution 05
                   </div>
-                  <h3 className="text-3xl font-semibold leading-tight mb-4 group-hover:text-indigo-50 transition-colors text-white">
-                    The Vehicle as a Digital Endpoint.
+                  <h3 className="text-xl sm:text-2xl font-semibold leading-tight mb-3 text-white uppercase">
+                    The Vehicle as a <span className="gradient-text">Digital Endpoint.</span>
                   </h3>
-                  <p className="text-sm text-white/70 leading-relaxed mb-6 group-hover:text-white/90 transition-colors">
+                  <p className="text-xs sm:text-sm text-white/70 leading-relaxed mb-5">
                     VMOVEXA creates an architecture where physical mobility assets can become software-addressable infrastructure.
                   </p>
-                  <div className="p-5 rounded-xl bg-white/[0.03] border border-white/10 text-xs font-mono text-white/80 space-y-2 group-hover:bg-indigo-950/20 transition-colors">
+                  <div className="p-4 rounded-xl bg-white/[0.03] border border-white/10 text-xs font-mono text-white/80 space-y-2 group-hover:bg-indigo-950/20 transition-colors">
                     <div className="text-white font-semibold flex items-center gap-2">
                       Physical Asset <FiArrowRight className="text-indigo-400" /> Software Node
                     </div>
-                    <div className="text-white/60 leading-relaxed pt-1">
+                    <div className="text-white/60 leading-relaxed pt-1 text-[11px]">
                       Transform every rolling chassis into an IP-addressable, telemetry-emitting, content-rendering digital participant in the smart grid.
                     </div>
                   </div>
@@ -396,15 +407,15 @@ export default function SolutionsPage() {
       </section>
 
       {/* CTA */}
-      <section className="py-28 text-center relative overflow-hidden">
+      <section className="py-24 text-center relative overflow-hidden bg-black">
         <div className="absolute inset-0 bg-gradient-to-t from-cyan-950/20 via-transparent to-transparent pointer-events-none" />
         <div className="container max-w-4xl mx-auto px-6 relative z-10">
           <EditorialLine>
             <div className="font-mono text-xs uppercase tracking-widest text-cyan-400 mb-3">Deployment & Implementation</div>
           </EditorialLine>
           <EditorialLine delay={0.1}>
-            <h2 className="text-3xl sm:text-5xl font-bold tracking-tight mb-8 text-white">
-              What Will You Build on the Moving Edge?
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight mb-6 text-white uppercase">
+              What Will You Build on <span className="gradient-text">the Moving Edge?</span>
             </h2>
           </EditorialLine>
           <EditorialLine delay={0.2}>
@@ -412,17 +423,19 @@ export default function SolutionsPage() {
               <MagneticElement strength={0.3}>
                 <Link
                   href="/contact"
-                  className="inline-flex items-center gap-2.5 px-8 py-4 rounded-full bg-white text-black font-semibold text-sm tracking-wide transition-transform duration-200 hover:scale-[1.03] active:scale-[0.98] shadow-[0_0_20px_rgba(255,255,255,0.2)] hover:shadow-[0_0_30px_rgba(255,255,255,0.4)]"
+                  className="inline-flex items-center gap-2.5 px-7 py-3.5 rounded-full bg-white text-black font-semibold text-xs uppercase tracking-wider transition-transform duration-200 hover:scale-[1.03] active:scale-[0.98] shadow-[0_0_20px_rgba(255,255,255,0.2)] hover:bg-zinc-200"
                 >
-                  Talk to VMOVEXA <FiArrowRight size={16} />
+                  <span>Talk to VMOVEXA</span>
+                  <FiArrowRight size={15} />
                 </Link>
               </MagneticElement>
               <MagneticElement strength={0.3}>
                 <Link
                   href="/industries"
-                  className="inline-flex items-center gap-2.5 px-8 py-4 rounded-full bg-white/[0.06] border border-white/20 text-white font-semibold text-sm tracking-wide transition-all duration-200 hover:bg-white/10 hover:border-white/30"
+                  className="inline-flex items-center gap-2.5 px-7 py-3.5 rounded-full bg-white/[0.06] border border-white/20 text-white font-semibold text-xs uppercase tracking-wider transition-all duration-200 hover:bg-white/10 hover:border-white/30"
                 >
-                  Explore Industries <FiArrowUpRight size={16} />
+                  <span>Explore Industries</span>
+                  <FiArrowUpRight size={15} />
                 </Link>
               </MagneticElement>
             </div>

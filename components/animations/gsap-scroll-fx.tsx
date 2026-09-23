@@ -200,3 +200,55 @@ export function GsapParallax({
     </div>
   );
 }
+
+/**
+ * ParallaxElement:
+ * Smoothly translates any element relative to scroll with GSAP scrub.
+ * Perfect for floating cards, background posters, and architectural diagrams.
+ */
+export function ParallaxElement({
+  children,
+  offset = 40,
+  className = "",
+  style,
+}: {
+  children: ReactNode;
+  offset?: number;
+  className?: string;
+  style?: React.CSSProperties;
+}) {
+  const elRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    if (typeof window === "undefined" || window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+    gsap.registerPlugin(ScrollTrigger);
+
+    const el = elRef.current;
+    if (!el) return;
+
+    const ctx = gsap.context(() => {
+      gsap.fromTo(
+        el,
+        { y: -offset / 2 },
+        {
+          y: offset / 2,
+          ease: "none",
+          scrollTrigger: {
+            trigger: el,
+            start: "top bottom",
+            end: "bottom top",
+            scrub: 1.2,
+          },
+        }
+      );
+    }, el);
+
+    return () => ctx.revert();
+  }, [offset]);
+
+  return (
+    <div ref={elRef} className={className} style={{ willChange: "transform", ...style }}>
+      {children}
+    </div>
+  );
+}

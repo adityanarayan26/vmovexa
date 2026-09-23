@@ -55,13 +55,13 @@ export default function CompanyPage() {
               </EditorialLine>
 
               <EditorialLine delay={0.15}>
-                <h1 className="text-5xl sm:text-7xl lg:text-8xl font-bold tracking-tight leading-[1.04] max-w-5xl mb-6 text-white drop-shadow-[0_4px_30px_rgba(0,0,0,0.9)]">
-                  Building intelligence into movement.
+                <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight leading-[1.1] max-w-4xl mb-6 text-white drop-shadow-[0_4px_30px_rgba(0,0,0,0.9)]">
+                  Building intelligence <span className="gradient-text">into movement.</span>
                 </h1>
               </EditorialLine>
 
               <EditorialLine delay={0.3}>
-                <p className="text-xl sm:text-2xl text-white/80 font-normal leading-relaxed max-w-3xl mb-10 drop-shadow-[0_2px_15px_rgba(0,0,0,0.8)]">
+                <p className="text-base sm:text-lg text-white/80 font-normal leading-relaxed max-w-2xl mb-8 drop-shadow-[0_2px_15px_rgba(0,0,0,0.8)]">
                   VMOVEXA is a deep-tech mobility technology company focused on the convergence of physical mobility and digital intelligence.
                 </p>
               </EditorialLine>

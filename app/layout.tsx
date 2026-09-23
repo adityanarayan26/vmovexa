@@ -7,6 +7,7 @@ import { SiteFooter } from "@/components/layout/site-footer";
 import { SiteHeader } from "@/components/layout/site-header";
 import { ThemeSwitcher } from "@/components/animations/theme-switcher";
 import { BackgroundGradient } from "@/components/visuals/background-gradient";
+import { WhatsAppFloat } from "@/components/ui/whatsapp-float";
 import { site } from "@/lib/site";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
@@ -94,6 +95,7 @@ export default function RootLayout({
         <SiteHeader />
 
         <main>{children}</main>
+        <WhatsAppFloat />
         <SiteFooter />
         <script
           dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
