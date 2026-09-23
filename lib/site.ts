@@ -122,7 +122,7 @@ export const architectureTiers = [
     items: [
       "Local execution engine",
       "Device & screen coordination",
-      "Sub-second geofence triggering",
+      "Near-real-time geofence triggering",
       "Telemetry aggregation",
       "Offline cache operation",
     ],
@@ -169,7 +169,7 @@ export const platformCapabilities: Feature[] = [
     number: "02",
     title: "Vehicle Edge Computing",
     description:
-      "Bring computing power directly to the moving asset where mobility happens, ensuring zero-latency responsiveness.",
+      "Bring computing power directly to the moving asset where mobility happens, enabling low-latency edge responsiveness.",
     icon: FiCpu,
   },
   {
@@ -251,7 +251,7 @@ export const vmovexaCoreEngines: Feature[] = [
   },
   {
     title: "Geo-Fence Engine",
-    description: "Sub-second boundary detection that triggers hyper-local content and alerts instantly.",
+    description: "Low-latency boundary detection that triggers hyper-local content and alerts in real time.",
     icon: FiMapPin,
   },
   {

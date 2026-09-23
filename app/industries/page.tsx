@@ -3,9 +3,13 @@ import Link from "next/link";
 import Image from "next/image";
 import { FiArrowRight, FiArrowUpRight, FiCompass, FiUsers, FiZap, FiShield } from "react-icons/fi";
 import { RiBusLine, RiFlightTakeoffLine, RiBuilding4Line, RiGovernmentLine, RiTruckLine, RiToolsLine } from "react-icons/ri";
-import { EditorialMaskText, EditorialLine } from "@/components/animations/editorial-text";
+import { EditorialMaskText, EditorialLine, CubertoLines } from "@/components/animations/editorial-text";
 import { MagneticElement, GsapScrollReveal } from "@/components/animations/gsap-scroll-fx";
 import { MediaSlot } from "@/components/ui/media-slot";
+import { TextDecrypt } from "@/components/animations/text-decrypt";
+import { BlurReveal } from "@/components/animations/blur-reveal";
+import { ImageCurtainReveal, FloatingElement } from "@/components/animations/image-reveal";
+import { TiltCard } from "@/components/animations/tilt-card";
 
 export const metadata: Metadata = {
   title: "VMOVEXA Industries | Connected Mobility Across Sectors",
@@ -105,32 +109,36 @@ export default function IndustriesPage() {
             <div className="lg:col-span-10">
               <EditorialLine>
                 <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/[0.04] border border-white/15 backdrop-blur-md mb-8">
-                  <span className="w-2 h-2 rounded-full bg-cyan-400" />
+                  <span className="w-2 h-2 rounded-full bg-cyan-400 animate-pulse" />
                   <span className="font-mono text-xs uppercase tracking-[0.2em] text-white/80">
-                    Industries
+                    <TextDecrypt text="Industries" delay={0.1} />
                   </span>
                 </div>
               </EditorialLine>
 
-              <EditorialLine delay={0.15}>
-                <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight leading-[1.1] max-w-4xl mb-6 text-white">
-                  One technology. <span className="gradient-text">Many mobility environments.</span>
-                </h1>
-              </EditorialLine>
+              <CubertoLines
+                as="h1"
+                className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight leading-[1.1] max-w-4xl mb-6 text-white"
+                delay={0.15}
+                lines={[
+                  "One technology.",
+                  <span key="sub" className="gradient-text">many mobility environments.</span>
+                ]}
+              />
 
-              <EditorialLine delay={0.3}>
+              <BlurReveal delay={0.25}>
                 <p className="text-base sm:text-lg text-white/70 font-normal leading-relaxed max-w-2xl mb-8">
                   VMOVEXA is designed for diverse mobility ecosystems — from public transport to airport mobility, from tourism to logistics.
                 </p>
-              </EditorialLine>
+              </BlurReveal>
             </div>
 
             {/* Right Side Vertical Floating Tags (Screen 05) */}
             <div className="hidden lg:flex lg:col-span-2 flex-col items-end gap-5 pt-16 font-mono text-[11px] text-white/40 tracking-[0.25em] uppercase">
-              <span className="hover:text-cyan-400 transition-colors cursor-default">PUBLIC</span>
-              <span className="hover:text-cyan-400 transition-colors cursor-default">PRIVATE</span>
-              <span className="hover:text-cyan-400 transition-colors cursor-default">URBAN</span>
-              <span className="hover:text-cyan-400 transition-colors cursor-default">GLOBAL</span>
+              <FloatingElement y={6} duration={3.5}><span className="hover:text-cyan-400 transition-colors cursor-default">PUBLIC</span></FloatingElement>
+              <FloatingElement y={8} duration={4.2}><span className="hover:text-cyan-400 transition-colors cursor-default">PRIVATE</span></FloatingElement>
+              <FloatingElement y={6} duration={3.8}><span className="hover:text-cyan-400 transition-colors cursor-default">URBAN</span></FloatingElement>
+              <FloatingElement y={7} duration={4.5}><span className="hover:text-cyan-400 transition-colors cursor-default">GLOBAL</span></FloatingElement>
             </div>
           </div>
 
@@ -180,39 +188,41 @@ export default function IndustriesPage() {
               },
             ].map((ind, i) => (
               <GsapScrollReveal key={ind.title} delay={i * 0.05} className="h-full flex flex-col">
-                <MagneticElement strength={0.03} className="w-full h-full block">
-                  <Link
-                    href={`#${ind.id}`}
-                    className={`group block rounded-2xl overflow-hidden border ${
-                      ind.active
-                        ? "border-cyan-500/80 shadow-[0_0_25px_rgba(6,182,212,0.25)]"
-                        : "border-white/10 hover:border-cyan-500/40"
-                    } bg-[#0c0d12] transition-all duration-300 shadow-lg h-full flex flex-col justify-between relative`}
-                  >
-                    <div className="relative h-48 w-full overflow-hidden bg-black/40">
-                      <Image
-                        src={ind.img}
-                        alt={ind.title}
-                        fill
-                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw"
-                        className="object-cover"
-                      />
-                      <div className="absolute inset-0 bg-gradient-to-t from-[#0c0d12] via-transparent to-transparent opacity-60 pointer-events-none z-10" />
-                    </div>
-                    <div className="px-5 py-4 flex items-center justify-between relative z-20 bg-[#0c0d12]">
-                      <h4
-                        className={`text-sm font-semibold tracking-wide transition-colors duration-300 ${
-                          ind.active ? "text-cyan-400" : "text-white group-hover:text-cyan-400"
-                        }`}
-                      >
-                        {ind.title}
-                      </h4>
-                      <div className="w-8 h-8 rounded-full bg-white text-black flex items-center justify-center group-hover:bg-cyan-400 group-hover:scale-110 transition-all duration-300 shrink-0 shadow-md">
-                        <FiArrowRight size={13} className="text-black" />
+                <TiltCard maxTilt={6} className="h-full">
+                  <MagneticElement strength={0.03} className="w-full h-full block">
+                    <Link
+                      href={`#${ind.id}`}
+                      className={`group block rounded-2xl overflow-hidden border ${
+                        ind.active
+                          ? "border-cyan-500/80 shadow-[0_0_25px_rgba(6,182,212,0.25)]"
+                          : "border-white/10 hover:border-cyan-500/40"
+                      } bg-[#0c0d12] transition-all duration-300 shadow-lg h-full flex flex-col justify-between relative`}
+                    >
+                      <ImageCurtainReveal delay={i * 0.05} direction="up" className="relative h-48 w-full bg-black/40">
+                        <Image
+                          src={ind.img}
+                          alt={ind.title}
+                          fill
+                          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw"
+                          className="object-cover group-hover:scale-105 transition-transform duration-500"
+                        />
+                        <div className="absolute inset-0 bg-gradient-to-t from-[#0c0d12] via-transparent to-transparent opacity-60 pointer-events-none z-10" />
+                      </ImageCurtainReveal>
+                      <div className="px-5 py-4 flex items-center justify-between relative z-20 bg-[#0c0d12]">
+                        <h4
+                          className={`text-sm font-semibold tracking-wide transition-colors duration-300 ${
+                            ind.active ? "text-cyan-400" : "text-white group-hover:text-cyan-400"
+                          }`}
+                        >
+                          {ind.title}
+                        </h4>
+                        <div className="w-8 h-8 rounded-full bg-white text-black flex items-center justify-center group-hover:bg-cyan-400 group-hover:scale-110 transition-all duration-300 shrink-0 shadow-md">
+                          <FiArrowRight size={13} className="text-black" />
+                        </div>
                       </div>
-                    </div>
-                  </Link>
-                </MagneticElement>
+                    </Link>
+                  </MagneticElement>
+                </TiltCard>
               </GsapScrollReveal>
             ))}
           </div>

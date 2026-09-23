@@ -2,10 +2,14 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { FiArrowRight, FiArrowUpRight, FiBriefcase, FiShare2, FiCheckCircle } from "react-icons/fi";
 import { RiBusLine, RiMegaphoneLine, RiBuilding4Line } from "react-icons/ri";
-import { EditorialMaskText, EditorialLine } from "@/components/animations/editorial-text";
+import { EditorialMaskText, EditorialLine, CubertoLines } from "@/components/animations/editorial-text";
 import { MagneticElement, GsapScrollReveal } from "@/components/animations/gsap-scroll-fx";
 import { MediaSlot } from "@/components/ui/media-slot";
 import { EmergencyBroadcasting } from "@/components/solutions/emergency-broadcasting";
+import { TextDecrypt } from "@/components/animations/text-decrypt";
+import { BlurReveal } from "@/components/animations/blur-reveal";
+import { ImageCurtainReveal, FloatingElement } from "@/components/animations/image-reveal";
+import { TiltCard } from "@/components/animations/tilt-card";
 
 export const metadata: Metadata = {
   title: "VMOVEXA Mobility Solutions | Fleet, Media & Smart City Technology",
@@ -23,12 +27,12 @@ export const metadata: Metadata = {
 
 export default function SolutionsPage() {
   const smartCityApps = [
-    "Public information broadcasts",
-    "Real-time transport communication",
-    "Dynamic traffic information & rerouting",
-    "Emergency alerts & evacuation messaging",
-    "Civic campaigns & public safety announcements",
-    "Dynamic municipal & tourism information",
+    "Emergency communication & public alerts",
+    "Real-time traffic information & rerouting",
+    "Public safety messaging & safe corridor advisories",
+    "Transport schedule & transit disruption updates",
+    "Civic information & municipal announcements",
+    "Dynamic municipal & public service information",
   ];
 
   const enterpriseApps = [
@@ -49,32 +53,36 @@ export default function SolutionsPage() {
             <div className="lg:col-span-10">
               <EditorialLine>
                 <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/[0.04] border border-white/15 backdrop-blur-md mb-8">
-                  <span className="w-2 h-2 rounded-full bg-cyan-400" />
+                  <span className="w-2 h-2 rounded-full bg-cyan-400 animate-pulse" />
                   <span className="font-mono text-xs uppercase tracking-[0.2em] text-white/80">
-                    Our Solutions
+                    <TextDecrypt text="Our Solutions" delay={0.1} />
                   </span>
                 </div>
               </EditorialLine>
 
-              <EditorialLine delay={0.15}>
-                <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight leading-[1.1] max-w-4xl mb-6 text-white uppercase">
-                  Technology that moves with <span className="gradient-text">the world.</span>
-                </h1>
-              </EditorialLine>
+              <CubertoLines
+                as="h1"
+                className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight leading-[1.1] max-w-4xl mb-6 text-white uppercase"
+                delay={0.15}
+                lines={[
+                  "Technology that moves with",
+                  <span key="sub" className="gradient-text">the world.</span>
+                ]}
+              />
 
-              <EditorialLine delay={0.3}>
+              <BlurReveal delay={0.25}>
                 <p className="text-base sm:text-lg text-white/70 font-normal leading-relaxed max-w-3xl mb-8">
                   VMOVEXA enables connected mobility solutions for fleets, brands, cities and enterprises — built for real-world impact.
                 </p>
-              </EditorialLine>
+              </BlurReveal>
             </div>
 
             {/* Right Side Vertical Floating Tags (Screen 04) */}
             <div className="hidden lg:flex lg:col-span-2 flex-col items-end gap-5 pt-16 font-mono text-[11px] text-white/40 tracking-[0.25em] uppercase">
-              <span className="hover:text-cyan-400 transition-colors cursor-default">FLEETS</span>
-              <span className="hover:text-cyan-400 transition-colors cursor-default">BRANDS</span>
-              <span className="hover:text-cyan-400 transition-colors cursor-default">CITIES</span>
-              <span className="hover:text-cyan-400 transition-colors cursor-default">ENTERPRISES</span>
+              <FloatingElement y={6} duration={3.7}><span className="hover:text-cyan-400 transition-colors cursor-default">FLEETS</span></FloatingElement>
+              <FloatingElement y={8} duration={4.3}><span className="hover:text-cyan-400 transition-colors cursor-default">BRANDS</span></FloatingElement>
+              <FloatingElement y={6} duration={3.9}><span className="hover:text-cyan-400 transition-colors cursor-default">CITIES</span></FloatingElement>
+              <FloatingElement y={7} duration={4.6}><span className="hover:text-cyan-400 transition-colors cursor-default">ENTERPRISES</span></FloatingElement>
             </div>
           </div>
 
@@ -107,38 +115,40 @@ export default function SolutionsPage() {
               },
             ].map((card, i) => (
               <GsapScrollReveal key={card.title} delay={i * 0.1}>
-                <MagneticElement strength={0.03} className="w-full h-full block">
-                  <Link
-                    href={card.href}
-                    className="group block relative h-72 sm:h-80 rounded-3xl overflow-hidden border border-white/10 hover:border-cyan-400/40 transition-all duration-500 shadow-[0_20px_40px_rgba(0,0,0,0.6)] hover:shadow-[0_20px_50px_rgba(34,211,238,0.15)]"
-                  >
-                    {/* Card Background Image */}
-                    <div
-                      className="absolute inset-0 bg-cover bg-center transition-all duration-700 ease-out group-hover:brightness-110"
-                      style={{ backgroundImage: `url('${card.img}')` }}
-                    />
-                    {/* Clean subtle bottom scrim gradient for title legibility */}
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/30 to-transparent pointer-events-none z-10" />
+                <TiltCard maxTilt={5} className="h-full">
+                  <MagneticElement strength={0.03} className="w-full h-full block">
+                    <Link
+                      href={card.href}
+                      className="group block relative h-72 sm:h-80 rounded-3xl overflow-hidden border border-white/10 hover:border-cyan-400/40 transition-all duration-500 shadow-[0_20px_40px_rgba(0,0,0,0.6)] hover:shadow-[0_20px_50px_rgba(34,211,238,0.15)]"
+                    >
+                      {/* Card Background Image */}
+                      <div
+                        className="absolute inset-0 bg-cover bg-center transition-all duration-700 ease-out group-hover:scale-105 group-hover:brightness-110"
+                        style={{ backgroundImage: `url('${card.img}')` }}
+                      />
+                      {/* Clean subtle bottom scrim gradient for title legibility */}
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/30 to-transparent pointer-events-none z-10" />
 
-                    {/* Interactive overlay glow */}
-                    <div className="absolute inset-0 bg-cyan-500/0 group-hover:bg-cyan-500/10 transition-colors duration-500 pointer-events-none mix-blend-overlay z-10" />
+                      {/* Interactive overlay glow */}
+                      <div className="absolute inset-0 bg-cyan-500/0 group-hover:bg-cyan-500/10 transition-colors duration-500 pointer-events-none mix-blend-overlay z-10" />
 
-                    {/* Content */}
-                    <div className="absolute inset-0 p-8 flex flex-col justify-end z-20">
-                      <div className="flex items-center justify-between">
-                        <div>
-                          <h3 className="text-xl sm:text-2xl font-semibold !text-white tracking-tight group-hover:text-cyan-300 transition-colors duration-300">
-                            {card.title}
-                          </h3>
-                          <p className="text-xs sm:text-sm !text-white/80 mt-1 max-w-sm group-hover:!text-white transition-colors duration-300">{card.desc}</p>
-                        </div>
-                        <div className="w-10 h-10 rounded-full bg-white/20 border border-white/30 backdrop-blur-md flex items-center justify-center !text-white group-hover:bg-white group-hover:!text-black group-hover:scale-110 transition-all duration-300 shrink-0 shadow-md">
-                          <FiArrowRight className="w-4 h-4 !text-white group-hover:!text-black" />
+                      {/* Content */}
+                      <div className="absolute inset-0 p-8 flex flex-col justify-end z-20">
+                        <div className="flex items-center justify-between">
+                          <div>
+                            <h3 className="text-xl sm:text-2xl font-semibold !text-white tracking-tight group-hover:text-cyan-300 transition-colors duration-300">
+                              {card.title}
+                            </h3>
+                            <p className="text-xs sm:text-sm !text-white/80 mt-1 max-w-sm group-hover:!text-white transition-colors duration-300">{card.desc}</p>
+                          </div>
+                          <div className="w-10 h-10 rounded-full bg-white/20 border border-white/30 backdrop-blur-md flex items-center justify-center !text-white group-hover:bg-white group-hover:!text-black group-hover:scale-110 transition-all duration-300 shrink-0 shadow-md">
+                            <FiArrowRight className="w-4 h-4 !text-white group-hover:!text-black" />
+                          </div>
                         </div>
                       </div>
-                    </div>
-                  </Link>
-                </MagneticElement>
+                    </Link>
+                  </MagneticElement>
+                </TiltCard>
               </GsapScrollReveal>
             ))}
           </div>
@@ -281,7 +291,7 @@ export default function SolutionsPage() {
                   Transit DOOH • Moving Inventory
                 </div>
                 <div className="text-[11px] sm:text-xs text-white/50 font-mono tracking-tight">
-                  Location-Triggered Media Execution with Microsecond Synchrony
+                  Location-Triggered Media Execution with Low-Latency Synchronization
                 </div>
               </div>
             </div>

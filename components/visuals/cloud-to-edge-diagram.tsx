@@ -36,13 +36,13 @@ export function CloudToEdgeDiagram() {
       gradient: "linear-gradient(135deg, rgba(79, 70, 229, 0.18) 0%, rgba(147, 51, 234, 0.12) 100%)",
       border: "rgba(79, 70, 229, 0.4)",
       components: [
-        { name: "Local Execution Engine", desc: "Microsecond policy evaluation without roundtrip network latency." },
+        { name: "Local Execution Engine", desc: "Low-latency policy evaluation without roundtrip network latency." },
         { name: "Device Coordination", desc: "Hardware driver synchronization across connected vehicle peripherals." },
-        { name: "Geofence Trigger Matrix", desc: "High-frequency polygon boundary collision detection (<50ms)." },
+        { name: "Geofence Trigger Matrix", desc: "High-frequency polygon boundary collision detection." },
         { name: "Telemetry Engine", desc: "Sensor stream ingestion, edge validation, and state monitoring." },
-        { name: "Offline Operation & Cache", desc: "Local asset caching ensuring 100% uptime through network blackouts." },
+        { name: "Offline Operation & Cache", desc: "Local asset caching ensuring operational uptime through network blackouts." },
       ],
-      state: "EXECUTING // SUB-SECOND",
+      state: "EXECUTING // REAL-TIME",
     },
     {
       id: "vehicle",
@@ -55,7 +55,7 @@ export function CloudToEdgeDiagram() {
       border: "rgba(147, 51, 234, 0.4)",
       components: [
         { name: "Digital Displays", desc: "Exterior high-nit transit displays and passenger-facing screens." },
-        { name: "Multi-Constellation GNSS / GPS", desc: "Continuous sub-meter geographic coordinate resolution." },
+        { name: "Multi-Constellation GNSS / GPS", desc: "Continuous high-precision geographic coordinate resolution." },
         { name: "Vehicle Sensors", desc: "Speed, ignition state, ambient lighting, power draw, temperature." },
         { name: "Multi-Network Connectivity", desc: "Carrier-redundant cellular uplink with automatic fallback." },
         { name: "Embedded Computing Unit", desc: "Automotive-grade hardware running the VMOVEXA CORE edge runtime." },

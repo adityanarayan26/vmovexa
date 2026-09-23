@@ -39,7 +39,7 @@ const patents = [
   },
   {
     id: "US-2025-B2",
-    title: "Sub-Second Geofence Triggering in High-Velocity Contexts",
+    title: "Low-Latency Geofence Triggering in High-Velocity Contexts",
     status: "Granted",
     desc: "Architecture for executing hyper-local digital events based on high-speed telemetry prediction.",
   },

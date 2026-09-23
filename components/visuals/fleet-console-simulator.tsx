@@ -93,7 +93,7 @@ export function FleetConsoleSimulator() {
       const randomHash = "0x" + Math.random().toString(16).substring(2, 6) + "..." + Math.random().toString(16).substring(2, 6);
       setProofHash(randomHash);
       setIsSimulatingEvent(false);
-      setLogMessage(`Event committed: Proof-of-play hash ${randomHash} verified in 12ms`);
+      setLogMessage(`Event committed: Proof-of-play hash ${randomHash} verified locally at edge`);
     }, 600);
   };
 
@@ -282,8 +282,8 @@ export function FleetConsoleSimulator() {
               </div>
 
               <div className="flex items-center justify-between">
-                <span className="text-white/50">Multi-Screen Sync Drift:</span>
-                <span className="text-white font-medium">&lt; 2ms (Sub-Frame)</span>
+                <span className="text-white/50">Multi-Screen Sync:</span>
+                <span className="text-white font-medium">Synchronized</span>
               </div>
             </div>
 

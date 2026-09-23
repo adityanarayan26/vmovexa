@@ -1,7 +1,7 @@
 "use client";
 
-import { motion, AnimatePresence, useReducedMotion } from "framer-motion";
-import type { ElementType, ReactNode } from "react";
+import { motion, AnimatePresence, useInView, useReducedMotion } from "framer-motion";
+import { useRef, type ElementType, type ReactNode } from "react";
 
 const editorialEase = [0.16, 1, 0.3, 1] as const;
 
@@ -19,6 +19,7 @@ export interface EditorialMaskTextProps {
 /**
  * EditorialMaskText:
  * Reveals words progressively with luxury editorial easing without breaking whitespace or text flow.
+ * Uses useInView on the unclipped wrapper so words reveal reliably in any viewport context.
  */
 export function EditorialMaskText({
   text,
@@ -30,6 +31,11 @@ export function EditorialMaskText({
   inView = true,
 }: EditorialMaskTextProps) {
   const shouldReduceMotion = useReducedMotion();
+  const containerRef = useRef<any>(null);
+  const isInView = useInView(containerRef, {
+    once: true,
+    margin: "0px 0px 80px 0px",
+  });
   const words = text ? text.split(" ") : [];
 
   if (shouldReduceMotion || words.length === 0) {
@@ -39,6 +45,8 @@ export function EditorialMaskText({
       </Component>
     );
   }
+
+  const isAnimated = !inView || isInView;
 
   const containerVariants = {
     hidden: { opacity: 1 },
@@ -52,33 +60,28 @@ export function EditorialMaskText({
   };
 
   const itemVariants = {
-    hidden: { y: "100%", opacity: 0 },
+    hidden: { y: "115%", rotate: 2.5, opacity: 0 },
     visible: {
       y: "0%",
+      rotate: 0,
       opacity: 1,
       transition: {
-        duration: 0.55,
+        duration: 0.82,
         ease: editorialEase,
       },
     },
   };
 
-  const motionProps = inView
-    ? {
-        initial: "hidden",
-        whileInView: "visible",
-        viewport: { once: true, margin: "0px 0px -20px 0px" },
-      }
-    : {
-        initial: "hidden",
-        animate: "visible",
-      };
-
   return (
-    <Component className={className} style={{ display: "inline", ...style }}>
+    <Component
+      ref={containerRef}
+      className={className}
+      style={{ display: "inline", ...style }}
+    >
       <motion.span
         variants={containerVariants}
-        {...motionProps}
+        initial="hidden"
+        animate={isAnimated ? "visible" : "hidden"}
         style={{ display: "inline" }}
       >
         {words.map((word, i) => (
@@ -89,6 +92,8 @@ export function EditorialMaskText({
               overflow: "hidden",
               display: "inline-block",
               verticalAlign: "top",
+              paddingBottom: "0.15em",
+              marginBottom: "-0.15em",
               marginRight: i === words.length - 1 ? 0 : "0.28em",
             }}
           >
@@ -96,6 +101,7 @@ export function EditorialMaskText({
               variants={itemVariants}
               style={{
                 display: "inline-block",
+                transformOrigin: "left center",
                 willChange: "transform, opacity",
               }}
             >
@@ -110,7 +116,9 @@ export function EditorialMaskText({
 
 /**
  * EditorialLine:
- * Wraps a block in a subtle, high-performance slide-up fade reveal.
+ * Cuberto overflow-mask kinetic text/element reveal.
+ * Wraps children in an overflow-hidden boundary that smoothly glides up with subtle tilt.
+ * Uses useInView on the unclipped wrapper so it never gets clipped out by the browser.
  */
 export function EditorialLine({
   children,
@@ -128,6 +136,11 @@ export function EditorialLine({
   as?: ElementType;
 }) {
   const shouldReduceMotion = useReducedMotion();
+  const containerRef = useRef<any>(null);
+  const isInView = useInView(containerRef, {
+    once: true,
+    margin: "0px 0px 80px 0px",
+  });
 
   if (shouldReduceMotion) {
     return (
@@ -137,27 +150,30 @@ export function EditorialLine({
     );
   }
 
-  const motionProps = inView
-    ? {
-        initial: { y: 20, opacity: 0 },
-        whileInView: { y: 0, opacity: 1 },
-        viewport: { once: true, margin: "0px 0px -30px 0px" },
-      }
-    : {
-        initial: { y: 20, opacity: 0 },
-        animate: { y: 0, opacity: 1 },
-      };
+  const isAnimated = !inView || isInView;
 
   return (
-    <Component className={className} style={style}>
+    <Component
+      ref={containerRef}
+      className={`overflow-hidden pb-2 -mb-2 pt-0.5 -mt-0.5 ${className}`}
+      style={style}
+    >
       <motion.div
-        {...motionProps}
+        initial={{ y: "115%", rotate: 2, opacity: 0 }}
+        animate={
+          isAnimated
+            ? { y: "0%", rotate: 0, opacity: 1 }
+            : { y: "115%", rotate: 2, opacity: 0 }
+        }
         transition={{
-          duration: 0.55,
+          duration: 0.85,
           delay,
           ease: editorialEase,
         }}
-        style={{ willChange: "transform, opacity" }}
+        style={{
+          transformOrigin: "left center",
+          willChange: "transform, opacity",
+        }}
       >
         {children}
       </motion.div>
@@ -275,3 +291,6 @@ export function EditorialTabItem({
     </motion.div>
   );
 }
+
+// Re-export dedicated Cuberto components
+export { CubertoReveal, CubertoLines, CubertoWords } from "./cuberto-text-reveal";

@@ -1,9 +1,13 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { FiArrowRight, FiArrowUpRight, FiMonitor, FiMapPin, FiBarChart2, FiCheckCircle } from "react-icons/fi";
-import { EditorialMaskText, EditorialLine } from "@/components/animations/editorial-text";
+import { EditorialMaskText, EditorialLine, CubertoLines } from "@/components/animations/editorial-text";
 import { MagneticElement, GsapScrollReveal, ParallaxElement } from "@/components/animations/gsap-scroll-fx";
 import { MediaSlot } from "@/components/ui/media-slot";
+import { TextDecrypt } from "@/components/animations/text-decrypt";
+import { BlurReveal } from "@/components/animations/blur-reveal";
+import { TiltCard } from "@/components/animations/tilt-card";
+import { FloatingElement } from "@/components/animations/image-reveal";
 
 export const metadata: Metadata = {
   title: "VMOVEXA Media | Dynamic Connected DOOH Infrastructure",
@@ -53,22 +57,26 @@ export default function MediaPage() {
                 <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/[0.04] border border-white/15 backdrop-blur-md mb-8">
                   <span className="w-2 h-2 rounded-full bg-cyan-400" />
                   <span className="font-mono text-xs uppercase tracking-[0.2em] text-white/80">
-                    Mobility Media
+                    <TextDecrypt text="Mobility Media" delay={150} />
                   </span>
                 </div>
               </EditorialLine>
 
-              <EditorialLine delay={0.15}>
-                <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight leading-[1.1] max-w-4xl mb-6 text-white uppercase">
-                  Media that <span className="gradient-text">moves.</span>
-                </h1>
-              </EditorialLine>
+              <CubertoLines
+                as="h1"
+                className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight leading-[1.1] max-w-4xl mb-6 text-white uppercase"
+                delay={0.15}
+                lines={[
+                  "Media that",
+                  <span key="sub" className="gradient-text">moves.</span>
+                ]}
+              />
 
-              <EditorialLine delay={0.3}>
+              <BlurReveal delay={0.25} blurAmount={10}>
                 <p className="text-base sm:text-lg text-white/70 font-normal leading-relaxed max-w-2xl mb-8">
                   A new era of Digital Out-of-Home — powered by movement, location and intelligence.
                 </p>
-              </EditorialLine>
+              </BlurReveal>
 
               <EditorialLine delay={0.4}>
                 <div className="flex flex-wrap items-center gap-4 mb-10">
@@ -104,10 +112,18 @@ export default function MediaPage() {
 
             {/* Right Side Vertical Floating Tags (Screen 06) */}
             <div className="hidden lg:flex lg:col-span-2 flex-col items-end gap-5 pt-16 font-mono text-[11px] text-white/40 tracking-[0.25em] uppercase">
-              <span className="hover:text-cyan-400 transition-colors cursor-default">MOVING</span>
-              <span className="hover:text-cyan-400 transition-colors cursor-default">MEASURABLE</span>
-              <span className="hover:text-cyan-400 transition-colors cursor-default">CONTEXTUAL</span>
-              <span className="hover:text-cyan-400 transition-colors cursor-default">IMPACTFUL</span>
+              <FloatingElement duration={5} yOffset={4}>
+                <span className="hover:text-cyan-400 transition-colors cursor-default">MOVING</span>
+              </FloatingElement>
+              <FloatingElement duration={4.2} yOffset={5}>
+                <span className="hover:text-cyan-400 transition-colors cursor-default">MEASURABLE</span>
+              </FloatingElement>
+              <FloatingElement duration={5.5} yOffset={4}>
+                <span className="hover:text-cyan-400 transition-colors cursor-default">CONTEXTUAL</span>
+              </FloatingElement>
+              <FloatingElement duration={4.7} yOffset={5}>
+                <span className="hover:text-cyan-400 transition-colors cursor-default">IMPACTFUL</span>
+              </FloatingElement>
             </div>
           </div>
 
@@ -122,6 +138,7 @@ export default function MediaPage() {
                 caption="Dynamic Exterior Screen: Contextual, Location-Triggered & Verified Proof-of-Play"
                 aspectRatio="21/9"
                 priority
+                curtainReveal={true}
               />
             </div>
           </GsapScrollReveal>
@@ -137,14 +154,16 @@ export default function MediaPage() {
               ].map((pill) => {
                 const PillIcon = pill.icon;
                 return (
-                  <div key={pill.title} className="flex items-center gap-3 px-3 py-2">
-                    <div className={`p-2.5 rounded-xl border ${pill.bg} ${pill.color} shadow-sm`}>
-                      <PillIcon size={18} />
+                  <TiltCard key={pill.title} maxTilt={8} glare={true}>
+                    <div className="flex items-center gap-3 px-3 py-2 rounded-xl hover:bg-white/[0.04] transition-colors cursor-default">
+                      <div className={`p-2.5 rounded-xl border ${pill.bg} ${pill.color} shadow-sm`}>
+                        <PillIcon size={18} />
+                      </div>
+                      <span className="text-xs sm:text-sm font-medium text-white/90">
+                        {pill.title}
+                      </span>
                     </div>
-                    <span className="text-xs sm:text-sm font-medium text-white/90">
-                      {pill.title}
-                    </span>
-                  </div>
+                  </TiltCard>
                 );
               })}
             </div>
@@ -176,54 +195,58 @@ export default function MediaPage() {
         <div className="container max-w-6xl mx-auto px-6 relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start mb-20">
             {/* The Screen as an Inventory Object */}
-            <GsapScrollReveal>
-              <div className="p-8 rounded-2xl bg-white/[0.02] border border-white/10 space-y-6 h-full hover:bg-white/[0.03] hover:border-cyan-500/20 transition-all duration-500 group relative overflow-hidden shadow-[inset_0_1px_0_rgba(255,255,255,0.02)]">
-                <div className="absolute -inset-x-full top-0 h-[1px] bg-gradient-to-r from-transparent via-cyan-400/30 to-transparent group-hover:animate-[shimmer_2s_infinite]" />
-                <div className="relative z-10">
-                  <div className="flex items-center gap-2 text-cyan-400 font-mono text-xs uppercase tracking-wider mb-2">
-                    <FiMonitor size={16} /> Inventory Object
-                  </div>
-                  <h3 className="text-xl sm:text-2xl font-semibold uppercase mb-4">The Screen as an <span className="gradient-text">Inventory Object</span></h3>
-                  <p className="text-sm text-white/70 leading-relaxed mb-6 group-hover:text-white/90 transition-colors">
-                    In traditional media, screens are fixed in place. In connected mobility, the screen moves through the physical world.
-                  </p>
-                  <div className="space-y-3 pt-4 border-t border-white/10 text-xs font-mono text-white/80">
-                    <div className="text-cyan-400 font-semibold mb-3">Each screen becomes a software-addressable object with:</div>
-                    {['Exact spatial location', 'Route trajectory', 'Operational status', 'Verified playback capacity'].map((item, i) => (
-                      <div key={i} className="flex items-center gap-3 group/item">
-                        <span className="text-cyan-400 group-hover/item:translate-x-1 transition-transform">→</span>
-                        <span className="group-hover/item:text-white transition-colors">{item}</span>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              </div>
-            </GsapScrollReveal>
-
-            {/* Contextual Where & When */}
-            <GsapScrollReveal delay={0.2}>
-              <div className="p-8 rounded-2xl bg-white/[0.02] border border-white/10 space-y-6 h-full hover:bg-white/[0.03] hover:border-purple-500/20 transition-all duration-500 group relative overflow-hidden shadow-[inset_0_1px_0_rgba(255,255,255,0.02)]">
-                 <div className="absolute -inset-x-full top-0 h-[1px] bg-gradient-to-r from-transparent via-purple-400/30 to-transparent group-hover:animate-[shimmer_2s_infinite]" />
-                <div className="relative z-10">
-                  <div className="flex items-center gap-2 text-purple-400 font-mono text-xs uppercase tracking-wider mb-2">
-                    <FiMapPin size={16} /> Contextual Delivery
-                  </div>
-                  <h3 className="text-xl sm:text-2xl font-semibold uppercase mb-4">Where + When <span className="gradient-text">Targeting</span></h3>
-                  <p className="text-sm text-white/70 leading-relaxed mb-6 group-hover:text-white/90 transition-colors">
-                    Contextual delivery happens at the intersection of geographical polygon rules and temporal dayparting:
-                  </p>
-                  <div className="pt-4 border-t border-white/10">
-                    <h4 className="text-xs font-mono uppercase tracking-widest text-white/40 mb-4">Temporal Windows:</h4>
-                    <div className="grid grid-cols-2 gap-3 text-xs font-mono text-white/80">
-                      {temporalWindows.map((tw, i) => (
-                        <div key={i} className="p-3 rounded-xl bg-white/[0.03] border border-white/10 text-center hover:bg-purple-950/20 hover:border-purple-500/30 transition-colors cursor-default">
-                          {tw}
+            <GsapScrollReveal className="h-full">
+              <TiltCard maxTilt={7} glare={true} className="h-full">
+                <div className="p-8 rounded-2xl bg-white/[0.02] border border-white/10 space-y-6 h-full hover:bg-white/[0.03] hover:border-cyan-500/20 transition-all duration-500 group relative overflow-hidden shadow-[inset_0_1px_0_rgba(255,255,255,0.02)]">
+                  <div className="absolute -inset-x-full top-0 h-[1px] bg-gradient-to-r from-transparent via-cyan-400/30 to-transparent group-hover:animate-[shimmer_2s_infinite]" />
+                  <div className="relative z-10">
+                    <div className="flex items-center gap-2 text-cyan-400 font-mono text-xs uppercase tracking-wider mb-2">
+                      <FiMonitor size={16} /> Inventory Object
+                    </div>
+                    <h3 className="text-xl sm:text-2xl font-semibold uppercase mb-4">The Screen as an <span className="gradient-text">Inventory Object</span></h3>
+                    <p className="text-sm text-white/70 leading-relaxed mb-6 group-hover:text-white/90 transition-colors">
+                      In traditional media, screens are fixed in place. In connected mobility, the screen moves through the physical world.
+                    </p>
+                    <div className="space-y-3 pt-4 border-t border-white/10 text-xs font-mono text-white/80">
+                      <div className="text-cyan-400 font-semibold mb-3">Each screen becomes a software-addressable object with:</div>
+                      {['Exact spatial location', 'Route trajectory', 'Operational status', 'Verified playback capacity'].map((item, i) => (
+                        <div key={i} className="flex items-center gap-3 group/item">
+                          <span className="text-cyan-400 group-hover/item:translate-x-1 transition-transform">→</span>
+                          <span className="group-hover/item:text-white transition-colors">{item}</span>
                         </div>
                       ))}
                     </div>
                   </div>
                 </div>
-              </div>
+              </TiltCard>
+            </GsapScrollReveal>
+
+            {/* Contextual Where & When */}
+            <GsapScrollReveal delay={0.2} className="h-full">
+              <TiltCard maxTilt={7} glare={true} className="h-full">
+                <div className="p-8 rounded-2xl bg-white/[0.02] border border-white/10 space-y-6 h-full hover:bg-white/[0.03] hover:border-purple-500/20 transition-all duration-500 group relative overflow-hidden shadow-[inset_0_1px_0_rgba(255,255,255,0.02)]">
+                   <div className="absolute -inset-x-full top-0 h-[1px] bg-gradient-to-r from-transparent via-purple-400/30 to-transparent group-hover:animate-[shimmer_2s_infinite]" />
+                  <div className="relative z-10">
+                    <div className="flex items-center gap-2 text-purple-400 font-mono text-xs uppercase tracking-wider mb-2">
+                      <FiMapPin size={16} /> Contextual Delivery
+                    </div>
+                    <h3 className="text-xl sm:text-2xl font-semibold uppercase mb-4">Where + When <span className="gradient-text">Targeting</span></h3>
+                    <p className="text-sm text-white/70 leading-relaxed mb-6 group-hover:text-white/90 transition-colors">
+                      Contextual delivery happens at the intersection of geographical polygon rules and temporal dayparting:
+                    </p>
+                    <div className="pt-4 border-t border-white/10">
+                      <h4 className="text-xs font-mono uppercase tracking-widest text-white/40 mb-4">Temporal Windows:</h4>
+                      <div className="grid grid-cols-2 gap-3 text-xs font-mono text-white/80">
+                        {temporalWindows.map((tw, i) => (
+                          <div key={i} className="p-3 rounded-xl bg-white/[0.03] border border-white/10 text-center hover:bg-purple-950/20 hover:border-purple-500/30 transition-colors cursor-default">
+                            {tw}
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </TiltCard>
             </GsapScrollReveal>
           </div>
 
@@ -296,6 +319,8 @@ export default function MediaPage() {
                 badge="DOOH Network • Digital Transit Advertising"
                 caption="Centrally Orchestrated Media Execution across Connected Arterials"
                 aspectRatio="21/9"
+                scanline={true}
+                curtainReveal={true}
               />
             </div>
           </GsapScrollReveal>

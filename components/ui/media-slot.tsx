@@ -3,7 +3,9 @@
 import Image from "next/image";
 import { useState, useRef } from "react";
 import { FiPlay, FiPause, FiFilm, FiImage, FiZap, FiVolume2, FiVolumeX } from "react-icons/fi";
+import { motion, useInView, useReducedMotion } from "framer-motion";
 import { GsapParallax } from "@/components/animations/gsap-scroll-fx";
+import { ModernImageSheen, AmbientMediaGlow } from "@/components/animations/image-reveal";
 
 interface MediaSlotProps {
   type?: "video" | "image" | "placeholder";
@@ -22,6 +24,8 @@ interface MediaSlotProps {
   parallax?: boolean;
   allowPause?: boolean;
   hideBadge?: boolean;
+  scanline?: boolean;
+  curtainReveal?: boolean;
 }
 
 export function MediaSlot({
@@ -41,10 +45,18 @@ export function MediaSlot({
   parallax = true,
   allowPause = true,
   hideBadge = false,
+  scanline = false,
+  curtainReveal = true,
 }: MediaSlotProps) {
   const [isPlaying, setIsPlaying] = useState(true);
   const [isMuted, setIsMuted] = useState(true);
   const videoRef = useRef<HTMLVideoElement>(null);
+  const containerRef = useRef<HTMLDivElement>(null);
+  const shouldReduceMotion = useReducedMotion();
+  const isInView = useInView(containerRef, {
+    once: true,
+    margin: "0px 0px 80px 0px",
+  });
 
   const toggleMute = () => {
     if (!videoRef.current) return;
@@ -97,8 +109,12 @@ export function MediaSlot({
 
   return (
     <div
+      ref={containerRef}
       className={`relative w-full rounded-3xl overflow-hidden ${theme === "transparent" ? "bg-transparent" : theme === "light" ? "bg-black/[0.03] border border-black/10" : "bg-black"} group transition-all duration-500 ${ratioClass} ${className}`}
     >
+      {/* Subtle ambient depth illumination behind card */}
+      <AmbientMediaGlow />
+
       {/* Top Media Tag / Badge */}
       {!hideBadge && (
         <div className="preserve-dark absolute top-4 left-4 z-20 flex items-center gap-2 px-3 py-1.5 rounded-full bg-black/80 backdrop-blur-md border border-white/20 text-[11px] font-mono tracking-wider !text-white uppercase shadow-lg">
@@ -144,7 +160,7 @@ export function MediaSlot({
               <div className="flex items-center justify-end">
                 <div className="flex items-center gap-2 px-3 py-1 rounded-full bg-black/60 backdrop-blur-md border border-cyan-500/30 text-[10px] font-mono text-cyan-300">
                   <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
-                  <span>1080P60 • 12ms PING</span>
+                  <span>1080P60 • EDGE STREAM</span>
                 </div>
               </div>
 
@@ -187,28 +203,43 @@ export function MediaSlot({
           </div>
         </div>
       ) : type === "image" && src ? (
-        <div className={`absolute inset-0 w-full h-full group ${fadeClass}`}>
+        <div className={`absolute inset-0 w-full h-full ${fadeClass}`}>
           {parallax ? (
-            <GsapParallax speed={0.15} className="absolute inset-0 w-full h-full z-0">
+            <GsapParallax speed={0.06} className="absolute inset-0 w-full h-full z-0">
+              <motion.div
+                initial={shouldReduceMotion ? false : { scale: 1.06, filter: "brightness(0.9)" }}
+                animate={shouldReduceMotion ? undefined : isInView ? { scale: 1, filter: "brightness(1)" } : { scale: 1.06, filter: "brightness(0.9)" }}
+                transition={{ duration: 1.1, ease: [0.16, 1, 0.3, 1] }}
+                className="w-full h-full relative"
+              >
+                <Image
+                  src={src}
+                  alt={alt}
+                  fill
+                  priority={priority}
+                  sizes="(max-width: 1200px) 100vw, 1200px"
+                  className={`${objectFit === "contain" ? "object-contain" : "object-cover"} transition-transform duration-700 ease-out z-0 absolute inset-0 group-hover:scale-[1.025]`}
+                />
+              </motion.div>
+            </GsapParallax>
+          ) : (
+            <motion.div
+              initial={shouldReduceMotion ? false : { scale: 1.06, filter: "brightness(0.9)" }}
+              animate={shouldReduceMotion ? undefined : isInView ? { scale: 1, filter: "brightness(1)" } : { scale: 1.06, filter: "brightness(0.9)" }}
+              transition={{ duration: 1.1, ease: [0.16, 1, 0.3, 1] }}
+              className="w-full h-full relative"
+            >
               <Image
                 src={src}
                 alt={alt}
                 fill
                 priority={priority}
                 sizes="(max-width: 1200px) 100vw, 1200px"
-                className={`${objectFit === "contain" ? "object-contain" : "object-cover"} transition-transform duration-700 ease-out`}
+                className={`${objectFit === "contain" ? "object-contain" : "object-cover"} transition-transform duration-700 ease-out z-0 absolute inset-0 group-hover:scale-[1.025]`}
               />
-            </GsapParallax>
-          ) : (
-            <Image
-              src={src}
-              alt={alt}
-              fill
-              priority={priority}
-              sizes="(max-width: 1200px) 100vw, 1200px"
-              className={`${objectFit === "contain" ? "object-contain" : "object-cover"} transition-transform duration-700 ease-out z-0 absolute inset-0`}
-            />
+            </motion.div>
           )}
+
           {/* Seamless perimeter feathering into pure black page background */}
           {theme === "dark" && (
             <>
@@ -217,6 +248,9 @@ export function MediaSlot({
               <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_40%,rgba(0,0,0,0.85)_80%,#000000_98%)] pointer-events-none z-10" />
             </>
           )}
+
+          {/* Modern specular glass sheen on entry */}
+          <ModernImageSheen delay={0.25} />
         </div>
       ) : (
         /* Explicit Placeholder / Space Reserved for future media */

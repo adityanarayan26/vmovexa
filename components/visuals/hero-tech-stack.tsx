@@ -130,7 +130,7 @@ export function HeroTechStack() {
       title: "Data Streams & Pipelines",
       icon: Radio,
       desc: "Bidirectional encrypted synchronization between central cloud and moving vehicles.",
-      specs: ["Sub-second Sync", "Bandwidth-Aware", "Delta Updates"],
+      specs: ["Near-Real-Time Sync", "Bandwidth-Aware", "Delta Updates"],
       color: "var(--accent-indigo)",
     },
     {
@@ -139,7 +139,7 @@ export function HeroTechStack() {
       title: "VMOVEXA CORE Edge Node",
       icon: Cpu,
       desc: "Hardware-agnostic edge computing runtime executing local triggers and media pipelines.",
-      specs: ["Offline Cache", "Sub-second Geo Logic", "Multi-Screen Sync"],
+      specs: ["Offline Cache", "Low-Latency Geo Logic", "Multi-Screen Sync"],
       color: "var(--accent-purple)",
     },
     {

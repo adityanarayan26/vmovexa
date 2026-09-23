@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
-import { Inter, JetBrains_Mono, Orbitron } from "next/font/google";
-// import localFont from "next/font/local";
+import { Space_Grotesk, IBM_Plex_Sans, IBM_Plex_Mono } from "next/font/google";
 import "./globals.css";
 import { SmoothScroll } from "@/components/animations/smooth-scroll";
 import { SiteFooter } from "@/components/layout/site-footer";
@@ -10,19 +9,29 @@ import { BackgroundGradient } from "@/components/visuals/background-gradient";
 import { WhatsAppFloat } from "@/components/ui/whatsapp-float";
 import { site } from "@/lib/site";
 
-const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
-const jetbrainsMono = JetBrains_Mono({ subsets: ["latin"], variable: "--font-jetbrains" });
+// Brand headlines / emotional moments
+const spaceGrotesk = Space_Grotesk({
+  subsets: ["latin"],
+  variable: "--font-space-grotesk",
+  weight: ["400", "500", "600", "700"],
+  display: "swap",
+});
 
-// TEMPORARY FALLBACK: Using Orbitron (as requested) until the Super League font file is uploaded
-const customHeading = Orbitron({ subsets: ["latin"], variable: "--font-custom-heading", weight: "700" });
+// Enterprise / product / website body
+const ibmPlexSans = IBM_Plex_Sans({
+  subsets: ["latin"],
+  variable: "--font-ibm-plex-sans",
+  weight: ["300", "400", "500", "600", "700"],
+  display: "swap",
+});
 
-// WHEN YOU HAVE THE SUPER LEAGUE FONT FILE, UNCOMMENT THIS AND DELETE THE ORBITRON LINE ABOVE:
-// const customHeading = localFont({
-//   src: "../public/fonts/SuperLeague-SemiBold.otf",
-//   variable: "--font-custom-heading",
-//   weight: "600",
-//   display: "swap",
-// });
+// Deep-tech / data / engineering / plain text
+const ibmPlexMono = IBM_Plex_Mono({
+  subsets: ["latin"],
+  variable: "--font-ibm-plex-mono",
+  weight: ["400", "500", "600"],
+  display: "swap",
+});
 
 export const metadata: Metadata = {
   metadataBase: new URL(site.url),
@@ -87,7 +96,7 @@ export default function RootLayout({
     },
   };
   return (
-    <html lang="en" className={`${inter.variable} ${customHeading.variable} ${jetbrainsMono.variable}`}>
+    <html lang="en" className={`${spaceGrotesk.variable} ${ibmPlexSans.variable} ${ibmPlexMono.variable}`}>
       <body>
         <SmoothScroll />
         <ThemeSwitcher />

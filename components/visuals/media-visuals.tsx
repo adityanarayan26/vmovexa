@@ -332,7 +332,7 @@ export function MeasurementProofOfPlay() {
     {
       step: "04",
       name: "Location Performance",
-      desc: "Sub-meter GNSS coordinates and timestamp cryptographically hashed as tamper-proof proof-of-play.",
+      desc: "High-precision GNSS coordinates and timestamp cryptographically hashed as tamper-proof proof-of-play.",
       metric: "Cryptographic coordinate hash",
     },
   ];

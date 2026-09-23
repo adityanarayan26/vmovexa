@@ -31,7 +31,7 @@ export function VmovexaOneFlow() {
     { name: "SCREEN", detail: "Targeting rooftop exterior displays vs in-cabin passenger screens." },
     { name: "DATE", detail: "Calendar pacing, event windows, and scheduled flight arrival matching." },
     { name: "TIME", detail: "Dayparting logic (morning peak commute, business hours, evening transit)." },
-    { name: "GEO CONTEXT", detail: "High-precision polygonal geofence boundaries with sub-second collision." },
+    { name: "GEO CONTEXT", detail: "High-precision polygonal geofence boundaries with near-real-time collision detection." },
     { name: "APPROVAL", detail: "Real-time compliance checks and multi-tenant creative sign-off." },
     { name: "DISTRIBUTION", detail: "Encrypted delta dispatch directly to VMOVEXA CORE edge storage." },
     { name: "MEASUREMENT", detail: "Cryptographic proof-of-play, duration logs & telemetry verification." },

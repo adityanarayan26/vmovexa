@@ -17,6 +17,7 @@ import { RiCarLine, RiMegaphoneLine } from "react-icons/ri";
 import { EditorialMaskText, EditorialLine, EditorialTabTransition, EditorialTabItem } from "@/components/animations/editorial-text";
 import { MagneticElement, GsapScrollReveal } from "@/components/animations/gsap-scroll-fx";
 import { MediaSlot } from "@/components/ui/media-slot";
+import { TiltCard } from "@/components/animations/tilt-card";
 
 const partnerCategories = [
   { title: "Transportation", desc: "Fleet operators, public transit authorities & EV mobility networks" },
@@ -119,6 +120,8 @@ export function CompanyClient() {
                           caption="INTELLIGENCE IN MOTION — The Digital Operating Layer for Worldwide Mobility"
                           aspectRatio="16/9"
                           priority
+                          scanline={true}
+                          curtainReveal={true}
                         />
                       </div>
                     </EditorialTabItem>
@@ -134,10 +137,12 @@ export function CompanyClient() {
                   { title: "A Smarter", subtitle: "Tomorrow", color: "pink" }
                 ].map((highlight, i) => (
                   <EditorialTabItem key={highlight.title} delayOffset={0.5 + (i * 0.1)}>
-                    <div className={`p-4 rounded-2xl bg-white/[0.02] border border-white/10 hover:bg-white/[0.04] hover:border-${highlight.color}-500/30 transition-colors cursor-default`}>
-                      <div className={`font-mono text-xs uppercase tracking-widest text-${highlight.color}-400`}>{highlight.title}</div>
-                      <div className="text-sm font-semibold text-white mt-1">{highlight.subtitle}</div>
-                    </div>
+                    <TiltCard maxTilt={8} glare={true}>
+                      <div className={`p-4 rounded-2xl bg-white/[0.02] border border-white/10 hover:bg-white/[0.04] hover:border-${highlight.color}-500/30 transition-colors cursor-default`}>
+                        <div className={`font-mono text-xs uppercase tracking-widest text-${highlight.color}-400`}>{highlight.title}</div>
+                        <div className="text-sm font-semibold text-white mt-1">{highlight.subtitle}</div>
+                      </div>
+                    </TiltCard>
                   </EditorialTabItem>
                 ))}
               </div>
@@ -195,7 +200,7 @@ export function CompanyClient() {
                     { title: "Media", desc: "Connected screens deliver contextual communication.", icon: FiMonitor, color: "text-pink-400", badge: "bg-pink-500/10 border-pink-500/30 shadow-[0_0_15px_rgba(236,72,153,0.12)]" },
                   ].map((node, i) => (
                     <EditorialTabItem key={node.title} delayOffset={0.4 + (i * 0.1)}>
-                      <MagneticElement strength={0.05}>
+                      <TiltCard maxTilt={8} glare={true} className="h-full">
                         <div className="p-6 rounded-2xl bg-white/[0.02] border border-white/10 h-full flex flex-col justify-between group hover:border-white/30 hover:bg-white/[0.04] transition-all duration-300">
                           <div>
                             <div className={`w-11 h-11 rounded-xl border ${node.badge} flex items-center justify-center mb-4 ${node.color} group-hover:scale-110 transition-all duration-300`}>
@@ -206,7 +211,7 @@ export function CompanyClient() {
                             <p className="text-xs text-white/60 leading-relaxed group-hover:text-white/80 transition-colors">{node.desc}</p>
                           </div>
                         </div>
-                      </MagneticElement>
+                      </TiltCard>
                     </EditorialTabItem>
                   ))}
                 </div>
@@ -274,7 +279,7 @@ export function CompanyClient() {
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                 {commercialDimensions.map((cd, i) => (
                   <EditorialTabItem key={cd.title} delayOffset={0.2 + (i * 0.1)}>
-                    <MagneticElement strength={0.05}>
+                    <TiltCard maxTilt={8} glare={true} className="h-full">
                       <div className="p-6 rounded-2xl bg-white/[0.02] border border-white/10 h-full group hover:border-white/30 hover:bg-white/[0.04] transition-all duration-300">
                         <div className="flex items-center justify-between mb-4">
                           <span className={`font-mono text-xs uppercase tracking-widest ${cd.color}`}>Dimension 0{i + 1}</span>
@@ -285,7 +290,7 @@ export function CompanyClient() {
                         <h4 className="text-lg font-semibold text-white mb-2 group-hover:text-cyan-100 transition-colors">{cd.title}</h4>
                         <p className="text-xs text-white/60 leading-relaxed group-hover:text-white/80 transition-colors">{cd.desc}</p>
                       </div>
-                    </MagneticElement>
+                    </TiltCard>
                   </EditorialTabItem>
                 ))}
               </div>
@@ -299,6 +304,8 @@ export function CompanyClient() {
                     badge="Investor Overview • Platform Opportunity"
                     caption="Market Intersection & Multi-Dimensional Platform Economics"
                     aspectRatio="21/9"
+                    scanline={true}
+                    curtainReveal={true}
                   />
                 </div>
               </EditorialTabItem>

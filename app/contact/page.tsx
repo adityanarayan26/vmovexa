@@ -4,6 +4,10 @@ import { useState } from "react";
 import { FiArrowRight, FiMail, FiPhone, FiMapPin, FiSend, FiCheckCircle } from "react-icons/fi";
 import { RiBuilding4Line, RiMegaphoneLine, RiCpuLine, RiFundsLine } from "react-icons/ri";
 import { Reveal } from "@/components/animations/reveal";
+import { CubertoLines } from "@/components/animations/cuberto-text-reveal";
+import { TextDecrypt } from "@/components/animations/text-decrypt";
+import { BlurReveal } from "@/components/animations/blur-reveal";
+import { TiltCard } from "@/components/animations/tilt-card";
 import { site } from "@/lib/site";
 
 export default function ContactPage() {
@@ -85,22 +89,26 @@ export default function ContactPage() {
             <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/[0.04] border border-white/15 backdrop-blur-md mb-8">
               <span className="w-2 h-2 rounded-full bg-cyan-400" />
               <span className="font-mono text-xs uppercase tracking-[0.16em] text-white/80">
-                16 — Contact & Enquiries
+                <TextDecrypt text="16 — Contact & Enquiries" delay={150} />
               </span>
             </div>
           </Reveal>
 
-          <Reveal delay={0.1}>
-            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight leading-[1.1] max-w-4xl mb-6 text-white uppercase">
-              Connect with <span className="gradient-text">VMOVEXA.</span>
-            </h1>
-          </Reveal>
+          <CubertoLines
+            as="h1"
+            className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight leading-[1.1] max-w-4xl mb-6 text-white uppercase"
+            delay={0.1}
+            lines={[
+              "Connect with",
+              <span key="sub" className="gradient-text">VMOVEXA.</span>
+            ]}
+          />
 
-          <Reveal delay={0.2}>
+          <BlurReveal delay={0.2} blurAmount={10}>
             <p className="text-base sm:text-lg text-white/70 font-normal leading-relaxed max-w-3xl mb-8">
               Whether you are deploying connected fleet infrastructure, building moving media campaigns, integrating technologies, or exploring platform investment—we are here to connect.
             </p>
-          </Reveal>
+          </BlurReveal>
         </div>
       </section>
 
@@ -113,35 +121,37 @@ export default function ContactPage() {
               const isSelected = selectedInterest === t.title;
               return (
                 <Reveal key={t.title} delay={idx * 0.05} className="h-full flex flex-col">
-                  <div
-                    onClick={() => setSelectedInterest(t.title)}
-                    className={`p-6 sm:p-7 rounded-2xl bg-[#090b10] border ${t.borderColor} ${
-                      isSelected ? "ring-2 ring-cyan-400 shadow-[0_0_30px_rgba(6,182,212,0.3)]" : ""
-                    } transition-all duration-300 h-full flex flex-col justify-between group shadow-xl relative overflow-hidden flex-1 cursor-pointer`}
-                  >
-                    {/* Ambient top color accent */}
-                    <div className={`absolute top-0 inset-x-0 h-[2px] ${t.accentBar} opacity-85 group-hover:h-1 group-hover:opacity-100 transition-all`} />
-                    <div className={`absolute -top-10 -right-10 w-28 h-28 bg-gradient-to-b ${t.glowBg} rounded-full blur-2xl pointer-events-none opacity-40 group-hover:opacity-80 transition-opacity`} />
+                  <TiltCard maxTilt={8} glare={true} className="h-full flex flex-col">
+                    <div
+                      onClick={() => setSelectedInterest(t.title)}
+                      className={`p-6 sm:p-7 rounded-2xl bg-[#090b10] border ${t.borderColor} ${
+                        isSelected ? "ring-2 ring-cyan-400 shadow-[0_0_30px_rgba(6,182,212,0.3)]" : ""
+                      } transition-all duration-300 h-full flex flex-col justify-between group shadow-xl relative overflow-hidden flex-1 cursor-pointer`}
+                    >
+                      {/* Ambient top color accent */}
+                      <div className={`absolute top-0 inset-x-0 h-[2px] ${t.accentBar} opacity-85 group-hover:h-1 group-hover:opacity-100 transition-all`} />
+                      <div className={`absolute -top-10 -right-10 w-28 h-28 bg-gradient-to-b ${t.glowBg} rounded-full blur-2xl pointer-events-none opacity-40 group-hover:opacity-80 transition-opacity`} />
 
-                    <div className="relative z-10 flex-1 flex flex-col">
-                      <div className={`w-11 h-11 rounded-xl border ${t.badge} flex items-center justify-center mb-5 ${t.color} group-hover:scale-110 transition-transform duration-300`}>
-                        <IconComp size={20} />
+                      <div className="relative z-10 flex-1 flex flex-col">
+                        <div className={`w-11 h-11 rounded-xl border ${t.badge} flex items-center justify-center mb-5 ${t.color} group-hover:scale-110 transition-transform duration-300`}>
+                          <IconComp size={20} />
+                        </div>
+                        <h3 className={`text-lg font-bold ${t.color} mb-2 uppercase tracking-tight`}>{t.title}</h3>
+                        <p className="text-[11px] font-mono uppercase tracking-wider mb-2.5 text-white/80 font-medium">{t.subtitle}</p>
+                        <p className="text-xs text-zinc-300 leading-relaxed font-normal flex-1">{t.copy}</p>
                       </div>
-                      <h3 className={`text-lg font-bold ${t.color} mb-2 uppercase tracking-tight`}>{t.title}</h3>
-                      <p className="text-[11px] font-mono uppercase tracking-wider mb-2.5 text-white/80 font-medium">{t.subtitle}</p>
-                      <p className="text-xs text-zinc-300 leading-relaxed font-normal flex-1">{t.copy}</p>
-                    </div>
 
-                    <div className="pt-5 mt-5 border-t border-white/10 relative z-10">
-                      <button
-                        type="button"
-                        className="inline-flex items-center justify-between w-full text-[11px] font-semibold text-white hover:text-cyan-300 uppercase tracking-wider transition-colors group/cta cursor-pointer"
-                      >
-                        <span className="text-white group-hover/cta:underline">{t.cta}</span>
-                        <FiArrowRight className={`w-3.5 h-3.5 ${t.color} transition-transform group-hover/cta:translate-x-1.5`} />
-                      </button>
+                      <div className="pt-5 mt-5 border-t border-white/10 relative z-10">
+                        <button
+                          type="button"
+                          className="inline-flex items-center justify-between w-full text-[11px] font-semibold text-white hover:text-cyan-300 uppercase tracking-wider transition-colors group/cta cursor-pointer"
+                        >
+                          <span className="text-white group-hover/cta:underline">{t.cta}</span>
+                          <FiArrowRight className={`w-3.5 h-3.5 ${t.color} transition-transform group-hover/cta:translate-x-1.5`} />
+                        </button>
+                      </div>
                     </div>
-                  </div>
+                  </TiltCard>
                 </Reveal>
               );
             })}

@@ -14,14 +14,29 @@ import {
   FiCheckCircle,
   FiServer,
   FiActivity,
+  FiLayers,
+  FiNavigation,
+  FiClock,
+  FiCrosshair,
+  FiWifi,
 } from "react-icons/fi";
-import { RiCarLine, RiDashboard3Line } from "react-icons/ri";
-import { EditorialMaskText, EditorialLine } from "@/components/animations/editorial-text";
+import {
+  RiCarLine,
+  RiDashboard3Line,
+  RiBusLine,
+  RiFlightTakeoffLine,
+  RiBuildingLine,
+  RiTaxiWifiLine,
+} from "react-icons/ri";
+import { EditorialMaskText, EditorialLine, CubertoLines } from "@/components/animations/editorial-text";
 import { MagneticElement, GsapScrollReveal, ParallaxElement } from "@/components/animations/gsap-scroll-fx";
 import { MediaSlot } from "@/components/ui/media-slot";
-import { TelemetryTicker } from "@/components/visuals/telemetry-ticker";
-import { FleetConsoleSimulator } from "@/components/visuals/fleet-console-simulator";
+import { CloudEdgeArchitectureAnimation } from "@/components/visuals/cloud-edge-architecture-animation";
 import { SpotlightCard } from "@/components/visuals/spotlight-card";
+import { TextDecrypt } from "@/components/animations/text-decrypt";
+import { BlurReveal } from "@/components/animations/blur-reveal";
+import { ImageCurtainReveal, ModernImageSheen, FloatingElement } from "@/components/animations/image-reveal";
+import { TiltCard } from "@/components/animations/tilt-card";
 
 export const metadata: Metadata = {
   title: "VMOVEXA | Cloud-to-Edge Mobility Intelligence Platform",
@@ -40,76 +55,220 @@ export const metadata: Metadata = {
 };
 
 export default function HomePage() {
-  const capabilities = [
+  // 02 // A VEHICLE CAN BE MORE — 5 Feature Nodes
+  const vehicleNodes = [
     {
-      title: "Cloud Orchestration",
-      desc: "Manage distributed mobility infrastructure through centralized software.",
-      icon: FiCloud,
-      color: "text-cyan-400",
-      badgeBg: "bg-cyan-500/10 border-cyan-500/25 text-cyan-400 shadow-[0_0_20px_rgba(6,182,212,0.18)]",
-      glow: "group-hover:border-cyan-500/40 group-hover:shadow-[0_0_30px_rgba(34,211,238,0.12)]",
-    },
-    {
-      title: "Vehicle Edge Computing",
-      desc: "Bring computing closer to the physical environment where mobility happens.",
-      icon: FiCpu,
-      color: "text-indigo-400",
-      badgeBg: "bg-indigo-500/10 border-indigo-500/25 text-indigo-400 shadow-[0_0_20px_rgba(99,102,241,0.18)]",
-      glow: "group-hover:border-indigo-500/40 group-hover:shadow-[0_0_30px_rgba(99,102,241,0.12)]",
-    },
-    {
-      title: "Location Intelligence",
-      desc: "Turn geographic position and movement into programmable digital context.",
-      icon: FiMapPin,
-      color: "text-purple-400",
-      badgeBg: "bg-purple-500/10 border-purple-500/25 text-purple-400 shadow-[0_0_20px_rgba(168,85,247,0.18)]",
-      glow: "group-hover:border-purple-500/40 group-hover:shadow-[0_0_30px_rgba(168,85,247,0.12)]",
-    },
-    {
-      title: "Multi-Screen Infrastructure",
-      desc: "Coordinate multiple digital surfaces within a connected vehicle.",
-      icon: FiMonitor,
-      color: "text-sky-400",
-      badgeBg: "bg-sky-500/10 border-sky-500/25 text-sky-400 shadow-[0_0_20px_rgba(56,189,248,0.18)]",
-      glow: "group-hover:border-sky-400/40 group-hover:shadow-[0_0_30px_rgba(103,232,249,0.12)]",
-    },
-    {
-      title: "Fleet Intelligence",
-      desc: "Create centralized visibility across vehicles, devices and connected infrastructure.",
+      title: "Mobility Platform",
+      desc: "Software-defined passenger and fleet management coordinating vehicle telemetry and route status.",
       icon: RiCarLine,
-      color: "text-blue-400",
-      badgeBg: "bg-blue-500/10 border-blue-500/25 text-blue-400 shadow-[0_0_20px_rgba(59,130,246,0.18)]",
-      glow: "group-hover:border-blue-500/40 group-hover:shadow-[0_0_30px_rgba(96,165,250,0.12)]",
+      color: "text-cyan-400",
+      badgeBg: "bg-cyan-500/10 border-cyan-500/25 shadow-[0_0_20px_rgba(6,182,212,0.2)]",
     },
     {
-      title: "Telemetry",
-      desc: "Capture and communicate operational states across the mobility network.",
-      icon: FiRadio,
+      title: "Digital Media Platform",
+      desc: "High-resolution exterior and interior displays transformed into programmable, context-aware digital media.",
+      icon: FiMonitor,
+      color: "text-indigo-400",
+      badgeBg: "bg-indigo-500/10 border-indigo-500/25 shadow-[0_0_20px_rgba(99,102,241,0.2)]",
+    },
+    {
+      title: "IoT Edge Node",
+      desc: "Autonomous local computing unit processing onboard sensor fusion, GPS telemetry, and safety-critical logic.",
+      icon: FiCpu,
+      color: "text-purple-400",
+      badgeBg: "bg-purple-500/10 border-purple-500/25 shadow-[0_0_20px_rgba(168,85,247,0.2)]",
+    },
+    {
+      title: "Data Generation",
+      desc: "Continuous spatial telemetry, dwell-time analytics, environmental parameters, and proof-of-play feeds.",
+      icon: FiActivity,
       color: "text-emerald-400",
-      badgeBg: "bg-emerald-500/10 border-emerald-500/25 text-emerald-400 shadow-[0_0_20px_rgba(16,185,129,0.18)]",
-      glow: "group-hover:border-emerald-500/40 group-hover:shadow-[0_0_30px_rgba(52,211,153,0.12)]",
+      badgeBg: "bg-emerald-500/10 border-emerald-500/25 shadow-[0_0_20px_rgba(16,185,129,0.2)]",
     },
     {
-      title: "Digital Media",
-      desc: "Transform vehicle displays into remotely managed digital media infrastructure.",
+      title: "Commercial Opportunities",
+      desc: "Monetize vehicle surfaces through verified DOOH campaigns, civic sponsorships, and contextual activations.",
       icon: FiZap,
       color: "text-amber-400",
-      badgeBg: "bg-amber-500/10 border-amber-500/25 text-amber-400 shadow-[0_0_20px_rgba(245,158,11,0.18)]",
-      glow: "group-hover:border-amber-500/40 group-hover:shadow-[0_0_30px_rgba(251,191,36,0.12)]",
+      badgeBg: "bg-amber-500/10 border-amber-500/25 shadow-[0_0_20px_rgba(245,158,11,0.2)]",
+    },
+  ];
+
+  // 03 // 4-Tier Architecture Layers
+  const architectureLayers = [
+    {
+      step: "01",
+      layer: "CLOUD",
+      sub: "Centralized Orchestration",
+      items: ["Fleet management", "Configuration & policies", "Predictive routing", "Digital media campaigns"],
+      color: "border-cyan-500/30",
+      badgeColor: "text-cyan-400 bg-cyan-950/40 border-cyan-500/30",
+      glow: "hover:border-cyan-400/50 hover:shadow-[0_0_30px_rgba(34,211,238,0.12)]",
+      icon: FiCloud,
     },
     {
-      title: "Offline Resilience",
-      desc: "Maintain supported local operations during temporary connectivity interruptions.",
+      step: "02",
+      layer: "EDGE",
+      sub: "Local Execution",
+      items: ["VMOVEXA CORE runtime", "Low-latency edge execution", "Dynamic geofencing", "Resilient offline caching"],
+      color: "border-indigo-500/30",
+      badgeColor: "text-indigo-400 bg-indigo-950/40 border-indigo-500/30",
+      glow: "hover:border-indigo-400/50 hover:shadow-[0_0_30px_rgba(99,102,241,0.12)]",
+      icon: FiCpu,
+    },
+    {
+      step: "03",
+      layer: "VEHICLE",
+      sub: "Physical Hardware",
+      items: ["Exterior LED arrays", "Interior passenger displays", "CAN-bus & GPS antennas", "Onboard compute units"],
+      color: "border-purple-500/30",
+      badgeColor: "text-purple-400 bg-purple-950/40 border-purple-500/30",
+      glow: "hover:border-purple-400/50 hover:shadow-[0_0_30px_rgba(168,85,247,0.12)]",
+      icon: RiCarLine,
+    },
+    {
+      step: "04",
+      layer: "DATA",
+      sub: "Operational Intelligence",
+      items: ["Cryptographic proof-of-play", "Vehicle state telemetry", "Spatial dwell analytics", "Hardware health diagnostics"],
+      color: "border-emerald-500/30",
+      badgeColor: "text-emerald-400 bg-emerald-950/40 border-emerald-500/30",
+      glow: "hover:border-emerald-400/50 hover:shadow-[0_0_30px_rgba(16,185,129,0.12)]",
+      icon: FiActivity,
+    },
+  ];
+
+  // 04 // In-Vehicle Edge Compute Pillars
+  const edgePillars = [
+    {
+      title: "VMOVEXA CORE Runtime",
+      desc: "Industrial-grade onboard software daemon running directly on vehicle hardware, interfacing directly with vehicle power and CAN-bus telemetry.",
+      icon: FiCpu,
+      color: "text-cyan-400",
+      badgeBg: "bg-cyan-500/10 border-cyan-500/25 shadow-[0_0_20px_rgba(6,182,212,0.18)]",
+    },
+    {
+      title: "Low-Latency Edge Execution",
+      desc: "Architecture designed for low-latency edge computing. Local logic evaluates geofences, speed thresholds, and passenger safety messages in real time.",
+      icon: FiZap,
+      color: "text-indigo-400",
+      badgeBg: "bg-indigo-500/10 border-indigo-500/25 shadow-[0_0_20px_rgba(99,102,241,0.18)]",
+    },
+    {
+      title: "Autonomous Offline Resilience",
+      desc: "100% operation through cellular dead zones, underground tunnels, and remote corridors via verified onboard encrypted caches.",
       icon: FiShield,
-      color: "text-rose-400",
-      badgeBg: "bg-rose-500/10 border-rose-500/25 text-rose-400 shadow-[0_0_20px_rgba(244,63,94,0.18)]",
-      glow: "group-hover:border-rose-500/40 group-hover:shadow-[0_0_30px_rgba(244,114,182,0.12)]",
+      color: "text-purple-400",
+      badgeBg: "bg-purple-500/10 border-purple-500/25 shadow-[0_0_20px_rgba(168,85,247,0.18)]",
+    },
+    {
+      title: "Multi-Screen Hardware Bus",
+      desc: "Synchronized dual-zone control powering exterior rooftop LED displays for pedestrians and interior passenger information monitors.",
+      icon: FiMonitor,
+      color: "text-emerald-400",
+      badgeBg: "bg-emerald-500/10 border-emerald-500/25 shadow-[0_0_20px_rgba(16,185,129,0.18)]",
+    },
+  ];
+
+  // 05 // MOVEMENT CREATES CONTEXT — Spatial Zones
+  const spatialCorridors = [
+    {
+      title: "Airport & Transit Corridors",
+      subtitle: "Arrivals, Departures & Ground Transit",
+      desc: "Context triggers update dynamically as vehicles approach terminals—showing flight departures, baggage carousels, and express transfers.",
+      icon: RiFlightTakeoffLine,
+      color: "text-cyan-400",
+      badge: "Air Transit Context",
+      tag: "ZONE: AIRPORT TERMINAL 3",
+    },
+    {
+      title: "Commercial & Shopping Corridors",
+      subtitle: "High-Intent Retail & Urban Districts",
+      desc: "Geofenced corridors trigger time-of-day promotions, store openings, and localized brand activations based on foot-traffic density.",
+      icon: RiBuildingLine,
+      color: "text-indigo-400",
+      badge: "Commercial Corridor",
+      tag: "ZONE: METRO CENTRAL COMMERCE",
+    },
+    {
+      title: "Metropolitan Transit Routes",
+      subtitle: "Municipal Commuter Arteries",
+      desc: "Continuous passenger updates with next-station arrival estimates, multimodal connection alerts, and civic service notices.",
+      icon: RiBusLine,
+      color: "text-purple-400",
+      badge: "Transit Route",
+      tag: "CORRIDOR: ROUTE 404 EXPRESS",
+    },
+    {
+      title: "Civic & Event Arenas",
+      subtitle: "Stadiums, Conventions & City Hubs",
+      desc: "Rapid-deployment geofences adapt to game schedules, concert exits, crowd egress management, and official municipal advisories.",
+      icon: FiCrosshair,
+      color: "text-amber-400",
+      badge: "Dynamic Event Zone",
+      tag: "ZONE: NATIONAL ARENA COMPLEX",
+    },
+  ];
+
+  // 07 // ONE PLATFORM. MANY MOBILITY ENVIRONMENTS.
+  const mobilityEnvironments = [
+    {
+      title: "Public Transit & City Buses",
+      role: "High-Capacity Urban Transport",
+      desc: "Connect municipal bus networks, tram corridors, and BRT systems with integrated passenger arrival systems and contextual exterior media.",
+      icon: RiBusLine,
+      color: "text-cyan-400",
+      badgeBg: "bg-cyan-500/10 border-cyan-500/25",
+      image: "/images/industry-public-transport.png",
+      tag: "Metropolitan Fleets",
+    },
+    {
+      title: "Airport Mobility & Shuttles",
+      role: "Inter-Terminal & Airside Fleets",
+      desc: "Tarmac passenger shuttles, parking express buses, and airport-to-hotel fleets synchronized with real-time flight manifests.",
+      icon: RiFlightTakeoffLine,
+      color: "text-indigo-400",
+      badgeBg: "bg-indigo-500/10 border-indigo-500/25",
+      image: "/images/industry-airport-mobility.png",
+      tag: "Airport Authorities",
+    },
+    {
+      title: "Corporate & Employee Transit",
+      role: "Enterprise & Campus Fleets",
+      desc: "Private corporate campus shuttles, executive transit, and employee shuttle networks with verified tracking and secure passenger alerts.",
+      icon: RiBuildingLine,
+      color: "text-purple-400",
+      badgeBg: "bg-purple-500/10 border-purple-500/25",
+      image: "/images/industry-employee-transport.png",
+      tag: "Enterprise Mobility",
+    },
+    {
+      title: "Smart Cities & Municipal Fleets",
+      role: "Civic Infrastructure & Public Works",
+      desc: "Municipal utility vehicles, emergency services, and city fleets acting as mobile sensor networks capturing urban environmental data.",
+      icon: FiMapPin,
+      color: "text-emerald-400",
+      badgeBg: "bg-emerald-500/10 border-emerald-500/25",
+      image: "/images/solution-smart-cities.png",
+      tag: "Civic Operations",
+    },
+    {
+      title: "Commercial Fleets & Rideshare",
+      role: "Taxis, Shuttles & On-Demand",
+      desc: "Equip taxi fleets and rideshare operators with smart rooftop digital screens and passenger displays for high-yield DOOH monetization.",
+      icon: RiTaxiWifiLine,
+      color: "text-amber-400",
+      badgeBg: "bg-amber-500/10 border-amber-500/25",
+      image: "/images/solution-fleet-operators.png",
+      tag: "Commercial Operators",
     },
   ];
 
   return (
-    <main className="min-h-screen bg-black text-white">
-      {/* 01 — HERO (Mockup Screen 01: HOME with Pure Black Poster Background) */}
+    <main className="min-h-screen bg-black text-white selection:bg-cyan-500/20 selection:text-cyan-300">
+      {/* ========================================================================= */}
+      {/* 01 // INTELLIGENCE IN MOTION. (Hero Section)                             */}
+      {/* ========================================================================= */}
       <section className="relative min-h-[92vh] lg:min-h-screen flex flex-col justify-between pt-36 pb-14 overflow-hidden border-b border-white/[0.08] bg-black">
         {/* Background Hero Poster Image */}
         <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none bg-black">
@@ -121,7 +280,7 @@ export default function HomePage() {
             sizes="100vw"
             className="object-cover object-[75%_center] md:object-center brightness-[0.75] contrast-[1.1] scale-[1.02]"
           />
-          {/* Pure Black cinematic scrims for flawless text contrast without gradient wash */}
+          {/* Pure Black cinematic scrims for flawless text contrast */}
           <div className="absolute inset-0 bg-gradient-to-r from-black via-black/85 to-transparent/40 md:from-black/95 md:via-black/75 md:to-transparent/20" />
           <div className="absolute inset-x-0 top-0 h-48 bg-gradient-to-b from-black via-black/75 to-transparent" />
           <div className="absolute inset-x-0 bottom-0 h-56 bg-gradient-to-t from-black via-black/90 to-transparent" />
@@ -129,42 +288,42 @@ export default function HomePage() {
 
         <div className="container relative z-10 max-w-7xl mx-auto px-6 my-auto">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
-            {/* Left Vertical Index (01 02 03 04) */}
-            <div className="hidden lg:flex lg:col-span-1 flex-col gap-6 pt-16 font-mono text-xs text-white/30 tracking-widest">
-              <span className="text-cyan-400 font-semibold">01</span>
-              <span>02</span>
-              <span>03</span>
-              <span>04</span>
+            {/* Left Vertical Index (01 to 08) */}
+            <div className="hidden lg:flex lg:col-span-1 flex-col gap-4 pt-16 font-mono text-[11px] text-white/30 tracking-widest select-none">
+              <span className="text-cyan-400 font-bold border-l-2 border-cyan-400 pl-2">01</span>
+              <span className="pl-2.5">02</span>
+              <span className="pl-2.5">03</span>
+              <span className="pl-2.5">04</span>
+              <span className="pl-2.5">05</span>
+              <span className="pl-2.5">06</span>
+              <span className="pl-2.5">07</span>
+              <span className="pl-2.5">08</span>
             </div>
 
             {/* Main Header Copy */}
             <div className="lg:col-span-9">
-              {/* Status Tracker Badge */}
+              {/* Number Badge */}
               <EditorialLine delay={0.1}>
                 <div className="inline-flex items-center gap-2.5 px-4 py-2 rounded-full bg-white/[0.06] border border-white/15 backdrop-blur-md mb-8 shadow-[0_0_20px_rgba(255,255,255,0.08)]">
-                  <span className="relative flex h-2 w-2">
-                    <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-white opacity-75" />
-                    <span className="relative inline-flex rounded-full h-2 w-2 bg-white" />
-                  </span>
-                  <span className="font-mono text-xs tracking-wider text-white/90">
-                    The Intelligence Layer for Mobility
-                  </span>
+                  <span className="font-mono text-xs font-bold text-cyan-400">01</span>
+                  <span className="text-white/30 text-xs">/</span>
+                  <TextDecrypt text="INTELLIGENCE IN MOTION" delay={0.2} className="text-white/90 text-xs" />
                 </div>
               </EditorialLine>
 
-              {/* Headline */}
+              {/* Headline: Space Grotesk — 64–88px — Medium */}
               <EditorialLine delay={0.15}>
-                <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight leading-[1.1] max-w-4xl mb-6 drop-shadow-lg text-white">
-                  Intelligence in <span className="gradient-text">Motion.</span>
+                <h1 className="text-4xl sm:text-6xl md:text-7xl lg:text-[76px] xl:text-[88px] font-medium font-heading tracking-tight leading-[1.04] max-w-5xl mb-6 text-white uppercase drop-shadow-lg">
+                  INTELLIGENCE IN <span className="gradient-text">MOTION.</span>
                 </h1>
               </EditorialLine>
 
-              {/* Subtitle */}
-              <EditorialLine delay={0.3}>
-                <p className="text-base sm:text-lg text-white/80 font-normal leading-relaxed max-w-2xl mb-8 drop-shadow-md">
+              {/* Subtitle: IBM Plex Sans — 20px — Regular */}
+              <BlurReveal delay={0.3}>
+                <p className="text-lg sm:text-[20px] font-sans text-white/80 font-normal leading-relaxed max-w-2xl mb-8 drop-shadow-md">
                   A cloud-to-edge mobility intelligence platform connecting vehicles, people, places and possibilities.
                 </p>
-              </EditorialLine>
+              </BlurReveal>
 
               {/* CTAs */}
               <EditorialLine delay={0.4}>
@@ -204,157 +363,175 @@ export default function HomePage() {
 
             {/* Right Vertical Floating Tags */}
             <div className="hidden lg:flex lg:col-span-2 flex-col items-end gap-5 pt-16 font-mono text-[11px] text-white/50 tracking-widest">
-              <span className="hover:text-white transition-colors cursor-default">Cities</span>
-              <span className="hover:text-white transition-colors cursor-default">Fleets</span>
-              <span className="hover:text-white transition-colors cursor-default">People</span>
-              <span className="hover:text-white transition-colors cursor-default">Possibilities</span>
+              <FloatingElement y={6} duration={3.6}><span className="hover:text-white transition-colors cursor-default">Cities</span></FloatingElement>
+              <FloatingElement y={8} duration={4.4}><span className="hover:text-white transition-colors cursor-default">Fleets</span></FloatingElement>
+              <FloatingElement y={6} duration={3.9}><span className="hover:text-white transition-colors cursor-default">People</span></FloatingElement>
+              <FloatingElement y={7} duration={4.8}><span className="hover:text-white transition-colors cursor-default">Possibilities</span></FloatingElement>
             </div>
           </div>
         </div>
 
-        {/* Bottom Hero HUD Telemetry Spec Bar */}
+        {/* Bottom Hero Architecture Pipeline: Cloud → Edge → Vehicle → Data */}
         <div className="container relative z-10 max-w-7xl mx-auto px-6 pt-8 mt-12 border-t border-white/10">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6 font-mono">
-            <div className="flex items-center gap-3">
-              <span className="w-2 h-2 rounded-full bg-cyan-400 animate-pulse" />
-              <div>
-                <div className="text-[10px] uppercase tracking-widest text-white/40">Platform Status</div>
-                <div className="text-xs font-semibold text-white/90">Autonomous Level 4 Ready</div>
+            <div className="flex items-center justify-between group">
+              <div className="flex items-center gap-3">
+                <span className="w-2 h-2 rounded-full bg-cyan-400 animate-pulse" />
+                <div>
+                  <div className="text-[10px] uppercase tracking-widest text-cyan-400/70">Stage 01</div>
+                  <div className="text-sm font-semibold text-white tracking-wide flex items-center gap-1.5 group-hover:text-cyan-300 transition-colors">
+                    <span>Cloud</span>
+                    <span className="text-cyan-400 font-light">→</span>
+                  </div>
+                  <div className="text-[10px] text-white/50 font-normal">Control &amp; Orchestration</div>
+                </div>
               </div>
             </div>
-            <div className="flex items-center gap-3">
-              <span className="w-2 h-2 rounded-full bg-indigo-400" />
-              <div>
-                <div className="text-[10px] uppercase tracking-widest text-white/40">Edge Processing</div>
-                <div className="text-xs font-semibold text-white/90">500+ TOPS Dual AI Compute</div>
+
+            <div className="flex items-center justify-between group">
+              <div className="flex items-center gap-3">
+                <span className="w-2 h-2 rounded-full bg-indigo-400" />
+                <div>
+                  <div className="text-[10px] uppercase tracking-widest text-indigo-400/70">Stage 02</div>
+                  <div className="text-sm font-semibold text-white tracking-wide flex items-center gap-1.5 group-hover:text-indigo-300 transition-colors">
+                    <span>Edge</span>
+                    <span className="text-indigo-400 font-light">→</span>
+                  </div>
+                  <div className="text-[10px] text-white/50 font-normal">VMOVEXA CORE Compute</div>
+                </div>
               </div>
             </div>
-            <div className="flex items-center gap-3">
-              <span className="w-2 h-2 rounded-full bg-emerald-400" />
-              <div>
-                <div className="text-[10px] uppercase tracking-widest text-white/40">Network Mesh</div>
-                <div className="text-xs font-semibold text-white/90">5G + V2X Low-Latency &lt;2ms</div>
+
+            <div className="flex items-center justify-between group">
+              <div className="flex items-center gap-3">
+                <span className="w-2 h-2 rounded-full bg-purple-400" />
+                <div>
+                  <div className="text-[10px] uppercase tracking-widest text-purple-400/70">Stage 03</div>
+                  <div className="text-sm font-semibold text-white tracking-wide flex items-center gap-1.5 group-hover:text-purple-300 transition-colors">
+                    <span>Vehicle</span>
+                    <span className="text-purple-400 font-light">→</span>
+                  </div>
+                  <div className="text-[10px] text-white/50 font-normal">Moving Transit Fleet</div>
+                </div>
               </div>
             </div>
-            <div className="flex items-center gap-3">
-              <span className="w-2 h-2 rounded-full bg-purple-400" />
-              <div>
-                <div className="text-[10px] uppercase tracking-widest text-white/40">Powertrain</div>
-                <div className="text-xs font-semibold text-white/90">800V Ultra-Fast Architecture</div>
+
+            <div className="flex items-center justify-between group">
+              <div className="flex items-center gap-3">
+                <span className="w-2 h-2 rounded-full bg-emerald-400" />
+                <div>
+                  <div className="text-[10px] uppercase tracking-widest text-emerald-400/70">Stage 04</div>
+                  <div className="text-sm font-semibold text-white tracking-wide flex items-center gap-1.5 group-hover:text-emerald-300 transition-colors">
+                    <span>Data</span>
+                  </div>
+                  <div className="text-[10px] text-white/50 font-normal">Telemetry &amp; Insights</div>
+                </div>
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* BEYOND TRANSPORTATION: A VEHICLE CAN BE MORE (Mockup Screen 01 Section 2) */}
-      <section className="py-20 border-b border-white/[0.08] relative">
-        <div className="container max-w-7xl mx-auto px-6">
-          <div className="text-center max-w-3xl mx-auto mb-12">
+      {/* ========================================================================= */}
+      {/* 02 // A VEHICLE CAN BE MORE.                                             */}
+      {/* ========================================================================= */}
+      <section className="py-24 border-b border-white/[0.08] relative overflow-hidden bg-black">
+        <div className="container max-w-7xl mx-auto px-6 relative z-10">
+          <div className="text-center max-w-3xl mx-auto mb-16">
             <EditorialLine>
-              <div className="font-mono text-xs tracking-widest text-cyan-400/80 mb-3">
-                Beyond Transportation
+              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/[0.05] border border-white/10 text-white/80 font-mono text-xs tracking-wider mb-4">
+                <span className="text-cyan-400 font-bold">02</span>
+                <span className="text-white/30">/</span>
+                <span>BEYOND TRANSPORTATION</span>
               </div>
             </EditorialLine>
             <EditorialLine delay={0.1}>
-              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight text-white leading-tight">
-                A vehicle can be <span className="gradient-text">more.</span>
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight uppercase text-white leading-tight mb-4">
+                A VEHICLE CAN BE <span className="gradient-text">MORE.</span>
               </h2>
+            </EditorialLine>
+            <EditorialLine delay={0.2}>
+              <p className="text-base text-white/70 font-light max-w-2xl mx-auto leading-relaxed">
+                VMOVEXA unlocks latent capability in physical vehicles—transforming moving steel into intelligent, software-defined edge nodes and revenue-generating digital media infrastructure.
+              </p>
             </EditorialLine>
           </div>
 
           {/* 5 Horizontal Feature Nodes Row */}
-          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4 sm:gap-6">
-            {[
-              { title: "Mobility Platform", icon: RiCarLine, color: "text-cyan-400", badgeBg: "bg-cyan-500/10 border-cyan-500/25 shadow-[0_0_20px_rgba(6,182,212,0.2)]" },
-              { title: "Digital Media Platform", icon: FiMonitor, color: "text-indigo-400", badgeBg: "bg-indigo-500/10 border-indigo-500/25 shadow-[0_0_20px_rgba(99,102,241,0.2)]" },
-              { title: "IoT Edge Node", icon: FiCpu, color: "text-purple-400", badgeBg: "bg-purple-500/10 border-purple-500/25 shadow-[0_0_20px_rgba(168,85,247,0.2)]" },
-              { title: "Data Generation", icon: FiActivity, color: "text-emerald-400", badgeBg: "bg-emerald-500/10 border-emerald-500/25 shadow-[0_0_20px_rgba(16,185,129,0.2)]" },
-              { title: "Commercial Opportunities", icon: FiZap, color: "text-amber-400", badgeBg: "bg-amber-500/10 border-amber-500/25 shadow-[0_0_20px_rgba(245,158,11,0.2)]" },
-            ].map((node, i) => {
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4 sm:gap-6">
+            {vehicleNodes.map((node, i) => {
               const NodeIcon = node.icon;
               return (
-                <GsapScrollReveal key={node.title} delay={i * 0.1}>
-                  <div className="p-6 rounded-2xl bg-white/[0.02] border border-white/10 hover:border-white/25 hover:bg-white/[0.05] transition-all duration-300 flex flex-col items-center text-center group cursor-default shadow-lg">
-                    <div className={`p-3.5 rounded-xl border ${node.badgeBg} ${node.color} group-hover:scale-110 transition-all duration-300 mb-4`}>
-                      <NodeIcon size={24} />
+                <GsapScrollReveal key={node.title} delay={i * 0.08}>
+                  <TiltCard maxTilt={6} className="h-full">
+                    <div className="p-6 rounded-2xl bg-white/[0.02] border border-white/10 hover:border-white/25 hover:bg-white/[0.05] transition-all duration-300 flex flex-col justify-between group cursor-default shadow-lg h-full">
+                      <div>
+                        <div className={`w-12 h-12 rounded-xl border ${node.badgeBg} ${node.color} flex items-center justify-center group-hover:scale-110 transition-all duration-300 mb-5`}>
+                          <NodeIcon size={24} />
+                        </div>
+                        <div className="text-base font-bold text-white mb-2 group-hover:text-cyan-300 transition-colors">
+                          {node.title}
+                        </div>
+                        <p className="text-xs text-white/60 leading-relaxed font-light">
+                          {node.desc}
+                        </p>
+                      </div>
                     </div>
-                    <div className="text-sm font-semibold text-white group-hover:text-white/90 transition-colors">
-                      {node.title}
-                    </div>
-                  </div>
+                  </TiltCard>
                 </GsapScrollReveal>
               );
             })}
           </div>
         </div>
       </section>
-      {/* LIVE TELEMETRY TICKER */}
-      <TelemetryTicker />
 
-      {/* 03 — THE PLATFORM (SYSTEM TOPOLOGY) */}
+      {/* ========================================================================= */}
+      {/* 03 // THE CLOUD ORCHESTRATES. THE EDGE EXECUTES.                          */}
+      {/* ========================================================================= */}
       <section className="py-28 border-b border-white/[0.08] relative overflow-hidden bg-black">
         <div className="container max-w-6xl mx-auto px-6 relative z-10">
-          <div className="text-center max-w-3xl mx-auto mb-16">
+          <div className="text-center max-w-4xl mx-auto mb-12">
             <EditorialLine>
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/[0.05] border border-white/10 text-white/80 font-mono text-xs tracking-wider mb-4">
-                System Topology
+              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/[0.05] border border-white/10 text-white/80 font-mono text-xs tracking-wider mb-5">
+                <span className="text-cyan-400 font-bold">03</span>
+                <span className="text-white/30">/</span>
+                <span>ARCHITECTURAL PRINCIPLE</span>
               </div>
             </EditorialLine>
-            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight text-white mb-4">
-              From Cloud to <span className="gradient-text">Moving Edge.</span>
-            </h2>
-            <EditorialLine delay={0.2}>
-              <p className="text-base text-white/70 max-w-2xl mx-auto font-light">
-                VMOVEXA connects centralized cloud infrastructure with computing capability inside the vehicle.
-              </p>
-            </EditorialLine>
+            <CubertoLines
+              as="h2"
+              className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight uppercase leading-[1.08] text-white"
+              delay={0.1}
+              stagger={0.1}
+              lines={[
+                <div key="l1">THE CLOUD <span className="gradient-text">ORCHESTRATES.</span></div>,
+                <div key="l2" className="mt-1 sm:mt-2 text-white/95">THE EDGE <span className="text-cyan-400">EXECUTES.</span></div>,
+              ]}
+            />
           </div>
+
+          {/* Architectural Animation */}
+          <GsapScrollReveal delay={0.2}>
+            <div className="mb-8">
+              <CloudEdgeArchitectureAnimation />
+            </div>
+          </GsapScrollReveal>
+
+          {/* 2-Line Explanation */}
+          <GsapScrollReveal delay={0.25}>
+            <div className="max-w-3xl mx-auto text-center space-y-2 mb-16 px-4">
+              <p className="text-base sm:text-lg text-white/85 font-normal leading-relaxed">
+                Centralized cloud intelligence orchestrates global fleet policies, predictive routing, and media campaigns at massive scale.
+              </p>
+              <p className="text-base sm:text-lg text-white/60 font-light leading-relaxed">
+                Localized in-vehicle edge compute executes low-latency decisions directly in motion—even during total network dropouts.
+              </p>
+            </div>
+          </GsapScrollReveal>
 
           {/* 4 Layers Grid */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
-            {[
-              {
-                step: "01",
-                layer: "CLOUD",
-                sub: "Centralized Orchestration",
-                items: ["Fleet management", "Configuration", "Analytics", "Digital media management"],
-                color: "border-cyan-500/30",
-                badgeColor: "text-cyan-400 bg-cyan-950/40 border-cyan-500/30",
-                glow: "hover:border-cyan-400/50 hover:shadow-[0_0_30px_rgba(34,211,238,0.1)]",
-                icon: FiCloud,
-              },
-              {
-                step: "02",
-                layer: "EDGE",
-                sub: "Local Execution",
-                items: ["Device coordination", "Geofencing", "Telemetry", "Offline operation"],
-                color: "border-indigo-500/30",
-                badgeColor: "text-indigo-400 bg-indigo-950/40 border-indigo-500/30",
-                glow: "hover:border-indigo-400/50 hover:shadow-[0_0_30px_rgba(99,102,241,0.1)]",
-                icon: FiCpu,
-              },
-              {
-                step: "03",
-                layer: "VEHICLE",
-                sub: "Physical Hardware",
-                items: ["Displays", "GPS", "Sensors", "Connectivity & Computing"],
-                color: "border-purple-500/30",
-                badgeColor: "text-purple-400 bg-purple-950/40 border-purple-500/30",
-                glow: "hover:border-purple-400/50 hover:shadow-[0_0_30px_rgba(168,85,247,0.1)]",
-                icon: RiCarLine,
-              },
-              {
-                step: "04",
-                layer: "DATA",
-                sub: "Operational Intelligence",
-                items: ["Mobility information", "Device status", "Media performance", "Telemetry feed"],
-                color: "border-pink-500/30",
-                badgeColor: "text-pink-400 bg-pink-950/40 border-pink-500/30",
-                glow: "hover:border-pink-400/50 hover:shadow-[0_0_30px_rgba(244,114,182,0.1)]",
-                icon: FiActivity,
-              },
-            ].map((col, idx) => {
+            {architectureLayers.map((col, idx) => {
               const ColIcon = col.icon;
               return (
                 <GsapScrollReveal key={col.layer} delay={idx * 0.1}>
@@ -390,9 +567,9 @@ export default function HomePage() {
             })}
           </div>
 
-          {/* Media Space for Cloud-to-Edge Architecture Visual */}
+          {/* 3D Architecture Diagram Visual */}
           <GsapScrollReveal delay={0.3}>
-            <ParallaxElement offset={30}>
+            <ParallaxElement offset={20}>
               <div className="relative group">
                 <MediaSlot
                   type="image"
@@ -408,111 +585,238 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* 03.5 — INTERACTIVE LIVE FLEET CONSOLE & TELEMETRY SIMULATOR */}
+      {/* ========================================================================= */}
+      {/* 04 // THE VEHICLE BECOMES THE EDGE.                                       */}
+      {/* ========================================================================= */}
       <section className="py-28 border-b border-white/[0.08] relative overflow-hidden bg-black">
         <div className="container max-w-6xl mx-auto px-6 relative z-10">
-          <div className="max-w-3xl mb-14">
+          <div className="max-w-3xl mb-16">
             <EditorialLine>
-              <div className="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full bg-white/[0.05] border border-white/15 text-white/80 font-mono text-xs tracking-wider mb-5">
-                <span className="w-1.5 h-1.5 rounded-full bg-white animate-pulse" />
-                Interactive Console
+              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/[0.05] border border-white/10 text-white/80 font-mono text-xs tracking-wider mb-4">
+                <span className="text-cyan-400 font-bold">04</span>
+                <span className="text-white/30">/</span>
+                <span>IN-VEHICLE COMPUTING</span>
               </div>
             </EditorialLine>
-            <EditorialLine delay={0.1}>
-              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight text-white leading-[1.15] mb-4">
-                Experience the <span className="gradient-text">connected moving edge.</span>
-              </h2>
-            </EditorialLine>
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight uppercase text-white leading-tight mb-4">
+              THE VEHICLE BECOMES <span className="gradient-text">THE EDGE.</span>
+            </h2>
             <EditorialLine delay={0.2}>
-              <p className="text-sm sm:text-base text-white/70 leading-relaxed font-normal max-w-2xl">
-                Switch connected vehicle presets, trigger real-time geofenced DOOH ad swaps, and simulate zero-loss edge caching during network dropouts.
+              <p className="text-base text-white/70 font-light leading-relaxed">
+                Rather than treating vehicles as passive mobile endpoints, VMOVEXA embeds an autonomous industrial compute engine directly into the vehicle architecture—fusing CAN-bus telemetry, screen buses, and localized geofencing logic into a single resilient runtime.
               </p>
             </EditorialLine>
           </div>
 
-          <GsapScrollReveal delay={0.25}>
-            <div className="rounded-3xl border border-white/10 bg-zinc-950/70 p-1.5 shadow-[0_20px_70px_rgba(0,0,0,0.8)]">
-              <FleetConsoleSimulator />
+          {/* Grid: 4 Pillars & Hardware Visual */}
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+            {/* Left 4 Edge Pillars */}
+            <div className="lg:col-span-6 grid grid-cols-1 sm:grid-cols-2 gap-4">
+              {edgePillars.map((pillar, idx) => {
+                const PillarIcon = pillar.icon;
+                return (
+                  <GsapScrollReveal key={pillar.title} delay={idx * 0.08}>
+                    <SpotlightCard className="h-full p-5 backdrop-blur-sm group cursor-default bg-white/[0.02] border-white/10">
+                      <div className={`w-10 h-10 rounded-xl border ${pillar.badgeBg} flex items-center justify-center mb-3 ${pillar.color} group-hover:scale-110 transition-all duration-300`}>
+                        <PillarIcon size={20} />
+                      </div>
+                      <h3 className="text-sm font-bold text-white mb-2 group-hover:text-cyan-200 transition-colors">
+                        {pillar.title}
+                      </h3>
+                      <p className="text-xs text-white/60 leading-relaxed font-light">
+                        {pillar.desc}
+                      </p>
+                    </SpotlightCard>
+                  </GsapScrollReveal>
+                );
+              })}
+            </div>
+
+            {/* Right Hardware X-Ray Visual */}
+            <div className="lg:col-span-6">
+              <GsapScrollReveal delay={0.2}>
+                <div className="relative group rounded-2xl overflow-hidden border border-white/15 bg-white/[0.02]">
+                  <MediaSlot
+                    type="image"
+                    src="/images/vmovexa-technology-bus-xray.PNG"
+                    alt="VMOVEXA In-Vehicle Edge Compute Architecture"
+                    badge="VMOVEXA CORE Hardware Runtime"
+                    caption="In-Vehicle Sensor Bus • CAN-Bus Telemetry • Display Processor Array"
+                    aspectRatio="16/9"
+                    scanline={true}
+                  />
+                  {/* Onboard Hardware Telemetry Ticker Strip */}
+                  <div className="p-4 bg-black/80 backdrop-blur-md border-t border-white/10 grid grid-cols-2 sm:grid-cols-4 gap-3 font-mono text-[10px]">
+                    <div>
+                      <div className="text-white/40 uppercase">EDGE DAEMON</div>
+                      <div className="text-cyan-400 font-semibold flex items-center gap-1.5 mt-0.5">
+                        <span className="w-1.5 h-1.5 rounded-full bg-cyan-400 animate-pulse" />
+                        <TextDecrypt text="ACTIVE v2.8" delay={0.2} />
+                      </div>
+                    </div>
+                    <div>
+                      <div className="text-white/40 uppercase">EDGE LATENCY</div>
+                      <div className="text-emerald-400 font-semibold mt-0.5">
+                        <TextDecrypt text="LOW-LATENCY EDGE" delay={0.3} />
+                      </div>
+                    </div>
+                    <div>
+                      <div className="text-white/40 uppercase">OFFLINE CACHE</div>
+                      <div className="text-indigo-300 font-semibold mt-0.5">
+                        <TextDecrypt text="100% HEALTHY" delay={0.4} />
+                      </div>
+                    </div>
+                    <div>
+                      <div className="text-white/40 uppercase">SCREEN BUS</div>
+                      <div className="text-purple-300 font-semibold mt-0.5">
+                        <TextDecrypt text="4 DISPLAYS SYNCED" delay={0.5} />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </GsapScrollReveal>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ========================================================================= */}
+      {/* 05 // MOVEMENT CREATES CONTEXT.                                           */}
+      {/* ========================================================================= */}
+      <section className="py-28 border-b border-white/[0.08] relative overflow-hidden bg-black">
+        <div className="container max-w-6xl mx-auto px-6 relative z-10">
+          <div className="text-center max-w-3xl mx-auto mb-16">
+            <EditorialLine>
+              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/[0.05] border border-white/10 text-white/80 font-mono text-xs tracking-wider mb-4">
+                <span className="text-cyan-400 font-bold">05</span>
+                <span className="text-white/30">/</span>
+                <span>SPATIAL INTELLIGENCE</span>
+              </div>
+            </EditorialLine>
+            <EditorialLine delay={0.1}>
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight uppercase text-white leading-tight mb-4">
+                MOVEMENT CREATES <span className="gradient-text">CONTEXT.</span>
+              </h2>
+            </EditorialLine>
+            <EditorialLine delay={0.2}>
+              <p className="text-base text-white/70 font-light leading-relaxed max-w-2xl mx-auto">
+                Unlike stationary billboards or fixed digital screens, a moving vehicle navigates living urban corridors. Speed, heading, time-of-day, and hyper-local geography merge to generate real-time programmatic context.
+              </p>
+            </EditorialLine>
+          </div>
+
+          {/* Spatial Corridors 4-Column Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+            {spatialCorridors.map((corridor, idx) => {
+              const CorIcon = corridor.icon;
+              return (
+                <GsapScrollReveal key={corridor.title} delay={idx * 0.1}>
+                  <div className="p-6 rounded-2xl bg-white/[0.02] border border-white/10 hover:border-white/25 hover:bg-white/[0.04] transition-all duration-300 flex flex-col justify-between group h-full shadow-lg">
+                    <div>
+                      <div className="flex items-center justify-between mb-4">
+                        <div className={`p-3 rounded-xl border border-white/15 bg-white/5 ${corridor.color} group-hover:scale-110 transition-transform`}>
+                          <CorIcon size={22} />
+                        </div>
+                        <span className="font-mono text-[10px] text-white/50 px-2 py-0.5 rounded-full border border-white/10 bg-white/[0.02]">
+                          {corridor.badge}
+                        </span>
+                      </div>
+                      <h3 className="text-base font-bold text-white mb-1 group-hover:text-cyan-300 transition-colors">
+                        {corridor.title}
+                      </h3>
+                      <div className="text-xs font-mono text-cyan-400/80 mb-3">{corridor.subtitle}</div>
+                      <p className="text-xs text-white/65 leading-relaxed font-light">
+                        {corridor.desc}
+                      </p>
+                    </div>
+                    <div className="mt-5 pt-3 border-t border-white/10 font-mono text-[10px] text-white/40 tracking-wider">
+                      {corridor.tag}
+                    </div>
+                  </div>
+                </GsapScrollReveal>
+              );
+            })}
+          </div>
+
+          {/* Interactive Spatial Trigger HUD Terminal */}
+          <GsapScrollReveal delay={0.3}>
+            <div className="p-6 rounded-2xl bg-white/[0.02] border border-white/15 backdrop-blur-md shadow-2xl relative overflow-hidden">
+              <div className="absolute top-0 right-0 p-4 font-mono text-[10px] text-cyan-400/60 uppercase tracking-widest hidden sm:block">
+                LIVE SPATIAL LOGIC ENGINE
+              </div>
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-6 font-mono text-xs">
+                <div className="space-y-2">
+                  <div className="text-white/40 text-[10px] uppercase tracking-wider flex items-center gap-2">
+                    <FiMapPin className="text-cyan-400" /> ACTIVE GEOFENCE COORDINATE
+                  </div>
+                  <div className="text-white font-semibold text-sm">
+                    <TextDecrypt text="28.5562° N, 77.1000° E" delay={0.2} />
+                  </div>
+                  <div className="text-white/50 text-[11px]">Polygon ID: DEL-T3-AIRPORT-EXPRESS</div>
+                </div>
+
+                <div className="space-y-2">
+                  <div className="text-white/40 text-[10px] uppercase tracking-wider flex items-center gap-2">
+                    <FiNavigation className="text-indigo-400" /> DYNAMIC MOTION TELEMETRY
+                  </div>
+                  <div className="text-white font-semibold text-sm">
+                    <TextDecrypt text="48 KM/H • HEADING 082° ENE" delay={0.3} />
+                  </div>
+                  <div className="text-white/50 text-[11px]">Dwell Prediction: 4m 30s remaining</div>
+                </div>
+
+                <div className="space-y-2">
+                  <div className="text-white/40 text-[10px] uppercase tracking-wider flex items-center gap-2">
+                    <FiZap className="text-amber-400" /> CONTEXTUAL SCREEN PAYLOAD
+                  </div>
+                  <div className="text-emerald-400 font-semibold text-sm">
+                    <TextDecrypt text="AIRPORT-DEPARTURE-FEED-v4" delay={0.4} />
+                  </div>
+                  <div className="text-white/50 text-[11px]">Verified Proof-of-Play Signed at Edge</div>
+                </div>
+              </div>
             </div>
           </GsapScrollReveal>
         </div>
       </section>
 
-      {/* 04 — PLATFORM CAPABILITIES */}
-      <section className="py-28 border-b border-white/[0.08]">
-        <div className="container max-w-6xl mx-auto px-6">
-          <div className="max-w-2xl mb-16">
-            <EditorialLine>
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/[0.05] border border-white/10 text-white/80 font-mono text-xs tracking-wider mb-4">
-                Core Capabilities
-              </div>
-            </EditorialLine>
-            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight text-white leading-tight mb-4">
-              One architecture. <span className="gradient-text">Multiple intelligence layers.</span>
-            </h2>
-            <EditorialLine delay={0.2}>
-              <p className="text-sm text-white/55 font-mono leading-relaxed">
-                Separation between cloud control and vehicle-side execution, with CORE responsible for local network, media, campaign, geo, GPS, telemetry, security, OTA and offline-cache functions.
-              </p>
-            </EditorialLine>
-          </div>
-
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
-            {capabilities.map((cap, idx) => {
-              const IconComp = cap.icon;
-              return (
-                <GsapScrollReveal key={cap.title} delay={idx * 0.04}>
-                  <MagneticElement strength={0.1} className="w-full h-full block">
-                    <SpotlightCard className="h-full p-6 backdrop-blur-sm group cursor-default">
-                      <div className={`w-11 h-11 rounded-xl border ${cap.badgeBg} flex items-center justify-center mb-4 ${cap.color} group-hover:scale-110 transition-all duration-300`}>
-                        <IconComp size={20} />
-                      </div>
-                      <h3 className="text-base font-semibold text-white mb-2 group-hover:text-cyan-200 transition-colors">
-                        {cap.title}
-                      </h3>
-                      <p className="text-xs text-white/60 leading-relaxed font-normal">
-                        {cap.desc}
-                      </p>
-                    </SpotlightCard>
-                  </MagneticElement>
-                </GsapScrollReveal>
-              );
-            })}
-          </div>
-        </div>
-      </section>
-
-      {/* 05 — THE DIFFERENCE (NOT DIGITAL SIGNAGE) */}
-      <section className="py-28 border-b border-white/[0.08] relative">
-        <div className="container max-w-6xl mx-auto px-6">
+      {/* ========================================================================= */}
+      {/* 06 // MEDIA THAT MOVES.                                                   */}
+      {/* ========================================================================= */}
+      <section className="py-28 border-b border-white/[0.08] relative overflow-hidden bg-black">
+        <div className="container max-w-6xl mx-auto px-6 relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+            {/* Left Column: Distinction & Matrix */}
             <div className="lg:col-span-6 space-y-6">
               <EditorialLine>
-                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/[0.05] border border-white/10 text-white/80 font-mono text-xs tracking-wider">
-                  The Distinction
+                <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/[0.05] border border-white/10 text-white/80 font-mono text-xs tracking-wider">
+                  <span className="text-cyan-400 font-bold">06</span>
+                  <span className="text-white/30">/</span>
+                  <span>DYNAMIC TRANSIT MEDIA</span>
                 </div>
               </EditorialLine>
 
-              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight text-white leading-tight">
-                Not digital <span className="gradient-text">signage.</span>
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight uppercase text-white leading-tight">
+                MEDIA THAT <span className="gradient-text">MOVES.</span>
               </h2>
 
               <EditorialLine delay={0.2}>
-                <p className="text-base sm:text-lg text-white/75 leading-relaxed font-light">
-                  Digital signage displays content.
+                <p className="text-base sm:text-lg text-white/80 leading-relaxed font-light">
+                  Not digital signage. Digital signage displays repetitive loops on static, stationary walls. VMOVEXA transforms moving transit surfaces into intelligent, context-aware digital media infrastructure.
                 </p>
               </EditorialLine>
 
-              {/* Interactive Matrix Box */}
+              {/* The Distinction Matrix */}
               <GsapScrollReveal delay={0.3}>
                 <div className="p-6 rounded-2xl bg-white/[0.03] border border-white/10 space-y-3 backdrop-blur-md shadow-[0_0_30px_rgba(0,0,0,0.5)]">
-                  <div className="text-cyan-400 font-mono text-xs uppercase tracking-wider">
-                    VMOVEXA is designed to connect:
+                  <div className="text-cyan-400 font-mono text-xs uppercase tracking-wider flex items-center gap-2">
+                    <span className="w-1.5 h-1.5 rounded-full bg-cyan-400" />
+                    VMOVEXA Unifies The Entire Chain:
                   </div>
                   <div className="flex flex-wrap items-center gap-2 font-mono text-xs sm:text-sm">
                     {["Content", "Location", "Vehicle", "Screen", "Cloud", "Data"].map((item, i, arr) => (
                       <span key={item} className="inline-flex items-center gap-2">
-                        <span className="px-3 py-1.5 rounded-lg bg-white/5 border border-white/10 text-white font-medium">
+                        <span className="px-3 py-1.5 rounded-lg bg-white/5 border border-white/10 text-white font-medium hover:border-cyan-400/40 transition-colors">
                           {item}
                         </span>
                         {i < arr.length - 1 && <span className="text-cyan-400 font-bold">+</span>}
@@ -522,20 +826,18 @@ export default function HomePage() {
                 </div>
               </GsapScrollReveal>
 
+              {/* High-Impact Architectural Quote */}
               <EditorialLine delay={0.4}>
-                <p className="text-sm sm:text-base text-white/70 leading-relaxed">
-                  That changes the role of the screen. It becomes part of a programmable mobility infrastructure.
-                </p>
-                <div className="mt-6 p-5 rounded-2xl bg-white/[0.03] border border-white/10 font-medium text-sm sm:text-base text-white/90 leading-snug">
+                <div className="p-6 rounded-2xl bg-white/[0.03] border border-white/10 font-heading text-base sm:text-lg text-white/90 leading-snug">
                   &ldquo;The screen is only what you see. <br />
-                  <span className="gradient-text font-semibold">
+                  <span className="gradient-text font-bold">
                     The intelligence is everything behind it.&rdquo;
                   </span>
                 </div>
               </EditorialLine>
             </div>
 
-            {/* Space for Digital OOH / Transit Screen Media */}
+            {/* Right Column: In-Transit Video Showcase */}
             <div className="lg:col-span-6">
               <GsapScrollReveal delay={0.3}>
                 <div className="relative group">
@@ -555,78 +857,157 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* 06 — WHY NOW */}
+      {/* ========================================================================= */}
+      {/* 07 // ONE PLATFORM. MANY MOBILITY ENVIRONMENTS.                           */}
+      {/* ========================================================================= */}
       <section className="py-28 border-b border-white/[0.08] relative overflow-hidden bg-black">
-        <div className="container max-w-6xl mx-auto px-6 text-center relative z-10">
-          <EditorialLine>
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/[0.05] border border-white/10 text-white/80 font-mono text-xs tracking-wider mb-4">
-              Market Macro Thesis
-            </div>
-          </EditorialLine>
-          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight text-white max-w-3xl mx-auto leading-tight mb-8">
-            The world is becoming <span className="gradient-text">software-defined.</span>
-          </h2>
+        <div className="container max-w-6xl mx-auto px-6 relative z-10">
+          <div className="text-center max-w-4xl mx-auto mb-16">
+            <EditorialLine>
+              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/[0.05] border border-white/10 text-white/80 font-mono text-xs tracking-wider mb-5">
+                <span className="text-cyan-400 font-bold">07</span>
+                <span className="text-white/30">/</span>
+                <span>CROSS-SECTOR DEPLOYMENTS</span>
+              </div>
+            </EditorialLine>
+            <CubertoLines
+              as="h2"
+              className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight uppercase leading-[1.08] text-white"
+              delay={0.1}
+              stagger={0.1}
+              lines={[
+                <div key="l1">ONE PLATFORM.</div>,
+                <div key="l2" className="mt-1 sm:mt-2 text-cyan-400">MANY MOBILITY ENVIRONMENTS.</div>,
+              ]}
+            />
+            <EditorialLine delay={0.2}>
+              <p className="text-base sm:text-lg text-white/70 max-w-2xl mx-auto mt-4 font-light leading-relaxed">
+                A modular, hardware-agnostic architecture engineered to operate across public transit authorities, airport campuses, corporate shuttles, municipal fleets, and commercial taxi networks.
+              </p>
+            </EditorialLine>
+          </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 max-w-5xl mx-auto mb-12">
-            {[
-              { title: "Vehicles", desc: "Becoming increasingly connected", icon: RiCarLine, color: "text-cyan-400", badgeBg: "bg-cyan-500/10 border-cyan-500/25 shadow-[0_0_15px_rgba(6,182,212,0.2)]" },
-              { title: "Cities", desc: "Becoming increasingly digital", icon: FiMapPin, color: "text-indigo-400", badgeBg: "bg-indigo-500/10 border-indigo-500/25 shadow-[0_0_15px_rgba(99,102,241,0.2)]" },
-              { title: "Media", desc: "Becoming increasingly measurable", icon: FiMonitor, color: "text-purple-400", badgeBg: "bg-purple-500/10 border-purple-500/25 shadow-[0_0_15px_rgba(168,85,247,0.2)]" },
-              { title: "Infrastructure", desc: "Becoming increasingly intelligent", icon: FiCpu, color: "text-emerald-400", badgeBg: "bg-emerald-500/10 border-emerald-500/25 shadow-[0_0_15px_rgba(16,185,129,0.2)]" },
-            ].map((item, idx) => {
-              const CardIcon = item.icon;
+          {/* 5 Mobility Environments Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {mobilityEnvironments.map((env, idx) => {
+              const EnvIcon = env.icon;
               return (
-                <GsapScrollReveal key={idx} delay={idx * 0.08}>
-                  <div className="p-6 rounded-2xl bg-white/[0.02] border border-white/10 text-left hover:bg-white/[0.05] hover:border-white/25 transition-all duration-300 h-full flex flex-col justify-between">
-                    <div>
-                      <div className={`p-3 rounded-xl border ${item.badgeBg} ${item.color} inline-block mb-3`}>
-                        <CardIcon size={20} />
+                <GsapScrollReveal key={env.title} delay={idx * 0.08}>
+                  <TiltCard maxTilt={5} className="h-full">
+                    <div className="p-6 rounded-2xl bg-white/[0.02] border border-white/10 hover:border-white/25 hover:bg-white/[0.04] transition-all duration-300 flex flex-col justify-between group h-full shadow-xl">
+                      <div>
+                        {/* Thumbnail Image Header */}
+                        <ImageCurtainReveal delay={idx * 0.08} direction="up" className="relative h-44 w-full rounded-xl overflow-hidden mb-5 border border-white/10">
+                          <Image
+                            src={env.image}
+                            alt={env.title}
+                            fill
+                            sizes="(max-width: 768px) 100vw, 33vw"
+                            className="object-cover group-hover:scale-105 transition-transform duration-500 brightness-90"
+                          />
+                          <div className="absolute inset-0 bg-gradient-to-t from-black via-black/30 to-transparent" />
+                          <div className="absolute bottom-3 left-3 flex items-center gap-2">
+                            <span className={`p-2 rounded-lg ${env.badgeBg} ${env.color} border border-white/20 backdrop-blur-md`}>
+                              <EnvIcon size={18} />
+                            </span>
+                            <span className="font-mono text-[10px] text-white/90 px-2 py-1 rounded bg-black/60 backdrop-blur-md border border-white/15">
+                              {env.tag}
+                            </span>
+                          </div>
+                        </ImageCurtainReveal>
+
+                        <h3 className="text-lg font-bold text-white mb-1 group-hover:text-cyan-300 transition-colors">
+                          {env.title}
+                        </h3>
+                        <div className="text-xs font-mono text-white/50 mb-3">{env.role}</div>
+                        <p className="text-xs text-white/65 leading-relaxed font-light">
+                          {env.desc}
+                        </p>
                       </div>
-                      <div className="font-semibold text-white text-base mb-1">{item.title}</div>
-                      <div className="text-xs text-white/55">{item.desc}</div>
+
+                      <div className="mt-6 pt-4 border-t border-white/10 flex items-center justify-between font-mono text-xs">
+                        <span className="text-white/40">Deployment Ready</span>
+                        <Link
+                          href="/platform"
+                          className="text-cyan-400 hover:text-cyan-300 flex items-center gap-1 transition-colors"
+                        >
+                          Explore <FiArrowRight size={12} />
+                        </Link>
+                      </div>
                     </div>
-                  </div>
+                  </TiltCard>
                 </GsapScrollReveal>
               );
             })}
           </div>
-
-          <EditorialLine delay={0.4}>
-            <MagneticElement strength={0.1}>
-              <div className="inline-block px-8 py-4 rounded-full bg-gradient-to-r from-white/[0.03] to-white/[0.06] border border-white/15 text-xs font-mono uppercase tracking-[0.2em] text-cyan-200 shadow-[inset_0_1px_0_rgba(255,255,255,0.1)]">
-                Mobility × Edge Computing × Cloud × Data × Digital Media
-              </div>
-            </MagneticElement>
-          </EditorialLine>
         </div>
       </section>
 
-      {/* 07 — HOME FINAL CTA */}
-      <section className="py-32 relative overflow-hidden text-center">
+      {/* ========================================================================= */}
+      {/* 08 // THE WORLD MOVES. INTELLIGENCE SHOULD MOVE WITH IT. (Final Section)  */}
+      {/* ========================================================================= */}
+      <section className="py-32 relative overflow-hidden text-center bg-black">
         <div className="absolute inset-0 bg-gradient-to-t from-cyan-950/30 via-transparent to-transparent pointer-events-none" />
-        <div className="container max-w-4xl mx-auto px-6 relative z-10">
+        <div className="container max-w-5xl mx-auto px-6 relative z-10">
+          {/* Number Badge */}
           <EditorialLine>
-            <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-white/5 border border-white/15 text-white/80 font-mono text-xs tracking-wider mb-5">
-              VMOVEXA Platform
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/5 border border-white/15 text-white/80 font-mono text-xs tracking-wider mb-6">
+              <span className="text-cyan-400 font-bold">08</span>
+              <span className="text-white/30">/</span>
+              <span>THE PLATFORM THESIS</span>
             </div>
           </EditorialLine>
-          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight text-white leading-tight mb-6">
-            The world moves. <span className="gradient-text">Intelligence should move with it.</span>
-          </h2>
-          <EditorialLine delay={0.3}>
-            <p className="text-base sm:text-lg text-white/75 max-w-2xl mx-auto mb-10 leading-relaxed font-light">
-              A cloud-to-edge mobility intelligence platform connecting vehicles, computing, digital infrastructure and the connected world.
+
+          {/* Headline */}
+          <CubertoLines
+            as="h2"
+            className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight uppercase text-white leading-tight mb-6"
+            delay={0.1}
+            stagger={0.1}
+            lines={[
+              <div key="l1">THE WORLD MOVES.</div>,
+              <div key="l2" className="gradient-text mt-1 sm:mt-2">INTELLIGENCE SHOULD MOVE WITH IT.</div>,
+            ]}
+          />
+
+          {/* Subtitle */}
+          <EditorialLine delay={0.2}>
+            <p className="text-base sm:text-lg text-white/75 max-w-3xl mx-auto mb-12 leading-relaxed font-light">
+              A unified cloud-to-edge mobility intelligence platform connecting vehicles, computing, digital displays, and urban infrastructure into an active, programmable ecosystem.
             </p>
           </EditorialLine>
-          <EditorialLine delay={0.4}>
-            <div className="flex flex-wrap items-center justify-center gap-4">
+
+          {/* 4 Macro Thesis Points */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 max-w-4xl mx-auto mb-12 text-left">
+            {[
+              { title: "Vehicles", desc: "Becoming software-defined & connected", icon: RiCarLine, color: "text-cyan-400" },
+              { title: "Cities", desc: "Becoming digital & sensor-instrumented", icon: FiMapPin, color: "text-indigo-400" },
+              { title: "Media", desc: "Becoming contextual & measurable", icon: FiMonitor, color: "text-purple-400" },
+              { title: "Infrastructure", desc: "Becoming intelligent at the edge", icon: FiCpu, color: "text-emerald-400" },
+            ].map((item, idx) => {
+              const ItemIcon = item.icon;
+              return (
+                <div key={idx} className="p-4 rounded-xl bg-white/[0.02] border border-white/10">
+                  <div className={`p-2 rounded-lg bg-white/5 ${item.color} inline-block mb-2`}>
+                    <ItemIcon size={18} />
+                  </div>
+                  <div className="font-bold text-white text-sm">{item.title}</div>
+                  <div className="text-xs text-white/50 font-light mt-0.5">{item.desc}</div>
+                </div>
+              );
+            })}
+          </div>
+
+          {/* Action CTAs */}
+          <EditorialLine delay={0.3}>
+            <div className="flex flex-wrap items-center justify-center gap-4 mb-8">
               <MagneticElement strength={0.3}>
                 <Link
                   href="/platform"
                   className="inline-flex items-center gap-2.5 px-8 py-4 rounded-full bg-white font-semibold text-sm tracking-wide transition-all duration-300 hover:scale-[1.03] active:scale-[0.98] shadow-[0_0_30px_rgba(255,255,255,0.25)] hover:shadow-[0_0_40px_rgba(255,255,255,0.5)]"
                   style={{ color: "#000000" }}
                 >
-                  <span className="text-black font-semibold">Explore VMOVEXA</span>
+                  <span className="text-black font-semibold">Explore VMOVEXA Platform</span>
                   <FiArrowRight size={16} className="text-black" />
                 </Link>
               </MagneticElement>
@@ -635,10 +1016,19 @@ export default function HomePage() {
                   href="/contact"
                   className="inline-flex items-center gap-2.5 px-8 py-4 rounded-full bg-white/[0.06] border border-white/20 text-white font-semibold text-sm tracking-wide transition-all duration-300 hover:bg-white/10 hover:border-white/30"
                 >
-                  Let&apos;s Build <FiArrowUpRight size={16} />
+                  Schedule Architecture Demo <FiArrowUpRight size={16} />
                 </Link>
               </MagneticElement>
             </div>
+          </EditorialLine>
+
+          {/* Bottom Pill Badge */}
+          <EditorialLine delay={0.4}>
+            <MagneticElement strength={0.1}>
+              <div className="inline-block px-8 py-3.5 rounded-full bg-gradient-to-r from-white/[0.03] to-white/[0.06] border border-white/15 text-xs font-mono uppercase tracking-[0.2em] text-cyan-200 shadow-[inset_0_1px_0_rgba(255,255,255,0.1)]">
+                Mobility × Edge Computing × Cloud × Data × Digital Media
+              </div>
+            </MagneticElement>
           </EditorialLine>
         </div>
       </section>

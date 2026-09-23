@@ -13,10 +13,14 @@ import {
   FiDatabase,
 } from "react-icons/fi";
 import { RiBusLine, RiMegaphoneLine } from "react-icons/ri";
-import { EditorialMaskText, EditorialLine } from "@/components/animations/editorial-text";
+import { EditorialMaskText, EditorialLine, CubertoLines } from "@/components/animations/editorial-text";
 import { MagneticElement, GsapScrollReveal } from "@/components/animations/gsap-scroll-fx";
 import { MediaSlot } from "@/components/ui/media-slot";
 import { Counter } from "@/components/animations/counter";
+import { TextDecrypt } from "@/components/animations/text-decrypt";
+import { BlurReveal } from "@/components/animations/blur-reveal";
+import { TiltCard } from "@/components/animations/tilt-card";
+import { FloatingElement } from "@/components/animations/image-reveal";
 
 export const metadata: Metadata = {
   title: "VMOVEXA Platform | Connected Mobility & Edge Computing",
@@ -62,8 +66,8 @@ export default function PlatformPage() {
     },
     { 
       title: "Location Intelligence", 
-      subtitle: "Sub-Second Spatial Logic",
-      desc: "Sub-second GPS geofencing, trigger-based zones, and real-time route logic.", 
+      subtitle: "Real-Time Spatial Logic",
+      desc: "Low-latency GPS geofencing, trigger-based zones, and real-time route logic.", 
       cta: "Explore Geo Logic",
       href: "#vmovexa-one",
       icon: FiMapPin, 
@@ -121,7 +125,7 @@ export default function PlatformPage() {
     { title: "Media Engine", desc: "Digital content playback execution and hardware-accelerated video rendering." },
     { title: "Campaign Engine", desc: "Remote campaign execution, rules matching, and schedule enforcement." },
     { title: "Geo-Fence Engine", desc: "Real-time location-aware operational rules and spatial triggers." },
-    { title: "GPS Positioning", desc: "Continuous sub-meter vehicle positioning and movement calculation." },
+    { title: "GPS Positioning", desc: "Designed for continuous high-precision vehicle positioning and movement calculation." },
     { title: "Telemetry Engine", desc: "Operational data capture, device state recording, and event logging." },
     { title: "Multi-Screen Controller", desc: "Coordinated independent, mirrored, and synchronized multi-display management." },
     { title: "Security Fabric", desc: "Protected device authorization and authenticated cloud-to-edge communication." },
@@ -159,22 +163,26 @@ export default function PlatformPage() {
                 <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/[0.04] border border-white/15 backdrop-blur-md mb-8">
                   <span className="w-2 h-2 rounded-full bg-cyan-400" />
                   <span className="font-mono text-xs uppercase tracking-[0.2em] text-white/80">
-                    The VMOVEXA Platform
+                    <TextDecrypt text="The VMOVEXA Platform" delay={150} />
                   </span>
                 </div>
               </EditorialLine>
 
-              <EditorialLine delay={0.15}>
-                <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight leading-[1.1] max-w-4xl mb-6 text-white uppercase">
-                  One platform. <span className="gradient-text">Every moving edge.</span>
-                </h1>
-              </EditorialLine>
+              <CubertoLines
+                as="h1"
+                className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight leading-[1.1] max-w-4xl mb-6 text-white uppercase"
+                delay={0.15}
+                lines={[
+                  "One platform.",
+                  <span key="sub" className="gradient-text">Every moving edge.</span>
+                ]}
+              />
 
-              <EditorialLine delay={0.3}>
+              <BlurReveal delay={0.25} blurAmount={10}>
                 <p className="text-base sm:text-lg text-white/70 font-normal leading-relaxed max-w-3xl mb-8">
                   VMOVEXA creates a digital operating layer between centralized cloud infrastructure and physical mobility — designed for a more connected, intelligent and measurable world.
                 </p>
-              </EditorialLine>
+              </BlurReveal>
 
               <EditorialLine delay={0.4}>
                 <div className="flex flex-wrap items-center gap-4 mb-10">
@@ -201,10 +209,18 @@ export default function PlatformPage() {
 
             {/* Right Side Vertical Floating Tags (Screen 02) */}
             <div className="hidden lg:flex lg:col-span-2 flex-col items-end gap-5 pt-16 font-mono text-[11px] text-white/40 tracking-[0.25em] uppercase">
-              <span className="hover:text-cyan-400 transition-colors cursor-default">SCALE</span>
-              <span className="hover:text-cyan-400 transition-colors cursor-default">CONTROL</span>
-              <span className="hover:text-cyan-400 transition-colors cursor-default">INTELLIGENCE</span>
-              <span className="hover:text-cyan-400 transition-colors cursor-default">IMPACT</span>
+              <FloatingElement duration={5} yOffset={4}>
+                <span className="hover:text-cyan-400 transition-colors cursor-default">SCALE</span>
+              </FloatingElement>
+              <FloatingElement duration={4.2} yOffset={5}>
+                <span className="hover:text-cyan-400 transition-colors cursor-default">CONTROL</span>
+              </FloatingElement>
+              <FloatingElement duration={5.5} yOffset={4}>
+                <span className="hover:text-cyan-400 transition-colors cursor-default">INTELLIGENCE</span>
+              </FloatingElement>
+              <FloatingElement duration={4.7} yOffset={5}>
+                <span className="hover:text-cyan-400 transition-colors cursor-default">IMPACT</span>
+              </FloatingElement>
             </div>
           </div>
 
@@ -215,9 +231,9 @@ export default function PlatformPage() {
               <div className="hidden lg:flex lg:col-span-4 flex-col gap-4 font-mono border-l-2 border-white/15 pl-6 py-6">
                 <div className="flex flex-col gap-1 text-xs uppercase tracking-[0.2em]">
                   <span className="text-white/40">From</span>
-                  <span className="text-cyan-400 font-bold text-sm tracking-widest">Cloud</span>
+                  <span className="text-cyan-400 font-bold text-sm tracking-widest"><TextDecrypt text="Cloud" delay={300} /></span>
                   <span className="text-white/40">To Moving</span>
-                  <span className="text-indigo-400 font-bold text-sm tracking-widest">Edge</span>
+                  <span className="text-indigo-400 font-bold text-sm tracking-widest"><TextDecrypt text="Edge" delay={500} /></span>
                 </div>
                 <p className="text-xs text-white/60 font-sans leading-relaxed pt-2">
                   Unified architectural stack orchestrating centralized systems with distributed in-vehicle computing, multi-screen control, and real-time telemetry.
@@ -238,6 +254,8 @@ export default function PlatformPage() {
                   aspectRatio="16/9"
                   objectFit="contain"
                   priority
+                  scanline={true}
+                  curtainReveal={true}
                   className="w-full max-w-3xl ml-auto"
                 />
               </div>
@@ -284,7 +302,7 @@ export default function PlatformPage() {
                 const Icon = card.icon;
                 return (
                   <GsapScrollReveal key={card.title} delay={idx * 0.07} className="h-full flex flex-col">
-                    <MagneticElement strength={0.04} className="w-full h-full flex flex-col">
+                    <TiltCard maxTilt={8} glare={true} className="w-full h-full flex flex-col">
                       <div className={`p-5 sm:p-5.5 xl:p-4.5 2xl:p-5 rounded-2xl bg-[#090b10] border ${card.borderColor} transition-all duration-300 h-full flex flex-col justify-between group shadow-xl relative overflow-hidden flex-1`}>
                         {/* Ambient top color accent */}
                         <div className={`absolute top-0 inset-x-0 h-[2px] ${card.accentBar} opacity-85 group-hover:h-1 group-hover:opacity-100 transition-all`} />
@@ -318,7 +336,7 @@ export default function PlatformPage() {
                           </Link>
                         </div>
                       </div>
-                    </MagneticElement>
+                    </TiltCard>
                   </GsapScrollReveal>
                 );
               })}
@@ -615,6 +633,8 @@ export default function PlatformPage() {
                 caption="In-Vehicle Edge Computing Runtime • Telemetry, Multi-Screen & Geo Synchronization"
                 aspectRatio="3/2"
                 objectFit="contain"
+                scanline={true}
+                curtainReveal={true}
               />
             </div>
           </GsapScrollReveal>

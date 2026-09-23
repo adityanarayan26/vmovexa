@@ -1,18 +1,21 @@
 @import "tailwindcss";
 
 @theme {
-  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
-  --font-mono: var(--font-jetbrains), ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
-  --font-heading: var(--font-custom-heading), ui-sans-serif, system-ui, sans-serif;
+  --font-sans: var(--font-ibm-plex-sans), -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-mono: var(--font-ibm-plex-mono), ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  --font-heading: var(--font-space-grotesk), sans-serif;
+  --font-display: var(--font-space-grotesk), sans-serif;
+  --font-space: var(--font-space-grotesk), sans-serif;
+  --font-plex-sans: var(--font-ibm-plex-sans), sans-serif;
+  --font-plex-mono: var(--font-ibm-plex-mono), monospace;
 }
 
 @layer base {
   :root {
-    --font-apple: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "SF Pro", "Helvetica Neue", Helvetica, Arial, sans-serif;
-    --font-apple-mono: "SF Mono", SFMono-Regular, ui-monospace, Menlo, Monaco, Consolas, monospace;
-    --font-sans: var(--font-inter), var(--font-apple);
-    --font-heading: var(--font-custom-heading), var(--font-apple);
-    --font-mono-custom: var(--font-jetbrains), var(--font-apple-mono);
+    --font-heading: var(--font-space-grotesk), sans-serif;
+    --font-sans: var(--font-ibm-plex-sans), -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    --font-mono-custom: var(--font-ibm-plex-mono), ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+    --font-apple-mono: var(--font-ibm-plex-mono), monospace;
     --bg-black: #000000;
     --bg-base: #000000;
     --bg-card: rgba(8, 16, 32, 0.72);
@@ -45,7 +48,6 @@
 
   *, *::before, *::after {
     box-sizing: border-box;
-    font-family: var(--font-sans);
   }
 
   html {
@@ -70,10 +72,8 @@
     transition: background-color 0.8s ease, color 0.8s ease, background 0.8s ease;
   }
 
-  h1, h2, h3, h4, h5, h6, .brand-link, .eyebrow, .button, .nav-link, .wordmark {
+  h1, h2, h3, h4, h5, h6, .brand-link, .eyebrow, .wordmark {
     font-family: var(--font-heading);
-    text-transform: uppercase;
-    font-weight: 700;
     letter-spacing: -0.02em;
   }
 

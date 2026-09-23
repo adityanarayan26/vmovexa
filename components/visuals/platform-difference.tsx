@@ -244,7 +244,7 @@ export function PlatformDifference() {
 
             <ul style={{ listStyle: "none", padding: 0, margin: 0, display: "grid", gap: "0.9rem" }}>
               {[
-                "Sub-second geofence triggers with high-precision GNSS",
+                "Low-latency geofence triggers with high-precision GNSS",
                 "Real-time vehicle vitals, speed, and ignition sensing",
                 "Cryptographic proof-of-play verified down to coordinates & second",
                 "100% offline resilience through local storage & caching",

@@ -5,6 +5,10 @@ import Link from "next/link";
 import { FiArrowRight, FiBriefcase, FiMapPin, FiCpu, FiCheck, FiSend, FiClock } from "react-icons/fi";
 import { RiWhatsappLine } from "react-icons/ri";
 import { Reveal } from "@/components/animations/reveal";
+import { CubertoLines } from "@/components/animations/cuberto-text-reveal";
+import { TextDecrypt } from "@/components/animations/text-decrypt";
+import { BlurReveal } from "@/components/animations/blur-reveal";
+import { TiltCard } from "@/components/animations/tilt-card";
 
 interface Role {
   id: string;
@@ -23,7 +27,7 @@ const openRoles: Role[] = [
     team: "Edge Runtime Systems",
     location: "Hyderabad, India / Hybrid",
     type: "Full-Time",
-    desc: "Architect and optimize the VMOVEXA CORE in-vehicle edge computing runtime. You will work on hardware acceleration for display playback, sub-second GPS dead-reckoning, offline storage sync, and secure Over-The-Air updates.",
+    desc: "Architect and optimize the VMOVEXA CORE in-vehicle edge computing runtime. You will work on hardware acceleration for display playback, high-precision GPS dead-reckoning, offline storage sync, and secure Over-The-Air updates.",
     skills: ["C++", "Rust", "Embedded Linux", "GStreamer / OpenGL", "CAN-bus / OBD-II", "OTA Systems"],
   },
   {
@@ -92,40 +96,44 @@ export default function CareersPage() {
             <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/[0.04] border border-white/15 backdrop-blur-md mb-8">
               <span className="w-2 h-2 rounded-full bg-cyan-400" />
               <span className="font-mono text-xs uppercase tracking-[0.16em] text-white/80">
-                Join VMOVEXA • Careers
+                <TextDecrypt text="Join VMOVEXA • Careers" delay={150} />
               </span>
             </div>
           </Reveal>
 
-          <Reveal delay={0.1}>
-            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight leading-[1.1] max-w-4xl mb-6 text-white uppercase">
-              Build the Future of <span className="gradient-text">Connected Movement.</span>
-            </h1>
-          </Reveal>
+          <CubertoLines
+            as="h1"
+            className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight leading-[1.1] max-w-4xl mb-6 text-white uppercase"
+            delay={0.1}
+            lines={[
+              "Build the Future of",
+              <span key="sub" className="gradient-text">Connected Movement.</span>
+            ]}
+          />
 
-          <Reveal delay={0.2}>
+          <BlurReveal delay={0.2} blurAmount={10}>
             <p className="text-base sm:text-lg text-white/70 font-normal leading-relaxed max-w-3xl mb-8">
               Join our engineering, systems, and product teams solving cloud-to-edge mobility, embedded runtime computing, and massive urban scale.
             </p>
-          </Reveal>
+          </BlurReveal>
 
           {/* Quick Metrics */}
           <Reveal delay={0.3}>
             <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 pt-6 border-t border-white/10 max-w-3xl">
               <div>
-                <div className="text-2xl font-bold text-white font-mono">500+</div>
-                <div className="text-xs text-white/50 uppercase font-mono">Rolling Nodes</div>
+                <div className="text-2xl font-bold text-white font-mono"><TextDecrypt text="Multi-Fleet" delay={300} /></div>
+                <div className="text-xs text-white/50 uppercase font-mono">Edge Network</div>
               </div>
               <div>
-                <div className="text-2xl font-bold text-cyan-400 font-mono">10M+</div>
+                <div className="text-2xl font-bold text-cyan-400 font-mono"><TextDecrypt text="10M+" delay={450} /></div>
                 <div className="text-xs text-white/50 uppercase font-mono">Daily Reach</div>
               </div>
               <div>
-                <div className="text-2xl font-bold text-indigo-400 font-mono">&lt;250ms</div>
-                <div className="text-xs text-white/50 uppercase font-mono">Dispatch Latency</div>
+                <div className="text-2xl font-bold text-indigo-400 font-mono"><TextDecrypt text="Low-Latency" delay={600} /></div>
+                <div className="text-xs text-white/50 uppercase font-mono">Edge Dispatch</div>
               </div>
               <div>
-                <div className="text-2xl font-bold text-pink-400 font-mono">100%</div>
+                <div className="text-2xl font-bold text-pink-400 font-mono"><TextDecrypt text="100%" delay={750} /></div>
                 <div className="text-xs text-white/50 uppercase font-mono">Offline Uptime</div>
               </div>
             </div>
@@ -147,16 +155,17 @@ export default function CareersPage() {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {values.map((v, i) => (
-              <div
-                key={i}
-                className="p-8 rounded-2xl bg-white/[0.02] border border-white/10 space-y-4 hover:border-cyan-400/30 hover:bg-white/[0.03] transition-all"
-              >
-                <div className="w-10 h-10 rounded-xl bg-cyan-500/10 border border-cyan-500/20 text-cyan-400 flex items-center justify-center font-mono font-bold text-sm">
-                  0{i + 1}
+              <TiltCard key={i} maxTilt={8} glare={true} className="h-full">
+                <div
+                  className="p-8 rounded-2xl bg-white/[0.02] border border-white/10 space-y-4 hover:border-cyan-400/30 hover:bg-white/[0.03] transition-all h-full"
+                >
+                  <div className="w-10 h-10 rounded-xl bg-cyan-500/10 border border-cyan-500/20 text-cyan-400 flex items-center justify-center font-mono font-bold text-sm">
+                    0{i + 1}
+                  </div>
+                  <h3 className="text-lg font-bold text-white uppercase tracking-tight">{v.title}</h3>
+                  <p className="text-xs sm:text-sm text-white/65 leading-relaxed font-normal">{v.desc}</p>
                 </div>
-                <h3 className="text-lg font-bold text-white uppercase tracking-tight">{v.title}</h3>
-                <p className="text-xs sm:text-sm text-white/65 leading-relaxed font-normal">{v.desc}</p>
-              </div>
+              </TiltCard>
             ))}
           </div>
         </div>

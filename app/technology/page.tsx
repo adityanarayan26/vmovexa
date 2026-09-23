@@ -15,9 +15,13 @@ import {
   FiShare2,
   FiActivity,
 } from "react-icons/fi";
-import { EditorialMaskText, EditorialLine } from "@/components/animations/editorial-text";
+import { EditorialMaskText, EditorialLine, CubertoLines } from "@/components/animations/editorial-text";
 import { MagneticElement, GsapScrollReveal, ParallaxElement } from "@/components/animations/gsap-scroll-fx";
 import { MediaSlot } from "@/components/ui/media-slot";
+import { TextDecrypt } from "@/components/animations/text-decrypt";
+import { BlurReveal } from "@/components/animations/blur-reveal";
+import { TiltCard } from "@/components/animations/tilt-card";
+import { FloatingElement } from "@/components/animations/image-reveal";
 
 export const metadata: Metadata = {
   title: "VMOVEXA Technology | Edge Computing, IoT & Connected Mobility",
@@ -42,18 +46,18 @@ export default function TechnologyPage() {
     { title: "Cloud Computing", icon: FiCloud, desc: "Centralized coordination, multi-tenant fleet fabrics, and global analytics" },
     { title: "Edge Computing", icon: FiCpu, desc: "In-vehicle runtime, local execution, and low-latency microservices" },
     { title: "IoT & Hardware", icon: FiRadio, desc: "Automotive-grade bus interfaces, GPS sensors, and cellular gateways" },
-    { title: "Connected Vehicles", icon: FiLayers, desc: "Multi-bus integration, real-time CAN bus telemetry, and display synchrony" },
+    { title: "Connected Vehicles", icon: FiLayers, desc: "Multi-bus integration, real-time vehicle telemetry, and display synchrony" },
     { title: "Digital Media", icon: FiMonitor, desc: "Hardware-accelerated dynamic DOOH playback and verified proof-of-play" },
-    { title: "Location Intelligence", icon: FiMapPin, desc: "Sub-meter GPS positioning, polygon geofencing, and spatial logic" },
+    { title: "Location Intelligence", icon: FiMapPin, desc: "Designed for sub-meter positioning, polygon geofencing, and spatial logic" },
     { title: "Telemetry Infrastructure", icon: FiShare2, desc: "Real-time state telemetry, diagnostic pings, and event log streaming" },
     { title: "Data Fabric", icon: FiDatabase, desc: "Unified operational intelligence, travel patterns, and audit pipelines" },
   ];
 
   const telemetryMetrics = [
     "Device state & system health",
-    "Network carrier & 5G/4G connectivity",
+    "Network carrier & cellular connectivity",
     "Screen runtime & display temperature",
-    "Precise sub-meter vehicle location",
+    "High-precision GNSS vehicle location",
     "Real-time operational conditions",
     "Encrypted system events & alarms",
   ];
@@ -78,22 +82,26 @@ export default function TechnologyPage() {
                 <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/[0.04] border border-white/15 backdrop-blur-md mb-8">
                   <span className="w-2 h-2 rounded-full bg-cyan-400" />
                   <span className="font-mono text-xs uppercase tracking-[0.2em] text-white/80">
-                    Our Technology
+                    <TextDecrypt text="Our Technology" delay={150} />
                   </span>
                 </div>
               </EditorialLine>
 
-              <EditorialLine delay={0.15}>
-                <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight leading-[1.1] max-w-4xl mb-6 text-white">
-                  Built for the <span className="gradient-text">moving edge.</span>
-                </h1>
-              </EditorialLine>
+              <CubertoLines
+                as="h1"
+                className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight leading-[1.1] max-w-4xl mb-6 text-white"
+                delay={0.15}
+                lines={[
+                  "Built for the",
+                  <span key="sub" className="gradient-text">moving edge.</span>
+                ]}
+              />
 
-              <EditorialLine delay={0.3}>
+              <BlurReveal delay={0.25} blurAmount={10}>
                 <p className="text-base sm:text-lg text-white/70 font-normal leading-relaxed max-w-2xl mb-8">
                   A deep-tech architecture combining cloud, edge, connectivity, sensors and intelligent software — engineered for the real world.
                 </p>
-              </EditorialLine>
+              </BlurReveal>
 
               <EditorialLine delay={0.4}>
                 <div className="flex flex-wrap items-center gap-4 mb-10">
@@ -120,10 +128,18 @@ export default function TechnologyPage() {
 
             {/* Right Side Vertical Floating Tags (Screen 03) */}
             <div className="hidden lg:flex lg:col-span-2 flex-col items-end gap-5 pt-16 font-mono text-[11px] text-white/40 tracking-[0.25em] uppercase">
-              <span className="hover:text-cyan-400 transition-colors cursor-default">ROBUST</span>
-              <span className="hover:text-cyan-400 transition-colors cursor-default">SECURE</span>
-              <span className="hover:text-cyan-400 transition-colors cursor-default">SCALABLE</span>
-              <span className="hover:text-cyan-400 transition-colors cursor-default">FUTURE-READY</span>
+              <FloatingElement duration={5} yOffset={4}>
+                <span className="hover:text-cyan-400 transition-colors cursor-default">ROBUST</span>
+              </FloatingElement>
+              <FloatingElement duration={4.2} yOffset={5}>
+                <span className="hover:text-cyan-400 transition-colors cursor-default">SECURE</span>
+              </FloatingElement>
+              <FloatingElement duration={5.5} yOffset={4}>
+                <span className="hover:text-cyan-400 transition-colors cursor-default">SCALABLE</span>
+              </FloatingElement>
+              <FloatingElement duration={4.7} yOffset={5}>
+                <span className="hover:text-cyan-400 transition-colors cursor-default">FUTURE-READY</span>
+              </FloatingElement>
             </div>
           </div>
 
@@ -133,9 +149,9 @@ export default function TechnologyPage() {
               {/* Left Vertical Annotation */}
               <div className="hidden lg:flex lg:col-span-2 flex-col gap-1 font-mono text-xs uppercase tracking-[0.2em] text-white/50 border-l border-white/10 pl-4 py-6">
                 <span className="text-white/30">Technology</span>
-                <span className="text-cyan-400 font-semibold">That Moves</span>
+                <span className="text-cyan-400 font-semibold"><TextDecrypt text="That Moves" delay={300} /></span>
                 <span className="text-white/30">With</span>
-                <span className="text-indigo-400 font-semibold">You.</span>
+                <span className="text-indigo-400 font-semibold"><TextDecrypt text="You." delay={450} /></span>
               </div>
 
               {/* Wireframe Bus Blueprint Showcase */}
@@ -151,6 +167,8 @@ export default function TechnologyPage() {
                     aspectRatio="16/9"
                     objectFit="contain"
                     priority
+                    scanline={true}
+                    curtainReveal={true}
                   />
                 </ParallaxElement>
               </div>
@@ -163,25 +181,29 @@ export default function TechnologyPage() {
               {[
                 { title: "Edge Computing", icon: FiCpu, desc: "Local workload execution and low-latency in-vehicle processing" },
                 { title: "Cloud Infrastructure", icon: FiCloud, desc: "Centralized fleet orchestration, telemetry sync and rule definitions" },
-                { title: "Location Intelligence", icon: FiMapPin, desc: "Sub-meter GPS positioning, polygon geofencing and contextual triggers" },
+                { title: "Location Intelligence", icon: FiMapPin, desc: "Designed for sub-meter positioning, polygon geofencing and contextual triggers" },
                 { title: "Multi-Screen Systems", icon: FiMonitor, desc: "Synchronized digital surfaces, smart DOOH, and real-time passenger info" },
               ].map((card, i) => {
                 const CardIcon = card.icon;
                 return (
-                  <div
+                  <TiltCard
                     key={card.title}
-                    className="p-6 rounded-2xl bg-gradient-to-b from-blue-950/30 to-white/[0.02] border border-blue-500/20 hover:border-cyan-400/50 hover:bg-blue-950/40 transition-all duration-300 group flex flex-col items-center text-center shadow-lg"
+                    maxTilt={9}
+                    glare={true}
+                    className="h-full flex flex-col"
                   >
-                    <div className="w-12 h-12 rounded-xl bg-blue-500/10 border border-blue-400/30 flex items-center justify-center text-cyan-400 mb-4 group-hover:scale-110 group-hover:bg-cyan-500/20 transition-all duration-300">
-                      <CardIcon size={22} />
+                    <div className="p-6 rounded-2xl bg-gradient-to-b from-blue-950/30 to-white/[0.02] border border-blue-500/20 hover:border-cyan-400/50 hover:bg-blue-950/40 transition-all duration-300 group flex flex-col items-center text-center shadow-lg h-full flex-1">
+                      <div className="w-12 h-12 rounded-xl bg-blue-500/10 border border-blue-400/30 flex items-center justify-center text-cyan-400 mb-4 group-hover:scale-110 group-hover:bg-cyan-500/20 transition-all duration-300">
+                        <CardIcon size={22} />
+                      </div>
+                      <h3 className="text-base font-semibold text-white group-hover:text-cyan-200 transition-colors mb-2">
+                        {card.title}
+                      </h3>
+                      <p className="text-xs text-white/50 leading-relaxed group-hover:text-white/70 transition-colors">
+                        {card.desc}
+                      </p>
                     </div>
-                    <h3 className="text-base font-semibold text-white group-hover:text-cyan-200 transition-colors mb-2">
-                      {card.title}
-                    </h3>
-                    <p className="text-xs text-white/50 leading-relaxed group-hover:text-white/70 transition-colors">
-                      {card.desc}
-                    </p>
-                  </div>
+                  </TiltCard>
                 );
               })}
             </div>
@@ -203,8 +225,8 @@ export default function TechnologyPage() {
               ].map((item, i) => {
                 const Icon = item.icon;
                 return (
-                  <GsapScrollReveal key={item.title} delay={i * 0.05}>
-                    <MagneticElement strength={0.1} className="w-full h-full block">
+                  <GsapScrollReveal key={item.title} delay={i * 0.05} className="h-full">
+                    <TiltCard maxTilt={8} glare={true} className="w-full h-full block">
                       <div className="p-6 rounded-2xl bg-gradient-to-b from-white/[0.03] to-transparent border border-white/10 hover:border-white/30 hover:bg-white/[0.05] transition-all duration-300 h-full group cursor-default shadow-[inset_0_1px_0_rgba(255,255,255,0.02)]">
                         <div className={`w-11 h-11 rounded-xl border ${item.badge} flex items-center justify-center ${item.color} mb-4 group-hover:scale-110 transition-all duration-300`}>
                           <Icon className="w-5 h-5" />
@@ -212,7 +234,7 @@ export default function TechnologyPage() {
                         <h3 className="text-base font-semibold text-white mb-1.5 group-hover:text-cyan-100 transition-colors">{item.title}</h3>
                         <p className="text-xs text-white/50 group-hover:text-white/70 transition-colors">{item.desc}</p>
                       </div>
-                    </MagneticElement>
+                    </TiltCard>
                   </GsapScrollReveal>
                 );
               })}
@@ -230,18 +252,19 @@ export default function TechnologyPage() {
                     <span className="gradient-text">Edge Speed.</span>
                   </h3>
                   <p className="text-sm text-white/70 leading-relaxed font-light">
-                    The right intelligence. In the right place. At the right time. Synchronizing high-throughput centralized orchestration with sub-millisecond edge triggering directly on moving transit fleets.
+                    The right intelligence. In the right place. At the right time. Synchronizing centralized orchestration with low-latency edge execution directly on moving transit fleets.
                   </p>
                 </div>
                 <div className="lg:col-span-6 relative">
                   <MediaSlot
                     theme="transparent"
                     type="image"
-                    src="/images/vmovexa-speed-trails.png"
+                    src="/images/vmovexa-speed-velocity.png"
                     alt="VMOVEXA Speed & Motion Blur"
                     badge="Motion Velocity • Low Latency"
-                    caption="Ultra-Low Latency Edge Processing in Real-World Mobility Conditions"
+                    caption="Architecture Designed for Low-Latency Edge Processing in Real-World Mobility Conditions"
                     aspectRatio="16/9"
+                    fade="none"
                   />
                 </div>
               </div>
@@ -301,6 +324,8 @@ export default function TechnologyPage() {
                     aspectRatio="3/2"
                     objectFit="contain"
                     fade="none"
+                    scanline={true}
+                    curtainReveal={true}
                   />
                 </div>
               </GsapScrollReveal>
@@ -349,6 +374,8 @@ export default function TechnologyPage() {
                 aspectRatio="16/9"
                 objectFit="contain"
                 fade="none"
+                scanline={true}
+                curtainReveal={true}
               />
             </div>
           </GsapScrollReveal>
@@ -356,8 +383,8 @@ export default function TechnologyPage() {
           {/* Spatial Capabilities Specs below diagram */}
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-8">
             <div className="p-4 rounded-xl bg-white/[0.02] border border-white/5 text-center">
-              <div className="text-xs font-mono text-cyan-400 uppercase tracking-wider mb-1">&lt; 1.0 m</div>
-              <div className="text-xs text-white/60">Sub-Meter Precision</div>
+              <div className="text-xs font-mono text-cyan-400 uppercase tracking-wider mb-1">High Precision</div>
+              <div className="text-xs text-white/60">Designed for Sub-Meter Accuracy</div>
             </div>
             <div className="p-4 rounded-xl bg-white/[0.02] border border-white/5 text-center">
               <div className="text-xs font-mono text-indigo-400 uppercase tracking-wider mb-1">Multi-Polygon</div>
@@ -368,8 +395,8 @@ export default function TechnologyPage() {
               <div className="text-xs text-white/60">Corridor Heading Triggers</div>
             </div>
             <div className="p-4 rounded-xl bg-white/[0.02] border border-white/5 text-center">
-              <div className="text-xs font-mono text-emerald-400 uppercase tracking-wider mb-1">Zero Latency</div>
-              <div className="text-xs text-white/60">In-Chassis Autonomous Cache</div>
+              <div className="text-xs font-mono text-emerald-400 uppercase tracking-wider mb-1">Low-Latency Edge</div>
+              <div className="text-xs text-white/60">In-Vehicle Autonomous Cache</div>
             </div>
           </div>
         </div>
@@ -450,11 +477,11 @@ export default function TechnologyPage() {
                 <div className="flex flex-wrap items-center gap-3">
                   <div className="px-3.5 py-1.5 rounded-full bg-white/[0.04] border border-white/10 text-xs font-mono text-cyan-300 flex items-center gap-2">
                     <span className="w-2 h-2 rounded-full bg-cyan-400 animate-pulse" />
-                    <span>Microsecond Triggers</span>
+                    <span>Near-Real-Time Event Triggering</span>
                   </div>
                   <div className="px-3.5 py-1.5 rounded-full bg-white/[0.04] border border-white/10 text-xs font-mono text-indigo-300 flex items-center gap-2">
                     <span className="w-2 h-2 rounded-full bg-indigo-400" />
-                    <span>Offline-First Fault Tolerance</span>
+                    <span>Offline-First Edge Resilience</span>
                   </div>
                 </div>
               </div>
@@ -471,6 +498,8 @@ export default function TechnologyPage() {
                   aspectRatio="3/2"
                   objectFit="contain"
                   fade="none"
+                  scanline={true}
+                  curtainReveal={true}
                 />
               </div>
 
@@ -490,7 +519,7 @@ export default function TechnologyPage() {
                 </div>
                 <div className="p-5 rounded-2xl bg-white/[0.02] border border-white/5 hover:border-emerald-500/20 transition-colors">
                   <div className="text-xs font-mono text-emerald-400 uppercase tracking-wider mb-1.5 font-semibold">04 • In-Transit Fleet</div>
-                  <div className="text-xs text-white/60 leading-relaxed">Sub-meter GPS, multi-screen sync, and CAN bus sensor stream ingest across commercial routes.</div>
+                  <div className="text-xs text-white/60 leading-relaxed">Designed for sub-meter positioning, multi-screen sync, and vehicle telemetry integration across commercial routes.</div>
                 </div>
               </div>
             </div>

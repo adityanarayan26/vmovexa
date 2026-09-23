@@ -77,9 +77,12 @@ export function MagneticElement({
   );
 }
 
+import { motion, useInView, useReducedMotion } from "framer-motion";
+
 /**
  * GsapScrollReveal:
- * Reliable entrance animation that smoothly reveals cards and layouts.
+ * Ultra-reliable entrance animation that smoothly reveals cards and layouts.
+ * Uses Framer Motion useInView with positive margin so content is never stuck at opacity 0.
  */
 export function GsapScrollReveal({
   children,
@@ -92,54 +95,35 @@ export function GsapScrollReveal({
   style?: React.CSSProperties;
   delay?: number;
 }) {
+  const shouldReduceMotion = useReducedMotion();
   const containerRef = useRef<HTMLDivElement>(null);
+  const isInView = useInView(containerRef, {
+    once: true,
+    margin: "0px 0px 80px 0px",
+  });
 
-  useEffect(() => {
-    if (typeof window === "undefined") return;
-    gsap.registerPlugin(ScrollTrigger);
-
-    const el = containerRef.current;
-    if (!el) return;
-
-    // If already in viewport on mount, reveal smoothly without waiting
-    const rect = el.getBoundingClientRect();
-    if (rect.top < window.innerHeight * 0.95) {
-      gsap.fromTo(
-        el,
-        { opacity: 0, y: 16 },
-        { opacity: 1, y: 0, duration: 0.5, delay, ease: "power2.out" }
-      );
-      return;
-    }
-
-    const ctx = gsap.context(() => {
-      gsap.fromTo(
-        el,
-        {
-          opacity: 0,
-          y: 24,
-        },
-        {
-          opacity: 1,
-          y: 0,
-          duration: 0.65,
-          delay,
-          ease: "power2.out",
-          scrollTrigger: {
-            trigger: el,
-            start: "top 92%",
-            toggleActions: "play none none none",
-          },
-        }
-      );
-    }, el);
-
-    return () => ctx.revert();
-  }, [delay]);
+  if (shouldReduceMotion) {
+    return (
+      <div className={`w-full ${className}`} style={style}>
+        {children}
+      </div>
+    );
+  }
 
   return (
     <div ref={containerRef} className={`w-full ${className}`} style={style}>
-      {children}
+      <motion.div
+        initial={{ opacity: 0, y: 22 }}
+        animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 22 }}
+        transition={{
+          duration: 0.65,
+          delay,
+          ease: [0.16, 1, 0.3, 1],
+        }}
+        className="w-full h-full"
+      >
+        {children}
+      </motion.div>
     </div>
   );
 }

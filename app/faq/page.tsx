@@ -6,6 +6,10 @@ import { motion, AnimatePresence } from "framer-motion";
 import { FiChevronDown, FiArrowRight, FiSearch, FiHelpCircle, FiMessageSquare } from "react-icons/fi";
 import { RiWhatsappLine } from "react-icons/ri";
 import { Reveal } from "@/components/animations/reveal";
+import { CubertoLines } from "@/components/animations/cuberto-text-reveal";
+import { TextDecrypt } from "@/components/animations/text-decrypt";
+import { BlurReveal } from "@/components/animations/blur-reveal";
+import { TiltCard } from "@/components/animations/tilt-card";
 
 interface FAQItem {
   question: string;
@@ -42,7 +46,7 @@ const faqs: FAQItem[] = [
     category: "Media",
     question: "How does location-triggered mobility media (DOOH) work?",
     answer:
-      "Using high-frequency GPS positioning and spatial geofencing algorithms, VMOVEXA evaluates vehicle coordinates in sub-second intervals. When a vehicle enters a targeted polygon (such as an airport corridor, IT corridor, or commercial district), the edge runtime instantly switches playback to the location-specific campaign with verifiable cryptographic proof-of-play logs.",
+      "Using high-frequency GPS positioning and spatial geofencing algorithms, VMOVEXA evaluates vehicle coordinates in real-time intervals. When a vehicle enters a targeted polygon (such as an airport corridor, IT corridor, or commercial district), the edge runtime smoothly switches playback to the location-specific campaign with verifiable cryptographic proof-of-play logs.",
   },
   {
     category: "Media",
@@ -52,9 +56,9 @@ const faqs: FAQItem[] = [
   },
   {
     category: "Smart Cities",
-    question: "How does the Emergency Operations & Broadcasting override function?",
+    question: "How does the authorized public information channel function?",
     answer:
-      "During municipal emergencies (such as flash floods, fires, seismic alerts, or Amber alerts), authorized civic agencies can dispatch high-priority override commands through VMOVEXA ONE. Within 250 milliseconds, target vehicle screens instantly transition from commercial media into emergency alerts with evacuation guidance and route advisories.",
+      "Connected mobility can become an additional channel for authorized public information. When authorized by municipal or transit authorities, digital transit surfaces can communicate critical advisories—including emergency communications, traffic information, public safety messaging, and transport advisories—across targeted urban corridors.",
   },
   {
     category: "Smart Cities",
@@ -100,22 +104,26 @@ export default function FAQPage() {
             <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/[0.04] border border-white/15 backdrop-blur-md mb-8">
               <span className="w-2 h-2 rounded-full bg-cyan-400" />
               <span className="font-mono text-xs uppercase tracking-[0.16em] text-white/80">
-                Knowledge & Support
+                <TextDecrypt text="Knowledge & Support" delay={150} />
               </span>
             </div>
           </Reveal>
 
-          <Reveal delay={0.1}>
-            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight leading-[1.1] max-w-4xl mb-6 text-white uppercase">
-              Frequently Asked <span className="gradient-text">Questions.</span>
-            </h1>
-          </Reveal>
+          <CubertoLines
+            as="h1"
+            className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight leading-[1.1] max-w-4xl mb-6 text-white uppercase"
+            delay={0.1}
+            lines={[
+              "Frequently Asked",
+              <span key="sub" className="gradient-text">Questions.</span>
+            ]}
+          />
 
-          <Reveal delay={0.2}>
+          <BlurReveal delay={0.2} blurAmount={10}>
             <p className="text-base sm:text-lg text-white/70 font-normal leading-relaxed max-w-3xl mb-8">
               Everything you need to know about VMOVEXA&apos;s cloud-to-edge mobility intelligence platform, vehicle hardware, digital DOOH media, and smart city infrastructure.
             </p>
-          </Reveal>
+          </BlurReveal>
 
           {/* Search Bar */}
           <Reveal delay={0.3}>
@@ -224,34 +232,36 @@ export default function FAQPage() {
       <section className="py-24 text-center relative overflow-hidden bg-black">
         <div className="container max-w-4xl mx-auto px-6 relative z-10">
           <Reveal>
-            <div className="p-10 rounded-3xl bg-white/[0.02] border border-white/10 shadow-2xl space-y-6">
-              <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-white uppercase">
-                Still have questions about <span className="gradient-text">VMOVEXA?</span>
-              </h2>
-              <p className="text-xs sm:text-sm text-white/70 max-w-xl mx-auto leading-relaxed">
-                Our solutions engineering group is available to answer deep architectural questions, discuss fleet pilots, and provide live dashboard walkthroughs.
-              </p>
+            <TiltCard maxTilt={5} glare={true}>
+              <div className="p-10 rounded-3xl bg-white/[0.02] border border-white/10 shadow-2xl space-y-6">
+                <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-white uppercase">
+                  Still have questions about <span className="gradient-text">VMOVEXA?</span>
+                </h2>
+                <p className="text-xs sm:text-sm text-white/70 max-w-xl mx-auto leading-relaxed">
+                  Our solutions engineering group is available to answer deep architectural questions, discuss fleet pilots, and provide live dashboard walkthroughs.
+                </p>
 
-              <div className="flex flex-wrap items-center justify-center gap-4 pt-2">
-                <a
-                  href="https://wa.me/919999999999?text=Hello!%20I%20have%20questions%20about%20VMOVEXA%20platform."
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 px-7 py-3.5 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 hover:bg-emerald-500/20 text-xs font-mono font-semibold uppercase tracking-wider transition-all hover:scale-105"
-                >
-                  <RiWhatsappLine size={16} />
-                  <span>Chat on WhatsApp</span>
-                </a>
+                <div className="flex flex-wrap items-center justify-center gap-4 pt-2">
+                  <a
+                    href="https://wa.me/919999999999?text=Hello!%20I%20have%20questions%20about%20VMOVEXA%20platform."
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 px-7 py-3.5 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 hover:bg-emerald-500/20 text-xs font-mono font-semibold uppercase tracking-wider transition-all hover:scale-105"
+                  >
+                    <RiWhatsappLine size={16} />
+                    <span>Chat on WhatsApp</span>
+                  </a>
 
-                <Link
-                  href="/contact"
-                  className="inline-flex items-center gap-2 px-7 py-3.5 rounded-full bg-white text-black font-semibold text-xs uppercase tracking-wider hover:bg-zinc-200 transition-all hover:scale-105 shadow-[0_0_20px_rgba(255,255,255,0.2)]"
-                >
-                  <span>Contact Solutions Team</span>
-                  <FiArrowRight size={14} />
-                </Link>
+                  <Link
+                    href="/contact"
+                    className="inline-flex items-center gap-2 px-7 py-3.5 rounded-full bg-white text-black font-semibold text-xs uppercase tracking-wider hover:bg-zinc-200 transition-all hover:scale-105 shadow-[0_0_20px_rgba(255,255,255,0.2)]"
+                  >
+                    <span>Contact Solutions Team</span>
+                    <FiArrowRight size={14} />
+                  </Link>
+                </div>
               </div>
-            </div>
+            </TiltCard>
           </Reveal>
         </div>
       </section>

@@ -19,11 +19,11 @@ export function DisciplinesArchitectureNode() {
 
   const disciplines = [
     { title: "Cloud Computing", icon: Server, desc: "Centralized policy, fleet orchestration, and media dispatch across thousands of edge nodes.", role: "Global Control Plane" },
-    { title: "Edge Computing", icon: Cpu, desc: "In-vehicle deterministic runtime executing media pipelines and geofence collision detection locally.", role: "Zero-Latency Local Compute" },
+    { title: "Edge Computing", icon: Cpu, desc: "In-vehicle deterministic runtime executing media pipelines and geofence collision detection locally.", role: "Low-Latency Local Compute" },
     { title: "IoT & Telemetry", icon: Radio, desc: "High-frequency operational state sensing, hardware diagnostics, and sensor data ingestion.", role: "Continuous System Sensing" },
     { title: "Connected Vehicles", icon: Wifi, desc: "Multi-carrier cellular uplink with automated failover and bandwidth-adaptive streaming.", role: "Physical Transport Gateway" },
     { title: "Digital Media", icon: Megaphone, desc: "Hardware-accelerated dynamic multi-screen rendering and frame-accurate synchronized display.", role: "Dynamic Visual Surfaces" },
-    { title: "Location Intelligence", icon: MapPin, desc: "Sub-meter GNSS positioning paired with high-frequency polygonal geofence triggers.", role: "Spatial Context Logic" },
+    { title: "Location Intelligence", icon: MapPin, desc: "Designed for sub-meter GNSS positioning paired with high-frequency polygonal geofence triggers.", role: "Spatial Context Logic" },
     { title: "Data Infrastructure", icon: Database, desc: "Event-driven mobility logs, cryptographic proof-of-play timestamps, and verified audits.", role: "Verifiable Data Pipeline" },
     { title: "Security & OTA", icon: ShieldCheck, desc: "Hardware root-of-trust, encrypted storage, and dual-bank atomic over-the-air firmware updates.", role: "Hardened Security Perimeter" },
   ];
@@ -390,7 +390,7 @@ export function ProgrammableGeography() {
           Make Geography <span className="gradient-text">Programmable.</span>
         </h3>
         <p style={{ color: "var(--text-secondary)", fontSize: "1rem", margin: 0, maxWidth: "680px" }}>
-          Raw latitude and longitude are transformed into semantic spatial context, triggering deterministic edge logic with sub-meter GNSS accuracy.
+          Raw latitude and longitude are transformed into semantic spatial context, triggering deterministic edge logic designed for high-precision GNSS positioning.
         </p>
       </div>
 
@@ -411,7 +411,7 @@ export function ProgrammableGeography() {
             Coordinates
           </div>
           <p style={{ fontSize: "0.85rem", color: "var(--text-secondary)", margin: 0, lineHeight: 1.5 }}>
-            Sub-meter GNSS coordinates continuously stream from in-vehicle receivers into VMOVEXA CORE.
+            High-precision GNSS coordinates continuously stream from in-vehicle receivers into VMOVEXA CORE.
           </p>
         </div>
 

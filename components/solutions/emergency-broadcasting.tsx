@@ -66,21 +66,21 @@ export function EmergencyBroadcasting() {
     {
       id: "security",
       title: "Security Alerts",
-      desc: "National security notifications, dynamic perimeter alerts, and civil defense bulletins.",
+      desc: "Civic security notifications, perimeter alerts, and authorized public bulletins.",
       img: "/images/emergency/security.png",
       badge: "Perimeter",
       severity: "HIGH",
-      sampleNotice: "SECURITY ADVISORY: RESTRICTED ACCESS IN ZONE 3. ALL BUS FLEET UNITS ACTIVATE LIVE GPS BEACONS.",
+      sampleNotice: "CIVIC SECURITY ADVISORY: RESTRICTED ACCESS IN ZONE 3. MUNICIPAL ROUTE DETOUR IN EFFECT.",
     },
   ];
 
   const [activeAlert, setActiveAlert] = useState<EmergencyOp>(emergencyOps[1]); // Default to Flood Alert
 
   const advantages = [
-    { title: "Instant Deployment", desc: "Push verified alerts to 500+ transit displays within <250ms." },
-    { title: "Geo-Fenced Targeting", desc: "Isolate broadcasts to affected wards without causing citywide panic." },
-    { title: "Route-Based Safety", desc: "Dynamically redirect passenger flows away from hazardous streets." },
-    { title: "Emergency Exit Sync", desc: "Automatic hardware override lighting in-vehicle evacuation pathways." },
+    { title: "Emergency Communication", desc: "Architecture designed to broadcast verified civic alerts and public safety notices across transit corridors." },
+    { title: "Traffic Information", desc: "Dynamic detours, road closures, and traffic management updates delivered to moving displays in real time." },
+    { title: "Public Safety Messaging", desc: "Targeted public advisories and safe routing guidance for specific urban districts." },
+    { title: "Transport & Civic Advisories", desc: "Timely municipal bulletins, transit disruptions, and official citizen updates." },
   ];
 
   return (
@@ -90,13 +90,13 @@ export function EmergencyBroadcasting() {
         <div>
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-red-500/10 border border-red-500/30 text-red-400 font-mono text-xs uppercase tracking-wider mb-4">
             <span className="w-2 h-2 rounded-full bg-red-500 animate-ping" />
-            Civic Protection • Emergency Broadcasting
+            Civic Protection • Public Information Channel
           </div>
           <h3 className="text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight text-white uppercase leading-tight">
-            Emergency <span className="gradient-text">Operations & Overrides</span>
+            Public Information &amp; <span className="gradient-text">Civic Communication</span>
           </h3>
           <p className="text-sm sm:text-base text-white/70 max-w-2xl mt-3 font-normal leading-relaxed">
-            In times of crisis, VMOVEXA transforms the moving fleet into a distributed civil defence network. Authorised disaster response agencies can override commercial media with microsecond-level synchronization.
+            Connected mobility can become an additional channel for authorized public information. When authorized by municipal or transit authorities, digital transit surfaces can communicate critical advisories across urban routes.
           </p>
         </div>
 
@@ -163,11 +163,11 @@ export function EmergencyBroadcasting() {
           <div className="flex items-center gap-3">
             <div className="w-3 h-3 rounded-full bg-red-500 animate-ping" />
             <span className="font-mono text-xs text-red-400 font-bold uppercase tracking-widest">
-              SIMULATED ON-VEHICLE DISPLAY OVERRIDE
+              SIMULATED ON-VEHICLE CIVIC BROADCAST
             </span>
           </div>
           <div className="flex items-center gap-2 font-mono text-xs text-white/60">
-            <span>Click any emergency card above to test instant screen takeover</span>
+            <span>Click any advisory category above to simulate authorized screen broadcast</span>
           </div>
         </div>
 
@@ -180,12 +180,12 @@ export function EmergencyBroadcasting() {
           <div className="flex items-center justify-between text-[11px] font-mono text-red-400 border-b border-red-500/20 pb-3 mb-5">
             <div className="flex items-center gap-2">
               <RiAlarmWarningLine size={16} className="text-red-500 animate-bounce" />
-              <span className="font-bold tracking-widest">DISASTER MANAGEMENT AUTHORITY OVERRIDE</span>
+              <span className="font-bold tracking-widest">AUTHORIZED CIVIC INFORMATION BROADCAST</span>
             </div>
             <div className="hidden sm:flex items-center gap-4">
-              <span>LATENCY: 0.18s</span>
-              <span>GEO-ZONE: WARD 14</span>
-              <span>DISPLAYS: 512 UNITS</span>
+              <span>CHANNEL: AUTHORIZED CIVIC FEED</span>
+              <span>GEO-ZONE: TRANSIT CORRIDOR</span>
+              <span>STATUS: BROADCASTING</span>
             </div>
           </div>
 
