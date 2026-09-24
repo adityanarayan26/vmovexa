@@ -60,13 +60,14 @@ export function SiteFooter() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-8 pb-10 border-b border-white/10">
           {/* Brand Info & Action CTAs */}
           <div className="lg:col-span-4 space-y-5">
-            <Link href="/" className="inline-block">
+            <Link href="/" className="inline-block group">
               <Image
                 src="/logos/vmovexa-vertical.svg"
                 alt="VMOVEXA"
-                width={150}
-                height={80}
-                className="h-16 w-auto brightness-110 object-contain drop-shadow-2xl"
+                width={280}
+                height={155}
+                className="w-60 sm:w-64 md:w-72 h-auto brightness-110 object-contain drop-shadow-2xl transition-transform duration-300 group-hover:scale-[1.02]"
+                priority
               />
             </Link>
 

@@ -1,18 +1,24 @@
 "use client";
 
 import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
-import { FiArrowUpRight, FiMenu, FiX } from "react-icons/fi";
+import { FiArrowUpRight, FiMenu, FiX, FiGlobe, FiHelpCircle, FiUser } from "react-icons/fi";
 import Image from "next/image";
 import Link from "next/link";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import { usePathname } from "next/navigation";
 import { navigation } from "@/lib/site";
+import { MegaMenu } from "./mega-menu";
+import { megaMenuData } from "@/lib/mega-menu";
+import { useI18n } from "@/lib/i18n-context";
 
 export function SiteHeader() {
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [activeMenu, setActiveMenu] = useState<string | null>(null);
   const pathname = usePathname();
   const reduceMotion = useReducedMotion();
+  const timeoutRef = useRef<NodeJS.Timeout | null>(null);
+  const { currentLanguage, currentLocation, openModal } = useI18n();
 
   useEffect(() => {
     const update = () => setScrolled(window.scrollY > 20);
@@ -21,18 +27,57 @@ export function SiteHeader() {
     return () => window.removeEventListener("scroll", update);
   }, []);
 
+  // Close mega menu on route change
+  useEffect(() => {
+    setActiveMenu(null);
+    setOpen(false);
+  }, [pathname]);
+
+  const handleMouseEnter = (label: string) => {
+    if (timeoutRef.current) clearTimeout(timeoutRef.current);
+    if (megaMenuData[label]) {
+      setActiveMenu(label);
+    } else {
+      setActiveMenu(null);
+    }
+  };
+
+  const handleMouseLeave = () => {
+    if (timeoutRef.current) clearTimeout(timeoutRef.current);
+    timeoutRef.current = setTimeout(() => {
+      setActiveMenu(null);
+    }, 200);
+  };
+
+  const handleMenuEnter = () => {
+    if (timeoutRef.current) clearTimeout(timeoutRef.current);
+  };
+
+  const handleMenuLeave = () => {
+    if (timeoutRef.current) clearTimeout(timeoutRef.current);
+    timeoutRef.current = setTimeout(() => {
+      setActiveMenu(null);
+    }, 200);
+  };
+
   const links = navigation.map((item) => {
     const isActive = pathname === item.href;
+    const isMenuOpen = activeMenu === item.label;
+
     return (
       <Link
         className={`relative px-4 py-2 rounded-full text-xs tracking-wide transition-all duration-300 ${
-          isActive
+          isActive || isMenuOpen
             ? "text-white bg-white/15 shadow-[0_0_15px_rgba(255,255,255,0.12),inset_0_1px_0_rgba(255,255,255,0.25)] font-semibold"
             : "text-zinc-400 hover:text-white hover:bg-white/[0.07]"
         }`}
         href={item.href}
         key={item.href}
-        onClick={() => setOpen(false)}
+        onMouseEnter={() => handleMouseEnter(item.label)}
+        onClick={() => {
+          setActiveMenu(null);
+          setOpen(false);
+        }}
       >
         {item.label}
         {isActive && (
@@ -43,9 +88,17 @@ export function SiteHeader() {
   });
 
   return (
-    <header className={`site-header transition-all duration-300 ${scrolled ? "site-header--scrolled" : ""}`}>
-      <nav aria-label="Main navigation" className="nav-shell container max-w-7xl mx-auto px-6 flex items-center justify-between h-[72px]">
-        <Link aria-label="VMOVEXA Home" className="brand-link flex items-center group py-1" href="/">
+    <header
+      className={`site-header transition-all duration-300 ${scrolled ? "site-header--scrolled" : ""}`}
+      onMouseLeave={handleMouseLeave}
+    >
+      <nav aria-label="Main navigation" className="nav-shell container max-w-7xl mx-auto px-6 flex items-center justify-between h-[72px] relative z-50">
+        <Link
+          aria-label="VMOVEXA Home"
+          className="brand-link flex items-center group py-1"
+          href="/"
+          onClick={() => setActiveMenu(null)}
+        >
           <Image
             alt="VMOVEXA"
             className="h-4 sm:h-[18px] w-auto max-w-[160px] sm:max-w-[195px] object-contain transition-transform duration-300 group-hover:scale-105"
@@ -56,19 +109,66 @@ export function SiteHeader() {
           />
         </Link>
         
-        {/* Sleek Centered Floating Pill Dock for Navigation */}
-        <div className="hidden lg:flex items-center gap-1 px-3 py-1.5 rounded-full backdrop-blur-xl bg-white/[0.03] border border-white/10 shadow-[inset_0_1px_0_rgba(255,255,255,0.06),0_4px_25px_rgba(0,0,0,0.6)]">
+        {/* Sleek Centered Floating Pill Dock for Navigation with Tesla Mega Menu Triggers */}
+        <div
+          className="hidden lg:flex items-center gap-1 px-3 py-1.5 rounded-full backdrop-blur-xl bg-white/[0.03] border border-white/10 shadow-[inset_0_1px_0_rgba(255,255,255,0.06),0_4px_25px_rgba(0,0,0,0.6)]"
+        >
           {links}
         </div>
 
-        <div className="flex items-center gap-3">
+        {/* Top Utility Icons (Tesla-style: Help ?, Globe 🌐 Language & Location, Account 👤) + CTA */}
+        <div className="flex items-center gap-2 sm:gap-3">
+          {/* Support / FAQ Icon (?) */}
+          <Link
+            href="/faq"
+            onClick={() => setActiveMenu(null)}
+            aria-label="FAQ & Support"
+            className="w-8 h-8 sm:w-9 sm:h-9 rounded-full flex items-center justify-center text-zinc-400 hover:text-white hover:bg-white/[0.08] transition-all"
+            title="FAQ & Support"
+          >
+            <FiHelpCircle className="w-4 h-4 sm:w-[17px] sm:h-[17px]" />
+          </Link>
+
+          {/* Language & Location Selector (🌐) */}
+          <button
+            type="button"
+            onClick={() => {
+              setActiveMenu(null);
+              openModal();
+            }}
+            aria-label="Select Language & Location"
+            className="group relative flex items-center gap-1.5 px-2.5 py-1.5 rounded-full text-zinc-300 hover:text-white hover:bg-white/[0.08] transition-all border border-white/5 hover:border-cyan-400/40"
+            title="Select Language & Market"
+          >
+            <FiGlobe className="w-4 h-4 text-cyan-400 group-hover:rotate-45 transition-transform duration-300" />
+            <span className="font-mono text-[11px] font-bold tracking-wider uppercase text-zinc-300 group-hover:text-cyan-300">
+              {currentLanguage.code}
+            </span>
+            <span className="text-[10px] hidden md:inline text-zinc-500 font-mono">
+              • {currentLocation.code.toUpperCase()}
+            </span>
+          </button>
+
+          {/* Account / Contact Icon (👤) */}
+          <Link
+            href="/contact"
+            onClick={() => setActiveMenu(null)}
+            aria-label="Contact and Client Portal"
+            className="w-8 h-8 sm:w-9 sm:h-9 rounded-full flex items-center justify-center text-zinc-400 hover:text-white hover:bg-white/[0.08] transition-all"
+            title="Client Portal & Contact"
+          >
+            <FiUser className="w-4 h-4 sm:w-[17px] sm:h-[17px]" />
+          </Link>
+
           <Link
             className="hidden sm:inline-flex items-center gap-2 px-6 py-2.5 rounded-full font-semibold text-xs tracking-wider transition-all duration-300 hover:scale-[1.04] active:scale-[0.98] group bg-white text-black shadow-[0_0_20px_rgba(255,255,255,0.25)] hover:shadow-[0_0_30px_rgba(255,255,255,0.45)]"
             href="/contact"
+            onClick={() => setActiveMenu(null)}
           >
             <span className="font-semibold text-black">Let&apos;s Build</span>
             <FiArrowUpRight size={14} className="text-black group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
           </Link>
+
           <button
             aria-controls="mobile-navigation"
             aria-expanded={open}
@@ -81,6 +181,20 @@ export function SiteHeader() {
           </button>
         </div>
       </nav>
+
+      {/* Tesla-Style Mega Menu Component */}
+      <AnimatePresence>
+        {activeMenu && (
+          <MegaMenu
+            activeKey={activeMenu}
+            onClose={() => setActiveMenu(null)}
+            onMouseEnter={handleMenuEnter}
+            onMouseLeave={handleMenuLeave}
+          />
+        )}
+      </AnimatePresence>
+
+      {/* Mobile Drawer */}
       <AnimatePresence>
         {open && (
           <motion.div
@@ -91,10 +205,60 @@ export function SiteHeader() {
             initial={reduceMotion ? false : { opacity: 0, clipPath: "inset(0 0 100% 0)" }}
             transition={{ duration: reduceMotion ? 0 : 0.35, ease: "easeOut" }}
           >
-            <div className="mobile-nav__inner container text-white">
-              {links}
+            <div className="mobile-nav__inner container text-white max-h-[85vh] overflow-y-auto">
+              {/* Mobile Language & Location Selector */}
+              <div className="pt-1 pb-4 border-b border-white/10 mb-4">
+                <button
+                  type="button"
+                  onClick={() => {
+                    setOpen(false);
+                    openModal();
+                  }}
+                  className="w-full flex items-center justify-between p-3 rounded-xl bg-white/[0.04] border border-white/10 text-white hover:bg-white/[0.08] transition-colors"
+                >
+                  <div className="flex items-center gap-2.5">
+                    <FiGlobe className="text-cyan-400 w-4 h-4" />
+                    <span className="text-sm font-medium">Language &amp; Region</span>
+                  </div>
+                  <span className="font-mono text-xs px-2.5 py-1 rounded-md bg-cyan-500/15 text-cyan-300 border border-cyan-500/30 font-semibold">
+                    {currentLanguage.flag} {currentLanguage.nativeName}
+                  </span>
+                </button>
+              </div>
+
+              <div className="flex flex-col space-y-2 mb-6">
+                {navigation.map((item) => {
+                  const data = megaMenuData[item.label];
+                  return (
+                    <div key={item.href} className="border-b border-white/10 pb-3">
+                      <Link
+                        className="text-lg font-bold text-white hover:text-cyan-300 block py-1"
+                        href={item.href}
+                        onClick={() => setOpen(false)}
+                      >
+                        {item.label}
+                      </Link>
+                      {data && data.sectionLinks && (
+                        <div className="grid grid-cols-2 gap-2 mt-2 pl-2">
+                          {data.sectionLinks.slice(0, 4).map((sec, sIdx) => (
+                            <Link
+                              key={sIdx}
+                              href={sec.href}
+                              onClick={() => setOpen(false)}
+                              className="text-xs text-zinc-400 hover:text-cyan-300 py-0.5 truncate"
+                            >
+                              • {sec.label}
+                            </Link>
+                          ))}
+                        </div>
+                      )}
+                    </div>
+                  );
+                })}
+              </div>
+
               <Link
-                className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full font-semibold text-sm tracking-wide mt-4 bg-white text-black"
+                className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full font-semibold text-sm tracking-wide mt-2 bg-white text-black w-full"
                 href="/contact"
                 onClick={() => setOpen(false)}
               >
@@ -108,4 +272,3 @@ export function SiteHeader() {
     </header>
   );
 }
-

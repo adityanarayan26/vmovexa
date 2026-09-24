@@ -16,7 +16,6 @@ import { RiBusLine, RiMegaphoneLine } from "react-icons/ri";
 import { EditorialMaskText, EditorialLine, CubertoLines } from "@/components/animations/editorial-text";
 import { MagneticElement, GsapScrollReveal } from "@/components/animations/gsap-scroll-fx";
 import { MediaSlot } from "@/components/ui/media-slot";
-import { Counter } from "@/components/animations/counter";
 import { TextDecrypt } from "@/components/animations/text-decrypt";
 import { BlurReveal } from "@/components/animations/blur-reveal";
 import { TiltCard } from "@/components/animations/tilt-card";
@@ -84,11 +83,11 @@ export default function PlatformPage() {
       cta: "Explore Edge Telemetry",
       href: "#vmovexa-core",
       icon: FiActivity, 
-      color: "text-emerald-400", 
-      badgeBg: "bg-emerald-500/15 border-emerald-500/40 shadow-[0_0_15px_rgba(16,185,129,0.25)]",
-      borderColor: "border-emerald-500/40 hover:border-emerald-400 shadow-[0_0_20px_rgba(16,185,129,0.15)] hover:shadow-[0_0_30px_rgba(16,185,129,0.3)]",
-      glowBg: "from-emerald-500/25 via-transparent to-transparent",
-      accentBar: "bg-emerald-400",
+      color: "text-purple-400", 
+      badgeBg: "bg-purple-500/15 border-purple-500/40 shadow-[0_0_15px_rgba(168,85,247,0.25)]",
+      borderColor: "border-purple-500/40 hover:border-purple-400 shadow-[0_0_20px_rgba(168,85,247,0.15)] hover:shadow-[0_0_30px_rgba(168,85,247,0.3)]",
+      glowBg: "from-purple-500/25 via-transparent to-transparent",
+      accentBar: "bg-purple-400",
     },
     { 
       title: "Scalable Infrastructure", 
@@ -97,11 +96,11 @@ export default function PlatformPage() {
       cta: "Explore Architecture",
       href: "/technology",
       icon: FiDatabase, 
-      color: "text-amber-400", 
-      badgeBg: "bg-amber-500/15 border-amber-500/40 shadow-[0_0_15px_rgba(245,158,11,0.25)]",
-      borderColor: "border-amber-500/40 hover:border-amber-400 shadow-[0_0_20px_rgba(245,158,11,0.15)] hover:shadow-[0_0_30px_rgba(245,158,11,0.3)]",
-      glowBg: "from-amber-500/25 via-transparent to-transparent",
-      accentBar: "bg-amber-400",
+      color: "text-fuchsia-400", 
+      badgeBg: "bg-fuchsia-500/15 border-fuchsia-500/40 shadow-[0_0_15px_rgba(217,70,239,0.25)]",
+      borderColor: "border-fuchsia-500/40 hover:border-fuchsia-400 shadow-[0_0_20px_rgba(217,70,239,0.15)] hover:shadow-[0_0_30px_rgba(217,70,239,0.3)]",
+      glowBg: "from-fuchsia-500/25 via-transparent to-transparent",
+      accentBar: "bg-fuchsia-400",
     },
   ];
 
@@ -262,30 +261,74 @@ export default function PlatformPage() {
             </div>
           </GsapScrollReveal>
 
-          {/* 4 Bottom Metrics from Mockup Screen 02 */}
+          {/* 4 Core Architectural Capabilities */}
           <GsapScrollReveal delay={0.4}>
-            <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 pt-12 border-t border-white/10">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 pt-12 border-t border-white/10">
               {[
-                { value: 500, suffix: "+", label: "Connected Vehicles", decimals: 0 },
-                { value: 10, suffix: "M+", label: "Daily Touchpoints", decimals: 0 },
-                { value: 99.9, suffix: "%", label: "Platform Uptime", decimals: 1 },
-                { value: NaN, prefix: "∞", label: "Possibilities Ahead", decimals: 0 },
-              ].map((metric, i) => (
-                <div
-                  key={i}
-                  className="p-6 rounded-2xl bg-white/[0.02] border border-white/10 hover:border-white/20 hover:bg-white/[0.04] transition-all duration-300 shadow-sm"
-                >
-                  <div className="text-3xl sm:text-4xl font-bold tracking-tight text-white mb-2 flex items-baseline">
-                    {isNaN(metric.value) ? metric.prefix : <Counter value={metric.value} suffix={metric.suffix} prefix={metric.prefix} decimals={metric.decimals} />}
-                  </div>
-                  <span className="text-xs sm:text-sm text-white/70 font-medium tracking-wide">{metric.label}</span>
-                </div>
-              ))}
+                { 
+                  icon: FiCpu, 
+                  tag: "Edge Computing", 
+                  title: "Autonomous Edge Runtime", 
+                  desc: "Vehicle-side local decisioning with zero latency and 100% offline continuity.",
+                  color: "text-cyan-400",
+                  bg: "bg-cyan-500/10 border-cyan-500/30"
+                },
+                { 
+                  icon: FiCloud, 
+                  tag: "Cloud Fabric", 
+                  title: "Distributed Fleet Mesh", 
+                  desc: "Centralized policy distribution, predictive routing, and fleet orchestration.",
+                  color: "text-indigo-400",
+                  bg: "bg-indigo-500/10 border-indigo-500/30"
+                },
+                { 
+                  icon: FiMapPin, 
+                  tag: "Spatial Logic", 
+                  title: "Geofenced Context Engine", 
+                  desc: "Real-time polygon boundaries trigger contextual passenger messages.",
+                  color: "text-purple-400",
+                  bg: "bg-purple-500/10 border-purple-500/30"
+                },
+                { 
+                  icon: FiMonitor, 
+                  tag: "Digital Media", 
+                  title: "Multi-Screen Synchrony", 
+                  desc: "Unified hardware bus powering dynamic exterior and interior display arrays.",
+                  color: "text-pink-400",
+                  bg: "bg-pink-500/10 border-pink-500/30"
+                },
+              ].map((feat) => {
+                const Icon = feat.icon;
+                return (
+                  <TiltCard key={feat.title} maxTilt={6} className="h-full">
+                    <div className="p-[1.5px] rounded-2xl bg-gradient-to-r from-[#00e5ff] via-[#6366f1] to-[#ec4899] shadow-[0_0_15px_rgba(99,102,241,0.2)] hover:shadow-[0_0_30px_rgba(236,72,153,0.35)] transition-all duration-300 h-full">
+                      <div className="p-6 rounded-[calc(1rem-1.5px)] bg-[#07090e] h-full flex flex-col justify-between group">
+                        <div>
+                          <div className="flex items-center justify-between mb-4">
+                            <span className={`p-2.5 rounded-xl border ${feat.bg} ${feat.color}`}>
+                              <Icon size={18} />
+                            </span>
+                            <span className="font-mono text-[10px] uppercase tracking-widest text-white/40">
+                              {feat.tag}
+                            </span>
+                          </div>
+                          <h4 className="text-base font-semibold text-white mb-2 group-hover:text-cyan-200 transition-colors">
+                            {feat.title}
+                          </h4>
+                          <p className="text-xs text-white/60 leading-relaxed font-light">
+                            {feat.desc}
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </TiltCard>
+                );
+              })}
             </div>
           </GsapScrollReveal>
 
-          {/* Subheading + 5 Feature Cards with Custom Box Colors */}
-          <div className="pt-16 mt-16 border-t border-white/10">
+          {/* Subheading + 5 Feature Cards with Logo Gradient Borders */}
+          <div id="connected-intelligence" className="pt-16 mt-16 border-t border-white/10 scroll-mt-24">
             <EditorialLine>
               <div className="text-center max-w-2xl mx-auto mb-10">
                 <span className="font-mono text-xs uppercase tracking-widest text-cyan-400 block mb-2">
@@ -303,37 +346,39 @@ export default function PlatformPage() {
                 return (
                   <GsapScrollReveal key={card.title} delay={idx * 0.07} className="h-full flex flex-col">
                     <TiltCard maxTilt={8} glare={true} className="w-full h-full flex flex-col">
-                      <div className={`p-5 sm:p-5.5 xl:p-4.5 2xl:p-5 rounded-2xl bg-[#090b10] border ${card.borderColor} transition-all duration-300 h-full flex flex-col justify-between group shadow-xl relative overflow-hidden flex-1`}>
-                        {/* Ambient top color accent */}
-                        <div className={`absolute top-0 inset-x-0 h-[2px] ${card.accentBar} opacity-85 group-hover:h-1 group-hover:opacity-100 transition-all`} />
-                        <div className={`absolute -top-10 -right-10 w-28 h-28 bg-gradient-to-b ${card.glowBg} rounded-full blur-2xl pointer-events-none opacity-40 group-hover:opacity-80 transition-opacity`} />
+                      <div className="p-[2px] rounded-2xl bg-gradient-to-r from-[#00e5ff] via-[#6366f1] to-[#ec4899] shadow-[0_0_25px_rgba(34,211,238,0.25),0_0_35px_rgba(236,72,153,0.2)] hover:shadow-[0_0_40px_rgba(34,211,238,0.45),0_0_55px_rgba(236,72,153,0.45)] transition-all duration-300 h-full flex flex-col group">
+                        <div className="p-5 sm:p-5.5 xl:p-4.5 2xl:p-5 rounded-[14px] bg-[#07090e] h-full flex flex-col justify-between relative overflow-hidden flex-1">
+                          {/* Ambient top color accent with logo gradient */}
+                          <div className="absolute top-0 inset-x-0 h-[2.5px] bg-gradient-to-r from-[#00e5ff] via-[#6366f1] to-[#ec4899] opacity-100 group-hover:h-1 transition-all" />
+                          <div className="absolute -top-10 -right-10 w-28 h-28 bg-gradient-to-b from-indigo-500/25 via-pink-500/15 to-transparent rounded-full blur-2xl pointer-events-none opacity-40 group-hover:opacity-80 transition-opacity" />
 
-                        <div className="relative z-10 flex-1 flex flex-col">
-                          <div className={`w-11 h-11 rounded-xl border ${card.badgeBg} flex items-center justify-center ${card.color} mb-4 group-hover:scale-110 transition-transform duration-300`}>
-                            <Icon className="w-5 h-5" />
+                          <div className="relative z-10 flex-1 flex flex-col">
+                            <div className={`w-11 h-11 rounded-xl border ${card.badgeBg} flex items-center justify-center ${card.color} mb-4 group-hover:scale-110 transition-transform duration-300`}>
+                              <Icon className="w-5 h-5" />
+                            </div>
+                            {/* Heading in crisp white with gradient hover */}
+                            <h4 className="text-[15px] sm:text-base xl:text-[14.5px] 2xl:text-[16px] font-bold text-white group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-cyan-300 group-hover:via-indigo-300 group-hover:to-pink-300 mb-2 uppercase tracking-tight leading-snug break-words transition-all">
+                              {card.title}
+                            </h4>
+                            {/* Subtitle in Crisp Light Color */}
+                            <p className="text-[11px] font-mono uppercase tracking-wider mb-3 !text-white/80 font-medium leading-relaxed">
+                              {card.subtitle}
+                            </p>
+                            {/* Description in High Contrast Zinc */}
+                            <p className="text-xs xl:text-[12.5px] 2xl:text-xs !text-zinc-200 leading-relaxed font-normal flex-1">
+                              {card.desc}
+                            </p>
                           </div>
-                          {/* Heading in Box Theme Color - Scaled to fit long words like ORCHESTRATION & INFRASTRUCTURE */}
-                          <h4 className={`text-[15px] sm:text-base xl:text-[14.5px] 2xl:text-[16px] font-bold ${card.color} mb-2 uppercase tracking-tight leading-snug break-words`}>
-                            {card.title}
-                          </h4>
-                          {/* Subtitle in Crisp Light Color */}
-                          <p className="text-[11px] font-mono uppercase tracking-wider mb-3 !text-white/80 font-medium leading-relaxed">
-                            {card.subtitle}
-                          </p>
-                          {/* Description in High Contrast Zinc */}
-                          <p className="text-xs xl:text-[12.5px] 2xl:text-xs !text-zinc-200 leading-relaxed font-normal flex-1">
-                            {card.desc}
-                          </p>
-                        </div>
 
-                        <div className="pt-5 mt-5 border-t border-white/10 relative z-10">
-                          <Link
-                            href={card.href}
-                            className="inline-flex items-center justify-between w-full text-[11px] xl:text-xs font-semibold !text-white hover:!text-cyan-300 uppercase tracking-wider transition-colors group/cta"
-                          >
-                            <span className="!text-white group-hover/cta:underline">{card.cta}</span>
-                            <FiArrowRight className={`w-3.5 h-3.5 ${card.color} transition-transform group-hover/cta:translate-x-1.5`} />
-                          </Link>
+                          <div className="pt-5 mt-5 border-t border-white/10 relative z-10">
+                            <Link
+                              href={card.href}
+                              className="inline-flex items-center justify-between w-full text-[11px] xl:text-xs font-semibold !text-white hover:!text-cyan-300 uppercase tracking-wider transition-colors group/cta"
+                            >
+                              <span className="!text-white group-hover/cta:underline">{card.cta}</span>
+                              <FiArrowRight className={`w-3.5 h-3.5 ${card.color} transition-transform group-hover/cta:translate-x-1.5`} />
+                            </Link>
+                          </div>
                         </div>
                       </div>
                     </TiltCard>

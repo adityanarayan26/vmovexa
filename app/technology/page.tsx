@@ -174,40 +174,6 @@ export default function TechnologyPage() {
               </div>
             </div>
           </GsapScrollReveal>
-
-          {/* 4 Blue Technology Cards from Mockup Screen 03 */}
-          <GsapScrollReveal delay={0.4}>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 pt-8 border-t border-white/10">
-              {[
-                { title: "Edge Computing", icon: FiCpu, desc: "Local workload execution and low-latency in-vehicle processing" },
-                { title: "Cloud Infrastructure", icon: FiCloud, desc: "Centralized fleet orchestration, telemetry sync and rule definitions" },
-                { title: "Location Intelligence", icon: FiMapPin, desc: "Designed for sub-meter positioning, polygon geofencing and contextual triggers" },
-                { title: "Multi-Screen Systems", icon: FiMonitor, desc: "Synchronized digital surfaces, smart DOOH, and real-time passenger info" },
-              ].map((card, i) => {
-                const CardIcon = card.icon;
-                return (
-                  <TiltCard
-                    key={card.title}
-                    maxTilt={9}
-                    glare={true}
-                    className="h-full flex flex-col"
-                  >
-                    <div className="p-6 rounded-2xl bg-gradient-to-b from-blue-950/30 to-white/[0.02] border border-blue-500/20 hover:border-cyan-400/50 hover:bg-blue-950/40 transition-all duration-300 group flex flex-col items-center text-center shadow-lg h-full flex-1">
-                      <div className="w-12 h-12 rounded-xl bg-blue-500/10 border border-blue-400/30 flex items-center justify-center text-cyan-400 mb-4 group-hover:scale-110 group-hover:bg-cyan-500/20 transition-all duration-300">
-                        <CardIcon size={22} />
-                      </div>
-                      <h3 className="text-base font-semibold text-white group-hover:text-cyan-200 transition-colors mb-2">
-                        {card.title}
-                      </h3>
-                      <p className="text-xs text-white/50 leading-relaxed group-hover:text-white/70 transition-colors">
-                        {card.desc}
-                      </p>
-                    </div>
-                  </TiltCard>
-                );
-              })}
-            </div>
-          </GsapScrollReveal>
         </div>
       </section>
 

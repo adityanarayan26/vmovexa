@@ -77,6 +77,9 @@ export const metadata: Metadata = {
   },
 };
 
+import { LanguageProvider } from "@/lib/i18n-context";
+import { LanguageLocationModal } from "@/components/ui/language-location-modal";
+
 export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
@@ -98,18 +101,21 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${spaceGrotesk.variable} ${ibmPlexSans.variable} ${ibmPlexMono.variable}`}>
       <body>
-        <SmoothScroll />
-        <ThemeSwitcher />
-        <BackgroundGradient />
-        <SiteHeader />
+        <LanguageProvider>
+          <SmoothScroll />
+          <ThemeSwitcher />
+          <BackgroundGradient />
+          <SiteHeader />
 
-        <main>{children}</main>
-        <WhatsAppFloat />
-        <SiteFooter />
-        <script
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
-          type="application/ld+json"
-        />
+          <main>{children}</main>
+          <WhatsAppFloat />
+          <LanguageLocationModal />
+          <SiteFooter />
+          <script
+            dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
+            type="application/ld+json"
+          />
+        </LanguageProvider>
       </body>
     </html>
   );

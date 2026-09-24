@@ -37,6 +37,7 @@ import { TextDecrypt } from "@/components/animations/text-decrypt";
 import { BlurReveal } from "@/components/animations/blur-reveal";
 import { ImageCurtainReveal, ModernImageSheen, FloatingElement } from "@/components/animations/image-reveal";
 import { TiltCard } from "@/components/animations/tilt-card";
+import { WhatIsVmovexaSection } from "@/components/sections/what-is-vmovexa";
 
 export const metadata: Metadata = {
   title: "VMOVEXA | Cloud-to-Edge Mobility Intelligence Platform",
@@ -288,16 +289,13 @@ export default function HomePage() {
 
         <div className="container relative z-10 max-w-7xl mx-auto px-6 my-auto">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
-            {/* Left Vertical Index (01 to 08) */}
-            <div className="hidden lg:flex lg:col-span-1 flex-col gap-4 pt-16 font-mono text-[11px] text-white/30 tracking-widest select-none">
-              <span className="text-cyan-400 font-bold border-l-2 border-cyan-400 pl-2">01</span>
-              <span className="pl-2.5">02</span>
-              <span className="pl-2.5">03</span>
-              <span className="pl-2.5">04</span>
-              <span className="pl-2.5">05</span>
-              <span className="pl-2.5">06</span>
-              <span className="pl-2.5">07</span>
-              <span className="pl-2.5">08</span>
+            {/* Left Vertical Feature Pillars */}
+            <div className="hidden lg:flex lg:col-span-1 flex-col gap-4 pt-16 font-mono text-[11px] text-white/40 tracking-wider select-none">
+              <span className="text-cyan-400 font-semibold border-l-2 border-cyan-400 pl-2">Cloud</span>
+              <span className="pl-2.5 hover:text-white transition-colors cursor-default">Edge</span>
+              <span className="pl-2.5 hover:text-white transition-colors cursor-default">Vehicle</span>
+              <span className="pl-2.5 hover:text-white transition-colors cursor-default">Media</span>
+              <span className="pl-2.5 hover:text-white transition-colors cursor-default">Data</span>
             </div>
 
             {/* Main Header Copy */}
@@ -433,14 +431,19 @@ export default function HomePage() {
       </section>
 
       {/* ========================================================================= */}
-      {/* 02 // A VEHICLE CAN BE MORE.                                             */}
+      {/* 02 // WHAT IS VMOVEXA — 10-SECOND CLARITY MOMENT                          */}
+      {/* ========================================================================= */}
+      <WhatIsVmovexaSection />
+
+      {/* ========================================================================= */}
+      {/* 03 // A VEHICLE CAN BE MORE.                                             */}
       {/* ========================================================================= */}
       <section className="py-24 border-b border-white/[0.08] relative overflow-hidden bg-black">
         <div className="container max-w-7xl mx-auto px-6 relative z-10">
           <div className="text-center max-w-3xl mx-auto mb-16">
             <EditorialLine>
               <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/[0.05] border border-white/10 text-white/80 font-mono text-xs tracking-wider mb-4">
-                <span className="text-cyan-400 font-bold">02</span>
+                <span className="text-cyan-400 font-bold">03</span>
                 <span className="text-white/30">/</span>
                 <span>BEYOND TRANSPORTATION</span>
               </div>
@@ -486,14 +489,14 @@ export default function HomePage() {
       </section>
 
       {/* ========================================================================= */}
-      {/* 03 // THE CLOUD ORCHESTRATES. THE EDGE EXECUTES.                          */}
+      {/* 04 // THE CLOUD ORCHESTRATES. THE EDGE EXECUTES.                          */}
       {/* ========================================================================= */}
       <section className="py-28 border-b border-white/[0.08] relative overflow-hidden bg-black">
         <div className="container max-w-6xl mx-auto px-6 relative z-10">
           <div className="text-center max-w-4xl mx-auto mb-12">
             <EditorialLine>
               <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/[0.05] border border-white/10 text-white/80 font-mono text-xs tracking-wider mb-5">
-                <span className="text-cyan-400 font-bold">03</span>
+                <span className="text-cyan-400 font-bold">04</span>
                 <span className="text-white/30">/</span>
                 <span>ARCHITECTURAL PRINCIPLE</span>
               </div>
@@ -586,14 +589,14 @@ export default function HomePage() {
       </section>
 
       {/* ========================================================================= */}
-      {/* 04 // THE VEHICLE BECOMES THE EDGE.                                       */}
+      {/* 05 // THE VEHICLE BECOMES THE EDGE.                                       */}
       {/* ========================================================================= */}
       <section className="py-28 border-b border-white/[0.08] relative overflow-hidden bg-black">
         <div className="container max-w-6xl mx-auto px-6 relative z-10">
           <div className="max-w-3xl mb-16">
             <EditorialLine>
               <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/[0.05] border border-white/10 text-white/80 font-mono text-xs tracking-wider mb-4">
-                <span className="text-cyan-400 font-bold">04</span>
+                <span className="text-cyan-400 font-bold">05</span>
                 <span className="text-white/30">/</span>
                 <span>IN-VEHICLE COMPUTING</span>
               </div>
@@ -645,32 +648,18 @@ export default function HomePage() {
                     aspectRatio="16/9"
                     scanline={true}
                   />
-                  {/* Onboard Hardware Telemetry Ticker Strip */}
-                  <div className="p-4 bg-black/80 backdrop-blur-md border-t border-white/10 grid grid-cols-2 sm:grid-cols-4 gap-3 font-mono text-[10px]">
-                    <div>
-                      <div className="text-white/40 uppercase">EDGE DAEMON</div>
-                      <div className="text-cyan-400 font-semibold flex items-center gap-1.5 mt-0.5">
-                        <span className="w-1.5 h-1.5 rounded-full bg-cyan-400 animate-pulse" />
-                        <TextDecrypt text="ACTIVE v2.8" delay={0.2} />
-                      </div>
+                  {/* Hardware Runtime Status Bar */}
+                  <div className="px-6 py-4 bg-black/85 backdrop-blur-md border-t border-white/10 flex flex-wrap items-center justify-between gap-4 font-mono text-xs">
+                    <div className="flex items-center gap-2.5 text-cyan-300">
+                      <span className="w-2 h-2 rounded-full bg-cyan-400 animate-pulse" />
+                      <span className="font-semibold tracking-wide">VMOVEXA CORE Active Runtime</span>
                     </div>
-                    <div>
-                      <div className="text-white/40 uppercase">EDGE LATENCY</div>
-                      <div className="text-emerald-400 font-semibold mt-0.5">
-                        <TextDecrypt text="LOW-LATENCY EDGE" delay={0.3} />
-                      </div>
-                    </div>
-                    <div>
-                      <div className="text-white/40 uppercase">OFFLINE CACHE</div>
-                      <div className="text-indigo-300 font-semibold mt-0.5">
-                        <TextDecrypt text="100% HEALTHY" delay={0.4} />
-                      </div>
-                    </div>
-                    <div>
-                      <div className="text-white/40 uppercase">SCREEN BUS</div>
-                      <div className="text-purple-300 font-semibold mt-0.5">
-                        <TextDecrypt text="4 DISPLAYS SYNCED" delay={0.5} />
-                      </div>
+                    <div className="flex flex-wrap items-center gap-4 sm:gap-6 text-white/60 text-[11px]">
+                      <span>Real-Time Edge Processing</span>
+                      <span className="text-white/20 hidden sm:inline">•</span>
+                      <span>Zero-Latency Offline Cache</span>
+                      <span className="text-white/20 hidden sm:inline">•</span>
+                      <span>Multi-Display Bus Synchronized</span>
                     </div>
                   </div>
                 </div>
@@ -681,14 +670,14 @@ export default function HomePage() {
       </section>
 
       {/* ========================================================================= */}
-      {/* 05 // MOVEMENT CREATES CONTEXT.                                           */}
+      {/* 06 // MOVEMENT CREATES CONTEXT.                                           */}
       {/* ========================================================================= */}
       <section className="py-28 border-b border-white/[0.08] relative overflow-hidden bg-black">
         <div className="container max-w-6xl mx-auto px-6 relative z-10">
           <div className="text-center max-w-3xl mx-auto mb-16">
             <EditorialLine>
               <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/[0.05] border border-white/10 text-white/80 font-mono text-xs tracking-wider mb-4">
-                <span className="text-cyan-400 font-bold">05</span>
+                <span className="text-cyan-400 font-bold">06</span>
                 <span className="text-white/30">/</span>
                 <span>SPATIAL INTELLIGENCE</span>
               </div>
@@ -781,7 +770,7 @@ export default function HomePage() {
       </section>
 
       {/* ========================================================================= */}
-      {/* 06 // MEDIA THAT MOVES.                                                   */}
+      {/* 07 // MEDIA THAT MOVES.                                                   */}
       {/* ========================================================================= */}
       <section className="py-28 border-b border-white/[0.08] relative overflow-hidden bg-black">
         <div className="container max-w-6xl mx-auto px-6 relative z-10">
@@ -790,7 +779,7 @@ export default function HomePage() {
             <div className="lg:col-span-6 space-y-6">
               <EditorialLine>
                 <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/[0.05] border border-white/10 text-white/80 font-mono text-xs tracking-wider">
-                  <span className="text-cyan-400 font-bold">06</span>
+                  <span className="text-cyan-400 font-bold">07</span>
                   <span className="text-white/30">/</span>
                   <span>DYNAMIC TRANSIT MEDIA</span>
                 </div>
@@ -858,14 +847,14 @@ export default function HomePage() {
       </section>
 
       {/* ========================================================================= */}
-      {/* 07 // ONE PLATFORM. MANY MOBILITY ENVIRONMENTS.                           */}
+      {/* 08 // ONE PLATFORM. MANY MOBILITY ENVIRONMENTS.                           */}
       {/* ========================================================================= */}
       <section className="py-28 border-b border-white/[0.08] relative overflow-hidden bg-black">
         <div className="container max-w-6xl mx-auto px-6 relative z-10">
           <div className="text-center max-w-4xl mx-auto mb-16">
             <EditorialLine>
               <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/[0.05] border border-white/10 text-white/80 font-mono text-xs tracking-wider mb-5">
-                <span className="text-cyan-400 font-bold">07</span>
+                <span className="text-cyan-400 font-bold">08</span>
                 <span className="text-white/30">/</span>
                 <span>CROSS-SECTOR DEPLOYMENTS</span>
               </div>
@@ -877,7 +866,7 @@ export default function HomePage() {
               stagger={0.1}
               lines={[
                 <div key="l1">ONE PLATFORM.</div>,
-                <div key="l2" className="mt-1 sm:mt-2 text-cyan-400">MANY MOBILITY ENVIRONMENTS.</div>,
+                <div key="l2" className="mt-1 sm:mt-2 gradient-text">MANY MOBILITY ENVIRONMENTS.</div>,
               ]}
             />
             <EditorialLine delay={0.2}>
@@ -944,7 +933,7 @@ export default function HomePage() {
       </section>
 
       {/* ========================================================================= */}
-      {/* 08 // THE WORLD MOVES. INTELLIGENCE SHOULD MOVE WITH IT. (Final Section)  */}
+      {/* 09 // THE WORLD MOVES. INTELLIGENCE SHOULD MOVE WITH IT. (Final Section)  */}
       {/* ========================================================================= */}
       <section className="py-32 relative overflow-hidden text-center bg-black">
         <div className="absolute inset-0 bg-gradient-to-t from-cyan-950/30 via-transparent to-transparent pointer-events-none" />
@@ -952,7 +941,7 @@ export default function HomePage() {
           {/* Number Badge */}
           <EditorialLine>
             <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/5 border border-white/15 text-white/80 font-mono text-xs tracking-wider mb-6">
-              <span className="text-cyan-400 font-bold">08</span>
+              <span className="text-cyan-400 font-bold">09</span>
               <span className="text-white/30">/</span>
               <span>THE PLATFORM THESIS</span>
             </div>

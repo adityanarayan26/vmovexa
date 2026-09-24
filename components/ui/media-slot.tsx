@@ -176,7 +176,7 @@ export function MediaSlot({
               <div className="flex items-center justify-between text-[11px] font-mono text-white/70">
                 <div className="px-3 py-1 rounded-lg bg-black/70 backdrop-blur-md border border-white/10 flex items-center gap-2">
                   <span className="w-1.5 h-1.5 rounded-full bg-cyan-400" />
-                  <span>GPS: 28.6139° N, 77.2090° E // SPEED: 44 KM/H</span>
+                  <span>Real-Time In-Transit Stream • Edge Verified</span>
                 </div>
               </div>
             </div>

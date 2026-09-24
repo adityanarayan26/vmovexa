@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
-import { FiArrowRight, FiCpu, FiZap, FiUsers, FiGlobe } from "react-icons/fi";
+import { FiArrowRight, FiArrowUpRight, FiCpu, FiZap, FiUsers, FiGlobe } from "react-icons/fi";
+import { FaLinkedinIn } from "react-icons/fa";
 import { EditorialMaskText, EditorialLine, CubertoLines } from "@/components/animations/editorial-text";
 import { MagneticElement, GsapScrollReveal } from "@/components/animations/gsap-scroll-fx";
 import { MediaSlot } from "@/components/ui/media-slot";
@@ -24,6 +25,27 @@ export const metadata: Metadata = {
     "connected mobility company",
   ],
 };
+
+const leadershipTeam = [
+  {
+    name: "G Satyanarayana",
+    role: "Founder & CEO",
+    image: "/people/g-satyanarayana-real.png",
+    linkedin: "https://www.linkedin.com/in/satyanarayanakleetechnologiesceo/",
+  },
+  {
+    name: "BS Anuhya",
+    role: "Director",
+    image: "/people/bs-anuhya-real.png",
+    linkedin: "https://www.linkedin.com/in/klee-technologies/",
+  },
+  {
+    name: "Nikhil Mungilwar",
+    role: "Business Head",
+    image: "/people/nikhil-mungilwar-real.png",
+    linkedin: "https://www.linkedin.com/in/nikhil-mungilwar-553521164/",
+  },
+];
 
 export default function CompanyPage() {
   return (
@@ -172,7 +194,63 @@ export default function CompanyPage() {
         </div>
       </section>
 
-      {/* 02 — DETAILED TABS & COMPANY ECOSYSTEM */}
+      {/* 02 — LEADERSHIP (Matching Klee Technologies Design) */}
+      <section id="leadership" className="py-24 border-b border-white/[0.08] relative overflow-hidden bg-black scroll-mt-20">
+        <div className="container max-w-7xl mx-auto px-6 relative z-10">
+          <div className="mb-12">
+            <EditorialLine>
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-white leading-tight">
+                Leadership
+              </h2>
+            </EditorialLine>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 items-center">
+            {leadershipTeam.map((leader, i) => (
+              <GsapScrollReveal key={leader.name} delay={i * 0.1}>
+                <a
+                  href={leader.linkedin}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={`${leader.name} on LinkedIn`}
+                  className="flex items-center justify-between gap-3.5 p-2.5 sm:p-3 pr-4 sm:pr-5 rounded-full border border-white/15 bg-white/[0.03] hover:bg-white/[0.08] hover:border-cyan-400/50 backdrop-blur-md transition-all duration-300 shadow-lg group cursor-pointer"
+                >
+                  {/* Circular Avatar */}
+                  <div className="relative w-14 h-14 sm:w-16 sm:h-16 rounded-full overflow-hidden flex-shrink-0 border border-white/10 shadow-sm bg-neutral-900">
+                    <Image
+                      src={leader.image}
+                      alt={leader.name}
+                      fill
+                      sizes="64px"
+                      className="object-cover grayscale contrast-[1.08] group-hover:scale-105 transition-transform duration-500"
+                    />
+                  </div>
+
+                  {/* Name & Role */}
+                  <div className="flex-1 min-w-0 pl-1">
+                    <div className="font-bold text-white text-base sm:text-[17px] tracking-tight truncate group-hover:text-cyan-300 transition-colors">
+                      {leader.name}
+                    </div>
+                    <div className="text-xs sm:text-sm text-white/50 font-normal truncate mt-0.5">
+                      {leader.role}
+                    </div>
+                  </div>
+
+                  {/* LinkedIn Pill with Arrow */}
+                  <div
+                    className="flex items-center gap-1.5 px-3 py-2 rounded-xl bg-black border border-white/20 text-white group-hover:border-cyan-400 group-hover:text-cyan-300 transition-all group-hover:scale-105 shadow-sm flex-shrink-0"
+                  >
+                    <FaLinkedinIn className="w-3.5 h-3.5 text-white group-hover:text-cyan-300 transition-colors" />
+                    <FiArrowUpRight className="w-3 h-3 text-white/60 group-hover:text-cyan-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+                  </div>
+                </a>
+              </GsapScrollReveal>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* 03 — DETAILED TABS & COMPANY ECOSYSTEM */}
       <section id="company-details" className="py-24 border-b border-white/[0.08]">
         <div className="container max-w-6xl mx-auto px-6">
           <CompanyClient />
