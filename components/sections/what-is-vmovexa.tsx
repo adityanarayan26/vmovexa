@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { motion } from "framer-motion";
 import {
   FiArrowRight,
@@ -12,7 +13,7 @@ import {
   FiGlobe,
   FiLayers,
 } from "react-icons/fi";
-import { RiCarLine, RiBroadcastLine, RiBuilding4Line } from "react-icons/ri";
+import { RiBusLine, RiBroadcastLine, RiBuilding4Line } from "react-icons/ri";
 import { EditorialLine } from "@/components/animations/editorial-text";
 import { GsapScrollReveal } from "@/components/animations/gsap-scroll-fx";
 import { BlurReveal } from "@/components/animations/blur-reveal";
@@ -38,7 +39,7 @@ const pillars = [
   {
     title: "Connected vehicles.",
     desc: "Transforming public transit and fleets into programmable digital assets.",
-    icon: RiCarLine,
+    icon: RiBusLine,
     accent: "text-blue-600",
     border: "border-blue-500/20",
     glow: "group-hover:border-blue-400/50",
@@ -105,15 +106,21 @@ export function WhatIsVmovexaSection() {
         <div className="text-center max-w-3xl mx-auto mb-16">
           <EditorialLine>
             <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-cyan-50 border border-cyan-200 text-cyan-800 font-mono text-xs tracking-wider mb-4 shadow-sm">
-              <span className="text-cyan-600 font-bold">02</span>
-              <span className="text-cyan-300">/</span>
               <span>THE INTELLIGENCE LAYER</span>
             </div>
           </EditorialLine>
 
           <EditorialLine delay={0.1}>
             <h2 className="text-3xl sm:text-5xl lg:text-6xl font-medium font-heading tracking-tight uppercase text-zinc-900 leading-[1.08] mb-6">
-              VMOVEXA. <br />
+              <span className="flex justify-center mb-4 sm:mb-6">
+                <Image
+                  src="/logos/logo-hover-menu-cropped.png"
+                  alt="VMOVEXA Logo"
+                  width={360}
+                  height={30}
+                  className="h-8 sm:h-10 lg:h-12 w-auto"
+                />
+              </span>
               <span className="gradient-text font-semibold">
                 The intelligence layer for moving infrastructure.
               </span>
@@ -185,7 +192,7 @@ export function WhatIsVmovexaSection() {
                 </div>
                 <div className="flex items-center gap-3.5 mb-3">
                   <div className="w-12 h-12 rounded-xl bg-cyan-50 border border-cyan-200 flex items-center justify-center text-cyan-600 shadow-sm">
-                    <RiCarLine size={24} />
+                    <RiBusLine size={24} />
                   </div>
                   <div>
                     <h5 className="text-xl font-bold text-zinc-900 uppercase tracking-wide">

@@ -13,7 +13,7 @@ import {
   FiWifi,
   FiBriefcase,
 } from "react-icons/fi";
-import { RiCarLine, RiMegaphoneLine } from "react-icons/ri";
+import { RiBusLine, RiMegaphoneLine } from "react-icons/ri";
 import { EditorialMaskText, EditorialLine, EditorialTabTransition, EditorialTabItem } from "@/components/animations/editorial-text";
 import { MagneticElement, GsapScrollReveal } from "@/components/animations/gsap-scroll-fx";
 import { MediaSlot } from "@/components/ui/media-slot";
@@ -193,7 +193,7 @@ export function CompanyClient() {
                 </EditorialTabItem>
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4">
                   {[
-                    { title: "Mobility", desc: "Physical movement creates the operating environment.", icon: RiCarLine, color: "text-cyan-400", badge: "bg-cyan-500/10 border-cyan-500/30 shadow-[0_0_15px_rgba(6,182,212,0.12)]" },
+                    { title: "Mobility", desc: "Physical movement creates the operating environment.", icon: RiBusLine, color: "text-cyan-400", badge: "bg-cyan-500/10 border-cyan-500/30 shadow-[0_0_15px_rgba(6,182,212,0.12)]" },
                     { title: "Edge Computing", desc: "Computing moves closer to the vehicle.", icon: FiCpu, color: "text-indigo-400", badge: "bg-indigo-500/10 border-indigo-500/30 shadow-[0_0_15px_rgba(99,102,241,0.12)]" },
                     { title: "Cloud", desc: "Central infrastructure coordinates distributed assets.", icon: FiCloud, color: "text-sky-400", badge: "bg-sky-500/10 border-sky-500/30 shadow-[0_0_15px_rgba(56,189,248,0.12)]" },
                     { title: "Data", desc: "Operational events create structured intelligence.", icon: FiDatabase, color: "text-purple-400", badge: "bg-purple-500/10 border-purple-500/30 shadow-[0_0_15px_rgba(168,85,247,0.12)]" },

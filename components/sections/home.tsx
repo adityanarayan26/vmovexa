@@ -1,6 +1,6 @@
 "use client";
 
-import { ArrowRight, ArrowUpRight, Sparkles, Car, Building, Tv, Database, Cpu } from "lucide-react";
+import { ArrowRight, ArrowUpRight, Sparkles, Bus, Building, Tv, Database, Cpu } from "lucide-react";
 import Link from "next/link";
 import { Reveal } from "@/components/animations/reveal";
 import { EditorialLine } from "@/components/animations/editorial-text";
@@ -16,7 +16,7 @@ export function HomeExperience() {
       label: "01 // VEHICLES",
       title: "Connected Fleets",
       desc: "From mechanical transport to software-defined, connected edge computers on wheels.",
-      icon: Car,
+      icon: Bus,
     },
     {
       label: "02 // CITIES",

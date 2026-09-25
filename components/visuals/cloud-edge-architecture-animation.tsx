@@ -10,7 +10,7 @@ import {
   FiLayers,
   FiRadio,
 } from "react-icons/fi";
-import { RiCarLine } from "react-icons/ri";
+import { RiBusLine } from "react-icons/ri";
 
 type ExecutionMode = "sync" | "geofence" | "offline";
 
@@ -180,7 +180,7 @@ export function CloudEdgeArchitectureAnimation() {
             {/* Concept Header */}
             <div className="flex items-center gap-3.5 mb-4">
               <div className="w-12 h-12 rounded-xl bg-indigo-500/10 border border-indigo-500/30 flex items-center justify-center text-indigo-300 shadow-[0_0_20px_rgba(99,102,241,0.2)]">
-                <RiCarLine size={24} />
+                <RiBusLine size={24} />
               </div>
               <div>
                 <h4 className="text-xl font-bold tracking-tight text-white uppercase">The Edge</h4>

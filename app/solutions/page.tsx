@@ -155,17 +155,17 @@ export default function SolutionsPage() {
 
           {/* Bottom Bar: WHAT WILL YOU BUILD ON THE MOVING EDGE? + Talk to VMOVEXA -> */}
           <GsapScrollReveal delay={0.4}>
-            <div className="p-8 rounded-3xl bg-white/[0.03] border border-white/10 flex flex-col sm:flex-row items-center justify-between gap-6 shadow-2xl backdrop-blur-md">
-              <div className="font-mono text-sm sm:text-base tracking-wider text-white/80 font-medium text-center sm:text-left">
+            <div className="p-8 rounded-3xl bg-white border border-zinc-200 flex flex-col sm:flex-row items-center justify-between gap-6 shadow-xl backdrop-blur-md">
+              <div className="font-mono text-sm sm:text-base tracking-wider text-zinc-800 font-bold text-center sm:text-left">
                 What will you build on the moving edge?
               </div>
               <MagneticElement strength={0.3}>
                 <Link
                   href="/contact"
-                  className="inline-flex items-center gap-2.5 px-8 py-3.5 rounded-full bg-white text-black font-semibold text-sm tracking-wide transition-all duration-300 hover:scale-[1.02] active:scale-[0.98] shadow-[0_0_25px_rgba(255,255,255,0.25)]"
+                  className="inline-flex items-center gap-2.5 px-8 py-3.5 rounded-full bg-black text-white font-semibold text-sm tracking-wide transition-all duration-300 hover:scale-[1.02] active:scale-[0.98] shadow-md hover:bg-zinc-800"
                 >
-                  <span className="text-black font-semibold">Talk to VMOVEXA</span>
-                  <FiArrowRight size={16} className="text-black" />
+                  <span className="text-white font-semibold">Talk to VMOVEXA</span>
+                  <FiArrowRight size={16} className="text-white" />
                 </Link>
               </MagneticElement>
             </div>
@@ -417,14 +417,14 @@ export default function SolutionsPage() {
       </section>
 
       {/* CTA */}
-      <section className="py-24 text-center relative overflow-hidden bg-black">
-        <div className="absolute inset-0 bg-gradient-to-t from-cyan-950/20 via-transparent to-transparent pointer-events-none" />
+      <section className="py-24 text-center relative overflow-hidden bg-white border-t border-zinc-100">
+        <div className="absolute inset-0 bg-gradient-to-t from-zinc-50 via-white to-white pointer-events-none" />
         <div className="container max-w-4xl mx-auto px-6 relative z-10">
           <EditorialLine>
-            <div className="font-mono text-xs uppercase tracking-widest text-cyan-400 mb-3">Deployment & Implementation</div>
+            <div className="font-mono text-xs uppercase tracking-widest text-cyan-600 mb-3">Deployment & Implementation</div>
           </EditorialLine>
           <EditorialLine delay={0.1}>
-            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight mb-6 text-white uppercase">
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight mb-6 text-zinc-900 uppercase">
               What Will You Build on <span className="gradient-text">the Moving Edge?</span>
             </h2>
           </EditorialLine>
@@ -433,7 +433,7 @@ export default function SolutionsPage() {
               <MagneticElement strength={0.3}>
                 <Link
                   href="/contact"
-                  className="inline-flex items-center gap-2.5 px-7 py-3.5 rounded-full bg-white text-black font-semibold text-xs uppercase tracking-wider transition-transform duration-200 hover:scale-[1.03] active:scale-[0.98] shadow-[0_0_20px_rgba(255,255,255,0.2)] hover:bg-zinc-200"
+                  className="inline-flex items-center gap-2.5 px-7 py-3.5 rounded-full bg-black text-white font-semibold text-xs uppercase tracking-wider transition-transform duration-200 hover:scale-[1.03] active:scale-[0.98] shadow-md hover:bg-zinc-800"
                 >
                   <span>Talk to VMOVEXA</span>
                   <FiArrowRight size={15} />
@@ -442,7 +442,7 @@ export default function SolutionsPage() {
               <MagneticElement strength={0.3}>
                 <Link
                   href="/industries"
-                  className="inline-flex items-center gap-2.5 px-7 py-3.5 rounded-full bg-white/[0.06] border border-white/20 text-white font-semibold text-xs uppercase tracking-wider transition-all duration-200 hover:bg-white/10 hover:border-white/30"
+                  className="inline-flex items-center gap-2.5 px-7 py-3.5 rounded-full bg-zinc-100 border border-zinc-200 text-zinc-900 font-semibold text-xs uppercase tracking-wider transition-all duration-200 hover:bg-zinc-200 hover:border-zinc-300"
                 >
                   <span>Explore Industries</span>
                   <FiArrowUpRight size={15} />

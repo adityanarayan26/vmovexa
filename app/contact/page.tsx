@@ -22,6 +22,7 @@ export default function ContactPage() {
       icon: RiBuilding4Line,
       cta: "Talk to Fleet Solutions",
       color: "text-cyan-400",
+      lightColor: "text-cyan-600",
       badge: "bg-cyan-500/15 border-cyan-500/40 shadow-[0_0_15px_rgba(6,182,212,0.25)]",
       borderColor: "border-cyan-500/40 hover:border-cyan-400 shadow-[0_0_20px_rgba(6,182,212,0.15)] hover:shadow-[0_0_30px_rgba(6,182,212,0.3)]",
       glowBg: "from-cyan-500/25 via-transparent to-transparent",
@@ -34,6 +35,7 @@ export default function ContactPage() {
       icon: RiMegaphoneLine,
       cta: "Talk to Media",
       color: "text-pink-400",
+      lightColor: "text-pink-600",
       badge: "bg-pink-500/15 border-pink-500/40 shadow-[0_0_15px_rgba(236,72,153,0.25)]",
       borderColor: "border-pink-500/40 hover:border-pink-400 shadow-[0_0_20px_rgba(236,72,153,0.15)] hover:shadow-[0_0_30px_rgba(236,72,153,0.3)]",
       glowBg: "from-pink-500/25 via-transparent to-transparent",
@@ -46,6 +48,7 @@ export default function ContactPage() {
       icon: RiCpuLine,
       cta: "Partner With VMOVEXA",
       color: "text-indigo-400",
+      lightColor: "text-indigo-600",
       badge: "bg-indigo-500/15 border-indigo-500/40 shadow-[0_0_15px_rgba(99,102,241,0.25)]",
       borderColor: "border-indigo-500/40 hover:border-indigo-400 shadow-[0_0_20px_rgba(99,102,241,0.15)] hover:shadow-[0_0_30px_rgba(99,102,241,0.3)]",
       glowBg: "from-indigo-500/25 via-transparent to-transparent",
@@ -58,6 +61,7 @@ export default function ContactPage() {
       icon: RiFundsLine,
       cta: "Investor Enquiries",
       color: "text-emerald-400",
+      lightColor: "text-emerald-600",
       badge: "bg-emerald-500/15 border-emerald-500/40 shadow-[0_0_15px_rgba(16,185,129,0.25)]",
       borderColor: "border-emerald-500/40 hover:border-emerald-400 shadow-[0_0_20px_rgba(16,185,129,0.15)] hover:shadow-[0_0_30px_rgba(16,185,129,0.3)]",
       glowBg: "from-emerald-500/25 via-transparent to-transparent",
@@ -89,7 +93,7 @@ export default function ContactPage() {
             <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/[0.04] border border-white/15 backdrop-blur-md mb-8">
               <span className="w-2 h-2 rounded-full bg-cyan-400" />
               <span className="font-mono text-xs uppercase tracking-[0.16em] text-white/80">
-                <TextDecrypt text="16 — Contact & Enquiries" delay={150} />
+                <TextDecrypt text="Contact & Enquiries" delay={150} />
               </span>
             </div>
           </Reveal>
@@ -113,7 +117,7 @@ export default function ContactPage() {
       </section>
 
       {/* 02 — 4 CONTACT TRACKS */}
-      <section className="py-20 border-b border-white/[0.08] bg-black">
+      <section className="py-20 border-b border-zinc-200 bg-white">
         <div className="container max-w-6xl mx-auto px-6">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 items-stretch">
             {tracks.map((t, idx) => {
@@ -124,30 +128,30 @@ export default function ContactPage() {
                   <TiltCard maxTilt={8} glare={true} className="h-full flex flex-col">
                     <div
                       onClick={() => setSelectedInterest(t.title)}
-                      className={`p-6 sm:p-7 rounded-2xl bg-[#090b10] border ${t.borderColor} ${
-                        isSelected ? "ring-2 ring-cyan-400 shadow-[0_0_30px_rgba(6,182,212,0.3)]" : ""
-                      } transition-all duration-300 h-full flex flex-col justify-between group shadow-xl relative overflow-hidden flex-1 cursor-pointer`}
+                      className={`p-6 sm:p-7 rounded-2xl bg-white border border-zinc-200 ${
+                        isSelected ? "ring-2 ring-cyan-400 shadow-md" : "hover:border-zinc-300 shadow-sm"
+                      } transition-all duration-300 h-full flex flex-col justify-between group relative overflow-hidden flex-1 cursor-pointer`}
                     >
                       {/* Ambient top color accent */}
                       <div className={`absolute top-0 inset-x-0 h-[2px] ${t.accentBar} opacity-85 group-hover:h-1 group-hover:opacity-100 transition-all`} />
                       <div className={`absolute -top-10 -right-10 w-28 h-28 bg-gradient-to-b ${t.glowBg} rounded-full blur-2xl pointer-events-none opacity-40 group-hover:opacity-80 transition-opacity`} />
 
                       <div className="relative z-10 flex-1 flex flex-col">
-                        <div className={`w-11 h-11 rounded-xl border ${t.badge} flex items-center justify-center mb-5 ${t.color} group-hover:scale-110 transition-transform duration-300`}>
+                        <div className={`w-11 h-11 rounded-xl bg-zinc-50 border border-zinc-200 flex items-center justify-center mb-5 ${t.lightColor} group-hover:scale-110 transition-transform duration-300 shadow-sm`}>
                           <IconComp size={20} />
                         </div>
-                        <h3 className={`text-lg font-bold ${t.color} mb-2 uppercase tracking-tight`}>{t.title}</h3>
-                        <p className="text-[11px] font-mono uppercase tracking-wider mb-2.5 text-white/80 font-medium">{t.subtitle}</p>
-                        <p className="text-xs text-zinc-300 leading-relaxed font-normal flex-1">{t.copy}</p>
+                        <h3 className={`text-lg font-bold ${t.lightColor} mb-2 uppercase tracking-tight`}>{t.title}</h3>
+                        <p className="text-[11px] font-mono uppercase tracking-wider mb-2.5 text-zinc-600 font-medium">{t.subtitle}</p>
+                        <p className="text-xs text-zinc-500 leading-relaxed font-normal flex-1">{t.copy}</p>
                       </div>
 
-                      <div className="pt-5 mt-5 border-t border-white/10 relative z-10">
+                      <div className="pt-5 mt-5 border-t border-zinc-200 relative z-10">
                         <button
                           type="button"
-                          className="inline-flex items-center justify-between w-full text-[11px] font-semibold text-white hover:text-cyan-300 uppercase tracking-wider transition-colors group/cta cursor-pointer"
+                          className="inline-flex items-center justify-between w-full text-[11px] font-semibold text-zinc-900 hover:text-cyan-600 uppercase tracking-wider transition-colors group/cta cursor-pointer"
                         >
-                          <span className="text-white group-hover/cta:underline">{t.cta}</span>
-                          <FiArrowRight className={`w-3.5 h-3.5 ${t.color} transition-transform group-hover/cta:translate-x-1.5`} />
+                          <span className="text-zinc-900 group-hover/cta:underline">{t.cta}</span>
+                          <FiArrowRight className={`w-3.5 h-3.5 ${t.lightColor} transition-transform group-hover/cta:translate-x-1.5`} />
                         </button>
                       </div>
                     </div>

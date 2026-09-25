@@ -21,8 +21,6 @@ import {
   FiWifi,
 } from "react-icons/fi";
 import {
-  RiCarLine,
-  RiDashboard3Line,
   RiBusLine,
   RiFlightTakeoffLine,
   RiBuildingLine,
@@ -38,6 +36,8 @@ import { BlurReveal } from "@/components/animations/blur-reveal";
 import { ImageCurtainReveal, ModernImageSheen, FloatingElement } from "@/components/animations/image-reveal";
 import { TiltCard } from "@/components/animations/tilt-card";
 import { WhatIsVmovexaSection } from "@/components/sections/what-is-vmovexa";
+import { WhyVmovexaSection } from "@/components/sections/why-vmovexa";
+import { OurEcosystemSection } from "@/components/sections/our-ecosystem";
 import { BlueprintFlowAnimation } from "@/components/visuals/blueprint-flow";
 
 export const metadata: Metadata = {
@@ -62,7 +62,7 @@ export default function HomePage() {
     {
       title: "Mobility Platform",
       desc: "Software-defined passenger and fleet management coordinating vehicle telemetry and route status.",
-      icon: RiCarLine,
+      icon: RiBusLine,
       color: "text-cyan-400",
       badgeBg: "bg-cyan-500/10 border-cyan-500/25 shadow-[0_0_20px_rgba(6,182,212,0.2)]",
     },
@@ -126,7 +126,7 @@ export default function HomePage() {
       color: "border-purple-500/30",
       badgeColor: "text-purple-400 bg-purple-950/40 border-purple-500/30",
       glow: "hover:border-purple-400/50 hover:shadow-[0_0_30px_rgba(168,85,247,0.12)]",
-      icon: RiCarLine,
+      icon: RiBusLine,
     },
     {
       step: "04",
@@ -309,8 +309,6 @@ export default function HomePage() {
               {/* Number Badge */}
               <EditorialLine delay={0.1}>
                 <div className="inline-flex items-center gap-2.5 px-4 py-2 rounded-full bg-white/[0.06] border border-white/15 backdrop-blur-md mb-8 shadow-[0_0_20px_rgba(255,255,255,0.08)]">
-                  <span className="font-mono text-xs font-bold text-cyan-400">01</span>
-                  <span className="text-white/30 text-xs">/</span>
                   <TextDecrypt text="INTELLIGENCE IN MOTION" delay={0.2} className="text-white/90 text-xs" />
                 </div>
               </EditorialLine>
@@ -318,7 +316,7 @@ export default function HomePage() {
               {/* Headline: Space Grotesk */}
               <EditorialLine delay={0.15}>
                 <h1 className="text-4xl sm:text-5xl md:text-5xl lg:text-[56px] xl:text-[66px] font-medium font-heading tracking-tight leading-[1.05] max-w-lg xl:max-w-xl mb-6 text-white uppercase drop-shadow-lg">
-                  INTELLIGENCE IN <span className="gradient-text">MOTION.</span>
+                  <TextDecrypt text="INTELLIGENCE IN" delay={0.2} speed={60} loopInterval={3000} /> <span className="gradient-text-shimmer">MOTION.</span>
                 </h1>
               </EditorialLine>
 
@@ -383,52 +381,52 @@ export default function HomePage() {
                 <span className="w-2 h-2 rounded-full bg-cyan-400 animate-pulse" />
                 <div>
                   <div className="text-[10px] uppercase tracking-widest text-cyan-400/70">Stage 01</div>
-                  <div className="text-sm font-semibold text-white tracking-wide flex items-center gap-1.5 group-hover:text-cyan-300 transition-colors">
+                  <div className="text-sm font-semibold tracking-wide flex items-center gap-1.5 transition-colors glow-shimmer-cyan">
                     <span>Cloud</span>
-                    <span className="text-cyan-400 font-light">→</span>
+                    <span className="font-light">→</span>
                   </div>
-                  <div className="text-[10px] text-white/50 font-normal">Control &amp; Orchestration</div>
+                  <div className="text-[10px] font-normal glow-shimmer-cyan">Control &amp; Orchestration</div>
                 </div>
               </div>
             </div>
 
             <div className="flex items-center justify-between group">
               <div className="flex items-center gap-3">
-                <span className="w-2 h-2 rounded-full bg-indigo-400" />
+                <span className="w-2 h-2 rounded-full bg-indigo-400 animate-pulse" />
                 <div>
                   <div className="text-[10px] uppercase tracking-widest text-indigo-400/70">Stage 02</div>
-                  <div className="text-sm font-semibold text-white tracking-wide flex items-center gap-1.5 group-hover:text-indigo-300 transition-colors">
+                  <div className="text-sm font-semibold tracking-wide flex items-center gap-1.5 transition-colors glow-shimmer-indigo">
                     <span>Edge</span>
-                    <span className="text-indigo-400 font-light">→</span>
+                    <span className="font-light">→</span>
                   </div>
-                  <div className="text-[10px] text-white/50 font-normal">VMOVEXA CORE Compute</div>
+                  <div className="text-[10px] font-normal glow-shimmer-indigo">VMOVEXA CORE Compute</div>
                 </div>
               </div>
             </div>
 
             <div className="flex items-center justify-between group">
               <div className="flex items-center gap-3">
-                <span className="w-2 h-2 rounded-full bg-purple-400" />
+                <span className="w-2 h-2 rounded-full bg-purple-400 animate-pulse" />
                 <div>
                   <div className="text-[10px] uppercase tracking-widest text-purple-400/70">Stage 03</div>
-                  <div className="text-sm font-semibold text-white tracking-wide flex items-center gap-1.5 group-hover:text-purple-300 transition-colors">
+                  <div className="text-sm font-semibold tracking-wide flex items-center gap-1.5 transition-colors glow-shimmer-purple">
                     <span>Vehicle</span>
-                    <span className="text-purple-400 font-light">→</span>
+                    <span className="font-light">→</span>
                   </div>
-                  <div className="text-[10px] text-white/50 font-normal">Moving Transit Fleet</div>
+                  <div className="text-[10px] font-normal glow-shimmer-purple">Moving Transit Fleet</div>
                 </div>
               </div>
             </div>
 
             <div className="flex items-center justify-between group">
               <div className="flex items-center gap-3">
-                <span className="w-2 h-2 rounded-full bg-emerald-400" />
+                <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
                 <div>
                   <div className="text-[10px] uppercase tracking-widest text-emerald-400/70">Stage 04</div>
-                  <div className="text-sm font-semibold text-white tracking-wide flex items-center gap-1.5 group-hover:text-emerald-300 transition-colors">
+                  <div className="text-sm font-semibold tracking-wide flex items-center gap-1.5 transition-colors glow-shimmer-emerald">
                     <span>Data</span>
                   </div>
-                  <div className="text-[10px] text-white/50 font-normal">Telemetry &amp; Insights</div>
+                  <div className="text-[10px] font-normal glow-shimmer-emerald">Telemetry &amp; Insights</div>
                 </div>
               </div>
             </div>
@@ -437,20 +435,28 @@ export default function HomePage() {
       </section>
 
       {/* ========================================================================= */}
-      {/* 02 // WHAT IS VMOVEXA — 10-SECOND CLARITY MOMENT                          */}
+      {/* 02 // WHY VMOVEXA — TRANSPORTATION DESERVES BETTER.                        */}
+      {/* ========================================================================= */}
+      <WhyVmovexaSection />
+
+      {/* ========================================================================= */}
+      {/* 03 // WHAT IS VMOVEXA — 10-SECOND CLARITY MOMENT                          */}
       {/* ========================================================================= */}
       <WhatIsVmovexaSection />
 
       {/* ========================================================================= */}
-      {/* 03 // A VEHICLE CAN BE MORE.                                             */}
+      {/* 04 // OUR ECOSYSTEM — ONE PLATFORM. INFINITE POSSIBILITIES.                */}
+      {/* ========================================================================= */}
+      <OurEcosystemSection />
+
+      {/* ========================================================================= */}
+      {/* 05 // A VEHICLE CAN BE MORE.                                             */}
       {/* ========================================================================= */}
       <section className="py-12 border-b border-zinc-200 relative overflow-hidden bg-white">
         <div className="container max-w-7xl mx-auto px-6 relative z-10">
           <div className="text-center max-w-3xl mx-auto mb-16">
             <EditorialLine>
               <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-cyan-50 border border-cyan-200 text-cyan-800 font-mono text-xs tracking-wider mb-4 shadow-sm">
-                <span className="text-cyan-600 font-bold">03</span>
-                <span className="text-cyan-300">/</span>
                 <span>BEYOND TRANSPORTATION</span>
               </div>
             </EditorialLine>
@@ -502,8 +508,6 @@ export default function HomePage() {
           <div className="text-center max-w-4xl mx-auto mb-12">
             <EditorialLine>
               <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/[0.05] border border-white/10 text-white/80 font-mono text-xs tracking-wider mb-5">
-                <span className="text-cyan-400 font-bold">04</span>
-                <span className="text-white/30">/</span>
                 <span>ARCHITECTURAL PRINCIPLE</span>
               </div>
             </EditorialLine>
@@ -602,13 +606,11 @@ export default function HomePage() {
           <div className="max-w-3xl mb-16">
             <EditorialLine>
               <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-cyan-50 border border-cyan-200 text-cyan-800 font-mono text-xs tracking-wider mb-4 shadow-sm">
-                <span className="text-cyan-600 font-bold">05</span>
-                <span className="text-cyan-300">/</span>
                 <span>IN-VEHICLE COMPUTING</span>
               </div>
             </EditorialLine>
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight uppercase text-zinc-900 leading-tight mb-4">
-              THE VEHICLE BECOMES <span className="text-cyan-600">THE EDGE.</span>
+              THE VEHICLE BECOMES <span className="gradient-text">THE EDGE.</span>
             </h2>
             <EditorialLine delay={0.2}>
               <p className="text-base text-zinc-600 font-light leading-relaxed">
@@ -684,8 +686,6 @@ export default function HomePage() {
           <div className="text-center max-w-4xl mx-auto mb-16">
             <EditorialLine>
               <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/[0.05] border border-white/10 text-white/80 font-mono text-xs tracking-wider mb-5">
-                <span className="text-cyan-400 font-bold">06</span>
-                <span className="text-white/30">/</span>
                 <span>SYSTEM BLUEPRINT</span>
               </div>
             </EditorialLine>
@@ -720,14 +720,12 @@ export default function HomePage() {
           <div className="text-center max-w-3xl mx-auto mb-16">
             <EditorialLine>
               <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-cyan-50 border border-cyan-200 text-cyan-800 font-mono text-xs tracking-wider mb-4 shadow-sm">
-                <span className="text-cyan-600 font-bold">07</span>
-                <span className="text-cyan-300">/</span>
                 <span>SPATIAL INTELLIGENCE</span>
               </div>
             </EditorialLine>
             <EditorialLine delay={0.1}>
               <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight uppercase text-zinc-900 leading-tight mb-4">
-                MOVEMENT CREATES <span className="text-cyan-600">CONTEXT.</span>
+                MOVEMENT CREATES <span className="gradient-text">CONTEXT.</span>
               </h2>
             </EditorialLine>
             <EditorialLine delay={0.2}>
@@ -770,45 +768,6 @@ export default function HomePage() {
             })}
           </div>
 
-          {/* Interactive Spatial Trigger HUD Terminal */}
-          <GsapScrollReveal delay={0.3}>
-            <div className="p-6 rounded-2xl bg-white border border-zinc-200 backdrop-blur-md shadow-lg relative overflow-hidden">
-              <div className="font-mono text-[10px] text-cyan-600/60 uppercase tracking-widest hidden sm:block text-right mb-6">
-                LIVE SPATIAL LOGIC ENGINE
-              </div>
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-6 font-mono text-xs">
-                <div className="space-y-2">
-                  <div className="text-zinc-500 text-[10px] uppercase tracking-wider flex items-center gap-2">
-                    <FiMapPin className="text-cyan-600" /> ACTIVE GEOFENCE COORDINATE
-                  </div>
-                  <div className="text-zinc-900 font-semibold text-sm">
-                    <TextDecrypt text="28.5562° N, 77.1000° E" delay={0.2} />
-                  </div>
-                  <div className="text-zinc-500 text-[11px]">Polygon ID: DEL-T3-AIRPORT-EXPRESS</div>
-                </div>
-
-                <div className="space-y-2">
-                  <div className="text-zinc-500 text-[10px] uppercase tracking-wider flex items-center gap-2">
-                    <FiNavigation className="text-indigo-600" /> DYNAMIC MOTION TELEMETRY
-                  </div>
-                  <div className="text-zinc-900 font-semibold text-sm">
-                    <TextDecrypt text="48 KM/H • HEADING 082° ENE" delay={0.3} />
-                  </div>
-                  <div className="text-zinc-500 text-[11px]">Dwell Prediction: 4m 30s remaining</div>
-                </div>
-
-                <div className="space-y-2">
-                  <div className="text-zinc-500 text-[10px] uppercase tracking-wider flex items-center gap-2">
-                    <FiZap className="text-amber-500" /> CONTEXTUAL SCREEN PAYLOAD
-                  </div>
-                  <div className="text-emerald-600 font-semibold text-sm">
-                    <TextDecrypt text="AIRPORT-DEPARTURE-FEED-v4" delay={0.4} />
-                  </div>
-                  <div className="text-zinc-500 text-[11px]">Verified Proof-of-Play Signed at Edge</div>
-                </div>
-              </div>
-            </div>
-          </GsapScrollReveal>
         </div>
       </section>
 
@@ -822,8 +781,6 @@ export default function HomePage() {
             <div className="lg:col-span-6 space-y-6">
               <EditorialLine>
                 <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/[0.05] border border-white/10 text-white/80 font-mono text-xs tracking-wider">
-                  <span className="text-cyan-400 font-bold">08</span>
-                  <span className="text-white/30">/</span>
                   <span>DYNAMIC TRANSIT MEDIA</span>
                 </div>
               </EditorialLine>
@@ -897,8 +854,6 @@ export default function HomePage() {
           <div className="text-center max-w-4xl mx-auto mb-14">
             <EditorialLine>
               <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-cyan-50 border border-cyan-200 text-cyan-800 font-mono text-xs tracking-wider mb-5 shadow-sm">
-                <span className="text-cyan-600 font-bold">09</span>
-                <span className="text-cyan-300">/</span>
                 <span>GLOBAL ORCHESTRATION</span>
               </div>
             </EditorialLine>
@@ -909,7 +864,7 @@ export default function HomePage() {
               stagger={0.1}
               lines={[
                 <div key="l1">ONE CLICK.</div>,
-                <div key="l2" className="mt-1 sm:mt-2 text-cyan-600">AN ENTIRE NATION.</div>,
+                <div key="l2" className="mt-1 sm:mt-2 gradient-text">AN ENTIRE NATION.</div>,
               ]}
             />
             <EditorialLine delay={0.2}>
@@ -947,8 +902,6 @@ export default function HomePage() {
           <div className="text-center max-w-4xl mx-auto mb-16">
             <EditorialLine>
               <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/[0.05] border border-white/10 text-white/80 font-mono text-xs tracking-wider mb-5">
-                <span className="text-cyan-400 font-bold">10</span>
-                <span className="text-white/30">/</span>
                 <span>CROSS-SECTOR DEPLOYMENTS</span>
               </div>
             </EditorialLine>
@@ -1033,8 +986,6 @@ export default function HomePage() {
           <div className="text-center max-w-4xl mx-auto mb-16">
             <EditorialLine>
               <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/[0.05] border border-white/10 text-white/80 font-mono text-xs tracking-wider mb-5">
-                <span className="text-cyan-400 font-bold">11</span>
-                <span className="text-white/30">/</span>
                 <span>BRAND IDENTITY</span>
               </div>
             </EditorialLine>
@@ -1128,8 +1079,6 @@ export default function HomePage() {
           {/* Number Badge */}
           <EditorialLine>
             <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-cyan-50 border border-cyan-200 text-cyan-800 font-mono text-xs tracking-wider mb-6 shadow-sm">
-              <span className="text-cyan-600 font-bold">12</span>
-              <span className="text-cyan-300">/</span>
               <span>THE PLATFORM THESIS</span>
             </div>
           </EditorialLine>
@@ -1142,7 +1091,7 @@ export default function HomePage() {
             stagger={0.1}
             lines={[
               <div key="l1">THE WORLD MOVES.</div>,
-              <div key="l2" className="gradient-text mt-1 sm:mt-2">INTELLIGENCE SHOULD MOVE WITH IT.</div>,
+              <div key="l2" className="gradient-text mt-1 sm:mt-2 whitespace-nowrap text-[26px] sm:text-4xl md:text-5xl lg:text-[50px] tracking-tight">INTELLIGENCE SHOULD MOVE WITH IT.</div>,
             ]}
           />
 
@@ -1156,7 +1105,7 @@ export default function HomePage() {
           {/* 4 Macro Thesis Points */}
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 max-w-4xl mx-auto mb-12 text-left">
             {[
-              { title: "Vehicles", desc: "Becoming software-defined & connected", icon: RiCarLine, color: "text-cyan-600", bg: "bg-cyan-50 border-cyan-200" },
+              { title: "Vehicles", desc: "Becoming software-defined & connected", icon: RiBusLine, color: "text-cyan-600", bg: "bg-cyan-50 border-cyan-200" },
               { title: "Cities", desc: "Becoming digital & sensor-instrumented", icon: FiMapPin, color: "text-indigo-600", bg: "bg-indigo-50 border-indigo-200" },
               { title: "Media", desc: "Becoming contextual & measurable", icon: FiMonitor, color: "text-purple-600", bg: "bg-purple-50 border-purple-200" },
               { title: "Infrastructure", desc: "Becoming intelligent at the edge", icon: FiCpu, color: "text-emerald-600", bg: "bg-emerald-50 border-emerald-200" },

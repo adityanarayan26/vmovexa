@@ -11,6 +11,7 @@ interface TextDecryptProps {
   speed?: number;
   characters?: string;
   trigger?: "inView" | "mount";
+  loopInterval?: number;
 }
 
 const DEFAULT_CHARS = "010101_•/[]<>~#%*+=ABCDEF0123456789";
@@ -28,8 +29,8 @@ export function TextDecrypt({
   speed = 30,
   characters = DEFAULT_CHARS,
   trigger = "inView",
+  loopInterval,
 }: TextDecryptProps) {
-  // Support both seconds (e.g. 0.15) and milliseconds (e.g. 150)
   const delayMs = delay > 10 ? delay : delay * 1000;
   const shouldReduceMotion = useReducedMotion();
   const [displayText, setDisplayText] = useState(text);
@@ -46,6 +47,7 @@ export function TextDecrypt({
 
     let timeoutId: ReturnType<typeof setTimeout> | null = null;
     let intervalId: ReturnType<typeof setInterval> | null = null;
+    let loopTimeoutId: ReturnType<typeof setTimeout> | null = null;
 
     const startDecryption = () => {
       if (hasTriggeredRef.current) return;
@@ -73,6 +75,14 @@ export function TextDecrypt({
             if (intervalId) clearInterval(intervalId);
             setDisplayText(text);
             setIsDone(true);
+            
+            if (loopInterval) {
+              loopTimeoutId = setTimeout(() => {
+                hasTriggeredRef.current = false;
+                setIsDone(false);
+                startDecryption();
+              }, loopInterval);
+            }
           }
 
           iteration += 1 / 2;
@@ -101,19 +111,21 @@ export function TextDecrypt({
         observer.disconnect();
         if (timeoutId) clearTimeout(timeoutId);
         if (intervalId) clearInterval(intervalId);
+        if (loopTimeoutId) clearTimeout(loopTimeoutId);
       };
     }
 
     return () => {
       if (timeoutId) clearTimeout(timeoutId);
       if (intervalId) clearInterval(intervalId);
+      if (loopTimeoutId) clearTimeout(loopTimeoutId);
     };
-  }, [text, delayMs, speed, characters, shouldReduceMotion, trigger]);
+  }, [text, delayMs, speed, characters, shouldReduceMotion, trigger, loopInterval]);
 
   return (
     <Component
       ref={elementRef}
-      className={`inline-block font-mono tracking-wider select-none ${className}`}
+      className={`inline font-mono tracking-wider select-none ${className}`}
       aria-label={text}
     >
       <span className={isDone ? "" : "opacity-95"}>

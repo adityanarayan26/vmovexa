@@ -459,7 +459,7 @@ export default function PlatformPage() {
           <div className="max-w-3xl mb-14">
             <EditorialLine>
               <div className="font-mono text-xs uppercase tracking-widest text-cyan-400 mb-3">
-                03 — Centralized Control Layer
+                Centralized Control Layer
               </div>
             </EditorialLine>
             <EditorialLine delay={0.1}>
@@ -575,27 +575,27 @@ export default function PlatformPage() {
       </section>
 
       {/* 04 — VMOVEXA CORE (VEHICLE EDGE RUNTIME) */}
-      <section id="vmovexa-core" className="py-24 border-b border-white/[0.08] relative overflow-hidden bg-black">
+      <section id="vmovexa-core" className="py-24 border-b border-zinc-200 relative overflow-hidden bg-white text-zinc-900">
         <div className="container max-w-6xl mx-auto px-6 relative z-10">
           <div className="max-w-3xl mb-14">
             <EditorialLine>
-              <div className="font-mono text-xs uppercase tracking-widest text-indigo-400 mb-3">
-                04 — In-Vehicle Edge Computing
+              <div className="font-mono text-xs uppercase tracking-widest text-indigo-600 mb-3">
+                In-Vehicle Edge Computing
               </div>
             </EditorialLine>
             <EditorialLine delay={0.1}>
-              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight text-white leading-tight mb-4 uppercase">
+              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight text-zinc-900 leading-tight mb-4 uppercase">
                 The intelligence inside <span className="gradient-text">the vehicle.</span>
               </h2>
             </EditorialLine>
             <EditorialLine delay={0.2}>
-              <p className="text-base text-white/70 leading-relaxed">
+              <p className="text-base text-zinc-600 leading-relaxed font-light">
                 VMOVEXA CORE is the vehicle-side edge platform connecting cloud infrastructure with physical mobility systems. It is designed not simply as a media player, but as a computing and execution layer for connected vehicles.
               </p>
             </EditorialLine>
             <EditorialLine delay={0.3}>
-              <div className="mt-5 inline-flex items-center gap-2 px-4 py-2 rounded-full bg-indigo-500/10 border border-indigo-500/25 text-xs font-mono text-indigo-300 font-medium shadow-sm">
-                <span className="w-2 h-2 rounded-full bg-indigo-400 animate-pulse" />
+              <div className="mt-5 inline-flex items-center gap-2 px-4 py-2 rounded-full bg-indigo-50 border border-indigo-200 text-xs font-mono text-indigo-800 font-medium shadow-sm">
+                <span className="w-2 h-2 rounded-full bg-indigo-600 animate-pulse" />
                 Compute Where Motion Happens • Networks × Geographies × Routes × Operating Conditions
               </div>
             </EditorialLine>
@@ -605,11 +605,11 @@ export default function PlatformPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-3.5 mb-14">
             {coreEngines.map((engine, i) => (
               <GsapScrollReveal key={engine.title} delay={i * 0.04}>
-                <div className="p-4.5 rounded-2xl bg-white/[0.02] border border-white/10 hover:border-indigo-500/40 hover:bg-white/[0.04] transition-all duration-300 h-full flex flex-col justify-between group cursor-default shadow-[inset_0_1px_0_rgba(255,255,255,0.02)]">
+                <div className="p-4.5 rounded-2xl bg-white border border-zinc-200 hover:border-indigo-400 hover:bg-zinc-50 hover:shadow-md transition-all duration-300 h-full flex flex-col justify-between group cursor-default shadow-sm">
                   <div>
-                    <span className="font-mono text-[10px] text-white/40 uppercase tracking-widest block mb-2.5 group-hover:text-indigo-400 transition-colors font-medium">Engine {String(i + 1).padStart(2, "0")}</span>
-                    <h4 className="text-xs sm:text-sm font-semibold text-white mb-1.5 group-hover:text-indigo-300 transition-colors">{engine.title}</h4>
-                    <p className="text-[11px] text-white/60 leading-relaxed group-hover:text-white/80 transition-colors">{engine.desc}</p>
+                    <span className="font-mono text-[10px] text-zinc-400 uppercase tracking-widest block mb-2.5 group-hover:text-indigo-600 transition-colors font-medium">Engine {String(i + 1).padStart(2, "0")}</span>
+                    <h4 className="text-xs sm:text-sm font-bold text-zinc-900 mb-1.5 group-hover:text-indigo-600 transition-colors">{engine.title}</h4>
+                    <p className="text-[11px] text-zinc-600 leading-relaxed group-hover:text-zinc-800 transition-colors font-light">{engine.desc}</p>
                   </div>
                 </div>
               </GsapScrollReveal>
@@ -619,17 +619,16 @@ export default function PlatformPage() {
           {/* Multi-Screen & Offline Resilience Split */}
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-16">
             <GsapScrollReveal delay={0.2}>
-              <div className="p-7 rounded-2xl bg-white/[0.02] border border-white/10 h-full flex flex-col justify-between hover:border-cyan-500/30 hover:bg-white/[0.03] transition-all duration-500 group relative overflow-hidden">
-                <div className="absolute -inset-x-full bottom-0 h-[1px] bg-gradient-to-r from-transparent via-cyan-500/50 to-transparent group-hover:animate-[shimmer_2s_infinite]" />
+              <div className="p-7 rounded-2xl bg-white border border-zinc-200 h-full flex flex-col justify-between hover:border-cyan-400 hover:bg-zinc-50 hover:shadow-md transition-all duration-500 group relative overflow-hidden shadow-sm">
                 <div className="relative z-10">
-                  <div className="flex items-center gap-2 text-cyan-400 font-mono text-xs uppercase tracking-widest font-semibold mb-3">
-                    <FiMonitor size={17} className="text-cyan-400" /> Multi-Screen Intelligence
+                  <div className="flex items-center gap-2 text-cyan-600 font-mono text-xs uppercase tracking-widest font-semibold mb-3">
+                    <FiMonitor size={17} className="text-cyan-600" /> Multi-Screen Intelligence
                   </div>
-                  <h3 className="text-xl font-semibold text-white mb-2.5">One vehicle. Multiple digital surfaces.</h3>
-                  <p className="text-xs sm:text-sm text-white/70 leading-relaxed mb-4">
+                  <h3 className="text-xl font-bold text-zinc-900 mb-2.5">One vehicle. Multiple digital surfaces.</h3>
+                  <p className="text-xs sm:text-sm text-zinc-600 leading-relaxed mb-4 font-light">
                     A vehicle can contain multiple connected displays. VMOVEXA&apos;s architecture supports independent, mirrored, synchronized, split and multi-zone display operation.
                   </p>
-                  <p className="text-xs font-mono text-white/60 bg-white/[0.03] p-3 rounded-lg border border-white/10">
+                  <p className="text-xs font-mono text-zinc-700 bg-zinc-50 p-3 rounded-lg border border-zinc-200 shadow-sm">
                     This creates a distributed digital environment inside a single mobility asset.
                   </p>
                 </div>
@@ -637,25 +636,24 @@ export default function PlatformPage() {
             </GsapScrollReveal>
 
             <GsapScrollReveal delay={0.3}>
-              <div className="p-7 rounded-2xl bg-white/[0.02] border border-white/10 h-full flex flex-col justify-between hover:border-indigo-500/30 hover:bg-white/[0.03] transition-all duration-500 group relative overflow-hidden">
-                 <div className="absolute -inset-x-full bottom-0 h-[1px] bg-gradient-to-r from-transparent via-indigo-500/50 to-transparent group-hover:animate-[shimmer_2s_infinite]" />
+              <div className="p-7 rounded-2xl bg-white border border-zinc-200 h-full flex flex-col justify-between hover:border-indigo-400 hover:bg-zinc-50 hover:shadow-md transition-all duration-500 group relative overflow-hidden shadow-sm">
                 <div className="relative z-10">
-                  <div className="flex items-center gap-2 text-indigo-400 font-mono text-xs uppercase tracking-widest font-semibold mb-3">
-                    <FiWifiOff size={17} className="text-indigo-400" /> Offline Resilience
+                  <div className="flex items-center gap-2 text-indigo-600 font-mono text-xs uppercase tracking-widest font-semibold mb-3">
+                    <FiWifiOff size={17} className="text-indigo-600" /> Offline Resilience
                   </div>
-                  <h3 className="text-xl font-semibold text-white mb-2.5">Connectivity can disappear. The system shouldn&apos;t.</h3>
-                  <p className="text-xs sm:text-sm text-white/70 leading-relaxed mb-4">
+                  <h3 className="text-xl font-bold text-zinc-900 mb-2.5">Connectivity can disappear. The system shouldn&apos;t.</h3>
+                  <p className="text-xs sm:text-sm text-zinc-600 leading-relaxed mb-4 font-light">
                     Vehicle connectivity is not guaranteed everywhere. VMOVEXA CORE is designed around local caching and synchronization.
                   </p>
-                  <div className="p-3.5 rounded-xl bg-white/[0.03] border border-white/10 font-mono text-xs flex flex-wrap items-center justify-between gap-2 shadow-sm">
-                    <span className="px-2.5 py-1 bg-white/10 border border-white/15 text-white font-medium rounded-lg">Cloud</span>
-                    <span className="text-indigo-400 font-bold text-sm">→</span>
-                    <span className="px-2.5 py-1 bg-white/10 border border-white/15 text-white font-medium rounded-lg">Local Edge</span>
-                    <span className="text-indigo-400 font-bold text-sm">→</span>
-                    <span className="px-2.5 py-1 bg-white/10 border border-white/15 text-white font-medium rounded-lg">Cached Op</span>
-                    <span className="text-indigo-400 font-bold text-sm">→</span>
-                    <span className="px-2.5 py-1 bg-indigo-500/20 text-indigo-300 border border-indigo-500/40 font-medium rounded-lg flex items-center gap-1.5">
-                      <span className="w-1.5 h-1.5 rounded-full bg-indigo-400 animate-pulse" />
+                  <div className="p-3.5 rounded-xl bg-zinc-50 border border-zinc-200 font-mono text-xs flex flex-wrap items-center justify-between gap-2 shadow-sm">
+                    <span className="px-2.5 py-1 bg-white border border-zinc-200 text-zinc-800 font-medium rounded-lg shadow-xs">Cloud</span>
+                    <span className="text-indigo-600 font-bold text-sm">→</span>
+                    <span className="px-2.5 py-1 bg-white border border-zinc-200 text-zinc-800 font-medium rounded-lg shadow-xs">Local Edge</span>
+                    <span className="text-indigo-600 font-bold text-sm">→</span>
+                    <span className="px-2.5 py-1 bg-white border border-zinc-200 text-zinc-800 font-medium rounded-lg shadow-xs">Cached Op</span>
+                    <span className="text-indigo-600 font-bold text-sm">→</span>
+                    <span className="px-2.5 py-1 bg-indigo-50 text-indigo-700 border border-indigo-200 font-medium rounded-lg flex items-center gap-1.5 shadow-xs">
+                      <span className="w-1.5 h-1.5 rounded-full bg-indigo-600 animate-pulse" />
                       Sync
                     </span>
                   </div>
@@ -687,11 +685,10 @@ export default function PlatformPage() {
       </section>
 
       {/* CTA */}
-      <section className="py-24 text-center relative overflow-hidden bg-black">
-        <div className="absolute inset-0 bg-gradient-to-t from-indigo-950/20 to-transparent pointer-events-none" />
+      <section className="py-24 text-center relative overflow-hidden bg-white border-b border-zinc-200">
         <div className="container max-w-4xl mx-auto px-6 relative z-10">
           <EditorialLine>
-            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-semibold tracking-tight mb-6 text-white uppercase">
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-semibold tracking-tight mb-6 text-zinc-900 uppercase">
               Ready to connect <span className="gradient-text">the moving edge?</span>
             </h2>
           </EditorialLine>
@@ -700,19 +697,19 @@ export default function PlatformPage() {
               <MagneticElement strength={0.3}>
                 <Link
                   href="/technology"
-                  className="inline-flex items-center gap-2.5 px-7 py-3.5 rounded-full bg-white text-black font-semibold text-xs tracking-wider uppercase transition-transform duration-200 hover:scale-[1.03] active:scale-[0.98] shadow-[0_0_20px_rgba(255,255,255,0.2)] hover:bg-zinc-200"
+                  className="inline-flex items-center gap-2.5 px-7 py-3.5 rounded-full bg-black text-white font-semibold text-xs tracking-wider uppercase transition-transform duration-200 hover:scale-[1.03] active:scale-[0.98] shadow-md hover:bg-zinc-800"
                 >
                   <span>Explore Technology</span>
-                  <FiArrowRight size={15} />
+                  <FiArrowRight size={15} className="text-white" />
                 </Link>
               </MagneticElement>
               <MagneticElement strength={0.3}>
                 <Link
                   href="/contact"
-                  className="inline-flex items-center gap-2.5 px-7 py-3.5 rounded-full bg-white/[0.06] border border-white/20 text-white font-semibold text-xs tracking-wider uppercase transition-all duration-200 hover:bg-white/10 hover:border-white/30"
+                  className="inline-flex items-center gap-2.5 px-7 py-3.5 rounded-full bg-white border border-zinc-200 text-zinc-900 font-semibold text-xs tracking-wider uppercase transition-all duration-200 hover:bg-zinc-50 hover:border-zinc-300 shadow-sm"
                 >
                   <span>Connect With Us</span>
-                  <FiArrowUpRight size={15} />
+                  <FiArrowUpRight size={15} className="text-zinc-900" />
                 </Link>
               </MagneticElement>
             </div>

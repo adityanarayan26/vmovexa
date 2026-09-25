@@ -5,6 +5,7 @@ import Lenis from "lenis";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { usePathname } from "next/navigation";
+import { motion, useScroll, useSpring } from "framer-motion";
 
 declare global {
   interface Window {
@@ -14,7 +15,12 @@ declare global {
 
 export function SmoothScroll() {
   const pathname = usePathname();
-  const progressBarRef = useRef<HTMLDivElement>(null);
+  const { scrollYProgress } = useScroll();
+  const scaleX = useSpring(scrollYProgress, {
+    stiffness: 100,
+    damping: 30,
+    restDelta: 0.001
+  });
 
   useEffect(() => {
     if (typeof window === "undefined") return;
@@ -39,21 +45,17 @@ export function SmoothScroll() {
     window.__lenis = lenis;
 
     // Synchronize Lenis with GSAP ScrollTrigger
-    lenis.on("scroll", (e) => {
+    lenis.on("scroll", () => {
       ScrollTrigger.update();
-      if (progressBarRef.current) {
-        const progress = e.progress ?? 0;
-        progressBarRef.current.style.transform = `scaleX(${progress})`;
-      }
     });
 
-    // Run Lenis on GSAP Ticker for frame-accurate lock
-    const updateTicker = (time: number) => {
-      lenis.raf(time * 1000);
-    };
-
-    gsap.ticker.add(updateTicker);
-    gsap.ticker.lagSmoothing(0);
+    // Use robust requestAnimationFrame instead of gsap.ticker to prevent time mismatches
+    let rafId: number;
+    function raf(time: number) {
+      lenis.raf(time);
+      rafId = requestAnimationFrame(raf);
+    }
+    rafId = requestAnimationFrame(raf);
 
     // Smooth anchor click handling
     const handleAnchorClick = (e: MouseEvent) => {
@@ -71,9 +73,16 @@ export function SmoothScroll() {
 
     document.addEventListener("click", handleAnchorClick);
 
+    // Force recalculation of sizes after a short delay to account for lazy images
+    const resizeTimeout = setTimeout(() => {
+      lenis.resize();
+      ScrollTrigger.refresh();
+    }, 1000);
+
     return () => {
       document.removeEventListener("click", handleAnchorClick);
-      gsap.ticker.remove(updateTicker);
+      cancelAnimationFrame(rafId);
+      clearTimeout(resizeTimeout);
       lenis.destroy();
       delete window.__lenis;
     };
@@ -83,12 +92,16 @@ export function SmoothScroll() {
   useEffect(() => {
     if (window.__lenis) {
       window.__lenis.scrollTo(0, { immediate: true });
-      ScrollTrigger.refresh();
+      // Small timeout ensures DOM is fully rendered before refreshing GSAP
+      setTimeout(() => {
+        window.__lenis?.resize();
+        ScrollTrigger.refresh();
+      }, 100);
     }
   }, [pathname]);
 
   return (
-    <div
+    <motion.div
       aria-hidden="true"
       style={{
         position: "fixed",
@@ -98,21 +111,11 @@ export function SmoothScroll() {
         height: "2px",
         zIndex: 9999,
         pointerEvents: "none",
-        background: "transparent",
+        background: "linear-gradient(90deg, #ffffff 0%, rgba(255, 255, 255, 0.7) 100%)",
+        transformOrigin: "left center",
+        scaleX,
+        boxShadow: "0 0 8px rgba(255, 255, 255, 0.5)",
       }}
-    >
-      <div
-        ref={progressBarRef}
-        style={{
-          height: "100%",
-          width: "100%",
-          background: "linear-gradient(90deg, #ffffff 0%, rgba(255, 255, 255, 0.7) 100%)",
-          transformOrigin: "left center",
-          transform: "scaleX(0)",
-          boxShadow: "0 0 8px rgba(255, 255, 255, 0.5)",
-          transition: "transform 0.05s linear",
-        }}
-      />
-    </div>
+    />
   );
 }

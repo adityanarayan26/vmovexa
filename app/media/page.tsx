@@ -275,7 +275,7 @@ export default function MediaPage() {
           <div className="max-w-3xl mb-16">
             <EditorialLine>
               <div className="font-mono text-xs uppercase tracking-widest text-cyan-400 mb-3">
-                09 — Digital Out-of-Home
+                Digital Out-of-Home
               </div>
             </EditorialLine>
             <EditorialLine delay={0.1}>
@@ -336,7 +336,7 @@ export default function MediaPage() {
             <div className="lg:col-span-6 space-y-6">
               <EditorialLine>
                 <div className="font-mono text-xs uppercase tracking-widest text-indigo-400">
-                  10 — Campaign Infrastructure
+                  Campaign Infrastructure
                 </div>
               </EditorialLine>
               <EditorialLine delay={0.1}>
