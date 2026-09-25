@@ -308,15 +308,29 @@ export default function HomePage() {
             <div className="lg:col-span-6 xl:col-span-6 z-10">
               {/* Number Badge */}
               <EditorialLine delay={0.1}>
-                <div className="inline-flex items-center gap-2.5 px-4 py-2 rounded-full bg-white/[0.06] border border-white/15 backdrop-blur-md mb-8 shadow-[0_0_20px_rgba(255,255,255,0.08)]">
-                  <TextDecrypt text="INTELLIGENCE IN MOTION" delay={0.2} className="text-white/90 text-xs" />
+                <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/[0.05] border border-white/15 backdrop-blur-md mb-8 shadow-[0_0_20px_rgba(255,255,255,0.04)]">
+                  <span className="w-1.5 h-1.5 rounded-full bg-cyan-400 animate-pulse" />
+                  <span className="font-mono text-xs uppercase tracking-widest text-white/85 font-medium">
+                    INTELLIGENCE IN MOTION
+                  </span>
                 </div>
               </EditorialLine>
 
               {/* Headline: Space Grotesk */}
               <EditorialLine delay={0.15}>
                 <h1 className="text-4xl sm:text-5xl md:text-5xl lg:text-[56px] xl:text-[66px] font-medium font-heading tracking-tight leading-[1.05] max-w-lg xl:max-w-xl mb-6 text-white uppercase drop-shadow-lg">
-                  <TextDecrypt text="INTELLIGENCE IN" delay={0.2} speed={60} loopInterval={3000} /> <span className="gradient-text-shimmer">MOTION.</span>
+                  INTELLIGENCE IN{" "}
+                  <span className="inline-flex overflow-visible">
+                    {"MOTION.".split("").map((letter, idx) => (
+                      <span
+                        key={idx}
+                        className="inline-block gradient-text font-semibold animate-wave-motion"
+                        style={{ animationDelay: `${idx * 0.14}s` }}
+                      >
+                        {letter}
+                      </span>
+                    ))}
+                  </span>
                 </h1>
               </EditorialLine>
 
@@ -328,12 +342,12 @@ export default function HomePage() {
               </BlurReveal>
 
               {/* CTAs */}
-              <EditorialLine delay={0.4}>
-                <div className="flex flex-wrap items-center gap-4">
+              <GsapScrollReveal delay={0.35}>
+                <div className="flex flex-wrap items-center gap-4 py-3 -my-3 overflow-visible">
                   <MagneticElement strength={0.3}>
                     <Link
                       href="/platform"
-                      className="inline-flex items-center gap-2.5 px-7 py-3.5 rounded-full bg-white font-semibold text-sm tracking-wide transition-all duration-300 hover:scale-[1.03] active:scale-[0.98] shadow-[0_0_30px_rgba(255,255,255,0.3)] hover:shadow-[0_0_40px_rgba(255,255,255,0.6)]"
+                      className="inline-flex items-center gap-2.5 px-7 py-3.5 rounded-full bg-white font-semibold text-sm tracking-wide transition-all duration-300 hover:scale-[1.03] active:scale-[0.98] shadow-[0_0_24px_rgba(255,255,255,0.22)] hover:shadow-[0_0_32px_rgba(255,255,255,0.45)]"
                       style={{ color: "#000000" }}
                     >
                       <span className="text-black font-semibold">Explore Platform</span>
@@ -360,7 +374,7 @@ export default function HomePage() {
                     </a>
                   </MagneticElement>
                 </div>
-              </EditorialLine>
+              </GsapScrollReveal>
             </div>
 
             {/* Right Vertical Floating Tags */}

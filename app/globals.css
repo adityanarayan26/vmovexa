@@ -1752,3 +1752,19 @@ html, body {
   animation-play-state: paused;
 }
 
+/* Wave motion animation for "MOTION." */
+@keyframes wave-motion {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+.animate-wave-motion {
+  display: inline-block;
+  animation: wave-motion 2.6s ease-in-out infinite;
+  will-change: transform;
+}
+

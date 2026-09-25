@@ -19,13 +19,13 @@ const pillars: PillarItem[] = [
     title: "Smarter Operations",
     desc: "Optimize fleets, reduce costs and improve efficiency.",
     gradientId: "grad-smarter-ops",
-    glowColor: "rgba(56, 189, 248, 0.25)",
+    glowColor: "rgba(56, 189, 248, 0.28)",
     renderIcon: (gradId) => (
       <svg
         viewBox="0 0 56 56"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
-        className="w-12 h-12 transition-transform duration-300 group-hover:scale-110 drop-shadow-[0_0_12px_rgba(168,85,247,0.35)]"
+        className="w-14 h-14 sm:w-16 sm:h-16 transition-transform duration-500 group-hover:scale-110 drop-shadow-[0_0_16px_rgba(56,189,248,0.4)]"
       >
         <defs>
           <linearGradient id={gradId} x1="0%" y1="0%" x2="100%" y2="100%">
@@ -35,26 +35,26 @@ const pillars: PillarItem[] = [
           </linearGradient>
         </defs>
         {/* Main lower gear */}
-        <circle cx="22" cy="33" r="7" stroke={`url(#${gradId})`} strokeWidth="2.2" />
+        <circle cx="22" cy="33" r="7.5" stroke={`url(#${gradId})`} strokeWidth="2.5" />
         <path
-          d="M22 22v4M22 40v4M11 33h4M29 33h4M14.5 25.5l2.8 2.8M26.7 37.7l2.8 2.8M14.5 40.5l2.8-2.8M26.7 28.3l2.8-2.8"
+          d="M22 21v4.5M22 40.5v4.5M10.5 33h4.5M29.5 33h4.5M14 25l3 3M27 38l3 3M14 41l3-3M27 28l3-3"
+          stroke={`url(#${gradId})`}
+          strokeWidth="2.5"
+          strokeLinecap="round"
+        />
+        {/* Secondary upper gear */}
+        <circle cx="35" cy="20" r="5.5" stroke={`url(#${gradId})`} strokeWidth="2.2" strokeDasharray="3.5 2" />
+        <path
+          d="M35 12v3.5M35 25v3.5M27 20h3.5M40 20h3.5M29 14l2.5 2.5M38.5 23.5l2.5 2.5M29 26l2.5-2.5M38.5 16.5l2.5-2.5"
           stroke={`url(#${gradId})`}
           strokeWidth="2.2"
           strokeLinecap="round"
         />
-        {/* Secondary upper gear */}
-        <circle cx="34" cy="21" r="5" stroke={`url(#${gradId})`} strokeWidth="2" strokeDasharray="3 2" />
-        <path
-          d="M34 13v3M34 26v3M26 21h3M39 21h3M28.5 15.5l2 2M37.5 24.5l2 2M28.5 26.5l2-2M37.5 17.5l2-2"
-          stroke={`url(#${gradId})`}
-          strokeWidth="2"
-          strokeLinecap="round"
-        />
         {/* Dynamic upward arrow */}
         <path
-          d="M17 38 L39 16 M30 16 H39 V25"
+          d="M16 39 L40 15 M30 15 H40 V25"
           stroke={`url(#${gradId})`}
-          strokeWidth="2.4"
+          strokeWidth="2.8"
           strokeLinecap="round"
           strokeLinejoin="round"
         />
@@ -66,13 +66,13 @@ const pillars: PillarItem[] = [
     title: "Safer Journeys",
     desc: "Advanced safety systems ensuring passenger protection.",
     gradientId: "grad-safer-journeys",
-    glowColor: "rgba(168, 85, 247, 0.25)",
+    glowColor: "rgba(168, 85, 247, 0.28)",
     renderIcon: (gradId) => (
       <svg
         viewBox="0 0 56 56"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
-        className="w-12 h-12 transition-transform duration-300 group-hover:scale-110 drop-shadow-[0_0_12px_rgba(168,85,247,0.35)]"
+        className="w-14 h-14 sm:w-16 sm:h-16 transition-transform duration-500 group-hover:scale-110 drop-shadow-[0_0_16px_rgba(168,85,247,0.4)]"
       >
         <defs>
           <linearGradient id={gradId} x1="0%" y1="0%" x2="100%" y2="100%">
@@ -83,33 +83,33 @@ const pillars: PillarItem[] = [
         </defs>
         {/* Dashed trajectory route */}
         <path
-          d="M14 43 C 20 43, 24 38, 28 38 C 34 38, 38 41, 44 41"
+          d="M13 44 C 19 44, 23 39, 28 39 C 33 39, 37 42, 43 42"
           stroke={`url(#${gradId})`}
-          strokeWidth="1.8"
-          strokeDasharray="2 3"
+          strokeWidth="2"
+          strokeDasharray="2.5 3.5"
           strokeLinecap="round"
         />
         {/* Primary location pin */}
         <path
-          d="M28 11 C 21 11, 16 16.5, 16 23.5 C 16 32, 28 41, 28 41 C 28 41, 40 32, 40 23.5 C 40 16.5, 35 11, 28 11 Z"
+          d="M28 10 C 20.5 10, 15 16, 15 23.5 C 15 32.5, 28 42, 28 42 C 28 42, 41 32.5, 41 23.5 C 41 16, 35.5 10, 28 10 Z"
           stroke={`url(#${gradId})`}
-          strokeWidth="2.2"
+          strokeWidth="2.5"
           strokeLinejoin="round"
         />
         {/* Passenger silhouette inside pin */}
-        <circle cx="28" cy="20" r="3.2" stroke={`url(#${gradId})`} strokeWidth="1.8" />
+        <circle cx="28" cy="19.5" r="3.5" stroke={`url(#${gradId})`} strokeWidth="2" />
         <path
-          d="M22 28 C 22 25, 25 24.5, 28 24.5 C 31 24.5, 34 25, 34 28"
+          d="M21.5 28 C 21.5 24.5, 24.5 24, 28 24 C 31.5 24, 34.5 24.5, 34.5 28"
           stroke={`url(#${gradId})`}
-          strokeWidth="1.8"
+          strokeWidth="2"
           strokeLinecap="round"
         />
         {/* Security badge at top-right */}
-        <circle cx="39" cy="15" r="5" stroke={`url(#${gradId})`} strokeWidth="1.8" fill="#090a0f" />
+        <circle cx="40" cy="14" r="5.5" stroke={`url(#${gradId})`} strokeWidth="2" fill="#090a0f" />
         <path
-          d="M37 15 L38.5 16.5 L41.5 13.5"
+          d="M38 14 L39.5 15.5 L42.5 12.5"
           stroke={`url(#${gradId})`}
-          strokeWidth="1.8"
+          strokeWidth="2"
           strokeLinecap="round"
           strokeLinejoin="round"
         />
@@ -121,13 +121,13 @@ const pillars: PillarItem[] = [
     title: "New Revenue Streams",
     desc: "Unlock advertising and partnership opportunities at scale.",
     gradientId: "grad-new-revenue",
-    glowColor: "rgba(236, 72, 153, 0.25)",
+    glowColor: "rgba(236, 72, 153, 0.28)",
     renderIcon: (gradId) => (
       <svg
         viewBox="0 0 56 56"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
-        className="w-12 h-12 transition-transform duration-300 group-hover:scale-110 drop-shadow-[0_0_12px_rgba(236,72,153,0.35)]"
+        className="w-14 h-14 sm:w-16 sm:h-16 transition-transform duration-500 group-hover:scale-110 drop-shadow-[0_0_16px_rgba(236,72,153,0.4)]"
       >
         <defs>
           <linearGradient id={gradId} x1="0%" y1="0%" x2="100%" y2="100%">
@@ -137,28 +137,28 @@ const pillars: PillarItem[] = [
           </linearGradient>
         </defs>
         {/* Left coin stack */}
-        <ellipse cx="20" cy="31" rx="6" ry="2.5" stroke={`url(#${gradId})`} strokeWidth="1.8" />
-        <path d="M14 31v4c0 1.4 2.7 2.5 6 2.5s6-1.1 6-2.5v-4" stroke={`url(#${gradId})`} strokeWidth="1.8" />
-        <path d="M14 35v4c0 1.4 2.7 2.5 6 2.5s6-1.1 6-2.5v-4" stroke={`url(#${gradId})`} strokeWidth="1.8" />
+        <ellipse cx="20" cy="31" rx="6.5" ry="2.8" stroke={`url(#${gradId})`} strokeWidth="2.2" />
+        <path d="M13.5 31v4.5c0 1.5 2.9 2.8 6.5 2.8s6.5-1.3 6.5-2.8v-4.5" stroke={`url(#${gradId})`} strokeWidth="2.2" />
+        <path d="M13.5 35.5v4.5c0 1.5 2.9 2.8 6.5 2.8s6.5-1.3 6.5-2.8v-4.5" stroke={`url(#${gradId})`} strokeWidth="2.2" />
 
         {/* Right coin stack (higher) */}
-        <ellipse cx="32" cy="26" rx="6" ry="2.5" stroke={`url(#${gradId})`} strokeWidth="1.8" />
-        <path d="M26 26v4c0 1.4 2.7 2.5 6 2.5s6-1.1 6-2.5v-4" stroke={`url(#${gradId})`} strokeWidth="1.8" />
-        <path d="M26 30v4c0 1.4 2.7 2.5 6 2.5s6-1.1 6-2.5v-4" stroke={`url(#${gradId})`} strokeWidth="1.8" />
-        <path d="M26 34v4c0 1.4 2.7 2.5 6 2.5s6-1.1 6-2.5v-4" stroke={`url(#${gradId})`} strokeWidth="1.8" />
+        <ellipse cx="33" cy="25" rx="6.5" ry="2.8" stroke={`url(#${gradId})`} strokeWidth="2.2" />
+        <path d="M26.5 25v4.5c0 1.5 2.9 2.8 6.5 2.8s6.5-1.3 6.5-2.8v-4.5" stroke={`url(#${gradId})`} strokeWidth="2.2" />
+        <path d="M26.5 29.5v4.5c0 1.5 2.9 2.8 6.5 2.8s6.5-1.3 6.5-2.8v-4.5" stroke={`url(#${gradId})`} strokeWidth="2.2" />
+        <path d="M26.5 34v4.5c0 1.5 2.9 2.8 6.5 2.8s6.5-1.3 6.5-2.8v-4.5" stroke={`url(#${gradId})`} strokeWidth="2.2" />
 
         {/* Dynamic rising growth chart */}
         <path
-          d="M14 26 L22 20 L28 23 L39 12"
+          d="M13 25 L22 18 L28 22 L40 10"
           stroke={`url(#${gradId})`}
-          strokeWidth="2.2"
+          strokeWidth="2.6"
           strokeLinecap="round"
           strokeLinejoin="round"
         />
         <path
-          d="M32 12 H39 V19"
+          d="M32 10 H40 V18"
           stroke={`url(#${gradId})`}
-          strokeWidth="2.2"
+          strokeWidth="2.6"
           strokeLinecap="round"
           strokeLinejoin="round"
         />
@@ -170,13 +170,13 @@ const pillars: PillarItem[] = [
     title: "Connected Infrastructure",
     desc: "Seamless connectivity across vehicles, cities and systems.",
     gradientId: "grad-connected-infra",
-    glowColor: "rgba(59, 130, 246, 0.25)",
+    glowColor: "rgba(59, 130, 246, 0.28)",
     renderIcon: (gradId) => (
       <svg
         viewBox="0 0 56 56"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
-        className="w-12 h-12 transition-transform duration-300 group-hover:scale-110 drop-shadow-[0_0_12px_rgba(59,130,246,0.35)]"
+        className="w-14 h-14 sm:w-16 sm:h-16 transition-transform duration-500 group-hover:scale-110 drop-shadow-[0_0_16px_rgba(59,130,246,0.4)]"
       >
         <defs>
           <linearGradient id={gradId} x1="0%" y1="0%" x2="100%" y2="100%">
@@ -186,22 +186,22 @@ const pillars: PillarItem[] = [
           </linearGradient>
         </defs>
         {/* Radial connecting spokes */}
-        <line x1="28" y1="28" x2="28" y2="13" stroke={`url(#${gradId})`} strokeWidth="1.8" strokeLinecap="round" />
-        <line x1="28" y1="28" x2="41" y2="19" stroke={`url(#${gradId})`} strokeWidth="1.8" strokeLinecap="round" />
-        <line x1="28" y1="28" x2="38" y2="39" stroke={`url(#${gradId})`} strokeWidth="1.8" strokeLinecap="round" />
-        <line x1="28" y1="28" x2="18" y2="39" stroke={`url(#${gradId})`} strokeWidth="1.8" strokeLinecap="round" />
-        <line x1="28" y1="28" x2="15" y2="19" stroke={`url(#${gradId})`} strokeWidth="1.8" strokeLinecap="round" />
+        <line x1="28" y1="28" x2="28" y2="12" stroke={`url(#${gradId})`} strokeWidth="2" strokeLinecap="round" />
+        <line x1="28" y1="28" x2="42" y2="18" stroke={`url(#${gradId})`} strokeWidth="2" strokeLinecap="round" />
+        <line x1="28" y1="28" x2="39" y2="40" stroke={`url(#${gradId})`} strokeWidth="2" strokeLinecap="round" />
+        <line x1="28" y1="28" x2="17" y2="40" stroke={`url(#${gradId})`} strokeWidth="2" strokeLinecap="round" />
+        <line x1="28" y1="28" x2="14" y2="18" stroke={`url(#${gradId})`} strokeWidth="2" strokeLinecap="round" />
 
         {/* Central Core Hub */}
-        <circle cx="28" cy="28" r="5" stroke={`url(#${gradId})`} strokeWidth="2.4" fill="#090a0f" />
-        <circle cx="28" cy="28" r="2" fill={`url(#${gradId})`} />
+        <circle cx="28" cy="28" r="5.5" stroke={`url(#${gradId})`} strokeWidth="2.6" fill="#090a0f" />
+        <circle cx="28" cy="28" r="2.2" fill={`url(#${gradId})`} />
 
         {/* Satellite distributed nodes */}
-        <circle cx="28" cy="13" r="3" stroke={`url(#${gradId})`} strokeWidth="2" fill="#090a0f" />
-        <circle cx="41" cy="19" r="3" stroke={`url(#${gradId})`} strokeWidth="2" fill="#090a0f" />
-        <circle cx="38" cy="39" r="3" stroke={`url(#${gradId})`} strokeWidth="2" fill="#090a0f" />
-        <circle cx="18" cy="39" r="3" stroke={`url(#${gradId})`} strokeWidth="2" fill="#090a0f" />
-        <circle cx="15" cy="19" r="3" stroke={`url(#${gradId})`} strokeWidth="2" fill="#090a0f" />
+        <circle cx="28" cy="12" r="3.5" stroke={`url(#${gradId})`} strokeWidth="2.2" fill="#090a0f" />
+        <circle cx="42" cy="18" r="3.5" stroke={`url(#${gradId})`} strokeWidth="2.2" fill="#090a0f" />
+        <circle cx="39" cy="40" r="3.5" stroke={`url(#${gradId})`} strokeWidth="2.2" fill="#090a0f" />
+        <circle cx="17" cy="40" r="3.5" stroke={`url(#${gradId})`} strokeWidth="2.2" fill="#090a0f" />
+        <circle cx="14" cy="18" r="3.5" stroke={`url(#${gradId})`} strokeWidth="2.2" fill="#090a0f" />
       </svg>
     ),
   },
@@ -210,13 +210,13 @@ const pillars: PillarItem[] = [
     title: "Sustainable Future",
     desc: "Solar-powered mobility for a cleaner, greener planet.",
     gradientId: "grad-sustainable-future",
-    glowColor: "rgba(52, 211, 153, 0.25)",
+    glowColor: "rgba(52, 211, 153, 0.28)",
     renderIcon: (gradId) => (
       <svg
         viewBox="0 0 56 56"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
-        className="w-12 h-12 transition-transform duration-300 group-hover:scale-110 drop-shadow-[0_0_12px_rgba(52,211,153,0.35)]"
+        className="w-14 h-14 sm:w-16 sm:h-16 transition-transform duration-500 group-hover:scale-110 drop-shadow-[0_0_16px_rgba(52,211,153,0.4)]"
       >
         <defs>
           <linearGradient id={gradId} x1="0%" y1="0%" x2="100%" y2="100%">
@@ -227,43 +227,43 @@ const pillars: PillarItem[] = [
         </defs>
         {/* Circular Eco Orbit Arrows */}
         <path
-          d="M13 28 A 15 15 0 0 1 42 20"
+          d="M12 28 A 16 16 0 0 1 43 19"
           stroke={`url(#${gradId})`}
-          strokeWidth="1.8"
+          strokeWidth="2"
           strokeLinecap="round"
         />
         <path
-          d="M39 16 L43 20 L38 23"
+          d="M40 15 L44 19 L39 23"
           stroke={`url(#${gradId})`}
-          strokeWidth="1.8"
+          strokeWidth="2"
           strokeLinecap="round"
           strokeLinejoin="round"
         />
         <path
-          d="M43 28 A 15 15 0 0 1 14 36"
+          d="M44 28 A 16 16 0 0 1 13 37"
           stroke={`url(#${gradId})`}
-          strokeWidth="1.8"
+          strokeWidth="2"
           strokeLinecap="round"
         />
         <path
-          d="M17 40 L13 36 L18 33"
+          d="M16 41 L12 37 L17 33"
           stroke={`url(#${gradId})`}
-          strokeWidth="1.8"
+          strokeWidth="2"
           strokeLinecap="round"
           strokeLinejoin="round"
         />
 
         {/* Central Ecological Leaf with Stem */}
         <path
-          d="M21 34 C 21 23, 31 18, 35 18 C 35 29, 29 35, 21 34 Z"
+          d="M20 35 C 20 23, 31 17, 36 17 C 36 29, 29 36, 20 35 Z"
           stroke={`url(#${gradId})`}
-          strokeWidth="2.2"
+          strokeWidth="2.5"
           strokeLinejoin="round"
         />
         <path
-          d="M23 31 C 26 28, 29 25, 33 21"
+          d="M22 32 C 26 28, 29 25, 34 20"
           stroke={`url(#${gradId})`}
-          strokeWidth="1.8"
+          strokeWidth="2"
           strokeLinecap="round"
         />
       </svg>
@@ -294,8 +294,8 @@ export function WhyVmovexaSection() {
           </EditorialLine>
 
           <EditorialLine delay={0.1}>
-            <h2 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white leading-tight mb-4">
-              Transportation <span className="gradient-text">deserves better.</span>
+            <h2 className="text-3xl sm:text-5xl lg:text-6xl font-heading font-semibold tracking-tight text-white leading-tight mb-4 uppercase">
+              TRANSPORTATION <span className="gradient-text font-semibold">DESERVES BETTER.</span>
             </h2>
           </EditorialLine>
 
@@ -306,36 +306,31 @@ export function WhyVmovexaSection() {
         </div>
 
         {/* 5 Pillars Layout */}
-        <div className="rounded-3xl border border-white/[0.08] bg-white/[0.015] backdrop-blur-sm shadow-[0_8px_32px_rgba(0,0,0,0.6)] overflow-hidden">
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 divide-y sm:divide-y-0 sm:divide-x divide-white/[0.06] divide-dashed lg:divide-solid">
+        <div className="rounded-3xl border border-white/[0.08] bg-[#07080d]/80 backdrop-blur-md shadow-[0_12px_40px_rgba(0,0,0,0.6)] overflow-hidden">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 divide-y sm:divide-y-0 sm:divide-x divide-white/[0.06]">
             {pillars.map((pillar, idx) => (
               <GsapScrollReveal key={pillar.title} delay={idx * 0.08}>
-                <div className="relative p-6 sm:p-7 lg:p-8 flex flex-col items-center text-center group cursor-default transition-all duration-300 hover:bg-white/[0.03] h-full justify-between">
+                <div className="relative py-10 px-5 sm:py-12 sm:px-6 flex flex-col items-center text-center group cursor-default transition-all duration-300 hover:bg-white/[0.025] h-full justify-between">
                   {/* Subtle hover backlight glow */}
                   <div
-                    className="absolute -top-12 left-1/2 -translate-x-1/2 w-28 h-28 rounded-full blur-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"
+                    className="absolute -top-10 left-1/2 -translate-x-1/2 w-36 h-36 rounded-full blur-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"
                     style={{ background: pillar.glowColor }}
                   />
 
-                  {/* Top Numeric Label */}
-                  <div className="w-full flex items-center justify-between mb-6 opacity-40 group-hover:opacity-75 transition-opacity">
-                    <span className="font-mono text-[10px] tracking-widest text-zinc-400">
-                      SYS // {pillar.number}
-                    </span>
-                    <span className="w-1.5 h-1.5 rounded-full bg-white/20 group-hover:bg-cyan-400 transition-colors" />
-                  </div>
-
                   {/* Icon with interactive scaling & glow */}
                   <div className="relative mb-6 flex items-center justify-center">
-                    <div className="absolute inset-0 rounded-2xl blur-xl opacity-0 group-hover:opacity-70 transition-opacity duration-300" style={{ background: pillar.glowColor }} />
-                    <div className="relative z-10 w-16 h-16 rounded-2xl bg-white/[0.03] border border-white/10 group-hover:border-white/20 flex items-center justify-center transition-all duration-300 shadow-[0_0_20px_rgba(0,0,0,0.4)]">
+                    <div
+                      className="absolute inset-0 rounded-3xl blur-2xl opacity-0 group-hover:opacity-80 transition-opacity duration-500 pointer-events-none"
+                      style={{ background: pillar.glowColor }}
+                    />
+                    <div className="relative z-10 w-20 h-20 sm:w-24 sm:h-24 rounded-3xl bg-white/[0.045] border border-white/[0.12] group-hover:border-white/30 flex items-center justify-center transition-all duration-500 shadow-[0_8px_32px_rgba(0,0,0,0.6)] group-hover:scale-105 group-hover:bg-white/[0.08]">
                       {pillar.renderIcon(pillar.gradientId)}
                     </div>
                   </div>
 
                   {/* Title & Description */}
-                  <div className="flex-1 flex flex-col justify-start">
-                    <h3 className="text-base sm:text-lg font-bold text-white mb-2.5 tracking-tight group-hover:text-white transition-colors">
+                  <div className="flex-1 flex flex-col items-center justify-start max-w-[220px]">
+                    <h3 className="text-base sm:text-lg font-heading font-semibold text-white mb-2.5 tracking-tight group-hover:text-cyan-300 transition-colors">
                       {pillar.title}
                     </h3>
                     <p className="text-xs sm:text-[13px] text-zinc-400 leading-relaxed font-light group-hover:text-zinc-300 transition-colors">
@@ -344,7 +339,7 @@ export function WhyVmovexaSection() {
                   </div>
 
                   {/* Subtle Expanding Bottom Accent Line on Hover */}
-                  <div className="w-full flex justify-center pt-6">
+                  <div className="w-full flex justify-center pt-6 mt-2">
                     <div className="h-[2px] w-0 group-hover:w-12 transition-all duration-300 bg-gradient-to-r from-cyan-400 via-purple-500 to-pink-500 rounded-full" />
                   </div>
                 </div>

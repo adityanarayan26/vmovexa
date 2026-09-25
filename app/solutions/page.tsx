@@ -299,30 +299,30 @@ export default function SolutionsPage() {
         </div>
       </section>
 
-      {/* SOLUTION 03 — SMART CITIES & EMERGENCY BROADCASTING */}
-      <section id="smart-cities" className="py-20 border-b border-white/[0.08] bg-black">
-        <div className="container max-w-6xl mx-auto px-6 space-y-16">
+      {/* SOLUTION 03 — SMART CITIES */}
+      <section id="smart-cities" className="py-20 border-b border-zinc-200 relative overflow-hidden bg-white">
+        <div className="container max-w-6xl mx-auto px-6">
           {/* Smart Cities Overview Grid */}
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
             <div className="lg:col-span-6 space-y-5">
               <EditorialLine>
-                <div className="flex items-center gap-2 text-indigo-400 font-mono text-xs uppercase tracking-wider">
+                <div className="flex items-center gap-2 text-indigo-600 font-mono text-xs uppercase tracking-wider font-semibold">
                   <RiBuilding4Line size={17} /> Solution 03
                 </div>
               </EditorialLine>
               <EditorialLine delay={0.1}>
-                <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight text-white leading-tight uppercase">
-                  Let the city communicate through <span className="gradient-text">mobility.</span>
+                <h2 className="text-2xl sm:text-3xl lg:text-4xl font-heading font-bold tracking-tight text-zinc-900 leading-tight uppercase">
+                  Let the city communicate through <span className="gradient-text font-bold">mobility.</span>
                 </h2>
               </EditorialLine>
               <EditorialLine delay={0.2}>
-                <p className="text-base text-white/70 leading-relaxed">
+                <p className="text-base text-zinc-600 leading-relaxed font-normal">
                   Connected vehicles become distributed information endpoints across urban environments, linking government agencies with moving citizen channels.
                 </p>
               </EditorialLine>
               <EditorialLine delay={0.3}>
-                <p className="text-xs text-white/60 font-mono p-4 rounded-xl bg-white/[0.03] border border-white/10 shadow-[inset_0_1px_0_rgba(255,255,255,0.05)]">
-                  <span className="text-cyan-400 font-semibold block mb-1">Key Stakeholders:</span>
+                <p className="text-xs text-zinc-600 font-mono p-4 rounded-xl bg-zinc-50 border border-zinc-200 shadow-sm leading-relaxed">
+                  <span className="text-cyan-700 font-semibold block mb-1">Key Stakeholders:</span>
                   Municipalities, smart cities, transport departments, disaster-management authorities and tourism departments.
                 </p>
               </EditorialLine>
@@ -330,15 +330,14 @@ export default function SolutionsPage() {
 
             <div className="lg:col-span-6">
               <GsapScrollReveal delay={0.2}>
-                <div className="p-7 rounded-2xl bg-white/[0.02] border border-white/10 space-y-3.5 hover:border-indigo-500/30 hover:bg-white/[0.03] transition-all duration-500 group relative overflow-hidden shadow-[inset_0_1px_0_rgba(255,255,255,0.02)]">
-                  <div className="absolute -inset-x-full top-0 h-[1px] bg-gradient-to-r from-transparent via-indigo-400/30 to-transparent group-hover:animate-[shimmer_2s_infinite]" />
+                <div className="p-7 rounded-2xl bg-zinc-50 border border-zinc-200 space-y-3.5 hover:border-indigo-400 hover:bg-zinc-100/50 transition-all duration-500 group relative overflow-hidden shadow-sm">
                   <div className="relative z-10">
-                    <h4 className="text-xs font-mono uppercase tracking-widest text-cyan-400 mb-4">Civic & Urban Applications</h4>
+                    <h4 className="text-xs font-mono uppercase tracking-widest text-cyan-700 font-semibold mb-4">Civic & Urban Applications</h4>
                     <div className="space-y-3">
                       {smartCityApps.map((app, i) => (
-                        <div key={i} className="flex items-center gap-3 text-xs sm:text-sm text-white/80 group/item cursor-default">
-                          <FiCheckCircle className="w-4 h-4 text-indigo-400 flex-shrink-0 group-hover/item:scale-125 group-hover/item:text-cyan-400 transition-all" />
-                          <span className="group-hover/item:text-white transition-colors">{app}</span>
+                        <div key={i} className="flex items-center gap-3 text-xs sm:text-sm text-zinc-700 group/item cursor-default">
+                          <FiCheckCircle className="w-4 h-4 text-indigo-600 flex-shrink-0 group-hover/item:scale-125 group-hover/item:text-cyan-600 transition-all" />
+                          <span className="group-hover/item:text-zinc-900 font-medium transition-colors">{app}</span>
                         </div>
                       ))}
                     </div>
@@ -347,12 +346,14 @@ export default function SolutionsPage() {
               </GsapScrollReveal>
             </div>
           </div>
+        </div>
+      </section>
 
-          {/* Emergency Operations & Broadcasting Component with vmovexa.com animations */}
-          <GsapScrollReveal delay={0.3}>
-            <div className="pt-8 border-t border-white/10">
-              <EmergencyBroadcasting />
-            </div>
+      {/* EMERGENCY OPERATIONS & BROADCASTING COMPONENT */}
+      <section id="emergency-operations" className="py-20 border-b border-white/[0.08] bg-black">
+        <div className="container max-w-6xl mx-auto px-6">
+          <GsapScrollReveal delay={0.2}>
+            <EmergencyBroadcasting />
           </GsapScrollReveal>
         </div>
       </section>

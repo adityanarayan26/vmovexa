@@ -571,16 +571,19 @@ export default function TechnologyPage() {
         </div>
       </section>
 
-      {/* CTA */}
-      <section className="py-24 text-center relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-t from-cyan-950/20 to-transparent pointer-events-none" />
+      {/* CTA — Light / White Background */}
+      <section className="py-24 text-center relative overflow-hidden bg-white border-t border-zinc-200">
+        <div className="absolute inset-0 bg-gradient-to-b from-cyan-50/50 via-transparent to-transparent pointer-events-none" />
         <div className="container max-w-4xl mx-auto px-6 relative z-10">
           <EditorialLine>
-            <div className="font-mono text-xs uppercase tracking-widest text-cyan-400 mb-3">Engineered for Motion</div>
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-cyan-50 border border-cyan-200/80 text-cyan-800 font-mono text-xs uppercase tracking-widest mb-4 shadow-sm">
+              <span className="w-1.5 h-1.5 rounded-full bg-cyan-500 animate-pulse" />
+              <span>Engineered for Motion</span>
+            </div>
           </EditorialLine>
           <EditorialLine delay={0.1}>
-            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-semibold tracking-tight mb-8 text-white">
-              Explore the Technology <span className="gradient-text">In Depth.</span>
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-heading font-semibold tracking-tight mb-8 text-zinc-900 leading-tight">
+              Explore the Technology <span className="gradient-text font-semibold">In Depth.</span>
             </h2>
           </EditorialLine>
           <EditorialLine delay={0.2}>
@@ -588,7 +591,7 @@ export default function TechnologyPage() {
               <MagneticElement strength={0.3}>
                 <Link
                   href="/solutions"
-                  className="inline-flex items-center gap-2.5 px-8 py-4 rounded-full bg-white text-black font-semibold text-sm tracking-wide transition-transform duration-200 hover:scale-[1.03] active:scale-[0.98] shadow-[0_0_20px_rgba(255,255,255,0.2)] hover:shadow-[0_0_30px_rgba(255,255,255,0.4)]"
+                  className="inline-flex items-center gap-2.5 px-8 py-4 rounded-full bg-black text-white font-semibold text-sm tracking-wide transition-all duration-200 hover:scale-[1.03] active:scale-[0.98] shadow-lg hover:bg-zinc-800"
                 >
                   View Solutions <FiArrowRight size={16} />
                 </Link>
@@ -596,7 +599,7 @@ export default function TechnologyPage() {
               <MagneticElement strength={0.3}>
                 <Link
                   href="/contact"
-                  className="inline-flex items-center gap-2.5 px-8 py-4 rounded-full bg-white/[0.06] border border-white/20 text-white font-semibold text-sm tracking-wide transition-all duration-200 hover:bg-white/10 hover:border-white/30"
+                  className="inline-flex items-center gap-2.5 px-8 py-4 rounded-full bg-white border border-zinc-300 text-zinc-900 font-semibold text-sm tracking-wide transition-all duration-200 hover:bg-zinc-50 hover:border-zinc-400 shadow-sm hover:scale-[1.02] active:scale-[0.98]"
                 >
                   Request Architecture Brief <FiArrowUpRight size={16} />
                 </Link>

@@ -60,6 +60,15 @@ const row1Items: EcosystemCard[] = [
     image: "/ecosystem-set1/5.jpg",
     layout: "text-top",
   },
+  {
+    id: "set1-card-6",
+    badge: "FLEET INTELLIGENCE",
+    subTag: "AI TELEMETRY • PREDICTIVE MAINTENANCE",
+    title: "Predictive Analytics & Edge AI",
+    desc: "AI-driven diagnostics for fleet health, energy optimization, and predictive maintenance schedules.",
+    image: "/images/vmovexa-fleet-twilight.png",
+    layout: "image-top",
+  },
 ];
 
 // Row 2 Cards: Powered by images from "OUR ECOSYSTEM1" folder
@@ -130,94 +139,111 @@ const row2Cards = [...row2Items, ...row2Items];
 
 function CardItem({ card }: { card: EcosystemCard }) {
   return (
-    <div className="w-[300px] sm:w-[360px] md:w-[400px] h-[340px] sm:h-[370px] shrink-0 p-4 sm:p-5 rounded-2xl sm:rounded-3xl bg-[#08090e]/95 border border-white/[0.08] hover:border-white/20 transition-all duration-500 flex flex-col justify-between group/card hover:shadow-[0_0_35px_rgba(168,85,247,0.18)] hover:-translate-y-1 relative overflow-hidden backdrop-blur-md">
+    <div className="w-full p-2 sm:p-2.5 rounded-[24px] bg-[#050508]/80 border border-white/[0.06] hover:border-white/[0.15] transition-all duration-500 flex flex-col group/card hover:shadow-[0_8px_40px_-12px_rgba(168,85,247,0.2)] hover:-translate-y-1.5 relative overflow-hidden backdrop-blur-xl">
       {/* Corner Ambient Glow */}
-      <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-cyan-500/10 via-purple-500/10 to-transparent blur-2xl opacity-0 group-hover/card:opacity-100 transition-opacity duration-500 pointer-events-none" />
+      <div className="absolute -top-20 -right-20 w-56 h-56 bg-gradient-to-br from-cyan-500/15 via-purple-500/10 to-transparent blur-3xl opacity-0 group-hover/card:opacity-100 transition-opacity duration-700 pointer-events-none" />
 
-      {card.layout === "text-top" ? (
-        <>
-          {/* Header text content */}
-          <div className="mb-2.5">
-            <div className="flex items-center justify-between mb-1.5">
-              <span className="font-mono text-[9px] tracking-widest text-cyan-400/90 uppercase px-2 py-0.5 rounded-full bg-cyan-950/40 border border-cyan-800/40">
-                {card.badge}
-              </span>
-              <span className="w-1.5 h-1.5 rounded-full bg-white/20 group-hover/card:bg-purple-400 transition-colors" />
-            </div>
-            <h3 className="text-sm sm:text-base font-bold text-white tracking-tight leading-snug line-clamp-1">
-              {card.title}
-            </h3>
-            <p className="text-[11px] sm:text-xs text-zinc-400 font-light leading-relaxed mt-0.5 line-clamp-2">
-              {card.desc}
-            </p>
-
-            {/* Optional Feature Badges */}
-            {card.features && (
-              <div className="grid grid-cols-2 gap-1 mt-2 pt-1.5 border-t border-white/[0.06]">
-                {card.features.map((feat, i) => (
-                  <div
-                    key={feat}
-                    className="flex items-center gap-1 text-[9px] font-mono text-zinc-400"
-                  >
-                    {i === 0 && <FiShield className="text-cyan-400 w-2.5 h-2.5 shrink-0" />}
-                    {i === 1 && <FiTrendingUp className="text-purple-400 w-2.5 h-2.5 shrink-0" />}
-                    {i === 2 && <FiCpu className="text-pink-400 w-2.5 h-2.5 shrink-0" />}
-                    {i === 3 && <FiCheckCircle className="text-emerald-400 w-2.5 h-2.5 shrink-0" />}
-                    <span className="truncate">{feat}</span>
-                  </div>
-                ))}
+      <div className="p-3 sm:p-4 h-full flex flex-col relative z-10">
+        {card.layout === "text-top" ? (
+          <>
+            {/* Header text content */}
+            <div className="mb-4 shrink-0">
+              <div className="flex items-center justify-between mb-3">
+                <span className="font-mono text-[9px] tracking-widest text-cyan-300 uppercase px-3 py-1 rounded-full bg-cyan-950/40 border border-cyan-500/30 shadow-[0_0_12px_rgba(6,182,212,0.15)] flex items-center gap-1.5">
+                  <span className="w-1.5 h-1.5 rounded-full bg-cyan-400 animate-pulse" />
+                  {card.badge}
+                </span>
+                <span className="w-2 h-2 rounded-full bg-white/10 group-hover/card:bg-purple-400 transition-colors duration-500" />
               </div>
-            )}
-          </div>
+              
+              {card.subTag && (
+                <div className="text-[9px] font-mono text-zinc-500 uppercase tracking-[0.15em] mb-1.5">
+                  {card.subTag}
+                </div>
+              )}
 
-          {/* Media slot */}
-          <div className="relative w-full flex-1 rounded-xl overflow-hidden border border-white/10 bg-black/60 shadow-inner group-hover/card:border-white/20 transition-colors min-h-[160px] sm:min-h-[180px]">
-            <Image
-              src={card.image}
-              alt={card.title}
-              fill
-              sizes="(max-width: 768px) 300px, 400px"
-              className="object-cover group-hover/card:scale-105 transition-transform duration-700 ease-out"
-            />
-          </div>
-        </>
-      ) : (
-        <>
-          {/* Media slot on top */}
-          <div className="relative w-full flex-1 rounded-xl overflow-hidden border border-white/10 bg-black/60 shadow-inner group-hover/card:border-white/20 transition-colors min-h-[160px] sm:min-h-[180px] mb-2.5">
-            <Image
-              src={card.image}
-              alt={card.title}
-              fill
-              sizes="(max-width: 768px) 300px, 400px"
-              className="object-cover group-hover/card:scale-105 transition-transform duration-700 ease-out"
-            />
-          </div>
+              <h3 className="text-[15px] sm:text-[17px] font-heading font-semibold text-white tracking-tight leading-snug mb-1.5 group-hover/card:text-cyan-50 transition-colors">
+                {card.title}
+              </h3>
+              <p className="text-[11px] sm:text-xs text-zinc-400 font-light leading-relaxed">
+                {card.desc}
+              </p>
 
-          {/* Bottom text content */}
-          <div>
-            <div className="flex items-center justify-between mb-1.5">
-              <span className="font-mono text-[9px] tracking-widest text-purple-400/90 uppercase px-2 py-0.5 rounded-full bg-purple-950/40 border border-purple-800/40">
-                {card.badge}
-              </span>
-              <span className="w-1.5 h-1.5 rounded-full bg-white/20 group-hover/card:bg-cyan-400 transition-colors" />
+              {/* Optional Feature Badges */}
+              {card.features && (
+                <div className="flex flex-wrap gap-1.5 mt-3 pt-3 border-t border-white/[0.06]">
+                  {card.features.map((feat, i) => (
+                    <div
+                      key={feat}
+                      className="flex items-center gap-1.5 text-[9.5px] font-mono text-zinc-300 bg-white/[0.03] px-2 py-1 rounded-md border border-white/[0.05]"
+                    >
+                      {i === 0 && <FiShield className="text-cyan-400 w-3 h-3 shrink-0" />}
+                      {i === 1 && <FiTrendingUp className="text-purple-400 w-3 h-3 shrink-0" />}
+                      {i === 2 && <FiCpu className="text-pink-400 w-3 h-3 shrink-0" />}
+                      {i === 3 && <FiCheckCircle className="text-emerald-400 w-3 h-3 shrink-0" />}
+                      <span>{feat}</span>
+                    </div>
+                  ))}
+                </div>
+              )}
             </div>
 
-            {card.subTag && (
-              <div className="text-[9px] font-mono text-zinc-500 uppercase tracking-wider mb-0.5 line-clamp-1">
-                {card.subTag}
-              </div>
-            )}
+            {/* Premium Media slot */}
+            <div className="relative w-full aspect-[4/3] rounded-[16px] overflow-hidden bg-gradient-to-b from-zinc-900 to-black border border-white/[0.08] shadow-[inset_0_1px_0_rgba(255,255,255,0.1)] group-hover/card:border-white/[0.15] transition-all duration-500 flex items-center justify-center mt-auto">
+              <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(255,255,255,0.03)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.03)_1px,transparent_1px)] bg-[size:1rem_1rem] pointer-events-none" />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-60 z-10 pointer-events-none" />
+              
+              <Image
+                src={card.image}
+                alt={card.title}
+                fill
+                sizes="(max-width: 768px) 100vw, 400px"
+                className="object-contain p-3 group-hover/card:scale-[1.08] transition-transform duration-700 ease-out z-0"
+              />
+            </div>
+          </>
+        ) : (
+          <>
+            {/* Premium Media slot on top */}
+            <div className="relative w-full aspect-[4/3] rounded-[16px] overflow-hidden bg-gradient-to-b from-zinc-900 to-black border border-white/[0.08] shadow-[inset_0_1px_0_rgba(255,255,255,0.1)] group-hover/card:border-white/[0.15] transition-all duration-500 mb-5 flex items-center justify-center">
+              <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(255,255,255,0.03)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.03)_1px,transparent_1px)] bg-[size:1rem_1rem] pointer-events-none" />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-60 z-10 pointer-events-none" />
+              
+              <Image
+                src={card.image}
+                alt={card.title}
+                fill
+                sizes="(max-width: 768px) 100vw, 400px"
+                className="object-contain p-3 group-hover/card:scale-[1.08] transition-transform duration-700 ease-out z-0"
+              />
+            </div>
 
-            <h3 className="text-sm sm:text-base font-bold text-white tracking-tight leading-snug line-clamp-1">
-              {card.title}
-            </h3>
-            <p className="text-[11px] sm:text-xs text-zinc-400 font-light leading-relaxed mt-0.5 line-clamp-2">
-              {card.desc}
-            </p>
-          </div>
-        </>
-      )}
+            {/* Bottom text content */}
+            <div className="shrink-0 flex flex-col justify-end">
+              <div className="flex items-center justify-between mb-3">
+                <span className="font-mono text-[9px] tracking-widest text-purple-300 uppercase px-3 py-1 rounded-full bg-purple-950/40 border border-purple-500/30 shadow-[0_0_12px_rgba(168,85,247,0.15)] flex items-center gap-1.5">
+                  <span className="w-1.5 h-1.5 rounded-full bg-purple-400 animate-pulse" />
+                  {card.badge}
+                </span>
+                <span className="w-2 h-2 rounded-full bg-white/10 group-hover/card:bg-cyan-400 transition-colors duration-500" />
+              </div>
+
+              {card.subTag && (
+                <div className="text-[9px] font-mono text-zinc-500 uppercase tracking-[0.15em] mb-1.5">
+                  {card.subTag}
+                </div>
+              )}
+
+              <h3 className="text-[15px] sm:text-[17px] font-heading font-semibold text-white tracking-tight leading-snug mb-1.5 group-hover/card:text-cyan-50 transition-colors">
+                {card.title}
+              </h3>
+              <p className="text-[11px] sm:text-xs text-zinc-400 font-light leading-relaxed">
+                {card.desc}
+              </p>
+            </div>
+          </>
+        )}
+      </div>
     </div>
   );
 }
@@ -246,7 +272,7 @@ export function OurEcosystemSection() {
         </EditorialLine>
 
         <EditorialLine delay={0.1}>
-          <h2 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white leading-tight mb-2.5">
+          <h2 className="text-3xl sm:text-5xl lg:text-6xl font-heading font-semibold tracking-tight text-white leading-tight mb-2.5">
             One Platform. <span className="gradient-text">Infinite Possibilities.</span>
           </h2>
         </EditorialLine>
@@ -258,28 +284,14 @@ export function OurEcosystemSection() {
         </EditorialLine>
       </div>
 
-      {/* 2-Row Dual-Direction Moving Carousel with Unique Images Per Row */}
-      <div className="relative w-full space-y-4 sm:space-y-5 overflow-hidden">
-        {/* Edge Gradient Fades for Smooth Cinematic Dissolve */}
-        <div className="pointer-events-none absolute inset-y-0 left-0 w-20 sm:w-40 md:w-56 bg-gradient-to-r from-black via-black/85 to-transparent z-20" />
-        <div className="pointer-events-none absolute inset-y-0 right-0 w-20 sm:w-40 md:w-56 bg-gradient-to-l from-black via-black/85 to-transparent z-20" />
-
-        {/* Row 1: Left to Right movement (Images from 'OUR ECOSYSTEM') */}
-        <div className="overflow-hidden flex">
-          <div className="animate-marquee-ltr flex items-center gap-4 sm:gap-5">
-            {row1Cards.map((card, idx) => (
-              <CardItem key={`row1-${card.id}-${idx}`} card={card} />
-            ))}
-          </div>
-        </div>
-
-        {/* Row 2: Right to Left / Ulta movement (Images from 'OUR ECOSYSTEM1') */}
-        <div className="overflow-hidden flex">
-          <div className="animate-marquee-rtl flex items-center gap-4 sm:gap-5">
-            {row2Cards.map((card, idx) => (
-              <CardItem key={`row2-${card.id}-${idx}`} card={card} />
-            ))}
-          </div>
+      {/* Beautiful Masonry Grid */}
+      <div className="container max-w-[1400px] mx-auto px-6 relative z-10 pb-16">
+        <div className="columns-1 md:columns-2 lg:columns-3 xl:columns-4 gap-6 space-y-6">
+          {[...row1Items, ...row2Items].map((card, idx) => (
+            <div key={`card-${card.id}-${idx}`} className="break-inside-avoid">
+              <CardItem card={card} />
+            </div>
+          ))}
         </div>
       </div>
     </section>
