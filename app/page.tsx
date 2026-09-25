@@ -441,23 +441,23 @@ export default function HomePage() {
       {/* ========================================================================= */}
       {/* 03 // A VEHICLE CAN BE MORE.                                             */}
       {/* ========================================================================= */}
-      <section className="py-12 border-b border-white/[0.08] relative overflow-hidden bg-black">
+      <section className="py-12 border-b border-zinc-200 relative overflow-hidden bg-white">
         <div className="container max-w-7xl mx-auto px-6 relative z-10">
           <div className="text-center max-w-3xl mx-auto mb-16">
             <EditorialLine>
-              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/[0.05] border border-white/10 text-white/80 font-mono text-xs tracking-wider mb-4">
-                <span className="text-cyan-400 font-bold">03</span>
-                <span className="text-white/30">/</span>
+              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-cyan-50 border border-cyan-200 text-cyan-800 font-mono text-xs tracking-wider mb-4 shadow-sm">
+                <span className="text-cyan-600 font-bold">03</span>
+                <span className="text-cyan-300">/</span>
                 <span>BEYOND TRANSPORTATION</span>
               </div>
             </EditorialLine>
             <EditorialLine delay={0.1}>
-              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight uppercase text-white leading-tight mb-4">
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight uppercase text-zinc-900 leading-tight mb-4">
                 A VEHICLE CAN BE <span className="gradient-text">MORE.</span>
               </h2>
             </EditorialLine>
             <EditorialLine delay={0.2}>
-              <p className="text-base text-white/70 font-light max-w-2xl mx-auto leading-relaxed">
+              <p className="text-base text-zinc-600 font-light max-w-2xl mx-auto leading-relaxed">
                 VMOVEXA unlocks latent capability in physical vehicles—transforming moving steel into intelligent, software-defined edge nodes and revenue-generating digital media infrastructure.
               </p>
             </EditorialLine>
@@ -470,15 +470,15 @@ export default function HomePage() {
               return (
                 <GsapScrollReveal key={node.title} delay={i * 0.08}>
                   <TiltCard maxTilt={6} className="h-full">
-                    <div className="p-6 rounded-2xl bg-white/[0.02] border border-white/10 hover:border-white/25 hover:bg-white/[0.05] transition-all duration-300 flex flex-col justify-between group cursor-default shadow-lg h-full">
+                    <div className="p-6 rounded-2xl bg-white border border-zinc-200 hover:border-cyan-400/40 hover:bg-zinc-50 transition-all duration-300 flex flex-col justify-between group cursor-default shadow-sm hover:shadow-md h-full">
                       <div>
-                        <div className={`w-12 h-12 rounded-xl border ${node.badgeBg} ${node.color} flex items-center justify-center group-hover:scale-110 transition-all duration-300 mb-5`}>
+                        <div className={`w-12 h-12 rounded-xl border ${node.badgeBg} ${node.color} bg-white flex items-center justify-center group-hover:scale-110 transition-all duration-300 mb-5 shadow-sm`}>
                           <NodeIcon size={24} />
                         </div>
-                        <div className="text-base font-bold text-white mb-2 group-hover:text-cyan-300 transition-colors">
+                        <div className="text-base font-bold text-zinc-900 mb-2 group-hover:text-cyan-600 transition-colors">
                           {node.title}
                         </div>
-                        <p className="text-xs text-white/60 leading-relaxed font-light">
+                        <p className="text-xs text-zinc-600 leading-relaxed font-light group-hover:text-zinc-800 transition-colors">
                           {node.desc}
                         </p>
                       </div>
@@ -594,21 +594,21 @@ export default function HomePage() {
       {/* ========================================================================= */}
       {/* 05 // THE VEHICLE BECOMES THE EDGE.                                       */}
       {/* ========================================================================= */}
-      <section className="py-12 border-b border-white/[0.08] relative overflow-hidden bg-black">
+      <section className="py-12 border-b border-zinc-200 relative overflow-hidden bg-white">
         <div className="container max-w-6xl mx-auto px-6 relative z-10">
           <div className="max-w-3xl mb-16">
             <EditorialLine>
-              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/[0.05] border border-white/10 text-white/80 font-mono text-xs tracking-wider mb-4">
-                <span className="text-cyan-400 font-bold">05</span>
-                <span className="text-white/30">/</span>
+              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-cyan-50 border border-cyan-200 text-cyan-800 font-mono text-xs tracking-wider mb-4 shadow-sm">
+                <span className="text-cyan-600 font-bold">05</span>
+                <span className="text-cyan-300">/</span>
                 <span>IN-VEHICLE COMPUTING</span>
               </div>
             </EditorialLine>
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight uppercase text-white leading-tight mb-4">
-              THE VEHICLE BECOMES <span className="gradient-text">THE EDGE.</span>
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight uppercase text-zinc-900 leading-tight mb-4">
+              THE VEHICLE BECOMES <span className="text-cyan-600">THE EDGE.</span>
             </h2>
             <EditorialLine delay={0.2}>
-              <p className="text-base text-white/70 font-light leading-relaxed">
+              <p className="text-base text-zinc-600 font-light leading-relaxed">
                 Rather than treating vehicles as passive mobile endpoints, VMOVEXA embeds an autonomous industrial compute engine directly into the vehicle architecture—fusing CAN-bus telemetry, screen buses, and localized geofencing logic into a single resilient runtime.
               </p>
             </EditorialLine>
@@ -622,14 +622,14 @@ export default function HomePage() {
                 const PillarIcon = pillar.icon;
                 return (
                   <GsapScrollReveal key={pillar.title} delay={idx * 0.08}>
-                    <SpotlightCard className="h-full p-5 backdrop-blur-sm group cursor-default bg-white/[0.02] border-white/10">
-                      <div className={`w-10 h-10 rounded-xl border ${pillar.badgeBg} flex items-center justify-center mb-3 ${pillar.color} group-hover:scale-110 transition-all duration-300`}>
+                    <SpotlightCard className="h-full p-5 backdrop-blur-sm group cursor-default bg-white border border-zinc-200 shadow-sm hover:shadow-md transition-shadow">
+                      <div className={`w-10 h-10 rounded-xl border ${pillar.badgeBg} bg-white flex items-center justify-center mb-3 ${pillar.color} group-hover:scale-110 transition-all duration-300 shadow-sm`}>
                         <PillarIcon size={20} />
                       </div>
-                      <h3 className="text-sm font-bold text-white mb-2 group-hover:text-cyan-200 transition-colors">
+                      <h3 className="text-sm font-bold text-zinc-900 mb-2 group-hover:text-cyan-600 transition-colors">
                         {pillar.title}
                       </h3>
-                      <p className="text-xs text-white/60 leading-relaxed font-light">
+                      <p className="text-xs text-zinc-600 leading-relaxed font-light group-hover:text-zinc-800 transition-colors">
                         {pillar.desc}
                       </p>
                     </SpotlightCard>
@@ -641,7 +641,7 @@ export default function HomePage() {
             {/* Right Hardware X-Ray Visual */}
             <div className="lg:col-span-6">
               <GsapScrollReveal delay={0.2}>
-                <div className="relative group rounded-2xl overflow-hidden border border-white/15 bg-white/[0.02]">
+                <div className="relative group rounded-2xl overflow-hidden border border-zinc-200 bg-zinc-50 shadow-sm">
                   <MediaSlot
                     type="image"
                     src="/images/vmovexa-technology-bus-xray.PNG"
@@ -650,18 +650,19 @@ export default function HomePage() {
                     caption="In-Vehicle Sensor Bus • CAN-Bus Telemetry • Display Processor Array"
                     aspectRatio="16/9"
                     scanline={true}
+                    className="!h-auto !rounded-b-none"
                   />
                   {/* Hardware Runtime Status Bar */}
-                  <div className="px-6 py-4 bg-black/85 backdrop-blur-md border-t border-white/10 flex flex-wrap items-center justify-between gap-4 font-mono text-xs">
-                    <div className="flex items-center gap-2.5 text-cyan-300">
-                      <span className="w-2 h-2 rounded-full bg-cyan-400 animate-pulse" />
+                  <div className="px-6 py-4 bg-white/95 backdrop-blur-md border-t border-zinc-200 flex flex-wrap items-center justify-between gap-4 font-mono text-xs shadow-inner">
+                    <div className="flex items-center gap-2.5 text-cyan-600">
+                      <span className="w-2 h-2 rounded-full bg-cyan-500 animate-pulse" />
                       <span className="font-semibold tracking-wide">VMOVEXA CORE Active Runtime</span>
                     </div>
-                    <div className="flex flex-wrap items-center gap-4 sm:gap-6 text-white/60 text-[11px]">
+                    <div className="flex flex-wrap items-center gap-4 sm:gap-6 text-zinc-500 text-[11px]">
                       <span>Real-Time Edge Processing</span>
-                      <span className="text-white/20 hidden sm:inline">•</span>
+                      <span className="text-zinc-300 hidden sm:inline">•</span>
                       <span>Zero-Latency Offline Cache</span>
-                      <span className="text-white/20 hidden sm:inline">•</span>
+                      <span className="text-zinc-300 hidden sm:inline">•</span>
                       <span>Multi-Display Bus Synchronized</span>
                     </div>
                   </div>
@@ -711,23 +712,23 @@ export default function HomePage() {
       {/* ========================================================================= */}
       {/* 07 // MOVEMENT CREATES CONTEXT.                                           */}
       {/* ========================================================================= */}
-      <section className="py-12 border-b border-white/[0.08] relative overflow-hidden bg-black">
+      <section className="py-12 border-b border-zinc-200 relative overflow-hidden bg-white">
         <div className="container max-w-6xl mx-auto px-6 relative z-10">
           <div className="text-center max-w-3xl mx-auto mb-16">
             <EditorialLine>
-              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/[0.05] border border-white/10 text-white/80 font-mono text-xs tracking-wider mb-4">
-                <span className="text-cyan-400 font-bold">07</span>
-                <span className="text-white/30">/</span>
+              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-cyan-50 border border-cyan-200 text-cyan-800 font-mono text-xs tracking-wider mb-4 shadow-sm">
+                <span className="text-cyan-600 font-bold">07</span>
+                <span className="text-cyan-300">/</span>
                 <span>SPATIAL INTELLIGENCE</span>
               </div>
             </EditorialLine>
             <EditorialLine delay={0.1}>
-              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight uppercase text-white leading-tight mb-4">
-                MOVEMENT CREATES <span className="gradient-text">CONTEXT.</span>
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight uppercase text-zinc-900 leading-tight mb-4">
+                MOVEMENT CREATES <span className="text-cyan-600">CONTEXT.</span>
               </h2>
             </EditorialLine>
             <EditorialLine delay={0.2}>
-              <p className="text-base text-white/70 font-light leading-relaxed max-w-2xl mx-auto">
+              <p className="text-base text-zinc-600 font-light leading-relaxed max-w-2xl mx-auto">
                 Unlike stationary billboards or fixed digital screens, a moving vehicle navigates living urban corridors. Speed, heading, time-of-day, and hyper-local geography merge to generate real-time programmatic context.
               </p>
             </EditorialLine>
@@ -739,25 +740,25 @@ export default function HomePage() {
               const CorIcon = corridor.icon;
               return (
                 <GsapScrollReveal key={corridor.title} delay={idx * 0.1}>
-                  <div className="p-6 rounded-2xl bg-white/[0.02] border border-white/10 hover:border-white/25 hover:bg-white/[0.04] transition-all duration-300 flex flex-col justify-between group h-full shadow-lg">
+                  <div className="p-6 rounded-2xl bg-white border border-zinc-200 hover:border-cyan-400/40 hover:bg-zinc-50 transition-all duration-300 flex flex-col justify-between group h-full shadow-sm hover:shadow-md">
                     <div>
                       <div className="flex items-center justify-between mb-4">
-                        <div className={`p-3 rounded-xl border border-white/15 bg-white/5 ${corridor.color} group-hover:scale-110 transition-transform`}>
+                        <div className={`p-3 rounded-xl border border-zinc-200 bg-zinc-50 ${corridor.color} group-hover:scale-110 transition-transform shadow-sm`}>
                           <CorIcon size={22} />
                         </div>
-                        <span className="font-mono text-[10px] text-white/50 px-2 py-0.5 rounded-full border border-white/10 bg-white/[0.02]">
+                        <span className="font-mono text-[10px] text-zinc-500 px-2 py-0.5 rounded-full border border-zinc-200 bg-zinc-50">
                           {corridor.badge}
                         </span>
                       </div>
-                      <h3 className="text-base font-bold text-white mb-1 group-hover:text-cyan-300 transition-colors">
+                      <h3 className="text-base font-bold text-zinc-900 mb-1 group-hover:text-cyan-600 transition-colors">
                         {corridor.title}
                       </h3>
-                      <div className="text-xs font-mono text-cyan-400/80 mb-3">{corridor.subtitle}</div>
-                      <p className="text-xs text-white/65 leading-relaxed font-light">
+                      <div className="text-xs font-mono text-cyan-700/80 mb-3">{corridor.subtitle}</div>
+                      <p className="text-xs text-zinc-600 leading-relaxed font-light group-hover:text-zinc-800 transition-colors">
                         {corridor.desc}
                       </p>
                     </div>
-                    <div className="mt-5 pt-3 border-t border-white/10 font-mono text-[10px] text-white/40 tracking-wider">
+                    <div className="mt-5 pt-3 border-t border-zinc-200 font-mono text-[10px] text-zinc-400 tracking-wider">
                       {corridor.tag}
                     </div>
                   </div>
@@ -768,39 +769,39 @@ export default function HomePage() {
 
           {/* Interactive Spatial Trigger HUD Terminal */}
           <GsapScrollReveal delay={0.3}>
-            <div className="p-6 rounded-2xl bg-white/[0.02] border border-white/15 backdrop-blur-md shadow-2xl relative overflow-hidden">
-              <div className="absolute top-0 right-0 p-4 font-mono text-[10px] text-cyan-400/60 uppercase tracking-widest hidden sm:block">
+            <div className="p-6 rounded-2xl bg-white border border-zinc-200 backdrop-blur-md shadow-lg relative overflow-hidden">
+              <div className="font-mono text-[10px] text-cyan-600/60 uppercase tracking-widest hidden sm:block text-right mb-6">
                 LIVE SPATIAL LOGIC ENGINE
               </div>
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6 font-mono text-xs">
                 <div className="space-y-2">
-                  <div className="text-white/40 text-[10px] uppercase tracking-wider flex items-center gap-2">
-                    <FiMapPin className="text-cyan-400" /> ACTIVE GEOFENCE COORDINATE
+                  <div className="text-zinc-500 text-[10px] uppercase tracking-wider flex items-center gap-2">
+                    <FiMapPin className="text-cyan-600" /> ACTIVE GEOFENCE COORDINATE
                   </div>
-                  <div className="text-white font-semibold text-sm">
+                  <div className="text-zinc-900 font-semibold text-sm">
                     <TextDecrypt text="28.5562° N, 77.1000° E" delay={0.2} />
                   </div>
-                  <div className="text-white/50 text-[11px]">Polygon ID: DEL-T3-AIRPORT-EXPRESS</div>
+                  <div className="text-zinc-500 text-[11px]">Polygon ID: DEL-T3-AIRPORT-EXPRESS</div>
                 </div>
 
                 <div className="space-y-2">
-                  <div className="text-white/40 text-[10px] uppercase tracking-wider flex items-center gap-2">
-                    <FiNavigation className="text-indigo-400" /> DYNAMIC MOTION TELEMETRY
+                  <div className="text-zinc-500 text-[10px] uppercase tracking-wider flex items-center gap-2">
+                    <FiNavigation className="text-indigo-600" /> DYNAMIC MOTION TELEMETRY
                   </div>
-                  <div className="text-white font-semibold text-sm">
+                  <div className="text-zinc-900 font-semibold text-sm">
                     <TextDecrypt text="48 KM/H • HEADING 082° ENE" delay={0.3} />
                   </div>
-                  <div className="text-white/50 text-[11px]">Dwell Prediction: 4m 30s remaining</div>
+                  <div className="text-zinc-500 text-[11px]">Dwell Prediction: 4m 30s remaining</div>
                 </div>
 
                 <div className="space-y-2">
-                  <div className="text-white/40 text-[10px] uppercase tracking-wider flex items-center gap-2">
-                    <FiZap className="text-amber-400" /> CONTEXTUAL SCREEN PAYLOAD
+                  <div className="text-zinc-500 text-[10px] uppercase tracking-wider flex items-center gap-2">
+                    <FiZap className="text-amber-500" /> CONTEXTUAL SCREEN PAYLOAD
                   </div>
-                  <div className="text-emerald-400 font-semibold text-sm">
+                  <div className="text-emerald-600 font-semibold text-sm">
                     <TextDecrypt text="AIRPORT-DEPARTURE-FEED-v4" delay={0.4} />
                   </div>
-                  <div className="text-white/50 text-[11px]">Verified Proof-of-Play Signed at Edge</div>
+                  <div className="text-zinc-500 text-[11px]">Verified Proof-of-Play Signed at Edge</div>
                 </div>
               </div>
             </div>
@@ -1114,14 +1115,14 @@ export default function HomePage() {
       {/* ========================================================================= */}
       {/* 12 // THE WORLD MOVES. INTELLIGENCE SHOULD MOVE WITH IT. (Final Section)  */}
       {/* ========================================================================= */}
-      <section className="py-32 relative overflow-hidden text-center bg-black">
-        <div className="absolute inset-0 bg-gradient-to-t from-cyan-950/30 via-transparent to-transparent pointer-events-none" />
+      <section className="py-32 relative overflow-hidden text-center bg-white border-b border-zinc-200">
+        <div className="absolute inset-0 bg-gradient-to-t from-cyan-50/50 via-transparent to-transparent pointer-events-none" />
         <div className="container max-w-5xl mx-auto px-6 relative z-10">
           {/* Number Badge */}
           <EditorialLine>
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/5 border border-white/15 text-white/80 font-mono text-xs tracking-wider mb-6">
-              <span className="text-cyan-400 font-bold">12</span>
-              <span className="text-white/30">/</span>
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-cyan-50 border border-cyan-200 text-cyan-800 font-mono text-xs tracking-wider mb-6 shadow-sm">
+              <span className="text-cyan-600 font-bold">12</span>
+              <span className="text-cyan-300">/</span>
               <span>THE PLATFORM THESIS</span>
             </div>
           </EditorialLine>
@@ -1129,18 +1130,18 @@ export default function HomePage() {
           {/* Headline */}
           <CubertoLines
             as="h2"
-            className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight uppercase text-white leading-tight mb-6"
+            className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight uppercase text-zinc-900 leading-tight mb-6"
             delay={0.1}
             stagger={0.1}
             lines={[
               <div key="l1">THE WORLD MOVES.</div>,
-              <div key="l2" className="gradient-text mt-1 sm:mt-2">INTELLIGENCE SHOULD MOVE WITH IT.</div>,
+              <div key="l2" className="text-cyan-600 mt-1 sm:mt-2">INTELLIGENCE SHOULD MOVE WITH IT.</div>,
             ]}
           />
 
           {/* Subtitle */}
           <EditorialLine delay={0.2}>
-            <p className="text-base sm:text-lg text-white/75 max-w-3xl mx-auto mb-12 leading-relaxed font-light">
+            <p className="text-base sm:text-lg text-zinc-600 max-w-3xl mx-auto mb-12 leading-relaxed font-light">
               A unified cloud-to-edge mobility intelligence platform connecting vehicles, computing, digital displays, and urban infrastructure into an active, programmable ecosystem.
             </p>
           </EditorialLine>
@@ -1148,19 +1149,19 @@ export default function HomePage() {
           {/* 4 Macro Thesis Points */}
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 max-w-4xl mx-auto mb-12 text-left">
             {[
-              { title: "Vehicles", desc: "Becoming software-defined & connected", icon: RiCarLine, color: "text-cyan-400" },
-              { title: "Cities", desc: "Becoming digital & sensor-instrumented", icon: FiMapPin, color: "text-indigo-400" },
-              { title: "Media", desc: "Becoming contextual & measurable", icon: FiMonitor, color: "text-purple-400" },
-              { title: "Infrastructure", desc: "Becoming intelligent at the edge", icon: FiCpu, color: "text-emerald-400" },
+              { title: "Vehicles", desc: "Becoming software-defined & connected", icon: RiCarLine, color: "text-cyan-600", bg: "bg-cyan-50 border-cyan-200" },
+              { title: "Cities", desc: "Becoming digital & sensor-instrumented", icon: FiMapPin, color: "text-indigo-600", bg: "bg-indigo-50 border-indigo-200" },
+              { title: "Media", desc: "Becoming contextual & measurable", icon: FiMonitor, color: "text-purple-600", bg: "bg-purple-50 border-purple-200" },
+              { title: "Infrastructure", desc: "Becoming intelligent at the edge", icon: FiCpu, color: "text-emerald-600", bg: "bg-emerald-50 border-emerald-200" },
             ].map((item, idx) => {
               const ItemIcon = item.icon;
               return (
-                <div key={idx} className="p-4 rounded-xl bg-white/[0.02] border border-white/10">
-                  <div className={`p-2 rounded-lg bg-white/5 ${item.color} inline-block mb-2`}>
+                <div key={idx} className="p-4 rounded-xl bg-white border border-zinc-200 shadow-sm hover:shadow-md transition-shadow">
+                  <div className={`p-2 rounded-lg border ${item.bg} ${item.color} inline-block mb-2 shadow-sm`}>
                     <ItemIcon size={18} />
                   </div>
-                  <div className="font-bold text-white text-sm">{item.title}</div>
-                  <div className="text-xs text-white/50 font-light mt-0.5">{item.desc}</div>
+                  <div className="font-bold text-zinc-900 text-sm">{item.title}</div>
+                  <div className="text-xs text-zinc-500 font-light mt-0.5">{item.desc}</div>
                 </div>
               );
             })}
@@ -1172,17 +1173,16 @@ export default function HomePage() {
               <MagneticElement strength={0.3}>
                 <Link
                   href="/platform"
-                  className="inline-flex items-center gap-2.5 px-8 py-4 rounded-full bg-white font-semibold text-sm tracking-wide transition-all duration-300 hover:scale-[1.03] active:scale-[0.98] shadow-[0_0_30px_rgba(255,255,255,0.25)] hover:shadow-[0_0_40px_rgba(255,255,255,0.5)]"
-                  style={{ color: "#000000" }}
+                  className="inline-flex items-center gap-2.5 px-8 py-4 rounded-full bg-zinc-900 text-white font-semibold text-sm tracking-wide transition-all duration-300 hover:scale-[1.03] active:scale-[0.98] shadow-md hover:shadow-lg hover:bg-zinc-800"
                 >
-                  <span className="text-black font-semibold">Explore VMOVEXA Platform</span>
-                  <FiArrowRight size={16} className="text-black" />
+                  <span className="font-semibold">Explore VMOVEXA Platform</span>
+                  <FiArrowRight size={16} />
                 </Link>
               </MagneticElement>
               <MagneticElement strength={0.3}>
                 <Link
                   href="/contact"
-                  className="inline-flex items-center gap-2.5 px-8 py-4 rounded-full bg-white/[0.06] border border-white/20 text-white font-semibold text-sm tracking-wide transition-all duration-300 hover:bg-white/10 hover:border-white/30"
+                  className="inline-flex items-center gap-2.5 px-8 py-4 rounded-full bg-white border border-zinc-300 text-zinc-800 font-semibold text-sm tracking-wide transition-all duration-300 hover:bg-zinc-50 hover:border-zinc-400 shadow-sm"
                 >
                   Schedule Architecture Demo <FiArrowUpRight size={16} />
                 </Link>
@@ -1193,7 +1193,7 @@ export default function HomePage() {
           {/* Bottom Pill Badge */}
           <EditorialLine delay={0.4}>
             <MagneticElement strength={0.1}>
-              <div className="inline-block px-8 py-3.5 rounded-full bg-gradient-to-r from-white/[0.03] to-white/[0.06] border border-white/15 text-xs font-mono uppercase tracking-[0.2em] text-cyan-200 shadow-[inset_0_1px_0_rgba(255,255,255,0.1)]">
+              <div className="inline-block px-8 py-3.5 rounded-full bg-zinc-50 border border-zinc-200 text-xs font-mono uppercase tracking-[0.2em] text-cyan-700 shadow-sm">
                 Mobility × Edge Computing × Cloud × Data × Digital Media
               </div>
             </MagneticElement>

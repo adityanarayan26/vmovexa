@@ -38,7 +38,7 @@ export function Reveal({
   return (
     <div
       ref={containerRef}
-      className={`overflow-hidden pb-2 -mb-2 pt-0.5 -mt-0.5 ${className}`}
+      className={`relative ${className}`}
       id={id}
       style={style}
     >
@@ -54,6 +54,7 @@ export function Reveal({
           transformOrigin: "left center",
           willChange: "transform, opacity",
         }}
+        className="w-full h-full"
       >
         {children}
       </motion.div>

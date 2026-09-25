@@ -101,40 +101,6 @@ export function SiteFooter() {
                 <FiArrowUpRight className="w-3.5 h-3.5" />
               </a>
 
-              <Link
-                href="/contact"
-                className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-white text-black text-xs font-semibold hover:bg-zinc-200 transition-all hover:scale-[1.02] shadow-sm"
-              >
-                <span>Initiate Deployment</span>
-                <FiArrowUpRight className="w-3.5 h-3.5 text-black" />
-              </Link>
-            </div>
-
-            {/* Social Media Icons */}
-            <div className="pt-1">
-              <div className="text-[10px] font-mono text-white/40 uppercase tracking-widest mb-2.5">
-                Follow VMOVEXA
-              </div>
-              <div className="flex items-center gap-2.5">
-                {socialLinks.map((s) => (
-                  <a
-                    key={s.name}
-                    href={s.href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    aria-label={s.name}
-                    className="w-9 h-9 rounded-full bg-white/[0.04] border border-white/10 flex items-center justify-center p-2 hover:bg-white/[0.1] hover:border-cyan-400/50 hover:scale-110 transition-all shadow-sm group"
-                  >
-                    <Image
-                      src={s.icon}
-                      alt={s.name}
-                      width={18}
-                      height={18}
-                      className="object-contain filter group-hover:brightness-125 transition-all"
-                    />
-                  </a>
-                ))}
-              </div>
             </div>
           </div>
 
@@ -233,11 +199,11 @@ export function SiteFooter() {
         </div>
 
         {/* Bottom Legal Row */}
-        <div className="pt-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-white/40 font-mono">
-          <div>
+        <div className="pt-6 flex flex-col md:flex-row items-center justify-between gap-6 text-xs text-white/40 font-mono">
+          <div className="flex-shrink-0">
             © {new Date().getFullYear()} VMOVEXA. All rights reserved.
           </div>
-          <div className="flex flex-wrap items-center gap-6">
+          <div className="flex flex-wrap items-center justify-center gap-6">
             <Link href="/faq" className="hover:text-cyan-400 transition-colors">
               FAQ
             </Link>
@@ -253,6 +219,26 @@ export function SiteFooter() {
             <Link href="/privacy#cookies" className="hover:text-white/80 transition-colors">
               Cookie Policy
             </Link>
+          </div>
+          <div className="flex items-center justify-end gap-2.5 flex-shrink-0">
+            {socialLinks.map((s) => (
+              <a
+                key={s.name}
+                href={s.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={s.name}
+                className="w-9 h-9 rounded-full bg-white/[0.04] border border-white/10 flex items-center justify-center p-2 hover:bg-white/[0.1] hover:border-cyan-400/50 hover:scale-110 transition-all shadow-sm group"
+              >
+                <Image
+                  src={s.icon}
+                  alt={s.name}
+                  width={18}
+                  height={18}
+                  className="object-contain filter group-hover:brightness-125 transition-all"
+                />
+              </a>
+            ))}
           </div>
         </div>
       </div>

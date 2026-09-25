@@ -171,17 +171,18 @@ export default function MediaPage() {
 
           {/* Bottom Section: DON'T JUST BUY A SCREEN. BUY A MOMENT IN MOTION. + 10M+ Reach */}
           <GsapScrollReveal delay={0.5}>
-            <div className="pt-8 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-6">
-              <div className="max-w-md text-center sm:text-left">
-                <h3 className="text-xl sm:text-2xl font-bold tracking-tight text-white leading-snug">
+            <div className="p-8 md:p-10 rounded-3xl bg-white border border-zinc-200 shadow-xl flex flex-col sm:flex-row items-center justify-between gap-6 relative overflow-hidden group">
+              <div className="absolute inset-0 bg-gradient-to-r from-transparent via-zinc-100/50 to-transparent -translate-x-full group-hover:animate-[shimmer_2s_infinite]" />
+              <div className="max-w-md text-center sm:text-left relative z-10">
+                <h3 className="text-xl sm:text-2xl font-bold tracking-tight text-zinc-900 leading-snug">
                   Don&apos;t just buy a screen. Buy a moment in motion.
                 </h3>
               </div>
-              <div className="text-center sm:text-right">
-                <div className="text-4xl sm:text-5xl font-bold tracking-tight text-white">
+              <div className="text-center sm:text-right relative z-10">
+                <div className="text-4xl sm:text-5xl font-bold tracking-tight text-zinc-900">
                   10M+
                 </div>
-                <div className="text-xs font-mono uppercase tracking-widest text-white/60 mt-1">
+                <div className="text-xs font-mono uppercase tracking-widest text-zinc-500 mt-1">
                   Potential Daily Audience Reach
                 </div>
               </div>
@@ -252,14 +253,14 @@ export default function MediaPage() {
 
           {/* Measurable Media & Proof of Play Banner */}
           <GsapScrollReveal delay={0.3}>
-            <div className="p-8 md:p-10 rounded-3xl bg-gradient-to-r from-white/[0.02] to-transparent border border-white/10 space-y-4 hover:border-white/20 transition-colors group shadow-[inset_0_1px_0_rgba(255,255,255,0.02)] relative overflow-hidden">
-               <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/5 to-transparent -translate-x-full group-hover:animate-[shimmer_2s_infinite]" />
+            <div className="p-8 md:p-10 rounded-3xl bg-white border border-zinc-200 space-y-4 hover:border-zinc-300 transition-colors group shadow-xl relative overflow-hidden">
+               <div className="absolute inset-0 bg-gradient-to-r from-transparent via-zinc-200/50 to-transparent -translate-x-full group-hover:animate-[shimmer_2s_infinite]" />
               <div className="relative z-10">
-                <div className="flex items-center gap-2 text-cyan-400 font-mono text-xs uppercase tracking-wider">
+                <div className="flex items-center gap-2 text-cyan-600 font-mono text-xs uppercase tracking-wider">
                   <FiBarChart2 size={16} className="group-hover:scale-110 transition-transform" /> Verifiable Measurement
                 </div>
-                <h3 className="text-xl sm:text-2xl font-semibold uppercase mb-2">Display is <span className="gradient-text">Not Enough.</span></h3>
-                <p className="text-sm text-white/70 leading-relaxed max-w-3xl font-light">
+                <h3 className="text-xl sm:text-2xl font-semibold uppercase mb-2 text-zinc-900">Display is <span className="gradient-text">Not Enough.</span></h3>
+                <p className="text-sm text-zinc-600 leading-relaxed max-w-3xl font-light">
                   VMOVEXA&apos;s architecture includes media analytics around playback, completion, campaign performance and location performance. This establishes a foundation for more measurable, audit-ready mobility media.
                 </p>
               </div>
@@ -318,7 +319,8 @@ export default function MediaPage() {
                 alt="VMOVEXA DOOH Media Network"
                 badge="DOOH Network • Digital Transit Advertising"
                 caption="Centrally Orchestrated Media Execution across Connected Arterials"
-                aspectRatio="21/9"
+                aspectRatio="16/9"
+                objectFit="contain"
                 scanline={true}
                 curtainReveal={true}
               />
@@ -376,14 +378,14 @@ export default function MediaPage() {
       </section>
 
       {/* CTA */}
-      <section className="py-28 text-center relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-t from-purple-950/20 to-transparent pointer-events-none" />
+      <section className="py-28 text-center relative overflow-hidden bg-white border-t border-zinc-200">
+        <div className="absolute inset-0 bg-gradient-to-t from-purple-100/50 to-transparent pointer-events-none" />
         <div className="container max-w-4xl mx-auto px-6 relative z-10">
           <EditorialLine>
-            <div className="font-mono text-xs uppercase tracking-widest text-cyan-400 mb-3">Media CTA</div>
+            <div className="font-mono text-xs uppercase tracking-widest text-cyan-600 mb-3">Media CTA</div>
           </EditorialLine>
           <EditorialLine delay={0.1}>
-            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight mb-6 text-white">
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight mb-6 text-zinc-900">
               Don&apos;t just buy a screen. <span className="gradient-text">Buy a moment in motion.</span>
             </h2>
           </EditorialLine>
@@ -392,7 +394,7 @@ export default function MediaPage() {
               <MagneticElement strength={0.3}>
                 <Link
                   href="/contact"
-                  className="inline-flex items-center gap-2.5 px-8 py-4 rounded-full bg-white text-black font-semibold text-sm tracking-wide transition-transform duration-200 hover:scale-[1.03] active:scale-[0.98] shadow-[0_0_20px_rgba(255,255,255,0.2)] hover:shadow-[0_0_30px_rgba(255,255,255,0.4)]"
+                  className="inline-flex items-center gap-2.5 px-8 py-4 rounded-full bg-black text-white font-semibold text-sm tracking-wide transition-transform duration-200 hover:scale-[1.03] active:scale-[0.98] shadow-xl"
                 >
                   Explore Mobility Media <FiArrowRight size={16} />
                 </Link>

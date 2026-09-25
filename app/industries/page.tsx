@@ -263,16 +263,16 @@ export default function IndustriesPage() {
       </section>
 
       {/* 02 — 9 SECTORS GRID */}
-      <section className="py-28 border-b border-white/[0.08] relative overflow-hidden bg-black">
+      <section className="py-28 border-b border-zinc-200 relative overflow-hidden bg-white">
         <div className="container max-w-6xl mx-auto px-6 relative z-10">
           <div className="max-w-2xl mb-16">
             <EditorialLine>
-              <div className="font-mono text-xs uppercase tracking-widest text-cyan-400 mb-3">
+              <div className="font-mono text-xs uppercase tracking-widest text-cyan-600 mb-3">
                 Industry Sectors
               </div>
             </EditorialLine>
             <EditorialLine delay={0.1}>
-              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight leading-tight text-white">
+              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight leading-tight text-zinc-900">
                 Where movement meets <span className="gradient-text">intelligence.</span>
               </h2>
             </EditorialLine>
@@ -284,17 +284,17 @@ export default function IndustriesPage() {
               return (
                 <GsapScrollReveal key={sec.title} delay={idx * 0.05}>
                   <MagneticElement strength={0.05}>
-                    <div className="p-7 rounded-2xl bg-gradient-to-br from-white/[0.03] to-white/[0.01] border border-white/10 hover:border-cyan-500/30 transition-all duration-500 hover:bg-white/[0.04] h-full flex flex-col justify-between group shadow-[inset_0_1px_0_rgba(255,255,255,0.02)] overflow-hidden relative">
+                    <div className="p-7 rounded-2xl bg-white border border-zinc-200 hover:border-cyan-500/50 hover:shadow-lg transition-all duration-500 hover:bg-zinc-50 h-full flex flex-col justify-between group shadow-sm overflow-hidden relative">
                        <div className="absolute -inset-x-full top-0 h-[1px] bg-gradient-to-r from-transparent via-cyan-400/50 to-transparent group-hover:animate-[shimmer_2s_infinite]" />
                       <div className="relative z-10">
                         <div className="flex items-center justify-between mb-5">
-                          <span className="font-mono text-xs text-white/30 group-hover:text-white/50 transition-colors">{sec.num}</span>
+                          <span className="font-mono text-xs text-zinc-400 group-hover:text-zinc-600 transition-colors">{sec.num}</span>
                           <div className={`w-11 h-11 rounded-xl border ${sec.badgeBg} flex items-center justify-center ${sec.color} group-hover:scale-110 transition-all duration-500`}>
                              <IconComp className="w-5 h-5" />
                           </div>
                         </div>
-                        <h3 className="text-lg font-semibold text-white mb-2 group-hover:text-cyan-100 transition-colors">{sec.title}</h3>
-                        <p className="text-xs text-white/50 leading-relaxed font-normal group-hover:text-white/70 transition-colors">{sec.desc}</p>
+                        <h3 className="text-lg font-semibold text-zinc-900 mb-2 group-hover:text-cyan-700 transition-colors">{sec.title}</h3>
+                        <p className="text-xs text-zinc-500 leading-relaxed font-normal group-hover:text-zinc-700 transition-colors">{sec.desc}</p>
                       </div>
                     </div>
                   </MagneticElement>

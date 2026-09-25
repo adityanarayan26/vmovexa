@@ -107,10 +107,10 @@ export function SiteHeader() {
         >
           <Image
             alt="VMOVEXA"
-            className={`h-4 sm:h-[18px] w-auto max-w-[160px] sm:max-w-[195px] object-contain transition-all duration-300 group-hover:scale-105 ${activeMenu ? "invert" : ""}`}
+            className={`h-4 sm:h-[18px] w-auto max-w-[160px] sm:max-w-[195px] object-contain transition-all duration-300 group-hover:scale-105`}
             height={18}
             priority
-            src="/logos/vmovexa-wordmark-dark.svg"
+            src={activeMenu ? "/logos/vmovexa-wordmark-light.svg" : "/logos/vmovexa-wordmark-dark.svg"}
             width={213}
           />
         </Link>

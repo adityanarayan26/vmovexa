@@ -178,27 +178,27 @@ export default function TechnologyPage() {
       </section>
 
       {/* 02 — DETAILED ARCHITECTURE SPECIFICATIONS */}
-      <section className="py-24 border-b border-white/[0.08]">
+      <section className="py-24 border-b border-zinc-200 bg-white">
         <div className="container max-w-6xl mx-auto px-6">
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-20">
               {[
-                { title: "Edge Computing", desc: "On-vehicle intelligence.", icon: FiCpu, color: "text-cyan-400", badge: "bg-cyan-500/10 border-cyan-500/30 shadow-[0_0_15px_rgba(6,182,212,0.12)]" },
-                { title: "Cloud Infrastructure", desc: "Scale & orchestration.", icon: FiCloud, color: "text-indigo-400", badge: "bg-indigo-500/10 border-indigo-500/30 shadow-[0_0_15px_rgba(99,102,241,0.12)]" },
-                { title: "GPS & Geofencing", desc: "Location as logic.", icon: FiMapPin, color: "text-emerald-400", badge: "bg-emerald-500/10 border-emerald-500/30 shadow-[0_0_15px_rgba(16,185,129,0.12)]" },
-                { title: "Multi-Screen Control", desc: "Independent or synchronized.", icon: FiMonitor, color: "text-purple-400", badge: "bg-purple-500/10 border-purple-500/30 shadow-[0_0_15px_rgba(168,85,247,0.12)]" },
-                { title: "Telemetry & Data", desc: "From mobility to insight.", icon: FiActivity, color: "text-amber-400", badge: "bg-amber-500/10 border-amber-500/30 shadow-[0_0_15px_rgba(245,158,11,0.12)]" },
-                { title: "Security & Resilience", desc: "Built for the real world.", icon: FiShield, color: "text-rose-400", badge: "bg-rose-500/10 border-rose-500/30 shadow-[0_0_15px_rgba(244,63,94,0.12)]" },
+                { title: "Edge Computing", desc: "On-vehicle intelligence.", icon: FiCpu, color: "text-cyan-600", badge: "bg-cyan-50 border-cyan-200" },
+                { title: "Cloud Infrastructure", desc: "Scale & orchestration.", icon: FiCloud, color: "text-indigo-600", badge: "bg-indigo-50 border-indigo-200" },
+                { title: "GPS & Geofencing", desc: "Location as logic.", icon: FiMapPin, color: "text-emerald-600", badge: "bg-emerald-50 border-emerald-200" },
+                { title: "Multi-Screen Control", desc: "Independent or synchronized.", icon: FiMonitor, color: "text-purple-600", badge: "bg-purple-50 border-purple-200" },
+                { title: "Telemetry & Data", desc: "From mobility to insight.", icon: FiActivity, color: "text-amber-600", badge: "bg-amber-50 border-amber-200" },
+                { title: "Security & Resilience", desc: "Built for the real world.", icon: FiShield, color: "text-rose-600", badge: "bg-rose-50 border-rose-200" },
               ].map((item, i) => {
                 const Icon = item.icon;
                 return (
                   <GsapScrollReveal key={item.title} delay={i * 0.05} className="h-full">
                     <TiltCard maxTilt={8} glare={true} className="w-full h-full block">
-                      <div className="p-6 rounded-2xl bg-gradient-to-b from-white/[0.03] to-transparent border border-white/10 hover:border-white/30 hover:bg-white/[0.05] transition-all duration-300 h-full group cursor-default shadow-[inset_0_1px_0_rgba(255,255,255,0.02)]">
+                      <div className="p-6 rounded-2xl bg-white border border-zinc-200 hover:border-zinc-300 hover:bg-zinc-50 transition-all duration-300 h-full group cursor-default shadow-sm hover:shadow-md">
                         <div className={`w-11 h-11 rounded-xl border ${item.badge} flex items-center justify-center ${item.color} mb-4 group-hover:scale-110 transition-all duration-300`}>
                           <Icon className="w-5 h-5" />
                         </div>
-                        <h3 className="text-base font-semibold text-white mb-1.5 group-hover:text-cyan-100 transition-colors">{item.title}</h3>
-                        <p className="text-xs text-white/50 group-hover:text-white/70 transition-colors">{item.desc}</p>
+                        <h3 className="text-base font-semibold text-zinc-900 mb-1.5 group-hover:text-cyan-700 transition-colors">{item.title}</h3>
+                        <p className="text-xs text-zinc-600 group-hover:text-zinc-800 transition-colors">{item.desc}</p>
                       </div>
                     </TiltCard>
                   </GsapScrollReveal>
@@ -208,16 +208,16 @@ export default function TechnologyPage() {
 
           {/* Cloud Scale. Edge Speed. Section with Motion Trails Visual */}
           <GsapScrollReveal delay={0.2}>
-            <div className="p-8 sm:p-12 rounded-3xl bg-gradient-to-b from-white/[0.03] to-transparent border border-white/10 mb-12 hover:border-cyan-500/20 transition-colors group relative overflow-hidden">
-               <div className="absolute inset-0 bg-gradient-to-tr from-cyan-900/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none" />
+            <div className="p-8 sm:p-12 rounded-3xl bg-zinc-50 border border-zinc-200 mb-12 hover:border-cyan-500/30 hover:shadow-lg transition-all group relative overflow-hidden">
+               <div className="absolute inset-0 bg-gradient-to-tr from-cyan-900/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none" />
               <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center relative z-10">
                 <div className="lg:col-span-6 space-y-4">
-                  <span className="font-mono text-xs uppercase tracking-widest text-cyan-400 block group-hover:text-cyan-300 transition-colors">Performance Benchmark</span>
-                  <h3 className="text-2xl sm:text-3xl font-semibold tracking-tight text-white">
+                  <span className="font-mono text-xs uppercase tracking-widest text-cyan-600 block group-hover:text-cyan-700 transition-colors">Performance Benchmark</span>
+                  <h3 className="text-2xl sm:text-3xl font-semibold tracking-tight text-zinc-900">
                     Cloud Scale. <br />
                     <span className="gradient-text">Edge Speed.</span>
                   </h3>
-                  <p className="text-sm text-white/70 leading-relaxed font-light">
+                  <p className="text-sm text-zinc-600 leading-relaxed font-normal">
                     The right intelligence. In the right place. At the right time. Synchronizing centralized orchestration with low-latency edge execution directly on moving transit fleets.
                   </p>
                 </div>
@@ -369,26 +369,26 @@ export default function TechnologyPage() {
       </section>
 
       {/* 04 — TELEMETRY & MULTI-SCREEN */}
-      <section className="py-28 border-b border-white/[0.08]">
+      <section className="py-28 border-b border-zinc-200 bg-white">
         <div className="container max-w-6xl mx-auto px-6">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
             {/* Telemetry */}
             <GsapScrollReveal>
-              <div className="p-8 rounded-2xl bg-white/[0.02] border border-white/10 space-y-6 h-full hover:bg-white/[0.03] hover:border-cyan-500/20 transition-all duration-500 group relative overflow-hidden">
+              <div className="p-8 rounded-2xl bg-white border border-zinc-200 space-y-6 h-full hover:bg-zinc-50 hover:border-cyan-500/20 hover:shadow-md transition-all duration-500 group relative overflow-hidden">
                 <div className="absolute -inset-x-full top-0 h-[1px] bg-gradient-to-r from-transparent via-cyan-400/30 to-transparent group-hover:animate-[shimmer_2s_infinite]" />
                 <div className="relative z-10">
-                  <div className="font-mono text-xs uppercase tracking-widest text-cyan-400 mb-2">Telemetry</div>
-                  <h3 className="text-2xl font-semibold text-white mb-3">The vehicle speaks in <span className="gradient-text">data.</span></h3>
-                  <p className="text-sm text-white/70 leading-relaxed mb-6">
+                  <div className="font-mono text-xs uppercase tracking-widest text-cyan-600 mb-2">Telemetry</div>
+                  <h3 className="text-2xl font-semibold text-zinc-900 mb-3">The vehicle speaks in <span className="gradient-text">data.</span></h3>
+                  <p className="text-sm text-zinc-600 leading-relaxed mb-6">
                     Connected systems generate operational information continuously. VMOVEXA&apos;s architecture incorporates telemetry as a core part of the vehicle-edge environment.
                   </p>
-                  <div className="pt-6 border-t border-white/10">
-                    <h4 className="text-xs font-mono uppercase tracking-widest text-white/40 mb-4">Continuous Visibility Into:</h4>
-                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs text-white/80">
+                  <div className="pt-6 border-t border-zinc-100">
+                    <h4 className="text-xs font-mono uppercase tracking-widest text-zinc-400 mb-4">Continuous Visibility Into:</h4>
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs text-zinc-700">
                       {telemetryMetrics.map((m, i) => (
                         <div key={i} className="flex items-start gap-2 group/item cursor-default">
-                          <FiCheckCircle className="w-4 h-4 text-cyan-400 flex-shrink-0 group-hover/item:scale-125 transition-transform" />
-                          <span className="group-hover/item:text-white transition-colors">{m}</span>
+                          <FiCheckCircle className="w-4 h-4 text-cyan-500 flex-shrink-0 group-hover/item:scale-125 transition-transform" />
+                          <span className="group-hover/item:text-zinc-900 transition-colors">{m}</span>
                         </div>
                       ))}
                     </div>
@@ -399,23 +399,23 @@ export default function TechnologyPage() {
 
             {/* Multi-Screen */}
             <GsapScrollReveal delay={0.2}>
-              <div className="p-8 rounded-2xl bg-white/[0.02] border border-white/10 space-y-6 h-full hover:bg-white/[0.03] hover:border-purple-500/20 transition-all duration-500 group relative overflow-hidden">
+              <div className="p-8 rounded-2xl bg-white border border-zinc-200 space-y-6 h-full hover:bg-zinc-50 hover:border-purple-500/20 hover:shadow-md transition-all duration-500 group relative overflow-hidden">
                  <div className="absolute -inset-x-full top-0 h-[1px] bg-gradient-to-r from-transparent via-purple-400/30 to-transparent group-hover:animate-[shimmer_2s_infinite]" />
                 <div className="relative z-10">
-                  <div className="font-mono text-xs uppercase tracking-widest text-purple-400 mb-2">Multi-Screen</div>
-                  <h3 className="text-2xl font-semibold text-white mb-3">One edge. <span className="gradient-text">Many digital surfaces.</span></h3>
-                  <p className="text-sm text-white/70 leading-relaxed mb-6">
+                  <div className="font-mono text-xs uppercase tracking-widest text-purple-600 mb-2">Multi-Screen</div>
+                  <h3 className="text-2xl font-semibold text-zinc-900 mb-3">One edge. <span className="gradient-text">Many digital surfaces.</span></h3>
+                  <p className="text-sm text-zinc-600 leading-relaxed mb-6">
                     The vehicle can become a coordinated display environment rather than a collection of independent screens.
                   </p>
-                  <div className="p-5 rounded-xl bg-white/[0.02] border border-white/5 space-y-3 text-xs font-mono text-white/80 mb-6 shadow-[inset_0_1px_0_rgba(255,255,200,0.02)]">
-                    <div className="text-white font-semibold">Supported Display Modes:</div>
-                    <div className="flex flex-wrap gap-2 text-cyan-400">
+                  <div className="p-5 rounded-xl bg-zinc-50 border border-zinc-200 space-y-3 text-xs font-mono text-zinc-800 mb-6 shadow-sm">
+                    <div className="text-zinc-900 font-semibold">Supported Display Modes:</div>
+                    <div className="flex flex-wrap gap-2 text-cyan-600">
                       {['Independent', 'Mirrored', 'Synchronized', 'Split-Zone', 'Multi-Zone'].map(mode => (
-                        <span key={mode} className="px-3 py-1.5 rounded bg-white/5 border border-white/10 hover:bg-cyan-950/40 hover:border-cyan-500/30 transition-colors cursor-default">{mode}</span>
+                        <span key={mode} className="px-3 py-1.5 rounded bg-white border border-zinc-200 hover:bg-cyan-50 hover:border-cyan-200 hover:text-cyan-700 transition-colors cursor-default shadow-sm">{mode}</span>
                       ))}
                     </div>
                   </div>
-                  <p className="text-xs text-white/50 leading-relaxed font-mono">
+                  <p className="text-xs text-zinc-500 leading-relaxed font-mono">
                     Coordinate passenger infotainment, exterior digital advertising, driver telemetry displays, and route mapping simultaneously.
                   </p>
                 </div>
@@ -425,35 +425,35 @@ export default function TechnologyPage() {
 
           {/* 04.B — FULL-STACK FLEET TELEMETRY & SERVICE FABRIC (new1.PNG) */}
           <GsapScrollReveal delay={0.3}>
-            <div className="mt-16 pt-16 border-t border-white/10">
+            <div className="mt-16 pt-16 border-t border-zinc-200">
               <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-6 mb-8">
                 <div>
-                  <span className="font-mono text-xs uppercase tracking-widest text-cyan-400 block mb-2">
+                  <span className="font-mono text-xs uppercase tracking-widest text-cyan-600 block mb-2">
                     End-to-End Synchronization
                   </span>
-                  <h3 className="text-2xl sm:text-3xl font-bold tracking-tight text-white">
+                  <h3 className="text-2xl sm:text-3xl font-bold tracking-tight text-zinc-900">
                     From Central Cloud to <span className="gradient-text">Moving Edge Fleets.</span>
                   </h3>
-                  <p className="text-sm text-white/60 max-w-2xl mt-2 leading-relaxed font-light">
+                  <p className="text-sm text-zinc-600 max-w-2xl mt-2 leading-relaxed font-normal">
                     A unified multi-tier operational stack connecting cloud data fabrics, containerized microservices, distributed edge racks, and high-frequency in-transit vehicle clusters.
                   </p>
                 </div>
                 
                 {/* Capability Indicators */}
                 <div className="flex flex-wrap items-center gap-3">
-                  <div className="px-3.5 py-1.5 rounded-full bg-white/[0.04] border border-white/10 text-xs font-mono text-cyan-300 flex items-center gap-2">
-                    <span className="w-2 h-2 rounded-full bg-cyan-400 animate-pulse" />
+                  <div className="px-3.5 py-1.5 rounded-full bg-cyan-50 border border-cyan-200 text-xs font-mono text-cyan-700 flex items-center gap-2">
+                    <span className="w-2 h-2 rounded-full bg-cyan-500 animate-pulse" />
                     <span>Near-Real-Time Event Triggering</span>
                   </div>
-                  <div className="px-3.5 py-1.5 rounded-full bg-white/[0.04] border border-white/10 text-xs font-mono text-indigo-300 flex items-center gap-2">
-                    <span className="w-2 h-2 rounded-full bg-indigo-400" />
+                  <div className="px-3.5 py-1.5 rounded-full bg-indigo-50 border border-indigo-200 text-xs font-mono text-indigo-700 flex items-center gap-2">
+                    <span className="w-2 h-2 rounded-full bg-indigo-500" />
                     <span>Offline-First Edge Resilience</span>
                   </div>
                 </div>
               </div>
 
               {/* Visual Container for new1.PNG */}
-              <div className="relative group rounded-3xl p-2 bg-gradient-to-b from-white/[0.04] to-transparent border border-white/10 hover:border-cyan-500/30 transition-all duration-500 shadow-2xl overflow-hidden mb-8">
+              <div className="relative group rounded-3xl p-2 bg-zinc-50 border border-zinc-200 hover:border-cyan-500/30 transition-all duration-500 shadow-sm hover:shadow-lg overflow-hidden mb-8">
                 <MediaSlot
                   theme="transparent"
                   type="image"
@@ -471,21 +471,21 @@ export default function TechnologyPage() {
 
               {/* 4 Feature Spec Pillars below the diagram */}
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-                <div className="p-5 rounded-2xl bg-white/[0.02] border border-white/5 hover:border-cyan-500/20 transition-colors">
-                  <div className="text-xs font-mono text-cyan-400 uppercase tracking-wider mb-1.5 font-semibold">01 • Cloud Orchestration</div>
-                  <div className="text-xs text-white/60 leading-relaxed">Multi-tenant fleet management, campaign rules, and unified national telemetry aggregation.</div>
+                <div className="p-5 rounded-2xl bg-white border border-zinc-200 hover:border-cyan-500/30 hover:shadow-md transition-all">
+                  <div className="text-xs font-mono text-cyan-600 uppercase tracking-wider mb-1.5 font-semibold">01 • Cloud Orchestration</div>
+                  <div className="text-xs text-zinc-600 leading-relaxed">Multi-tenant fleet management, campaign rules, and unified national telemetry aggregation.</div>
                 </div>
-                <div className="p-5 rounded-2xl bg-white/[0.02] border border-white/5 hover:border-indigo-500/20 transition-colors">
-                  <div className="text-xs font-mono text-indigo-400 uppercase tracking-wider mb-1.5 font-semibold">02 • Microservices Tier</div>
-                  <div className="text-xs text-white/60 leading-relaxed">Decoupled APIs for real-time routing, DOOH playback logs, spatial queries, and security.</div>
+                <div className="p-5 rounded-2xl bg-white border border-zinc-200 hover:border-indigo-500/30 hover:shadow-md transition-all">
+                  <div className="text-xs font-mono text-indigo-600 uppercase tracking-wider mb-1.5 font-semibold">02 • Microservices Tier</div>
+                  <div className="text-xs text-zinc-600 leading-relaxed">Decoupled APIs for real-time routing, DOOH playback logs, spatial queries, and security.</div>
                 </div>
-                <div className="p-5 rounded-2xl bg-white/[0.02] border border-white/5 hover:border-purple-500/20 transition-colors">
-                  <div className="text-xs font-mono text-purple-400 uppercase tracking-wider mb-1.5 font-semibold">03 • Distributed Edge</div>
-                  <div className="text-xs text-white/60 leading-relaxed">Depot and in-vehicle edge nodes providing localized decisioning even during network loss.</div>
+                <div className="p-5 rounded-2xl bg-white border border-zinc-200 hover:border-purple-500/30 hover:shadow-md transition-all">
+                  <div className="text-xs font-mono text-purple-600 uppercase tracking-wider mb-1.5 font-semibold">03 • Distributed Edge</div>
+                  <div className="text-xs text-zinc-600 leading-relaxed">Depot and in-vehicle edge nodes providing localized decisioning even during network loss.</div>
                 </div>
-                <div className="p-5 rounded-2xl bg-white/[0.02] border border-white/5 hover:border-emerald-500/20 transition-colors">
-                  <div className="text-xs font-mono text-emerald-400 uppercase tracking-wider mb-1.5 font-semibold">04 • In-Transit Fleet</div>
-                  <div className="text-xs text-white/60 leading-relaxed">Designed for sub-meter positioning, multi-screen sync, and vehicle telemetry integration across commercial routes.</div>
+                <div className="p-5 rounded-2xl bg-white border border-zinc-200 hover:border-emerald-500/30 hover:shadow-md transition-all">
+                  <div className="text-xs font-mono text-emerald-600 uppercase tracking-wider mb-1.5 font-semibold">04 • In-Transit Fleet</div>
+                  <div className="text-xs text-zinc-600 leading-relaxed">Designed for sub-meter positioning, multi-screen sync, and vehicle telemetry integration across commercial routes.</div>
                 </div>
               </div>
             </div>
@@ -547,21 +547,21 @@ export default function TechnologyPage() {
 
           {/* Security & Resilience banner */}
           <GsapScrollReveal delay={0.3}>
-            <div className="p-8 md:p-10 rounded-3xl bg-gradient-to-r from-white/[0.03] to-transparent border border-white/10 flex flex-col md:flex-row items-start md:items-center justify-between gap-8 hover:border-white/20 transition-colors group relative overflow-hidden">
-               <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/5 to-transparent -translate-x-full group-hover:animate-[shimmer_2s_infinite]" />
+            <div className="p-8 md:p-10 rounded-3xl bg-white border border-zinc-200 flex flex-col md:flex-row items-start md:items-center justify-between gap-8 hover:border-cyan-500/30 hover:shadow-lg transition-all group relative overflow-hidden shadow-sm">
+               <div className="absolute inset-0 bg-gradient-to-r from-transparent via-cyan-50/50 to-transparent -translate-x-full group-hover:animate-[shimmer_2s_infinite]" />
               <div className="space-y-3 max-w-2xl relative z-10">
-                <div className="flex items-center gap-2 text-cyan-400 font-mono text-xs uppercase tracking-wider">
-                  <FiShield size={16} className="group-hover:text-white transition-colors" /> Security + Resilience
+                <div className="flex items-center gap-2 text-cyan-600 font-mono text-xs uppercase tracking-wider">
+                  <FiShield size={16} className="group-hover:text-cyan-700 transition-colors" /> Security + Resilience
                 </div>
-                <h4 className="text-2xl font-semibold text-white">Designed for Distributed Infrastructure</h4>
-                <p className="text-sm text-white/70 leading-relaxed font-light">
+                <h4 className="text-2xl font-semibold text-zinc-900">Designed for Distributed Infrastructure</h4>
+                <p className="text-sm text-zinc-600 leading-relaxed font-normal">
                   Connected mobility operates across public environments, variable networks and geographically distributed endpoints. VMOVEXA incorporates security, OTA management, offline caching and controlled cloud-to-edge communication within the architecture.
                 </p>
               </div>
               <MagneticElement strength={0.2} className="relative z-10">
                 <Link
                   href="/platform"
-                  className="inline-flex items-center gap-2 px-7 py-3.5 rounded-full bg-white text-black font-semibold text-xs uppercase tracking-wider flex-shrink-0 hover:scale-105 active:scale-95 transition-transform shadow-[0_5px_15px_rgba(255,255,255,0.1)]"
+                  className="inline-flex items-center gap-2 px-7 py-3.5 rounded-full bg-zinc-900 text-white font-semibold text-xs uppercase tracking-wider flex-shrink-0 hover:scale-105 active:scale-95 transition-transform shadow-md"
                 >
                   Explore VMOVEXA CORE <FiArrowRight size={14} />
                 </Link>
