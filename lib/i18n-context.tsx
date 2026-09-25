@@ -80,6 +80,12 @@ export function LanguageProvider({ children }: { children: React.ReactNode }) {
       if (typeof window !== "undefined") {
         localStorage.setItem("vmovexa_lang", code);
         document.documentElement.lang = code;
+        if (code === "en") {
+          document.cookie = `googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;`;
+        } else {
+          document.cookie = `googtrans=/en/${code}; path=/;`;
+        }
+        window.location.reload();
       }
     }
   };

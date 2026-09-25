@@ -95,7 +95,7 @@ export function SiteHeader() {
 
   return (
     <header
-      className={`site-header transition-colors duration-300 ${scrolled ? "site-header--scrolled" : ""} ${activeMenu ? "!bg-white !border-transparent !shadow-none" : ""}`}
+      className={`site-header transition-all duration-500 ease-in-out ${scrolled ? "site-header--scrolled" : ""} ${activeMenu ? "!bg-white !border-transparent !shadow-none" : ""}`}
       onMouseLeave={handleMouseLeave}
     >
       <nav aria-label="Main navigation" className="nav-shell container max-w-7xl mx-auto px-6 flex items-center justify-between h-[72px] relative z-50">
@@ -105,14 +105,28 @@ export function SiteHeader() {
           href="/"
           onClick={() => setActiveMenu(null)}
         >
-          <Image
-            alt="VMOVEXA"
-            className={`h-4 sm:h-[18px] w-auto max-w-[160px] sm:max-w-[195px] object-contain transition-all duration-300 group-hover:scale-105`}
-            height={18}
-            priority
-            src={activeMenu ? "/logos/vmovexa-wordmark-light.svg" : "/logos/vmovexa-wordmark-dark.svg"}
-            width={213}
-          />
+          <div className="relative flex items-center w-[160px] sm:w-[195px] h-4 sm:h-[18px]">
+            <Image
+              alt="VMOVEXA"
+              className={`absolute left-0 w-auto object-contain transition-opacity duration-500 ease-in-out group-hover:scale-105 h-4 sm:h-[18px] origin-left ${
+                activeMenu ? "opacity-0 pointer-events-none" : "opacity-100"
+              }`}
+              height={18}
+              priority
+              src="/logos/vmovexa-wordmark-dark.svg"
+              width={213}
+            />
+            <Image
+              alt="VMOVEXA"
+              className={`absolute left-0 w-auto object-contain transition-opacity duration-500 ease-in-out group-hover:scale-105 h-4 sm:h-[18px] origin-left ${
+                activeMenu ? "opacity-100" : "opacity-0 pointer-events-none"
+              }`}
+              height={18}
+              priority
+              src="/logos/logo-hover-menu-cropped.png"
+              width={213}
+            />
+          </div>
         </Link>
         
         {/* Sleek Centered Floating Pill Dock for Navigation with Tesla Mega Menu Triggers */}
@@ -206,7 +220,7 @@ export function SiteHeader() {
                 >
                   <div className="flex items-center gap-2.5">
                     <FiGlobe className="text-cyan-400 w-4 h-4" />
-                    <span className="text-sm font-medium">Language &amp; Region</span>
+                    <span className="text-sm font-medium">Language</span>
                   </div>
                   <span className="font-mono text-xs px-2.5 py-1 rounded-md bg-cyan-500/15 text-cyan-300 border border-cyan-500/30 font-semibold">
                     {currentLanguage.flag} {currentLanguage.nativeName}

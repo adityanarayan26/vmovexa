@@ -1609,15 +1609,52 @@ a.brand-link:focus-visible {
 /* Cinematic Hero Animations */
 @keyframes hero-bus-enter {
   0% {
-    transform: translateX(35vw);
-    filter: blur(24px) brightness(0.3);
+    transform: translateX(100px) scale(0.85);
+    opacity: 0;
+    filter: blur(12px) brightness(0.4);
   }
   100% {
-    transform: translateX(0);
-    filter: blur(0px) brightness(0.75) contrast(1.1);
+    transform: translateX(0) scale(1);
+    opacity: 1;
+    filter: blur(0px) brightness(0.98) contrast(1.08);
+  }
+}
+
+@keyframes hero-bus-breathe {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-12px);
   }
 }
 
 .animate-hero-bus {
-  animation: hero-bus-enter 2.5s cubic-bezier(0.05, 0.95, 0.05, 1) forwards;
+  animation: 
+    hero-bus-enter 2.2s cubic-bezier(0.1, 0.9, 0.2, 1) forwards,
+    hero-bus-breathe 5s ease-in-out 2.2s infinite;
+}
+
+/* Hide Google Translate UI */
+.goog-te-banner-frame,
+.goog-te-banner-frame.skiptranslate,
+iframe.goog-te-banner-frame {
+  display: none !important;
+}
+html, body {
+  top: 0px !important;
+  position: static !important;
+  margin-top: 0px !important;
+}
+.goog-tooltip,
+.goog-tooltip:hover {
+  display: none !important;
+}
+.goog-text-highlight {
+  background-color: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+#google_translate_element {
+  display: none !important;
 }
