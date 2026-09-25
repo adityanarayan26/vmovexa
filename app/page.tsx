@@ -35,7 +35,6 @@ import { CloudEdgeArchitectureAnimation } from "@/components/visuals/cloud-edge-
 import { SpotlightCard } from "@/components/visuals/spotlight-card";
 import { TextDecrypt } from "@/components/animations/text-decrypt";
 import { BlurReveal } from "@/components/animations/blur-reveal";
-import { GsapParallax } from "@/components/animations/gsap-scroll-fx";
 import { ImageCurtainReveal, ModernImageSheen, FloatingElement } from "@/components/animations/image-reveal";
 import { TiltCard } from "@/components/animations/tilt-card";
 import { WhatIsVmovexaSection } from "@/components/sections/what-is-vmovexa";
@@ -277,16 +276,14 @@ export default function HomePage() {
         <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none bg-black">
           {/* Constrained container to make the bus smaller and shifted right */}
           <div className="absolute right-[-5%] top-[10%] bottom-[10%] w-[100%] md:w-[85%] lg:w-[75%] xl:w-[65%] z-0">
-            <GsapParallax speed={0.15}>
-              <Image
-                src="/images/home-bus.png"
-                alt="VMOVEXA Flagship Intelligent Autonomous Transit Bus"
-                fill
-                priority
-                sizes="(max-width: 1024px) 100vw, 75vw"
-                className="object-contain object-right md:object-[90%_center] brightness-[0.95] contrast-[1.1] animate-hero-bus"
-              />
-            </GsapParallax>
+            <Image
+              src="/images/home-bus.png"
+              alt="VMOVEXA Flagship Intelligent Autonomous Transit Bus"
+              fill
+              priority
+              sizes="(max-width: 1024px) 100vw, 75vw"
+              className="object-contain object-right md:object-[90%_center] brightness-[0.95] contrast-[1.1] animate-hero-bus"
+            />
           </div>
           {/* Subtle cinematic scrims since the image is a transparent PNG */}
           <div className="absolute inset-0 bg-gradient-to-r from-black via-black/40 to-transparent md:from-black md:via-transparent pointer-events-none" />
@@ -644,17 +641,16 @@ export default function HomePage() {
             {/* Right Hardware X-Ray Visual */}
             <div className="lg:col-span-6">
               <GsapScrollReveal delay={0.2}>
-                <ParallaxElement offset={40}>
-                  <div className="relative group rounded-2xl overflow-hidden border border-white/15 bg-white/[0.02]">
-                    <MediaSlot
-                      type="image"
-                      src="/images/vmovexa-technology-bus-xray.PNG"
-                      alt="VMOVEXA In-Vehicle Edge Compute Architecture"
-                      badge="VMOVEXA CORE Hardware Runtime"
-                      caption="In-Vehicle Sensor Bus • CAN-Bus Telemetry • Display Processor Array"
-                      aspectRatio="16/9"
-                      scanline={true}
-                    />
+                <div className="relative group rounded-2xl overflow-hidden border border-white/15 bg-white/[0.02]">
+                  <MediaSlot
+                    type="image"
+                    src="/images/vmovexa-technology-bus-xray.PNG"
+                    alt="VMOVEXA In-Vehicle Edge Compute Architecture"
+                    badge="VMOVEXA CORE Hardware Runtime"
+                    caption="In-Vehicle Sensor Bus • CAN-Bus Telemetry • Display Processor Array"
+                    aspectRatio="16/9"
+                    scanline={true}
+                  />
                   {/* Hardware Runtime Status Bar */}
                   <div className="px-6 py-4 bg-black/85 backdrop-blur-md border-t border-white/10 flex flex-wrap items-center justify-between gap-4 font-mono text-xs">
                     <div className="flex items-center gap-2.5 text-cyan-300">
@@ -670,9 +666,8 @@ export default function HomePage() {
                     </div>
                   </div>
                 </div>
-              </ParallaxElement>
-            </GsapScrollReveal>
-          </div>
+              </GsapScrollReveal>
+            </div>
           </div>
         </div>
       </section>
@@ -873,8 +868,7 @@ export default function HomePage() {
             {/* Right Column: In-Transit Video Showcase */}
             <div className="lg:col-span-6">
               <GsapScrollReveal delay={0.3}>
-                <ParallaxElement offset={60}>
-                  <div className="relative group">
+                <div className="relative group">
                   <MediaSlot
                     type="video"
                     src="/videos/vmovexa-transit-demo.mp4"
@@ -884,8 +878,7 @@ export default function HomePage() {
                     aspectRatio="16/9"
                     hudOverlay
                   />
-                  </div>
-                </ParallaxElement>
+                </div>
               </GsapScrollReveal>
             </div>
           </div>
@@ -897,8 +890,33 @@ export default function HomePage() {
       {/* ========================================================================= */}
       <section className="py-20 border-b border-white/[0.08] relative overflow-hidden bg-black">
         <div className="container max-w-7xl mx-auto px-6 relative z-10">
-          <GsapScrollReveal delay={0.1}>
-            <div className="relative group rounded-3xl overflow-hidden border border-white/10 bg-white/[0.02] p-2 sm:p-4 backdrop-blur-sm shadow-[0_20px_60px_rgba(0,0,0,0.6)] mb-16">
+          <div className="text-center max-w-4xl mx-auto mb-16">
+            <EditorialLine>
+              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/[0.05] border border-white/10 text-white/80 font-mono text-xs tracking-wider mb-5">
+                <span className="text-cyan-400 font-bold">09</span>
+                <span className="text-white/30">/</span>
+                <span>GLOBAL ORCHESTRATION</span>
+              </div>
+            </EditorialLine>
+            <CubertoLines
+              as="h2"
+              className="text-4xl sm:text-5xl md:text-6xl lg:text-[72px] font-extrabold tracking-tight uppercase leading-[1.05] text-white"
+              delay={0.1}
+              stagger={0.1}
+              lines={[
+                <div key="l1">ONE CLICK.</div>,
+                <div key="l2" className="mt-1 sm:mt-2 gradient-text">AN ENTIRE NATION.</div>,
+              ]}
+            />
+            <EditorialLine delay={0.2}>
+              <p className="text-base sm:text-lg text-white/60 max-w-2xl mx-auto mt-6 font-mono uppercase tracking-[0.25em] leading-relaxed">
+                [ONE CAMPAIGN. MANY ROUTES.]
+              </p>
+            </EditorialLine>
+          </div>
+
+          <GsapScrollReveal delay={0.3}>
+            <div className="relative group rounded-3xl overflow-hidden border border-white/10 bg-white/[0.02] p-2 sm:p-4 backdrop-blur-sm shadow-[0_20px_60px_rgba(0,0,0,0.6)]">
               <div className="relative w-full aspect-[16/9] lg:aspect-[21/9] rounded-2xl overflow-hidden border border-white/5 bg-black">
                 <Image
                   src="/images/VMOVEXA_WEB_IMAGE.png"
@@ -910,31 +928,6 @@ export default function HomePage() {
               </div>
             </div>
           </GsapScrollReveal>
-
-          <div className="text-center max-w-4xl mx-auto">
-            <EditorialLine delay={0.2}>
-              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/[0.05] border border-white/10 text-white/80 font-mono text-xs tracking-wider mb-5">
-                <span className="text-cyan-400 font-bold">09</span>
-                <span className="text-white/30">/</span>
-                <span>GLOBAL ORCHESTRATION</span>
-              </div>
-            </EditorialLine>
-            <CubertoLines
-              as="h2"
-              className="text-4xl sm:text-5xl md:text-6xl lg:text-[72px] font-extrabold tracking-tight uppercase leading-[1.05] text-white"
-              delay={0.3}
-              stagger={0.1}
-              lines={[
-                <div key="l1">ONE CLICK.</div>,
-                <div key="l2" className="mt-1 sm:mt-2 gradient-text">AN ENTIRE NATION.</div>,
-              ]}
-            />
-            <EditorialLine delay={0.4}>
-              <p className="text-base sm:text-lg text-white/60 max-w-2xl mx-auto mt-6 font-mono uppercase tracking-[0.25em] leading-relaxed">
-                [ONE CAMPAIGN. MANY ROUTES.]
-              </p>
-            </EditorialLine>
-          </div>
         </div>
       </section>
 
