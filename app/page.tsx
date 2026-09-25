@@ -1122,14 +1122,14 @@ export default function HomePage() {
       {/* ========================================================================= */}
       {/* 12 // THE WORLD MOVES. INTELLIGENCE SHOULD MOVE WITH IT. (Final Section)  */}
       {/* ========================================================================= */}
-      <section className="py-32 relative overflow-hidden text-center bg-black">
-        <div className="absolute inset-0 bg-gradient-to-t from-cyan-950/30 via-transparent to-transparent pointer-events-none" />
+      <section className="py-32 relative overflow-hidden text-center bg-white border-b border-zinc-200">
+        <div className="absolute inset-0 bg-gradient-to-t from-cyan-50/50 via-transparent to-transparent pointer-events-none" />
         <div className="container max-w-5xl mx-auto px-6 relative z-10">
           {/* Number Badge */}
           <EditorialLine>
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/5 border border-white/15 text-white/80 font-mono text-xs tracking-wider mb-6">
-              <span className="text-cyan-400 font-bold">12</span>
-              <span className="text-white/30">/</span>
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-cyan-50 border border-cyan-200 text-cyan-800 font-mono text-xs tracking-wider mb-6 shadow-sm">
+              <span className="text-cyan-600 font-bold">12</span>
+              <span className="text-cyan-300">/</span>
               <span>THE PLATFORM THESIS</span>
             </div>
           </EditorialLine>
@@ -1137,7 +1137,7 @@ export default function HomePage() {
           {/* Headline */}
           <CubertoLines
             as="h2"
-            className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight uppercase text-white leading-tight mb-6"
+            className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight uppercase text-zinc-900 leading-tight mb-6"
             delay={0.1}
             stagger={0.1}
             lines={[
@@ -1148,7 +1148,7 @@ export default function HomePage() {
 
           {/* Subtitle */}
           <EditorialLine delay={0.2}>
-            <p className="text-base sm:text-lg text-white/75 max-w-3xl mx-auto mb-12 leading-relaxed font-light">
+            <p className="text-base sm:text-lg text-zinc-600 max-w-3xl mx-auto mb-12 leading-relaxed font-light">
               A unified cloud-to-edge mobility intelligence platform connecting vehicles, computing, digital displays, and urban infrastructure into an active, programmable ecosystem.
             </p>
           </EditorialLine>
@@ -1156,19 +1156,19 @@ export default function HomePage() {
           {/* 4 Macro Thesis Points */}
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 max-w-4xl mx-auto mb-12 text-left">
             {[
-              { title: "Vehicles", desc: "Becoming software-defined & connected", icon: RiCarLine, color: "text-cyan-400" },
-              { title: "Cities", desc: "Becoming digital & sensor-instrumented", icon: FiMapPin, color: "text-indigo-400" },
-              { title: "Media", desc: "Becoming contextual & measurable", icon: FiMonitor, color: "text-purple-400" },
-              { title: "Infrastructure", desc: "Becoming intelligent at the edge", icon: FiCpu, color: "text-emerald-400" },
+              { title: "Vehicles", desc: "Becoming software-defined & connected", icon: RiCarLine, color: "text-cyan-600", bg: "bg-cyan-50 border-cyan-200" },
+              { title: "Cities", desc: "Becoming digital & sensor-instrumented", icon: FiMapPin, color: "text-indigo-600", bg: "bg-indigo-50 border-indigo-200" },
+              { title: "Media", desc: "Becoming contextual & measurable", icon: FiMonitor, color: "text-purple-600", bg: "bg-purple-50 border-purple-200" },
+              { title: "Infrastructure", desc: "Becoming intelligent at the edge", icon: FiCpu, color: "text-emerald-600", bg: "bg-emerald-50 border-emerald-200" },
             ].map((item, idx) => {
               const ItemIcon = item.icon;
               return (
-                <div key={idx} className="p-4 rounded-xl bg-white/[0.02] border border-white/10">
-                  <div className={`p-2 rounded-lg bg-white/5 ${item.color} inline-block mb-2`}>
+                <div key={idx} className="p-4 rounded-xl bg-white border border-zinc-200 shadow-sm hover:shadow-md transition-shadow">
+                  <div className={`p-2 rounded-lg border ${item.bg} ${item.color} inline-block mb-2 shadow-sm`}>
                     <ItemIcon size={18} />
                   </div>
-                  <div className="font-bold text-white text-sm">{item.title}</div>
-                  <div className="text-xs text-white/50 font-light mt-0.5">{item.desc}</div>
+                  <div className="font-bold text-zinc-900 text-sm">{item.title}</div>
+                  <div className="text-xs text-zinc-500 font-light mt-0.5">{item.desc}</div>
                 </div>
               );
             })}
@@ -1180,17 +1180,16 @@ export default function HomePage() {
               <MagneticElement strength={0.3}>
                 <Link
                   href="/platform"
-                  className="inline-flex items-center gap-2.5 px-8 py-4 rounded-full bg-white font-semibold text-sm tracking-wide transition-all duration-300 hover:scale-[1.03] active:scale-[0.98] shadow-[0_0_30px_rgba(255,255,255,0.25)] hover:shadow-[0_0_40px_rgba(255,255,255,0.5)]"
-                  style={{ color: "#000000" }}
+                  className="inline-flex items-center gap-2.5 px-8 py-4 rounded-full bg-zinc-900 text-white font-semibold text-sm tracking-wide transition-all duration-300 hover:scale-[1.03] active:scale-[0.98] shadow-md hover:shadow-lg hover:bg-zinc-800"
                 >
-                  <span className="text-black font-semibold">Explore VMOVEXA Platform</span>
-                  <FiArrowRight size={16} className="text-black" />
+                  <span className="font-semibold">Explore VMOVEXA Platform</span>
+                  <FiArrowRight size={16} />
                 </Link>
               </MagneticElement>
               <MagneticElement strength={0.3}>
                 <Link
                   href="/contact"
-                  className="inline-flex items-center gap-2.5 px-8 py-4 rounded-full bg-white/[0.06] border border-white/20 text-white font-semibold text-sm tracking-wide transition-all duration-300 hover:bg-white/10 hover:border-white/30"
+                  className="inline-flex items-center gap-2.5 px-8 py-4 rounded-full bg-white border border-zinc-300 text-zinc-800 font-semibold text-sm tracking-wide transition-all duration-300 hover:bg-zinc-50 hover:border-zinc-400 shadow-sm"
                 >
                   Schedule Architecture Demo <FiArrowUpRight size={16} />
                 </Link>
@@ -1201,7 +1200,7 @@ export default function HomePage() {
           {/* Bottom Pill Badge */}
           <EditorialLine delay={0.4}>
             <MagneticElement strength={0.1}>
-              <div className="inline-block px-8 py-3.5 rounded-full bg-gradient-to-r from-white/[0.03] to-white/[0.06] border border-white/15 text-xs font-mono uppercase tracking-[0.2em] text-cyan-200 shadow-[inset_0_1px_0_rgba(255,255,255,0.1)]">
+              <div className="inline-block px-8 py-3.5 rounded-full bg-zinc-50 border border-zinc-200 text-xs font-mono uppercase tracking-[0.2em] text-cyan-700 shadow-sm">
                 Mobility × Edge Computing × Cloud × Data × Digital Media
               </div>
             </MagneticElement>
