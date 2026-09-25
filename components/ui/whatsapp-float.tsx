@@ -11,7 +11,7 @@ export function WhatsAppFloat() {
       initial={{ scale: 0.85, opacity: 0, y: 16 }}
       animate={{ scale: 1, opacity: 1, y: 0 }}
       transition={{ delay: 0.6, duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
-      className="fixed bottom-6 right-6 z-50 flex items-center"
+      className="fixed bottom-10 md:bottom-14 right-6 z-50 flex items-center"
       aria-label="Contact options"
     >
       <a

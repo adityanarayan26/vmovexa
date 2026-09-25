@@ -301,8 +301,8 @@ export default function PlatformPage() {
                 const Icon = feat.icon;
                 return (
                   <TiltCard key={feat.title} maxTilt={6} className="h-full">
-                    <div className="p-[1.5px] rounded-2xl bg-gradient-to-r from-[#00e5ff] via-[#6366f1] to-[#ec4899] shadow-[0_0_15px_rgba(99,102,241,0.2)] hover:shadow-[0_0_30px_rgba(236,72,153,0.35)] transition-all duration-300 h-full">
-                      <div className="p-6 rounded-[calc(1rem-1.5px)] bg-[#07090e] h-full flex flex-col justify-between group">
+                    <div className="p-[1px] rounded-2xl bg-gradient-to-r from-[#2f7bff]/30 via-[#6a4cff]/30 to-[#d946ef]/30 group-hover:from-[#2f7bff] group-hover:via-[#6a4cff] group-hover:to-[#d946ef] transition-all duration-300 h-full group">
+                      <div className="p-6 rounded-[calc(1rem-1px)] bg-[#07090e] h-full flex flex-col justify-between group-hover:bg-[#0a0d16] transition-colors">
                         <div>
                           <div className="flex items-center justify-between mb-4">
                             <span className={`p-2.5 rounded-xl border ${feat.bg} ${feat.color}`}>
@@ -346,10 +346,10 @@ export default function PlatformPage() {
                 return (
                   <GsapScrollReveal key={card.title} delay={idx * 0.07} className="h-full flex flex-col">
                     <TiltCard maxTilt={8} glare={true} className="w-full h-full flex flex-col">
-                      <div className="p-[2px] rounded-2xl bg-gradient-to-r from-[#00e5ff] via-[#6366f1] to-[#ec4899] shadow-[0_0_25px_rgba(34,211,238,0.25),0_0_35px_rgba(236,72,153,0.2)] hover:shadow-[0_0_40px_rgba(34,211,238,0.45),0_0_55px_rgba(236,72,153,0.45)] transition-all duration-300 h-full flex flex-col group">
-                        <div className="p-5 sm:p-5.5 xl:p-4.5 2xl:p-5 rounded-[14px] bg-[#07090e] h-full flex flex-col justify-between relative overflow-hidden flex-1">
+                      <div className="p-[1px] rounded-2xl bg-gradient-to-r from-[#2f7bff]/30 via-[#6a4cff]/30 to-[#d946ef]/30 group-hover:from-[#2f7bff] group-hover:via-[#6a4cff] group-hover:to-[#d946ef] transition-all duration-300 h-full flex flex-col group">
+                        <div className="p-5 sm:p-5.5 xl:p-4.5 2xl:p-5 rounded-[calc(1rem-1px)] bg-[#07090e] h-full flex flex-col justify-between relative overflow-hidden flex-1 group-hover:bg-[#0a0d16] transition-colors">
                           {/* Ambient top color accent with logo gradient */}
-                          <div className="absolute top-0 inset-x-0 h-[2.5px] bg-gradient-to-r from-[#00e5ff] via-[#6366f1] to-[#ec4899] opacity-100 group-hover:h-1 transition-all" />
+                          <div className="absolute top-0 inset-x-0 h-[1.5px] bg-gradient-to-r from-[#2f7bff]/40 via-[#6a4cff]/40 to-[#d946ef]/40 opacity-100 group-hover:h-[2px] group-hover:from-[#2f7bff] group-hover:via-[#6a4cff] group-hover:to-[#d946ef] transition-all" />
                           <div className="absolute -top-10 -right-10 w-28 h-28 bg-gradient-to-b from-indigo-500/25 via-pink-500/15 to-transparent rounded-full blur-2xl pointer-events-none opacity-40 group-hover:opacity-80 transition-opacity" />
 
                           <div className="relative z-10 flex-1 flex flex-col">

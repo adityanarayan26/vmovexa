@@ -64,13 +64,19 @@ export function SiteHeader() {
     const isActive = pathname === item.href;
     const isMenuOpen = activeMenu === item.label;
 
+    let linkClasses = isActive || isMenuOpen
+      ? "text-white bg-white/15 shadow-[0_0_15px_rgba(255,255,255,0.12),inset_0_1px_0_rgba(255,255,255,0.25)] font-semibold"
+      : "text-zinc-400 hover:text-white hover:bg-white/[0.07]";
+
+    if (activeMenu) {
+      linkClasses = isMenuOpen
+        ? "text-black bg-black/5 font-semibold"
+        : "text-zinc-500 hover:text-black hover:bg-black/5";
+    }
+
     return (
       <Link
-        className={`relative px-4 py-2 rounded-full text-xs tracking-wide transition-all duration-300 ${
-          isActive || isMenuOpen
-            ? "text-white bg-white/15 shadow-[0_0_15px_rgba(255,255,255,0.12),inset_0_1px_0_rgba(255,255,255,0.25)] font-semibold"
-            : "text-zinc-400 hover:text-white hover:bg-white/[0.07]"
-        }`}
+        className={`relative px-4 py-2 rounded-full text-xs tracking-wide transition-all duration-300 ${linkClasses}`}
         href={item.href}
         key={item.href}
         onMouseEnter={() => handleMouseEnter(item.label)}
@@ -89,7 +95,7 @@ export function SiteHeader() {
 
   return (
     <header
-      className={`site-header transition-all duration-300 ${scrolled ? "site-header--scrolled" : ""}`}
+      className={`site-header transition-colors duration-300 ${scrolled ? "site-header--scrolled" : ""} ${activeMenu ? "!bg-white !border-transparent !shadow-none" : ""}`}
       onMouseLeave={handleMouseLeave}
     >
       <nav aria-label="Main navigation" className="nav-shell container max-w-7xl mx-auto px-6 flex items-center justify-between h-[72px] relative z-50">
@@ -101,7 +107,7 @@ export function SiteHeader() {
         >
           <Image
             alt="VMOVEXA"
-            className="h-4 sm:h-[18px] w-auto max-w-[160px] sm:max-w-[195px] object-contain transition-transform duration-300 group-hover:scale-105"
+            className={`h-4 sm:h-[18px] w-auto max-w-[160px] sm:max-w-[195px] object-contain transition-all duration-300 group-hover:scale-105 ${activeMenu ? "invert" : ""}`}
             height={18}
             priority
             src="/logos/vmovexa-wordmark-dark.svg"
@@ -111,24 +117,17 @@ export function SiteHeader() {
         
         {/* Sleek Centered Floating Pill Dock for Navigation with Tesla Mega Menu Triggers */}
         <div
-          className="hidden lg:flex items-center gap-1 px-3 py-1.5 rounded-full backdrop-blur-xl bg-white/[0.03] border border-white/10 shadow-[inset_0_1px_0_rgba(255,255,255,0.06),0_4px_25px_rgba(0,0,0,0.6)]"
+          className={`hidden lg:flex items-center gap-1 px-3 py-1.5 rounded-full backdrop-blur-xl border transition-all duration-300 ${
+            activeMenu 
+              ? "bg-zinc-100/50 border-zinc-200" 
+              : "bg-white/[0.03] border-white/10 shadow-[inset_0_1px_0_rgba(255,255,255,0.06),0_4px_25px_rgba(0,0,0,0.6)]"
+          }`}
         >
           {links}
         </div>
 
         {/* Top Utility Icons (Tesla-style: Help ?, Globe 🌐 Language & Location, Account 👤) + CTA */}
         <div className="flex items-center gap-2 sm:gap-3">
-          {/* Support / FAQ Icon (?) */}
-          <Link
-            href="/faq"
-            onClick={() => setActiveMenu(null)}
-            aria-label="FAQ & Support"
-            className="w-8 h-8 sm:w-9 sm:h-9 rounded-full flex items-center justify-center text-zinc-400 hover:text-white hover:bg-white/[0.08] transition-all"
-            title="FAQ & Support"
-          >
-            <FiHelpCircle className="w-4 h-4 sm:w-[17px] sm:h-[17px]" />
-          </Link>
-
           {/* Language & Location Selector (🌐) */}
           <button
             type="button"
@@ -137,36 +136,25 @@ export function SiteHeader() {
               openModal();
             }}
             aria-label="Select Language & Location"
-            className="group relative flex items-center gap-1.5 px-2.5 py-1.5 rounded-full text-zinc-300 hover:text-white hover:bg-white/[0.08] transition-all border border-white/5 hover:border-cyan-400/40"
+            className={`w-8 h-8 sm:w-9 sm:h-9 rounded-full flex items-center justify-center transition-colors ${
+              activeMenu ? "text-zinc-500 hover:text-black hover:bg-black/5" : "text-zinc-400 hover:text-white hover:bg-white/[0.08]"
+            }`}
             title="Select Language & Market"
           >
-            <FiGlobe className="w-4 h-4 text-cyan-400 group-hover:rotate-45 transition-transform duration-300" />
-            <span className="font-mono text-[11px] font-bold tracking-wider uppercase text-zinc-300 group-hover:text-cyan-300">
-              {currentLanguage.code}
-            </span>
-            <span className="text-[10px] hidden md:inline text-zinc-500 font-mono">
-              • {currentLocation.code.toUpperCase()}
-            </span>
+            <FiGlobe className="w-[18px] h-[18px] sm:w-5 sm:h-5" />
           </button>
 
-          {/* Account / Contact Icon (👤) */}
           <Link
-            href="/contact"
-            onClick={() => setActiveMenu(null)}
-            aria-label="Contact and Client Portal"
-            className="w-8 h-8 sm:w-9 sm:h-9 rounded-full flex items-center justify-center text-zinc-400 hover:text-white hover:bg-white/[0.08] transition-all"
-            title="Client Portal & Contact"
-          >
-            <FiUser className="w-4 h-4 sm:w-[17px] sm:h-[17px]" />
-          </Link>
-
-          <Link
-            className="hidden sm:inline-flex items-center gap-2 px-6 py-2.5 rounded-full font-semibold text-xs tracking-wider transition-all duration-300 hover:scale-[1.04] active:scale-[0.98] group bg-white text-black shadow-[0_0_20px_rgba(255,255,255,0.25)] hover:shadow-[0_0_30px_rgba(255,255,255,0.45)]"
+            className={`hidden sm:inline-flex items-center gap-2 px-6 py-2.5 rounded-full font-semibold text-xs tracking-wider transition-all duration-300 hover:scale-[1.04] active:scale-[0.98] group ${
+              activeMenu 
+                ? "bg-black text-white hover:shadow-lg" 
+                : "bg-white text-black shadow-[0_0_20px_rgba(255,255,255,0.25)] hover:shadow-[0_0_30px_rgba(255,255,255,0.45)]"
+            }`}
             href="/contact"
             onClick={() => setActiveMenu(null)}
           >
-            <span className="font-semibold text-black">Let&apos;s Build</span>
-            <FiArrowUpRight size={14} className="text-black group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+            <span className={`font-semibold ${activeMenu ? "text-white" : "text-black"}`}>Let&apos;s Build</span>
+            <FiArrowUpRight size={14} className={`${activeMenu ? "text-white" : "text-black"} group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform`} />
           </Link>
 
           <button

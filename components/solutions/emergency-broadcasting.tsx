@@ -70,12 +70,13 @@ export function EmergencyBroadcasting() {
               className="emergency-card cursor-pointer group"
             >
               <div className="emergency-card-image">
+                <div className="emergency-pulse" />
                 <Image
                   src={op.img}
                   alt={op.title}
                   width={56}
                   height={56}
-                  className="object-contain"
+                  className="object-contain relative z-10"
                 />
               </div>
 

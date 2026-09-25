@@ -35,9 +35,11 @@ import { CloudEdgeArchitectureAnimation } from "@/components/visuals/cloud-edge-
 import { SpotlightCard } from "@/components/visuals/spotlight-card";
 import { TextDecrypt } from "@/components/animations/text-decrypt";
 import { BlurReveal } from "@/components/animations/blur-reveal";
+import { GsapParallax } from "@/components/animations/gsap-scroll-fx";
 import { ImageCurtainReveal, ModernImageSheen, FloatingElement } from "@/components/animations/image-reveal";
 import { TiltCard } from "@/components/animations/tilt-card";
 import { WhatIsVmovexaSection } from "@/components/sections/what-is-vmovexa";
+import { BlueprintFlowAnimation } from "@/components/visuals/blueprint-flow";
 
 export const metadata: Metadata = {
   title: "VMOVEXA | Cloud-to-Edge Mobility Intelligence Platform",
@@ -273,18 +275,22 @@ export default function HomePage() {
       <section className="relative min-h-[92vh] lg:min-h-screen flex flex-col justify-between pt-36 pb-14 overflow-hidden border-b border-white/[0.08] bg-black">
         {/* Background Hero Poster Image */}
         <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none bg-black">
-          <Image
-            src="/images/vmovexa-bus-official.png"
-            alt="VMOVEXA Flagship Intelligent Autonomous Transit Bus Poster"
-            fill
-            priority
-            sizes="100vw"
-            className="object-cover object-[75%_center] md:object-center brightness-[0.75] contrast-[1.1] scale-[1.02]"
-          />
-          {/* Pure Black cinematic scrims for flawless text contrast */}
-          <div className="absolute inset-0 bg-gradient-to-r from-black via-black/85 to-transparent/40 md:from-black/95 md:via-black/75 md:to-transparent/20" />
-          <div className="absolute inset-x-0 top-0 h-48 bg-gradient-to-b from-black via-black/75 to-transparent" />
-          <div className="absolute inset-x-0 bottom-0 h-56 bg-gradient-to-t from-black via-black/90 to-transparent" />
+          {/* Constrained container to make the bus smaller and shifted right */}
+          <div className="absolute right-[-5%] top-[10%] bottom-[10%] w-[100%] md:w-[85%] lg:w-[75%] xl:w-[65%] z-0">
+            <GsapParallax speed={0.15}>
+              <Image
+                src="/images/home-bus.png"
+                alt="VMOVEXA Flagship Intelligent Autonomous Transit Bus"
+                fill
+                priority
+                sizes="(max-width: 1024px) 100vw, 75vw"
+                className="object-contain object-right md:object-[90%_center] brightness-[0.95] contrast-[1.1] animate-hero-bus"
+              />
+            </GsapParallax>
+          </div>
+          {/* Subtle cinematic scrims since the image is a transparent PNG */}
+          <div className="absolute inset-0 bg-gradient-to-r from-black via-black/40 to-transparent md:from-black md:via-transparent pointer-events-none" />
+          <div className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-black via-black/80 to-transparent pointer-events-none" />
         </div>
 
         <div className="container relative z-10 max-w-7xl mx-auto px-6 my-auto">
@@ -299,7 +305,7 @@ export default function HomePage() {
             </div>
 
             {/* Main Header Copy */}
-            <div className="lg:col-span-9">
+            <div className="lg:col-span-9 z-10">
               {/* Number Badge */}
               <EditorialLine delay={0.1}>
                 <div className="inline-flex items-center gap-2.5 px-4 py-2 rounded-full bg-white/[0.06] border border-white/15 backdrop-blur-md mb-8 shadow-[0_0_20px_rgba(255,255,255,0.08)]">
@@ -360,7 +366,7 @@ export default function HomePage() {
             </div>
 
             {/* Right Vertical Floating Tags */}
-            <div className="hidden lg:flex lg:col-span-2 flex-col items-end gap-5 pt-16 font-mono text-[11px] text-white/50 tracking-widest">
+            <div className="hidden lg:flex lg:col-span-2 flex-col items-end gap-5 pt-16 font-mono text-[11px] text-white/50 tracking-widest relative z-10">
               <FloatingElement y={6} duration={3.6}><span className="hover:text-white transition-colors cursor-default">Cities</span></FloatingElement>
               <FloatingElement y={8} duration={4.4}><span className="hover:text-white transition-colors cursor-default">Fleets</span></FloatingElement>
               <FloatingElement y={6} duration={3.9}><span className="hover:text-white transition-colors cursor-default">People</span></FloatingElement>
@@ -438,7 +444,7 @@ export default function HomePage() {
       {/* ========================================================================= */}
       {/* 03 // A VEHICLE CAN BE MORE.                                             */}
       {/* ========================================================================= */}
-      <section className="py-24 border-b border-white/[0.08] relative overflow-hidden bg-black">
+      <section className="py-12 border-b border-white/[0.08] relative overflow-hidden bg-black">
         <div className="container max-w-7xl mx-auto px-6 relative z-10">
           <div className="text-center max-w-3xl mx-auto mb-16">
             <EditorialLine>
@@ -491,7 +497,7 @@ export default function HomePage() {
       {/* ========================================================================= */}
       {/* 04 // THE CLOUD ORCHESTRATES. THE EDGE EXECUTES.                          */}
       {/* ========================================================================= */}
-      <section className="py-28 border-b border-white/[0.08] relative overflow-hidden bg-black">
+      <section className="py-12 border-b border-white/[0.08] relative overflow-hidden bg-black">
         <div className="container max-w-6xl mx-auto px-6 relative z-10">
           <div className="text-center max-w-4xl mx-auto mb-12">
             <EditorialLine>
@@ -591,7 +597,7 @@ export default function HomePage() {
       {/* ========================================================================= */}
       {/* 05 // THE VEHICLE BECOMES THE EDGE.                                       */}
       {/* ========================================================================= */}
-      <section className="py-28 border-b border-white/[0.08] relative overflow-hidden bg-black">
+      <section className="py-12 border-b border-white/[0.08] relative overflow-hidden bg-black">
         <div className="container max-w-6xl mx-auto px-6 relative z-10">
           <div className="max-w-3xl mb-16">
             <EditorialLine>
@@ -638,16 +644,17 @@ export default function HomePage() {
             {/* Right Hardware X-Ray Visual */}
             <div className="lg:col-span-6">
               <GsapScrollReveal delay={0.2}>
-                <div className="relative group rounded-2xl overflow-hidden border border-white/15 bg-white/[0.02]">
-                  <MediaSlot
-                    type="image"
-                    src="/images/vmovexa-technology-bus-xray.PNG"
-                    alt="VMOVEXA In-Vehicle Edge Compute Architecture"
-                    badge="VMOVEXA CORE Hardware Runtime"
-                    caption="In-Vehicle Sensor Bus • CAN-Bus Telemetry • Display Processor Array"
-                    aspectRatio="16/9"
-                    scanline={true}
-                  />
+                <ParallaxElement offset={40}>
+                  <div className="relative group rounded-2xl overflow-hidden border border-white/15 bg-white/[0.02]">
+                    <MediaSlot
+                      type="image"
+                      src="/images/vmovexa-technology-bus-xray.PNG"
+                      alt="VMOVEXA In-Vehicle Edge Compute Architecture"
+                      badge="VMOVEXA CORE Hardware Runtime"
+                      caption="In-Vehicle Sensor Bus • CAN-Bus Telemetry • Display Processor Array"
+                      aspectRatio="16/9"
+                      scanline={true}
+                    />
                   {/* Hardware Runtime Status Bar */}
                   <div className="px-6 py-4 bg-black/85 backdrop-blur-md border-t border-white/10 flex flex-wrap items-center justify-between gap-4 font-mono text-xs">
                     <div className="flex items-center gap-2.5 text-cyan-300">
@@ -663,21 +670,58 @@ export default function HomePage() {
                     </div>
                   </div>
                 </div>
-              </GsapScrollReveal>
-            </div>
+              </ParallaxElement>
+            </GsapScrollReveal>
+          </div>
           </div>
         </div>
       </section>
 
       {/* ========================================================================= */}
-      {/* 06 // MOVEMENT CREATES CONTEXT.                                           */}
+      {/* 06 // SYSTEM BLUEPRINT: HOW IT WORKS                                      */}
       {/* ========================================================================= */}
-      <section className="py-28 border-b border-white/[0.08] relative overflow-hidden bg-black">
+      <section className="py-20 border-b border-white/[0.08] relative overflow-hidden bg-black">
+        <div className="container max-w-7xl mx-auto px-6 relative z-10">
+          <div className="text-center max-w-4xl mx-auto mb-16">
+            <EditorialLine>
+              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/[0.05] border border-white/10 text-white/80 font-mono text-xs tracking-wider mb-5">
+                <span className="text-cyan-400 font-bold">06</span>
+                <span className="text-white/30">/</span>
+                <span>SYSTEM BLUEPRINT</span>
+              </div>
+            </EditorialLine>
+            <CubertoLines
+              as="h2"
+              className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight uppercase leading-[1.05] text-white"
+              delay={0.1}
+              stagger={0.1}
+              lines={[
+                <div key="l1">HOW THE ENTIRE</div>,
+                <div key="l2" className="mt-1 sm:mt-2 gradient-text">NETWORK FLOWS.</div>,
+              ]}
+            />
+            <EditorialLine delay={0.2}>
+              <p className="text-base sm:text-lg text-white/70 max-w-2xl mx-auto mt-6 font-light leading-relaxed">
+                From cloud orchestration down to edge execution. See exactly how VMOVEXA ONE controls the VMOVEXA CORE, manages the smart glass windows, generates proof-of-play, and sends analytics back.
+              </p>
+            </EditorialLine>
+          </div>
+
+          <GsapScrollReveal delay={0.3}>
+            <BlueprintFlowAnimation />
+          </GsapScrollReveal>
+        </div>
+      </section>
+
+      {/* ========================================================================= */}
+      {/* 07 // MOVEMENT CREATES CONTEXT.                                           */}
+      {/* ========================================================================= */}
+      <section className="py-12 border-b border-white/[0.08] relative overflow-hidden bg-black">
         <div className="container max-w-6xl mx-auto px-6 relative z-10">
           <div className="text-center max-w-3xl mx-auto mb-16">
             <EditorialLine>
               <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/[0.05] border border-white/10 text-white/80 font-mono text-xs tracking-wider mb-4">
-                <span className="text-cyan-400 font-bold">06</span>
+                <span className="text-cyan-400 font-bold">07</span>
                 <span className="text-white/30">/</span>
                 <span>SPATIAL INTELLIGENCE</span>
               </div>
@@ -770,16 +814,16 @@ export default function HomePage() {
       </section>
 
       {/* ========================================================================= */}
-      {/* 07 // MEDIA THAT MOVES.                                                   */}
+      {/* 08 // MEDIA THAT MOVES.                                                   */}
       {/* ========================================================================= */}
-      <section className="py-28 border-b border-white/[0.08] relative overflow-hidden bg-black">
+      <section className="py-12 border-b border-white/[0.08] relative overflow-hidden bg-black">
         <div className="container max-w-6xl mx-auto px-6 relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
             {/* Left Column: Distinction & Matrix */}
             <div className="lg:col-span-6 space-y-6">
               <EditorialLine>
                 <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/[0.05] border border-white/10 text-white/80 font-mono text-xs tracking-wider">
-                  <span className="text-cyan-400 font-bold">07</span>
+                  <span className="text-cyan-400 font-bold">08</span>
                   <span className="text-white/30">/</span>
                   <span>DYNAMIC TRANSIT MEDIA</span>
                 </div>
@@ -829,7 +873,8 @@ export default function HomePage() {
             {/* Right Column: In-Transit Video Showcase */}
             <div className="lg:col-span-6">
               <GsapScrollReveal delay={0.3}>
-                <div className="relative group">
+                <ParallaxElement offset={60}>
+                  <div className="relative group">
                   <MediaSlot
                     type="video"
                     src="/videos/vmovexa-transit-demo.mp4"
@@ -839,7 +884,8 @@ export default function HomePage() {
                     aspectRatio="16/9"
                     hudOverlay
                   />
-                </div>
+                  </div>
+                </ParallaxElement>
               </GsapScrollReveal>
             </div>
           </div>
@@ -847,14 +893,60 @@ export default function HomePage() {
       </section>
 
       {/* ========================================================================= */}
-      {/* 08 // ONE PLATFORM. MANY MOBILITY ENVIRONMENTS.                           */}
+      {/* 09 // ONE CLICK. AN ENTIRE NATION.                                        */}
       {/* ========================================================================= */}
-      <section className="py-28 border-b border-white/[0.08] relative overflow-hidden bg-black">
+      <section className="py-20 border-b border-white/[0.08] relative overflow-hidden bg-black">
+        <div className="container max-w-7xl mx-auto px-6 relative z-10">
+          <GsapScrollReveal delay={0.1}>
+            <div className="relative group rounded-3xl overflow-hidden border border-white/10 bg-white/[0.02] p-2 sm:p-4 backdrop-blur-sm shadow-[0_20px_60px_rgba(0,0,0,0.6)] mb-16">
+              <div className="relative w-full aspect-[16/9] lg:aspect-[21/9] rounded-2xl overflow-hidden border border-white/5 bg-black">
+                <Image
+                  src="/images/VMOVEXA_WEB_IMAGE.png"
+                  alt="VMOVEXA Campaign Orchestration"
+                  fill
+                  sizes="100vw"
+                  className="object-cover sm:object-contain object-center scale-[1.01] transition-transform duration-1000 group-hover:scale-[1.03]"
+                />
+              </div>
+            </div>
+          </GsapScrollReveal>
+
+          <div className="text-center max-w-4xl mx-auto">
+            <EditorialLine delay={0.2}>
+              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/[0.05] border border-white/10 text-white/80 font-mono text-xs tracking-wider mb-5">
+                <span className="text-cyan-400 font-bold">09</span>
+                <span className="text-white/30">/</span>
+                <span>GLOBAL ORCHESTRATION</span>
+              </div>
+            </EditorialLine>
+            <CubertoLines
+              as="h2"
+              className="text-4xl sm:text-5xl md:text-6xl lg:text-[72px] font-extrabold tracking-tight uppercase leading-[1.05] text-white"
+              delay={0.3}
+              stagger={0.1}
+              lines={[
+                <div key="l1">ONE CLICK.</div>,
+                <div key="l2" className="mt-1 sm:mt-2 gradient-text">AN ENTIRE NATION.</div>,
+              ]}
+            />
+            <EditorialLine delay={0.4}>
+              <p className="text-base sm:text-lg text-white/60 max-w-2xl mx-auto mt-6 font-mono uppercase tracking-[0.25em] leading-relaxed">
+                [ONE CAMPAIGN. MANY ROUTES.]
+              </p>
+            </EditorialLine>
+          </div>
+        </div>
+      </section>
+
+      {/* ========================================================================= */}
+      {/* 10 // ONE PLATFORM. MANY MOBILITY ENVIRONMENTS.                           */}
+      {/* ========================================================================= */}
+      <section className="py-12 border-b border-white/[0.08] relative overflow-hidden bg-black">
         <div className="container max-w-6xl mx-auto px-6 relative z-10">
           <div className="text-center max-w-4xl mx-auto mb-16">
             <EditorialLine>
               <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/[0.05] border border-white/10 text-white/80 font-mono text-xs tracking-wider mb-5">
-                <span className="text-cyan-400 font-bold">08</span>
+                <span className="text-cyan-400 font-bold">10</span>
                 <span className="text-white/30">/</span>
                 <span>CROSS-SECTOR DEPLOYMENTS</span>
               </div>
@@ -933,7 +1025,101 @@ export default function HomePage() {
       </section>
 
       {/* ========================================================================= */}
-      {/* 09 // THE WORLD MOVES. INTELLIGENCE SHOULD MOVE WITH IT. (Final Section)  */}
+      {/* 11 // THE BRAND IDENTITY.                                                 */}
+      {/* ========================================================================= */}
+      <section className="py-20 border-b border-white/[0.08] relative overflow-hidden bg-black">
+        <div className="container max-w-7xl mx-auto px-6 relative z-10">
+          <div className="text-center max-w-4xl mx-auto mb-16">
+            <EditorialLine>
+              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/[0.05] border border-white/10 text-white/80 font-mono text-xs tracking-wider mb-5">
+                <span className="text-cyan-400 font-bold">11</span>
+                <span className="text-white/30">/</span>
+                <span>BRAND IDENTITY</span>
+              </div>
+            </EditorialLine>
+            <CubertoLines
+              as="h2"
+              className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight uppercase leading-[1.05] text-white"
+              delay={0.1}
+              stagger={0.1}
+              lines={[
+                <div key="l1">THE SOUL OF</div>,
+                <div key="l2" className="mt-1 sm:mt-2 gradient-text">INTELLIGENT MOVEMENT.</div>,
+              ]}
+            />
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-16 items-start">
+            {/* Left Column: The Iconic V */}
+            <GsapScrollReveal delay={0.2}>
+              <div className="flex flex-col gap-6">
+                <div className="relative w-full aspect-[4/5] sm:aspect-square rounded-3xl overflow-hidden bg-white/[0.02] border border-white/10 p-2 shadow-2xl">
+                  <div className="relative w-full h-full rounded-2xl overflow-hidden bg-black">
+                    <Image
+                      src="/images/iconic-v.jpg"
+                      alt="The Iconic V"
+                      fill
+                      sizes="(max-width: 768px) 100vw, 50vw"
+                      className="object-cover object-center"
+                    />
+                  </div>
+                </div>
+                <div className="text-center md:text-left space-y-4 px-4 sm:px-0">
+                  <h3 className="text-2xl font-bold text-white tracking-wide uppercase">THE ICONIC “V”</h3>
+                  <div className="font-mono text-xs tracking-widest text-cyan-400 uppercase">
+                    Three ideas. One identity.
+                  </div>
+                  <p className="text-white/70 font-light leading-relaxed text-lg">
+                    Velocity. Vision. Value.<br />
+                    Move + Nexus.<br />
+                    A symbol for the movement of what comes next.
+                  </p>
+                  <div className="pt-4 border-t border-white/10">
+                    <div className="font-bold text-white text-xl tracking-wider">VMOVEXA</div>
+                    <div className="text-sm text-white/50">The Soul of Intelligent Movement.</div>
+                  </div>
+                </div>
+              </div>
+            </GsapScrollReveal>
+
+            {/* Right Column: The Gradient X */}
+            <GsapScrollReveal delay={0.3}>
+              <div className="flex flex-col gap-6 md:mt-16">
+                <div className="relative w-full aspect-[4/5] sm:aspect-square rounded-3xl overflow-hidden bg-white/[0.02] border border-white/10 p-2 shadow-2xl">
+                  <div className="relative w-full h-full rounded-2xl overflow-hidden bg-black">
+                    <Image
+                      src="/images/gradient-x.jpg"
+                      alt="The Gradient X"
+                      fill
+                      sizes="(max-width: 768px) 100vw, 50vw"
+                      className="object-cover object-center"
+                    />
+                  </div>
+                </div>
+                <div className="text-center md:text-left space-y-4 px-4 sm:px-0">
+                  <h3 className="text-2xl font-bold text-white tracking-wide uppercase">AND “X”</h3>
+                  <div className="font-mono text-xs tracking-widest text-indigo-400 uppercase">
+                    Digital Intelligent Media.
+                  </div>
+                  <p className="text-white/70 font-light leading-relaxed text-lg">
+                    Media. With intelligence.<br />
+                    It sees the moment.<br />
+                    Understands the context.<br />
+                    Moves with the world.
+                  </p>
+                  <div className="pt-4 border-t border-white/10">
+                    <div className="font-bold text-white text-xl tracking-wider"><span className="text-white">VMOVEXA</span> <span className="text-indigo-400">X</span></div>
+                    <div className="text-sm text-white/50">Where movement becomes experience.</div>
+                  </div>
+                </div>
+              </div>
+            </GsapScrollReveal>
+          </div>
+        </div>
+      </section>
+
+      {/* ========================================================================= */}
+      {/* 12 // THE WORLD MOVES. INTELLIGENCE SHOULD MOVE WITH IT. (Final Section)  */}
       {/* ========================================================================= */}
       <section className="py-32 relative overflow-hidden text-center bg-black">
         <div className="absolute inset-0 bg-gradient-to-t from-cyan-950/30 via-transparent to-transparent pointer-events-none" />
@@ -941,7 +1127,7 @@ export default function HomePage() {
           {/* Number Badge */}
           <EditorialLine>
             <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/5 border border-white/15 text-white/80 font-mono text-xs tracking-wider mb-6">
-              <span className="text-cyan-400 font-bold">09</span>
+              <span className="text-cyan-400 font-bold">12</span>
               <span className="text-white/30">/</span>
               <span>THE PLATFORM THESIS</span>
             </div>

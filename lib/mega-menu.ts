@@ -27,17 +27,10 @@ export const megaMenuData: Record<string, MegaMenuItem> = {
       {
         title: "VMOVEXA ONE",
         subtitle: "Full-Stack Moving Edge Hardware & OS",
-        image: "/images/vmovexa-bus-official.png",
+        image: "/images/nav/1.png",
         primaryLink: { label: "Learn", href: "/platform#vmovexa-one" },
-        secondaryLink: { label: "Architecture", href: "/platform#cloud-to-edge" },
-      },
-      {
-        title: "VMOVEXA CORE",
-        subtitle: "10 Core In-Vehicle Operational Engines",
-        image: "/images/vmovexa-platform-layers-3d-black.png",
-        primaryLink: { label: "Learn", href: "/platform#vmovexa-core" },
-        secondaryLink: { label: "Engines", href: "/platform#vmovexa-core" },
-      },
+        secondaryLink: { label: "Order", href: "/platform#order" },
+      }
     ],
     sectionLinks: [
       { label: "VMOVEXA ONE", href: "/platform#vmovexa-one" },
@@ -56,17 +49,10 @@ export const megaMenuData: Record<string, MegaMenuItem> = {
       {
         title: "Vehicle Edge Architecture",
         subtitle: "Decentralized Compute & Local Decisioning",
-        image: "/images/vmovexa-technology-bus-xray.PNG",
+        image: "/images/nav/2.png",
         primaryLink: { label: "Learn", href: "/technology#edge" },
-        secondaryLink: { label: "Disciplines", href: "/technology#disciplines" },
-      },
-      {
-        title: "Cloud & Telemetry Fabric",
-        subtitle: "Real-Time Sensor Ingestion & Telemetry",
-        image: "/images/vmovexa-cloud-edge-architecture.png",
-        primaryLink: { label: "Learn", href: "/technology#telemetry" },
-        secondaryLink: { label: "Security", href: "/technology#security" },
-      },
+        secondaryLink: { label: "Order", href: "/technology#order" },
+      }
     ],
     sectionLinks: [
       { label: "Architecture", href: "/technology#disciplines" },
@@ -85,17 +71,10 @@ export const megaMenuData: Record<string, MegaMenuItem> = {
       {
         title: "Fleet Operators",
         subtitle: "Unified Fleet Control & Remote Diagnostics",
-        image: "/images/solution-fleet-operators.png",
+        image: "/images/nav/3.png",
         primaryLink: { label: "Learn", href: "/solutions#fleet-operators" },
-        secondaryLink: { label: "Explore", href: "/solutions#fleet-operators" },
-      },
-      {
-        title: "Mobility Media Network",
-        subtitle: "High-Resolution Geofenced Screen Networks",
-        image: "/images/solution-mobility-media.png",
-        primaryLink: { label: "Learn", href: "/solutions#mobility-media" },
-        secondaryLink: { label: "Media Engine", href: "/media" },
-      },
+        secondaryLink: { label: "Order", href: "/solutions#order" },
+      }
     ],
     sectionLinks: [
       { label: "Fleet Operators", href: "/solutions#fleet-operators" },
@@ -113,17 +92,10 @@ export const megaMenuData: Record<string, MegaMenuItem> = {
       {
         title: "Public Transport Networks",
         subtitle: "State & Municipal Transit Fleets",
-        image: "/images/industry-public-transport.png",
+        image: "/images/nav/4.png",
         primaryLink: { label: "Learn", href: "/industries#public-transport" },
-        secondaryLink: { label: "Transit", href: "/industries#public-transport" },
-      },
-      {
-        title: "Airport & Electric Mobility",
-        subtitle: "Airside Aprons, EVs & Inter-Terminal Shuttles",
-        image: "/images/industry-airport-mobility.png",
-        primaryLink: { label: "Learn", href: "/industries#airport-mobility" },
-        secondaryLink: { label: "Electric", href: "/industries#electric-mobility" },
-      },
+        secondaryLink: { label: "Order", href: "/industries#order" },
+      }
     ],
     sectionLinks: [
       { label: "Public Transport", href: "/industries#public-transport" },
@@ -142,17 +114,10 @@ export const megaMenuData: Record<string, MegaMenuItem> = {
       {
         title: "Digital Out-of-Home",
         subtitle: "Moving Digital Billboards with GPS Synchronization",
-        image: "/images/vmovexa-media-bus-banner.png",
+        image: "/images/nav/1.png",
         primaryLink: { label: "Learn", href: "/media" },
-        secondaryLink: { label: "Ad Engine", href: "/media" },
-      },
-      {
-        title: "Smart Transit Displays",
-        subtitle: "Geofenced Campaign Scheduling & Playback",
-        image: "/images/vmovexa-smart-bus-night.png",
-        primaryLink: { label: "Learn", href: "/media" },
-        secondaryLink: { label: "Campaigns", href: "/media" },
-      },
+        secondaryLink: { label: "Order", href: "/media#order" },
+      }
     ],
     sectionLinks: [
       { label: "Dynamic Scheduling", href: "/media" },
@@ -170,17 +135,10 @@ export const megaMenuData: Record<string, MegaMenuItem> = {
       {
         title: "Deep-Tech Mobility Thesis",
         subtitle: "Convergence of Physical Mobility & Computing",
-        image: "/images/vmovexa-company-earth-space.png",
+        image: "/images/nav/2.png",
         primaryLink: { label: "Learn", href: "/company#thesis" },
-        secondaryLink: { label: "Our Story", href: "/company#vision" },
-      },
-      {
-        title: "Executive Leadership",
-        subtitle: "World-Class Engineering & Operations",
-        image: "/people/g-satyanarayana-real.png",
-        primaryLink: { label: "Leadership", href: "/company#leadership" },
-        secondaryLink: { label: "Partners", href: "/company#partners" },
-      },
+        secondaryLink: { label: "Order", href: "/company#order" },
+      }
     ],
     sectionLinks: [
       { label: "About", href: "/company#vision" },
