@@ -272,22 +272,25 @@ export default function HomePage() {
       {/* 01 // INTELLIGENCE IN MOTION. (Hero Section)                             */}
       {/* ========================================================================= */}
       <section className="relative min-h-[92vh] lg:min-h-screen flex flex-col justify-between pt-36 pb-14 overflow-hidden border-b border-white/[0.08] bg-black">
-        {/* Background Hero Poster Image */}
-        <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none bg-black">
-          {/* Constrained container to make the bus smaller and shifted right */}
-          <div className="absolute right-[-5%] top-[10%] bottom-[10%] w-[100%] md:w-[85%] lg:w-[75%] xl:w-[65%] z-0">
+        {/* Background Base */}
+        <div className="absolute inset-0 z-0 bg-black pointer-events-none" />
+
+        {/* Bus Image Layer (Strictly z-0 to sit BEHIND text) */}
+        <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
+          {/* Large prominent bus positioned on the right */}
+          <div className="absolute right-[-6%] md:right-[-2%] lg:right-[1%] xl:right-[3%] top-[3%] bottom-[3%] w-[108%] md:w-[86%] lg:w-[70%] xl:w-[65%] z-0">
             <Image
               src="/images/home-bus.png"
               alt="VMOVEXA Flagship Intelligent Autonomous Transit Bus"
               fill
               priority
-              sizes="(max-width: 1024px) 100vw, 75vw"
-              className="object-contain object-right md:object-[90%_center] brightness-[0.95] contrast-[1.1] animate-hero-bus"
+              sizes="(max-width: 1024px) 100vw, 70vw"
+              className="object-contain object-right md:object-[95%_center] brightness-[0.98] contrast-[1.08] animate-hero-bus drop-shadow-2xl"
             />
           </div>
-          {/* Subtle cinematic scrims since the image is a transparent PNG */}
-          <div className="absolute inset-0 bg-gradient-to-r from-black via-black/40 to-transparent md:from-black md:via-transparent pointer-events-none" />
-          <div className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-black via-black/80 to-transparent pointer-events-none" />
+          {/* Subtle gradient scrim to keep text razor sharp on all devices */}
+          <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/30 to-transparent md:from-black/60 md:via-transparent pointer-events-none" />
+          <div className="absolute inset-x-0 bottom-0 h-36 bg-gradient-to-t from-black via-black/40 to-transparent pointer-events-none" />
         </div>
 
         <div className="container relative z-10 max-w-7xl mx-auto px-6 my-auto">
@@ -301,8 +304,8 @@ export default function HomePage() {
               <span className="pl-2.5 hover:text-white transition-colors cursor-default">Data</span>
             </div>
 
-            {/* Main Header Copy */}
-            <div className="lg:col-span-9 z-10">
+            {/* Main Header Copy (Constrained to left side so it doesn't overlap the bus) */}
+            <div className="lg:col-span-6 xl:col-span-6 z-10">
               {/* Number Badge */}
               <EditorialLine delay={0.1}>
                 <div className="inline-flex items-center gap-2.5 px-4 py-2 rounded-full bg-white/[0.06] border border-white/15 backdrop-blur-md mb-8 shadow-[0_0_20px_rgba(255,255,255,0.08)]">
@@ -312,16 +315,16 @@ export default function HomePage() {
                 </div>
               </EditorialLine>
 
-              {/* Headline: Space Grotesk — 64–88px — Medium */}
+              {/* Headline: Space Grotesk */}
               <EditorialLine delay={0.15}>
-                <h1 className="text-4xl sm:text-6xl md:text-7xl lg:text-[76px] xl:text-[88px] font-medium font-heading tracking-tight leading-[1.04] max-w-5xl mb-6 text-white uppercase drop-shadow-lg">
+                <h1 className="text-4xl sm:text-5xl md:text-5xl lg:text-[56px] xl:text-[66px] font-medium font-heading tracking-tight leading-[1.05] max-w-lg xl:max-w-xl mb-6 text-white uppercase drop-shadow-lg">
                   INTELLIGENCE IN <span className="gradient-text">MOTION.</span>
                 </h1>
               </EditorialLine>
 
-              {/* Subtitle: IBM Plex Sans — 20px — Regular */}
+              {/* Subtitle: IBM Plex Sans */}
               <BlurReveal delay={0.3}>
-                <p className="text-lg sm:text-[20px] font-sans text-white/80 font-normal leading-relaxed max-w-2xl mb-8 drop-shadow-md">
+                <p className="text-base sm:text-lg lg:text-[19px] font-sans text-white/80 font-normal leading-relaxed max-w-lg mb-8 drop-shadow-md">
                   A cloud-to-edge mobility intelligence platform connecting vehicles, people, places and possibilities.
                 </p>
               </BlurReveal>
@@ -363,7 +366,7 @@ export default function HomePage() {
             </div>
 
             {/* Right Vertical Floating Tags */}
-            <div className="hidden lg:flex lg:col-span-2 flex-col items-end gap-5 pt-16 font-mono text-[11px] text-white/50 tracking-widest relative z-10">
+            <div className="hidden lg:flex lg:col-span-4 xl:col-span-5 flex-col items-end gap-5 pt-16 font-mono text-[11px] text-white/50 tracking-widest relative z-10">
               <FloatingElement y={6} duration={3.6}><span className="hover:text-white transition-colors cursor-default">Cities</span></FloatingElement>
               <FloatingElement y={8} duration={4.4}><span className="hover:text-white transition-colors cursor-default">Fleets</span></FloatingElement>
               <FloatingElement y={6} duration={3.9}><span className="hover:text-white transition-colors cursor-default">People</span></FloatingElement>
