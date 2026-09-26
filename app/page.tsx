@@ -20,6 +20,12 @@ import {
   FiClock,
   FiCrosshair,
   FiWifi,
+  FiGlobe,
+  FiAlertTriangle,
+  FiUsers,
+  FiMap,
+  FiMessageCircle,
+  FiHeart,
 } from "react-icons/fi";
 import {
   RiBusLine,
@@ -866,9 +872,65 @@ export default function HomePage() {
       </section>
 
       {/* ========================================================================= */}
+      {/* 08.5 // GOVERNMENT & PUBLIC SECTOR                                        */}
+      {/* ========================================================================= */}
+      <section className="py-24 sm:py-32 relative overflow-hidden bg-black border-y border-white/5">
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(59,130,246,0.08)_0%,transparent_70%)] pointer-events-none" />
+        
+        <div className="container max-w-7xl mx-auto px-6 relative z-10">
+          <div className="max-w-3xl mb-16 md:mb-24 text-center md:text-left mx-auto md:mx-0">
+            <EditorialLine>
+              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-400 font-mono text-xs tracking-wider mb-6">
+                <FiShield className="w-3 h-3" />
+                <span>PUBLIC SECTOR & GOVERNANCE</span>
+              </div>
+            </EditorialLine>
+            <EditorialLine delay={0.1}>
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight leading-tight text-white mb-6">
+                Smarter Mobility.<br/>
+                <span className="gradient-text">Stronger Governance.</span>
+              </h2>
+            </EditorialLine>
+            <EditorialLine delay={0.2}>
+              <p className="text-base sm:text-lg text-white/60 leading-relaxed max-w-2xl mx-auto md:mx-0">
+                Building intelligent mobility infrastructure that connects governments, protects passengers, and empowers smarter cities.
+              </p>
+            </EditorialLine>
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
+            {[
+              { title: "Public Awareness", desc: "Reach millions of citizens instantly.", icon: FiGlobe, color: "text-blue-400", bg: "bg-blue-500/10", border: "border-blue-500/20" },
+              { title: "Disaster Alerts", desc: "Real-time emergency notifications.", icon: FiAlertTriangle, color: "text-rose-400", bg: "bg-rose-500/10", border: "border-rose-500/20" },
+              { title: "Election Campaigns", desc: "Democratic engagement at scale.", icon: FiUsers, color: "text-indigo-400", bg: "bg-indigo-500/10", border: "border-indigo-500/20" },
+              { title: "Tourism Promotion", desc: "Showcase destinations to travellers.", icon: FiMap, color: "text-emerald-400", bg: "bg-emerald-500/10", border: "border-emerald-500/20" },
+              { title: "Traffic Advisory", desc: "Smart route guidance for commuters.", icon: FiNavigation, color: "text-amber-400", bg: "bg-amber-500/10", border: "border-amber-500/20" },
+              { title: "Citizen Engagement", desc: "Two-way government communication.", icon: FiMessageCircle, color: "text-cyan-400", bg: "bg-cyan-500/10", border: "border-cyan-500/20" },
+              { title: "Emergency Comm.", desc: "Critical alerts when it matters.", icon: FiShield, color: "text-red-400", bg: "bg-red-500/10", border: "border-red-500/20" },
+              { title: "Health Campaigns", desc: "Public health awareness drives.", icon: FiHeart, color: "text-pink-400", bg: "bg-pink-500/10", border: "border-pink-500/20" },
+            ].map((app, idx) => {
+              const Icon = app.icon;
+              return (
+                <GsapScrollReveal key={app.title} delay={idx * 0.05} className="h-full">
+                  <div className="p-6 rounded-2xl bg-white/[0.02] border border-white/5 hover:border-white/10 transition-colors h-full flex flex-col group relative overflow-hidden backdrop-blur-sm">
+                    <div className="absolute inset-0 bg-gradient-to-b from-white/[0.02] to-transparent opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none" />
+                    <div className={`w-10 h-10 rounded-xl flex items-center justify-center mb-5 ${app.bg} ${app.border} border`}>
+                      <Icon className={`w-5 h-5 ${app.color}`} />
+                    </div>
+                    <h3 className="text-white font-semibold text-base mb-2 group-hover:text-blue-300 transition-colors">{app.title}</h3>
+                    <p className="text-white/50 text-sm leading-relaxed font-light">{app.desc}</p>
+                  </div>
+                </GsapScrollReveal>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
+      {/* ========================================================================= */}
       {/* 09 // ONE CLICK. AN ENTIRE NATION.                                        */}
       {/* ========================================================================= */}
-      <section className="pb-24 sm:pb-32 pt-0 relative overflow-hidden bg-black">
+      <section className="py-24 sm:py-32 relative overflow-hidden bg-black">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(6,182,212,0.05)_0%,transparent_70%)] pointer-events-none" />
         <div className="container max-w-7xl mx-auto px-6 relative z-10">
           

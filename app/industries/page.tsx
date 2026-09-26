@@ -265,12 +265,70 @@ export default function IndustriesPage() {
            <div className="absolute bottom-[-10%] left-[-10%] w-[600px] h-[600px] rounded-full bg-indigo-500/[0.03] blur-[120px]" />
            <div className="absolute top-[40%] right-[20%] w-[500px] h-[500px] rounded-full bg-rose-400/[0.03] blur-[100px]" />
 
-           {/* Conceptual Wavy Illustration */}
-           <svg className="absolute top-0 w-full h-[150%] opacity-[0.03] text-zinc-900" viewBox="0 0 1440 1000" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M-100,200 C300,400 500,50 900,200 C1300,350 1500,100 1600,150" fill="none" stroke="currentColor" strokeWidth="2" />
-              <path d="M-100,400 C200,600 600,200 1000,400 C1400,600 1500,300 1600,350" fill="none" stroke="currentColor" strokeWidth="1" />
-              <path d="M-100,600 C400,800 700,400 1100,600 C1500,800 1500,500 1600,550" fill="none" stroke="currentColor" strokeWidth="2" strokeDasharray="4 4" />
-              <path d="M-100,800 C300,1000 800,600 1200,800 C1600,1000 1500,700 1600,750" fill="none" stroke="currentColor" strokeWidth="1" />
+           {/* Conceptual Mobility Routes with Animated Data Packets (Buses) */}
+           <svg className="absolute top-0 w-full h-[150%] opacity-40 pointer-events-none" viewBox="0 0 1440 1000" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+              <defs>
+                <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+                  <feGaussianBlur stdDeviation="4" result="blur" />
+                  <feComposite in="SourceGraphic" in2="blur" operator="over" />
+                </filter>
+                <linearGradient id="route-gradient-1" x1="0%" y1="0%" x2="100%" y2="0%">
+                  <stop offset="0%" stopColor="#06b6d4" stopOpacity="0.1" />
+                  <stop offset="50%" stopColor="#8b5cf6" stopOpacity="0.5" />
+                  <stop offset="100%" stopColor="#ec4899" stopOpacity="0.1" />
+                </linearGradient>
+                <linearGradient id="route-gradient-2" x1="0%" y1="0%" x2="100%" y2="0%">
+                  <stop offset="0%" stopColor="#ec4899" stopOpacity="0.1" />
+                  <stop offset="50%" stopColor="#06b6d4" stopOpacity="0.4" />
+                  <stop offset="100%" stopColor="#8b5cf6" stopOpacity="0.1" />
+                </linearGradient>
+                
+                <g id="micro-bus">
+                  {/* Micro Bus Icon centered and scaled up for visibility */}
+                  <path d="M4 16c0 .88.39 1.67 1 2.22V20c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-1h8v1c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-1.78c.61-.55 1-1.34 1-2.22V6c0-3.5-3.58-4-8-4s-8 .5-8 4v10zm3.5 1c-.83 0-1.5-.67-1.5-1.5S6.67 14 7.5 14s1.5.67 1.5 1.5S8.33 17 7.5 17zm9 0c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5zm1.5-6H6V6h12v5z" transform="scale(1.4) translate(-12, -12)" filter="url(#glow)" />
+                </g>
+              </defs>
+
+              {/* Glowing Paths */}
+              <path d="M-100,200 C300,400 500,50 900,200 C1300,350 1500,100 1600,150" fill="none" stroke="url(#route-gradient-1)" strokeWidth="2" strokeDasharray="8 8" />
+              <path d="M-100,400 C200,600 600,200 1000,400 C1400,600 1500,300 1600,350" fill="none" stroke="url(#route-gradient-2)" strokeWidth="1.5" />
+              <path d="M-100,600 C400,800 700,400 1100,600 C1500,800 1500,500 1600,550" fill="none" stroke="url(#route-gradient-1)" strokeWidth="1" />
+              <path d="M-100,800 C300,1000 800,600 1200,800 C1600,1000 1500,700 1600,750" fill="none" stroke="url(#route-gradient-2)" strokeWidth="2" strokeDasharray="12 6" />
+
+              {/* Connected Hubs (Data Nodes) */}
+              <circle cx="200" cy="320" r="4" fill="#06b6d4" opacity="0.6" />
+              <circle cx="500" cy="50" r="6" fill="#8b5cf6" opacity="0.6" />
+              <circle cx="900" cy="200" r="5" fill="#ec4899" opacity="0.6" />
+              <circle cx="1500" cy="100" r="4" fill="#06b6d4" opacity="0.6" />
+              
+              <circle cx="600" cy="200" r="4" fill="#ec4899" opacity="0.5" />
+              <circle cx="1000" cy="400" r="5" fill="#06b6d4" opacity="0.5" />
+              
+              <circle cx="700" cy="400" r="4" fill="#8b5cf6" opacity="0.5" />
+              <circle cx="1100" cy="600" r="6" fill="#ec4899" opacity="0.5" />
+
+              {/* Animated Buses along Routes */}
+              <use href="#micro-bus" fill="#06b6d4">
+                <animateMotion dur="25s" repeatCount="indefinite" path="M-100,200 C300,400 500,50 900,200 C1300,350 1500,100 1600,150" />
+              </use>
+              <use href="#micro-bus" fill="#8b5cf6">
+                <animateMotion dur="25s" begin="8s" repeatCount="indefinite" path="M-100,200 C300,400 500,50 900,200 C1300,350 1500,100 1600,150" />
+              </use>
+              
+              <use href="#micro-bus" fill="#ec4899">
+                <animateMotion dur="35s" begin="2s" repeatCount="indefinite" path="M-100,400 C200,600 600,200 1000,400 C1400,600 1500,300 1600,350" />
+              </use>
+              <use href="#micro-bus" fill="#0ea5e9">
+                <animateMotion dur="35s" begin="15s" repeatCount="indefinite" path="M-100,400 C200,600 600,200 1000,400 C1400,600 1500,300 1600,350" />
+              </use>
+
+              <use href="#micro-bus" fill="#8b5cf6">
+                <animateMotion dur="30s" begin="5s" repeatCount="indefinite" path="M-100,600 C400,800 700,400 1100,600 C1500,800 1500,500 1600,550" />
+              </use>
+
+              <use href="#micro-bus" fill="#06b6d4">
+                <animateMotion dur="40s" begin="0s" repeatCount="indefinite" path="M-100,800 C300,1000 800,600 1200,800 C1600,1000 1500,700 1600,750" />
+              </use>
            </svg>
         </div>
 

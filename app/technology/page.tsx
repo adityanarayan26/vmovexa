@@ -210,31 +210,31 @@ export default function TechnologyPage() {
       </section>
 
       {/* SMART EMERGENCY EXIT SECTION */}
-      <section className="py-24 relative overflow-hidden bg-black border-y border-white/10">
+      <section className="py-24 relative overflow-hidden bg-black">
         <div className="container max-w-6xl mx-auto px-6 relative z-10">
           <GsapScrollReveal delay={0.2}>
-            <div className="rounded-3xl bg-[#0a0a0d] border border-white/5 overflow-hidden relative shadow-2xl">
-              <div className="grid grid-cols-1 lg:grid-cols-2 h-full">
+            <div className="rounded-3xl bg-[#0a0a0d] overflow-hidden relative shadow-2xl">
+              <div className="grid grid-cols-1 lg:grid-cols-2 h-full gap-8 lg:gap-16">
                 <div className="p-8 lg:p-12 flex flex-col justify-center relative z-10 order-2 lg:order-1">
                   <div className="font-mono text-xs uppercase tracking-widest text-cyan-400 mb-4">
                     SMART EMERGENCY EXIT
                   </div>
                   <h3 className="text-3xl sm:text-4xl font-bold tracking-tight text-white mb-6 leading-[1.15]">
                     REVENUE WHEN CLOSED.<br />
-                    <span className="bg-clip-text text-transparent bg-gradient-to-r from-rose-400 to-orange-400">SAFETY WHEN NEEDED.</span>
+                    <span className="gradient-text">SAFETY WHEN NEEDED.</span>
                   </h3>
                   <p className="text-white/70 text-sm sm:text-base leading-relaxed mb-8">
                     A first-of-its-kind concept that transforms the emergency exit into an intelligent digital revenue surface.
                   </p>
 
                   <div className="space-y-4 mb-8">
-                    <div className="p-4 rounded-xl bg-white/[0.03] border border-white/10">
+                    <div className="p-4 rounded-xl bg-white/[0.03]">
                       <div className="font-mono text-[11px] text-cyan-400 mb-2 uppercase tracking-wider flex items-center gap-2">
                         <span className="w-1.5 h-1.5 rounded-full bg-cyan-400" /> NORMAL MODE
                       </div>
                       <div className="text-white/90 text-sm">Premium content • Digital advertising • Contextual media</div>
                     </div>
-                    <div className="p-4 rounded-xl bg-rose-500/10 border border-rose-500/20">
+                    <div className="p-4 rounded-xl bg-rose-500/10">
                       <div className="font-mono text-[11px] text-rose-400 mb-2 uppercase tracking-wider flex items-center gap-2">
                         <span className="w-1.5 h-1.5 rounded-full bg-rose-400 animate-pulse" /> EMERGENCY MODE
                       </div>
@@ -242,26 +242,27 @@ export default function TechnologyPage() {
                     </div>
                   </div>
 
-                  <div className="flex flex-wrap gap-2 mt-auto pt-6 border-t border-white/10">
-                    <span className="font-mono text-[10px] uppercase text-white/60 px-2.5 py-1 rounded bg-white/5 border border-white/10">
+                  <div className="flex flex-wrap gap-2 mt-auto pt-6 border-t border-white/5">
+                    <span className="font-mono text-[10px] uppercase text-white/60 px-2.5 py-1 rounded bg-white/5">
                       ONE SURFACE. TWO PURPOSES.
                     </span>
-                    <span className="font-mono text-[10px] uppercase text-white/60 px-2.5 py-1 rounded bg-white/5 border border-white/10">
+                    <span className="font-mono text-[10px] uppercase text-white/60 px-2.5 py-1 rounded bg-white/5">
                       PATENT-PROTECTED TECHNOLOGY
                     </span>
-                    <span className="font-mono text-[10px] uppercase text-cyan-400/80 px-2.5 py-1 rounded bg-cyan-500/10 border border-cyan-500/20">
+                    <span className="font-mono text-[10px] uppercase text-cyan-400/80 px-2.5 py-1 rounded bg-cyan-500/10">
                       VMOVEXA — REINVENTING THE EMERGENCY EXIT.
                     </span>
                   </div>
                 </div>
-                <div className="relative h-64 lg:h-auto min-h-[400px] order-1 lg:order-2 bg-black">
-                  <Image
-                    src="/images/2.jpg"
-                    alt="Smart Emergency Exit"
-                    fill
-                    className="object-cover object-center"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-b lg:bg-gradient-to-r from-[#0a0a0d] via-transparent to-transparent opacity-80" />
+                <div className="w-full h-80 lg:h-auto min-h-[500px] order-1 lg:order-2 py-4 pr-4 lg:py-6 lg:pr-8 flex items-center justify-center">
+                  <div className="relative w-full h-full min-h-[400px]">
+                    <Image
+                      src="/images/2.jpg"
+                      alt="Smart Emergency Exit"
+                      fill
+                      className="object-contain object-right lg:scale-[1.15] origin-right"
+                    />
+                  </div>
                 </div>
               </div>
             </div>
@@ -305,7 +306,7 @@ export default function TechnologyPage() {
       </section>
 
       {/* 02 — CLOUD + EDGE (TWO WORLDS. ONE ARCHITECTURE) */}
-      <section className="py-28 relative overflow-hidden bg-black">
+      <section className="pt-24 pb-8 sm:pb-12 relative overflow-hidden bg-black">
         <div className="container max-w-6xl mx-auto px-6 relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
             <div className="lg:col-span-6 space-y-6">
@@ -366,7 +367,7 @@ export default function TechnologyPage() {
       </section>
 
       {/* 03 — GPS & GEOFENCING (MAKE GEOGRAPHY PROGRAMMABLE) */}
-      <section className="py-28 relative overflow-hidden bg-black">
+      <section className="pt-8 sm:pt-12 pb-24 relative overflow-hidden bg-black">
         <div className="container max-w-6xl mx-auto px-6 relative z-10">
           <div className="max-w-3xl mb-16">
             <EditorialLine>
