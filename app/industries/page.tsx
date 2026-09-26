@@ -284,8 +284,8 @@ export default function IndustriesPage() {
                 </linearGradient>
                 
                 <g id="micro-bus">
-                  {/* Micro Bus Icon centered and scaled up for visibility */}
-                  <path d="M4 16c0 .88.39 1.67 1 2.22V20c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-1h8v1c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-1.78c.61-.55 1-1.34 1-2.22V6c0-3.5-3.58-4-8-4s-8 .5-8 4v10zm3.5 1c-.83 0-1.5-.67-1.5-1.5S6.67 14 7.5 14s1.5.67 1.5 1.5S8.33 17 7.5 17zm9 0c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5zm1.5-6H6V6h12v5z" transform="scale(1.4) translate(-12, -12)" filter="url(#glow)" />
+                  {/* Realistic Side-Profile Bus Icon centered and scaled up */}
+                  <path d="M 2 12 L 2 5 C 2 4 3 3 4 3 L 19 3 C 21.5 3 23 4.5 23 7 L 23 12 C 23 13 22 14 21 14 L 19 14 A 2 2 0 0 0 15 14 L 9 14 A 2 2 0 0 0 5 14 L 3 14 C 2.5 14 2 13.5 2 12 Z M 17 14 A 2 2 0 1 1 17 18 A 2 2 0 0 1 17 14 Z M 7 14 A 2 2 0 1 1 7 18 A 2 2 0 0 1 7 14 Z M 4 5 L 12 5 L 12 9 L 4 9 Z M 13 5 L 18 5 C 19 5 20 6 21 7 L 21 9 L 13 9 Z" transform="scale(1.2) translate(-12, -12)" filter="url(#glow)" />
                 </g>
               </defs>
 
@@ -309,25 +309,25 @@ export default function IndustriesPage() {
 
               {/* Animated Buses along Routes */}
               <use href="#micro-bus" fill="#06b6d4">
-                <animateMotion dur="25s" repeatCount="indefinite" path="M-100,200 C300,400 500,50 900,200 C1300,350 1500,100 1600,150" />
+                <animateMotion dur="25s" repeatCount="indefinite" rotate="auto" path="M-100,200 C300,400 500,50 900,200 C1300,350 1500,100 1600,150" />
               </use>
               <use href="#micro-bus" fill="#8b5cf6">
-                <animateMotion dur="25s" begin="8s" repeatCount="indefinite" path="M-100,200 C300,400 500,50 900,200 C1300,350 1500,100 1600,150" />
+                <animateMotion dur="25s" begin="8s" repeatCount="indefinite" rotate="auto" path="M-100,200 C300,400 500,50 900,200 C1300,350 1500,100 1600,150" />
               </use>
               
               <use href="#micro-bus" fill="#ec4899">
-                <animateMotion dur="35s" begin="2s" repeatCount="indefinite" path="M-100,400 C200,600 600,200 1000,400 C1400,600 1500,300 1600,350" />
+                <animateMotion dur="35s" begin="2s" repeatCount="indefinite" rotate="auto" path="M-100,400 C200,600 600,200 1000,400 C1400,600 1500,300 1600,350" />
               </use>
               <use href="#micro-bus" fill="#0ea5e9">
-                <animateMotion dur="35s" begin="15s" repeatCount="indefinite" path="M-100,400 C200,600 600,200 1000,400 C1400,600 1500,300 1600,350" />
+                <animateMotion dur="35s" begin="15s" repeatCount="indefinite" rotate="auto" path="M-100,400 C200,600 600,200 1000,400 C1400,600 1500,300 1600,350" />
               </use>
 
               <use href="#micro-bus" fill="#8b5cf6">
-                <animateMotion dur="30s" begin="5s" repeatCount="indefinite" path="M-100,600 C400,800 700,400 1100,600 C1500,800 1500,500 1600,550" />
+                <animateMotion dur="30s" begin="5s" repeatCount="indefinite" rotate="auto" path="M-100,600 C400,800 700,400 1100,600 C1500,800 1500,500 1600,550" />
               </use>
 
               <use href="#micro-bus" fill="#06b6d4">
-                <animateMotion dur="40s" begin="0s" repeatCount="indefinite" path="M-100,800 C300,1000 800,600 1200,800 C1600,1000 1500,700 1600,750" />
+                <animateMotion dur="40s" begin="0s" repeatCount="indefinite" rotate="auto" path="M-100,800 C300,1000 800,600 1200,800 C1600,1000 1500,700 1600,750" />
               </use>
            </svg>
         </div>
