@@ -868,7 +868,7 @@ export default function HomePage() {
       {/* ========================================================================= */}
       {/* 09 // ONE CLICK. AN ENTIRE NATION.                                        */}
       {/* ========================================================================= */}
-      <section className="py-24 sm:py-32 relative overflow-hidden bg-black">
+      <section className="pb-24 sm:pb-32 pt-0 relative overflow-hidden bg-black">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(6,182,212,0.05)_0%,transparent_70%)] pointer-events-none" />
         <div className="container max-w-7xl mx-auto px-6 relative z-10">
           
@@ -933,17 +933,17 @@ export default function HomePage() {
       {/* ========================================================================= */}
       {/* 10 // ONE PLATFORM. MANY MOBILITY ENVIRONMENTS.                           */}
       {/* ========================================================================= */}
-      <section className="py-12 relative overflow-hidden bg-black">
+      <section className="py-20 relative overflow-hidden bg-white">
         <div className="container max-w-6xl mx-auto px-6 relative z-10">
           <div className="text-center max-w-4xl mx-auto mb-16">
             <EditorialLine>
-              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/[0.05] border border-white/10 text-white/80 font-mono text-xs tracking-wider mb-5">
-                <span>CROSS-SECTOR DEPLOYMENTS</span>
+              <div className="font-mono text-xs uppercase tracking-widest text-cyan-600 mb-4">
+                CROSS-SECTOR DEPLOYMENTS
               </div>
             </EditorialLine>
             <CubertoLines
               as="h2"
-              className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight uppercase leading-[1.08] text-white"
+              className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight uppercase leading-[1.08] text-zinc-900"
               delay={0.1}
               stagger={0.1}
               lines={[
@@ -952,55 +952,46 @@ export default function HomePage() {
               ]}
             />
             <EditorialLine delay={0.2}>
-              <p className="text-base sm:text-lg text-white/70 max-w-2xl mx-auto mt-4 font-light leading-relaxed">
+              <p className="text-base sm:text-lg text-zinc-600 max-w-2xl mx-auto mt-6 font-normal leading-relaxed">
                 A modular, hardware-agnostic architecture engineered to operate across public transit authorities, airport campuses, corporate shuttles, municipal fleets, and commercial taxi networks.
               </p>
             </EditorialLine>
           </div>
 
           {/* 5 Mobility Environments Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-6">
             {mobilityEnvironments.map((env, idx) => {
               const EnvIcon = env.icon;
               return (
-                <GsapScrollReveal key={env.title} delay={idx * 0.08}>
+                <GsapScrollReveal key={env.title} delay={idx * 0.08} className={`h-full flex flex-col ${idx < 3 ? 'lg:col-span-2' : 'lg:col-span-3 md:col-span-2 lg:col-start-auto'}`}>
                   <TiltCard maxTilt={5} className="h-full">
-                    <div className="p-6 rounded-2xl bg-white/[0.02] border border-white/10 hover:border-white/25 hover:bg-white/[0.04] transition-all duration-300 flex flex-col justify-between group h-full shadow-xl">
+                    <div className="p-7 rounded-2xl bg-white border border-zinc-200 hover:border-cyan-500/50 hover:shadow-lg transition-all duration-500 hover:bg-zinc-50 flex flex-col justify-between group h-full shadow-sm relative overflow-hidden">
+                      <div className="absolute -inset-x-full top-0 h-[1px] bg-gradient-to-r from-transparent via-cyan-400/50 to-transparent group-hover:animate-[shimmer_2s_infinite]" />
                       <div>
-                        {/* Thumbnail Image Header */}
-                        <ImageCurtainReveal delay={idx * 0.08} direction="up" className="relative h-44 w-full rounded-xl overflow-hidden mb-5 border border-white/10">
-                          <Image
-                            src={env.image}
-                            alt={env.title}
-                            fill
-                            sizes="(max-width: 768px) 100vw, 33vw"
-                            className="object-cover group-hover:scale-105 transition-transform duration-500 brightness-90"
-                          />
-                          <div className="absolute inset-0 bg-gradient-to-t from-black via-black/30 to-transparent" />
-                          <div className="absolute bottom-3 left-3 flex items-center gap-2">
-                            <span className={`p-2 rounded-lg ${env.badgeBg} ${env.color} border border-white/20 backdrop-blur-md`}>
-                              <EnvIcon size={18} />
-                            </span>
-                            <span className="font-mono text-[10px] text-white/90 px-2 py-1 rounded bg-black/60 backdrop-blur-md border border-white/15">
-                              {env.tag}
-                            </span>
+                        {/* Icon Header */}
+                        <div className="flex items-center gap-3 mb-6">
+                          <div className={`w-12 h-12 rounded-xl flex items-center justify-center border ${env.badgeBg} ${env.color} group-hover:scale-110 transition-transform duration-500`}>
+                            <EnvIcon className="w-6 h-6" />
                           </div>
-                        </ImageCurtainReveal>
+                          <span className="font-mono text-[10px] uppercase tracking-wider text-zinc-500 px-3 py-1.5 rounded-full bg-zinc-100 border border-zinc-200">
+                            {env.tag}
+                          </span>
+                        </div>
 
-                        <h3 className="text-lg font-bold text-white mb-1 group-hover:text-cyan-300 transition-colors">
+                        <h3 className="text-xl font-bold text-zinc-900 mb-2 group-hover:text-cyan-700 transition-colors">
                           {env.title}
                         </h3>
-                        <div className="text-xs font-mono text-white/50 mb-3">{env.role}</div>
-                        <p className="text-xs text-white/65 leading-relaxed font-light">
+                        <div className="text-xs font-mono text-cyan-600 mb-4">{env.role}</div>
+                        <p className="text-[15px] text-zinc-600 leading-relaxed font-normal">
                           {env.desc}
                         </p>
                       </div>
 
-                      <div className="mt-6 pt-4 border-t border-white/10 flex items-center justify-between font-mono text-xs">
-                        <span className="text-white/40">Deployment Ready</span>
+                      <div className="mt-8 pt-5 border-t border-zinc-100 flex items-center justify-between font-mono text-xs">
+                        <span className="text-zinc-400">Deployment Ready</span>
                         <Link
                           href="/platform"
-                          className="text-cyan-400 hover:text-cyan-300 flex items-center gap-1 transition-colors"
+                          className="text-cyan-600 hover:text-cyan-500 flex items-center gap-1 transition-colors"
                         >
                           Explore <FiArrowRight size={12} />
                         </Link>

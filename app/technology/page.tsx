@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 import {
   FiArrowRight,
   FiArrowUpRight,
@@ -159,7 +160,7 @@ export default function TechnologyPage() {
                   <MediaSlot
                     theme="transparent"
                     type="image"
-                    src="/images/vmovexa-technology-bus-xray.png"
+                    src="/images/5.jpg"
                     alt="VMOVEXA Deep-Tech Smart Bus Blueprint & Architecture"
                     badge="Deep-Tech Bus Architecture • Wireframe Blueprint"
                     caption="Integrated Moving Edge System: Edge Computing, Sensors, Displays, Telemetry & 5G Gateway"
@@ -205,10 +206,74 @@ export default function TechnologyPage() {
                 );
               })}
             </div>
+        </div>
+      </section>
 
-          {/* Cloud Scale. Edge Speed. Section with Motion Trails Visual */}
+      {/* SMART EMERGENCY EXIT SECTION */}
+      <section className="py-24 relative overflow-hidden bg-black border-y border-white/10">
+        <div className="container max-w-6xl mx-auto px-6 relative z-10">
           <GsapScrollReveal delay={0.2}>
-            <div className="pt-12 mt-16 border-t border-zinc-200 mb-12 relative overflow-hidden">
+            <div className="rounded-3xl bg-[#0a0a0d] border border-white/5 overflow-hidden relative shadow-2xl">
+              <div className="grid grid-cols-1 lg:grid-cols-2 h-full">
+                <div className="p-8 lg:p-12 flex flex-col justify-center relative z-10 order-2 lg:order-1">
+                  <div className="font-mono text-xs uppercase tracking-widest text-cyan-400 mb-4">
+                    SMART EMERGENCY EXIT
+                  </div>
+                  <h3 className="text-3xl sm:text-4xl font-bold tracking-tight text-white mb-6 leading-[1.15]">
+                    REVENUE WHEN CLOSED.<br />
+                    <span className="bg-clip-text text-transparent bg-gradient-to-r from-rose-400 to-orange-400">SAFETY WHEN NEEDED.</span>
+                  </h3>
+                  <p className="text-white/70 text-sm sm:text-base leading-relaxed mb-8">
+                    A first-of-its-kind concept that transforms the emergency exit into an intelligent digital revenue surface.
+                  </p>
+
+                  <div className="space-y-4 mb-8">
+                    <div className="p-4 rounded-xl bg-white/[0.03] border border-white/10">
+                      <div className="font-mono text-[11px] text-cyan-400 mb-2 uppercase tracking-wider flex items-center gap-2">
+                        <span className="w-1.5 h-1.5 rounded-full bg-cyan-400" /> NORMAL MODE
+                      </div>
+                      <div className="text-white/90 text-sm">Premium content • Digital advertising • Contextual media</div>
+                    </div>
+                    <div className="p-4 rounded-xl bg-rose-500/10 border border-rose-500/20">
+                      <div className="font-mono text-[11px] text-rose-400 mb-2 uppercase tracking-wider flex items-center gap-2">
+                        <span className="w-1.5 h-1.5 rounded-full bg-rose-400 animate-pulse" /> EMERGENCY MODE
+                      </div>
+                      <div className="text-white/90 text-sm">Display turns transparent • Exit unlocks • Passengers evacuate</div>
+                    </div>
+                  </div>
+
+                  <div className="flex flex-wrap gap-2 mt-auto pt-6 border-t border-white/10">
+                    <span className="font-mono text-[10px] uppercase text-white/60 px-2.5 py-1 rounded bg-white/5 border border-white/10">
+                      ONE SURFACE. TWO PURPOSES.
+                    </span>
+                    <span className="font-mono text-[10px] uppercase text-white/60 px-2.5 py-1 rounded bg-white/5 border border-white/10">
+                      PATENT-PROTECTED TECHNOLOGY
+                    </span>
+                    <span className="font-mono text-[10px] uppercase text-cyan-400/80 px-2.5 py-1 rounded bg-cyan-500/10 border border-cyan-500/20">
+                      VMOVEXA — REINVENTING THE EMERGENCY EXIT.
+                    </span>
+                  </div>
+                </div>
+                <div className="relative h-64 lg:h-auto min-h-[400px] order-1 lg:order-2 bg-black">
+                  <Image
+                    src="/images/2.jpg"
+                    alt="Smart Emergency Exit"
+                    fill
+                    className="object-cover object-center"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-b lg:bg-gradient-to-r from-[#0a0a0d] via-transparent to-transparent opacity-80" />
+                </div>
+              </div>
+            </div>
+          </GsapScrollReveal>
+        </div>
+      </section>
+
+      {/* Cloud Scale. Edge Speed. Section with Motion Trails Visual */}
+      <section className="py-24 relative overflow-hidden bg-white">
+        <div className="container max-w-6xl mx-auto px-6 relative z-10">
+          <GsapScrollReveal delay={0.2}>
+            <div className="relative overflow-hidden">
                <div className="absolute inset-0 bg-gradient-to-tr from-cyan-900/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none" />
               <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center relative z-10">
                 <div className="lg:col-span-6 space-y-4">
@@ -225,7 +290,7 @@ export default function TechnologyPage() {
                   <MediaSlot
                     theme="transparent"
                     type="image"
-                    src="/images/vmovexa-speed-velocity.png"
+                    src="/images/2CCE68D8-4AEF-411F-83FA-39B05037DF94.PNG"
                     alt="VMOVEXA Speed & Motion Blur"
                     badge="Motion Velocity • Low Latency"
                     caption="Architecture Designed for Low-Latency Edge Processing in Real-World Mobility Conditions"

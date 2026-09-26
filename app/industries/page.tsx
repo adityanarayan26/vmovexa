@@ -255,6 +255,25 @@ export default function IndustriesPage() {
 
       {/* 02 — 9 SECTORS GRID */}
       <section className="py-28 relative overflow-hidden bg-white">
+        {/* Decorative Background Elements */}
+        <div className="absolute inset-0 pointer-events-none">
+           {/* Subtle Technical Grid */}
+           <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:40px_40px]" />
+           
+           {/* Abstract Glowing Orbs */}
+           <div className="absolute top-[-10%] right-[-5%] w-[800px] h-[800px] rounded-full bg-cyan-400/[0.04] blur-[100px]" />
+           <div className="absolute bottom-[-10%] left-[-10%] w-[600px] h-[600px] rounded-full bg-indigo-500/[0.03] blur-[120px]" />
+           <div className="absolute top-[40%] right-[20%] w-[500px] h-[500px] rounded-full bg-rose-400/[0.03] blur-[100px]" />
+
+           {/* Conceptual Wavy Illustration */}
+           <svg className="absolute top-0 w-full h-[150%] opacity-[0.03] text-zinc-900" viewBox="0 0 1440 1000" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M-100,200 C300,400 500,50 900,200 C1300,350 1500,100 1600,150" fill="none" stroke="currentColor" strokeWidth="2" />
+              <path d="M-100,400 C200,600 600,200 1000,400 C1400,600 1500,300 1600,350" fill="none" stroke="currentColor" strokeWidth="1" />
+              <path d="M-100,600 C400,800 700,400 1100,600 C1500,800 1500,500 1600,550" fill="none" stroke="currentColor" strokeWidth="2" strokeDasharray="4 4" />
+              <path d="M-100,800 C300,1000 800,600 1200,800 C1600,1000 1500,700 1600,750" fill="none" stroke="currentColor" strokeWidth="1" />
+           </svg>
+        </div>
+
         <div className="container max-w-6xl mx-auto px-6 relative z-10">
           <div className="max-w-2xl mb-16 text-center md:text-left">
             <EditorialLine>
