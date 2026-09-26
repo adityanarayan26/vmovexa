@@ -211,15 +211,15 @@ export default function TechnologyPage() {
 
       {/* SMART EMERGENCY EXIT SECTION */}
       <section className="py-24 relative overflow-hidden bg-black">
-        <div className="container max-w-6xl mx-auto px-6 relative z-10">
+        <div className="w-[95%] max-w-[1600px] mx-auto px-4 sm:px-6 relative z-10">
           <GsapScrollReveal delay={0.2}>
-            <div className="rounded-3xl bg-[#0a0a0d] overflow-hidden relative shadow-2xl">
-              <div className="grid grid-cols-1 lg:grid-cols-2 h-full gap-8 lg:gap-16">
-                <div className="p-8 lg:p-12 flex flex-col justify-center relative z-10 order-2 lg:order-1">
+            <div className="rounded-[2.5rem] bg-[#0a0a0d] overflow-hidden relative shadow-2xl">
+              <div className="grid grid-cols-1 lg:grid-cols-12 h-full gap-8 lg:gap-12">
+                <div className="lg:col-span-5 p-8 lg:p-16 flex flex-col justify-center relative z-10 order-2 lg:order-1">
                   <div className="font-mono text-xs uppercase tracking-widest text-cyan-400 mb-4">
                     SMART EMERGENCY EXIT
                   </div>
-                  <h3 className="text-3xl sm:text-4xl font-bold tracking-tight text-white mb-6 leading-[1.15]">
+                  <h3 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-white mb-6 leading-[1.15]">
                     REVENUE WHEN CLOSED.<br />
                     <span className="gradient-text">SAFETY WHEN NEEDED.</span>
                   </h3>
@@ -254,13 +254,13 @@ export default function TechnologyPage() {
                     </span>
                   </div>
                 </div>
-                <div className="w-full h-80 lg:h-auto min-h-[500px] order-1 lg:order-2 py-4 pr-4 lg:py-6 lg:pr-8 flex items-center justify-center">
+                <div className="lg:col-span-7 w-full h-80 lg:h-auto min-h-[500px] lg:min-h-[600px] order-1 lg:order-2 py-8 pr-4 lg:py-12 lg:pr-12 flex items-center justify-center">
                   <div className="relative w-full h-full min-h-[400px]">
                     <Image
                       src="/images/2.jpg"
                       alt="Smart Emergency Exit"
                       fill
-                      className="object-contain object-right lg:scale-[1.15] origin-right"
+                      className="object-contain object-right lg:scale-105 origin-right"
                     />
                   </div>
                 </div>
@@ -489,76 +489,77 @@ export default function TechnologyPage() {
               </div>
             </GsapScrollReveal>
           </div>
+        </div>
+      </section>
 
-          {/* 04.B — FULL-STACK FLEET TELEMETRY & SERVICE FABRIC (new1.PNG) */}
-          <GsapScrollReveal delay={0.3}>
-            <div className="mt-16 pt-16 border-t border-zinc-200">
-              <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-6 mb-8">
-                <div>
-                  <span className="font-mono text-xs uppercase tracking-widest text-cyan-600 block mb-2">
-                    End-to-End Synchronization
-                  </span>
-                  <h3 className="text-2xl sm:text-3xl font-bold tracking-tight text-zinc-900">
-                    From Central Cloud to <span className="gradient-text">Moving Edge Fleets.</span>
-                  </h3>
-                  <p className="text-sm text-zinc-600 max-w-2xl mt-2 leading-relaxed font-normal">
-                    A unified multi-tier operational stack connecting cloud data fabrics, containerized microservices, distributed edge racks, and high-frequency in-transit vehicle clusters.
-                  </p>
+      {/* 04.B — FULL-STACK FLEET TELEMETRY & SERVICE FABRIC (new1.PNG) */}
+      <section className="py-24 relative overflow-hidden bg-black border-t border-white/5">
+        <div className="container max-w-6xl mx-auto px-6 relative z-10">
+          <GsapScrollReveal delay={0.1}>
+            <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-6 mb-12">
+              <div>
+                <span className="font-mono text-xs uppercase tracking-widest text-cyan-400 block mb-2">
+                  End-to-End Synchronization
+                </span>
+                <h3 className="text-2xl sm:text-3xl font-bold tracking-tight text-white">
+                  From Central Cloud to <span className="gradient-text">Moving Edge Fleets.</span>
+                </h3>
+                <p className="text-sm text-white/60 max-w-2xl mt-2 leading-relaxed font-normal">
+                  A unified multi-tier operational stack connecting cloud data fabrics, containerized microservices, distributed edge racks, and high-frequency in-transit vehicle clusters.
+                </p>
+              </div>
+              
+              {/* Capability Indicators */}
+              <div className="flex flex-wrap items-center gap-3">
+                <div className="px-3.5 py-1.5 rounded-full bg-cyan-500/10 border border-cyan-500/20 text-xs font-mono text-cyan-400 flex items-center gap-2">
+                  <span className="w-2 h-2 rounded-full bg-cyan-400 animate-pulse" />
+                  <span>Near-Real-Time Event Triggering</span>
                 </div>
-                
-                {/* Capability Indicators */}
-                <div className="flex flex-wrap items-center gap-3">
-                  <div className="px-3.5 py-1.5 rounded-full bg-cyan-50 border border-cyan-200 text-xs font-mono text-cyan-700 flex items-center gap-2">
-                    <span className="w-2 h-2 rounded-full bg-cyan-500 animate-pulse" />
-                    <span>Near-Real-Time Event Triggering</span>
-                  </div>
-                  <div className="px-3.5 py-1.5 rounded-full bg-indigo-50 border border-indigo-200 text-xs font-mono text-indigo-700 flex items-center gap-2">
-                    <span className="w-2 h-2 rounded-full bg-indigo-500" />
-                    <span>Offline-First Edge Resilience</span>
-                  </div>
+                <div className="px-3.5 py-1.5 rounded-full bg-indigo-500/10 border border-indigo-500/20 text-xs font-mono text-indigo-400 flex items-center gap-2">
+                  <span className="w-2 h-2 rounded-full bg-indigo-400" />
+                  <span>Offline-First Edge Resilience</span>
                 </div>
               </div>
+            </div>
 
-              {/* Visual Container for new1.PNG */}
-              <div className="relative group rounded-3xl p-2 bg-zinc-50 border border-zinc-200 hover:border-cyan-500/30 transition-all duration-500 shadow-sm hover:shadow-lg overflow-hidden mb-8">
-                <MediaSlot
-                  theme="transparent"
-                  type="image"
-                  src="/images/new1.PNG"
-                  alt="VMOVEXA End-to-End Fleet Architecture: Cloud Datacenter, Microservice Tier, Edge Servers, and Connected Fleet"
-                  badge="Full-Stack Fleet Telemetry & Orchestration Fabric"
-                  caption="End-to-End Pipeline: Global & Regional Cloud Analytics ↔ Microservice Tier ↔ Edge Hardware ↔ High-Frequency Vehicle Bus Fleet"
-                  aspectRatio="3/2"
-                  objectFit="contain"
-                  fade="none"
-                  scanline={true}
-                  curtainReveal={true}
-                />
+            {/* Visual Container for new1.PNG */}
+            <div className="relative group rounded-[2.5rem] p-2 bg-gradient-to-b from-white/[0.04] to-transparent border border-white/10 hover:border-cyan-500/30 transition-all duration-500 overflow-hidden mb-12 shadow-2xl">
+              <MediaSlot
+                theme="transparent"
+                type="image"
+                src="/images/new1.PNG"
+                alt="VMOVEXA End-to-End Fleet Architecture: Cloud Datacenter, Microservice Tier, Edge Servers, and Connected Fleet"
+                badge="Full-Stack Fleet Telemetry & Orchestration Fabric"
+                caption="End-to-End Pipeline: Global & Regional Cloud Analytics ↔ Microservice Tier ↔ Edge Hardware ↔ High-Frequency Vehicle Bus Fleet"
+                aspectRatio="3/2"
+                objectFit="contain"
+                fade="none"
+                scanline={true}
+                curtainReveal={true}
+              />
+            </div>
+
+            {/* 4 Feature Spec Pillars below the diagram */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+              <div className="p-5 rounded-2xl bg-white/[0.02] border border-white/5 hover:bg-white/[0.04] hover:border-cyan-500/30 transition-all">
+                <div className="text-xs font-mono text-cyan-400 uppercase tracking-wider mb-1.5 font-semibold">01 • Cloud Orchestration</div>
+                <div className="text-xs text-white/60 leading-relaxed">Multi-tenant fleet management, campaign rules, and unified national telemetry aggregation.</div>
               </div>
-
-              {/* 4 Feature Spec Pillars below the diagram */}
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-                <div className="p-5 rounded-2xl bg-white border border-zinc-200 hover:border-cyan-500/30 hover:shadow-md transition-all">
-                  <div className="text-xs font-mono text-cyan-600 uppercase tracking-wider mb-1.5 font-semibold">01 • Cloud Orchestration</div>
-                  <div className="text-xs text-zinc-600 leading-relaxed">Multi-tenant fleet management, campaign rules, and unified national telemetry aggregation.</div>
-                </div>
-                <div className="p-5 rounded-2xl bg-white border border-zinc-200 hover:border-indigo-500/30 hover:shadow-md transition-all">
-                  <div className="text-xs font-mono text-indigo-600 uppercase tracking-wider mb-1.5 font-semibold">02 • Microservices Tier</div>
-                  <div className="text-xs text-zinc-600 leading-relaxed">Decoupled APIs for real-time routing, DOOH playback logs, spatial queries, and security.</div>
-                </div>
-                <div className="p-5 rounded-2xl bg-white border border-zinc-200 hover:border-purple-500/30 hover:shadow-md transition-all">
-                  <div className="text-xs font-mono text-purple-600 uppercase tracking-wider mb-1.5 font-semibold">03 • Distributed Edge</div>
-                  <div className="text-xs text-zinc-600 leading-relaxed">Depot and in-vehicle edge nodes providing localized decisioning even during network loss.</div>
-                </div>
-                <div className="p-5 rounded-2xl bg-white border border-zinc-200 hover:border-emerald-500/30 hover:shadow-md transition-all">
-                  <div className="text-xs font-mono text-emerald-600 uppercase tracking-wider mb-1.5 font-semibold">04 • In-Transit Fleet</div>
-                  <div className="text-xs text-zinc-600 leading-relaxed">Designed for sub-meter positioning, multi-screen sync, and vehicle telemetry integration across commercial routes.</div>
-                </div>
+              <div className="p-5 rounded-2xl bg-white/[0.02] border border-white/5 hover:bg-white/[0.04] hover:border-indigo-500/30 transition-all">
+                <div className="text-xs font-mono text-indigo-400 uppercase tracking-wider mb-1.5 font-semibold">02 • Microservices Tier</div>
+                <div className="text-xs text-white/60 leading-relaxed">Decoupled APIs for real-time routing, DOOH playback logs, spatial queries, and security.</div>
+              </div>
+              <div className="p-5 rounded-2xl bg-white/[0.02] border border-white/5 hover:bg-white/[0.04] hover:border-purple-500/30 transition-all">
+                <div className="text-xs font-mono text-purple-400 uppercase tracking-wider mb-1.5 font-semibold">03 • Distributed Edge</div>
+                <div className="text-xs text-white/60 leading-relaxed">Depot and in-vehicle edge nodes providing localized decisioning even during network loss.</div>
+              </div>
+              <div className="p-5 rounded-2xl bg-white/[0.02] border border-white/5 hover:bg-white/[0.04] hover:border-emerald-500/30 transition-all">
+                <div className="text-xs font-mono text-emerald-400 uppercase tracking-wider mb-1.5 font-semibold">04 • In-Transit Fleet</div>
+                <div className="text-xs text-white/60 leading-relaxed">Designed for sub-meter positioning, multi-screen sync, and vehicle telemetry integration.</div>
               </div>
             </div>
           </GsapScrollReveal>
         </div>
-        
       </section>
 
       {/* 05 — API-READY ARCHITECTURE (BUILT TO CONNECT) */}
