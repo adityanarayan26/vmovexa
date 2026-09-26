@@ -63,7 +63,7 @@ export function MegaMenu({ activeKey, onClose, onMouseEnter, onMouseLeave }: Meg
         onMouseLeave={onMouseLeave}
         className="fixed top-[72px] inset-x-0 bg-white z-40 shadow-[0_10px_30px_rgba(0,0,0,0.1)] overflow-hidden"
       >
-        <div className="container max-w-[1400px] mx-auto px-8 py-10 min-h-[460px] flex items-center">
+        <div className="container max-w-[1400px] mx-auto px-8 py-8 min-h-[350px] flex items-center">
           <AnimatePresence mode="wait">
             <motion.div
               key={activeKey}
@@ -78,7 +78,7 @@ export function MegaMenu({ activeKey, onClose, onMouseEnter, onMouseLeave }: Meg
                 <Link
                   href={mainVisual.primaryLink.href}
                   onClick={onClose}
-                  className="relative w-full max-w-[700px] h-[250px] sm:h-[350px] flex items-center justify-center mb-6 transition-transform duration-300 hover:scale-[1.02] will-change-transform translate-z-0"
+                  className="relative w-full max-w-[450px] h-[180px] sm:h-[250px] flex items-center justify-center mb-6 transition-transform duration-300 hover:scale-[1.02] will-change-transform translate-z-0"
                 >
                   <Image
                     src={mainVisual.image}

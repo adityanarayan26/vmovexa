@@ -381,6 +381,17 @@ export default function HomePage() {
                   </MagneticElement>
                 </div>
               </GsapScrollReveal>
+
+              {/* Added Tags */}
+              <GsapScrollReveal delay={0.4}>
+                <div className="flex flex-wrap items-center gap-3 sm:gap-4 mt-10 font-mono text-xs sm:text-[13px] tracking-[0.15em] uppercase text-white/60">
+                  <span className="hover:text-cyan-400 transition-colors cursor-default">Smart Mobility</span>
+                  <span className="text-white/20">|</span>
+                  <span className="hover:text-purple-400 transition-colors cursor-default">Interactive Media</span>
+                  <span className="text-white/20">|</span>
+                  <span className="hover:text-emerald-400 transition-colors cursor-default">Safety First</span>
+                </div>
+              </GsapScrollReveal>
             </div>
 
             {/* Right Vertical Floating Tags */}
@@ -912,15 +923,15 @@ export default function HomePage() {
               const Icon = app.icon;
               return (
                 <GsapScrollReveal key={app.title} delay={idx * 0.05} className="h-full">
-                  <div className={`p-6 rounded-2xl bg-white border border-zinc-200 ${app.hoverBorder} ${app.hoverShadow} hover:-translate-y-1.5 transition-all duration-500 h-full flex flex-col group relative overflow-hidden cursor-default`}>
+                  <div className={`p-4 sm:p-5 rounded-2xl bg-white border border-zinc-200 ${app.hoverBorder} ${app.hoverShadow} hover:-translate-y-1 transition-all duration-500 h-full flex flex-col group relative overflow-hidden cursor-default`}>
                     {/* Glowing Top Line */}
                     <div className={`absolute top-0 left-0 w-full h-[3px] bg-gradient-to-r from-transparent ${app.viaColor} to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500`} />
                     
-                    <div className={`w-11 h-11 rounded-xl flex items-center justify-center mb-5 ${app.bg} ${app.border} border group-hover:scale-110 group-hover:rotate-3 transition-transform duration-500`}>
-                      <Icon className={`w-5 h-5 ${app.color}`} />
+                    <div className={`w-9 h-9 sm:w-10 sm:h-10 rounded-xl flex items-center justify-center mb-4 ${app.bg} ${app.border} border group-hover:scale-110 group-hover:rotate-3 transition-transform duration-500`}>
+                      <Icon className={`w-4 h-4 sm:w-5 sm:h-5 ${app.color}`} />
                     </div>
-                    <h3 className={`text-zinc-900 font-semibold text-base mb-2 ${app.hoverText} transition-colors duration-300`}>{app.title}</h3>
-                    <p className="text-zinc-600 text-sm leading-relaxed font-light">{app.desc}</p>
+                    <h3 className={`text-zinc-900 font-semibold text-[15px] mb-1.5 ${app.hoverText} transition-colors duration-300`}>{app.title}</h3>
+                    <p className="text-zinc-500 text-xs sm:text-[13px] leading-relaxed font-light">{app.desc}</p>
                   </div>
                 </GsapScrollReveal>
               );
