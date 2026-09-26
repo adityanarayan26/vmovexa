@@ -131,7 +131,7 @@ export default function MediaPage() {
             <div className="relative group mb-8">
               <MediaSlot
                 type="image"
-                src="/images/vmovexa-media-bus-banner.png"
+                src="/images/vmovexa-media-bus.jpg"
                 alt="VMOVEXA Mobility Media Smart Transit Bus - Brands Travel Further Here"
                 badge="Digital Transit Media • Connected DOOH"
                 caption="Dynamic Exterior Screen: Contextual, Location-Triggered & Verified Proof-of-Play"
