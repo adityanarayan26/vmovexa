@@ -26,76 +26,67 @@ export const metadata: Metadata = {
 export default function IndustriesPage() {
   const sectors = [
     {
-      num: "01",
-      title: "Public Transport",
-      desc: "City bus fleets, urban transit networks, municipal mobility, and passenger information systems.",
+      title: "Public Transportation",
+      desc: "Modern connected fleets.",
       icon: RiBusLine,
-      color: "text-cyan-400",
-      badgeBg: "bg-cyan-500/10 border-cyan-500/25 shadow-[0_0_15px_rgba(6,182,212,0.18)]",
-    },
-    {
-      num: "02",
-      title: "Private Bus & Coach Fleets",
-      desc: "Intercity fleets, private bus operators, interstate lines, and luxury coach networks.",
-      icon: FiCompass,
-      color: "text-indigo-400",
-      badgeBg: "bg-indigo-500/10 border-indigo-500/25 shadow-[0_0_15px_rgba(99,102,241,0.18)]",
-    },
-    {
-      num: "03",
-      title: "Airport Mobility",
-      desc: "Airside operations, passenger apron shuttle networks, and terminal connected mobility infrastructure.",
-      icon: RiFlightTakeoffLine,
-      color: "text-sky-400",
-      badgeBg: "bg-sky-500/10 border-sky-500/25 shadow-[0_0_15px_rgba(56,189,248,0.18)]",
-    },
-    {
-      num: "04",
-      title: "Employee & Corporate Shuttles",
-      desc: "Enterprise transport, tech campus transit networks, and internal corporate communication media.",
-      icon: FiUsers,
-      color: "text-purple-400",
-      badgeBg: "bg-purple-500/10 border-purple-500/25 shadow-[0_0_15px_rgba(168,85,247,0.18)]",
-    },
-    {
-      num: "05",
-      title: "Electric Vehicle Fleets",
-      desc: "Electric bus networks, smart charging corridor integration, and next-generation battery telemetry.",
-      icon: FiZap,
-      color: "text-emerald-400",
-      badgeBg: "bg-emerald-500/10 border-emerald-500/25 shadow-[0_0_15px_rgba(16,185,129,0.18)]",
-    },
-    {
-      num: "06",
-      title: "Smart City Transit Networks",
-      desc: "Urban infrastructure, civic messaging, real-time traffic broadcast, and municipal transit integration.",
-      icon: RiBuilding4Line,
       color: "text-blue-400",
       badgeBg: "bg-blue-500/10 border-blue-500/25 shadow-[0_0_15px_rgba(59,130,246,0.18)]",
     },
     {
-      num: "07",
-      title: "Tourism & Sightseeing Fleets",
-      desc: "Destination routes, tourist transport, cultural zones, and dynamic visitor information networks.",
+      title: "Government",
+      desc: "Citizen communication network.",
       icon: RiGovernmentLine,
+      color: "text-indigo-400",
+      badgeBg: "bg-indigo-500/10 border-indigo-500/25 shadow-[0_0_15px_rgba(99,102,241,0.18)]",
+    },
+    {
+      title: "Smart Cities",
+      desc: "Digital urban infrastructure.",
+      icon: RiBuilding4Line,
+      color: "text-cyan-400",
+      badgeBg: "bg-cyan-500/10 border-cyan-500/25 shadow-[0_0_15px_rgba(6,182,212,0.18)]",
+    },
+    {
+      title: "Tourism",
+      desc: "Destination promotion.",
+      icon: FiCompass,
+      color: "text-purple-400",
+      badgeBg: "bg-purple-500/10 border-purple-500/25 shadow-[0_0_15px_rgba(168,85,247,0.18)]",
+    },
+    {
+      title: "Retail",
+      desc: "Location-based advertising.",
+      icon: FiZap,
+      color: "text-pink-400",
+      badgeBg: "bg-pink-500/10 border-pink-500/25 shadow-[0_0_15px_rgba(236,72,153,0.18)]",
+    },
+    {
+      title: "Education",
+      desc: "Institution communication.",
+      icon: FiUsers,
+      color: "text-sky-400",
+      badgeBg: "bg-sky-500/10 border-sky-500/25 shadow-[0_0_15px_rgba(56,189,248,0.18)]",
+    },
+    {
+      title: "Healthcare",
+      desc: "Emergency awareness.",
+      icon: FiShield,
+      color: "text-emerald-400",
+      badgeBg: "bg-emerald-500/10 border-emerald-500/25 shadow-[0_0_15px_rgba(16,185,129,0.18)]",
+    },
+    {
+      title: "Airports",
+      desc: "Premium advertising platform.",
+      icon: RiFlightTakeoffLine,
       color: "text-amber-400",
       badgeBg: "bg-amber-500/10 border-amber-500/25 shadow-[0_0_15px_rgba(245,158,11,0.18)]",
     },
     {
-      num: "08",
-      title: "Logistics & Delivery Fleets",
-      desc: "Commercial vehicles, urban delivery fleets, route telemetry, and distributed mobile computing nodes.",
+      title: "Enterprise Brands",
+      desc: "National brand campaigns.",
       icon: RiTruckLine,
       color: "text-orange-400",
       badgeBg: "bg-orange-500/10 border-orange-500/25 shadow-[0_0_15px_rgba(249,115,22,0.18)]",
-    },
-    {
-      num: "09",
-      title: "Specialized Commercial Vehicles",
-      desc: "Utility fleets, municipal sanitation, maintenance vehicles, and emergency transit operations support.",
-      icon: FiShield,
-      color: "text-pink-400",
-      badgeBg: "bg-pink-500/10 border-pink-500/25 shadow-[0_0_15px_rgba(236,72,153,0.18)]",
     },
   ];
 
@@ -265,30 +256,35 @@ export default function IndustriesPage() {
       {/* 02 — 9 SECTORS GRID */}
       <section className="py-28 relative overflow-hidden bg-white">
         <div className="container max-w-6xl mx-auto px-6 relative z-10">
-          <div className="max-w-2xl mb-16">
+          <div className="max-w-2xl mb-16 text-center md:text-left">
             <EditorialLine>
               <div className="font-mono text-xs uppercase tracking-widest text-cyan-600 mb-3">
                 Industry Sectors
               </div>
             </EditorialLine>
             <EditorialLine delay={0.1}>
-              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight leading-tight text-zinc-900">
-                Where movement meets <span className="gradient-text">intelligence.</span>
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight leading-tight text-zinc-900">
+                Powering <span className="gradient-text">Every Industry Everywhere</span>
               </h2>
+            </EditorialLine>
+            <EditorialLine delay={0.2}>
+              <p className="mt-4 text-base sm:text-lg text-zinc-600 leading-relaxed max-w-3xl">
+                Empowering industries with intelligent mobility, targeted communication, digital engagement, and scalable advertising across connected ecosystems.
+              </p>
             </EditorialLine>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-10 lg:gap-12">
             {sectors.map((sec, idx) => {
               const IconComp = sec.icon;
               return (
-                <GsapScrollReveal key={sec.title} delay={idx * 0.05}>
-                  <MagneticElement strength={0.05}>
-                    <div className="p-7 rounded-2xl bg-white border border-zinc-200 hover:border-cyan-500/50 hover:shadow-lg transition-all duration-500 hover:bg-zinc-50 h-full flex flex-col justify-between group shadow-sm overflow-hidden relative">
+                <GsapScrollReveal key={sec.title} delay={idx * 0.05} className="h-full flex flex-col">
+                  <MagneticElement strength={0.05} className="h-full block">
+                    <div className="min-h-[220px] p-7 rounded-2xl bg-white border border-zinc-200 hover:border-cyan-500/50 hover:shadow-lg transition-all duration-500 hover:bg-zinc-50 h-full flex flex-col justify-between group shadow-sm overflow-hidden relative">
                        <div className="absolute -inset-x-full top-0 h-[1px] bg-gradient-to-r from-transparent via-cyan-400/50 to-transparent group-hover:animate-[shimmer_2s_infinite]" />
                       <div className="relative z-10">
                         <div className="flex items-center justify-between mb-5">
-                          <span className="font-mono text-xs text-zinc-400 group-hover:text-zinc-600 transition-colors">{sec.num}</span>
+                          <span className="font-mono text-xs text-zinc-400 group-hover:text-zinc-600 transition-colors">{String(idx + 1).padStart(2, '0')}</span>
                           <div className={`w-11 h-11 rounded-xl border ${sec.badgeBg} flex items-center justify-center ${sec.color} group-hover:scale-110 transition-all duration-500`}>
                              <IconComp className="w-5 h-5" />
                           </div>

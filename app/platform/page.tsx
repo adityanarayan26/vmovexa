@@ -394,27 +394,94 @@ export default function PlatformPage() {
       <section className="py-24 relative overflow-hidden bg-white">
         <div className="container max-w-6xl mx-auto px-6 relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 mb-16 items-start">
-            <div className="lg:col-span-6 space-y-6">
-              <EditorialLine>
-                <div className="font-mono text-xs uppercase tracking-widest text-cyan-600">
-                  Platform Principle
+            <div className="lg:col-span-6 flex flex-col h-full">
+              <div className="space-y-6">
+                <EditorialLine>
+                  <div className="font-mono text-xs uppercase tracking-widest text-cyan-600">
+                    Platform Principle
+                  </div>
+                </EditorialLine>
+                <EditorialLine delay={0.1}>
+                  <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight text-zinc-900 leading-tight uppercase">
+                    The cloud orchestrates. <span className="gradient-text">The edge executes.</span>
+                  </h2>
+                </EditorialLine>
+                <EditorialLine delay={0.2}>
+                  <p className="text-base text-zinc-600 leading-relaxed pt-2">
+                    Centralized systems define configurations, rules and operational requirements. The vehicle-side edge environment executes supported functions locally.
+                  </p>
+                </EditorialLine>
+                <EditorialLine delay={0.3}>
+                  <p className="text-xs text-zinc-500 leading-relaxed font-mono">
+                    This architecture is particularly relevant to moving environments where connectivity can vary. The underlying design explicitly describes the cloud defining rules while the edge executes them locally.
+                  </p>
+                </EditorialLine>
+              </div>
+
+              {/* Sustainability Block to fill empty space */}
+              <GsapScrollReveal delay={0.4} className="mt-auto pt-12">
+                <div className="p-8 sm:p-10 rounded-3xl bg-white border border-zinc-200 text-center relative overflow-hidden shadow-sm hover:shadow-md transition-shadow group">
+                  {/* Subtle background glow */}
+                  <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(168,85,247,0.05)_0%,transparent_70%)] pointer-events-none" />
+                  
+                  <h3 className="text-2xl sm:text-3xl font-medium text-zinc-900 mb-10 relative z-10">
+                    Sustainabil<span className="bg-clip-text text-transparent bg-gradient-to-r from-purple-500 to-pink-500">ity</span>
+                  </h3>
+                  
+                  <div className="flex items-center justify-center gap-4 sm:gap-6 mb-10 relative z-10">
+                    {/* Zero Paper */}
+                    <div className="flex flex-col items-center gap-4">
+                      <div className="w-16 h-16 rounded-full border border-blue-200 bg-blue-50 flex items-center justify-center group-hover:scale-105 transition-transform">
+                        <svg className="w-7 h-7 text-blue-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+                          <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                          <polyline points="14 2 14 8 20 8"></polyline>
+                          <path d="M9 15v-1l-2 2 2 2v-1h4v1l2-2-2-2v1H9z"></path>
+                        </svg>
+                      </div>
+                      <span className="text-[13px] font-semibold text-zinc-800">Zero Paper</span>
+                    </div>
+
+                    {/* Divider */}
+                    <div className="flex flex-col items-center mb-6">
+                      <div className="w-[1px] h-3 bg-gradient-to-b from-transparent to-purple-300" />
+                      <div className="w-1.5 h-1.5 rounded-full bg-purple-400 shadow-[0_0_8px_rgba(168,85,247,0.4)]" />
+                      <div className="w-[1px] h-3 bg-gradient-to-t from-transparent to-purple-300" />
+                    </div>
+
+                    {/* Zero Ink */}
+                    <div className="flex flex-col items-center gap-4">
+                      <div className="w-16 h-16 rounded-full border border-purple-200 bg-purple-50 flex items-center justify-center group-hover:scale-105 transition-transform">
+                        <svg className="w-7 h-7 text-purple-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+                          <path d="M12 2v4M10 2h4M9 6h6v12a2 2 0 0 1-2 2h-2a2 2 0 0 1-2-2V6z"></path>
+                          <path d="M16 10l4-4-2-2-4 4"></path>
+                        </svg>
+                      </div>
+                      <span className="text-[13px] font-semibold text-zinc-800">Zero Ink</span>
+                    </div>
+
+                    {/* Divider */}
+                    <div className="flex flex-col items-center mb-6">
+                      <div className="w-[1px] h-3 bg-gradient-to-b from-transparent to-purple-300" />
+                      <div className="w-1.5 h-1.5 rounded-full bg-purple-400 shadow-[0_0_8px_rgba(168,85,247,0.4)]" />
+                      <div className="w-[1px] h-3 bg-gradient-to-t from-transparent to-purple-300" />
+                    </div>
+
+                    {/* Infinite Possibilities */}
+                    <div className="flex flex-col items-center gap-4">
+                      <div className="w-16 h-16 rounded-full border border-indigo-200 bg-indigo-50 flex items-center justify-center group-hover:scale-105 transition-transform">
+                        <svg className="w-7 h-7 text-indigo-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+                          <path d="M12 12c-2-2.5-4-4-6-4-3 0-4.5 2-4.5 4s1.5 4 4.5 4c2 0 4-1.5 6-4Zm0 0c2 2.5 4 4 6 4 3 0 4.5-2 4.5-4s-1.5-4-4.5-4c-2 0-4 1.5-6 4Z"></path>
+                        </svg>
+                      </div>
+                      <span className="text-[13px] font-semibold text-zinc-800">Infinite Possibilities</span>
+                    </div>
+                  </div>
+
+                  <p className="text-sm text-zinc-600 leading-relaxed relative z-10 max-w-[280px] sm:max-w-xs mx-auto">
+                    We are committed to building a sustainable future where technology and nature coexist in perfect harmony.
+                  </p>
                 </div>
-              </EditorialLine>
-              <EditorialLine delay={0.1}>
-                <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight text-zinc-900 leading-tight uppercase">
-                  The cloud orchestrates. <span className="gradient-text">The edge executes.</span>
-                </h2>
-              </EditorialLine>
-              <EditorialLine delay={0.2}>
-                <p className="text-base text-zinc-600 leading-relaxed pt-2">
-                  Centralized systems define configurations, rules and operational requirements. The vehicle-side edge environment executes supported functions locally.
-                </p>
-              </EditorialLine>
-              <EditorialLine delay={0.3}>
-                <p className="text-xs text-zinc-500 leading-relaxed font-mono">
-                  This architecture is particularly relevant to moving environments where connectivity can vary. The underlying design explicitly describes the cloud defining rules while the edge executes them locally.
-                </p>
-              </EditorialLine>
+              </GsapScrollReveal>
             </div>
 
             <div className="lg:col-span-6 space-y-6">

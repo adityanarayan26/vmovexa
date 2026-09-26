@@ -49,7 +49,7 @@ export const megaMenuData: Record<string, MegaMenuItem> = {
       {
         title: "Vehicle Edge Architecture",
         subtitle: "Decentralized Compute & Local Decisioning",
-        image: "/images/nav/2.png",
+        image: "/images/nav/technology-nav.jpg",
         primaryLink: { label: "Learn", href: "/technology#edge" },
         secondaryLink: { label: "Order", href: "/technology#order" },
       }

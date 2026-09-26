@@ -601,7 +601,7 @@ export default function HomePage() {
               <div className="relative group">
                 <MediaSlot
                   type="image"
-                  src="/images/vmovexa-cloud-edge-architecture.png"
+                  src="/images/platform-architecture-new.jpg"
                   alt="VMOVEXA Cloud-to-Edge Multi-Layer Architecture"
                   badge="3D Architecture • Cloud & Edge Hierarchy"
                   caption="Centralized Cloud Orchestration ↔ In-Vehicle Edge Runtime"

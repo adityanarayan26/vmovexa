@@ -160,9 +160,9 @@ export default function SolutionsPage() {
         <div className="container max-w-7xl mx-auto px-6 relative z-10">
           <GsapScrollReveal delay={0.1}>
             <div className="flex flex-col sm:flex-row items-center justify-between gap-6 group">
-              <div className="font-mono text-xl sm:text-2xl tracking-wider text-zinc-900 font-bold text-center sm:text-left">
-                What will you build on the moving edge?
-              </div>
+              <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight text-zinc-900 text-center sm:text-left leading-tight">
+                What will you build on the <span className="gradient-text">moving edge?</span>
+              </h2>
               <MagneticElement strength={0.3}>
                 <Link
                   href="/contact"

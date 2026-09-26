@@ -552,11 +552,11 @@ export default function TechnologyPage() {
             <div className="pt-12 mt-20 border-t border-zinc-200 flex flex-col md:flex-row items-start md:items-center justify-between gap-8 relative overflow-hidden">
                <div className="absolute inset-0 bg-gradient-to-r from-transparent via-cyan-50/50 to-transparent -translate-x-full group-hover:animate-[shimmer_2s_infinite]" />
               <div className="space-y-3 max-w-2xl relative z-10">
-                <div className="flex items-center gap-2 text-cyan-600 font-mono text-xs uppercase tracking-wider">
-                  <FiShield size={16} className="group-hover:text-cyan-700 transition-colors" /> Security + Resilience
+                <div className="flex items-center gap-2 text-cyan-400 font-mono text-xs uppercase tracking-wider">
+                  <FiShield size={16} className="group-hover:text-cyan-300 transition-colors" /> Security + Resilience
                 </div>
-                <h4 className="text-2xl font-semibold text-zinc-900">Designed for Distributed Infrastructure</h4>
-                <p className="text-sm text-zinc-600 leading-relaxed font-normal">
+                <h4 className="text-2xl font-semibold text-white">Designed for Distributed Infrastructure</h4>
+                <p className="text-sm text-white/70 leading-relaxed font-normal">
                   Connected mobility operates across public environments, variable networks and geographically distributed endpoints. VMOVEXA incorporates security, OTA management, offline caching and controlled cloud-to-edge communication within the architecture.
                 </p>
               </div>

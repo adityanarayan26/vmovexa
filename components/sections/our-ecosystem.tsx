@@ -63,7 +63,7 @@ const row2Items: EcosystemCard[] = [
     title: "Revenue-Generating Emergency Exit Ecosystem",
     desc: "Safety first. Designed to save. Built to earn.",
     image: "/ecosystem/1.jpg",
-    layout: "text-top",
+    layout: "image-top",
     features: [
       "Enhances Safety",
       "Generates Revenue",
@@ -77,7 +77,7 @@ const row2Items: EcosystemCard[] = [
     subTag: "REAR FLEET MEDIA MATRIX",
     title: "Safety When It Matters. Value Always",
     desc: "Turn every exit into opportunity, even in an emergency.",
-    image: "/ecosystem/2.jpg",
+    image: "/ecosystem/vmovexa-rear-emergency.jpg",
     layout: "image-top",
   },
   {
@@ -171,7 +171,7 @@ function CardItem({ card }: { card: EcosystemCard }) {
               alt={card.title}
               fill
               sizes="(max-width: 768px) 100vw, 400px"
-              className="object-cover group-hover/card:scale-[1.03] transition-transform duration-700 ease-out z-0"
+              className={`group-hover/card:scale-[1.03] transition-transform duration-700 ease-out z-0 ${card.id === "set1-card-2" ? "object-contain p-2" : "object-cover"}`}
             />
             <div className="absolute inset-0 bg-gradient-to-t from-[#050508]/80 via-transparent to-transparent pointer-events-none z-10" />
           </div>
@@ -185,7 +185,7 @@ function CardItem({ card }: { card: EcosystemCard }) {
               alt={card.title}
               fill
               sizes="(max-width: 768px) 100vw, 400px"
-              className="object-cover group-hover/card:scale-[1.03] transition-transform duration-700 ease-out z-0"
+              className={`group-hover/card:scale-[1.03] transition-transform duration-700 ease-out z-0 ${card.id === "set1-card-2" ? "object-contain p-2" : "object-cover"}`}
             />
             <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-[#050508]/80 pointer-events-none z-10" />
           </div>
