@@ -665,7 +665,7 @@ export default function HomePage() {
                 <div className="relative group rounded-2xl overflow-hidden border border-zinc-200 bg-zinc-50 shadow-sm">
                   <MediaSlot
                     type="image"
-                    src="/images/vmovexa-technology-bus-xray.PNG"
+                    src="/images/5.jpg"
                     alt="VMOVEXA In-Vehicle Edge Compute Architecture"
                     badge="VMOVEXA CORE Hardware Runtime"
                     caption="In-Vehicle Sensor Bus • CAN-Bus Telemetry • Display Processor Array"
