@@ -285,7 +285,7 @@ export default function IndustriesPage() {
                 
                 <g id="micro-bus">
                   {/* Realistic Side-Profile Bus Icon centered and scaled up */}
-                  <path d="M 2 12 L 2 5 C 2 4 3 3 4 3 L 19 3 C 21.5 3 23 4.5 23 7 L 23 12 C 23 13 22 14 21 14 L 19 14 A 2 2 0 0 0 15 14 L 9 14 A 2 2 0 0 0 5 14 L 3 14 C 2.5 14 2 13.5 2 12 Z M 17 14 A 2 2 0 1 1 17 18 A 2 2 0 0 1 17 14 Z M 7 14 A 2 2 0 1 1 7 18 A 2 2 0 0 1 7 14 Z M 4 5 L 12 5 L 12 9 L 4 9 Z M 13 5 L 18 5 C 19 5 20 6 21 7 L 21 9 L 13 9 Z" transform="scale(1.2) translate(-12, -12)" filter="url(#glow)" />
+                  <path d="M 2 12 L 2 5 C 2 4 3 3 4 3 L 19 3 C 21.5 3 23 4.5 23 7 L 23 12 C 23 13 22 14 21 14 L 19 14 A 2 2 0 0 0 15 14 L 9 14 A 2 2 0 0 0 5 14 L 3 14 C 2.5 14 2 13.5 2 12 Z M 17 14 A 2 2 0 1 1 17 18 A 2 2 0 0 1 17 14 Z M 7 14 A 2 2 0 1 1 7 18 A 2 2 0 0 1 7 14 Z M 4 5 L 12 5 L 12 9 L 4 9 Z M 13 5 L 18 5 C 19 5 20 6 21 7 L 21 9 L 13 9 Z" transform="scale(1.2) translate(-12, -18.5)" filter="url(#glow)" />
                 </g>
               </defs>
 
