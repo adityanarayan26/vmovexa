@@ -900,24 +900,26 @@ export default function HomePage() {
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
             {[
-              { title: "Public Awareness", desc: "Reach millions of citizens instantly.", icon: FiGlobe, color: "text-blue-600", bg: "bg-blue-50", border: "border-blue-100" },
-              { title: "Disaster Alerts", desc: "Real-time emergency notifications.", icon: FiAlertTriangle, color: "text-rose-600", bg: "bg-rose-50", border: "border-rose-100" },
-              { title: "Election Campaigns", desc: "Democratic engagement at scale.", icon: FiUsers, color: "text-indigo-600", bg: "bg-indigo-50", border: "border-indigo-100" },
-              { title: "Tourism Promotion", desc: "Showcase destinations to travellers.", icon: FiMap, color: "text-emerald-600", bg: "bg-emerald-50", border: "border-emerald-100" },
-              { title: "Traffic Advisory", desc: "Smart route guidance for commuters.", icon: FiNavigation, color: "text-amber-600", bg: "bg-amber-50", border: "border-amber-100" },
-              { title: "Citizen Engagement", desc: "Two-way government communication.", icon: FiMessageCircle, color: "text-cyan-600", bg: "bg-cyan-50", border: "border-cyan-100" },
-              { title: "Emergency Comm.", desc: "Critical alerts when it matters.", icon: FiShield, color: "text-red-600", bg: "bg-red-50", border: "border-red-100" },
-              { title: "Health Campaigns", desc: "Public health awareness drives.", icon: FiHeart, color: "text-pink-600", bg: "bg-pink-50", border: "border-pink-100" },
+              { title: "Public Awareness", desc: "Reach millions of citizens instantly.", icon: FiGlobe, color: "text-blue-600", hoverText: "group-hover:text-blue-600", viaColor: "via-blue-500", bg: "bg-blue-50", border: "border-blue-100", hoverBorder: "hover:border-blue-200", hoverShadow: "hover:shadow-[0_8px_30px_rgb(37,99,235,0.12)]" },
+              { title: "Disaster Alerts", desc: "Real-time emergency notifications.", icon: FiAlertTriangle, color: "text-rose-600", hoverText: "group-hover:text-rose-600", viaColor: "via-rose-500", bg: "bg-rose-50", border: "border-rose-100", hoverBorder: "hover:border-rose-200", hoverShadow: "hover:shadow-[0_8px_30px_rgb(225,29,72,0.12)]" },
+              { title: "Election Campaigns", desc: "Democratic engagement at scale.", icon: FiUsers, color: "text-indigo-600", hoverText: "group-hover:text-indigo-600", viaColor: "via-indigo-500", bg: "bg-indigo-50", border: "border-indigo-100", hoverBorder: "hover:border-indigo-200", hoverShadow: "hover:shadow-[0_8px_30px_rgb(79,70,229,0.12)]" },
+              { title: "Tourism Promotion", desc: "Showcase destinations to travellers.", icon: FiMap, color: "text-emerald-600", hoverText: "group-hover:text-emerald-600", viaColor: "via-emerald-500", bg: "bg-emerald-50", border: "border-emerald-100", hoverBorder: "hover:border-emerald-200", hoverShadow: "hover:shadow-[0_8px_30px_rgb(16,185,129,0.12)]" },
+              { title: "Traffic Advisory", desc: "Smart route guidance for commuters.", icon: FiNavigation, color: "text-amber-600", hoverText: "group-hover:text-amber-600", viaColor: "via-amber-500", bg: "bg-amber-50", border: "border-amber-100", hoverBorder: "hover:border-amber-200", hoverShadow: "hover:shadow-[0_8px_30px_rgb(245,158,11,0.12)]" },
+              { title: "Citizen Engagement", desc: "Two-way government communication.", icon: FiMessageCircle, color: "text-cyan-600", hoverText: "group-hover:text-cyan-600", viaColor: "via-cyan-500", bg: "bg-cyan-50", border: "border-cyan-100", hoverBorder: "hover:border-cyan-200", hoverShadow: "hover:shadow-[0_8px_30px_rgb(6,182,212,0.12)]" },
+              { title: "Emergency Comm.", desc: "Critical alerts when it matters.", icon: FiShield, color: "text-red-600", hoverText: "group-hover:text-red-600", viaColor: "via-red-500", bg: "bg-red-50", border: "border-red-100", hoverBorder: "hover:border-red-200", hoverShadow: "hover:shadow-[0_8px_30px_rgb(220,38,38,0.12)]" },
+              { title: "Health Campaigns", desc: "Public health awareness drives.", icon: FiHeart, color: "text-pink-600", hoverText: "group-hover:text-pink-600", viaColor: "via-pink-500", bg: "bg-pink-50", border: "border-pink-100", hoverBorder: "hover:border-pink-200", hoverShadow: "hover:shadow-[0_8px_30px_rgb(219,39,119,0.12)]" },
             ].map((app, idx) => {
               const Icon = app.icon;
               return (
                 <GsapScrollReveal key={app.title} delay={idx * 0.05} className="h-full">
-                  <div className="p-6 rounded-2xl bg-zinc-50 border border-zinc-200 hover:border-zinc-300 hover:shadow-sm transition-all h-full flex flex-col group relative overflow-hidden">
-                    <div className="absolute inset-0 bg-gradient-to-b from-white to-transparent opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none" />
-                    <div className={`w-10 h-10 rounded-xl flex items-center justify-center mb-5 ${app.bg} ${app.border} border`}>
+                  <div className={`p-6 rounded-2xl bg-white border border-zinc-200 ${app.hoverBorder} ${app.hoverShadow} hover:-translate-y-1.5 transition-all duration-500 h-full flex flex-col group relative overflow-hidden cursor-default`}>
+                    {/* Glowing Top Line */}
+                    <div className={`absolute top-0 left-0 w-full h-[3px] bg-gradient-to-r from-transparent ${app.viaColor} to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500`} />
+                    
+                    <div className={`w-11 h-11 rounded-xl flex items-center justify-center mb-5 ${app.bg} ${app.border} border group-hover:scale-110 group-hover:rotate-3 transition-transform duration-500`}>
                       <Icon className={`w-5 h-5 ${app.color}`} />
                     </div>
-                    <h3 className="text-zinc-900 font-semibold text-base mb-2 group-hover:text-blue-600 transition-colors">{app.title}</h3>
+                    <h3 className={`text-zinc-900 font-semibold text-base mb-2 ${app.hoverText} transition-colors duration-300`}>{app.title}</h3>
                     <p className="text-zinc-600 text-sm leading-relaxed font-light">{app.desc}</p>
                   </div>
                 </GsapScrollReveal>
