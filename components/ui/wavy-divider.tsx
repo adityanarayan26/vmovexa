@@ -8,7 +8,7 @@ const variants = {
 };
 
 export function WavyDivider({ 
-  className = "", 
+  className = "",
   fill = "fill-white",
   variant = 1 
 }: { 

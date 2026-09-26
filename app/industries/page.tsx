@@ -10,8 +10,6 @@ import { TextDecrypt } from "@/components/animations/text-decrypt";
 import { BlurReveal } from "@/components/animations/blur-reveal";
 import { ImageCurtainReveal, FloatingElement } from "@/components/animations/image-reveal";
 import { TiltCard } from "@/components/animations/tilt-card";
-import { WavyDivider } from "@/components/ui/wavy-divider";
-
 export const metadata: Metadata = {
   title: "VMOVEXA Industries | Connected Mobility Across Sectors",
   description:
@@ -262,12 +260,6 @@ export default function IndustriesPage() {
           </GsapScrollReveal>
         </div>
         
-        {/* Wavy Transition to White Section */}
-        {/* Spacer to prevent wave from covering content */}
-        <div className="w-full h-[30px] sm:h-[50px] lg:h-[70px] pointer-events-none" />
-        <div className="absolute bottom-0 left-0 right-0 w-full pointer-events-none translate-y-[1px] z-10">
-          <WavyDivider fill="fill-white" />
-        </div>
       </section>
 
       {/* 02 — 9 SECTORS GRID */}
@@ -312,12 +304,6 @@ export default function IndustriesPage() {
           </div>
         </div>
         
-        {/* Wavy Transition to Black Section */}
-        {/* Spacer to prevent wave from covering content */}
-        <div className="w-full h-[30px] sm:h-[50px] lg:h-[70px] pointer-events-none" />
-        <div className="absolute bottom-0 left-0 right-0 w-full pointer-events-none translate-y-[1px] z-10">
-          <WavyDivider fill="fill-black" variant={1} />
-        </div>
       </section>
 
       {/* CTA */}

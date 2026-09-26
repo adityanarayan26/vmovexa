@@ -40,8 +40,6 @@ import { WhatIsVmovexaSection } from "@/components/sections/what-is-vmovexa";
 import { WhyVmovexaSection } from "@/components/sections/why-vmovexa";
 import { OurEcosystemSection } from "@/components/sections/our-ecosystem";
 import { BlueprintFlowAnimation } from "@/components/visuals/blueprint-flow";
-import { WavyDivider } from "@/components/ui/wavy-divider";
-
 export const metadata: Metadata = {
   title: "VMOVEXA | Cloud-to-Edge Mobility Intelligence Platform",
   description:
@@ -515,12 +513,6 @@ export default function HomePage() {
           </div>
         </div>
         
-        {/* Wavy Transition to Black Section */}
-        {/* Spacer to prevent wave from covering content */}
-        <div className="w-full h-[30px] sm:h-[50px] lg:h-[70px] pointer-events-none" />
-        <div className="absolute bottom-0 left-0 right-0 w-full pointer-events-none translate-y-[1px] z-10">
-          <WavyDivider fill="fill-black" variant={2} />
-        </div>
       </section>
 
       {/* ========================================================================= */}
@@ -620,12 +612,6 @@ export default function HomePage() {
           </GsapScrollReveal>
         </div>
         
-        {/* Wavy Transition to White Section */}
-        {/* Spacer to prevent wave from covering content */}
-        <div className="w-full h-[30px] sm:h-[50px] lg:h-[70px] pointer-events-none" />
-        <div className="absolute bottom-0 left-0 right-0 w-full pointer-events-none translate-y-[1px] z-10">
-          <WavyDivider fill="fill-white" variant={3} />
-        </div>
       </section>
 
       {/* ========================================================================= */}
@@ -707,12 +693,6 @@ export default function HomePage() {
           </div>
         </div>
         
-        {/* Wavy Transition to Black Section */}
-        {/* Spacer to prevent wave from covering content */}
-        <div className="w-full h-[30px] sm:h-[50px] lg:h-[70px] pointer-events-none" />
-        <div className="absolute bottom-0 left-0 right-0 w-full pointer-events-none translate-y-[1px] z-10">
-          <WavyDivider fill="fill-black" variant={1} />
-        </div>
       </section>
 
       {/* ========================================================================= */}
@@ -748,12 +728,6 @@ export default function HomePage() {
           </GsapScrollReveal>
         </div>
         
-        {/* Wavy Transition to White Section */}
-        {/* Spacer to prevent wave from covering content */}
-        <div className="w-full h-[30px] sm:h-[50px] lg:h-[70px] pointer-events-none" />
-        <div className="absolute bottom-0 left-0 right-0 w-full pointer-events-none translate-y-[1px] z-10">
-          <WavyDivider fill="fill-white" variant={2} />
-        </div>
       </section>
 
       {/* ========================================================================= */}
@@ -814,12 +788,6 @@ export default function HomePage() {
 
         </div>
         
-        {/* Wavy Transition to Black Section */}
-        {/* Spacer to prevent wave from covering content */}
-        <div className="w-full h-[30px] sm:h-[50px] lg:h-[70px] pointer-events-none" />
-        <div className="absolute bottom-0 left-0 right-0 w-full pointer-events-none translate-y-[1px] z-10">
-          <WavyDivider fill="fill-black" variant={3} />
-        </div>
       </section>
 
       {/* ========================================================================= */}
@@ -1137,12 +1105,6 @@ export default function HomePage() {
           </div>
         </div>
         
-        {/* Wavy Transition to White Section */}
-        {/* Spacer to prevent wave from covering content */}
-        <div className="w-full h-[30px] sm:h-[50px] lg:h-[70px] pointer-events-none" />
-        <div className="absolute bottom-0 left-0 right-0 w-full pointer-events-none translate-y-[1px] z-10">
-          <WavyDivider fill="fill-white" variant={1} />
-        </div>
       </section>
 
       {/* ========================================================================= */}
@@ -1231,12 +1193,6 @@ export default function HomePage() {
           </EditorialLine>
         </div>
         
-        {/* Wavy Transition to Black Footer */}
-        {/* Spacer to prevent wave from covering content */}
-        <div className="w-full h-[30px] sm:h-[50px] lg:h-[70px] pointer-events-none" />
-        <div className="absolute bottom-0 left-0 right-0 w-full pointer-events-none translate-y-[1px] z-10">
-          <WavyDivider fill="fill-black" variant={4} />
-        </div>
       </section>
     </main>
   );

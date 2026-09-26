@@ -11,7 +11,6 @@ import { PatentsAndCerts } from "@/components/visuals/patents-and-certs";
 import { TextDecrypt } from "@/components/animations/text-decrypt";
 import { BlurReveal } from "@/components/animations/blur-reveal";
 import { TiltCard } from "@/components/animations/tilt-card";
-import { WavyDivider } from "@/components/ui/wavy-divider";
 import { FloatingElement } from "@/components/animations/image-reveal";
 
 export const metadata: Metadata = {
@@ -194,12 +193,6 @@ export default function CompanyPage() {
           </GsapScrollReveal>
         </div>
         
-        {/* Wavy Transition to White Section */}
-        {/* Spacer to prevent wave from covering content */}
-        <div className="w-full h-[30px] sm:h-[50px] lg:h-[70px] pointer-events-none" />
-        <div className="absolute bottom-0 left-0 right-0 w-full pointer-events-none translate-y-[1px] z-10">
-          <WavyDivider fill="fill-white" variant={1} />
-        </div>
       </section>
 
       {/* 02 — LEADERSHIP (Matching Klee Technologies Design) */}
@@ -257,12 +250,6 @@ export default function CompanyPage() {
           </div>
         </div>
         
-        {/* Wavy Transition to Black Section */}
-        {/* Spacer to prevent wave from covering content */}
-        <div className="w-full h-[30px] sm:h-[50px] lg:h-[70px] pointer-events-none" />
-        <div className="absolute bottom-0 left-0 right-0 w-full pointer-events-none translate-y-[1px] z-10">
-          <WavyDivider fill="fill-black" variant={1} />
-        </div>
       </section>
 
       {/* 03 — DETAILED TABS & COMPANY ECOSYSTEM */}

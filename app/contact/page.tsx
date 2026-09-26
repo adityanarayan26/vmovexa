@@ -7,7 +7,6 @@ import { Reveal } from "@/components/animations/reveal";
 import { CubertoLines } from "@/components/animations/cuberto-text-reveal";
 import { TextDecrypt } from "@/components/animations/text-decrypt";
 import { BlurReveal } from "@/components/animations/blur-reveal";
-import { WavyDivider } from "@/components/ui/wavy-divider";
 import { TiltCard } from "@/components/animations/tilt-card";
 import { site } from "@/lib/site";
 
@@ -162,12 +161,6 @@ export default function ContactPage() {
           </BlurReveal>
         </div>
         
-        {/* Wavy Transition to Light Section */}
-        {/* Spacer to prevent wave from covering content */}
-        <div className="w-full h-[30px] sm:h-[50px] lg:h-[70px] pointer-events-none" />
-        <div className="absolute bottom-0 left-0 right-0 w-full pointer-events-none translate-y-[1px] z-10">
-          <WavyDivider fill="fill-[#fafaff]" variant={1} />
-        </div>
       </section>
 
       {/* 02 — 4 CONTACT TRACKS */}
@@ -299,12 +292,6 @@ export default function ContactPage() {
           </div>
         </div>
         
-        {/* Wavy Transition to Black Section */}
-        {/* Spacer to prevent wave from covering content */}
-        <div className="w-full h-[30px] sm:h-[50px] lg:h-[70px] pointer-events-none" />
-        <div className="absolute bottom-0 left-0 right-0 w-full pointer-events-none translate-y-[1px] z-10">
-          <WavyDivider fill="fill-black" variant={2} />
-        </div>
       </section>
 
       {/* 03 — CONTACT FORM & DIRECT INFO */}
@@ -473,12 +460,6 @@ export default function ContactPage() {
           </div>
         </div>
         
-        {/* Wavy Transition to Black Footer */}
-        {/* Spacer to prevent wave from covering content */}
-        <div className="w-full h-[30px] sm:h-[50px] lg:h-[70px] pointer-events-none" />
-        <div className="absolute bottom-0 left-0 right-0 w-full pointer-events-none translate-y-[1px] z-10">
-          <WavyDivider fill="fill-black" variant={3} />
-        </div>
       </section>
     </main>
   );

@@ -22,8 +22,6 @@ import { TextDecrypt } from "@/components/animations/text-decrypt";
 import { BlurReveal } from "@/components/animations/blur-reveal";
 import { TiltCard } from "@/components/animations/tilt-card";
 import { FloatingElement } from "@/components/animations/image-reveal";
-import { WavyDivider } from "@/components/ui/wavy-divider";
-
 export const metadata: Metadata = {
   title: "VMOVEXA Technology | Edge Computing, IoT & Connected Mobility",
   description:
@@ -177,12 +175,6 @@ export default function TechnologyPage() {
           </GsapScrollReveal>
         </div>
         
-        {/* Wavy Transition to White Section */}
-        {/* Spacer to prevent wave from covering content */}
-        <div className="w-full h-[30px] sm:h-[50px] lg:h-[70px] pointer-events-none" />
-        <div className="absolute bottom-0 left-0 right-0 w-full pointer-events-none translate-y-[1px] z-10">
-          <WavyDivider fill="fill-white" variant={4} />
-        </div>
       </section>
 
       {/* 02 — DETAILED ARCHITECTURE SPECIFICATIONS */}
@@ -244,12 +236,6 @@ export default function TechnologyPage() {
               </div>
             </div>
           </GsapScrollReveal>
-        </div>
-        {/* Wavy Transition to Black Section */}
-        {/* Spacer to prevent wave from covering content */}
-        <div className="w-full h-[30px] sm:h-[50px] lg:h-[70px] pointer-events-none" />
-        <div className="absolute bottom-0 left-0 right-0 w-full pointer-events-none translate-y-[1px] z-10">
-          <WavyDivider fill="fill-black" variant={3} />
         </div>
       </section>
 
@@ -381,12 +367,6 @@ export default function TechnologyPage() {
           </div>
         </div>
 
-        {/* Wavy Transition to White Section */}
-        {/* Spacer to prevent wave from covering content */}
-        <div className="w-full h-[30px] sm:h-[50px] lg:h-[70px] pointer-events-none" />
-        <div className="absolute bottom-0 left-0 right-0 w-full pointer-events-none translate-y-[1px] z-10">
-          <WavyDivider fill="fill-white" variant={2} />
-        </div>
       </section>
 
       {/* 04 — TELEMETRY & MULTI-SCREEN */}
@@ -513,12 +493,6 @@ export default function TechnologyPage() {
           </GsapScrollReveal>
         </div>
         
-        {/* Wavy Transition to Black Section */}
-        {/* Spacer to prevent wave from covering content */}
-        <div className="w-full h-[30px] sm:h-[50px] lg:h-[70px] pointer-events-none" />
-        <div className="absolute bottom-0 left-0 right-0 w-full pointer-events-none translate-y-[1px] z-10">
-          <WavyDivider fill="fill-black" variant={1} />
-        </div>
       </section>
 
       {/* 05 — API-READY ARCHITECTURE (BUILT TO CONNECT) */}
@@ -598,12 +572,6 @@ export default function TechnologyPage() {
           </GsapScrollReveal>
         </div>
         
-        {/* Wavy Transition to White Section */}
-        {/* Spacer to prevent wave from covering content */}
-        <div className="w-full h-[30px] sm:h-[50px] lg:h-[70px] pointer-events-none" />
-        <div className="absolute bottom-0 left-0 right-0 w-full pointer-events-none translate-y-[1px] z-10">
-          <WavyDivider fill="fill-white" variant={1} />
-        </div>
       </section>
 
       {/* CTA — Light / White Background */}
@@ -643,12 +611,6 @@ export default function TechnologyPage() {
           </EditorialLine>
         </div>
         
-        {/* Wavy Transition to Black Footer */}
-        {/* Spacer to prevent wave from covering content */}
-        <div className="w-full h-[30px] sm:h-[50px] lg:h-[70px] pointer-events-none" />
-        <div className="absolute bottom-0 left-0 right-0 w-full pointer-events-none translate-y-[1px] z-10">
-          <WavyDivider fill="fill-black" variant={3} />
-        </div>
       </section>
     </main>
   );

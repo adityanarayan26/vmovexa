@@ -140,109 +140,97 @@ const row2Cards = [...row2Items, ...row2Items];
 
 function CardItem({ card }: { card: EcosystemCard }) {
   return (
-    <div className="w-full p-2 sm:p-2.5 rounded-[24px] bg-[#050508]/80 border border-white/[0.06] hover:border-white/[0.15] transition-all duration-500 flex flex-col group/card hover:shadow-[0_8px_40px_-12px_rgba(168,85,247,0.2)] hover:-translate-y-1.5 relative overflow-hidden backdrop-blur-xl">
+    <div className="w-full rounded-[24px] bg-[#050508]/80 border border-white/[0.06] hover:border-white/[0.15] transition-all duration-500 flex flex-col group/card hover:shadow-[0_8px_40px_-12px_rgba(168,85,247,0.2)] hover:-translate-y-1.5 relative overflow-hidden backdrop-blur-xl">
       {/* Corner Ambient Glow */}
       <div className="absolute -top-20 -right-20 w-56 h-56 bg-gradient-to-br from-cyan-500/15 via-purple-500/10 to-transparent blur-3xl opacity-0 group-hover/card:opacity-100 transition-opacity duration-700 pointer-events-none" />
 
-      <div className="p-3 sm:p-4 h-full flex flex-col relative z-10">
-        {card.layout === "text-top" ? (
-          <>
-            {/* Header text content */}
-            <div className="mb-4 shrink-0">
-              <div className="flex items-center justify-between mb-3">
-                <span className="font-mono text-[9px] tracking-widest text-cyan-300 uppercase px-3 py-1 rounded-full bg-cyan-950/40 border border-cyan-500/30 shadow-[0_0_12px_rgba(6,182,212,0.15)] flex items-center gap-1.5">
-                  <span className="w-1.5 h-1.5 rounded-full bg-cyan-400 animate-pulse" />
-                  {card.badge}
-                </span>
-                <span className="w-2 h-2 rounded-full bg-white/10 group-hover/card:bg-purple-400 transition-colors duration-500" />
+      {card.layout === "text-top" ? (
+        <>
+          {/* Header text content */}
+          <div className="p-6 sm:p-8 shrink-0 relative z-10">
+            <div className="flex items-center justify-between mb-4">
+              <span className="font-mono text-[9px] tracking-widest text-cyan-300 uppercase flex items-center gap-2">
+                <span className="w-1.5 h-1.5 rounded-full bg-cyan-400 animate-pulse" />
+                {card.badge}
+              </span>
+            </div>
+            
+            <h3 className="text-[22px] sm:text-[26px] font-heading font-semibold text-white tracking-tight leading-snug mb-3 group-hover/card:text-cyan-50 transition-colors">
+              {card.title}
+            </h3>
+            <p className="text-[13px] sm:text-[15px] text-zinc-400 font-light leading-relaxed">
+              {card.desc}
+            </p>
+
+            {/* Optional Feature Badges */}
+            {card.features && (
+              <div className="flex flex-wrap gap-2 mt-5">
+                {card.features.map((feat, i) => (
+                  <div
+                    key={feat}
+                    className="flex items-center gap-1.5 text-[10px] font-mono text-zinc-300 bg-white/[0.03] px-3 py-1.5 rounded-full border border-white/[0.05]"
+                  >
+                    {i === 0 && <FiShield className="text-cyan-400 w-3 h-3 shrink-0" />}
+                    {i === 1 && <FiTrendingUp className="text-purple-400 w-3 h-3 shrink-0" />}
+                    {i === 2 && <FiCpu className="text-pink-400 w-3 h-3 shrink-0" />}
+                    {i === 3 && <FiCheckCircle className="text-emerald-400 w-3 h-3 shrink-0" />}
+                    <span>{feat}</span>
+                  </div>
+                ))}
               </div>
-              
-              {card.subTag && (
-                <div className="text-[9px] font-mono text-zinc-500 uppercase tracking-[0.15em] mb-1.5">
-                  {card.subTag}
-                </div>
-              )}
+            )}
+          </div>
 
-              <h3 className="text-[15px] sm:text-[17px] font-heading font-semibold text-white tracking-tight leading-snug mb-1.5 group-hover/card:text-cyan-50 transition-colors">
-                {card.title}
-              </h3>
-              <p className="text-[11px] sm:text-xs text-zinc-400 font-light leading-relaxed">
-                {card.desc}
-              </p>
+          {/* Seamless Media slot */}
+          <div className="relative w-full aspect-[4/3] mt-auto">
+            <Image
+              src={card.image}
+              alt={card.title}
+              fill
+              sizes="(max-width: 768px) 100vw, 400px"
+              className="object-cover group-hover/card:scale-[1.03] transition-transform duration-700 ease-out z-0"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-[#050508]/80 via-transparent to-transparent pointer-events-none z-10" />
+          </div>
+        </>
+      ) : (
+        <>
+          {/* Seamless Media slot on top */}
+          <div className="relative w-full aspect-[4/3]">
+            <Image
+              src={card.image}
+              alt={card.title}
+              fill
+              sizes="(max-width: 768px) 100vw, 400px"
+              className="object-cover group-hover/card:scale-[1.03] transition-transform duration-700 ease-out z-0"
+            />
+            <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-[#050508]/80 pointer-events-none z-10" />
+          </div>
 
-              {/* Optional Feature Badges */}
-              {card.features && (
-                <div className="flex flex-wrap gap-1.5 mt-3 pt-3 border-t border-white/[0.06]">
-                  {card.features.map((feat, i) => (
-                    <div
-                      key={feat}
-                      className="flex items-center gap-1.5 text-[9.5px] font-mono text-zinc-300 bg-white/[0.03] px-2 py-1 rounded-md border border-white/[0.05]"
-                    >
-                      {i === 0 && <FiShield className="text-cyan-400 w-3 h-3 shrink-0" />}
-                      {i === 1 && <FiTrendingUp className="text-purple-400 w-3 h-3 shrink-0" />}
-                      {i === 2 && <FiCpu className="text-pink-400 w-3 h-3 shrink-0" />}
-                      {i === 3 && <FiCheckCircle className="text-emerald-400 w-3 h-3 shrink-0" />}
-                      <span>{feat}</span>
-                    </div>
-                  ))}
-                </div>
-              )}
+          {/* Bottom text content */}
+          <div className="p-6 sm:p-8 shrink-0 flex flex-col justify-end relative z-10 mt-[-20px]">
+            <div className="flex items-center justify-between mb-4">
+              <span className="font-mono text-[9px] tracking-widest text-purple-300 uppercase flex items-center gap-2">
+                <span className="w-1.5 h-1.5 rounded-full bg-purple-400 animate-pulse" />
+                {card.badge}
+              </span>
             </div>
 
-            {/* Premium Media slot */}
-            <div className="relative w-full aspect-[4/3] rounded-[16px] overflow-hidden bg-black border border-white/[0.04] group-hover/card:border-white/[0.12] transition-all duration-500 flex items-center justify-center mt-auto">
-              <div className="absolute inset-0 shadow-[inset_0_1px_1px_rgba(255,255,255,0.05)] pointer-events-none z-10" />
-              
-              <Image
-                src={card.image}
-                alt={card.title}
-                fill
-                sizes="(max-width: 768px) 100vw, 400px"
-                className="object-contain group-hover/card:scale-[1.05] transition-transform duration-700 ease-out z-0"
-              />
-            </div>
-          </>
-        ) : (
-          <>
-            {/* Premium Media slot on top */}
-            <div className="relative w-full aspect-[4/3] rounded-[16px] overflow-hidden bg-black border border-white/[0.04] group-hover/card:border-white/[0.12] transition-all duration-500 mb-5 flex items-center justify-center">
-              <div className="absolute inset-0 shadow-[inset_0_1px_1px_rgba(255,255,255,0.05)] pointer-events-none z-10" />
-              
-              <Image
-                src={card.image}
-                alt={card.title}
-                fill
-                sizes="(max-width: 768px) 100vw, 400px"
-                className="object-contain group-hover/card:scale-[1.05] transition-transform duration-700 ease-out z-0"
-              />
-            </div>
-
-            {/* Bottom text content */}
-            <div className="shrink-0 flex flex-col justify-end">
-              <div className="flex items-center justify-between mb-3">
-                <span className="font-mono text-[9px] tracking-widest text-purple-300 uppercase px-3 py-1 rounded-full bg-purple-950/40 border border-purple-500/30 shadow-[0_0_12px_rgba(168,85,247,0.15)] flex items-center gap-1.5">
-                  <span className="w-1.5 h-1.5 rounded-full bg-purple-400 animate-pulse" />
-                  {card.badge}
-                </span>
-                <span className="w-2 h-2 rounded-full bg-white/10 group-hover/card:bg-cyan-400 transition-colors duration-500" />
+            {card.subTag && (
+              <div className="text-[10px] font-mono text-zinc-500 uppercase tracking-[0.15em] mb-2">
+                {card.subTag}
               </div>
+            )}
 
-              {card.subTag && (
-                <div className="text-[9px] font-mono text-zinc-500 uppercase tracking-[0.15em] mb-1.5">
-                  {card.subTag}
-                </div>
-              )}
-
-              <h3 className="text-[15px] sm:text-[17px] font-heading font-semibold text-white tracking-tight leading-snug mb-1.5 group-hover/card:text-cyan-50 transition-colors">
-                {card.title}
-              </h3>
-              <p className="text-[11px] sm:text-xs text-zinc-400 font-light leading-relaxed">
-                {card.desc}
-              </p>
-            </div>
-          </>
-        )}
-      </div>
+            <h3 className="text-[22px] sm:text-[26px] font-heading font-semibold text-white tracking-tight leading-snug mb-3 group-hover/card:text-cyan-50 transition-colors">
+              {card.title}
+            </h3>
+            <p className="text-[13px] sm:text-[15px] text-zinc-400 font-light leading-relaxed">
+              {card.desc}
+            </p>
+          </div>
+        </>
+      )}
     </div>
   );
 }
@@ -283,23 +271,17 @@ export function OurEcosystemSection() {
         </EditorialLine>
       </div>
 
-      {/* Beautiful Masonry Grid */}
-      <div className="container max-w-[1400px] mx-auto px-6 relative z-10 pb-16">
-        <div className="columns-1 md:columns-2 lg:columns-3 xl:columns-4 gap-6 space-y-6">
+      {/* Structured Grid */}
+      <div className="container max-w-[1200px] mx-auto px-6 relative z-10 pb-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {[...row1Items, ...row2Items].map((card, idx) => (
-            <div key={`card-${card.id}-${idx}`} className="break-inside-avoid">
+            <div key={`card-${card.id}-${idx}`}>
               <CardItem card={card} />
             </div>
           ))}
         </div>
       </div>
 
-      {/* Wavy Transition to White Section */}
-      {/* Spacer to prevent wave from covering content */}
-      <div className="w-full h-[30px] sm:h-[50px] lg:h-[70px] pointer-events-none" />
-      <div className="absolute bottom-0 left-0 right-0 w-full pointer-events-none translate-y-[1px] z-10">
-        <WavyDivider fill="fill-white" variant={3} />
-      </div>
     </section>
   );
 }

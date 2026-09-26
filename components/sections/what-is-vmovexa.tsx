@@ -18,8 +18,6 @@ import { EditorialLine } from "@/components/animations/editorial-text";
 import { GsapScrollReveal } from "@/components/animations/gsap-scroll-fx";
 import { BlurReveal } from "@/components/animations/blur-reveal";
 import { TiltCard } from "@/components/animations/tilt-card";
-import { WavyDivider } from "@/components/ui/wavy-divider";
-
 const pillars = [
   {
     title: "Cloud intelligence.",
@@ -297,12 +295,6 @@ export function WhatIsVmovexaSection() {
         </GsapScrollReveal>
       </div>
       
-      {/* Wavy Transition to Black Section */}
-      {/* Spacer to prevent wave from covering content */}
-      <div className="w-full h-[30px] sm:h-[50px] lg:h-[70px] pointer-events-none" />
-      <div className="absolute bottom-0 left-0 right-0 w-full pointer-events-none translate-y-[1px] z-10">
-        <WavyDivider fill="fill-black" variant={2} />
-      </div>
     </section>
   );
 }
