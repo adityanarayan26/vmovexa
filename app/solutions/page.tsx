@@ -10,6 +10,7 @@ import { TextDecrypt } from "@/components/animations/text-decrypt";
 import { BlurReveal } from "@/components/animations/blur-reveal";
 import { ImageCurtainReveal, FloatingElement } from "@/components/animations/image-reveal";
 import { TiltCard } from "@/components/animations/tilt-card";
+import { WavyDivider } from "@/components/ui/wavy-divider";
 
 export const metadata: Metadata = {
   title: "VMOVEXA Mobility Solutions | Fleet, Media & Smart City Technology",
@@ -47,7 +48,7 @@ export default function SolutionsPage() {
   return (
     <main className="min-h-screen bg-black text-white">
       {/* 01 — HERO (Mockup Screen 04: SOLUTIONS) */}
-      <section className="relative pt-36 pb-20 overflow-hidden border-b border-white/[0.08] bg-black">
+      <section className="relative pt-36 pb-20 overflow-hidden bg-black">
         <div className="container relative z-10 max-w-7xl mx-auto px-6">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start mb-14">
             <div className="lg:col-span-10">
@@ -62,7 +63,7 @@ export default function SolutionsPage() {
 
               <CubertoLines
                 as="h1"
-                className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight leading-[1.1] max-w-4xl mb-6 text-white uppercase"
+                className="text-4xl sm:text-5xl lg:text-7xl font-extrabold tracking-tight leading-[1.05] max-w-4xl mb-6 text-white uppercase"
                 delay={0.15}
                 lines={[
                   "Technology that moves with",
@@ -152,17 +153,28 @@ export default function SolutionsPage() {
               </GsapScrollReveal>
             ))}
           </div>
+        </div>
+        {/* Wavy Transition to White Section */}
+        {/* Spacer to prevent wave from covering content */}
+        <div className="w-full h-[30px] sm:h-[50px] lg:h-[70px] pointer-events-none" />
+        <div className="absolute bottom-0 left-0 right-0 w-full pointer-events-none translate-y-[1px] z-10">
+          <WavyDivider fill="fill-white" variant={3} />
+        </div>
+      </section>
 
-          {/* Bottom Bar: WHAT WILL YOU BUILD ON THE MOVING EDGE? + Talk to VMOVEXA -> */}
-          <GsapScrollReveal delay={0.4}>
-            <div className="p-8 rounded-3xl bg-white border border-zinc-200 flex flex-col sm:flex-row items-center justify-between gap-6 shadow-xl backdrop-blur-md">
-              <div className="font-mono text-sm sm:text-base tracking-wider text-zinc-800 font-bold text-center sm:text-left">
+      {/* Bottom Bar: WHAT WILL YOU BUILD ON THE MOVING EDGE? + Talk to VMOVEXA -> */}
+      <section className="w-full bg-white py-16 relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-r from-transparent via-zinc-100/50 to-transparent -translate-x-full hover:animate-[shimmer_2s_infinite]" />
+        <div className="container max-w-7xl mx-auto px-6 relative z-10">
+          <GsapScrollReveal delay={0.1}>
+            <div className="flex flex-col sm:flex-row items-center justify-between gap-6 group">
+              <div className="font-mono text-xl sm:text-2xl tracking-wider text-zinc-900 font-bold text-center sm:text-left">
                 What will you build on the moving edge?
               </div>
               <MagneticElement strength={0.3}>
                 <Link
                   href="/contact"
-                  className="inline-flex items-center gap-2.5 px-8 py-3.5 rounded-full bg-black text-white font-semibold text-sm tracking-wide transition-all duration-300 hover:scale-[1.02] active:scale-[0.98] shadow-md hover:bg-zinc-800"
+                  className="inline-flex items-center gap-2.5 px-8 py-4 rounded-full bg-black text-white font-semibold text-sm tracking-wide transition-all duration-300 hover:scale-[1.02] active:scale-[0.98] shadow-xl hover:bg-zinc-800"
                 >
                   <span className="text-white font-semibold">Talk to VMOVEXA</span>
                   <FiArrowRight size={16} className="text-white" />
@@ -174,7 +186,7 @@ export default function SolutionsPage() {
       </section>
 
       {/* SOLUTION 01 — FLEET OPERATORS */}
-      <section id="fleet-operators" className="py-20 border-b border-zinc-200 relative overflow-hidden bg-white">
+      <section id="fleet-operators" className="py-20 relative overflow-hidden bg-white">
         <div className="container max-w-6xl mx-auto px-6 relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
             <div className="lg:col-span-6 space-y-5">
@@ -229,10 +241,17 @@ export default function SolutionsPage() {
             </div>
           </div>
         </div>
+        
+        {/* Wavy Transition to Black Section */}
+        {/* Spacer to prevent wave from covering content */}
+        <div className="w-full h-[30px] sm:h-[50px] lg:h-[70px] pointer-events-none" />
+        <div className="absolute bottom-0 left-0 right-0 w-full pointer-events-none translate-y-[1px] z-10">
+          <WavyDivider fill="fill-black" variant={1} />
+        </div>
       </section>
 
       {/* SOLUTION 02 — MOBILITY MEDIA */}
-      <section id="mobility-media" className="py-20 border-b border-white/[0.08] relative overflow-hidden bg-black">
+      <section id="mobility-media" className="py-20 relative overflow-hidden bg-black">
         <div className="container max-w-6xl mx-auto px-6 relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
             <div className="lg:col-span-6 lg:order-2 space-y-5">
@@ -300,7 +319,7 @@ export default function SolutionsPage() {
       </section>
 
       {/* SOLUTION 03 — SMART CITIES */}
-      <section id="smart-cities" className="py-20 border-b border-zinc-200 relative overflow-hidden bg-white">
+      <section id="smart-cities" className="py-20 relative overflow-hidden bg-white">
         <div className="container max-w-6xl mx-auto px-6">
           {/* Smart Cities Overview Grid */}
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
@@ -347,10 +366,17 @@ export default function SolutionsPage() {
             </div>
           </div>
         </div>
+        
+        {/* Wavy Transition to Black Section */}
+        {/* Spacer to prevent wave from covering content */}
+        <div className="w-full h-[30px] sm:h-[50px] lg:h-[70px] pointer-events-none" />
+        <div className="absolute bottom-0 left-0 right-0 w-full pointer-events-none translate-y-[1px] z-10">
+          <WavyDivider fill="fill-black" variant={2} />
+        </div>
       </section>
 
       {/* EMERGENCY OPERATIONS & BROADCASTING COMPONENT */}
-      <section id="emergency-operations" className="py-20 border-b border-white/[0.08] bg-black">
+      <section id="emergency-operations" className="py-20 relative overflow-hidden bg-black">
         <div className="container max-w-6xl mx-auto px-6">
           <GsapScrollReveal delay={0.2}>
             <EmergencyBroadcasting />
@@ -359,7 +385,7 @@ export default function SolutionsPage() {
       </section>
 
       {/* SOLUTION 04 & 05 — ENTERPRISE MOBILITY & CONNECTED INFRASTRUCTURE */}
-      <section id="enterprise-mobility" className="py-20 border-b border-white/[0.08] bg-black">
+      <section id="enterprise-mobility" className="py-20 relative overflow-hidden bg-black">
         <div className="container max-w-6xl mx-auto px-6">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
             {/* Enterprise Mobility */}
@@ -418,7 +444,7 @@ export default function SolutionsPage() {
       </section>
 
       {/* CTA */}
-      <section className="py-24 text-center relative overflow-hidden bg-white border-t border-zinc-100">
+      <section className="py-24 text-center relative overflow-hidden bg-white">
         <div className="absolute inset-0 bg-gradient-to-t from-zinc-50 via-white to-white pointer-events-none" />
         <div className="container max-w-4xl mx-auto px-6 relative z-10">
           <EditorialLine>
@@ -451,6 +477,13 @@ export default function SolutionsPage() {
               </MagneticElement>
             </div>
           </EditorialLine>
+        </div>
+        
+        {/* Wavy Transition to Black Footer */}
+        {/* Spacer to prevent wave from covering content */}
+        <div className="w-full h-[30px] sm:h-[50px] lg:h-[70px] pointer-events-none" />
+        <div className="absolute bottom-0 left-0 right-0 w-full pointer-events-none translate-y-[1px] z-10">
+          <WavyDivider fill="fill-black" variant={3} />
         </div>
       </section>
     </main>

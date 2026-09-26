@@ -8,6 +8,7 @@ import { TextDecrypt } from "@/components/animations/text-decrypt";
 import { BlurReveal } from "@/components/animations/blur-reveal";
 import { TiltCard } from "@/components/animations/tilt-card";
 import { FloatingElement } from "@/components/animations/image-reveal";
+import { WavyDivider } from "@/components/ui/wavy-divider";
 
 export const metadata: Metadata = {
   title: "VMOVEXA Media | Dynamic Connected DOOH Infrastructure",
@@ -49,7 +50,7 @@ export default function MediaPage() {
   return (
     <main className="min-h-screen bg-black text-white">
       {/* 01 — HERO (Mockup Screen 06: MEDIA) */}
-      <section className="relative pt-36 pb-20 overflow-hidden border-b border-white/[0.08] bg-black">
+      <section className="relative pt-36 pb-20 overflow-hidden bg-black">
         <div className="container relative z-10 max-w-7xl mx-auto px-6">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start mb-12">
             <div className="lg:col-span-10">
@@ -64,7 +65,7 @@ export default function MediaPage() {
 
               <CubertoLines
                 as="h1"
-                className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight leading-[1.1] max-w-4xl mb-6 text-white uppercase"
+                className="text-4xl sm:text-5xl lg:text-7xl font-extrabold tracking-tight leading-[1.05] max-w-4xl mb-6 text-white uppercase"
                 delay={0.15}
                 lines={[
                   "Media that",
@@ -169,30 +170,49 @@ export default function MediaPage() {
             </div>
           </GsapScrollReveal>
 
-          {/* Bottom Section: DON'T JUST BUY A SCREEN. BUY A MOMENT IN MOTION. + 10M+ Reach */}
-          <GsapScrollReveal delay={0.5}>
-            <div className="p-8 md:p-10 rounded-3xl bg-white border border-zinc-200 shadow-xl flex flex-col sm:flex-row items-center justify-between gap-6 relative overflow-hidden group">
-              <div className="absolute inset-0 bg-gradient-to-r from-transparent via-zinc-100/50 to-transparent -translate-x-full group-hover:animate-[shimmer_2s_infinite]" />
-              <div className="max-w-md text-center sm:text-left relative z-10">
-                <h3 className="text-xl sm:text-2xl font-bold tracking-tight text-zinc-900 leading-snug">
+        </div>
+        
+        {/* Wavy Transition to White Section */}
+        {/* Spacer to prevent wave from covering content */}
+        <div className="w-full h-[30px] sm:h-[50px] lg:h-[70px] pointer-events-none" />
+        <div className="absolute bottom-0 left-0 right-0 w-full pointer-events-none translate-y-[1px] z-10">
+          <WavyDivider fill="fill-white" variant={2} />
+        </div>
+      </section>
+
+      {/* Bottom Section: DON'T JUST BUY A SCREEN. BUY A MOMENT IN MOTION. + 10M+ Reach */}
+      <section className="w-full bg-white py-16 relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-r from-transparent via-zinc-100/50 to-transparent -translate-x-full hover:animate-[shimmer_2s_infinite]" />
+        <div className="container max-w-7xl mx-auto px-6 relative z-10">
+          <GsapScrollReveal delay={0.1}>
+            <div className="flex flex-col sm:flex-row items-center justify-between gap-6 group">
+              <div className="max-w-xl text-center sm:text-left relative z-10">
+                <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold tracking-tight text-zinc-900 leading-snug">
                   Don&apos;t just buy a screen. Buy a moment in motion.
                 </h3>
               </div>
               <div className="text-center sm:text-right relative z-10">
-                <div className="text-4xl sm:text-5xl font-bold tracking-tight text-zinc-900">
+                <div className="text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight text-zinc-900">
                   10M+
                 </div>
-                <div className="text-xs font-mono uppercase tracking-widest text-zinc-500 mt-1">
+                <div className="text-xs sm:text-sm font-mono uppercase tracking-widest text-zinc-500 mt-2">
                   Potential Daily Audience Reach
                 </div>
               </div>
             </div>
           </GsapScrollReveal>
         </div>
+        
+        {/* Wavy Transition to Black Section */}
+        {/* Spacer to prevent wave from covering content */}
+        <div className="w-full h-[30px] sm:h-[50px] lg:h-[70px] pointer-events-none" />
+        <div className="absolute bottom-0 left-0 right-0 w-full pointer-events-none translate-y-[1px] z-10">
+          <WavyDivider fill="fill-black" variant={3} />
+        </div>
       </section>
 
       {/* 02 — THE SCREEN AS AN INVENTORY OBJECT & CONTEXTUAL TARGETING */}
-      <section id="inventory-object" className="py-28 border-b border-white/[0.08] relative overflow-hidden bg-black">
+      <section id="inventory-object" className="py-28 relative overflow-hidden bg-black">
         <div className="container max-w-6xl mx-auto px-6 relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start mb-20">
             {/* The Screen as an Inventory Object */}
@@ -251,26 +271,36 @@ export default function MediaPage() {
             </GsapScrollReveal>
           </div>
 
-          {/* Measurable Media & Proof of Play Banner */}
-          <GsapScrollReveal delay={0.3}>
-            <div className="p-8 md:p-10 rounded-3xl bg-white border border-zinc-200 space-y-4 hover:border-zinc-300 transition-colors group shadow-xl relative overflow-hidden">
-               <div className="absolute inset-0 bg-gradient-to-r from-transparent via-zinc-200/50 to-transparent -translate-x-full group-hover:animate-[shimmer_2s_infinite]" />
-              <div className="relative z-10">
-                <div className="flex items-center gap-2 text-cyan-600 font-mono text-xs uppercase tracking-wider">
-                  <FiBarChart2 size={16} className="group-hover:scale-110 transition-transform" /> Verifiable Measurement
-                </div>
-                <h3 className="text-xl sm:text-2xl font-semibold uppercase mb-2 text-zinc-900">Display is <span className="gradient-text">Not Enough.</span></h3>
-                <p className="text-sm text-zinc-600 leading-relaxed max-w-3xl font-light">
-                  VMOVEXA&apos;s architecture includes media analytics around playback, completion, campaign performance and location performance. This establishes a foundation for more measurable, audit-ready mobility media.
-                </p>
+        </div>
+      </section>
+
+      {/* Measurable Media & Proof of Play Banner */}
+      <section className="w-full bg-white py-20 relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-r from-transparent via-zinc-100/50 to-transparent -translate-x-full hover:animate-[shimmer_2s_infinite]" />
+        <div className="container max-w-6xl mx-auto px-6 relative z-10">
+          <GsapScrollReveal delay={0.1}>
+            <div className="space-y-4 group">
+              <div className="flex items-center gap-2 text-cyan-600 font-mono text-xs uppercase tracking-wider">
+                <FiBarChart2 size={16} className="group-hover:scale-110 transition-transform" /> Verifiable Measurement
               </div>
+              <h3 className="text-2xl sm:text-3xl md:text-4xl font-semibold uppercase mb-2 text-zinc-900">Display is <span className="gradient-text">Not Enough.</span></h3>
+              <p className="text-base sm:text-lg text-zinc-600 leading-relaxed max-w-3xl font-light mt-4">
+                VMOVEXA&apos;s architecture includes media analytics around playback, completion, campaign performance and location performance. This establishes a foundation for more measurable, audit-ready mobility media.
+              </p>
             </div>
           </GsapScrollReveal>
+        </div>
+        
+        {/* Wavy Transition to Black Section */}
+        {/* Spacer to prevent wave from covering content */}
+        <div className="w-full h-[30px] sm:h-[50px] lg:h-[70px] pointer-events-none" />
+        <div className="absolute bottom-0 left-0 right-0 w-full pointer-events-none translate-y-[1px] z-10">
+          <WavyDivider fill="fill-black" variant={1} />
         </div>
       </section>
 
       {/* 03 — DIGITAL OOH: THE ROAD IS YOUR MEDIA NETWORK */}
-      <section className="py-28 border-b border-white/[0.08] relative bg-black">
+      <section className="py-28 relative bg-black">
         <div className="container max-w-6xl mx-auto px-6 relative z-10">
           <div className="max-w-3xl mb-16">
             <EditorialLine>
@@ -330,7 +360,7 @@ export default function MediaPage() {
       </section>
 
       {/* 04 — CAMPAIGN INFRASTRUCTURE & ADVERTISER CATEGORIES */}
-      <section className="py-28 border-b border-white/[0.08] relative overflow-hidden bg-black">
+      <section className="py-28 relative overflow-hidden bg-black">
         <div className="container max-w-6xl mx-auto px-6 relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
             <div className="lg:col-span-6 space-y-6">
@@ -378,7 +408,7 @@ export default function MediaPage() {
       </section>
 
       {/* CTA */}
-      <section className="py-28 text-center relative overflow-hidden bg-white border-t border-zinc-200">
+      <section className="py-28 text-center relative overflow-hidden bg-white">
         <div className="absolute inset-0 bg-gradient-to-t from-purple-100/50 to-transparent pointer-events-none" />
         <div className="container max-w-4xl mx-auto px-6 relative z-10">
           <EditorialLine>
@@ -401,6 +431,13 @@ export default function MediaPage() {
               </MagneticElement>
             </div>
           </EditorialLine>
+        </div>
+        
+        {/* Wavy Transition to Black Footer */}
+        {/* Spacer to prevent wave from covering content */}
+        <div className="w-full h-[30px] sm:h-[50px] lg:h-[70px] pointer-events-none" />
+        <div className="absolute bottom-0 left-0 right-0 w-full pointer-events-none translate-y-[1px] z-10">
+          <WavyDivider fill="fill-black" variant={2} />
         </div>
       </section>
     </main>

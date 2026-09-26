@@ -20,6 +20,7 @@ import { TextDecrypt } from "@/components/animations/text-decrypt";
 import { BlurReveal } from "@/components/animations/blur-reveal";
 import { TiltCard } from "@/components/animations/tilt-card";
 import { FloatingElement } from "@/components/animations/image-reveal";
+import { WavyDivider } from "@/components/ui/wavy-divider";
 
 export const metadata: Metadata = {
   title: "VMOVEXA Platform | Connected Mobility & Edge Computing",
@@ -154,7 +155,7 @@ export default function PlatformPage() {
   return (
     <main className="min-h-screen bg-black text-white">
       {/* 01 — HERO (Mockup Screen 02: PLATFORM) */}
-      <section className="relative pt-36 pb-20 overflow-hidden border-b border-white/[0.08] bg-black">
+      <section className="relative pt-36 pb-20 overflow-hidden bg-black">
         <div className="container relative z-10 max-w-7xl mx-auto px-6">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start mb-12">
             <div className="lg:col-span-10">
@@ -169,11 +170,11 @@ export default function PlatformPage() {
 
               <CubertoLines
                 as="h1"
-                className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight leading-[1.1] max-w-4xl mb-6 text-white uppercase"
+                className="text-4xl sm:text-5xl lg:text-7xl font-extrabold tracking-tight uppercase leading-[1.05] max-w-4xl mb-6 text-white"
                 delay={0.15}
                 lines={[
-                  "One platform.",
-                  <span key="sub" className="gradient-text">Every moving edge.</span>
+                  "ONE PLATFORM.",
+                  <span key="sub" className="gradient-text">EVERY MOVING EDGE.</span>
                 ]}
               />
 
@@ -388,10 +389,17 @@ export default function PlatformPage() {
             </div>
           </div>
         </div>
+        
+        {/* Wavy Transition to White Section */}
+        {/* Spacer to prevent wave from covering content */}
+        <div className="w-full h-[30px] sm:h-[50px] lg:h-[70px] pointer-events-none" />
+        <div className="absolute bottom-0 left-0 right-0 w-full pointer-events-none translate-y-[1px] z-10">
+          <WavyDivider fill="fill-white" variant={1} />
+        </div>
       </section>
 
       {/* 02 — PLATFORM ARCHITECTURE & PRINCIPLE */}
-      <section className="py-24 border-b border-zinc-200 bg-white">
+      <section className="py-24 relative overflow-hidden bg-white">
         <div className="container max-w-6xl mx-auto px-6 relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 mb-16 items-start">
             <div className="lg:col-span-6 space-y-6">
@@ -451,10 +459,17 @@ export default function PlatformPage() {
             </div>
           </div>
         </div>
+        
+        {/* Wavy Transition to Black Section */}
+        {/* Spacer to prevent wave from covering content */}
+        <div className="w-full h-[30px] sm:h-[50px] lg:h-[70px] pointer-events-none" />
+        <div className="absolute bottom-0 left-0 right-0 w-full pointer-events-none translate-y-[1px] z-10">
+          <WavyDivider fill="fill-black" variant={3} />
+        </div>
       </section>
 
       {/* 03 — VMOVEXA ONE (CENTRALIZED CONTROL LAYER) */}
-      <section id="vmovexa-one" className="py-24 border-b border-white/[0.08] relative bg-black">
+      <section id="vmovexa-one" className="py-24 relative bg-black">
         <div className="container max-w-6xl mx-auto px-6">
           <div className="max-w-3xl mb-14">
             <EditorialLine>
@@ -572,10 +587,17 @@ export default function PlatformPage() {
             </div>
           </GsapScrollReveal>
         </div>
+
+        {/* Wavy Transition to White Section */}
+        {/* Spacer to prevent wave from covering content */}
+        <div className="w-full h-[30px] sm:h-[50px] lg:h-[70px] pointer-events-none" />
+        <div className="absolute bottom-0 left-0 right-0 w-full pointer-events-none translate-y-[1px] z-10">
+          <WavyDivider fill="fill-white" variant={2} />
+        </div>
       </section>
 
       {/* 04 — VMOVEXA CORE (VEHICLE EDGE RUNTIME) */}
-      <section id="vmovexa-core" className="py-24 border-b border-zinc-200 relative overflow-hidden bg-white text-zinc-900">
+      <section id="vmovexa-core" className="py-24 relative overflow-hidden bg-white text-zinc-900">
         <div className="container max-w-6xl mx-auto px-6 relative z-10">
           <div className="max-w-3xl mb-14">
             <EditorialLine>
@@ -670,7 +692,7 @@ export default function PlatformPage() {
                 fade="none"
                 parallax={false}
                 type="image"
-                src="/images/VMOVEXA FOLDER DESIGN MOCKUP1.PNG"
+                src="/images/1784434406438-731883811.png"
                 alt="VMOVEXA CORE In-Vehicle Edge Device Mockup"
                 badge="Hardware & Edge Environment • VMOVEXA CORE"
                 caption="In-Vehicle Edge Computing Runtime • Telemetry, Multi-Screen & Geo Synchronization"
@@ -685,7 +707,7 @@ export default function PlatformPage() {
       </section>
 
       {/* CTA */}
-      <section className="py-24 text-center relative overflow-hidden bg-white border-b border-zinc-200">
+      <section className="py-24 text-center relative overflow-hidden bg-white">
         <div className="container max-w-4xl mx-auto px-6 relative z-10">
           <EditorialLine>
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-semibold tracking-tight mb-6 text-zinc-900 uppercase">
@@ -714,6 +736,13 @@ export default function PlatformPage() {
               </MagneticElement>
             </div>
           </EditorialLine>
+        </div>
+        
+        {/* Wavy Transition to Black Footer */}
+        {/* Spacer to prevent wave from covering content */}
+        <div className="w-full h-[30px] sm:h-[50px] lg:h-[70px] pointer-events-none" />
+        <div className="absolute bottom-0 left-0 right-0 w-full pointer-events-none translate-y-[1px] z-10">
+          <WavyDivider fill="fill-black" variant={2} />
         </div>
       </section>
     </main>

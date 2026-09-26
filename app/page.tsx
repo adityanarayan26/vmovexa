@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
+import VmovexaWebImage from "@/public/images/VMOVEXA_WEB_IMAGE.png";
 import {
   FiArrowRight,
   FiArrowUpRight,
@@ -39,6 +40,7 @@ import { WhatIsVmovexaSection } from "@/components/sections/what-is-vmovexa";
 import { WhyVmovexaSection } from "@/components/sections/why-vmovexa";
 import { OurEcosystemSection } from "@/components/sections/our-ecosystem";
 import { BlueprintFlowAnimation } from "@/components/visuals/blueprint-flow";
+import { WavyDivider } from "@/components/ui/wavy-divider";
 
 export const metadata: Metadata = {
   title: "VMOVEXA | Cloud-to-Edge Mobility Intelligence Platform",
@@ -271,7 +273,7 @@ export default function HomePage() {
       {/* ========================================================================= */}
       {/* 01 // INTELLIGENCE IN MOTION. (Hero Section)                             */}
       {/* ========================================================================= */}
-      <section className="relative min-h-[92vh] lg:min-h-screen flex flex-col justify-between pt-36 pb-14 overflow-hidden border-b border-white/[0.08] bg-black">
+      <section className="relative min-h-[92vh] lg:min-h-screen flex flex-col justify-between pt-36 pb-14 overflow-hidden bg-black">
         {/* Background Base */}
         <div className="absolute inset-0 z-0 bg-black pointer-events-none" />
 
@@ -466,7 +468,7 @@ export default function HomePage() {
       {/* ========================================================================= */}
       {/* 05 // A VEHICLE CAN BE MORE.                                             */}
       {/* ========================================================================= */}
-      <section className="py-12 border-b border-zinc-200 relative overflow-hidden bg-white">
+      <section className="py-12 relative overflow-hidden bg-white">
         <div className="container max-w-7xl mx-auto px-6 relative z-10">
           <div className="text-center max-w-3xl mx-auto mb-16">
             <EditorialLine>
@@ -512,12 +514,19 @@ export default function HomePage() {
             })}
           </div>
         </div>
+        
+        {/* Wavy Transition to Black Section */}
+        {/* Spacer to prevent wave from covering content */}
+        <div className="w-full h-[30px] sm:h-[50px] lg:h-[70px] pointer-events-none" />
+        <div className="absolute bottom-0 left-0 right-0 w-full pointer-events-none translate-y-[1px] z-10">
+          <WavyDivider fill="fill-black" variant={2} />
+        </div>
       </section>
 
       {/* ========================================================================= */}
       {/* 04 // THE CLOUD ORCHESTRATES. THE EDGE EXECUTES.                          */}
       {/* ========================================================================= */}
-      <section className="py-12 border-b border-white/[0.08] relative overflow-hidden bg-black">
+      <section className="py-12 relative overflow-hidden bg-black">
         <div className="container max-w-6xl mx-auto px-6 relative z-10">
           <div className="text-center max-w-4xl mx-auto mb-12">
             <EditorialLine>
@@ -610,12 +619,19 @@ export default function HomePage() {
             </ParallaxElement>
           </GsapScrollReveal>
         </div>
+        
+        {/* Wavy Transition to White Section */}
+        {/* Spacer to prevent wave from covering content */}
+        <div className="w-full h-[30px] sm:h-[50px] lg:h-[70px] pointer-events-none" />
+        <div className="absolute bottom-0 left-0 right-0 w-full pointer-events-none translate-y-[1px] z-10">
+          <WavyDivider fill="fill-white" variant={3} />
+        </div>
       </section>
 
       {/* ========================================================================= */}
       {/* 05 // THE VEHICLE BECOMES THE EDGE.                                       */}
       {/* ========================================================================= */}
-      <section className="py-12 border-b border-zinc-200 relative overflow-hidden bg-white">
+      <section className="py-12 relative overflow-hidden bg-white">
         <div className="container max-w-6xl mx-auto px-6 relative z-10">
           <div className="max-w-3xl mb-16">
             <EditorialLine>
@@ -690,12 +706,19 @@ export default function HomePage() {
             </div>
           </div>
         </div>
+        
+        {/* Wavy Transition to Black Section */}
+        {/* Spacer to prevent wave from covering content */}
+        <div className="w-full h-[30px] sm:h-[50px] lg:h-[70px] pointer-events-none" />
+        <div className="absolute bottom-0 left-0 right-0 w-full pointer-events-none translate-y-[1px] z-10">
+          <WavyDivider fill="fill-black" variant={1} />
+        </div>
       </section>
 
       {/* ========================================================================= */}
       {/* 06 // SYSTEM BLUEPRINT: HOW IT WORKS                                      */}
       {/* ========================================================================= */}
-      <section className="py-20 border-b border-white/[0.08] relative overflow-hidden bg-black">
+      <section className="py-20 relative overflow-hidden bg-black">
         <div className="container max-w-7xl mx-auto px-6 relative z-10">
           <div className="text-center max-w-4xl mx-auto mb-16">
             <EditorialLine>
@@ -724,12 +747,19 @@ export default function HomePage() {
             <BlueprintFlowAnimation />
           </GsapScrollReveal>
         </div>
+        
+        {/* Wavy Transition to White Section */}
+        {/* Spacer to prevent wave from covering content */}
+        <div className="w-full h-[30px] sm:h-[50px] lg:h-[70px] pointer-events-none" />
+        <div className="absolute bottom-0 left-0 right-0 w-full pointer-events-none translate-y-[1px] z-10">
+          <WavyDivider fill="fill-white" variant={2} />
+        </div>
       </section>
 
       {/* ========================================================================= */}
       {/* 07 // MOVEMENT CREATES CONTEXT.                                           */}
       {/* ========================================================================= */}
-      <section className="py-12 border-b border-zinc-200 relative overflow-hidden bg-white">
+      <section className="py-12 relative overflow-hidden bg-white">
         <div className="container max-w-6xl mx-auto px-6 relative z-10">
           <div className="text-center max-w-3xl mx-auto mb-16">
             <EditorialLine>
@@ -783,12 +813,19 @@ export default function HomePage() {
           </div>
 
         </div>
+        
+        {/* Wavy Transition to Black Section */}
+        {/* Spacer to prevent wave from covering content */}
+        <div className="w-full h-[30px] sm:h-[50px] lg:h-[70px] pointer-events-none" />
+        <div className="absolute bottom-0 left-0 right-0 w-full pointer-events-none translate-y-[1px] z-10">
+          <WavyDivider fill="fill-black" variant={3} />
+        </div>
       </section>
 
       {/* ========================================================================= */}
       {/* 08 // MEDIA THAT MOVES.                                                   */}
       {/* ========================================================================= */}
-      <section className="py-12 border-b border-white/[0.08] relative overflow-hidden bg-black">
+      <section className="py-12 relative overflow-hidden bg-black">
         <div className="container max-w-6xl mx-auto px-6 relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
             {/* Left Column: Distinction & Matrix */}
@@ -863,55 +900,72 @@ export default function HomePage() {
       {/* ========================================================================= */}
       {/* 09 // ONE CLICK. AN ENTIRE NATION.                                        */}
       {/* ========================================================================= */}
-      <section className="py-24 border-b border-zinc-200 relative overflow-hidden bg-white">
-        <div className="container max-w-6xl mx-auto px-6 relative z-10">
-          <div className="text-center max-w-4xl mx-auto mb-14">
-            <EditorialLine>
-              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-cyan-50 border border-cyan-200 text-cyan-800 font-mono text-xs tracking-wider mb-5 shadow-sm">
-                <span>GLOBAL ORCHESTRATION</span>
-              </div>
-            </EditorialLine>
-            <CubertoLines
-              as="h2"
-              className="text-4xl sm:text-5xl md:text-6xl lg:text-[72px] font-extrabold tracking-tight uppercase leading-[1.05] text-zinc-900"
-              delay={0.1}
-              stagger={0.1}
-              lines={[
-                <div key="l1">ONE CLICK.</div>,
-                <div key="l2" className="mt-1 sm:mt-2 gradient-text">AN ENTIRE NATION.</div>,
-              ]}
-            />
-            <EditorialLine delay={0.2}>
-              <p className="text-base sm:text-lg text-zinc-500 max-w-2xl mx-auto mt-6 font-mono uppercase tracking-[0.25em] leading-relaxed">
-                [ONE CAMPAIGN. MANY ROUTES.]
-              </p>
-            </EditorialLine>
-          </div>
-
-          <GsapScrollReveal delay={0.3}>
-            <div className="max-w-4xl mx-auto">
-              <div
-                className="relative group w-full rounded-2xl md:rounded-3xl overflow-hidden border border-zinc-200 shadow-[0_25px_60px_-15px_rgba(0,0,0,0.2)] bg-black"
-                style={{ aspectRatio: "4659 / 3297" }}
-              >
-                <Image
-                  src="/images/VMOVEXA_WEB_IMAGE.png"
-                  alt="VMOVEXA Campaign Orchestration - One Click. An Entire Nation."
-                  fill
-                  priority
-                  sizes="(max-width: 1280px) 100vw, 1152px"
-                  className="object-cover object-center transition-transform duration-700 group-hover:scale-[1.01]"
-                />
-              </div>
+      <section className="py-24 sm:py-32 relative overflow-hidden bg-black">
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(6,182,212,0.05)_0%,transparent_70%)] pointer-events-none" />
+        <div className="container max-w-7xl mx-auto px-6 relative z-10">
+          
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
+            {/* Left: Text Content */}
+            <div className="lg:col-span-5 flex flex-col justify-center">
+              <EditorialLine>
+                <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/[0.05] border border-white/10 text-cyan-400 font-mono text-xs tracking-wider mb-6 shadow-sm">
+                  <span className="w-1.5 h-1.5 rounded-full bg-cyan-400 animate-pulse" />
+                  <span>GLOBAL ORCHESTRATION</span>
+                </div>
+              </EditorialLine>
+              
+              <CubertoLines
+                as="h2"
+                className="text-4xl sm:text-5xl lg:text-[56px] xl:text-[64px] font-extrabold tracking-tight uppercase leading-[1.05] text-white mb-8"
+                delay={0.1}
+                stagger={0.1}
+                lines={[
+                  <div key="l1">ONE CLICK.</div>,
+                  <div key="l2" className="mt-1 sm:mt-2 gradient-text drop-shadow-[0_0_15px_rgba(6,182,212,0.3)]">AN ENTIRE NATION.</div>,
+                ]}
+              />
+              
+              <EditorialLine delay={0.2}>
+                <p className="text-base sm:text-lg text-white/60 leading-relaxed mb-8 max-w-lg">
+                  Deploy programmatic DOOH inventory, hyper-targeted campaigns, and digital mobility infrastructure instantly across the country from a single interface.
+                </p>
+                <div className="font-mono text-xs sm:text-sm text-cyan-500/80 uppercase tracking-[0.2em] border-l-2 border-cyan-500/30 pl-4 py-1">
+                  [ONE CAMPAIGN. MANY ROUTES.]
+                </div>
+              </EditorialLine>
             </div>
-          </GsapScrollReveal>
+
+            {/* Right: Full Image */}
+            <div className="lg:col-span-7">
+              <GsapScrollReveal delay={0.3}>
+                <div className="relative group w-full rounded-3xl sm:rounded-[2rem] overflow-hidden border border-white/[0.05] shadow-2xl shadow-cyan-900/10 bg-[#030303] flex items-center justify-center p-2 sm:p-6 lg:p-8">
+                  {/* Subtle ambient glow behind the image */}
+                  <div className="absolute inset-0 bg-gradient-to-tr from-cyan-500/10 via-transparent to-purple-500/10 opacity-30 group-hover:opacity-60 transition-opacity duration-1000 z-0" />
+                  
+                  <div className="relative w-full h-auto z-10 mix-blend-screen overflow-hidden rounded-xl sm:rounded-2xl">
+                    {/* Edge fade masks (very subtle, just to blend harsh edges) */}
+                    <div className="absolute inset-0 pointer-events-none border-[10px] sm:border-[20px] border-[#030303]/50 blur-[10px] rounded-2xl z-20" />
+                    
+                    <Image
+                      src={VmovexaWebImage}
+                      alt="VMOVEXA Campaign Orchestration - One Click. An Entire Nation."
+                      placeholder="blur"
+                      priority
+                      sizes="(max-width: 1024px) 100vw, 60vw"
+                      className="w-full h-auto object-contain transition-transform duration-[2000ms] ease-out group-hover:scale-[1.03] opacity-90"
+                    />
+                  </div>
+                </div>
+              </GsapScrollReveal>
+            </div>
+          </div>
         </div>
       </section>
 
       {/* ========================================================================= */}
       {/* 10 // ONE PLATFORM. MANY MOBILITY ENVIRONMENTS.                           */}
       {/* ========================================================================= */}
-      <section className="py-12 border-b border-white/[0.08] relative overflow-hidden bg-black">
+      <section className="py-12 relative overflow-hidden bg-black">
         <div className="container max-w-6xl mx-auto px-6 relative z-10">
           <div className="text-center max-w-4xl mx-auto mb-16">
             <EditorialLine>
@@ -995,7 +1049,7 @@ export default function HomePage() {
       {/* ========================================================================= */}
       {/* 11 // THE BRAND IDENTITY.                                                 */}
       {/* ========================================================================= */}
-      <section className="py-20 border-b border-white/[0.08] relative overflow-hidden bg-black">
+      <section className="py-20 relative overflow-hidden bg-black">
         <div className="container max-w-7xl mx-auto px-6 relative z-10">
           <div className="text-center max-w-4xl mx-auto mb-16">
             <EditorialLine>
@@ -1082,12 +1136,19 @@ export default function HomePage() {
             </GsapScrollReveal>
           </div>
         </div>
+        
+        {/* Wavy Transition to White Section */}
+        {/* Spacer to prevent wave from covering content */}
+        <div className="w-full h-[30px] sm:h-[50px] lg:h-[70px] pointer-events-none" />
+        <div className="absolute bottom-0 left-0 right-0 w-full pointer-events-none translate-y-[1px] z-10">
+          <WavyDivider fill="fill-white" variant={1} />
+        </div>
       </section>
 
       {/* ========================================================================= */}
       {/* 12 // THE WORLD MOVES. INTELLIGENCE SHOULD MOVE WITH IT. (Final Section)  */}
       {/* ========================================================================= */}
-      <section className="py-32 relative overflow-hidden text-center bg-white border-b border-zinc-200">
+      <section className="py-32 relative overflow-hidden text-center bg-white">
         <div className="absolute inset-0 bg-gradient-to-t from-cyan-50/50 via-transparent to-transparent pointer-events-none" />
         <div className="container max-w-5xl mx-auto px-6 relative z-10">
           {/* Number Badge */}
@@ -1168,6 +1229,13 @@ export default function HomePage() {
               </div>
             </MagneticElement>
           </EditorialLine>
+        </div>
+        
+        {/* Wavy Transition to Black Footer */}
+        {/* Spacer to prevent wave from covering content */}
+        <div className="w-full h-[30px] sm:h-[50px] lg:h-[70px] pointer-events-none" />
+        <div className="absolute bottom-0 left-0 right-0 w-full pointer-events-none translate-y-[1px] z-10">
+          <WavyDivider fill="fill-black" variant={4} />
         </div>
       </section>
     </main>

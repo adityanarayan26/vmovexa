@@ -10,6 +10,7 @@ import { TextDecrypt } from "@/components/animations/text-decrypt";
 import { BlurReveal } from "@/components/animations/blur-reveal";
 import { ImageCurtainReveal, FloatingElement } from "@/components/animations/image-reveal";
 import { TiltCard } from "@/components/animations/tilt-card";
+import { WavyDivider } from "@/components/ui/wavy-divider";
 
 export const metadata: Metadata = {
   title: "VMOVEXA Industries | Connected Mobility Across Sectors",
@@ -103,7 +104,7 @@ export default function IndustriesPage() {
   return (
     <main className="min-h-screen bg-black text-white">
       {/* 01 — HERO (Mockup Screen 05: INDUSTRIES) */}
-      <section className="relative pt-36 pb-20 overflow-hidden border-b border-white/[0.08] bg-black">
+      <section className="relative pt-36 pb-20 overflow-hidden bg-black">
         <div className="container relative z-10 max-w-7xl mx-auto px-6">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start mb-12">
             <div className="lg:col-span-10">
@@ -118,11 +119,11 @@ export default function IndustriesPage() {
 
               <CubertoLines
                 as="h1"
-                className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight leading-[1.1] max-w-4xl mb-6 text-white"
+                className="text-4xl sm:text-5xl lg:text-7xl font-extrabold tracking-tight uppercase leading-[1.05] max-w-4xl mb-6 text-white"
                 delay={0.15}
                 lines={[
-                  "One technology.",
-                  <span key="sub" className="gradient-text">many mobility environments.</span>
+                  "ONE TECHNOLOGY.",
+                  <span key="sub" className="gradient-text">MANY MOBILITY ENVIRONMENTS.</span>
                 ]}
               />
 
@@ -260,10 +261,17 @@ export default function IndustriesPage() {
             </div>
           </GsapScrollReveal>
         </div>
+        
+        {/* Wavy Transition to White Section */}
+        {/* Spacer to prevent wave from covering content */}
+        <div className="w-full h-[30px] sm:h-[50px] lg:h-[70px] pointer-events-none" />
+        <div className="absolute bottom-0 left-0 right-0 w-full pointer-events-none translate-y-[1px] z-10">
+          <WavyDivider fill="fill-white" />
+        </div>
       </section>
 
       {/* 02 — 9 SECTORS GRID */}
-      <section className="py-28 border-b border-zinc-200 relative overflow-hidden bg-white">
+      <section className="py-28 relative overflow-hidden bg-white">
         <div className="container max-w-6xl mx-auto px-6 relative z-10">
           <div className="max-w-2xl mb-16">
             <EditorialLine>
@@ -302,6 +310,13 @@ export default function IndustriesPage() {
               );
             })}
           </div>
+        </div>
+        
+        {/* Wavy Transition to Black Section */}
+        {/* Spacer to prevent wave from covering content */}
+        <div className="w-full h-[30px] sm:h-[50px] lg:h-[70px] pointer-events-none" />
+        <div className="absolute bottom-0 left-0 right-0 w-full pointer-events-none translate-y-[1px] z-10">
+          <WavyDivider fill="fill-black" variant={1} />
         </div>
       </section>
 

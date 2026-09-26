@@ -7,6 +7,7 @@ import { Reveal } from "@/components/animations/reveal";
 import { CubertoLines } from "@/components/animations/cuberto-text-reveal";
 import { TextDecrypt } from "@/components/animations/text-decrypt";
 import { BlurReveal } from "@/components/animations/blur-reveal";
+import { WavyDivider } from "@/components/ui/wavy-divider";
 import { TiltCard } from "@/components/animations/tilt-card";
 import { site } from "@/lib/site";
 
@@ -34,6 +35,7 @@ export default function ContactPage() {
       gradientBar: "from-cyan-400 via-blue-500 to-indigo-500",
       glowBg: "from-cyan-500/20 via-blue-500/5 to-transparent",
       ringActive: "border-cyan-400 ring-2 ring-cyan-400/40 shadow-[0_16px_40px_rgba(6,182,212,0.16)]",
+      ringHover: "hover:border-cyan-400 hover:ring-2 hover:ring-cyan-400/40 hover:shadow-[0_16px_40px_rgba(6,182,212,0.16)]",
     },
     {
       title: "Media & Brands",
@@ -54,6 +56,7 @@ export default function ContactPage() {
       gradientBar: "from-pink-400 via-rose-500 to-purple-500",
       glowBg: "from-pink-500/20 via-rose-500/5 to-transparent",
       ringActive: "border-pink-400 ring-2 ring-pink-400/40 shadow-[0_16px_40px_rgba(236,72,153,0.16)]",
+      ringHover: "hover:border-pink-400 hover:ring-2 hover:ring-pink-400/40 hover:shadow-[0_16px_40px_rgba(236,72,153,0.16)]",
     },
     {
       title: "Technology Partners",
@@ -74,6 +77,7 @@ export default function ContactPage() {
       gradientBar: "from-indigo-400 via-purple-500 to-pink-500",
       glowBg: "from-indigo-500/20 via-purple-500/5 to-transparent",
       ringActive: "border-indigo-400 ring-2 ring-indigo-400/40 shadow-[0_16px_40px_rgba(99,102,241,0.16)]",
+      ringHover: "hover:border-indigo-400 hover:ring-2 hover:ring-indigo-400/40 hover:shadow-[0_16px_40px_rgba(99,102,241,0.16)]",
     },
     {
       title: "Investors",
@@ -94,6 +98,7 @@ export default function ContactPage() {
       gradientBar: "from-emerald-400 via-teal-500 to-cyan-500",
       glowBg: "from-emerald-500/20 via-teal-500/5 to-transparent",
       ringActive: "border-emerald-400 ring-2 ring-emerald-400/40 shadow-[0_16px_40px_rgba(16,185,129,0.16)]",
+      ringHover: "hover:border-emerald-400 hover:ring-2 hover:ring-emerald-400/40 hover:shadow-[0_16px_40px_rgba(16,185,129,0.16)]",
     },
   ];
 
@@ -115,25 +120,21 @@ export default function ContactPage() {
   const handleSelectTrack = (formOption: string) => {
     setSelectedInterest(formOption);
 
-    // Timeout allows React state update & DOM paint to finish completely
-    // so the browser's smooth scroll isn't aborted by a layout shift
-    setTimeout(() => {
-      const formEl = document.getElementById("contact-form");
-      if (formEl) {
-        const headerOffset = 80;
-        const targetY = formEl.getBoundingClientRect().top + window.scrollY - headerOffset;
-        window.scrollTo({
-          top: targetY,
-          behavior: "smooth",
-        });
-      }
-    }, 150);
+    const formEl = document.getElementById("contact-form");
+    if (formEl) {
+      const headerOffset = 80;
+      const targetY = formEl.getBoundingClientRect().top + window.scrollY - headerOffset;
+      window.scrollTo({
+        top: targetY,
+        behavior: "smooth",
+      });
+    }
   };
 
   return (
     <main className="min-h-screen bg-black text-white">
       {/* 01 — HERO */}
-      <section className="relative pt-36 pb-20 overflow-hidden border-b border-white/[0.08] bg-black">
+      <section className="relative pt-36 pb-20 overflow-hidden bg-black">
         <div className="container relative z-10 max-w-6xl mx-auto px-6">
           <Reveal>
             <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/[0.04] border border-white/15 backdrop-blur-md mb-8">
@@ -146,7 +147,7 @@ export default function ContactPage() {
 
           <CubertoLines
             as="h1"
-            className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight leading-[1.1] max-w-4xl mb-6 text-white uppercase"
+            className="text-4xl sm:text-5xl lg:text-7xl font-extrabold tracking-tight leading-[1.05] max-w-4xl mb-6 text-white uppercase"
             delay={0.1}
             lines={[
               "Connect with",
@@ -160,10 +161,17 @@ export default function ContactPage() {
             </p>
           </BlurReveal>
         </div>
+        
+        {/* Wavy Transition to Light Section */}
+        {/* Spacer to prevent wave from covering content */}
+        <div className="w-full h-[30px] sm:h-[50px] lg:h-[70px] pointer-events-none" />
+        <div className="absolute bottom-0 left-0 right-0 w-full pointer-events-none translate-y-[1px] z-10">
+          <WavyDivider fill="fill-[#fafaff]" variant={1} />
+        </div>
       </section>
 
       {/* 02 — 4 CONTACT TRACKS */}
-      <section className="py-24 sm:py-28 border-b border-zinc-200/90 bg-[#fafaff] relative overflow-hidden">
+      <section className="py-24 sm:py-28 bg-[#fafaff] relative overflow-hidden">
         {/* Multi-layered Ambient Background Glow & Cyber-Grid Mask */}
         <div className="absolute top-1/4 left-1/4 -translate-x-1/2 w-[550px] h-[360px] bg-cyan-400/8 rounded-full blur-[110px] pointer-events-none -z-10" />
         <div className="absolute top-1/3 right-1/4 translate-x-1/2 w-[550px] h-[360px] bg-purple-400/8 rounded-full blur-[110px] pointer-events-none -z-10" />
@@ -209,7 +217,7 @@ export default function ContactPage() {
                       className={`p-7 sm:p-8 rounded-[28px] bg-white/95 backdrop-blur-md border ${
                         isSelected
                           ? t.ringActive
-                          : "border-zinc-200/90 hover:border-zinc-300 shadow-[0_4px_24px_rgba(0,0,0,0.03)] hover:shadow-[0_20px_45px_rgba(0,0,0,0.08)]"
+                          : `border-zinc-200/90 shadow-[0_4px_24px_rgba(0,0,0,0.03)] ${t.ringHover}`
                       } transition-all duration-500 h-full flex flex-col justify-between group relative overflow-hidden flex-1 cursor-pointer hover:-translate-y-2`}
                     >
                       {/* Top Luminous Light Bar */}
@@ -289,6 +297,13 @@ export default function ContactPage() {
               );
             })}
           </div>
+        </div>
+        
+        {/* Wavy Transition to Black Section */}
+        {/* Spacer to prevent wave from covering content */}
+        <div className="w-full h-[30px] sm:h-[50px] lg:h-[70px] pointer-events-none" />
+        <div className="absolute bottom-0 left-0 right-0 w-full pointer-events-none translate-y-[1px] z-10">
+          <WavyDivider fill="fill-black" variant={2} />
         </div>
       </section>
 
@@ -456,6 +471,13 @@ export default function ContactPage() {
               </Reveal>
             </div>
           </div>
+        </div>
+        
+        {/* Wavy Transition to Black Footer */}
+        {/* Spacer to prevent wave from covering content */}
+        <div className="w-full h-[30px] sm:h-[50px] lg:h-[70px] pointer-events-none" />
+        <div className="absolute bottom-0 left-0 right-0 w-full pointer-events-none translate-y-[1px] z-10">
+          <WavyDivider fill="fill-black" variant={3} />
         </div>
       </section>
     </main>

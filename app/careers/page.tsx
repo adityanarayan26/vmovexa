@@ -90,7 +90,7 @@ export default function CareersPage() {
   return (
     <main className="min-h-screen bg-black text-white">
       {/* 01 — HERO */}
-      <section className="relative pt-36 pb-20 overflow-hidden border-b border-white/[0.08] bg-black">
+      <section className="relative pt-36 pb-20 overflow-hidden bg-black">
         <div className="container relative z-10 max-w-6xl mx-auto px-6">
           <Reveal>
             <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/[0.04] border border-white/15 backdrop-blur-md mb-8">
@@ -103,7 +103,7 @@ export default function CareersPage() {
 
           <CubertoLines
             as="h1"
-            className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight leading-[1.1] max-w-4xl mb-6 text-white uppercase"
+            className="text-4xl sm:text-5xl lg:text-7xl font-extrabold tracking-tight leading-[1.05] max-w-4xl mb-6 text-white uppercase"
             delay={0.1}
             lines={[
               "Build the Future of",
@@ -142,7 +142,7 @@ export default function CareersPage() {
       </section>
 
       {/* 02 — CORE CULTURE & VALUES */}
-      <section className="py-20 border-b border-white/[0.08] bg-black">
+      <section className="py-20 bg-black">
         <div className="container max-w-6xl mx-auto px-6">
           <div className="text-center max-w-2xl mx-auto mb-14">
             <span className="font-mono text-xs uppercase tracking-widest text-cyan-400 block mb-2">
@@ -172,7 +172,7 @@ export default function CareersPage() {
       </section>
 
       {/* 03 — OPEN ROLES & APPLICATION */}
-      <section className="py-24 border-b border-white/[0.08] bg-black" id="open-positions">
+      <section className="py-24 bg-black" id="open-positions">
         <div className="container max-w-6xl mx-auto px-6">
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
             <div>

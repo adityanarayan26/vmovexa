@@ -3,6 +3,7 @@
 import React from "react";
 import { EditorialLine } from "@/components/animations/editorial-text";
 import { GsapScrollReveal } from "@/components/animations/gsap-scroll-fx";
+import { WavyDivider } from "@/components/ui/wavy-divider";
 
 interface PillarItem {
   number: string;
@@ -273,7 +274,7 @@ const pillars: PillarItem[] = [
 
 export function WhyVmovexaSection() {
   return (
-    <section className="relative py-24 sm:py-28 overflow-hidden bg-black border-b border-white/[0.08]">
+    <section className="relative py-24 sm:py-28 overflow-hidden bg-black">
       {/* Dynamic Background Ambient Glow */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[850px] h-[380px] bg-gradient-to-b from-cyan-500/10 via-purple-500/10 to-transparent blur-[130px] pointer-events-none -z-10" />
       <div className="absolute bottom-0 right-1/4 w-[400px] h-[250px] bg-pink-500/5 blur-[120px] pointer-events-none -z-10" />
@@ -347,6 +348,12 @@ export function WhyVmovexaSection() {
             ))}
           </div>
         </div>
+      </div>
+      {/* Wavy Transition to White Section */}
+      {/* Spacer to prevent wave from covering content */}
+      <div className="w-full h-[30px] sm:h-[50px] lg:h-[70px] pointer-events-none" />
+      <div className="absolute bottom-0 left-0 right-0 w-full pointer-events-none translate-y-[1px] z-10">
+        <WavyDivider fill="fill-white" variant={4} />
       </div>
     </section>
   );

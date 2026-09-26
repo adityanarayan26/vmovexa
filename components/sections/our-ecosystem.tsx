@@ -2,6 +2,7 @@
 
 import React from "react";
 import Image from "next/image";
+import { WavyDivider } from "@/components/ui/wavy-divider";
 import { EditorialLine } from "@/components/animations/editorial-text";
 import { FiShield, FiTrendingUp, FiCpu, FiCheckCircle } from "react-icons/fi";
 
@@ -54,9 +55,9 @@ const row1Items: EcosystemCard[] = [
   },
   {
     id: "set1-card-5",
-    badge: "FAIL-SAFE SAFETY",
-    title: "Smart Emergency Exit Safety Infrastructure",
-    desc: "Industrial fail-safe emergency exits with real-time telemetry, driver alerts, and cloud verification.",
+    badge: "EDGE COMPUTING",
+    title: "VMOVEXA AI Edge Node",
+    desc: "Industrial-grade edge computing hardware delivering real-time processing, AI telemetry, and fail-safe redundancy onboard.",
     image: "/ecosystem-set1/5.jpg",
     layout: "text-top",
   },
@@ -106,10 +107,10 @@ const row2Items: EcosystemCard[] = [
   },
   {
     id: "set2-card-4",
-    badge: "SMART SAFETY",
-    subTag: "INTELLIGENT FLEET SURFACES",
-    title: "Safety. Reimagined.",
-    desc: "Smart emergency exits that think ahead, because every second matters.",
+    badge: "CLOUD TELEMETRY",
+    subTag: "REAL-TIME VEHICLE SYNC",
+    title: "Always Connected. Always Safe.",
+    desc: "Continuous cloud synchronization ensures every fleet vehicle is monitored, optimized, and secure.",
     image: "/ecosystem/4.jpg",
     layout: "image-top",
   },
@@ -189,32 +190,30 @@ function CardItem({ card }: { card: EcosystemCard }) {
             </div>
 
             {/* Premium Media slot */}
-            <div className="relative w-full aspect-[4/3] rounded-[16px] overflow-hidden bg-gradient-to-b from-zinc-900 to-black border border-white/[0.08] shadow-[inset_0_1px_0_rgba(255,255,255,0.1)] group-hover/card:border-white/[0.15] transition-all duration-500 flex items-center justify-center mt-auto">
-              <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(255,255,255,0.03)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.03)_1px,transparent_1px)] bg-[size:1rem_1rem] pointer-events-none" />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-60 z-10 pointer-events-none" />
+            <div className="relative w-full aspect-[4/3] rounded-[16px] overflow-hidden bg-black border border-white/[0.04] group-hover/card:border-white/[0.12] transition-all duration-500 flex items-center justify-center mt-auto">
+              <div className="absolute inset-0 shadow-[inset_0_1px_1px_rgba(255,255,255,0.05)] pointer-events-none z-10" />
               
               <Image
                 src={card.image}
                 alt={card.title}
                 fill
                 sizes="(max-width: 768px) 100vw, 400px"
-                className="object-contain p-3 group-hover/card:scale-[1.08] transition-transform duration-700 ease-out z-0"
+                className="object-contain group-hover/card:scale-[1.05] transition-transform duration-700 ease-out z-0"
               />
             </div>
           </>
         ) : (
           <>
             {/* Premium Media slot on top */}
-            <div className="relative w-full aspect-[4/3] rounded-[16px] overflow-hidden bg-gradient-to-b from-zinc-900 to-black border border-white/[0.08] shadow-[inset_0_1px_0_rgba(255,255,255,0.1)] group-hover/card:border-white/[0.15] transition-all duration-500 mb-5 flex items-center justify-center">
-              <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(255,255,255,0.03)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.03)_1px,transparent_1px)] bg-[size:1rem_1rem] pointer-events-none" />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-60 z-10 pointer-events-none" />
+            <div className="relative w-full aspect-[4/3] rounded-[16px] overflow-hidden bg-black border border-white/[0.04] group-hover/card:border-white/[0.12] transition-all duration-500 mb-5 flex items-center justify-center">
+              <div className="absolute inset-0 shadow-[inset_0_1px_1px_rgba(255,255,255,0.05)] pointer-events-none z-10" />
               
               <Image
                 src={card.image}
                 alt={card.title}
                 fill
                 sizes="(max-width: 768px) 100vw, 400px"
-                className="object-contain p-3 group-hover/card:scale-[1.08] transition-transform duration-700 ease-out z-0"
+                className="object-contain group-hover/card:scale-[1.05] transition-transform duration-700 ease-out z-0"
               />
             </div>
 
@@ -250,7 +249,7 @@ function CardItem({ card }: { card: EcosystemCard }) {
 
 export function OurEcosystemSection() {
   return (
-    <section className="relative py-16 sm:py-20 overflow-hidden bg-black border-b border-white/[0.08]">
+    <section className="relative py-16 sm:py-20 overflow-hidden bg-black">
       {/* Background Lighting & Grid */}
       <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[900px] h-[450px] bg-gradient-to-b from-blue-500/10 via-purple-500/10 to-transparent blur-[140px] pointer-events-none -z-10" />
       <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(255,255,255,0.02)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.02)_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_75%_55%_at_50%_40%,#000_70%,transparent_100%)] pointer-events-none" />
@@ -293,6 +292,13 @@ export function OurEcosystemSection() {
             </div>
           ))}
         </div>
+      </div>
+
+      {/* Wavy Transition to White Section */}
+      {/* Spacer to prevent wave from covering content */}
+      <div className="w-full h-[30px] sm:h-[50px] lg:h-[70px] pointer-events-none" />
+      <div className="absolute bottom-0 left-0 right-0 w-full pointer-events-none translate-y-[1px] z-10">
+        <WavyDivider fill="fill-white" variant={3} />
       </div>
     </section>
   );

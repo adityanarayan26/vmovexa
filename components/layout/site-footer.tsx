@@ -54,7 +54,7 @@ const socialLinks = [
 
 export function SiteFooter() {
   return (
-    <footer className="border-t border-white/10 bg-black text-white pt-12 pb-8">
+    <footer className="bg-black text-white pt-12 pb-8">
       <div className="container mx-auto px-6 md:px-12 max-w-7xl">
         {/* Main Footer Grid: Brand & CTAs (Left 4 cols) + Navigation (Right 8 cols) */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-8 pb-10 border-b border-white/10">

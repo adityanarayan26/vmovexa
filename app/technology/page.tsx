@@ -22,6 +22,7 @@ import { TextDecrypt } from "@/components/animations/text-decrypt";
 import { BlurReveal } from "@/components/animations/blur-reveal";
 import { TiltCard } from "@/components/animations/tilt-card";
 import { FloatingElement } from "@/components/animations/image-reveal";
+import { WavyDivider } from "@/components/ui/wavy-divider";
 
 export const metadata: Metadata = {
   title: "VMOVEXA Technology | Edge Computing, IoT & Connected Mobility",
@@ -74,7 +75,7 @@ export default function TechnologyPage() {
   return (
     <main className="min-h-screen bg-black text-white">
       {/* 01 — HERO (Mockup Screen 03: TECHNOLOGY) */}
-      <section className="relative pt-36 pb-20 overflow-hidden border-b border-white/[0.08] bg-black">
+      <section className="relative pt-36 pb-20 overflow-hidden bg-black">
         <div className="container relative z-10 max-w-7xl mx-auto px-6">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start mb-12">
             <div className="lg:col-span-10">
@@ -89,11 +90,11 @@ export default function TechnologyPage() {
 
               <CubertoLines
                 as="h1"
-                className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight leading-[1.1] max-w-4xl mb-6 text-white"
+                className="text-4xl sm:text-5xl lg:text-7xl font-extrabold tracking-tight uppercase leading-[1.05] max-w-4xl mb-6 text-white"
                 delay={0.15}
                 lines={[
-                  "Built for the",
-                  <span key="sub" className="gradient-text">moving edge.</span>
+                  "BUILT FOR THE",
+                  <span key="sub" className="gradient-text">MOVING EDGE.</span>
                 ]}
               />
 
@@ -175,10 +176,17 @@ export default function TechnologyPage() {
             </div>
           </GsapScrollReveal>
         </div>
+        
+        {/* Wavy Transition to White Section */}
+        {/* Spacer to prevent wave from covering content */}
+        <div className="w-full h-[30px] sm:h-[50px] lg:h-[70px] pointer-events-none" />
+        <div className="absolute bottom-0 left-0 right-0 w-full pointer-events-none translate-y-[1px] z-10">
+          <WavyDivider fill="fill-white" variant={4} />
+        </div>
       </section>
 
       {/* 02 — DETAILED ARCHITECTURE SPECIFICATIONS */}
-      <section className="py-24 border-b border-zinc-200 bg-white">
+      <section className="py-24 relative overflow-hidden bg-white">
         <div className="container max-w-6xl mx-auto px-6">
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-20">
               {[
@@ -208,7 +216,7 @@ export default function TechnologyPage() {
 
           {/* Cloud Scale. Edge Speed. Section with Motion Trails Visual */}
           <GsapScrollReveal delay={0.2}>
-            <div className="p-8 sm:p-12 rounded-3xl bg-zinc-50 border border-zinc-200 mb-12 hover:border-cyan-500/30 hover:shadow-lg transition-all group relative overflow-hidden">
+            <div className="pt-12 mt-16 border-t border-zinc-200 mb-12 relative overflow-hidden">
                <div className="absolute inset-0 bg-gradient-to-tr from-cyan-900/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none" />
               <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center relative z-10">
                 <div className="lg:col-span-6 space-y-4">
@@ -237,10 +245,16 @@ export default function TechnologyPage() {
             </div>
           </GsapScrollReveal>
         </div>
+        {/* Wavy Transition to Black Section */}
+        {/* Spacer to prevent wave from covering content */}
+        <div className="w-full h-[30px] sm:h-[50px] lg:h-[70px] pointer-events-none" />
+        <div className="absolute bottom-0 left-0 right-0 w-full pointer-events-none translate-y-[1px] z-10">
+          <WavyDivider fill="fill-black" variant={3} />
+        </div>
       </section>
 
       {/* 02 — CLOUD + EDGE (TWO WORLDS. ONE ARCHITECTURE) */}
-      <section className="py-28 border-b border-white/[0.08] relative overflow-hidden bg-black">
+      <section className="py-28 relative overflow-hidden bg-black">
         <div className="container max-w-6xl mx-auto px-6 relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
             <div className="lg:col-span-6 space-y-6">
@@ -301,7 +315,7 @@ export default function TechnologyPage() {
       </section>
 
       {/* 03 — GPS & GEOFENCING (MAKE GEOGRAPHY PROGRAMMABLE) */}
-      <section className="py-28 border-b border-white/[0.08] relative bg-black">
+      <section className="py-28 relative overflow-hidden bg-black">
         <div className="container max-w-6xl mx-auto px-6 relative z-10">
           <div className="max-w-3xl mb-16">
             <EditorialLine>
@@ -366,10 +380,17 @@ export default function TechnologyPage() {
             </div>
           </div>
         </div>
+
+        {/* Wavy Transition to White Section */}
+        {/* Spacer to prevent wave from covering content */}
+        <div className="w-full h-[30px] sm:h-[50px] lg:h-[70px] pointer-events-none" />
+        <div className="absolute bottom-0 left-0 right-0 w-full pointer-events-none translate-y-[1px] z-10">
+          <WavyDivider fill="fill-white" variant={2} />
+        </div>
       </section>
 
       {/* 04 — TELEMETRY & MULTI-SCREEN */}
-      <section className="py-28 border-b border-zinc-200 bg-white">
+      <section className="py-28 relative overflow-hidden bg-white">
         <div className="container max-w-6xl mx-auto px-6">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
             {/* Telemetry */}
@@ -491,10 +512,17 @@ export default function TechnologyPage() {
             </div>
           </GsapScrollReveal>
         </div>
+        
+        {/* Wavy Transition to Black Section */}
+        {/* Spacer to prevent wave from covering content */}
+        <div className="w-full h-[30px] sm:h-[50px] lg:h-[70px] pointer-events-none" />
+        <div className="absolute bottom-0 left-0 right-0 w-full pointer-events-none translate-y-[1px] z-10">
+          <WavyDivider fill="fill-black" variant={1} />
+        </div>
       </section>
 
       {/* 05 — API-READY ARCHITECTURE (BUILT TO CONNECT) */}
-      <section className="py-28 border-b border-white/[0.08] relative overflow-hidden bg-black">
+      <section className="py-28 relative overflow-hidden bg-black">
         <div className="container max-w-6xl mx-auto px-6 relative z-10">
           <div className="max-w-2xl mb-16">
             <EditorialLine>
@@ -547,7 +575,7 @@ export default function TechnologyPage() {
 
           {/* Security & Resilience banner */}
           <GsapScrollReveal delay={0.3}>
-            <div className="p-8 md:p-10 rounded-3xl bg-white border border-zinc-200 flex flex-col md:flex-row items-start md:items-center justify-between gap-8 hover:border-cyan-500/30 hover:shadow-lg transition-all group relative overflow-hidden shadow-sm">
+            <div className="pt-12 mt-20 border-t border-zinc-200 flex flex-col md:flex-row items-start md:items-center justify-between gap-8 relative overflow-hidden">
                <div className="absolute inset-0 bg-gradient-to-r from-transparent via-cyan-50/50 to-transparent -translate-x-full group-hover:animate-[shimmer_2s_infinite]" />
               <div className="space-y-3 max-w-2xl relative z-10">
                 <div className="flex items-center gap-2 text-cyan-600 font-mono text-xs uppercase tracking-wider">
@@ -569,10 +597,17 @@ export default function TechnologyPage() {
             </div>
           </GsapScrollReveal>
         </div>
+        
+        {/* Wavy Transition to White Section */}
+        {/* Spacer to prevent wave from covering content */}
+        <div className="w-full h-[30px] sm:h-[50px] lg:h-[70px] pointer-events-none" />
+        <div className="absolute bottom-0 left-0 right-0 w-full pointer-events-none translate-y-[1px] z-10">
+          <WavyDivider fill="fill-white" variant={1} />
+        </div>
       </section>
 
       {/* CTA — Light / White Background */}
-      <section className="py-24 text-center relative overflow-hidden bg-white border-t border-zinc-200">
+      <section className="py-24 text-center relative overflow-hidden bg-white">
         <div className="absolute inset-0 bg-gradient-to-b from-cyan-50/50 via-transparent to-transparent pointer-events-none" />
         <div className="container max-w-4xl mx-auto px-6 relative z-10">
           <EditorialLine>
@@ -606,6 +641,13 @@ export default function TechnologyPage() {
               </MagneticElement>
             </div>
           </EditorialLine>
+        </div>
+        
+        {/* Wavy Transition to Black Footer */}
+        {/* Spacer to prevent wave from covering content */}
+        <div className="w-full h-[30px] sm:h-[50px] lg:h-[70px] pointer-events-none" />
+        <div className="absolute bottom-0 left-0 right-0 w-full pointer-events-none translate-y-[1px] z-10">
+          <WavyDivider fill="fill-black" variant={3} />
         </div>
       </section>
     </main>

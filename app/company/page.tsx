@@ -11,6 +11,7 @@ import { PatentsAndCerts } from "@/components/visuals/patents-and-certs";
 import { TextDecrypt } from "@/components/animations/text-decrypt";
 import { BlurReveal } from "@/components/animations/blur-reveal";
 import { TiltCard } from "@/components/animations/tilt-card";
+import { WavyDivider } from "@/components/ui/wavy-divider";
 import { FloatingElement } from "@/components/animations/image-reveal";
 
 export const metadata: Metadata = {
@@ -51,7 +52,7 @@ export default function CompanyPage() {
   return (
     <main className="min-h-screen bg-black text-white">
       {/* 01 — HERO (Mockup Screen 07: COMPANY) */}
-      <section className="relative min-h-[90vh] pt-32 pb-12 overflow-hidden border-b border-white/[0.08] bg-black flex flex-col justify-center">
+      <section className="relative min-h-[90vh] pt-32 pb-12 overflow-hidden bg-black flex flex-col justify-center">
         {/* Background Earth Orbit Visual behind 'Building intelligence into movement.' */}
         <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
           <Image
@@ -82,7 +83,7 @@ export default function CompanyPage() {
 
               <CubertoLines
                 as="h1"
-                className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight leading-[1.1] max-w-4xl mb-6 text-white drop-shadow-[0_4px_30px_rgba(0,0,0,0.9)]"
+                className="text-4xl sm:text-5xl lg:text-7xl font-extrabold tracking-tight uppercase leading-[1.05] max-w-4xl mb-6 text-white drop-shadow-[0_4px_30px_rgba(0,0,0,0.9)]"
                 delay={0.15}
                 lines={[
                   "Building intelligence",
@@ -192,10 +193,17 @@ export default function CompanyPage() {
             </div>
           </GsapScrollReveal>
         </div>
+        
+        {/* Wavy Transition to White Section */}
+        {/* Spacer to prevent wave from covering content */}
+        <div className="w-full h-[30px] sm:h-[50px] lg:h-[70px] pointer-events-none" />
+        <div className="absolute bottom-0 left-0 right-0 w-full pointer-events-none translate-y-[1px] z-10">
+          <WavyDivider fill="fill-white" variant={1} />
+        </div>
       </section>
 
       {/* 02 — LEADERSHIP (Matching Klee Technologies Design) */}
-      <section id="leadership" className="py-12 border-b border-neutral-200 relative overflow-hidden bg-white scroll-mt-20">
+      <section id="leadership" className="py-12 relative overflow-hidden bg-white scroll-mt-20">
         <div className="container max-w-7xl mx-auto px-6 relative z-10">
           <div className="mb-12">
             <EditorialLine>
@@ -248,10 +256,17 @@ export default function CompanyPage() {
             ))}
           </div>
         </div>
+        
+        {/* Wavy Transition to Black Section */}
+        {/* Spacer to prevent wave from covering content */}
+        <div className="w-full h-[30px] sm:h-[50px] lg:h-[70px] pointer-events-none" />
+        <div className="absolute bottom-0 left-0 right-0 w-full pointer-events-none translate-y-[1px] z-10">
+          <WavyDivider fill="fill-black" variant={1} />
+        </div>
       </section>
 
       {/* 03 — DETAILED TABS & COMPANY ECOSYSTEM */}
-      <section id="company-details" className="py-12 border-b border-white/[0.08]">
+      <section id="company-details" className="py-12">
         <div className="container max-w-6xl mx-auto px-6">
           <CompanyClient />
         </div>

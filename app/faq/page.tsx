@@ -98,7 +98,7 @@ export default function FAQPage() {
   return (
     <main className="min-h-screen bg-black text-white">
       {/* 01 — HERO */}
-      <section className="relative pt-36 pb-20 overflow-hidden border-b border-white/[0.08] bg-black">
+      <section className="relative pt-36 pb-20 overflow-hidden bg-black">
         <div className="container relative z-10 max-w-6xl mx-auto px-6">
           <Reveal>
             <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/[0.04] border border-white/15 backdrop-blur-md mb-8">
@@ -111,7 +111,7 @@ export default function FAQPage() {
 
           <CubertoLines
             as="h1"
-            className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight leading-[1.1] max-w-4xl mb-6 text-white uppercase"
+            className="text-4xl sm:text-5xl lg:text-7xl font-extrabold tracking-tight leading-[1.05] max-w-4xl mb-6 text-white uppercase"
             delay={0.1}
             lines={[
               "Frequently Asked",
@@ -142,7 +142,7 @@ export default function FAQPage() {
       </section>
 
       {/* 02 — CATEGORIES & ACCORDION */}
-      <section className="py-20 border-b border-white/[0.08] bg-black">
+      <section className="py-20 bg-black">
         <div className="container max-w-5xl mx-auto px-6">
           {/* Category Filter Pills */}
           <div className="flex flex-wrap gap-2.5 mb-12">
