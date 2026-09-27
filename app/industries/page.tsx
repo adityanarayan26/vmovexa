@@ -112,7 +112,7 @@ export default function IndustriesPage() {
                 delay={0.15}
                 lines={[
                   "ONE TECHNOLOGY.",
-                  <span key="sub" className="gradient-text">MANY MOBILITY ENVIRONMENTS.</span>
+                  <span key="sub" className="bg-gradient-to-r from-cyan-400 via-indigo-500 to-purple-500 text-transparent bg-clip-text" style={{ WebkitBoxDecorationBreak: 'clone', boxDecorationBreak: 'clone' }}>MANY MOBILITY ENVIRONMENTS.</span>
                 ]}
               />
 
@@ -333,7 +333,7 @@ export default function IndustriesPage() {
         </div>
 
         <div className="container max-w-6xl mx-auto px-6 relative z-10">
-          <div className="max-w-2xl mb-16 text-center md:text-left">
+          <div className="max-w-2xl mb-8 text-center md:text-left">
             <EditorialLine>
               <div className="font-mono text-xs uppercase tracking-widest text-cyan-600 mb-3">
                 Industry Sectors
@@ -357,7 +357,8 @@ export default function IndustriesPage() {
               return (
                 <GsapScrollReveal key={sec.title} delay={idx * 0.05} className="h-full flex flex-col">
                   <MagneticElement strength={0.05} className="h-full block">
-                    <div className="min-h-[220px] p-7 rounded-2xl bg-white border border-zinc-200 hover:border-cyan-500/50 hover:shadow-lg transition-all duration-500 hover:bg-zinc-50 h-full flex flex-col justify-between group shadow-sm overflow-hidden relative">
+                    <div className="min-h-[220px] p-7 rounded-2xl bg-transparent border border-zinc-200 hover:border-transparent hover:shadow-lg transition-all duration-500 hover:bg-white/30 backdrop-blur-sm h-full flex flex-col justify-between group shadow-sm overflow-hidden relative">
+                       <div className="absolute inset-0 rounded-2xl p-[1.5px] bg-gradient-to-r from-cyan-400 via-indigo-500 to-purple-500 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" style={{ WebkitMask: 'linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0)', WebkitMaskComposite: 'xor', maskComposite: 'exclude' }} />
                        <div className="absolute -inset-x-full top-0 h-[1px] bg-gradient-to-r from-transparent via-cyan-400/50 to-transparent group-hover:animate-[shimmer_2s_infinite]" />
                       <div className="relative z-10">
                         <div className="flex items-center justify-between mb-5">

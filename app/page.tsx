@@ -888,6 +888,19 @@ export default function HomePage() {
       <section className="pt-16 pb-20 sm:pt-20 sm:pb-24 relative overflow-hidden bg-white">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(59,130,246,0.05)_0%,transparent_70%)] pointer-events-none" />
         
+        {/* Background Grid & Vector Nodes */}
+        <div className="absolute inset-0 opacity-[0.03] pointer-events-none" style={{ backgroundImage: 'linear-gradient(#000 1px, transparent 1px), linear-gradient(90deg, #000 1px, transparent 1px)', backgroundSize: '64px 64px' }} />
+        <div className="absolute inset-0 opacity-20 pointer-events-none overflow-hidden">
+          <svg className="w-full h-full" viewBox="0 0 1200 800" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M-100,400 C300,700 500,100 1300,400" fill="none" stroke="#3b82f6" strokeWidth="1" strokeDasharray="8 8" />
+            <path d="M-100,600 C400,800 600,200 1300,200" fill="none" stroke="#6366f1" strokeWidth="0.5" />
+            <circle cx="350" cy="530" r="4" fill="#3b82f6" className="animate-pulse" />
+            <circle cx="850" cy="270" r="4" fill="#6366f1" className="animate-pulse" />
+            <circle cx="200" cy="630" r="2" fill="#8b5cf6" />
+            <circle cx="1000" cy="300" r="2" fill="#0ea5e9" />
+          </svg>
+        </div>
+
         <div className="container max-w-7xl mx-auto px-6 relative z-10">
           <div className="max-w-3xl mb-12 md:mb-16 text-center md:text-left mx-auto md:mx-0">
             <EditorialLine>

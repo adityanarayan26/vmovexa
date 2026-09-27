@@ -111,9 +111,47 @@ export default function ContactPage() {
     "Other",
   ];
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    setSubmitted(true);
+    setIsSubmitting(true);
+    
+    const formData = new FormData(e.currentTarget);
+    const data = {
+      firstName: formData.get('firstName'),
+      lastName: formData.get('lastName'), // We'll split the full name or just use full name as firstName
+      workEmail: formData.get('workEmail'),
+      companyName: formData.get('companyName'),
+      interest: selectedInterest,
+      message: formData.get('message')
+    };
+    
+    // Split full name if provided in a single field
+    const fullName = formData.get('fullName') as string;
+    if (fullName) {
+      const parts = fullName.split(' ');
+      data.firstName = parts[0];
+      data.lastName = parts.slice(1).join(' ') || '-';
+    }
+
+    try {
+      const res = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(data),
+      });
+      if (res.ok) {
+        setSubmitted(true);
+      } else {
+        alert('Failed to send message. Please try again later.');
+      }
+    } catch (error) {
+      console.error(error);
+      alert('An error occurred. Please try again.');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const handleSelectTrack = (formOption: string) => {
@@ -312,17 +350,25 @@ export default function ContactPage() {
 
               <Reveal delay={0.1}>
                 <div className="space-y-3.5 pt-4 border-t border-white/10 text-xs sm:text-sm text-white/80 font-medium">
-                  <div className="flex items-center gap-3">
-                    <div className="w-8 h-8 rounded-lg bg-white/[0.04] border border-white/10 flex items-center justify-center text-cyan-400 shrink-0">
+                  <div className="flex items-start gap-3">
+                    <div className="w-8 h-8 rounded-lg bg-white/[0.04] border border-white/10 flex items-center justify-center text-cyan-400 shrink-0 mt-1">
                       <FiMail className="w-3.5 h-3.5" />
                     </div>
-                    <span>{site.email}</span>
+                    <div className="flex flex-col gap-1.5 mt-1">
+                      <span>{site.email}</span>
+                      <span>support@vmovexa.com</span>
+                      <span>hr@vmovexa.com</span>
+                      <span>business@vmovexa.com</span>
+                    </div>
                   </div>
-                  <div className="flex items-center gap-3">
-                    <div className="w-8 h-8 rounded-lg bg-white/[0.04] border border-white/10 flex items-center justify-center text-indigo-400 shrink-0">
+                  <div className="flex items-start gap-3 pt-2">
+                    <div className="w-8 h-8 rounded-lg bg-white/[0.04] border border-white/10 flex items-center justify-center text-indigo-400 shrink-0 mt-1">
                       <FiPhone className="w-3.5 h-3.5" />
                     </div>
-                    <span>{site.phone}</span>
+                    <div className="flex flex-col gap-1.5 mt-1">
+                      <span>{site.phone}</span>
+                      <span>+91 93903 93994</span>
+                    </div>
                   </div>
                   <div className="flex items-center gap-3">
                     <div className="w-8 h-8 rounded-lg bg-white/[0.04] border border-white/10 flex items-center justify-center text-purple-400 shrink-0">
@@ -335,7 +381,7 @@ export default function ContactPage() {
                 {/* Direct Action Buttons: WhatsApp & Brochure */}
                 <div className="pt-6 flex flex-col sm:flex-row gap-3">
                   <a
-                    href="https://wa.me/919999999999?text=Hello!%20I%20would%20like%20to%20know%20more%20about%20VMOVEXA."
+                    href="https://wa.me/919390393994?text=Hello!%20I%20would%20like%20to%20know%20more%20about%20VMOVEXA."
                     target="_blank"
                     rel="noopener noreferrer"
                     className="inline-flex items-center justify-center gap-2 px-5 py-3 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 hover:bg-emerald-500/20 text-xs font-mono font-semibold transition-all hover:scale-[1.02]"
@@ -378,6 +424,7 @@ export default function ContactPage() {
                         <div className="space-y-1.5">
                           <label className="text-xs font-mono text-white/70 uppercase tracking-wider block font-medium">Full Name *</label>
                           <input
+                            name="fullName"
                             required
                             type="text"
                             placeholder="John Doe"
@@ -387,6 +434,7 @@ export default function ContactPage() {
                         <div className="space-y-1.5">
                           <label className="text-xs font-mono text-white/70 uppercase tracking-wider block font-medium">Company *</label>
                           <input
+                            name="companyName"
                             required
                             type="text"
                             placeholder="Enterprise / Fleet / Agency"
@@ -399,6 +447,7 @@ export default function ContactPage() {
                         <div className="space-y-1.5">
                           <label className="text-xs font-mono text-white/70 uppercase tracking-wider block font-medium">Work Email *</label>
                           <input
+                            name="workEmail"
                             required
                             type="email"
                             placeholder="name@company.com"
@@ -408,6 +457,7 @@ export default function ContactPage() {
                         <div className="space-y-1.5">
                           <label className="text-xs font-mono text-white/70 uppercase tracking-wider block font-medium">Phone Number</label>
                           <input
+                            name="phone"
                             type="tel"
                             placeholder="+91 98765 43210"
                             className="w-full px-4 py-3 rounded-xl bg-white/[0.04] border border-white/10 text-white placeholder-white/30 text-sm focus:outline-none focus:border-cyan-400 focus:ring-2 focus:ring-cyan-500/20 transition-all"
@@ -439,6 +489,7 @@ export default function ContactPage() {
                       <div className="space-y-1.5">
                         <label className="text-xs font-mono text-white/70 uppercase tracking-wider block font-medium">Message</label>
                         <textarea
+                          name="message"
                           rows={4}
                           placeholder="Tell us about your fleet, requirements, or partnership proposal..."
                           className="w-full px-4 py-3 rounded-xl bg-white/[0.04] border border-white/10 text-white placeholder-white/30 text-sm focus:outline-none focus:border-cyan-400 focus:ring-2 focus:ring-cyan-500/20 transition-all resize-none"
@@ -447,10 +498,11 @@ export default function ContactPage() {
 
                       <button
                         type="submit"
-                        className="w-full py-3.5 rounded-xl bg-white text-black font-semibold text-xs uppercase tracking-widest hover:bg-zinc-200 active:scale-[0.99] transition-all flex items-center justify-center gap-2 shadow-[0_0_20px_rgba(255,255,255,0.2)] cursor-pointer group"
+                        disabled={isSubmitting}
+                        className="w-full py-3.5 rounded-xl bg-white text-black font-semibold text-xs uppercase tracking-widest hover:bg-zinc-200 active:scale-[0.99] transition-all flex items-center justify-center gap-2 shadow-[0_0_20px_rgba(255,255,255,0.2)] cursor-pointer group disabled:opacity-70 disabled:cursor-not-allowed"
                       >
-                        <span>Send Enquiry</span>
-                        <FiSend size={14} className="group-hover:translate-x-1 transition-transform" />
+                        <span>{isSubmitting ? "Sending..." : "Send Enquiry"}</span>
+                        {!isSubmitting && <FiSend size={14} className="group-hover:translate-x-1 transition-transform" />}
                       </button>
                     </form>
                   )}

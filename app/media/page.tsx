@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 import { FiArrowRight, FiArrowUpRight, FiMonitor, FiMapPin, FiBarChart2, FiCheckCircle } from "react-icons/fi";
 import { EditorialMaskText, EditorialLine, CubertoLines } from "@/components/animations/editorial-text";
 import { MagneticElement, GsapScrollReveal, ParallaxElement } from "@/components/animations/gsap-scroll-fx";
@@ -49,6 +50,23 @@ export default function MediaPage() {
     <main className="min-h-screen bg-black text-white">
       {/* 01 — HERO (Mockup Screen 06: MEDIA) */}
       <section className="relative pt-36 pb-20 overflow-hidden bg-black">
+        {/* Background X Logo with Radial Edge Fade */}
+        <div 
+          className="absolute top-10 -right-20 lg:right-10 w-[400px] lg:w-[600px] opacity-60 pointer-events-none select-none z-0 mix-blend-screen"
+          style={{
+            maskImage: 'radial-gradient(circle at center, black 40%, transparent 75%)',
+            WebkitMaskImage: 'radial-gradient(circle at center, black 40%, transparent 75%)'
+          }}
+        >
+          <Image
+            src="/images/logo-x-media.png"
+            alt="Intelligent Media"
+            width={600}
+            height={600}
+            className="w-full h-auto object-contain"
+          />
+        </div>
+
         <div className="container relative z-10 max-w-7xl mx-auto px-6">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start mb-12">
             <div className="lg:col-span-10">
@@ -280,7 +298,7 @@ export default function MediaPage() {
       </section>
 
       {/* 03 — DIGITAL OOH: THE ROAD IS YOUR MEDIA NETWORK */}
-      <section className="py-28 relative bg-black">
+      <section className="pt-28 pb-8 relative bg-black">
         <div className="container max-w-6xl mx-auto px-6 relative z-10">
           <div className="max-w-3xl mb-16">
             <EditorialLine>
@@ -340,7 +358,7 @@ export default function MediaPage() {
       </section>
 
       {/* 04 — CAMPAIGN INFRASTRUCTURE & ADVERTISER CATEGORIES */}
-      <section className="py-28 relative overflow-hidden bg-black">
+      <section className="pt-8 pb-28 relative overflow-hidden bg-black">
         <div className="container max-w-6xl mx-auto px-6 relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
             <div className="lg:col-span-6 space-y-6">

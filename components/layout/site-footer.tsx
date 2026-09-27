@@ -59,7 +59,7 @@ export function SiteFooter() {
         {/* Main Footer Grid: Brand & CTAs (Left 4 cols) + Navigation (Right 8 cols) */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-8 pb-10 border-b border-white/10">
           {/* Brand Info & Action CTAs */}
-          <div className="lg:col-span-4 space-y-5">
+          <div className="lg:col-span-4 flex flex-col items-center text-center lg:items-start lg:text-left space-y-5">
             <Link href="/" className="inline-block group">
               <Image
                 src="/logos/vmovexa-vertical.svg"
@@ -71,19 +71,23 @@ export function SiteFooter() {
               />
             </Link>
 
-            <div className="space-y-1.5">
-              <div className="font-mono text-[11px] tracking-widest text-cyan-400 uppercase font-semibold">
-                INTELLIGENCE IN MOTION.
+            <div className="space-y-1.5 flex flex-col items-center lg:items-start">
+              <div className="font-mono text-[9.5px] sm:text-[10.5px] tracking-wider uppercase font-semibold whitespace-nowrap">
+                <span className="text-white/90">Smart Mobility</span>
+                <span className="text-white/30 mx-1.5">|</span>
+                <span className="text-white/90">Interactive Media</span>
+                <span className="text-white/30 mx-1.5">|</span>
+                <span className="bg-gradient-to-r from-cyan-400 via-indigo-500 to-purple-500 text-transparent bg-clip-text">Safety First</span>
               </div>
-              <p className="text-xs text-white/50 leading-relaxed font-light max-w-sm">
+              <p className="text-xs text-white/50 leading-relaxed font-light max-w-sm mx-auto lg:mx-0">
                 Cloud-to-Edge Mobility Intelligence Platform connecting vehicles, edge computing, digital displays, and urban intelligence layers.
               </p>
             </div>
 
             {/* Quick Action CTAs */}
-            <div className="flex flex-wrap items-center gap-2 pt-1">
+            <div className="flex flex-wrap justify-center lg:justify-start items-center gap-2 pt-1">
               <a
-                href="https://wa.me/919999999999?text=Hello!%20I%20would%20like%20to%20know%20more%20about%20VMOVEXA."
+                href="https://wa.me/919390393994?text=Hello!%20I%20would%20like%20to%20know%20more%20about%20VMOVEXA."
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-xs font-mono font-medium text-emerald-400 hover:bg-emerald-500/20 hover:border-emerald-400 transition-all hover:scale-[1.02]"
@@ -100,7 +104,6 @@ export function SiteFooter() {
                 <span>Brochure</span>
                 <FiArrowUpRight className="w-3.5 h-3.5" />
               </a>
-
             </div>
           </div>
 

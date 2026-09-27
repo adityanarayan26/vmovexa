@@ -17,6 +17,7 @@
     "lenis": "latest",
     "lucide-react": "latest",
     "next": "latest",
+    "nodemailer": "^10.0.11",
     "react": "latest",
     "react-dom": "latest",
     "react-icons": "^5.7.0"
@@ -25,6 +26,7 @@
     "@eslint/eslintrc": "latest",
     "@tailwindcss/postcss": "^4.3.3",
     "@types/node": "latest",
+    "@types/nodemailer": "^8.0.2",
     "@types/react": "latest",
     "@types/react-dom": "latest",
     "eslint": "latest",

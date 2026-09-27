@@ -64,8 +64,8 @@ export default function SolutionsPage() {
                 className="text-4xl sm:text-5xl lg:text-7xl font-extrabold tracking-tight leading-[1.05] max-w-4xl mb-6 text-white uppercase"
                 delay={0.15}
                 lines={[
-                  "Technology that moves with",
-                  <span key="sub" className="gradient-text">the world.</span>
+                  <span key="1" className="block whitespace-nowrap">Technology that moves with</span>,
+                  <span key="sub" className="block bg-gradient-to-r from-cyan-400 via-indigo-500 to-purple-500 text-transparent bg-clip-text mt-1" style={{ WebkitBoxDecorationBreak: 'clone', boxDecorationBreak: 'clone' }}>the world.</span>
                 ]}
               />
 
@@ -91,25 +91,25 @@ export default function SolutionsPage() {
               {
                 title: "Fleet Operators",
                 desc: "Digitalize your fleet with a connected infrastructure.",
-                img: "/images/solution-fleet-operators.png",
+                img: "/images/solution-fleet-operators.jpg",
                 href: "#fleet-operators",
               },
               {
                 title: "Mobility Media",
                 desc: "Turn moving screens into measurable digital inventory.",
-                img: "/images/solution-mobility-media.png",
+                img: "/images/solution-mobility-media.jpg",
                 href: "#mobility-media",
               },
               {
                 title: "Smart Cities",
                 desc: "Let the city communicate through mobility.",
-                img: "/images/solution-smart-cities.png",
+                img: "/images/solution-smart-cities.jpg",
                 href: "#smart-cities",
               },
               {
                 title: "Enterprise Mobility",
                 desc: "Connect people, places and operations.",
-                img: "/images/solution-enterprise-mobility.png",
+                img: "/images/solution-enterprise-mobility.jpg",
                 href: "#enterprise-mobility",
               },
             ].map((card, i) => (

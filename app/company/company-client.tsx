@@ -224,8 +224,9 @@ export function CompanyClient() {
             <div className="space-y-12">
               <EditorialTabItem delayOffset={0.1}>
                 <div className="max-w-3xl mb-8">
-                  <h2 className="text-4xl sm:text-6xl font-semibold tracking-tight uppercase leading-tight mb-4">
-                    Build the Moving Ecosystem.
+                  <h2 className="text-4xl sm:text-6xl font-semibold tracking-tight uppercase leading-[1.1] mb-5 text-balance">
+                    Build the Moving <br />
+                    <span className="gradient-text">Ecosystem.</span>
                   </h2>
                   <p className="text-lg text-white/70 leading-relaxed">
                     VMOVEXA is designed to work within a broader technology ecosystem, partnering across hardware, connectivity, cloud, and media.
@@ -264,9 +265,9 @@ export function CompanyClient() {
             <div className="space-y-16">
               <EditorialTabItem delayOffset={0.1}>
                 <div className="max-w-3xl mb-8">
-                  <h2 className="text-4xl sm:text-6xl font-semibold tracking-tight uppercase leading-tight mb-4">
-                    Building a New Digital Layer <br />
-                    <span className="text-cyan-400">Across Mobility.</span>
+                  <h2 className="text-3xl sm:text-5xl lg:text-[3.5rem] font-bold tracking-tight uppercase leading-[1.1] mb-5 text-balance max-w-4xl">
+                    Building a New Digital Layer{" "}
+                    <span className="gradient-text block sm:inline">Across Mobility.</span>
                   </h2>
                   <p className="text-lg text-white/70 leading-relaxed mb-4">
                     VMOVEXA operates at the intersection of several expanding technology categories: Connected Mobility, Edge Computing, Cloud Software, IoT, Digital Media, Data Infrastructure, and Smart Transportation.
@@ -317,7 +318,7 @@ export function CompanyClient() {
             <div className="py-12 flex flex-col items-center justify-center text-center">
               <EditorialTabItem delayOffset={0.1}>
                 <h2 className="text-4xl sm:text-6xl font-semibold tracking-tight uppercase mb-6">
-                  Build With VMOVEXA.
+                  Build With <span className="gradient-text">VMOVEXA.</span>
                 </h2>
               </EditorialTabItem>
               <EditorialTabItem delayOffset={0.2}>

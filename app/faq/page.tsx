@@ -243,7 +243,7 @@ export default function FAQPage() {
 
                 <div className="flex flex-wrap items-center justify-center gap-4 pt-2">
                   <a
-                    href="https://wa.me/919999999999?text=Hello!%20I%20have%20questions%20about%20VMOVEXA%20platform."
+                    href="https://wa.me/919390393994?text=Hello!%20I%20have%20questions%20about%20VMOVEXA%20platform."
                     target="_blank"
                     rel="noopener noreferrer"
                     className="inline-flex items-center gap-2 px-7 py-3.5 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 hover:bg-emerald-500/20 text-xs font-mono font-semibold uppercase tracking-wider transition-all hover:scale-105"

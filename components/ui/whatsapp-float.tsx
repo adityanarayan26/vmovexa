@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import { RiWhatsappFill } from "react-icons/ri";
 
 export function WhatsAppFloat() {
-  const whatsappUrl = "https://wa.me/919999999999?text=Hello!%20I%20would%20like%20to%20know%20more%20about%20VMOVEXA.";
+  const whatsappUrl = "https://wa.me/919390393994?text=Hello!%20I%20would%20like%20to%20know%20more%20about%20VMOVEXA.";
 
   return (
     <motion.aside

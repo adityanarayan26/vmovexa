@@ -493,7 +493,7 @@ export default function TechnologyPage() {
       </section>
 
       {/* 04.B — FULL-STACK FLEET TELEMETRY & SERVICE FABRIC (new1.PNG) */}
-      <section className="py-24 relative overflow-hidden bg-black border-t border-white/5">
+      <section className="pt-24 pb-8 relative overflow-hidden bg-black border-t border-white/5">
         <div className="container max-w-6xl mx-auto px-6 relative z-10">
           <GsapScrollReveal delay={0.1}>
             <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-6 mb-12">
@@ -523,7 +523,7 @@ export default function TechnologyPage() {
             </div>
 
             {/* Visual Container for new1.PNG */}
-            <div className="relative group rounded-[2.5rem] p-2 bg-gradient-to-b from-white/[0.04] to-transparent border border-white/10 hover:border-cyan-500/30 transition-all duration-500 overflow-hidden mb-12 shadow-2xl">
+            <div className="relative group rounded-[2.5rem] p-2 bg-gradient-to-b from-white/[0.04] to-transparent border border-white/10 hover:border-cyan-500/30 transition-all duration-500 overflow-hidden mb-6 shadow-2xl">
               <MediaSlot
                 theme="transparent"
                 type="image"
@@ -541,21 +541,29 @@ export default function TechnologyPage() {
 
             {/* 4 Feature Spec Pillars below the diagram */}
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-              <div className="p-5 rounded-2xl bg-white/[0.02] border border-white/5 hover:bg-white/[0.04] hover:border-cyan-500/30 transition-all">
-                <div className="text-xs font-mono text-cyan-400 uppercase tracking-wider mb-1.5 font-semibold">01 • Cloud Orchestration</div>
-                <div className="text-xs text-white/60 leading-relaxed">Multi-tenant fleet management, campaign rules, and unified national telemetry aggregation.</div>
+              <div className="group relative rounded-2xl p-[1px] bg-white/5 hover:bg-gradient-to-r hover:from-cyan-400 hover:via-indigo-500 hover:to-purple-500 transition-all duration-500">
+                <div className="p-5 rounded-2xl bg-[#0a0a0a] h-full transition-colors">
+                  <div className="text-xs font-mono text-cyan-400 uppercase tracking-wider mb-1.5 font-semibold">01 • Cloud Orchestration</div>
+                  <div className="text-xs text-white/60 leading-relaxed">Multi-tenant fleet management, campaign rules, and unified national telemetry aggregation.</div>
+                </div>
               </div>
-              <div className="p-5 rounded-2xl bg-white/[0.02] border border-white/5 hover:bg-white/[0.04] hover:border-indigo-500/30 transition-all">
-                <div className="text-xs font-mono text-indigo-400 uppercase tracking-wider mb-1.5 font-semibold">02 • Microservices Tier</div>
-                <div className="text-xs text-white/60 leading-relaxed">Decoupled APIs for real-time routing, DOOH playback logs, spatial queries, and security.</div>
+              <div className="group relative rounded-2xl p-[1px] bg-white/5 hover:bg-gradient-to-r hover:from-cyan-400 hover:via-indigo-500 hover:to-purple-500 transition-all duration-500">
+                <div className="p-5 rounded-2xl bg-[#0a0a0a] h-full transition-colors">
+                  <div className="text-xs font-mono text-indigo-400 uppercase tracking-wider mb-1.5 font-semibold">02 • Microservices Tier</div>
+                  <div className="text-xs text-white/60 leading-relaxed">Decoupled APIs for real-time routing, DOOH playback logs, spatial queries, and security.</div>
+                </div>
               </div>
-              <div className="p-5 rounded-2xl bg-white/[0.02] border border-white/5 hover:bg-white/[0.04] hover:border-purple-500/30 transition-all">
-                <div className="text-xs font-mono text-purple-400 uppercase tracking-wider mb-1.5 font-semibold">03 • Distributed Edge</div>
-                <div className="text-xs text-white/60 leading-relaxed">Depot and in-vehicle edge nodes providing localized decisioning even during network loss.</div>
+              <div className="group relative rounded-2xl p-[1px] bg-white/5 hover:bg-gradient-to-r hover:from-cyan-400 hover:via-indigo-500 hover:to-purple-500 transition-all duration-500">
+                <div className="p-5 rounded-2xl bg-[#0a0a0a] h-full transition-colors">
+                  <div className="text-xs font-mono text-purple-400 uppercase tracking-wider mb-1.5 font-semibold">03 • Distributed Edge</div>
+                  <div className="text-xs text-white/60 leading-relaxed">Depot and in-vehicle edge nodes providing localized decisioning even during network loss.</div>
+                </div>
               </div>
-              <div className="p-5 rounded-2xl bg-white/[0.02] border border-white/5 hover:bg-white/[0.04] hover:border-emerald-500/30 transition-all">
-                <div className="text-xs font-mono text-emerald-400 uppercase tracking-wider mb-1.5 font-semibold">04 • In-Transit Fleet</div>
-                <div className="text-xs text-white/60 leading-relaxed">Designed for sub-meter positioning, multi-screen sync, and vehicle telemetry integration.</div>
+              <div className="group relative rounded-2xl p-[1px] bg-white/5 hover:bg-gradient-to-r hover:from-cyan-400 hover:via-indigo-500 hover:to-purple-500 transition-all duration-500">
+                <div className="p-5 rounded-2xl bg-[#0a0a0a] h-full transition-colors">
+                  <div className="text-xs font-mono text-emerald-400 uppercase tracking-wider mb-1.5 font-semibold">04 • In-Transit Fleet</div>
+                  <div className="text-xs text-white/60 leading-relaxed">Designed for sub-meter positioning, multi-screen sync, and vehicle telemetry integration.</div>
+                </div>
               </div>
             </div>
           </GsapScrollReveal>
@@ -563,7 +571,7 @@ export default function TechnologyPage() {
       </section>
 
       {/* 05 — API-READY ARCHITECTURE (BUILT TO CONNECT) */}
-      <section className="py-28 relative overflow-hidden bg-black">
+      <section className="pt-8 pb-28 relative overflow-hidden bg-black">
         <div className="container max-w-6xl mx-auto px-6 relative z-10">
           <div className="max-w-2xl mb-16">
             <EditorialLine>
