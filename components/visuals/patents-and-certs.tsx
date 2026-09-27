@@ -99,7 +99,7 @@ export function PatentsAndCerts() {
             transition={{ delay: 0.1 }}
             className="text-4xl md:text-5xl font-bold tracking-tight text-zinc-900 mb-6"
           >
-            Innovation <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-600 to-indigo-600">Protected</span>
+            Innovation <span className="gradient-text">Protected</span>
           </motion.h2>
           <motion.p
             initial={{ opacity: 0, y: 15 }}

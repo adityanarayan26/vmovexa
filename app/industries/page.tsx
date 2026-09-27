@@ -112,7 +112,7 @@ export default function IndustriesPage() {
                 delay={0.15}
                 lines={[
                   "ONE TECHNOLOGY.",
-                  <span key="sub" className="bg-gradient-to-r from-cyan-400 via-indigo-500 to-purple-500 text-transparent bg-clip-text" style={{ WebkitBoxDecorationBreak: 'clone', boxDecorationBreak: 'clone' }}>MANY MOBILITY ENVIRONMENTS.</span>
+                  <span key="sub" className="gradient-text" style={{ WebkitBoxDecorationBreak: 'clone', boxDecorationBreak: 'clone' }}>MANY MOBILITY ENVIRONMENTS.</span>
                 ]}
               />
 

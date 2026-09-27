@@ -66,7 +66,7 @@ export default function SolutionsPage() {
                 lines={[
                   <span key="1" className="block">Technology that moves</span>,
                   <span key="sub" className="block mt-1">
-                    with <span className="bg-gradient-to-r from-cyan-400 via-indigo-500 to-purple-500 text-transparent bg-clip-text" style={{ WebkitBoxDecorationBreak: 'clone', boxDecorationBreak: 'clone' }}>the world.</span>
+                    with <span className="gradient-text" style={{ WebkitBoxDecorationBreak: 'clone', boxDecorationBreak: 'clone' }}>the world.</span>
                   </span>
                 ]}
               />
@@ -164,7 +164,7 @@ export default function SolutionsPage() {
             <div className="flex flex-col sm:flex-row items-center justify-between gap-6 group">
               <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight text-zinc-900 text-center sm:text-left leading-tight">
                 What will you build on the <br className="hidden sm:block" />
-                <span className="bg-gradient-to-r from-cyan-400 via-indigo-500 to-purple-500 text-transparent bg-clip-text">moving edge?</span>
+                <span className="gradient-text">moving edge?</span>
               </h2>
               <MagneticElement strength={0.3}>
                 <Link
