@@ -37,10 +37,10 @@
     --secondary-color: #6a4cff;
     --accent-color: #d946ef;
     --danger-color: #ef4444;
-    --gradient-primary: linear-gradient(90deg, #22d3ee 0%, #6366f1 50%, #a855f7 100%);
-    --gradient-brand: linear-gradient(90deg, #22d3ee 0%, #6366f1 50%, #a855f7 100%);
-    --gradient-tagline: linear-gradient(90deg, #22d3ee 0%, #6366f1 50%, #a855f7 100%);
-    --gradient-subtle: linear-gradient(90deg, #22d3ee 0%, #6366f1 100%);
+    --gradient-primary: linear-gradient(90deg, #2f7bff 0%, #6a4cff 50%, #d946ef 100%);
+    --gradient-brand: linear-gradient(90deg, #3b9eff 0%, #a855f7 50%, #ec4899 100%);
+    --gradient-tagline: linear-gradient(90deg, #3b9eff 0%, #a855f7 50%, #ec4899 100%);
+    --gradient-subtle: linear-gradient(90deg, #3b9eff 0%, #a855f7 100%);
     --gradient-danger: linear-gradient(90deg, #ef4444 0%, #f97316 100%);
     --radius: 1.25rem;
     --radius-sm: 0.75rem;
