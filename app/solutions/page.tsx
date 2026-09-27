@@ -163,7 +163,8 @@ export default function SolutionsPage() {
           <GsapScrollReveal delay={0.1}>
             <div className="flex flex-col sm:flex-row items-center justify-between gap-6 group">
               <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight text-zinc-900 text-center sm:text-left leading-tight">
-                What will you build on the <span className="bg-gradient-to-r from-cyan-400 via-indigo-500 to-purple-500 text-transparent bg-clip-text">moving edge?</span>
+                What will you build on the <br className="hidden sm:block" />
+                <span className="bg-gradient-to-r from-cyan-400 via-indigo-500 to-purple-500 text-transparent bg-clip-text">moving edge?</span>
               </h2>
               <MagneticElement strength={0.3}>
                 <Link

@@ -52,7 +52,7 @@ export default function MediaPage() {
       <section className="relative pt-36 pb-20 overflow-hidden bg-black">
         {/* Background X Logo with Radial Edge Fade */}
         <div 
-          className="absolute top-32 -right-20 lg:top-40 lg:-right-4 w-[500px] lg:w-[750px] opacity-60 pointer-events-none select-none z-0 mix-blend-screen"
+          className="absolute top-1/2 -translate-y-1/2 -right-20 lg:right-0 w-[500px] lg:w-[750px] opacity-60 pointer-events-none select-none z-0 mix-blend-screen"
           style={{
             maskImage: 'radial-gradient(circle at center, black 40%, transparent 75%)',
             WebkitMaskImage: 'radial-gradient(circle at center, black 40%, transparent 75%)'
