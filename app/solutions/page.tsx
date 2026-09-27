@@ -66,7 +66,7 @@ export default function SolutionsPage() {
                 lines={[
                   <span key="1" className="block">Technology that moves</span>,
                   <span key="sub" className="block mt-1">
-                    with <span className="gradient-text" style={{ WebkitBoxDecorationBreak: 'clone', boxDecorationBreak: 'clone' }}>the world.</span>
+                    with <span className="gradient-text">the world.</span>
                   </span>
                 ]}
               />

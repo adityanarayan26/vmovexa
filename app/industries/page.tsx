@@ -112,7 +112,7 @@ export default function IndustriesPage() {
                 delay={0.15}
                 lines={[
                   "ONE TECHNOLOGY.",
-                  <span key="sub" className="gradient-text" style={{ WebkitBoxDecorationBreak: 'clone', boxDecorationBreak: 'clone' }}>MANY MOBILITY ENVIRONMENTS.</span>
+                  <span key="sub" className="gradient-text">MANY MOBILITY ENVIRONMENTS.</span>
                 ]}
               />
 
