@@ -61,11 +61,11 @@ export default function SolutionsPage() {
 
               <CubertoLines
                 as="h1"
-                className="text-4xl sm:text-5xl lg:text-7xl font-extrabold tracking-tight leading-[1.05] max-w-4xl mb-6 text-white uppercase"
+                className="text-4xl sm:text-5xl lg:text-[68px] font-extrabold tracking-tight leading-[1.05] max-w-5xl mb-6 text-white uppercase"
                 delay={0.15}
                 lines={[
-                  <span key="1" className="block whitespace-nowrap">Technology that moves with</span>,
-                  <span key="sub" className="block bg-gradient-to-r from-cyan-400 via-indigo-500 to-purple-500 text-transparent bg-clip-text mt-1" style={{ WebkitBoxDecorationBreak: 'clone', boxDecorationBreak: 'clone' }}>the world.</span>
+                  "Technology that moves with ",
+                  <span key="sub" className="bg-gradient-to-r from-cyan-400 via-indigo-500 to-purple-500 text-transparent bg-clip-text" style={{ WebkitBoxDecorationBreak: 'clone', boxDecorationBreak: 'clone' }}>the world.</span>
                 ]}
               />
 
@@ -155,13 +155,13 @@ export default function SolutionsPage() {
       </section>
 
       {/* Bottom Bar: WHAT WILL YOU BUILD ON THE MOVING EDGE? + Talk to VMOVEXA -> */}
-      <section className="w-full bg-white py-16 relative overflow-hidden">
+      <section className="w-full bg-white pt-16 pb-8 relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-r from-transparent via-zinc-100/50 to-transparent -translate-x-full hover:animate-[shimmer_2s_infinite]" />
         <div className="container max-w-7xl mx-auto px-6 relative z-10">
           <GsapScrollReveal delay={0.1}>
             <div className="flex flex-col sm:flex-row items-center justify-between gap-6 group">
               <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight text-zinc-900 text-center sm:text-left leading-tight">
-                What will you build on the <span className="gradient-text">moving edge?</span>
+                What will you build on the <span className="bg-gradient-to-r from-cyan-400 via-indigo-500 to-purple-500 text-transparent bg-clip-text">moving edge?</span>
               </h2>
               <MagneticElement strength={0.3}>
                 <Link
@@ -178,7 +178,7 @@ export default function SolutionsPage() {
       </section>
 
       {/* SOLUTION 01 — FLEET OPERATORS */}
-      <section id="fleet-operators" className="py-20 relative overflow-hidden bg-white">
+      <section id="fleet-operators" className="pt-8 pb-20 relative overflow-hidden bg-white">
         <div className="container max-w-6xl mx-auto px-6 relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
             <div className="lg:col-span-6 space-y-5">
