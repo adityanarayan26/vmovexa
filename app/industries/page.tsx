@@ -112,7 +112,8 @@ export default function IndustriesPage() {
                 delay={0.15}
                 lines={[
                   "ONE TECHNOLOGY.",
-                  <span key="sub" className="gradient-text">MANY MOBILITY ENVIRONMENTS.</span>
+                  <span key="sub1" className="gradient-text">MANY MOBILITY</span>,
+                  <span key="sub2" className="gradient-text">ENVIRONMENTS.</span>
                 ]}
               />
 
