@@ -64,8 +64,10 @@ export default function SolutionsPage() {
                 className="text-4xl sm:text-5xl lg:text-[68px] font-extrabold tracking-tight leading-[1.05] max-w-5xl mb-6 text-white uppercase"
                 delay={0.15}
                 lines={[
-                  "Technology that moves with ",
-                  <span key="sub" className="bg-gradient-to-r from-cyan-400 via-indigo-500 to-purple-500 text-transparent bg-clip-text" style={{ WebkitBoxDecorationBreak: 'clone', boxDecorationBreak: 'clone' }}>the world.</span>
+                  <span key="1" className="block">Technology that moves</span>,
+                  <span key="sub" className="block mt-1">
+                    with <span className="bg-gradient-to-r from-cyan-400 via-indigo-500 to-purple-500 text-transparent bg-clip-text" style={{ WebkitBoxDecorationBreak: 'clone', boxDecorationBreak: 'clone' }}>the world.</span>
+                  </span>
                 ]}
               />
 
