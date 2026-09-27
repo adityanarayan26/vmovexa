@@ -75,9 +75,9 @@ export function SiteFooter() {
               <div className="font-mono text-[9.5px] sm:text-[10.5px] tracking-wider uppercase font-semibold whitespace-nowrap">
                 <span className="text-white/90">Smart Mobility</span>
                 <span className="text-white/30 mx-1.5">|</span>
-                <span className="text-white/90">Interactive Media</span>
+                <span className="gradient-text">Interactive Media</span>
                 <span className="text-white/30 mx-1.5">|</span>
-                <span className="bg-gradient-to-r from-cyan-400 via-indigo-500 to-purple-500 text-transparent bg-clip-text">Safety First</span>
+                <span className="text-white/90">Safety First</span>
               </div>
               <p className="text-xs text-white/50 leading-relaxed font-light max-w-sm mx-auto lg:mx-0">
                 Cloud-to-Edge Mobility Intelligence Platform connecting vehicles, edge computing, digital displays, and urban intelligence layers.
