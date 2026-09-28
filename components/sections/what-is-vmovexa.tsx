@@ -18,6 +18,7 @@ import { EditorialLine } from "@/components/animations/editorial-text";
 import { GsapScrollReveal } from "@/components/animations/gsap-scroll-fx";
 import { BlurReveal } from "@/components/animations/blur-reveal";
 import { TiltCard } from "@/components/animations/tilt-card";
+import { GridWaveBackground } from "@/components/visuals/grid-wave-background";
 const pillars = [
   {
     title: "Cloud intelligence.",
@@ -97,8 +98,7 @@ const ecosystemOutputs = [
 export function WhatIsVmovexaSection() {
   return (
     <section className="py-24 sm:py-28 relative overflow-hidden bg-white">
-      {/* Background ambient lighting */}
-      <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[700px] h-[350px] bg-gradient-to-b from-cyan-500/5 via-indigo-500/5 to-transparent blur-3xl pointer-events-none -z-10" />
+      <GridWaveBackground variant="purple" />
 
       <div className="container max-w-7xl mx-auto px-6 relative z-10">
         {/* Section Header: 10-Second Clarity */}
@@ -141,10 +141,11 @@ export function WhatIsVmovexaSection() {
               <GsapScrollReveal key={pillar.title} delay={i * 0.08}>
                 <TiltCard maxTilt={5} className="h-full">
                   <div
-                    className={`p-6 rounded-2xl bg-white border border-zinc-200 hover:border-cyan-400/40 hover:bg-zinc-50 hover:shadow-md transition-all duration-300 flex flex-col justify-between group cursor-default shadow-sm h-full`}
+                    className={`p-6 rounded-2xl bg-white/[0.12] hover:bg-white/[0.28] backdrop-blur-[2px] border border-zinc-200/70 hover:border-cyan-400/50 hover:-translate-y-1 hover:shadow-[0_8px_30px_rgba(6,182,212,0.12)] transition-all duration-300 flex flex-col justify-between group cursor-default shadow-[0_4px_24px_rgba(0,0,0,0.02)] h-full`}
+                    style={{ backdropFilter: 'blur(2px)', WebkitBackdropFilter: 'blur(2px)' }}
                   >
                     <div>
-                      <div className={`w-11 h-11 rounded-xl bg-zinc-50 border border-zinc-200 ${pillar.accent} flex items-center justify-center mb-5 group-hover:scale-110 transition-transform duration-300 shadow-sm`}>
+                      <div className={`w-11 h-11 rounded-xl bg-white/60 backdrop-blur-sm border border-zinc-200/70 ${pillar.accent} flex items-center justify-center mb-5 group-hover:scale-110 transition-transform duration-300 shadow-sm`}>
                         <Icon size={22} />
                       </div>
                       <h3 className="text-lg font-bold text-zinc-900 mb-2 tracking-tight group-hover:text-cyan-600 transition-colors">
@@ -182,7 +183,10 @@ export function WhatIsVmovexaSection() {
             {/* Step-by-Step Ecosystem Hierarchy */}
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 relative mb-8">
               {/* Node 1: VEHICLE */}
-              <div className="p-6 rounded-2xl bg-white border border-zinc-200 relative group hover:border-cyan-400 hover:bg-zinc-50 transition-colors shadow-sm">
+              <div 
+                className="p-6 rounded-2xl bg-white/[0.12] hover:bg-white/[0.28] backdrop-blur-[2px] border border-zinc-200/70 relative group hover:border-cyan-400 hover:shadow-[0_8px_30px_rgba(6,182,212,0.12)] transition-all duration-500 shadow-[0_4px_24px_rgba(0,0,0,0.02)] cursor-default"
+                style={{ backdropFilter: 'blur(2px)', WebkitBackdropFilter: 'blur(2px)' }}
+              >
                 <div className="flex items-center justify-between mb-4">
                   <span className="text-[11px] font-mono text-cyan-600 uppercase tracking-widest font-semibold">
                     Level 01
@@ -208,7 +212,10 @@ export function WhatIsVmovexaSection() {
               </div>
 
               {/* Node 2: VMOVEXA CORE */}
-              <div className="p-6 rounded-2xl bg-white border border-zinc-200 relative group hover:border-indigo-400 hover:bg-zinc-50 transition-colors shadow-sm hover:shadow-md">
+              <div 
+                className="p-6 rounded-2xl bg-white/[0.12] hover:bg-white/[0.28] backdrop-blur-[2px] border border-zinc-200/70 relative group hover:border-indigo-400 hover:shadow-[0_8px_30px_rgba(99,102,241,0.12)] transition-all duration-500 shadow-[0_4px_24px_rgba(0,0,0,0.02)] cursor-default"
+                style={{ backdropFilter: 'blur(2px)', WebkitBackdropFilter: 'blur(2px)' }}
+              >
                 <div className="flex items-center justify-between mb-4">
                   <span className="text-[11px] font-mono text-indigo-600 uppercase tracking-widest font-semibold">
                     Level 02
@@ -234,7 +241,10 @@ export function WhatIsVmovexaSection() {
               </div>
 
               {/* Node 3: CLOUD */}
-              <div className="p-6 rounded-2xl bg-white border border-zinc-200 relative group hover:border-purple-400 hover:bg-zinc-50 transition-colors shadow-sm hover:shadow-md">
+              <div 
+                className="p-6 rounded-2xl bg-white/[0.12] hover:bg-white/[0.28] backdrop-blur-[2px] border border-zinc-200/70 relative group hover:border-purple-400 hover:shadow-[0_8px_30px_rgba(168,85,247,0.12)] transition-all duration-500 shadow-[0_4px_24px_rgba(0,0,0,0.02)] cursor-default"
+                style={{ backdropFilter: 'blur(2px)', WebkitBackdropFilter: 'blur(2px)' }}
+              >
                 <div className="flex items-center justify-between mb-4">
                   <span className="text-[11px] font-mono text-purple-600 uppercase tracking-widest font-semibold">
                     Level 03
@@ -276,7 +286,8 @@ export function WhatIsVmovexaSection() {
                 return (
                   <div
                     key={item.title}
-                    className="p-4 rounded-xl bg-white border border-zinc-200 hover:border-cyan-200 hover:bg-zinc-50 transition-colors group cursor-default shadow-sm"
+                    className="p-4 rounded-xl bg-white/[0.12] hover:bg-white/[0.28] backdrop-blur-[2px] border border-zinc-200/70 hover:border-cyan-400/50 hover:shadow-[0_8px_30px_rgba(6,182,212,0.12)] transition-all duration-300 group cursor-default shadow-[0_4px_24px_rgba(0,0,0,0.02)]"
+                    style={{ backdropFilter: 'blur(2px)', WebkitBackdropFilter: 'blur(2px)' }}
                   >
                     <div className={`${item.color} mb-2.5`}>
                       <ItemIcon size={18} />

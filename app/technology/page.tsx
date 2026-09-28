@@ -23,6 +23,7 @@ import { TextDecrypt } from "@/components/animations/text-decrypt";
 import { BlurReveal } from "@/components/animations/blur-reveal";
 import { TiltCard } from "@/components/animations/tilt-card";
 import { FloatingElement } from "@/components/animations/image-reveal";
+import { GridWaveBackground } from "@/components/visuals/grid-wave-background";
 export const metadata: Metadata = {
   title: "VMOVEXA Technology | Edge Computing, IoT & Connected Mobility",
   description:
@@ -74,9 +75,9 @@ export default function TechnologyPage() {
   return (
     <main className="min-h-screen bg-black text-white">
       {/* 01 — HERO (Mockup Screen 03: TECHNOLOGY) */}
-      <section className="relative pt-36 pb-20 overflow-hidden bg-black">
+      <section className="relative pt-36 pb-12 overflow-hidden bg-black">
         <div className="container relative z-10 max-w-7xl mx-auto px-6">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start mb-12">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start mb-8">
             <div className="lg:col-span-10">
               <EditorialLine>
                 <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/[0.04] border border-white/15 backdrop-blur-md mb-8">
@@ -145,7 +146,7 @@ export default function TechnologyPage() {
 
           {/* Central Visual: Deep-Tech Bus Wireframe X-Ray with Callouts */}
           <GsapScrollReveal delay={0.3}>
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-center mb-16">
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-center mb-8">
               {/* Left Vertical Annotation */}
               <div className="hidden lg:flex lg:col-span-2 flex-col gap-1 font-mono text-xs uppercase tracking-[0.2em] text-white/50 border-l border-white/10 pl-4 py-6">
                 <span className="text-white/30">Technology</span>
@@ -179,9 +180,11 @@ export default function TechnologyPage() {
       </section>
 
       {/* 02 — DETAILED ARCHITECTURE SPECIFICATIONS */}
-      <section className="py-24 relative overflow-hidden bg-white">
-        <div className="container max-w-6xl mx-auto px-6">
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-20">
+      <section className="pt-12 pb-12 relative overflow-hidden bg-white">
+        <GridWaveBackground variant="cyan" />
+
+        <div className="container max-w-6xl mx-auto px-6 relative z-10">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
               {[
                 { title: "Edge Computing", desc: "On-vehicle intelligence.", icon: FiCpu, color: "text-cyan-600", badge: "bg-cyan-50 border-cyan-200" },
                 { title: "Cloud Infrastructure", desc: "Scale & orchestration.", icon: FiCloud, color: "text-indigo-600", badge: "bg-indigo-50 border-indigo-200" },
@@ -194,12 +197,16 @@ export default function TechnologyPage() {
                 return (
                   <GsapScrollReveal key={item.title} delay={i * 0.05} className="h-full">
                     <TiltCard maxTilt={8} glare={true} className="w-full h-full block">
-                      <div className="p-6 rounded-2xl bg-white border border-zinc-200 hover:border-zinc-300 hover:bg-zinc-50 transition-all duration-300 h-full group cursor-default shadow-sm hover:shadow-md">
-                        <div className={`w-11 h-11 rounded-xl border ${item.badge} flex items-center justify-center ${item.color} mb-4 group-hover:scale-110 transition-all duration-300`}>
+                      <div 
+                        className="p-6 rounded-2xl bg-white/[0.12] hover:bg-white/[0.28] backdrop-blur-[2px] border border-zinc-200/70 hover:border-cyan-400/50 shadow-[0_4px_24px_rgba(0,0,0,0.02)] hover:shadow-[0_8px_30px_rgba(6,182,212,0.12)] hover:-translate-y-1 transition-all duration-500 h-full group cursor-default relative overflow-hidden"
+                        style={{ backdropFilter: 'blur(2px)', WebkitBackdropFilter: 'blur(2px)' }}
+                      >
+                        <div className="absolute top-0 left-0 w-full h-[3px] bg-gradient-to-r from-transparent via-cyan-400 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                        <div className={`w-11 h-11 rounded-xl border ${item.badge} bg-white/60 backdrop-blur-sm flex items-center justify-center ${item.color} mb-4 group-hover:scale-110 transition-all duration-300 shadow-sm`}>
                           <Icon className="w-5 h-5" />
                         </div>
                         <h3 className="text-base font-semibold text-zinc-900 mb-1.5 group-hover:text-cyan-700 transition-colors">{item.title}</h3>
-                        <p className="text-xs text-zinc-600 group-hover:text-zinc-800 transition-colors">{item.desc}</p>
+                        <p className="text-xs text-zinc-600 group-hover:text-zinc-800 transition-colors font-light">{item.desc}</p>
                       </div>
                     </TiltCard>
                   </GsapScrollReveal>
@@ -272,6 +279,7 @@ export default function TechnologyPage() {
 
       {/* Cloud Scale. Edge Speed. Section with Motion Trails Visual */}
       <section className="py-24 relative overflow-hidden bg-white">
+        <GridWaveBackground variant="cyan" />
         <div className="container max-w-6xl mx-auto px-6 relative z-10">
           <GsapScrollReveal delay={0.2}>
             <div className="relative overflow-hidden">
@@ -437,25 +445,30 @@ export default function TechnologyPage() {
 
       {/* 04 — TELEMETRY & MULTI-SCREEN */}
       <section className="py-28 relative overflow-hidden bg-white">
-        <div className="container max-w-6xl mx-auto px-6">
+        <GridWaveBackground variant="indigo" />
+
+        <div className="container max-w-6xl mx-auto px-6 relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
             {/* Telemetry */}
             <GsapScrollReveal>
-              <div className="p-8 rounded-2xl bg-white border border-zinc-200 space-y-6 h-full hover:bg-zinc-50 hover:border-cyan-500/20 hover:shadow-md transition-all duration-500 group relative overflow-hidden">
-                <div className="absolute -inset-x-full top-0 h-[1px] bg-gradient-to-r from-transparent via-cyan-400/30 to-transparent group-hover:animate-[shimmer_2s_infinite]" />
+              <div 
+                className="p-8 rounded-2xl bg-white/[0.12] hover:bg-white/[0.28] backdrop-blur-[2px] border border-zinc-200/70 space-y-6 h-full hover:border-cyan-500/50 shadow-[0_4px_24px_rgba(0,0,0,0.02)] hover:shadow-[0_8px_30px_rgba(6,182,212,0.12)] hover:-translate-y-1 transition-all duration-500 group relative overflow-hidden"
+                style={{ backdropFilter: 'blur(2px)', WebkitBackdropFilter: 'blur(2px)' }}
+              >
+                <div className="absolute top-0 left-0 w-full h-[3px] bg-gradient-to-r from-transparent via-cyan-400 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                 <div className="relative z-10">
                   <div className="font-mono text-xs uppercase tracking-widest text-cyan-600 mb-2">Telemetry</div>
                   <h3 className="text-2xl font-semibold text-zinc-900 mb-3">The vehicle speaks in <span className="gradient-text">data.</span></h3>
-                  <p className="text-sm text-zinc-600 leading-relaxed mb-6">
+                  <p className="text-sm text-zinc-600 leading-relaxed mb-6 font-light">
                     Connected systems generate operational information continuously. VMOVEXA&apos;s architecture incorporates telemetry as a core part of the vehicle-edge environment.
                   </p>
-                  <div className="pt-6 border-t border-zinc-100">
+                  <div className="pt-6 border-t border-zinc-200/70">
                     <h4 className="text-xs font-mono uppercase tracking-widest text-zinc-400 mb-4">Continuous Visibility Into:</h4>
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs text-zinc-700">
                       {telemetryMetrics.map((m, i) => (
                         <div key={i} className="flex items-start gap-2 group/item cursor-default">
                           <FiCheckCircle className="w-4 h-4 text-cyan-500 flex-shrink-0 group-hover/item:scale-125 transition-transform" />
-                          <span className="group-hover/item:text-zinc-900 transition-colors">{m}</span>
+                          <span className="group-hover/item:text-zinc-900 transition-colors font-medium">{m}</span>
                         </div>
                       ))}
                     </div>
@@ -466,19 +479,22 @@ export default function TechnologyPage() {
 
             {/* Multi-Screen */}
             <GsapScrollReveal delay={0.2}>
-              <div className="p-8 rounded-2xl bg-white border border-zinc-200 space-y-6 h-full hover:bg-zinc-50 hover:border-purple-500/20 hover:shadow-md transition-all duration-500 group relative overflow-hidden">
-                 <div className="absolute -inset-x-full top-0 h-[1px] bg-gradient-to-r from-transparent via-purple-400/30 to-transparent group-hover:animate-[shimmer_2s_infinite]" />
+              <div 
+                className="p-8 rounded-2xl bg-white/[0.12] hover:bg-white/[0.28] backdrop-blur-[2px] border border-zinc-200/70 space-y-6 h-full hover:border-purple-500/50 shadow-[0_4px_24px_rgba(0,0,0,0.02)] hover:shadow-[0_8px_30px_rgba(168,85,247,0.12)] hover:-translate-y-1 transition-all duration-500 group relative overflow-hidden"
+                style={{ backdropFilter: 'blur(2px)', WebkitBackdropFilter: 'blur(2px)' }}
+              >
+                <div className="absolute top-0 left-0 w-full h-[3px] bg-gradient-to-r from-transparent via-purple-500 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                 <div className="relative z-10">
                   <div className="font-mono text-xs uppercase tracking-widest text-purple-600 mb-2">Multi-Screen</div>
                   <h3 className="text-2xl font-semibold text-zinc-900 mb-3">One edge. <span className="gradient-text">Many digital surfaces.</span></h3>
-                  <p className="text-sm text-zinc-600 leading-relaxed mb-6">
+                  <p className="text-sm text-zinc-600 leading-relaxed mb-6 font-light">
                     The vehicle can become a coordinated display environment rather than a collection of independent screens.
                   </p>
-                  <div className="p-5 rounded-xl bg-zinc-50 border border-zinc-200 space-y-3 text-xs font-mono text-zinc-800 mb-6 shadow-sm">
+                  <div className="p-5 rounded-xl bg-white/60 backdrop-blur-sm border border-zinc-200/70 space-y-3 text-xs font-mono text-zinc-800 mb-6 shadow-xs">
                     <div className="text-zinc-900 font-semibold">Supported Display Modes:</div>
                     <div className="flex flex-wrap gap-2 text-cyan-600">
                       {['Independent', 'Mirrored', 'Synchronized', 'Split-Zone', 'Multi-Zone'].map(mode => (
-                        <span key={mode} className="px-3 py-1.5 rounded bg-white border border-zinc-200 hover:bg-cyan-50 hover:border-cyan-200 hover:text-cyan-700 transition-colors cursor-default shadow-sm">{mode}</span>
+                        <span key={mode} className="px-3 py-1.5 rounded bg-white border border-zinc-200/70 hover:bg-cyan-50 hover:border-cyan-200 hover:text-cyan-700 transition-colors cursor-default shadow-xs">{mode}</span>
                       ))}
                     </div>
                   </div>
@@ -651,7 +667,7 @@ export default function TechnologyPage() {
 
       {/* CTA — Light / White Background */}
       <section className="py-24 text-center relative overflow-hidden bg-white">
-        <div className="absolute inset-0 bg-gradient-to-b from-cyan-50/50 via-transparent to-transparent pointer-events-none" />
+        <GridWaveBackground variant="cyan" />
         <div className="container max-w-4xl mx-auto px-6 relative z-10">
           <EditorialLine>
             <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-cyan-50 border border-cyan-200/80 text-cyan-800 font-mono text-xs uppercase tracking-widest mb-4 shadow-sm">

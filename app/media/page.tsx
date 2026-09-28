@@ -9,6 +9,7 @@ import { TextDecrypt } from "@/components/animations/text-decrypt";
 import { BlurReveal } from "@/components/animations/blur-reveal";
 import { TiltCard } from "@/components/animations/tilt-card";
 import { FloatingElement } from "@/components/animations/image-reveal";
+import { GridWaveBackground } from "@/components/visuals/grid-wave-background";
 export const metadata: Metadata = {
   title: "VMOVEXA Media | Dynamic Connected DOOH Infrastructure",
   description:
@@ -192,7 +193,7 @@ export default function MediaPage() {
 
       {/* Bottom Section: DON'T JUST BUY A SCREEN. BUY A MOMENT IN MOTION. + 10M+ Reach */}
       <section className="w-full bg-white py-16 relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-r from-transparent via-zinc-100/50 to-transparent -translate-x-full hover:animate-[shimmer_2s_infinite]" />
+        <GridWaveBackground variant="cyan" />
         <div className="container max-w-7xl mx-auto px-6 relative z-10">
           <GsapScrollReveal delay={0.1}>
             <div className="flex flex-col sm:flex-row items-center justify-between gap-6 group">
@@ -280,7 +281,7 @@ export default function MediaPage() {
 
       {/* Measurable Media & Proof of Play Banner */}
       <section className="w-full bg-white py-20 relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-r from-transparent via-zinc-100/50 to-transparent -translate-x-full hover:animate-[shimmer_2s_infinite]" />
+        <GridWaveBackground variant="blue" />
         <div className="container max-w-6xl mx-auto px-6 relative z-10">
           <GsapScrollReveal delay={0.1}>
             <div className="space-y-4 group">
@@ -407,7 +408,7 @@ export default function MediaPage() {
 
       {/* CTA */}
       <section className="py-28 text-center relative overflow-hidden bg-white">
-        <div className="absolute inset-0 bg-gradient-to-t from-purple-100/50 to-transparent pointer-events-none" />
+        <GridWaveBackground variant="purple" />
         <div className="container max-w-4xl mx-auto px-6 relative z-10">
           <EditorialLine>
             <div className="font-mono text-xs uppercase tracking-widest text-cyan-600 mb-3">Media CTA</div>

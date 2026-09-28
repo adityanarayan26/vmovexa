@@ -46,6 +46,7 @@ import { WhatIsVmovexaSection } from "@/components/sections/what-is-vmovexa";
 import { WhyVmovexaSection } from "@/components/sections/why-vmovexa";
 import { OurEcosystemSection } from "@/components/sections/our-ecosystem";
 import { BlueprintFlowAnimation } from "@/components/visuals/blueprint-flow";
+import { GridWaveBackground } from "@/components/visuals/grid-wave-background";
 export const metadata: Metadata = {
   title: "VMOVEXA | Cloud-to-Edge Mobility Intelligence Platform",
   description:
@@ -484,6 +485,8 @@ export default function HomePage() {
       {/* 05 // A VEHICLE CAN BE MORE.                                             */}
       {/* ========================================================================= */}
       <section className="py-12 relative overflow-hidden bg-white">
+        <GridWaveBackground variant="cyan" />
+
         <div className="container max-w-7xl mx-auto px-6 relative z-10">
           <div className="text-center max-w-3xl mx-auto mb-16">
             <EditorialLine>
@@ -510,9 +513,14 @@ export default function HomePage() {
               return (
                 <GsapScrollReveal key={node.title} delay={i * 0.08}>
                   <TiltCard maxTilt={6} className="h-full">
-                    <div className="p-6 rounded-2xl bg-white border border-zinc-200 hover:border-cyan-400/40 hover:bg-zinc-50 transition-all duration-300 flex flex-col justify-between group cursor-default shadow-sm hover:shadow-md h-full">
+                    <div 
+                      className="p-6 rounded-2xl bg-white/[0.12] hover:bg-white/[0.28] backdrop-blur-[2px] border border-zinc-200/70 hover:border-cyan-400/50 transition-all duration-500 flex flex-col justify-between group cursor-default shadow-[0_4px_24px_rgba(0,0,0,0.02)] hover:shadow-[0_8px_30px_rgba(6,182,212,0.12)] hover:-translate-y-1 h-full relative overflow-hidden"
+                      style={{ backdropFilter: 'blur(2px)', WebkitBackdropFilter: 'blur(2px)' }}
+                    >
+                      {/* Glowing Top Line */}
+                      <div className="absolute top-0 left-0 w-full h-[3px] bg-gradient-to-r from-transparent via-cyan-500 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                       <div>
-                        <div className={`w-12 h-12 rounded-xl border ${node.badgeBg} ${node.color} bg-white flex items-center justify-center group-hover:scale-110 transition-all duration-300 mb-5 shadow-sm`}>
+                        <div className={`w-12 h-12 rounded-xl border ${node.badgeBg} ${node.color} bg-white/60 backdrop-blur-sm flex items-center justify-center group-hover:scale-110 transition-all duration-300 mb-5 shadow-sm`}>
                           <NodeIcon size={24} />
                         </div>
                         <div className="text-base font-bold text-zinc-900 mb-2 group-hover:text-cyan-600 transition-colors">
@@ -550,7 +558,7 @@ export default function HomePage() {
               stagger={0.1}
               lines={[
                 <div key="l1">THE CLOUD <span className="gradient-text">ORCHESTRATES.</span></div>,
-                <div key="l2" className="mt-1 sm:mt-2 text-white/95">THE EDGE <span className="text-cyan-400">EXECUTES.</span></div>,
+                <div key="l2" className="mt-1 sm:mt-2 text-white/95">THE EDGE <span className="gradient-text">EXECUTES.</span></div>,
               ]}
             />
           </div>
@@ -635,6 +643,8 @@ export default function HomePage() {
       {/* 05 // THE VEHICLE BECOMES THE EDGE.                                       */}
       {/* ========================================================================= */}
       <section className="py-12 relative overflow-hidden bg-white">
+        <GridWaveBackground variant="cyan" />
+
         <div className="container max-w-6xl mx-auto px-6 relative z-10">
           <div className="max-w-3xl mb-16">
             <EditorialLine>
@@ -660,8 +670,12 @@ export default function HomePage() {
                 const PillarIcon = pillar.icon;
                 return (
                   <GsapScrollReveal key={pillar.title} delay={idx * 0.08}>
-                    <SpotlightCard className="h-full p-5 backdrop-blur-sm group cursor-default bg-white border border-zinc-200 shadow-sm hover:shadow-md transition-shadow">
-                      <div className={`w-10 h-10 rounded-xl border ${pillar.badgeBg} bg-white flex items-center justify-center mb-3 ${pillar.color} group-hover:scale-110 transition-all duration-300 shadow-sm`}>
+                    <SpotlightCard 
+                      className="h-full p-5 backdrop-blur-[2px] group cursor-default bg-white/[0.12] hover:bg-white/[0.28] border border-zinc-200/70 shadow-[0_4px_24px_rgba(0,0,0,0.02)] hover:shadow-[0_8px_30px_rgba(6,182,212,0.12)] hover:-translate-y-1 transition-all duration-500 relative overflow-hidden rounded-2xl"
+                      style={{ backdropFilter: 'blur(2px)', WebkitBackdropFilter: 'blur(2px)' }}
+                    >
+                      <div className="absolute top-0 left-0 w-full h-[3px] bg-gradient-to-r from-transparent via-cyan-500 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                      <div className={`w-10 h-10 rounded-xl border ${pillar.badgeBg} bg-white/60 backdrop-blur-sm flex items-center justify-center mb-3 ${pillar.color} group-hover:scale-110 transition-all duration-300 shadow-sm`}>
                         <PillarIcon size={20} />
                       </div>
                       <h3 className="text-sm font-bold text-zinc-900 mb-2 group-hover:text-cyan-600 transition-colors">
@@ -751,6 +765,8 @@ export default function HomePage() {
       {/* 07 // MOVEMENT CREATES CONTEXT.                                           */}
       {/* ========================================================================= */}
       <section className="py-12 relative overflow-hidden bg-white">
+        <GridWaveBackground variant="blue" />
+
         <div className="container max-w-6xl mx-auto px-6 relative z-10">
           <div className="text-center max-w-3xl mx-auto mb-16">
             <EditorialLine>
@@ -776,13 +792,17 @@ export default function HomePage() {
               const CorIcon = corridor.icon;
               return (
                 <GsapScrollReveal key={corridor.title} delay={idx * 0.1}>
-                  <div className="p-6 rounded-2xl bg-white border border-zinc-200 hover:border-cyan-400/40 hover:bg-zinc-50 transition-all duration-300 flex flex-col justify-between group h-full shadow-sm hover:shadow-md">
+                  <div 
+                    className="p-6 rounded-2xl bg-white/[0.12] hover:bg-white/[0.28] backdrop-blur-[2px] border border-zinc-200/70 hover:border-cyan-400/50 hover:shadow-[0_8px_30px_rgba(6,182,212,0.12)] hover:-translate-y-1 transition-all duration-500 flex flex-col justify-between group h-full shadow-[0_4px_24px_rgba(0,0,0,0.02)] relative overflow-hidden cursor-default"
+                    style={{ backdropFilter: 'blur(2px)', WebkitBackdropFilter: 'blur(2px)' }}
+                  >
+                    <div className="absolute top-0 left-0 w-full h-[3px] bg-gradient-to-r from-transparent via-cyan-500 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                     <div>
                       <div className="flex items-center justify-between mb-4">
-                        <div className={`p-3 rounded-xl border border-zinc-200 bg-zinc-50 ${corridor.color} group-hover:scale-110 transition-transform shadow-sm`}>
+                        <div className={`p-3 rounded-xl border border-zinc-200 bg-white/60 backdrop-blur-sm ${corridor.color} group-hover:scale-110 transition-transform shadow-sm`}>
                           <CorIcon size={22} />
                         </div>
-                        <span className="font-mono text-[10px] text-zinc-500 px-2 py-0.5 rounded-full border border-zinc-200 bg-zinc-50">
+                        <span className="font-mono text-[10px] text-zinc-500 px-2 py-0.5 rounded-full border border-zinc-200 bg-white/50 backdrop-blur-sm">
                           {corridor.badge}
                         </span>
                       </div>
@@ -794,7 +814,7 @@ export default function HomePage() {
                         {corridor.desc}
                       </p>
                     </div>
-                    <div className="mt-5 pt-3 border-t border-zinc-200 font-mono text-[10px] text-zinc-400 tracking-wider">
+                    <div className="mt-5 pt-3 border-t border-zinc-200/70 font-mono text-[10px] text-zinc-400 tracking-wider">
                       {corridor.tag}
                     </div>
                   </div>
@@ -868,7 +888,7 @@ export default function HomePage() {
                 <div className="relative group">
                   <MediaSlot
                     type="video"
-                    src="/videos/vmovexa-transit-demo.mp4"
+                    src="/videos/small.MOV"
                     poster="/images/VMOVEXA FOLDER DESIGN MOCKUP.PNG"
                     badge="In-Transit Digital Screen"
                     caption="Contextual Where & When Delivery • Verifiable Proof-of-Play"
@@ -886,20 +906,7 @@ export default function HomePage() {
       {/* 08.5 // GOVERNMENT & PUBLIC SECTOR                                        */}
       {/* ========================================================================= */}
       <section className="pt-16 pb-20 sm:pt-20 sm:pb-24 relative overflow-hidden bg-white">
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(59,130,246,0.05)_0%,transparent_70%)] pointer-events-none" />
-        
-        {/* Background Grid & Vector Nodes */}
-        <div className="absolute inset-0 opacity-[0.03] pointer-events-none" style={{ backgroundImage: 'linear-gradient(#000 1px, transparent 1px), linear-gradient(90deg, #000 1px, transparent 1px)', backgroundSize: '64px 64px' }} />
-        <div className="absolute inset-0 opacity-20 pointer-events-none overflow-hidden">
-          <svg className="w-full h-full" viewBox="0 0 1200 800" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M-100,400 C300,700 500,100 1300,400" fill="none" stroke="#3b82f6" strokeWidth="1" strokeDasharray="8 8" />
-            <path d="M-100,600 C400,800 600,200 1300,200" fill="none" stroke="#6366f1" strokeWidth="0.5" />
-            <circle cx="350" cy="530" r="4" fill="#3b82f6" className="animate-pulse" />
-            <circle cx="850" cy="270" r="4" fill="#6366f1" className="animate-pulse" />
-            <circle cx="200" cy="630" r="2" fill="#8b5cf6" />
-            <circle cx="1000" cy="300" r="2" fill="#0ea5e9" />
-          </svg>
-        </div>
+        <GridWaveBackground variant="blue" />
 
         <div className="container max-w-7xl mx-auto px-6 relative z-10">
           <div className="max-w-3xl mb-12 md:mb-16 text-center md:text-left mx-auto md:mx-0">
@@ -936,7 +943,10 @@ export default function HomePage() {
               const Icon = app.icon;
               return (
                 <GsapScrollReveal key={app.title} delay={idx * 0.05} className="h-full">
-                  <div className={`p-4 sm:p-5 rounded-2xl bg-white border border-zinc-200 ${app.hoverBorder} ${app.hoverShadow} hover:-translate-y-1 transition-all duration-500 h-full flex flex-col group relative overflow-hidden cursor-default`}>
+                  <div 
+                    className={`p-4 sm:p-5 rounded-2xl bg-white/[0.12] hover:bg-white/[0.28] backdrop-blur-[2px] border border-zinc-200/70 shadow-[0_4px_24px_rgba(0,0,0,0.02)] ${app.hoverBorder} ${app.hoverShadow} hover:-translate-y-1 transition-all duration-500 h-full flex flex-col group relative overflow-hidden cursor-default`}
+                    style={{ backdropFilter: 'blur(2px)', WebkitBackdropFilter: 'blur(2px)' }}
+                  >
                     {/* Glowing Top Line */}
                     <div className={`absolute top-0 left-0 w-full h-[3px] bg-gradient-to-r from-transparent ${app.viaColor} to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500`} />
                     
@@ -977,7 +987,8 @@ export default function HomePage() {
                 stagger={0.1}
                 lines={[
                   <div key="l1">ONE CLICK.</div>,
-                  <div key="l2" className="mt-1 sm:mt-2 gradient-text drop-shadow-[0_0_15px_rgba(6,182,212,0.3)]">AN ENTIRE NATION.</div>,
+                  <span key="l2" className="mt-1 sm:mt-2 gradient-text">AN ENTIRE</span>,
+                  <span key="l3" className="mt-1 sm:mt-2 gradient-text">NATION.</span>,
                 ]}
               />
               
@@ -1022,6 +1033,8 @@ export default function HomePage() {
       {/* 10 // ONE PLATFORM. MANY MOBILITY ENVIRONMENTS.                           */}
       {/* ========================================================================= */}
       <section className="py-20 relative overflow-hidden bg-white">
+        <GridWaveBackground variant="cyan" />
+
         <div className="container max-w-6xl mx-auto px-6 relative z-10">
           <div className="text-center max-w-4xl mx-auto mb-16">
             <EditorialLine>
@@ -1053,15 +1066,18 @@ export default function HomePage() {
               return (
                 <GsapScrollReveal key={env.title} delay={idx * 0.08} className={`h-full flex flex-col ${idx < 3 ? 'lg:col-span-2' : 'lg:col-span-3 md:col-span-2 lg:col-start-auto'}`}>
                   <TiltCard maxTilt={5} className="h-full">
-                    <div className="p-7 rounded-2xl bg-white border border-zinc-200 hover:border-cyan-500/50 hover:shadow-lg transition-all duration-500 hover:bg-zinc-50 flex flex-col justify-between group h-full shadow-sm relative overflow-hidden">
-                      <div className="absolute -inset-x-full top-0 h-[1px] bg-gradient-to-r from-transparent via-cyan-400/50 to-transparent group-hover:animate-[shimmer_2s_infinite]" />
+                    <div 
+                      className="p-7 rounded-2xl bg-white/[0.12] hover:bg-white/[0.28] backdrop-blur-[2px] border border-zinc-200/70 hover:border-cyan-500/50 hover:shadow-[0_8px_30px_rgba(6,182,212,0.12)] hover:-translate-y-1 transition-all duration-500 flex flex-col justify-between group h-full shadow-[0_4px_24px_rgba(0,0,0,0.02)] relative overflow-hidden"
+                      style={{ backdropFilter: 'blur(2px)', WebkitBackdropFilter: 'blur(2px)' }}
+                    >
+                      <div className="absolute top-0 left-0 w-full h-[3px] bg-gradient-to-r from-transparent via-cyan-400 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                       <div>
                         {/* Icon Header */}
                         <div className="flex items-center gap-3 mb-6">
-                          <div className={`w-12 h-12 rounded-xl flex items-center justify-center border ${env.badgeBg} ${env.color} group-hover:scale-110 transition-transform duration-500`}>
+                          <div className={`w-12 h-12 rounded-xl flex items-center justify-center border ${env.badgeBg} ${env.color} bg-white/60 backdrop-blur-sm group-hover:scale-110 transition-transform duration-500 shadow-sm`}>
                             <EnvIcon className="w-6 h-6" />
                           </div>
-                          <span className="font-mono text-[10px] uppercase tracking-wider text-zinc-500 px-3 py-1.5 rounded-full bg-zinc-100 border border-zinc-200">
+                          <span className="font-mono text-[10px] uppercase tracking-wider text-zinc-600 px-3 py-1.5 rounded-full bg-white/50 border border-zinc-200 backdrop-blur-sm">
                             {env.tag}
                           </span>
                         </div>
@@ -1075,7 +1091,7 @@ export default function HomePage() {
                         </p>
                       </div>
 
-                      <div className="mt-8 pt-5 border-t border-zinc-100 flex items-center justify-between font-mono text-xs">
+                      <div className="mt-8 pt-5 border-t border-zinc-200/70 flex items-center justify-between font-mono text-xs">
                         <span className="text-zinc-400">Deployment Ready</span>
                         <Link
                           href="/platform"
@@ -1190,7 +1206,8 @@ export default function HomePage() {
       {/* 12 // THE WORLD MOVES. INTELLIGENCE SHOULD MOVE WITH IT. (Final Section)  */}
       {/* ========================================================================= */}
       <section className="py-32 relative overflow-hidden text-center bg-white">
-        <div className="absolute inset-0 bg-gradient-to-t from-cyan-50/50 via-transparent to-transparent pointer-events-none" />
+        <GridWaveBackground variant="cyan" />
+
         <div className="container max-w-5xl mx-auto px-6 relative z-10">
           {/* Number Badge */}
           <EditorialLine>
@@ -1228,8 +1245,12 @@ export default function HomePage() {
             ].map((item, idx) => {
               const ItemIcon = item.icon;
               return (
-                <div key={idx} className="p-4 rounded-xl bg-white border border-zinc-200 shadow-sm hover:shadow-md transition-shadow">
-                  <div className={`p-2 rounded-lg border ${item.bg} ${item.color} inline-block mb-2 shadow-sm`}>
+                <div 
+                  key={idx} 
+                  className="p-4 rounded-xl bg-white/[0.12] hover:bg-white/[0.28] backdrop-blur-[2px] border border-zinc-200/70 shadow-[0_4px_24px_rgba(0,0,0,0.02)] hover:shadow-md transition-all duration-300 relative overflow-hidden"
+                  style={{ backdropFilter: 'blur(2px)', WebkitBackdropFilter: 'blur(2px)' }}
+                >
+                  <div className={`p-2 rounded-lg border ${item.bg} ${item.color} inline-block mb-2 shadow-sm bg-white/60 backdrop-blur-sm`}>
                     <ItemIcon size={18} />
                   </div>
                   <div className="font-bold text-zinc-900 text-sm">{item.title}</div>

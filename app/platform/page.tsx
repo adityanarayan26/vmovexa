@@ -20,6 +20,7 @@ import { TextDecrypt } from "@/components/animations/text-decrypt";
 import { BlurReveal } from "@/components/animations/blur-reveal";
 import { TiltCard } from "@/components/animations/tilt-card";
 import { FloatingElement } from "@/components/animations/image-reveal";
+import { GridWaveBackground } from "@/components/visuals/grid-wave-background";
 export const metadata: Metadata = {
   title: "VMOVEXA Platform | Connected Mobility & Edge Computing",
   description:
@@ -391,11 +392,13 @@ export default function PlatformPage() {
       </section>
 
       {/* 02 — PLATFORM ARCHITECTURE & PRINCIPLE */}
-      <section className="py-24 relative overflow-hidden bg-white">
+      <section className="pt-24 pb-12 relative overflow-hidden bg-white">
+        <GridWaveBackground variant="cyan" />
+
         <div className="container max-w-6xl mx-auto px-6 relative z-10">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 mb-16 items-start">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 mb-16 items-stretch">
             <div className="lg:col-span-6 flex flex-col h-full">
-              <div className="space-y-6">
+              <div className="flex flex-col h-full space-y-6">
                 <EditorialLine>
                   <div className="font-mono text-xs uppercase tracking-widest text-cyan-600">
                     Platform Principle
@@ -411,82 +414,35 @@ export default function PlatformPage() {
                     Centralized systems define configurations, rules and operational requirements. The vehicle-side edge environment executes supported functions locally.
                   </p>
                 </EditorialLine>
-                <EditorialLine delay={0.3}>
-                  <p className="text-xs text-zinc-500 leading-relaxed font-mono">
-                    This architecture is particularly relevant to moving environments where connectivity can vary. The underlying design explicitly describes the cloud defining rules while the edge executes them locally.
-                  </p>
-                </EditorialLine>
+                <div className="flex-1 flex flex-col pt-4">
+                  <GsapScrollReveal delay={0.3} className="h-full">
+                    <div 
+                      className="p-7 rounded-2xl bg-white/[0.12] hover:bg-white/[0.28] backdrop-blur-[2px] border border-zinc-200/70 hover:border-indigo-400/50 space-y-3 shadow-[0_4px_24px_rgba(0,0,0,0.02)] hover:shadow-[0_8px_30px_rgba(99,102,241,0.12)] hover:-translate-y-1 transition-all duration-500 group h-full flex flex-col justify-center relative overflow-hidden"
+                      style={{ backdropFilter: 'blur(2px)', WebkitBackdropFilter: 'blur(2px)' }}
+                    >
+                      <div className="absolute top-0 left-0 w-full h-[3px] bg-gradient-to-r from-transparent via-indigo-500 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                      <div className="flex items-center gap-2 text-indigo-600 font-mono text-xs uppercase tracking-wider group-hover:text-indigo-700 transition-colors">
+                        <FiCpu size={16} /> Connected Vehicle
+                      </div>
+                      <h3 className="text-xl font-semibold text-zinc-900">The Physical Mobility Layer</h3>
+                      <p className="text-sm text-zinc-600">
+                        Connects <span className="text-cyan-600 font-medium">Compute + Screens + GPS + Sensors + Network</span> into one technology environment.
+                      </p>
+                    </div>
+                  </GsapScrollReveal>
+                </div>
               </div>
 
-              {/* Sustainability Block to fill empty space */}
-              <GsapScrollReveal delay={0.4} className="mt-auto pt-12">
-                <div className="p-8 sm:p-10 rounded-3xl bg-white border border-zinc-200 text-center relative overflow-hidden shadow-sm hover:shadow-md transition-shadow group">
-                  {/* Subtle background glow */}
-                  <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(168,85,247,0.05)_0%,transparent_70%)] pointer-events-none" />
-                  
-                  <h3 className="text-2xl sm:text-3xl font-medium text-zinc-900 mb-10 relative z-10">
-                    Sustainabil<span className="bg-clip-text text-transparent bg-gradient-to-r from-purple-500 to-pink-500">ity</span>
-                  </h3>
-                  
-                  <div className="flex items-center justify-center gap-4 sm:gap-6 mb-10 relative z-10">
-                    {/* Zero Paper */}
-                    <div className="flex flex-col items-center gap-4">
-                      <div className="w-16 h-16 rounded-full border border-blue-200 bg-blue-50 flex items-center justify-center group-hover:scale-105 transition-transform">
-                        <svg className="w-7 h-7 text-blue-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
-                          <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
-                          <polyline points="14 2 14 8 20 8"></polyline>
-                          <path d="M9 15v-1l-2 2 2 2v-1h4v1l2-2-2-2v1H9z"></path>
-                        </svg>
-                      </div>
-                      <span className="text-[13px] font-semibold text-zinc-800">Zero Paper</span>
-                    </div>
 
-                    {/* Divider */}
-                    <div className="flex flex-col items-center mb-6">
-                      <div className="w-[1px] h-3 bg-gradient-to-b from-transparent to-purple-300" />
-                      <div className="w-1.5 h-1.5 rounded-full bg-purple-400 shadow-[0_0_8px_rgba(168,85,247,0.4)]" />
-                      <div className="w-[1px] h-3 bg-gradient-to-t from-transparent to-purple-300" />
-                    </div>
-
-                    {/* Zero Ink */}
-                    <div className="flex flex-col items-center gap-4">
-                      <div className="w-16 h-16 rounded-full border border-purple-200 bg-purple-50 flex items-center justify-center group-hover:scale-105 transition-transform">
-                        <svg className="w-7 h-7 text-purple-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
-                          <path d="M12 2v4M10 2h4M9 6h6v12a2 2 0 0 1-2 2h-2a2 2 0 0 1-2-2V6z"></path>
-                          <path d="M16 10l4-4-2-2-4 4"></path>
-                        </svg>
-                      </div>
-                      <span className="text-[13px] font-semibold text-zinc-800">Zero Ink</span>
-                    </div>
-
-                    {/* Divider */}
-                    <div className="flex flex-col items-center mb-6">
-                      <div className="w-[1px] h-3 bg-gradient-to-b from-transparent to-purple-300" />
-                      <div className="w-1.5 h-1.5 rounded-full bg-purple-400 shadow-[0_0_8px_rgba(168,85,247,0.4)]" />
-                      <div className="w-[1px] h-3 bg-gradient-to-t from-transparent to-purple-300" />
-                    </div>
-
-                    {/* Infinite Possibilities */}
-                    <div className="flex flex-col items-center gap-4">
-                      <div className="w-16 h-16 rounded-full border border-indigo-200 bg-indigo-50 flex items-center justify-center group-hover:scale-105 transition-transform">
-                        <svg className="w-7 h-7 text-indigo-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
-                          <path d="M12 12c-2-2.5-4-4-6-4-3 0-4.5 2-4.5 4s1.5 4 4.5 4c2 0 4-1.5 6-4Zm0 0c2 2.5 4 4 6 4 3 0 4.5-2 4.5-4s-1.5-4-4.5-4c-2 0-4 1.5-6 4Z"></path>
-                        </svg>
-                      </div>
-                      <span className="text-[13px] font-semibold text-zinc-800">Infinite Possibilities</span>
-                    </div>
-                  </div>
-
-                  <p className="text-sm text-zinc-600 leading-relaxed relative z-10 max-w-[280px] sm:max-w-xs mx-auto">
-                    We are committed to building a sustainable future where technology and nature coexist in perfect harmony.
-                  </p>
-                </div>
-              </GsapScrollReveal>
             </div>
 
             <div className="lg:col-span-6 space-y-6">
               <GsapScrollReveal delay={0.2}>
-                <div className="p-7 rounded-2xl bg-white border border-zinc-200 space-y-4 shadow-sm hover:bg-zinc-50 transition-colors group">
+                <div 
+                  className="p-7 rounded-2xl bg-white/[0.12] hover:bg-white/[0.28] backdrop-blur-[2px] border border-zinc-200/70 hover:border-cyan-400/50 space-y-4 shadow-[0_4px_24px_rgba(0,0,0,0.02)] hover:shadow-[0_8px_30px_rgba(6,182,212,0.12)] hover:-translate-y-1 transition-all duration-500 group relative overflow-hidden"
+                  style={{ backdropFilter: 'blur(2px)', WebkitBackdropFilter: 'blur(2px)' }}
+                >
+                  <div className="absolute top-0 left-0 w-full h-[3px] bg-gradient-to-r from-transparent via-cyan-500 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                   <div className="flex items-center gap-2 text-cyan-600 font-mono text-xs uppercase tracking-wider group-hover:text-cyan-700 transition-colors">
                     <FiCloud size={16} /> Cloud Control
                   </div>
@@ -496,7 +452,7 @@ export default function PlatformPage() {
                   </p>
                   <div className="grid grid-cols-3 gap-2 pt-2 text-xs font-mono text-zinc-800">
                     {cloudItems.map((item, i) => (
-                      <span key={i} className="px-2.5 py-1.5 rounded-lg bg-zinc-50 border border-zinc-200 text-center hover:bg-cyan-50 hover:border-cyan-200 hover:text-cyan-700 transition-colors cursor-default shadow-sm">
+                      <span key={i} className="px-2.5 py-1.5 rounded-lg bg-white/60 backdrop-blur-sm border border-zinc-200/70 text-center hover:bg-cyan-50 hover:border-cyan-200 hover:text-cyan-700 transition-colors cursor-default shadow-xs">
                         {item}
                       </span>
                     ))}
@@ -504,17 +460,7 @@ export default function PlatformPage() {
                 </div>
               </GsapScrollReveal>
 
-              <GsapScrollReveal delay={0.3}>
-                <div className="p-7 rounded-2xl bg-white border border-zinc-200 space-y-3 shadow-sm hover:bg-zinc-50 transition-colors group">
-                  <div className="flex items-center gap-2 text-indigo-600 font-mono text-xs uppercase tracking-wider group-hover:text-indigo-700 transition-colors">
-                    <FiCpu size={16} /> Connected Vehicle
-                  </div>
-                  <h3 className="text-xl font-semibold text-zinc-900">The Physical Mobility Layer</h3>
-                  <p className="text-sm text-zinc-600">
-                    Connects <span className="text-cyan-600 font-medium">Compute + Screens + GPS + Sensors + Network</span> into one technology environment.
-                  </p>
-                </div>
-              </GsapScrollReveal>
+
             </div>
           </div>
         </div>
@@ -522,7 +468,7 @@ export default function PlatformPage() {
       </section>
 
       {/* 03 — VMOVEXA ONE (CENTRALIZED CONTROL LAYER) */}
-      <section id="vmovexa-one" className="py-24 relative bg-black">
+      <section id="vmovexa-one" className="pt-12 pb-24 relative bg-black">
         <div className="container max-w-6xl mx-auto px-6">
           <div className="max-w-3xl mb-14">
             <EditorialLine>
@@ -630,8 +576,8 @@ export default function PlatformPage() {
                 theme="dark"
                 fade="none"
                 type="video"
-                src="/videos/vmovexa-transit-demo.mp4"
-                badge="Space Reserved • VMOVEXA ONE Dashboard Demo"
+                src="/videos/big.MOV"
+                badge="VMOVEXA ONE Dashboard Demo"
                 caption="Interactive Fleet Operations Map & Centralized Device Control Stream"
                 aspectRatio="21/9"
                 allowPause={false}
@@ -645,6 +591,8 @@ export default function PlatformPage() {
 
       {/* 04 — VMOVEXA CORE (VEHICLE EDGE RUNTIME) */}
       <section id="vmovexa-core" className="py-24 relative overflow-hidden bg-white text-zinc-900">
+        <GridWaveBackground variant="indigo" />
+
         <div className="container max-w-6xl mx-auto px-6 relative z-10">
           <div className="max-w-3xl mb-14">
             <EditorialLine>
@@ -674,7 +622,11 @@ export default function PlatformPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-3.5 mb-14">
             {coreEngines.map((engine, i) => (
               <GsapScrollReveal key={engine.title} delay={i * 0.04}>
-                <div className="p-4.5 rounded-2xl bg-white border border-zinc-200 hover:border-indigo-400 hover:bg-zinc-50 hover:shadow-md transition-all duration-300 h-full flex flex-col justify-between group cursor-default shadow-sm">
+                <div 
+                  className="p-4.5 rounded-2xl bg-white/[0.12] hover:bg-white/[0.28] backdrop-blur-[2px] border border-zinc-200/70 hover:border-indigo-400 hover:shadow-md hover:-translate-y-1 transition-all duration-300 h-full flex flex-col justify-between group cursor-default shadow-[0_4px_24px_rgba(0,0,0,0.02)] relative overflow-hidden"
+                  style={{ backdropFilter: 'blur(2px)', WebkitBackdropFilter: 'blur(2px)' }}
+                >
+                  <div className="absolute top-0 left-0 w-full h-[2px] bg-gradient-to-r from-transparent via-indigo-500 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                   <div>
                     <span className="font-mono text-[10px] text-zinc-400 uppercase tracking-widest block mb-2.5 group-hover:text-indigo-600 transition-colors font-medium">Engine {String(i + 1).padStart(2, "0")}</span>
                     <h4 className="text-xs sm:text-sm font-bold text-zinc-900 mb-1.5 group-hover:text-indigo-600 transition-colors">{engine.title}</h4>
@@ -688,7 +640,11 @@ export default function PlatformPage() {
           {/* Multi-Screen & Offline Resilience Split */}
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-16">
             <GsapScrollReveal delay={0.2}>
-              <div className="p-7 rounded-2xl bg-white border border-zinc-200 h-full flex flex-col justify-between hover:border-cyan-400 hover:bg-zinc-50 hover:shadow-md transition-all duration-500 group relative overflow-hidden shadow-sm">
+              <div 
+                className="p-7 rounded-2xl bg-white/[0.12] hover:bg-white/[0.28] backdrop-blur-[2px] border border-zinc-200/70 h-full flex flex-col justify-between hover:border-cyan-400 hover:shadow-[0_8px_30px_rgba(6,182,212,0.12)] hover:-translate-y-1 transition-all duration-500 group relative overflow-hidden shadow-[0_4px_24px_rgba(0,0,0,0.02)]"
+                style={{ backdropFilter: 'blur(2px)', WebkitBackdropFilter: 'blur(2px)' }}
+              >
+                <div className="absolute top-0 left-0 w-full h-[3px] bg-gradient-to-r from-transparent via-cyan-500 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                 <div className="relative z-10">
                   <div className="flex items-center gap-2 text-cyan-600 font-mono text-xs uppercase tracking-widest font-semibold mb-3">
                     <FiMonitor size={17} className="text-cyan-600" /> Multi-Screen Intelligence
@@ -697,7 +653,7 @@ export default function PlatformPage() {
                   <p className="text-xs sm:text-sm text-zinc-600 leading-relaxed mb-4 font-light">
                     A vehicle can contain multiple connected displays. VMOVEXA&apos;s architecture supports independent, mirrored, synchronized, split and multi-zone display operation.
                   </p>
-                  <p className="text-xs font-mono text-zinc-700 bg-zinc-50 p-3 rounded-lg border border-zinc-200 shadow-sm">
+                  <p className="text-xs font-mono text-zinc-700 bg-white/60 backdrop-blur-sm p-3 rounded-lg border border-zinc-200/70 shadow-xs">
                     This creates a distributed digital environment inside a single mobility asset.
                   </p>
                 </div>
@@ -705,7 +661,11 @@ export default function PlatformPage() {
             </GsapScrollReveal>
 
             <GsapScrollReveal delay={0.3}>
-              <div className="p-7 rounded-2xl bg-white border border-zinc-200 h-full flex flex-col justify-between hover:border-indigo-400 hover:bg-zinc-50 hover:shadow-md transition-all duration-500 group relative overflow-hidden shadow-sm">
+              <div 
+                className="p-7 rounded-2xl bg-white/[0.12] hover:bg-white/[0.28] backdrop-blur-[2px] border border-zinc-200/70 h-full flex flex-col justify-between hover:border-indigo-400 hover:shadow-[0_8px_30px_rgba(99,102,241,0.12)] hover:-translate-y-1 transition-all duration-500 group relative overflow-hidden shadow-[0_4px_24px_rgba(0,0,0,0.02)]"
+                style={{ backdropFilter: 'blur(2px)', WebkitBackdropFilter: 'blur(2px)' }}
+              >
+                <div className="absolute top-0 left-0 w-full h-[3px] bg-gradient-to-r from-transparent via-indigo-500 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                 <div className="relative z-10">
                   <div className="flex items-center gap-2 text-indigo-600 font-mono text-xs uppercase tracking-widest font-semibold mb-3">
                     <FiWifiOff size={17} className="text-indigo-600" /> Offline Resilience
@@ -714,12 +674,12 @@ export default function PlatformPage() {
                   <p className="text-xs sm:text-sm text-zinc-600 leading-relaxed mb-4 font-light">
                     Vehicle connectivity is not guaranteed everywhere. VMOVEXA CORE is designed around local caching and synchronization.
                   </p>
-                  <div className="p-3.5 rounded-xl bg-zinc-50 border border-zinc-200 font-mono text-xs flex flex-wrap items-center justify-between gap-2 shadow-sm">
-                    <span className="px-2.5 py-1 bg-white border border-zinc-200 text-zinc-800 font-medium rounded-lg shadow-xs">Cloud</span>
+                  <div className="p-3.5 rounded-xl bg-white/60 backdrop-blur-sm border border-zinc-200/70 font-mono text-xs flex flex-wrap items-center justify-between gap-2 shadow-xs">
+                    <span className="px-2.5 py-1 bg-white/80 border border-zinc-200 text-zinc-800 font-medium rounded-lg shadow-xs">Cloud</span>
                     <span className="text-indigo-600 font-bold text-sm">→</span>
-                    <span className="px-2.5 py-1 bg-white border border-zinc-200 text-zinc-800 font-medium rounded-lg shadow-xs">Local Edge</span>
+                    <span className="px-2.5 py-1 bg-white/80 border border-zinc-200 text-zinc-800 font-medium rounded-lg shadow-xs">Local Edge</span>
                     <span className="text-indigo-600 font-bold text-sm">→</span>
-                    <span className="px-2.5 py-1 bg-white border border-zinc-200 text-zinc-800 font-medium rounded-lg shadow-xs">Cached Op</span>
+                    <span className="px-2.5 py-1 bg-white/80 border border-zinc-200 text-zinc-800 font-medium rounded-lg shadow-xs">Cached Op</span>
                     <span className="text-indigo-600 font-bold text-sm">→</span>
                     <span className="px-2.5 py-1 bg-indigo-50 text-indigo-700 border border-indigo-200 font-medium rounded-lg flex items-center gap-1.5 shadow-xs">
                       <span className="w-1.5 h-1.5 rounded-full bg-indigo-600 animate-pulse" />
@@ -759,6 +719,7 @@ export default function PlatformPage() {
 
       {/* CTA */}
       <section className="py-24 text-center relative overflow-hidden bg-white">
+        <GridWaveBackground variant="cyan" />
         <div className="container max-w-4xl mx-auto px-6 relative z-10">
           <EditorialLine>
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-semibold tracking-tight mb-6 text-zinc-900 uppercase">

@@ -12,6 +12,7 @@ import { TextDecrypt } from "@/components/animations/text-decrypt";
 import { BlurReveal } from "@/components/animations/blur-reveal";
 import { TiltCard } from "@/components/animations/tilt-card";
 import { FloatingElement } from "@/components/animations/image-reveal";
+import { GridWaveBackground } from "@/components/visuals/grid-wave-background";
 
 export const metadata: Metadata = {
   title: "About VMOVEXA | Deep-Tech Mobility Technology Company",
@@ -197,6 +198,8 @@ export default function CompanyPage() {
 
       {/* 02 — LEADERSHIP (Matching Klee Technologies Design) */}
       <section id="leadership" className="py-12 relative overflow-hidden bg-white scroll-mt-20">
+        <GridWaveBackground variant="cyan" />
+
         <div className="container max-w-7xl mx-auto px-6 relative z-10">
           <div className="mb-12">
             <EditorialLine>
@@ -214,7 +217,8 @@ export default function CompanyPage() {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label={`${leader.name} on LinkedIn`}
-                  className="flex items-center justify-between gap-3.5 p-2.5 sm:p-3 pr-4 sm:pr-5 rounded-full border border-neutral-200 bg-neutral-50 hover:bg-neutral-100 hover:border-neutral-300 transition-all duration-300 shadow-sm group cursor-pointer"
+                  className="flex items-center justify-between gap-3.5 p-2.5 sm:p-3 pr-4 sm:pr-5 rounded-full border border-zinc-200/70 bg-white/[0.12] hover:bg-white/[0.28] backdrop-blur-[2px] hover:border-cyan-400/50 hover:-translate-y-1 transition-all duration-300 shadow-[0_4px_24px_rgba(0,0,0,0.02)] hover:shadow-[0_8px_30px_rgba(6,182,212,0.12)] group cursor-pointer"
+                  style={{ backdropFilter: 'blur(2px)', WebkitBackdropFilter: 'blur(2px)' }}
                 >
                   {/* Circular Avatar */}
                   <div className="relative w-14 h-14 sm:w-16 sm:h-16 rounded-full overflow-hidden flex-shrink-0 bg-transparent">
@@ -259,8 +263,171 @@ export default function CompanyPage() {
         </div>
       </section>
       
-      {/* 03 — PATENTS & CERTIFICATIONS */}
+      {/* 04 — PATENTS & CERTIFICATIONS */}
       <PatentsAndCerts />
+
+      {/* ========================================================================= */}
+      {/* 05 // THE BRAND IDENTITY: THE SOUL OF INTELLIGENT MOVEMENT.               */}
+      {/* ========================================================================= */}
+      <section className="py-20 relative bg-black">
+        <div className="container max-w-7xl mx-auto px-6 relative z-10">
+          <div className="text-center max-w-4xl mx-auto mb-16">
+            <EditorialLine>
+              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/[0.05] border border-white/10 text-white/80 font-mono text-xs tracking-wider mb-5">
+                <span>BRAND IDENTITY</span>
+              </div>
+            </EditorialLine>
+            <CubertoLines
+              as="h2"
+              className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight uppercase leading-[1.05] text-white"
+              delay={0.1}
+              stagger={0.1}
+              lines={[
+                <div key="l1">THE SOUL OF</div>,
+                <div key="l2" className="mt-1 sm:mt-2 gradient-text">INTELLIGENT MOVEMENT.</div>,
+              ]}
+            />
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-16 items-start">
+            {/* Left Column: The Iconic V */}
+            <GsapScrollReveal delay={0.2}>
+              <div className="flex flex-col gap-6">
+                <div className="relative w-full aspect-[4/5] sm:aspect-square rounded-3xl overflow-hidden bg-white/[0.02] border border-white/10 p-2 shadow-2xl">
+                  <div className="relative w-full h-full rounded-2xl overflow-hidden bg-black">
+                    <Image
+                      src="/images/iconic-v.jpg"
+                      alt="The Iconic V"
+                      fill
+                      sizes="(max-width: 768px) 100vw, 50vw"
+                      className="object-cover object-center"
+                    />
+                  </div>
+                </div>
+                <div className="text-center md:text-left space-y-4 px-4 sm:px-0">
+                  <h3 className="text-2xl font-bold text-white tracking-wide uppercase">THE ICONIC “V”</h3>
+                  <div className="font-mono text-xs tracking-widest text-cyan-400 uppercase">
+                    Three ideas. One identity.
+                  </div>
+                  <p className="text-white/70 font-light leading-relaxed text-lg">
+                    Velocity. Vision. Value.<br />
+                    Move + Nexus.<br />
+                    A symbol for the movement of what comes next.
+                  </p>
+                  <div className="pt-4 border-t border-white/10">
+                    <div className="font-bold text-white text-xl tracking-wider">VMOVEXA</div>
+                    <div className="text-sm text-white/50">The Soul of Intelligent Movement.</div>
+                  </div>
+                </div>
+              </div>
+            </GsapScrollReveal>
+
+            {/* Right Column: The Gradient X */}
+            <GsapScrollReveal delay={0.3}>
+              <div className="flex flex-col gap-6 md:mt-16">
+                <div className="relative w-full aspect-[4/5] sm:aspect-square rounded-3xl overflow-hidden bg-white/[0.02] border border-white/10 p-2 shadow-2xl">
+                  <div className="relative w-full h-full rounded-2xl overflow-hidden bg-black">
+                    <Image
+                      src="/images/gradient-x.jpg"
+                      alt="The Gradient X"
+                      fill
+                      sizes="(max-width: 768px) 100vw, 50vw"
+                      className="object-cover object-center"
+                    />
+                  </div>
+                </div>
+                <div className="text-center md:text-left space-y-4 px-4 sm:px-0">
+                  <h3 className="text-2xl font-bold text-white tracking-wide uppercase">AND “X”</h3>
+                  <div className="font-mono text-xs tracking-widest text-indigo-400 uppercase">
+                    Digital Intelligent Media.
+                  </div>
+                  <p className="text-white/70 font-light leading-relaxed text-lg">
+                    Media. With intelligence.<br />
+                    It sees the moment.<br />
+                    Understands the context.<br />
+                    Moves with the world.
+                  </p>
+                  <div className="pt-4 border-t border-white/10">
+                    <div className="font-bold text-white text-xl tracking-wider"><span className="text-white">VMOVEXA</span> <span className="text-indigo-400">X</span></div>
+                    <div className="text-sm text-white/50">Where movement becomes experience.</div>
+                  </div>
+                </div>
+              </div>
+            </GsapScrollReveal>
+          </div>
+        </div>
+      </section>
+
+      {/* ========================================================================= */}
+      {/* 06 // SUSTAINABILITY                                                      */}
+      {/* ========================================================================= */}
+      <section className="py-20 relative bg-white border-t border-zinc-200 overflow-hidden">
+        <GridWaveBackground variant="purple" />
+        
+        <div className="container max-w-7xl mx-auto px-6 relative z-10">
+          <GsapScrollReveal>
+            <div className="flex flex-col md:flex-row items-center justify-between gap-12">
+              <div className="md:w-1/3 text-center md:text-left">
+                <h2 className="text-3xl sm:text-4xl lg:text-5xl font-semibold tracking-tight text-zinc-900 mb-6">
+                  Sustainabil<span className="bg-clip-text text-transparent bg-gradient-to-r from-purple-500 to-pink-500">ity</span>
+                </h2>
+                <p className="text-base text-zinc-600 leading-relaxed max-w-md mx-auto md:mx-0">
+                  We are committed to building a sustainable future where technology and nature coexist in perfect harmony.
+                </p>
+              </div>
+
+              <div className="md:w-2/3 flex flex-wrap md:flex-nowrap items-center justify-center md:justify-end gap-8 lg:gap-12">
+                {/* Zero Paper */}
+                <div className="flex flex-col items-center gap-4 group">
+                  <div className="w-20 h-20 rounded-full border border-blue-200 bg-blue-50 flex items-center justify-center group-hover:scale-105 transition-transform shadow-sm hover:shadow-md">
+                    <svg className="w-8 h-8 text-blue-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+                      <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                      <polyline points="14 2 14 8 20 8"></polyline>
+                      <path d="M9 15v-1l-2 2 2 2v-1h4v1l2-2-2-2v1H9z"></path>
+                    </svg>
+                  </div>
+                  <span className="text-sm font-bold text-zinc-800 uppercase tracking-wide">Zero Paper</span>
+                </div>
+
+                {/* Divider */}
+                <div className="hidden md:flex flex-row items-center">
+                  <div className="w-6 h-[1px] bg-gradient-to-r from-transparent to-purple-300" />
+                  <div className="w-1.5 h-1.5 rounded-full bg-purple-400 shadow-[0_0_8px_rgba(168,85,247,0.4)]" />
+                  <div className="w-6 h-[1px] bg-gradient-to-l from-transparent to-purple-300" />
+                </div>
+
+                {/* Zero Ink */}
+                <div className="flex flex-col items-center gap-4 group">
+                  <div className="w-20 h-20 rounded-full border border-purple-200 bg-purple-50 flex items-center justify-center group-hover:scale-105 transition-transform shadow-sm hover:shadow-md">
+                    <svg className="w-8 h-8 text-purple-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+                      <path d="M12 2v4M10 2h4M9 6h6v12a2 2 0 0 1-2 2h-2a2 2 0 0 1-2-2V6z"></path>
+                      <path d="M16 10l4-4-2-2-4 4"></path>
+                    </svg>
+                  </div>
+                  <span className="text-sm font-bold text-zinc-800 uppercase tracking-wide">Zero Ink</span>
+                </div>
+
+                {/* Divider */}
+                <div className="hidden md:flex flex-row items-center">
+                  <div className="w-6 h-[1px] bg-gradient-to-r from-transparent to-purple-300" />
+                  <div className="w-1.5 h-1.5 rounded-full bg-purple-400 shadow-[0_0_8px_rgba(168,85,247,0.4)]" />
+                  <div className="w-6 h-[1px] bg-gradient-to-l from-transparent to-purple-300" />
+                </div>
+
+                {/* Infinite Possibilities */}
+                <div className="flex flex-col items-center gap-4 group">
+                  <div className="w-20 h-20 rounded-full border border-indigo-200 bg-indigo-50 flex items-center justify-center group-hover:scale-105 transition-transform shadow-sm hover:shadow-md">
+                    <svg className="w-8 h-8 text-indigo-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+                      <path d="M12 12c-2-2.5-4-4-6-4-3 0-4.5 2-4.5 4s1.5 4 4.5 4c2 0 4-1.5 6-4Zm0 0c2 2.5 4 4 6 4 3 0 4.5-2 4.5-4s-1.5-4-4.5-4c-2 0-4 1.5-6 4Z"></path>
+                    </svg>
+                  </div>
+                  <span className="text-sm font-bold text-zinc-800 uppercase tracking-wide">Infinite Possibilities</span>
+                </div>
+              </div>
+            </div>
+          </GsapScrollReveal>
+        </div>
+      </section>
     </main>
   );
 }

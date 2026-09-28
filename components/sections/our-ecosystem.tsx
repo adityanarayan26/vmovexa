@@ -171,7 +171,7 @@ function CardItem({ card }: { card: EcosystemCard }) {
               alt={card.title}
               fill
               sizes="(max-width: 768px) 100vw, 400px"
-              className={`group-hover/card:scale-[1.03] transition-transform duration-700 ease-out z-0 ${card.id === "set1-card-2" ? "object-contain p-2" : "object-cover"}`}
+              className={`group-hover/card:scale-[1.03] transition-transform duration-700 ease-out z-0 ${card.id === "set1-card-2" ? "object-contain p-2" : "object-cover"} ${card.id === "set2-card-2" ? "object-[50%_20%]" : ""}`}
             />
             <div className="absolute inset-0 bg-gradient-to-t from-[#050508]/80 via-transparent to-transparent pointer-events-none z-10" />
           </div>
@@ -185,7 +185,7 @@ function CardItem({ card }: { card: EcosystemCard }) {
               alt={card.title}
               fill
               sizes="(max-width: 768px) 100vw, 400px"
-              className={`group-hover/card:scale-[1.03] transition-transform duration-700 ease-out z-0 ${card.id === "set1-card-2" ? "object-contain p-2" : "object-cover"}`}
+              className={`group-hover/card:scale-[1.03] transition-transform duration-700 ease-out z-0 ${card.id === "set1-card-2" ? "object-contain p-2" : "object-cover"} ${card.id === "set2-card-2" ? "object-[50%_20%]" : ""}`}
             />
             <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-[#050508]/80 pointer-events-none z-10" />
           </div>

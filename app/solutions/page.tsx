@@ -10,6 +10,7 @@ import { TextDecrypt } from "@/components/animations/text-decrypt";
 import { BlurReveal } from "@/components/animations/blur-reveal";
 import { ImageCurtainReveal, FloatingElement } from "@/components/animations/image-reveal";
 import { TiltCard } from "@/components/animations/tilt-card";
+import { GridWaveBackground } from "@/components/visuals/grid-wave-background";
 export const metadata: Metadata = {
   title: "VMOVEXA Mobility Solutions | Fleet, Media & Smart City Technology",
   description:
@@ -158,7 +159,7 @@ export default function SolutionsPage() {
 
       {/* Bottom Bar: WHAT WILL YOU BUILD ON THE MOVING EDGE? + Talk to VMOVEXA -> */}
       <section className="w-full bg-white pt-16 pb-8 relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-r from-transparent via-zinc-100/50 to-transparent -translate-x-full hover:animate-[shimmer_2s_infinite]" />
+        <GridWaveBackground variant="cyan" />
         <div className="container max-w-7xl mx-auto px-6 relative z-10">
           <GsapScrollReveal delay={0.1}>
             <div className="flex flex-col sm:flex-row items-center justify-between gap-6 group">
@@ -182,6 +183,7 @@ export default function SolutionsPage() {
 
       {/* SOLUTION 01 — FLEET OPERATORS */}
       <section id="fleet-operators" className="pt-8 pb-20 relative overflow-hidden bg-white">
+        <GridWaveBackground variant="cyan" />
         <div className="container max-w-6xl mx-auto px-6 relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
             <div className="lg:col-span-6 space-y-5">
@@ -309,7 +311,8 @@ export default function SolutionsPage() {
 
       {/* SOLUTION 03 — SMART CITIES */}
       <section id="smart-cities" className="py-20 relative overflow-hidden bg-white">
-        <div className="container max-w-6xl mx-auto px-6">
+        <GridWaveBackground variant="indigo" />
+        <div className="container max-w-6xl mx-auto px-6 relative z-10">
           {/* Smart Cities Overview Grid */}
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
             <div className="lg:col-span-6 space-y-5">
@@ -329,7 +332,10 @@ export default function SolutionsPage() {
                 </p>
               </EditorialLine>
               <EditorialLine delay={0.3}>
-                <p className="text-xs text-zinc-600 font-mono p-4 rounded-xl bg-zinc-50 border border-zinc-200 shadow-sm leading-relaxed">
+                <p 
+                  className="text-xs text-zinc-600 font-mono p-4 rounded-xl bg-white/[0.12] backdrop-blur-[2px] border border-zinc-200/70 shadow-xs leading-relaxed"
+                  style={{ backdropFilter: 'blur(2px)', WebkitBackdropFilter: 'blur(2px)' }}
+                >
                   <span className="text-cyan-700 font-semibold block mb-1">Key Stakeholders:</span>
                   Municipalities, smart cities, transport departments, disaster-management authorities and tourism departments.
                 </p>
@@ -338,7 +344,11 @@ export default function SolutionsPage() {
 
             <div className="lg:col-span-6">
               <GsapScrollReveal delay={0.2}>
-                <div className="p-7 rounded-2xl bg-zinc-50 border border-zinc-200 space-y-3.5 hover:border-indigo-400 hover:bg-zinc-100/50 transition-all duration-500 group relative overflow-hidden shadow-sm">
+                <div 
+                  className="p-7 rounded-2xl bg-white/[0.12] hover:bg-white/[0.28] backdrop-blur-[2px] border border-zinc-200/70 space-y-3.5 hover:border-indigo-400 hover:shadow-[0_8px_30px_rgba(99,102,241,0.12)] hover:-translate-y-1 transition-all duration-500 group relative overflow-hidden shadow-[0_4px_24px_rgba(0,0,0,0.02)]"
+                  style={{ backdropFilter: 'blur(2px)', WebkitBackdropFilter: 'blur(2px)' }}
+                >
+                  <div className="absolute top-0 left-0 w-full h-[3px] bg-gradient-to-r from-transparent via-indigo-500 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                   <div className="relative z-10">
                     <h4 className="text-xs font-mono uppercase tracking-widest text-cyan-700 font-semibold mb-4">Civic & Urban Applications</h4>
                     <div className="space-y-3">
@@ -428,7 +438,7 @@ export default function SolutionsPage() {
 
       {/* CTA */}
       <section className="py-24 text-center relative overflow-hidden bg-white">
-        <div className="absolute inset-0 bg-gradient-to-t from-zinc-50 via-white to-white pointer-events-none" />
+        <GridWaveBackground variant="cyan" />
         <div className="container max-w-4xl mx-auto px-6 relative z-10">
           <EditorialLine>
             <div className="font-mono text-xs uppercase tracking-widest text-cyan-600 mb-3">Deployment & Implementation</div>

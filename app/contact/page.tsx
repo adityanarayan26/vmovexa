@@ -8,6 +8,7 @@ import { CubertoLines } from "@/components/animations/cuberto-text-reveal";
 import { TextDecrypt } from "@/components/animations/text-decrypt";
 import { BlurReveal } from "@/components/animations/blur-reveal";
 import { TiltCard } from "@/components/animations/tilt-card";
+import { GridWaveBackground } from "@/components/visuals/grid-wave-background";
 import { site } from "@/lib/site";
 
 export default function ContactPage() {
@@ -204,19 +205,20 @@ export default function ContactPage() {
 
       {/* 02 — 4 CONTACT TRACKS */}
       <section className="py-24 sm:py-28 bg-[#fafaff] relative overflow-hidden">
+        <GridWaveBackground variant="cyan" />
         {/* Multi-layered Ambient Background Glow & Cyber-Grid Mask */}
         <div className="absolute top-1/4 left-1/4 -translate-x-1/2 w-[550px] h-[360px] bg-cyan-400/8 rounded-full blur-[110px] pointer-events-none -z-10" />
         <div className="absolute top-1/3 right-1/4 translate-x-1/2 w-[550px] h-[360px] bg-purple-400/8 rounded-full blur-[110px] pointer-events-none -z-10" />
         <div className="absolute bottom-6 left-1/2 -translate-x-1/2 w-[800px] h-[300px] bg-emerald-400/6 rounded-full blur-[130px] pointer-events-none -z-10" />
-        
-        {/* Subtle Engineering Matrix Pattern with Radial Edge Fade */}
-        <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(0,0,0,0.02)_1px,transparent_1px),linear-gradient(to_bottom,rgba(0,0,0,0.02)_1px,transparent_1px)] bg-[size:3.5rem_3.5rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_50%,#000_70%,transparent_100%)] pointer-events-none" />
 
         <div className="container max-w-6xl mx-auto px-6 relative z-10">
           {/* Section Header */}
           <div className="text-center max-w-3xl mx-auto mb-16 sm:mb-20">
             <Reveal>
-              <div className="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-white/95 border border-zinc-200/90 text-zinc-700 font-mono text-[11px] uppercase tracking-[0.2em] mb-4 shadow-[0_2px_12px_rgba(0,0,0,0.04)] backdrop-blur-md">
+              <div 
+                className="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-white/[0.15] border border-zinc-200/70 text-zinc-700 font-mono text-[11px] uppercase tracking-[0.2em] mb-4 shadow-[0_2px_12px_rgba(0,0,0,0.02)] backdrop-blur-[2px]"
+                style={{ backdropFilter: 'blur(2px)', WebkitBackdropFilter: 'blur(2px)' }}
+              >
                 <span className="relative flex h-2 w-2">
                   <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-cyan-400 opacity-75" />
                   <span className="relative inline-flex rounded-full h-2 w-2 bg-gradient-to-r from-cyan-500 to-indigo-500" />
@@ -246,11 +248,12 @@ export default function ContactPage() {
                   <TiltCard maxTilt={5} glare={false} className="h-full flex flex-col">
                     <div
                       onClick={() => handleSelectTrack(t.formOption)}
-                      className={`p-7 sm:p-8 rounded-[28px] bg-white/95 backdrop-blur-md border ${
+                      className={`p-7 sm:p-8 rounded-[28px] bg-white/[0.12] hover:bg-white/[0.28] backdrop-blur-[2px] border ${
                         isSelected
                           ? t.ringActive
-                          : `border-zinc-200/90 shadow-[0_4px_24px_rgba(0,0,0,0.03)] ${t.ringHover}`
+                          : `border-zinc-200/70 shadow-[0_4px_24px_rgba(0,0,0,0.02)] ${t.ringHover}`
                       } transition-all duration-500 h-full flex flex-col justify-between group relative overflow-hidden flex-1 cursor-pointer hover:-translate-y-2`}
+                      style={{ backdropFilter: 'blur(2px)', WebkitBackdropFilter: 'blur(2px)' }}
                     >
                       {/* Top Luminous Light Bar */}
                       <div className={`absolute top-0 inset-x-0 h-[3.5px] bg-gradient-to-r ${t.gradientBar} transition-all duration-500 group-hover:h-[5px]`} />

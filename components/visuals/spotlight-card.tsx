@@ -5,6 +5,7 @@ import React, { useRef, useState, useCallback, ReactNode } from "react";
 interface SpotlightCardProps {
   children: ReactNode;
   className?: string;
+  style?: React.CSSProperties;
   spotlightColor?: string;
   borderGlowColor?: string;
 }
@@ -12,6 +13,7 @@ interface SpotlightCardProps {
 export function SpotlightCard({
   children,
   className = "",
+  style,
   spotlightColor = "rgba(34, 211, 238, 0.12)",
   borderGlowColor = "rgba(34, 211, 238, 0.35)",
 }: SpotlightCardProps) {
@@ -42,6 +44,7 @@ export function SpotlightCard({
       onMouseMove={handleMouseMove}
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
+      style={style}
       className={`relative overflow-hidden rounded-2xl bg-[#020712] border border-white/10 transition-colors duration-300 hover:border-white/20 ${className}`}
     >
       {/* Mouse Spotlight Radial Glow */}
