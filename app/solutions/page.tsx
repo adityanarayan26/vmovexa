@@ -286,7 +286,7 @@ export default function SolutionsPage() {
                 <div className="relative group">
                   <MediaSlot
                     type="video"
-                    src="/videos/vmovexa-transit-demo.mp4"
+                    src="/videos/small.MOV"
                     poster="/images/VMOVEXA FOLDER DESIGN MOCKUP.PNG"
                     aspectRatio="16/9"
                     hideBadge

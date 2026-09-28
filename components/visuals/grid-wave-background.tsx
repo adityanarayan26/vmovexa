@@ -10,8 +10,8 @@ interface GridWaveBackgroundProps {
 export function GridWaveBackground({
   variant = "cyan",
   className = "",
-  gridOpacity = "opacity-[0.06]",
-  waveOpacity = "opacity-30",
+  gridOpacity = "opacity-[0.03]",
+  waveOpacity = "opacity-20",
 }: GridWaveBackgroundProps) {
   const glowMap = {
     cyan: "bg-[radial-gradient(ellipse_at_top,rgba(6,182,212,0.05)_0%,transparent_70%)]",
