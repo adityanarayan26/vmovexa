@@ -122,6 +122,7 @@ export default function ContactPage() {
       firstName: formData.get('firstName'),
       lastName: formData.get('lastName'), // We'll split the full name or just use full name as firstName
       workEmail: formData.get('workEmail'),
+      phone: formData.get('phone'),
       companyName: formData.get('companyName'),
       interest: selectedInterest,
       message: formData.get('message')

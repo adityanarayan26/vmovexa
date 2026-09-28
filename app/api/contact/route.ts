@@ -4,7 +4,7 @@ import nodemailer from 'nodemailer';
 export async function POST(req: Request) {
   try {
     const data = await req.json();
-    const { firstName, lastName, workEmail, companyName, interest, message } = data;
+    const { firstName, lastName, workEmail, phone, companyName, interest, message } = data;
 
     if (!firstName || !lastName || !workEmail) {
       return NextResponse.json(
@@ -82,6 +82,10 @@ export async function POST(req: Request) {
                   <td class="value">${companyName || "Not specified"}</td>
                 </tr>
                 <tr>
+                  <td class="label">Phone Number:</td>
+                  <td class="value">${phone || "Not specified"}</td>
+                </tr>
+                <tr>
                   <td class="label">Email Address:</td>
                   <td class="value"><a href="mailto:${workEmail}" style="color: #3b82f6; text-decoration: none;">${workEmail}</a></td>
                 </tr>
@@ -126,7 +130,7 @@ export async function POST(req: Request) {
       replyTo: `"${fullName}" <${workEmail}>`,
       to: recipientEmail,
       subject,
-      text: `Name: ${fullName}\nCompany: ${companyName || "N/A"}\nEmail: ${workEmail}\nInterest: ${formattedInterest}\n\nMessage:\n${message || "N/A"}`,
+      text: `Name: ${fullName}\nCompany: ${companyName || "N/A"}\nPhone: ${phone || "N/A"}\nEmail: ${workEmail}\nInterest: ${formattedInterest}\n\nMessage:\n${message || "N/A"}`,
       html: adminHtml,
       attachments: attachments
     });
