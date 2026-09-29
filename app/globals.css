@@ -11,6 +11,10 @@
 }
 
 @layer base {
+  h1, h2, h3, h4, h5, h6 {
+    text-transform: uppercase !important;
+  }
+
   :root {
     --font-heading: var(--font-heading-local), -apple-system, BlinkMacSystemFont, sans-serif;
     --font-sans: var(--font-sans-local), -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
@@ -91,6 +95,10 @@
   code, pre, kbd, samp, .font-mono {
     font-family: var(--font-mono-custom) !important;
   }
+}
+
+h1, h2, h3, h4, h5, h6 {
+  text-transform: uppercase !important;
 }
 
 html.lenis,

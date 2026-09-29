@@ -111,7 +111,7 @@ export default function FAQPage() {
 
           <CubertoLines
             as="h1"
-            className="text-4xl sm:text-5xl lg:text-7xl font-extrabold tracking-tight leading-[1.05] max-w-4xl mb-6 text-white uppercase"
+            className="text-4xl sm:text-5xl lg:text-7xl font-extrabold tracking-tight uppercase leading-[1.05] max-w-4xl mb-6 text-white"
             delay={0.1}
             lines={[
               "Frequently Asked",
@@ -234,7 +234,7 @@ export default function FAQPage() {
           <Reveal>
             <TiltCard maxTilt={5} glare={true}>
               <div className="p-10 rounded-3xl bg-white/[0.02] border border-white/10 shadow-2xl space-y-6">
-                <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-white uppercase">
+                <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-white ">
                   Still have questions about <span className="gradient-text">VMOVEXA?</span>
                 </h2>
                 <p className="text-xs sm:text-sm text-white/70 max-w-xl mx-auto leading-relaxed">

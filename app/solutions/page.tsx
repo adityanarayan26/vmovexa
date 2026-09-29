@@ -62,12 +62,12 @@ export default function SolutionsPage() {
 
               <CubertoLines
                 as="h1"
-                className="text-4xl sm:text-5xl lg:text-[68px] font-extrabold tracking-tight leading-[1.05] max-w-5xl mb-6 text-white uppercase"
+                className="text-4xl sm:text-5xl lg:text-[68px] font-extrabold tracking-tight uppercase leading-[1.05] max-w-5xl mb-6 text-white"
                 delay={0.15}
                 lines={[
-                  <span key="1" className="block">Technology that moves</span>,
+                  <span key="1" className="block">Technology That Moves</span>,
                   <span key="sub" className="block mt-1">
-                    with <span className="gradient-text">the world.</span>
+                    With <span className="gradient-text">The World.</span>
                   </span>
                 ]}
               />
@@ -164,8 +164,8 @@ export default function SolutionsPage() {
           <GsapScrollReveal delay={0.1}>
             <div className="flex flex-col sm:flex-row items-center justify-between gap-6 group">
               <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight text-zinc-900 text-center sm:text-left leading-tight">
-                What will you build on the <br className="hidden sm:block" />
-                <span className="gradient-text">moving edge?</span>
+                What Will You Build On The <br className="hidden sm:block" />
+                <span className="gradient-text">Moving Edge?</span>
               </h2>
               <MagneticElement strength={0.3}>
                 <Link
@@ -193,8 +193,8 @@ export default function SolutionsPage() {
                 </div>
               </EditorialLine>
               <EditorialLine delay={0.1}>
-                <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight text-zinc-900 leading-tight uppercase">
-                  Digitalize the <span className="gradient-text">fleet.</span>
+                <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight text-zinc-900 leading-tight ">
+                  Digitalize The <span className="gradient-text">Fleet.</span>
                 </h2>
               </EditorialLine>
               <EditorialLine delay={0.2}>
@@ -252,8 +252,8 @@ export default function SolutionsPage() {
                 </div>
               </EditorialLine>
               <EditorialLine delay={0.1}>
-                <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight text-white leading-tight uppercase">
-                  Turn moving screens into <span className="gradient-text">digital inventory.</span>
+                <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight text-white leading-tight ">
+                  Turn Moving Screens Into <span className="gradient-text">Digital Inventory.</span>
                 </h2>
               </EditorialLine>
               <EditorialLine delay={0.2}>
@@ -322,8 +322,8 @@ export default function SolutionsPage() {
                 </div>
               </EditorialLine>
               <EditorialLine delay={0.1}>
-                <h2 className="text-2xl sm:text-3xl lg:text-4xl font-heading font-bold tracking-tight text-zinc-900 leading-tight uppercase">
-                  Let the city communicate through <span className="gradient-text font-bold">mobility.</span>
+                <h2 className="text-2xl sm:text-3xl lg:text-4xl font-heading font-bold tracking-tight text-zinc-900 leading-tight ">
+                  Let The City Communicate Through <span className="gradient-text font-bold">Mobility.</span>
                 </h2>
               </EditorialLine>
               <EditorialLine delay={0.2}>
@@ -350,7 +350,7 @@ export default function SolutionsPage() {
                 >
                   <div className="absolute top-0 left-0 w-full h-[3px] bg-gradient-to-r from-transparent via-indigo-500 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                   <div className="relative z-10">
-                    <h4 className="text-xs font-mono uppercase tracking-widest text-cyan-700 font-semibold mb-4">Civic & Urban Applications</h4>
+                    <h4 className="text-xs font-mono  tracking-widest text-cyan-700 font-semibold mb-4">Civic & Urban Applications</h4>
                     <div className="space-y-3">
                       {smartCityApps.map((app, i) => (
                         <div key={i} className="flex items-center gap-3 text-xs sm:text-sm text-zinc-700 group/item cursor-default">
@@ -389,7 +389,7 @@ export default function SolutionsPage() {
                   <div className="flex items-center gap-2 text-cyan-400 font-mono text-xs uppercase tracking-wider mb-2.5">
                     <FiBriefcase size={16} /> Solution 04
                   </div>
-                  <h3 className="text-xl sm:text-2xl font-semibold leading-tight mb-3 text-white uppercase">
+                  <h3 className="text-xl sm:text-2xl font-semibold leading-tight mb-3 text-white ">
                     Connect the Enterprise to <span className="gradient-text">the Moving World.</span>
                   </h3>
                   <p className="text-xs sm:text-sm text-white/70 leading-relaxed mb-5">
@@ -415,7 +415,7 @@ export default function SolutionsPage() {
                   <div className="flex items-center gap-2 text-indigo-400 font-mono text-xs uppercase tracking-wider mb-2.5">
                     <FiShare2 size={16} /> Solution 05
                   </div>
-                  <h3 className="text-xl sm:text-2xl font-semibold leading-tight mb-3 text-white uppercase">
+                  <h3 className="text-xl sm:text-2xl font-semibold leading-tight mb-3 text-white ">
                     The Vehicle as a <span className="gradient-text">Digital Endpoint.</span>
                   </h3>
                   <p className="text-xs sm:text-sm text-white/70 leading-relaxed mb-5">
@@ -444,7 +444,7 @@ export default function SolutionsPage() {
             <div className="font-mono text-xs uppercase tracking-widest text-cyan-600 mb-3">Deployment & Implementation</div>
           </EditorialLine>
           <EditorialLine delay={0.1}>
-            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight mb-6 text-zinc-900 uppercase">
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight mb-6 text-zinc-900 ">
               What Will You Build on <span className="gradient-text">the Moving Edge?</span>
             </h2>
           </EditorialLine>

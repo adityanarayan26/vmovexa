@@ -172,8 +172,8 @@ export default function PlatformPage() {
                 className="text-4xl sm:text-5xl lg:text-7xl font-extrabold tracking-tight uppercase leading-[1.05] max-w-4xl mb-6 text-white"
                 delay={0.15}
                 lines={[
-                  "ONE PLATFORM.",
-                  <span key="sub" className="gradient-text">EVERY MOVING EDGE.</span>
+                  "One Platform.",
+                  <span key="sub" className="gradient-text">Every Moving Edge.</span>
                 ]}
               />
 
@@ -357,7 +357,7 @@ export default function PlatformPage() {
                               <Icon className="w-5 h-5" />
                             </div>
                             {/* Heading in crisp white with gradient hover */}
-                            <h4 className="text-[15px] sm:text-base xl:text-[14.5px] 2xl:text-[16px] font-bold text-white group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-cyan-300 group-hover:via-indigo-300 group-hover:to-pink-300 mb-2 uppercase tracking-tight leading-snug break-words transition-all">
+                            <h4 className="text-[15px] sm:text-base xl:text-[14.5px] 2xl:text-[16px] font-bold text-white group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-cyan-300 group-hover:via-indigo-300 group-hover:to-pink-300 mb-2  tracking-tight leading-snug break-words transition-all">
                               {card.title}
                             </h4>
                             {/* Subtitle in Crisp Light Color */}
@@ -405,8 +405,8 @@ export default function PlatformPage() {
                   </div>
                 </EditorialLine>
                 <EditorialLine delay={0.1}>
-                  <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight text-zinc-900 leading-tight !normal-case">
-                    The cloud orchestrates. <span className="gradient-text">The edge executes.</span>
+                  <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight text-zinc-900 leading-tight uppercase">
+                    The Cloud Orchestrates. <span className="gradient-text">The Edge Executes.</span>
                   </h2>
                 </EditorialLine>
                 <EditorialLine delay={0.2}>
@@ -477,8 +477,8 @@ export default function PlatformPage() {
               </div>
             </EditorialLine>
             <EditorialLine delay={0.1}>
-              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight text-white leading-tight mb-4 uppercase">
-                Command mobility with <span className="gradient-text">VMOVEXA ONE.</span>
+              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight text-white leading-tight mb-4 ">
+                Command Mobility With <span className="gradient-text">VMOVEXA ONE.</span>
               </h2>
             </EditorialLine>
             <EditorialLine delay={0.2}>
@@ -497,7 +497,7 @@ export default function PlatformPage() {
                     <RiBusLine size={22} />
                   </div>
                   <div className="font-mono text-[11px] uppercase tracking-widest text-white/50 mb-1">Fleet Control</div>
-                  <h3 className="text-xl font-semibold text-white">See the network. Not just the vehicle.</h3>
+                  <h3 className="text-xl font-semibold text-white">See The Network. Not Just The Vehicle.</h3>
                 </div>
                 <p className="text-xs sm:text-sm text-white/70 leading-relaxed relative z-10">
                   A modern fleet can contain hundreds or thousands of connected devices. VMOVEXA ONE provides a structured way to represent and manage that distributed infrastructure:
@@ -515,7 +515,7 @@ export default function PlatformPage() {
                 </div>
 
                 <div className="pt-4 border-t border-white/10 relative z-10">
-                  <h4 className="text-xs font-mono uppercase tracking-widest text-cyan-400 mb-3">Vehicle Visibility — Know What is Connected</h4>
+                  <h4 className="text-xs font-mono  tracking-widest text-cyan-400 mb-3">Vehicle Visibility — Know What Is Connected</h4>
                   <div className="grid grid-cols-2 gap-2.5 text-xs text-white/80">
                     {visibilityStates.map((s, i) => (
                       <div key={i} className="flex items-center gap-2 group/item cursor-default">
@@ -533,7 +533,7 @@ export default function PlatformPage() {
               <GsapScrollReveal delay={0.2}>
                 <div className="p-7 rounded-2xl bg-white/[0.02] border border-white/10 space-y-3.5 hover:border-white/20 transition-colors">
                   <div className="font-mono text-xs uppercase tracking-widest text-pink-400 font-semibold mb-1">Campaign Orchestration</div>
-                  <h3 className="text-lg font-semibold text-white">From creative to screen</h3>
+                  <h3 className="text-lg font-semibold text-white">From Creative To Screen</h3>
                   <p className="text-xs sm:text-sm text-white/70 leading-relaxed">
                     A digital campaign can be structured around:
                   </p>
@@ -549,7 +549,7 @@ export default function PlatformPage() {
               <GsapScrollReveal delay={0.3}>
                 <div className="p-7 rounded-2xl bg-white/[0.02] border border-white/10 space-y-3.5 hover:border-white/20 transition-colors">
                   <div className="font-mono text-xs uppercase tracking-widest text-cyan-400 font-semibold mb-1">Geo Intelligence</div>
-                  <h3 className="text-lg font-semibold text-white">Location becomes logic</h3>
+                  <h3 className="text-lg font-semibold text-white">Location Becomes Logic</h3>
                   <p className="text-xs sm:text-sm text-white/70 leading-relaxed">
                     A geographic zone can become more than a coordinate. It can become a programmable context:
                   </p>
@@ -601,7 +601,7 @@ export default function PlatformPage() {
               </div>
             </EditorialLine>
             <EditorialLine delay={0.1}>
-              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight text-zinc-900 leading-tight mb-4 uppercase">
+              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight text-zinc-900 leading-tight mb-4 ">
                 The intelligence inside <span className="gradient-text">the vehicle.</span>
               </h2>
             </EditorialLine>
@@ -649,7 +649,7 @@ export default function PlatformPage() {
                   <div className="flex items-center gap-2 text-cyan-600 font-mono text-xs uppercase tracking-widest font-semibold mb-3">
                     <FiMonitor size={17} className="text-cyan-600" /> Multi-Screen Intelligence
                   </div>
-                  <h3 className="text-xl font-bold text-zinc-900 mb-2.5">One vehicle. Multiple digital surfaces.</h3>
+                  <h3 className="text-xl font-bold text-zinc-900 mb-2.5">One Vehicle. Multiple Digital Surfaces.</h3>
                   <p className="text-xs sm:text-sm text-zinc-600 leading-relaxed mb-4 font-light">
                     A vehicle can contain multiple connected displays. VMOVEXA&apos;s architecture supports independent, mirrored, synchronized, split and multi-zone display operation.
                   </p>
@@ -670,7 +670,7 @@ export default function PlatformPage() {
                   <div className="flex items-center gap-2 text-indigo-600 font-mono text-xs uppercase tracking-widest font-semibold mb-3">
                     <FiWifiOff size={17} className="text-indigo-600" /> Offline Resilience
                   </div>
-                  <h3 className="text-xl font-bold text-zinc-900 mb-2.5">Connectivity can disappear. The system shouldn&apos;t.</h3>
+                  <h3 className="text-xl font-bold text-zinc-900 mb-2.5">Connectivity Can Disappear. The System Shouldn&apos;t.</h3>
                   <p className="text-xs sm:text-sm text-zinc-600 leading-relaxed mb-4 font-light">
                     Vehicle connectivity is not guaranteed everywhere. VMOVEXA CORE is designed around local caching and synchronization.
                   </p>
@@ -722,8 +722,8 @@ export default function PlatformPage() {
         <GridWaveBackground variant="cyan" />
         <div className="container max-w-4xl mx-auto px-6 relative z-10">
           <EditorialLine>
-            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-semibold tracking-tight mb-6 text-zinc-900 uppercase">
-              Ready to connect <span className="gradient-text">the moving edge?</span>
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-semibold tracking-tight mb-6 text-zinc-900 ">
+              Ready To Connect <span className="gradient-text">The Moving Edge?</span>
             </h2>
           </EditorialLine>
           <EditorialLine delay={0.2}>

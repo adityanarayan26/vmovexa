@@ -86,8 +86,8 @@ export default function CompanyPage() {
                 className="text-4xl sm:text-5xl lg:text-7xl font-extrabold tracking-tight uppercase leading-[1.05] max-w-4xl mb-6 text-white drop-shadow-[0_4px_30px_rgba(0,0,0,0.9)]"
                 delay={0.15}
                 lines={[
-                  "Building intelligence",
-                  <span key="sub" className="gradient-text">into movement.</span>
+                  "Building Intelligence",
+                  <span key="sub" className="gradient-text">Into Movement.</span>
                 ]}
               />
 
@@ -283,8 +283,8 @@ export default function CompanyPage() {
               delay={0.1}
               stagger={0.1}
               lines={[
-                <div key="l1">THE SOUL OF</div>,
-                <div key="l2" className="mt-1 sm:mt-2 gradient-text">INTELLIGENT MOVEMENT.</div>,
+                <div key="l1">The Soul Of</div>,
+                <div key="l2" className="mt-1 sm:mt-2 gradient-text">Intelligent Movement.</div>,
               ]}
             />
           </div>
@@ -305,8 +305,8 @@ export default function CompanyPage() {
                   </div>
                 </div>
                 <div className="text-center md:text-left space-y-4 px-4 sm:px-0">
-                  <h3 className="text-2xl font-bold text-white tracking-wide uppercase">
-                    THE ICONIC “V”
+                  <h3 className="text-2xl font-bold text-white tracking-wide ">
+                    The iconic “V”
                   </h3>
                   <div className="font-mono text-xs tracking-widest text-cyan-400 uppercase">
                     Three ideas. One identity.
@@ -341,8 +341,8 @@ export default function CompanyPage() {
                   </div>
                 </div>
                 <div className="text-center md:text-left space-y-4 px-4 sm:px-0">
-                  <h3 className="text-2xl font-bold text-white tracking-wide uppercase">
-                    AND “X”
+                  <h3 className="text-2xl font-bold text-white tracking-wide ">
+                    And “X”
                   </h3>
                   <div className="font-mono text-xs tracking-widest text-indigo-400 uppercase">
                     Digital Intelligent Media.

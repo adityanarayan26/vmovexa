@@ -155,15 +155,15 @@ export function EditorialLine({
   return (
     <Component
       ref={containerRef}
-      className={`overflow-hidden pb-2 -mb-2 pt-0.5 -mt-0.5 ${className}`}
+      className={`overflow-hidden pt-1 pb-2 ${className}`}
       style={style}
     >
       <motion.div
-        initial={{ y: "115%", rotate: 2, opacity: 0 }}
+        initial={{ y: "115%", opacity: 0 }}
         animate={
           isAnimated
-            ? { y: "0%", rotate: 0, opacity: 1 }
-            : { y: "115%", rotate: 2, opacity: 0 }
+            ? { y: "0%", opacity: 1 }
+            : { y: "115%", opacity: 0 }
         }
         transition={{
           duration: 0.85,

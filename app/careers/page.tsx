@@ -103,10 +103,10 @@ export default function CareersPage() {
 
           <CubertoLines
             as="h1"
-            className="text-4xl sm:text-5xl lg:text-7xl font-extrabold tracking-tight leading-[1.05] max-w-4xl mb-6 text-white uppercase"
+            className="text-4xl sm:text-5xl lg:text-7xl font-extrabold tracking-tight uppercase leading-[1.05] max-w-4xl mb-6 text-white"
             delay={0.1}
             lines={[
-              "Build the Future of",
+              "Build The Future Of",
               <span key="sub" className="gradient-text">Connected Movement.</span>
             ]}
           />
@@ -148,8 +148,8 @@ export default function CareersPage() {
             <span className="font-mono text-xs uppercase tracking-widest text-cyan-400 block mb-2">
               Engineering Culture
             </span>
-            <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-white uppercase">
-              Why Build with <span className="gradient-text">VMOVEXA?</span>
+            <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-white ">
+              Why Build With <span className="gradient-text">VMOVEXA?</span>
             </h2>
           </div>
 
@@ -162,7 +162,7 @@ export default function CareersPage() {
                   <div className="w-10 h-10 rounded-xl bg-cyan-500/10 border border-cyan-500/20 text-cyan-400 flex items-center justify-center font-mono font-bold text-sm">
                     0{i + 1}
                   </div>
-                  <h3 className="text-lg font-bold text-white uppercase tracking-tight">{v.title}</h3>
+                  <h3 className="text-lg font-bold text-white  tracking-tight">{v.title}</h3>
                   <p className="text-xs sm:text-sm text-white/65 leading-relaxed font-normal">{v.desc}</p>
                 </div>
               </TiltCard>
@@ -179,7 +179,7 @@ export default function CareersPage() {
               <span className="font-mono text-xs uppercase tracking-widest text-cyan-400 block mb-2">
                 Opportunities
               </span>
-              <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-white uppercase">
+              <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-white ">
                 Open <span className="gradient-text">Engineering Roles</span>
               </h2>
             </div>
@@ -215,7 +215,7 @@ export default function CareersPage() {
                       </span>
                     </div>
 
-                    <h3 className="text-lg font-bold text-white uppercase tracking-tight mb-2">
+                    <h3 className="text-lg font-bold text-white  tracking-tight mb-2">
                       {role.title}
                     </h3>
 
@@ -248,7 +248,7 @@ export default function CareersPage() {
                     <div className="text-[10px] font-mono text-cyan-400 uppercase tracking-widest mb-1">
                       {selectedRole.team} • {selectedRole.type}
                     </div>
-                    <h3 className="text-xl sm:text-2xl font-bold text-white uppercase tracking-tight">
+                    <h3 className="text-xl sm:text-2xl font-bold text-white  tracking-tight">
                       {selectedRole.title}
                     </h3>
                     <div className="flex items-center gap-2 text-xs font-mono text-white/50 mt-1">
@@ -278,7 +278,7 @@ export default function CareersPage() {
                     {applied ? (
                       <div className="p-6 rounded-2xl bg-emerald-500/10 border border-emerald-500/30 text-center space-y-2">
                         <FiCheck className="w-8 h-8 text-emerald-400 mx-auto" />
-                        <h4 className="text-base font-bold text-white uppercase">Application Forwarded</h4>
+                        <h4 className="text-base font-bold text-white ">Application Forwarded</h4>
                         <p className="text-xs text-white/70 max-w-xs mx-auto">
                           Thank you! Our engineering talent team will review your profile and reach out within 48 hours.
                         </p>
@@ -291,7 +291,7 @@ export default function CareersPage() {
                         }}
                         className="space-y-4"
                       >
-                        <h4 className="text-sm font-mono uppercase tracking-wider text-white">Fast-Track Application</h4>
+                        <h4 className="text-sm font-mono  tracking-wider text-white">Fast-Track Application</h4>
                         <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                           <input
                             required

@@ -121,7 +121,7 @@ export function CubertoLines({
 
   if (shouldReduceMotion) {
     return (
-      <Component className={className}>
+      <Component className={`${className} uppercase`.trim()}>
         {lines.map((line, idx) => (
           <div key={idx} className={lineClassName}>
             {line}
@@ -134,14 +134,14 @@ export function CubertoLines({
   const isAnimated = !inView || isInView;
 
   return (
-    <Component ref={containerRef} className={className}>
+    <Component ref={containerRef} className={`${className} uppercase`.trim()}>
       {lines.map((line, idx) => {
         const itemDelay = delay + idx * stagger;
 
         return (
           <div
             key={idx}
-            className="overflow-hidden pb-6 -mb-6 pt-2 -mt-2 block"
+            className="overflow-hidden pt-1 pb-2 block"
           >
             <motion.div
               initial={{ y: "115%", rotate, opacity: 0 }}

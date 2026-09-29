@@ -327,9 +327,9 @@ export default function HomePage() {
               {/* Headline: Space Grotesk */}
               <EditorialLine delay={0.15}>
                 <h1 className="text-4xl sm:text-5xl md:text-5xl lg:text-[56px] xl:text-[66px] font-extrabold font-heading tracking-tight leading-[1.05] max-w-lg xl:max-w-xl mb-6 text-white drop-shadow-lg" style={{ WebkitTextStroke: "1px currentColor" }}>
-                  INTELLIGENCE IN{" "}
+                  Intelligence In{" "}
                   <span className="inline-flex overflow-visible">
-                    {"MOTION.".split("").map((letter, idx) => (
+                    {"Motion.".split("").map((letter, idx) => (
                       <span
                         key={idx}
                         className="inline-block gradient-text animate-wave-motion"
@@ -471,7 +471,7 @@ export default function HomePage() {
       <WhatIsVmovexaSection />
 
       {/* ========================================================================= */}
-      {/* 04 // OUR ECOSYSTEM — ONE PLATFORM. INFINITE POSSIBILITIES.                */}
+      {/* 04 // OUR ECOSYSTEM — ONE PLATFORM. Infinite possibilities.                */}
       {/* ========================================================================= */}
       <OurEcosystemSection />
 
@@ -490,7 +490,7 @@ export default function HomePage() {
             </EditorialLine>
             <EditorialLine delay={0.1}>
               <h2 className="text-3xl sm:text-4xl lg:text-5xl font-semibold tracking-tight text-zinc-900 leading-tight mb-4">
-                A VEHICLE CAN BE <span className="gradient-text">MORE.</span>
+                A Vehicle Can Be <span className="gradient-text">More.</span>
               </h2>
             </EditorialLine>
             <EditorialLine delay={0.2}>
@@ -547,12 +547,12 @@ export default function HomePage() {
             </EditorialLine>
             <CubertoLines
               as="h2"
-              className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-semibold tracking-tight leading-[1.08] text-white !normal-case"
+              className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-semibold tracking-tight leading-[1.08] text-white uppercase"
               delay={0.1}
               stagger={0.1}
               lines={[
-                <div key="l1">The cloud <span className="gradient-text">orchestrates.</span></div>,
-                <div key="l2" className="mt-1 sm:mt-2 text-white/95">The edge <span className="gradient-text">executes.</span></div>,
+                <div key="l1">The Cloud <span className="gradient-text">Orchestrates.</span></div>,
+                <div key="l2" className="mt-1 sm:mt-2 text-white/95">The Edge <span className="gradient-text">Executes.</span></div>,
               ]}
             />
           </div>
@@ -647,7 +647,7 @@ export default function HomePage() {
               </div>
             </EditorialLine>
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-semibold tracking-tight text-zinc-900 leading-tight mb-4">
-              THE VEHICLE BECOMES <span className="gradient-text">THE EDGE.</span>
+              The Vehicle Becomes <span className="gradient-text">The Edge.</span>
             </h2>
             <EditorialLine delay={0.2}>
               <p className="text-base text-zinc-600 font-light leading-relaxed">
@@ -733,12 +733,12 @@ export default function HomePage() {
             </EditorialLine>
             <CubertoLines
               as="h2"
-              className="text-4xl sm:text-5xl lg:text-6xl font-semibold tracking-tight leading-[1.05] text-white !normal-case"
+              className="text-4xl sm:text-5xl lg:text-6xl font-semibold tracking-tight leading-[1.05] text-white uppercase"
               delay={0.1}
               stagger={0.1}
               lines={[
-                <div key="l1">How the entire</div>,
-                <div key="l2" className="mt-1 sm:mt-2 gradient-text">network flows.</div>,
+                <div key="l1">How The Entire</div>,
+                <div key="l2" className="mt-1 sm:mt-2 gradient-text">Network Flows.</div>,
               ]}
             />
             <EditorialLine delay={0.2}>
@@ -770,7 +770,7 @@ export default function HomePage() {
             </EditorialLine>
             <EditorialLine delay={0.1}>
               <h2 className="text-3xl sm:text-4xl lg:text-5xl font-semibold tracking-tight text-zinc-900 leading-tight mb-4">
-                MOVEMENT CREATES <span className="gradient-text">CONTEXT.</span>
+                Movement Creates <span className="gradient-text">Context.</span>
               </h2>
             </EditorialLine>
             <EditorialLine delay={0.2}>
@@ -836,7 +836,7 @@ export default function HomePage() {
               </EditorialLine>
 
               <h2 className="text-3xl sm:text-4xl lg:text-5xl font-semibold tracking-tight text-white leading-tight">
-                MEDIA THAT <span className="gradient-text">MOVES.</span>
+                Media That <span className="gradient-text">Moves.</span>
               </h2>
 
               <EditorialLine delay={0.2}>
@@ -976,12 +976,12 @@ export default function HomePage() {
               
               <CubertoLines
                 as="h2"
-                className="text-4xl sm:text-5xl lg:text-[56px] xl:text-[64px] font-semibold tracking-tight leading-[1.05] text-white mb-8 !normal-case"
+                className="text-4xl sm:text-5xl lg:text-[56px] xl:text-[64px] font-semibold tracking-tight leading-[1.05] text-white mb-8 uppercase"
                 delay={0.1}
                 stagger={0.1}
                 lines={[
-                  <div key="l1">One click.</div>,
-                  <span key="l2" className="mt-1 sm:mt-2 gradient-text">an entire</span>,
+                  <div key="l1">One Click.</div>,
+                  <span key="l2" className="mt-1 sm:mt-2 gradient-text">An Entire</span>,
                   <span key="l3" className="mt-1 sm:mt-2 gradient-text">Nation.</span>,
                 ]}
               />
@@ -1038,12 +1038,12 @@ export default function HomePage() {
             </EditorialLine>
             <CubertoLines
               as="h2"
-              className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-semibold tracking-tight leading-[1.08] text-zinc-900 !normal-case"
+              className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-semibold tracking-tight leading-[1.08] text-zinc-900 uppercase"
               delay={0.1}
               stagger={0.1}
               lines={[
-                <div key="l1">One platform.</div>,
-                <div key="l2" className="mt-1 sm:mt-2 gradient-text">Many mobility environments.</div>,
+                <div key="l1">One Platform.</div>,
+                <div key="l2" className="mt-1 sm:mt-2 gradient-text">Many Mobility Environments.</div>,
               ]}
             />
             <EditorialLine delay={0.2}>
@@ -1116,12 +1116,12 @@ export default function HomePage() {
             </EditorialLine>
             <CubertoLines
               as="h2"
-              className="text-4xl sm:text-5xl lg:text-6xl font-semibold tracking-tight leading-[1.05] text-white !normal-case"
+              className="text-4xl sm:text-5xl lg:text-6xl font-semibold tracking-tight leading-[1.05] text-white uppercase"
               delay={0.1}
               stagger={0.1}
               lines={[
-                <div key="l1">The soul of</div>,
-                <div key="l2" className="mt-1 sm:mt-2 gradient-text">intelligent movement.</div>,
+                <div key="l1">The Soul Of</div>,
+                <div key="l2" className="mt-1 sm:mt-2 gradient-text">Intelligent Movement.</div>,
               ]}
             />
           </div>
@@ -1142,7 +1142,7 @@ export default function HomePage() {
                   </div>
                 </div>
                 <div className="text-center md:text-left space-y-4 px-4 sm:px-0">
-                  <h3 className="text-2xl font-bold text-white tracking-wide uppercase">THE ICONIC “V”</h3>
+                  <h3 className="text-2xl font-bold text-white tracking-wide ">The Iconic “V”</h3>
                   <div className="font-mono text-xs tracking-widest text-cyan-400 uppercase">
                     Three ideas. One identity.
                   </div>
@@ -1176,7 +1176,7 @@ export default function HomePage() {
                   </div>
                 </div>
                 <div className="text-center md:text-left space-y-4 px-4 sm:px-0">
-                  <h3 className="text-2xl font-bold text-white tracking-wide uppercase">AND “X”</h3>
+                  <h3 className="text-2xl font-bold text-white tracking-wide ">And “X”</h3>
                   <div className="font-mono text-xs tracking-widest text-indigo-400 uppercase">
                     Digital Intelligent Media.
                   </div>
@@ -1218,12 +1218,12 @@ export default function HomePage() {
           {/* Headline */}
           <CubertoLines
             as="h2"
-            className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-semibold tracking-tight text-zinc-900 leading-tight mb-6 !normal-case"
+            className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-semibold tracking-tight text-zinc-900 leading-tight mb-6 uppercase"
             delay={0.1}
             stagger={0.1}
             lines={[
-              <div key="l1">The world moves.</div>,
-              <div key="l2" className="gradient-text mt-1 sm:mt-2 whitespace-nowrap text-[26px] sm:text-4xl md:text-5xl lg:text-[50px] tracking-tight">Intelligence should move with it.</div>,
+              <div key="l1">The World Moves.</div>,
+              <div key="l2" className="gradient-text mt-1 sm:mt-2 text-[26px] sm:text-4xl md:text-5xl lg:text-[50px] tracking-tight">Intelligence Should Move With It.</div>,
             ]}
           />
 

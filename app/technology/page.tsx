@@ -90,11 +90,11 @@ export default function TechnologyPage() {
 
               <CubertoLines
                 as="h1"
-                className="text-4xl sm:text-5xl lg:text-7xl font-semibold tracking-tight leading-[1.05] max-w-4xl mb-6 text-white"
+                className="text-4xl sm:text-5xl lg:text-7xl font-semibold tracking-tight uppercase leading-[1.05] max-w-4xl mb-6 text-white"
                 delay={0.15}
                 lines={[
-                  "BUILT FOR THE",
-                  <span key="sub" className="gradient-text">MOVING EDGE.</span>
+                  "Built For The",
+                  <span key="sub" className="gradient-text">Moving Edge.</span>
                 ]}
               />
 
@@ -227,8 +227,8 @@ export default function TechnologyPage() {
                     SMART EMERGENCY EXIT
                   </div>
                   <h3 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-white mb-6 leading-[1.15]">
-                    REVENUE WHEN CLOSED.<br />
-                    <span className="gradient-text">SAFETY WHEN NEEDED.</span>
+                    Revenue When Closed.<br />
+                    <span className="gradient-text">Safety When Needed.</span>
                   </h3>
                   <p className="text-white/70 text-sm sm:text-base leading-relaxed mb-8">
                     A first-of-its-kind concept that transforms the emergency exit into an intelligent digital revenue surface.
@@ -458,12 +458,12 @@ export default function TechnologyPage() {
                 <div className="absolute top-0 left-0 w-full h-[3px] bg-gradient-to-r from-transparent via-cyan-400 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                 <div className="relative z-10">
                   <div className="font-mono text-xs uppercase tracking-widest text-cyan-600 mb-2">Telemetry</div>
-                  <h3 className="text-2xl font-semibold text-zinc-900 mb-3">The vehicle speaks in <span className="gradient-text">data.</span></h3>
+                  <h3 className="text-2xl font-semibold text-zinc-900 mb-3">The Vehicle Speaks In <span className="gradient-text">Data.</span></h3>
                   <p className="text-sm text-zinc-600 leading-relaxed mb-6 font-light">
                     Connected systems generate operational information continuously. VMOVEXA&apos;s architecture incorporates telemetry as a core part of the vehicle-edge environment.
                   </p>
                   <div className="pt-6 border-t border-zinc-200/70">
-                    <h4 className="text-xs font-mono uppercase tracking-widest text-zinc-400 mb-4">Continuous Visibility Into:</h4>
+                    <h4 className="text-xs font-mono  tracking-widest text-zinc-400 mb-4">Continuous Visibility Into:</h4>
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs text-zinc-700">
                       {telemetryMetrics.map((m, i) => (
                         <div key={i} className="flex items-start gap-2 group/item cursor-default">
@@ -486,7 +486,7 @@ export default function TechnologyPage() {
                 <div className="absolute top-0 left-0 w-full h-[3px] bg-gradient-to-r from-transparent via-purple-500 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                 <div className="relative z-10">
                   <div className="font-mono text-xs uppercase tracking-widest text-purple-600 mb-2">Multi-Screen</div>
-                  <h3 className="text-2xl font-semibold text-zinc-900 mb-3">One edge. <span className="gradient-text">Many digital surfaces.</span></h3>
+                  <h3 className="text-2xl font-semibold text-zinc-900 mb-3">One Edge. <span className="gradient-text">Many Digital Surfaces.</span></h3>
                   <p className="text-sm text-zinc-600 leading-relaxed mb-6 font-light">
                     The vehicle can become a coordinated display environment rather than a collection of independent screens.
                   </p>

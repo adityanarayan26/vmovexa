@@ -15,7 +15,7 @@ export default function NotFound() {
       <CubertoLines
         as="h1"
         className="text-4xl sm:text-6xl font-bold tracking-tight text-white mb-6 uppercase"
-        lines={["This route is still", "being mapped."]}
+        lines={["This Route Is Still", "Being Mapped."]}
       />
       <Reveal delay={0.2}>
         <p className="text-white/70 max-w-md mx-auto mb-8 font-light text-base">

@@ -294,7 +294,7 @@ export function WhyVmovexaSection() {
 
           <EditorialLine delay={0.1}>
             <h2 className="text-3xl sm:text-5xl lg:text-6xl font-heading font-semibold tracking-tight text-white leading-tight mb-4 uppercase">
-              TRANSPORTATION <span className="gradient-text font-semibold">DESERVES BETTER.</span>
+              Transportation <span className="gradient-text font-semibold">Deserves Better.</span>
             </h2>
           </EditorialLine>
 

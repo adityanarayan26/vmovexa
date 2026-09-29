@@ -82,11 +82,11 @@ export default function MediaPage() {
 
               <CubertoLines
                 as="h1"
-                className="text-4xl sm:text-5xl lg:text-7xl font-extrabold tracking-tight leading-[1.05] max-w-4xl mb-6 text-white uppercase"
+                className="text-4xl sm:text-5xl lg:text-7xl font-extrabold tracking-tight uppercase leading-[1.05] max-w-4xl mb-6 text-white"
                 delay={0.15}
                 lines={[
-                  "Media that",
-                  <span key="sub" className="gradient-text">moves.</span>
+                  "Media That",
+                  <span key="sub" className="gradient-text">Moves.</span>
                 ]}
               />
 
@@ -199,7 +199,7 @@ export default function MediaPage() {
             <div className="flex flex-col sm:flex-row items-center justify-between gap-6 group">
               <div className="max-w-xl text-center sm:text-left relative z-10">
                 <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold tracking-tight text-zinc-900 leading-snug">
-                  Don&apos;t just buy a screen. Buy a moment in motion.
+                  Don&apos;t Just Buy A Screen. Buy A Moment In Motion.
                 </h3>
               </div>
               <div className="text-center sm:text-right relative z-10">
@@ -229,7 +229,7 @@ export default function MediaPage() {
                     <div className="flex items-center gap-2 text-cyan-400 font-mono text-xs uppercase tracking-wider mb-2">
                       <FiMonitor size={16} /> Inventory Object
                     </div>
-                    <h3 className="text-xl sm:text-2xl font-semibold uppercase mb-4">The Screen as an <span className="gradient-text">Inventory Object</span></h3>
+                    <h3 className="text-xl sm:text-2xl font-semibold  mb-4">The Screen As An <span className="gradient-text">Inventory Object</span></h3>
                     <p className="text-sm text-white/70 leading-relaxed mb-6 group-hover:text-white/90 transition-colors">
                       In traditional media, screens are fixed in place. In connected mobility, the screen moves through the physical world.
                     </p>
@@ -256,12 +256,12 @@ export default function MediaPage() {
                     <div className="flex items-center gap-2 text-purple-400 font-mono text-xs uppercase tracking-wider mb-2">
                       <FiMapPin size={16} /> Contextual Delivery
                     </div>
-                    <h3 className="text-xl sm:text-2xl font-semibold uppercase mb-4">Where + When <span className="gradient-text">Targeting</span></h3>
+                    <h3 className="text-xl sm:text-2xl font-semibold  mb-4">Where + When <span className="gradient-text">Targeting</span></h3>
                     <p className="text-sm text-white/70 leading-relaxed mb-6 group-hover:text-white/90 transition-colors">
                       Contextual delivery happens at the intersection of geographical polygon rules and temporal dayparting:
                     </p>
                     <div className="pt-4 border-t border-white/10">
-                      <h4 className="text-xs font-mono uppercase tracking-widest text-white/40 mb-4">Temporal Windows:</h4>
+                      <h4 className="text-xs font-mono  tracking-widest text-white/40 mb-4">Temporal Windows:</h4>
                       <div className="grid grid-cols-2 gap-3 text-xs font-mono text-white/80">
                         {temporalWindows.map((tw, i) => (
                           <div key={i} className="p-3 rounded-xl bg-white/[0.03] border border-white/10 text-center hover:bg-purple-950/20 hover:border-purple-500/30 transition-colors cursor-default">
@@ -288,7 +288,7 @@ export default function MediaPage() {
               <div className="flex items-center gap-2 text-cyan-600 font-mono text-xs uppercase tracking-wider">
                 <FiBarChart2 size={16} className="group-hover:scale-110 transition-transform" /> Verifiable Measurement
               </div>
-              <h3 className="text-2xl sm:text-3xl md:text-4xl font-semibold uppercase mb-2 text-zinc-900">Display is <span className="gradient-text">Not Enough.</span></h3>
+              <h3 className="text-2xl sm:text-3xl md:text-4xl font-semibold  mb-2 text-zinc-900">Display Is <span className="gradient-text">Not Enough.</span></h3>
               <p className="text-base sm:text-lg text-zinc-600 leading-relaxed max-w-3xl font-light mt-4">
                 VMOVEXA&apos;s architecture includes media analytics around playback, completion, campaign performance and location performance. This establishes a foundation for more measurable, audit-ready mobility media.
               </p>
@@ -309,7 +309,7 @@ export default function MediaPage() {
             </EditorialLine>
             <EditorialLine delay={0.1}>
               <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight text-white leading-tight mb-4">
-                The road is your <span className="gradient-text">media network.</span>
+                The Road Is Your <span className="gradient-text">Media Network.</span>
               </h2>
             </EditorialLine>
             <EditorialLine delay={0.2}>
@@ -370,7 +370,7 @@ export default function MediaPage() {
               </EditorialLine>
               <EditorialLine delay={0.1}>
                 <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight text-white leading-tight">
-                  From creative to <span className="gradient-text">moving screen.</span>
+                  From Creative To <span className="gradient-text">Moving Screen.</span>
                 </h2>
               </EditorialLine>
               <EditorialLine delay={0.2}>
@@ -387,7 +387,7 @@ export default function MediaPage() {
 
             <div className="lg:col-span-6 space-y-4">
               <EditorialLine delay={0.2}>
-                <h4 className="text-xs font-mono uppercase tracking-widest text-white/40 mb-3">
+                <h4 className="text-xs font-mono  tracking-widest text-white/40 mb-3">
                   Ecosystem Advertiser Categories:
                 </h4>
               </EditorialLine>
@@ -415,7 +415,7 @@ export default function MediaPage() {
           </EditorialLine>
           <EditorialLine delay={0.1}>
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight mb-6 text-zinc-900">
-              Don&apos;t just buy a screen. <span className="gradient-text">Buy a moment in motion.</span>
+              Don&apos;t Just Buy A Screen. <span className="gradient-text">Buy A Moment In Motion.</span>
             </h2>
           </EditorialLine>
           <EditorialLine delay={0.3}>

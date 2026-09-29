@@ -89,7 +89,7 @@ export function CloudEdgeArchitectureAnimation() {
                 <FiCloud size={24} />
               </div>
               <div>
-                <h4 className="text-xl font-bold tracking-tight text-white uppercase">The Cloud</h4>
+                <h4 className="text-xl font-bold tracking-tight text-white ">The Cloud</h4>
                 <div className="text-xs font-mono text-cyan-400 font-medium tracking-widest uppercase">
                   Thinks at Scale
                 </div>
@@ -183,7 +183,7 @@ export function CloudEdgeArchitectureAnimation() {
                 <RiBusLine size={24} />
               </div>
               <div>
-                <h4 className="text-xl font-bold tracking-tight text-white uppercase">The Edge</h4>
+                <h4 className="text-xl font-bold tracking-tight text-white ">The Edge</h4>
                 <div className="text-xs font-mono text-indigo-400 font-medium tracking-widest uppercase">
                   Acts in Motion
                 </div>

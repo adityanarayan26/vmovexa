@@ -186,10 +186,10 @@ export default function ContactPage() {
 
           <CubertoLines
             as="h1"
-            className="text-4xl sm:text-5xl lg:text-7xl font-extrabold tracking-tight leading-[1.05] max-w-4xl mb-6 text-white uppercase"
+            className="text-4xl sm:text-5xl lg:text-7xl font-extrabold tracking-tight uppercase leading-[1.05] max-w-4xl mb-6 text-white"
             delay={0.1}
             lines={[
-              "Connect with",
+              "Connect With",
               <span key="sub" className="gradient-text">VMOVEXA.</span>
             ]}
           />
@@ -227,7 +227,7 @@ export default function ContactPage() {
               </div>
             </Reveal>
             <Reveal delay={0.1}>
-              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-heading font-bold text-zinc-900 tracking-tight leading-[1.15] uppercase">
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-heading font-bold text-zinc-900 tracking-tight leading-[1.15] ">
                 Choose Your <span className="gradient-text">Collaboration Track.</span>
               </h2>
             </Reveal>
@@ -283,7 +283,7 @@ export default function ContactPage() {
                             {t.category}
                           </span>
                         </div>
-                        <h3 className="text-lg sm:text-xl font-heading font-bold text-zinc-900 group-hover:text-black mb-2 uppercase tracking-tight transition-colors">
+                        <h3 className="text-lg sm:text-xl font-heading font-bold text-zinc-900 group-hover:text-black mb-2  tracking-tight transition-colors">
                           {t.title}
                         </h3>
 
@@ -344,7 +344,7 @@ export default function ContactPage() {
             <div className="lg:col-span-5 space-y-6">
               <Reveal>
                 <div className="font-mono text-xs uppercase tracking-widest text-cyan-400 font-semibold">Direct Communication</div>
-                <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight uppercase leading-tight pt-2 text-white">
+                <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight  leading-tight pt-2 text-white">
                   Let&apos;s Build <span className="gradient-text">What Moves Next.</span>
                 </h2>
                 <p className="text-xs sm:text-sm text-white/70 leading-relaxed pt-2">
@@ -412,7 +412,7 @@ export default function ContactPage() {
                   {submitted ? (
                     <div className="py-12 text-center space-y-4">
                       <FiCheckCircle className="w-12 h-12 text-cyan-400 mx-auto" />
-                      <h3 className="text-xl font-bold text-white uppercase tracking-tight">Enquiry Received</h3>
+                      <h3 className="text-xl font-bold text-white  tracking-tight">Enquiry Received</h3>
                       <p className="text-xs sm:text-sm text-white/60 max-w-md mx-auto">
                         Thank you for reaching out to VMOVEXA. Our team will review your enquiry and get back to you shortly.
                       </p>
@@ -420,7 +420,7 @@ export default function ContactPage() {
                   ) : (
                     <form onSubmit={handleSubmit} className="space-y-5">
                       <div>
-                        <h3 className="text-xl font-bold uppercase tracking-tight mb-1 text-white">Let&apos;s Talk</h3>
+                        <h3 className="text-xl font-bold  tracking-tight mb-1 text-white">Let&apos;s Talk</h3>
                         <p className="text-xs text-white/50 font-mono">Fill in your details and we will direct your enquiry to the right group.</p>
                       </div>
 

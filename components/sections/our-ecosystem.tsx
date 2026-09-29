@@ -226,29 +226,30 @@ export function OurEcosystemSection() {
       <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(255,255,255,0.02)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.02)_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_75%_55%_at_50%_40%,#000_70%,transparent_100%)] pointer-events-none" />
 
       {/* Header Container */}
-      <div className="container max-w-7xl mx-auto px-6 relative z-10 mb-10 sm:mb-12 text-center">
+      <div className="container max-w-7xl mx-auto px-6 relative z-10 mb-16 sm:mb-20 text-center">
         {/* Subtle pill line above eyebrow with soft spread glow */}
-        <div className="flex justify-center mb-3">
+        <div className="flex justify-center mb-4">
           <div className="relative flex items-center justify-center">
             <div className="absolute w-24 h-6 rounded-full bg-gradient-to-r from-cyan-500/50 to-purple-500/50 blur-md pointer-events-none" />
             <div className="relative z-10 w-12 h-[3px] rounded-full bg-gradient-to-r from-cyan-400 to-purple-500 shadow-[0_0_12px_rgba(59,130,246,0.6)]" />
           </div>
         </div>
 
-        <EditorialLine>
-          <div className="text-[11px] sm:text-xs font-mono tracking-[0.25em] text-white/70 uppercase font-semibold mb-2.5">
+        <EditorialLine className="mb-3.5">
+          <div className="text-[11px] sm:text-xs font-mono tracking-[0.25em] text-white/70 uppercase font-semibold">
             OUR ECOSYSTEM
           </div>
         </EditorialLine>
 
-        <EditorialLine delay={0.1}>
-          <h2 className="text-3xl sm:text-5xl lg:text-6xl font-heading font-semibold tracking-tight text-white leading-tight mb-2.5">
-            One Platform. <span className="gradient-text">Infinite Possibilities.</span>
+        <EditorialLine delay={0.1} className="mb-4 sm:mb-5">
+          <h2 className="text-3xl sm:text-5xl lg:text-6xl font-heading font-semibold tracking-tight text-white leading-tight uppercase">
+            <span className="block">One Platform.</span>
+            <span className="block mt-1 sm:mt-2 gradient-text">Infinite Possibilities.</span>
           </h2>
         </EditorialLine>
 
         <EditorialLine delay={0.2}>
-          <p className="text-xs sm:text-sm text-zinc-400 font-light tracking-wide max-w-xl mx-auto">
+          <p className="text-sm sm:text-base text-zinc-400 font-light tracking-wide max-w-xl mx-auto">
             Intelligent Connected Technologies
           </p>
         </EditorialLine>

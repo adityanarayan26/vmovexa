@@ -86,7 +86,7 @@ export function CompanyClient() {
                     <EditorialTabItem delayOffset={0.1}>
                       <div className="space-y-1.5 p-4 rounded-2xl bg-white/[0.02] border border-white/5 hover:border-cyan-500/30 transition-colors">
                         <span className="font-mono text-xs uppercase tracking-widest text-cyan-400 block">Our Vision</span>
-                        <h3 className="text-xl font-semibold text-white">Make mobility intelligent.</h3>
+                        <h3 className="text-xl font-semibold text-white">Make Mobility Intelligent.</h3>
                         <p className="text-xs text-white/50">Unified system of physical movement and digital intelligence.</p>
                       </div>
                     </EditorialTabItem>
@@ -94,7 +94,7 @@ export function CompanyClient() {
                     <EditorialTabItem delayOffset={0.2}>
                       <div className="space-y-1.5 p-4 rounded-2xl bg-white/[0.02] border border-white/5 hover:border-indigo-500/30 transition-colors">
                         <span className="font-mono text-xs uppercase tracking-widest text-indigo-400 block">Our Mission</span>
-                        <h3 className="text-xl font-semibold text-white">Connect the physical world with the digital world.</h3>
+                        <h3 className="text-xl font-semibold text-white">Connect The Physical World With The Digital World.</h3>
                         <p className="text-xs text-white/50">Turning moving vehicles into programmatic edge compute nodes.</p>
                       </div>
                     </EditorialTabItem>
@@ -102,7 +102,7 @@ export function CompanyClient() {
                     <EditorialTabItem delayOffset={0.3}>
                       <div className="space-y-1.5 p-4 rounded-2xl bg-white/[0.02] border border-white/5 hover:border-purple-500/30 transition-colors">
                         <span className="font-mono text-xs uppercase tracking-widest text-purple-400 block">Our Belief</span>
-                        <h3 className="text-xl font-semibold text-white">The future won&apos;t just be connected. It will be contextual.</h3>
+                        <h3 className="text-xl font-semibold text-white">The Future Won&apos;t Just Be Connected. It Will Be Contextual.</h3>
                         <p className="text-xs text-white/50">Intelligence reacting to location, velocity, environment and time.</p>
                       </div>
                     </EditorialTabItem>
@@ -156,7 +156,7 @@ export function CompanyClient() {
                 <EditorialTabItem delayOffset={0.1}>
                   <div className="p-8 rounded-2xl bg-gradient-to-br from-white/[0.03] to-transparent border border-white/10 space-y-4 h-full shadow-[inset_0_1px_0_rgba(255,255,255,0.02)] hover:border-cyan-500/30 transition-colors">
                     <div className="font-mono text-xs uppercase tracking-widest text-cyan-400">Our Vision</div>
-                    <h3 className="text-3xl font-semibold uppercase">Make Mobility Intelligent.</h3>
+                    <h3 className="text-3xl font-semibold ">Make Mobility Intelligent.</h3>
                     <p className="text-base text-white/70 leading-relaxed">
                       We envision a future where physical movement and digital intelligence operate as one connected system.
                     </p>
@@ -169,7 +169,7 @@ export function CompanyClient() {
                 <EditorialTabItem delayOffset={0.2}>
                   <div className="p-8 rounded-2xl bg-gradient-to-br from-white/[0.03] to-transparent border border-white/10 space-y-4 h-full shadow-[inset_0_1px_0_rgba(255,255,255,0.02)] hover:border-indigo-500/30 transition-colors">
                     <div className="font-mono text-xs uppercase tracking-widest text-indigo-400">Our Technology Thesis</div>
-                    <h3 className="text-3xl font-semibold uppercase">The Vehicle is the New Edge.</h3>
+                    <h3 className="text-3xl font-semibold ">The Vehicle Is The New Edge.</h3>
                     <p className="text-base text-white/70 leading-relaxed">
                       The central proposition is that each connected vehicle can operate as an intelligent edge node.
                     </p>
@@ -183,7 +183,7 @@ export function CompanyClient() {
               <div>
                 <EditorialTabItem delayOffset={0.3}>
                   <div className="max-w-2xl mb-10">
-                    <h2 className="text-3xl font-semibold tracking-tight uppercase leading-tight">
+                    <h2 className="text-3xl font-semibold tracking-tight  leading-tight">
                       Technology Convergence.
                     </h2>
                     <p className="text-sm text-white/50 font-mono mt-3">
@@ -224,7 +224,7 @@ export function CompanyClient() {
             <div className="space-y-12">
               <EditorialTabItem delayOffset={0.1}>
                 <div className="max-w-3xl mb-8">
-                  <h2 className="text-4xl sm:text-6xl font-semibold tracking-tight uppercase leading-[1.1] mb-5 text-balance">
+                  <h2 className="text-4xl sm:text-6xl font-semibold tracking-tight  leading-[1.1] mb-5 text-balance">
                     Build the Moving <br />
                     <span className="gradient-text">Ecosystem.</span>
                   </h2>
@@ -265,7 +265,7 @@ export function CompanyClient() {
             <div className="space-y-16">
               <EditorialTabItem delayOffset={0.1}>
                 <div className="max-w-3xl mb-8">
-                  <h2 className="text-3xl sm:text-5xl lg:text-[3.5rem] font-bold tracking-tight uppercase leading-[1.1] mb-5 text-balance max-w-4xl">
+                  <h2 className="text-3xl sm:text-5xl lg:text-[3.5rem] font-bold tracking-tight  leading-[1.1] mb-5 text-balance max-w-4xl">
                     Building a New Digital Layer{" "}
                     <span className="gradient-text block sm:inline">Across Mobility.</span>
                   </h2>
@@ -317,7 +317,7 @@ export function CompanyClient() {
           {activeTab === "Careers" && (
             <div className="py-12 w-full flex flex-col items-center justify-center text-center">
               <EditorialTabItem delayOffset={0.1} className="w-full text-center">
-                <h2 className="text-4xl sm:text-6xl font-semibold tracking-tight uppercase mb-6 text-center w-full">
+                <h2 className="text-4xl sm:text-6xl font-semibold tracking-tight  mb-6 text-center w-full">
                   Build With <span className="gradient-text">VMOVEXA.</span>
                 </h2>
               </EditorialTabItem>

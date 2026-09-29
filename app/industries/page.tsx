@@ -112,9 +112,9 @@ export default function IndustriesPage() {
                 className="text-4xl sm:text-5xl lg:text-7xl font-extrabold tracking-tight uppercase leading-[1.05] max-w-4xl mb-6 text-white"
                 delay={0.15}
                 lines={[
-                  "ONE TECHNOLOGY.",
-                  <span key="sub1" className="gradient-text">MANY MOBILITY</span>,
-                  <span key="sub2" className="gradient-text">ENVIRONMENTS.</span>
+                  "One Technology.",
+                  <span key="sub1" className="gradient-text">Many Mobility</span>,
+                  <span key="sub2" className="gradient-text">Environments.</span>
                 ]}
               />
 
@@ -392,7 +392,7 @@ export default function IndustriesPage() {
           </EditorialLine>
           <EditorialLine delay={0.1}>
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-semibold tracking-tight mb-8 text-white">
-              Deploy across your <span className="gradient-text">environment.</span>
+              Deploy Across Your <span className="gradient-text">Environment.</span>
             </h2>
           </EditorialLine>
           <EditorialLine delay={0.2}>

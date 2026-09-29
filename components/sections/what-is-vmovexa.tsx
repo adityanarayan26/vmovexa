@@ -110,7 +110,7 @@ export function WhatIsVmovexaSection() {
           </EditorialLine>
 
           <EditorialLine delay={0.1}>
-            <h2 className="text-3xl sm:text-5xl lg:text-6xl font-medium font-heading tracking-tight !normal-case text-zinc-900 leading-[1.08] mb-6">
+            <h2 className="text-3xl sm:text-5xl lg:text-6xl font-medium font-heading tracking-tight uppercase text-zinc-900 leading-[1.08] mb-6">
               <span className="flex justify-center mb-4 sm:mb-6">
                 <Image
                   src="/logos/logo-hover-menu-cropped.png"
@@ -121,7 +121,7 @@ export function WhatIsVmovexaSection() {
                 />
               </span>
               <span className="gradient-text font-semibold">
-                The intelligence layer for moving infrastructure.
+                The Intelligence Layer For Moving Infrastructure.
               </span>
             </h2>
           </EditorialLine>
@@ -172,7 +172,7 @@ export function WhatIsVmovexaSection() {
                   Ecosystem Architecture
                 </span>
                 <h4 className="text-xl sm:text-2xl font-bold text-zinc-900 tracking-tight">
-                  How Intelligence Moves Through the Physical World
+                  How Intelligence Moves Through The Physical World
                 </h4>
               </div>
               <span className="font-mono text-xs text-zinc-400">
@@ -198,7 +198,7 @@ export function WhatIsVmovexaSection() {
                     <RiBusLine size={24} />
                   </div>
                   <div>
-                    <h5 className="text-xl font-bold text-zinc-900 uppercase tracking-wide">
+                    <h5 className="text-xl font-bold text-zinc-900  tracking-wide">
                       Vehicle
                     </h5>
                     <div className="text-xs text-zinc-500 font-mono">
@@ -227,7 +227,7 @@ export function WhatIsVmovexaSection() {
                     <FiCpu size={24} />
                   </div>
                   <div>
-                    <h5 className="text-xl font-bold text-zinc-900 uppercase tracking-wide">
+                    <h5 className="text-xl font-bold text-zinc-900  tracking-wide">
                       VMOVEXA Core
                     </h5>
                     <div className="text-xs text-indigo-600 font-mono font-medium">
@@ -256,7 +256,7 @@ export function WhatIsVmovexaSection() {
                     <FiCloud size={24} />
                   </div>
                   <div>
-                    <h5 className="text-xl font-bold text-zinc-900 uppercase tracking-wide">
+                    <h5 className="text-xl font-bold text-zinc-900  tracking-wide">
                       Cloud
                     </h5>
                     <div className="text-xs text-purple-600 font-mono font-medium">
