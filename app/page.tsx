@@ -326,13 +326,13 @@ export default function HomePage() {
 
               {/* Headline: Space Grotesk */}
               <EditorialLine delay={0.15}>
-                <h1 className="text-4xl sm:text-5xl md:text-5xl lg:text-[56px] xl:text-[66px] font-medium font-heading tracking-tight leading-[1.05] max-w-lg xl:max-w-xl mb-6 text-white uppercase drop-shadow-lg">
+                <h1 className="text-4xl sm:text-5xl md:text-5xl lg:text-[56px] xl:text-[66px] font-extrabold font-heading tracking-tight leading-[1.05] max-w-lg xl:max-w-xl mb-6 text-white drop-shadow-lg" style={{ WebkitTextStroke: "1px currentColor" }}>
                   INTELLIGENCE IN{" "}
                   <span className="inline-flex overflow-visible">
                     {"MOTION.".split("").map((letter, idx) => (
                       <span
                         key={idx}
-                        className="inline-block gradient-text font-semibold animate-wave-motion"
+                        className="inline-block gradient-text animate-wave-motion"
                         style={{ animationDelay: `${idx * 0.14}s` }}
                       >
                         {letter}
@@ -1152,7 +1152,9 @@ export default function HomePage() {
                     A symbol for the movement of what comes next.
                   </p>
                   <div className="pt-4 border-t border-white/10">
-                    <div className="font-bold text-white text-xl tracking-wider">VMOVEXA</div>
+                    <div className="font-bold text-white text-xl tracking-wider">
+                      <Image src="/logos/vmovexa-wordmark-light.svg" alt="VMOVEXA" width={140} height={24} />
+                    </div>
                     <div className="text-sm text-white/50">The Soul of Intelligent Movement.</div>
                   </div>
                 </div>
@@ -1185,7 +1187,10 @@ export default function HomePage() {
                     Moves with the world.
                   </p>
                   <div className="pt-4 border-t border-white/10">
-                    <div className="font-bold text-white text-xl tracking-wider"><span className="text-white">VMOVEXA</span> <span className="text-indigo-400">X</span></div>
+                    <div className="font-bold text-white text-xl tracking-wider flex items-center gap-2">
+                      <Image src="/logos/vmovexa-wordmark-light.svg" alt="VMOVEXA" width={120} height={20} />
+                      <span className="text-indigo-400">X</span>
+                    </div>
                     <div className="text-sm text-white/50">Where movement becomes experience.</div>
                   </div>
                 </div>
