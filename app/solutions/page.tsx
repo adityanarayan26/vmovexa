@@ -208,7 +208,7 @@ export default function SolutionsPage() {
                 </p>
               </EditorialLine>
               <GsapScrollReveal delay={0.4}>
-                <div className="pt-2 py-4 -my-4 overflow-visible">
+                <div className="mt-8 mb-2 overflow-visible">
                   <MagneticElement strength={0.2}>
                     <Link
                       href="/technology"
@@ -267,7 +267,7 @@ export default function SolutionsPage() {
                 </p>
               </EditorialLine>
               <GsapScrollReveal delay={0.4}>
-                <div className="pt-2 py-4 -my-4 overflow-visible">
+                <div className="mt-8 mb-2 overflow-visible">
                   <MagneticElement strength={0.2}>
                     <Link
                       href="/media"
