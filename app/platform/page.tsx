@@ -405,7 +405,7 @@ export default function PlatformPage() {
                   </div>
                 </EditorialLine>
                 <EditorialLine delay={0.1}>
-                  <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight text-zinc-900 leading-tight uppercase">
+                  <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight text-zinc-900 leading-tight normal-case">
                     The cloud orchestrates. <span className="gradient-text">The edge executes.</span>
                   </h2>
                 </EditorialLine>

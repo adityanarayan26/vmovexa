@@ -547,12 +547,12 @@ export default function HomePage() {
             </EditorialLine>
             <CubertoLines
               as="h2"
-              className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-semibold tracking-tight leading-[1.08] text-white"
+              className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-semibold tracking-tight leading-[1.08] text-white normal-case"
               delay={0.1}
               stagger={0.1}
               lines={[
-                <div key="l1">THE CLOUD <span className="gradient-text">ORCHESTRATES.</span></div>,
-                <div key="l2" className="mt-1 sm:mt-2 text-white/95">THE EDGE <span className="gradient-text">EXECUTES.</span></div>,
+                <div key="l1">The cloud <span className="gradient-text">orchestrates.</span></div>,
+                <div key="l2" className="mt-1 sm:mt-2 text-white/95">The edge <span className="gradient-text">executes.</span></div>,
               ]}
             />
           </div>
@@ -733,12 +733,12 @@ export default function HomePage() {
             </EditorialLine>
             <CubertoLines
               as="h2"
-              className="text-4xl sm:text-5xl lg:text-6xl font-semibold tracking-tight leading-[1.05] text-white"
+              className="text-4xl sm:text-5xl lg:text-6xl font-semibold tracking-tight leading-[1.05] text-white normal-case"
               delay={0.1}
               stagger={0.1}
               lines={[
-                <div key="l1">HOW THE ENTIRE</div>,
-                <div key="l2" className="mt-1 sm:mt-2 gradient-text">NETWORK FLOWS.</div>,
+                <div key="l1">How the entire</div>,
+                <div key="l2" className="mt-1 sm:mt-2 gradient-text">network flows.</div>,
               ]}
             />
             <EditorialLine delay={0.2}>
@@ -976,13 +976,13 @@ export default function HomePage() {
               
               <CubertoLines
                 as="h2"
-                className="text-4xl sm:text-5xl lg:text-[56px] xl:text-[64px] font-semibold tracking-tight leading-[1.05] text-white mb-8"
+                className="text-4xl sm:text-5xl lg:text-[56px] xl:text-[64px] font-semibold tracking-tight leading-[1.05] text-white mb-8 normal-case"
                 delay={0.1}
                 stagger={0.1}
                 lines={[
-                  <div key="l1">ONE CLICK.</div>,
-                  <span key="l2" className="mt-1 sm:mt-2 gradient-text">AN ENTIRE</span>,
-                  <span key="l3" className="mt-1 sm:mt-2 gradient-text">NATION.</span>,
+                  <div key="l1">One click.</div>,
+                  <span key="l2" className="mt-1 sm:mt-2 gradient-text">an entire</span>,
+                  <span key="l3" className="mt-1 sm:mt-2 gradient-text">Nation.</span>,
                 ]}
               />
               
@@ -1038,12 +1038,12 @@ export default function HomePage() {
             </EditorialLine>
             <CubertoLines
               as="h2"
-              className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-semibold tracking-tight leading-[1.08] text-zinc-900"
+              className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-semibold tracking-tight leading-[1.08] text-zinc-900 normal-case"
               delay={0.1}
               stagger={0.1}
               lines={[
-                <div key="l1">ONE PLATFORM.</div>,
-                <div key="l2" className="mt-1 sm:mt-2 gradient-text">MANY MOBILITY ENVIRONMENTS.</div>,
+                <div key="l1">One platform.</div>,
+                <div key="l2" className="mt-1 sm:mt-2 gradient-text">Many mobility environments.</div>,
               ]}
             />
             <EditorialLine delay={0.2}>
@@ -1116,12 +1116,12 @@ export default function HomePage() {
             </EditorialLine>
             <CubertoLines
               as="h2"
-              className="text-4xl sm:text-5xl lg:text-6xl font-semibold tracking-tight leading-[1.05] text-white"
+              className="text-4xl sm:text-5xl lg:text-6xl font-semibold tracking-tight leading-[1.05] text-white normal-case"
               delay={0.1}
               stagger={0.1}
               lines={[
-                <div key="l1">THE SOUL OF</div>,
-                <div key="l2" className="mt-1 sm:mt-2 gradient-text">INTELLIGENT MOVEMENT.</div>,
+                <div key="l1">The soul of</div>,
+                <div key="l2" className="mt-1 sm:mt-2 gradient-text">intelligent movement.</div>,
               ]}
             />
           </div>
@@ -1218,12 +1218,12 @@ export default function HomePage() {
           {/* Headline */}
           <CubertoLines
             as="h2"
-            className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-semibold tracking-tight text-zinc-900 leading-tight mb-6"
+            className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-semibold tracking-tight text-zinc-900 leading-tight mb-6 normal-case"
             delay={0.1}
             stagger={0.1}
             lines={[
-              <div key="l1">THE WORLD MOVES.</div>,
-              <div key="l2" className="gradient-text mt-1 sm:mt-2 whitespace-nowrap text-[26px] sm:text-4xl md:text-5xl lg:text-[50px] tracking-tight">INTELLIGENCE SHOULD MOVE WITH IT.</div>,
+              <div key="l1">The world moves.</div>,
+              <div key="l2" className="gradient-text mt-1 sm:mt-2 whitespace-nowrap text-[26px] sm:text-4xl md:text-5xl lg:text-[50px] tracking-tight">Intelligence should move with it.</div>,
             ]}
           />
 

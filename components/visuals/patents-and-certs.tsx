@@ -77,7 +77,7 @@ const claimsRight = [
 
 export function PatentsAndCerts() {
   return (
-    <section className="py-24 relative overflow-hidden bg-white border-t border-zinc-200">
+    <section className="pt-10 pb-24 relative overflow-hidden bg-white border-t border-zinc-200">
       {/* Background Ambience */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-3/4 h-[500px] bg-cyan-100/50 blur-[120px] rounded-full pointer-events-none" />
       
