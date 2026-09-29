@@ -110,7 +110,7 @@ export function WhatIsVmovexaSection() {
           </EditorialLine>
 
           <EditorialLine delay={0.1}>
-            <h2 className="text-3xl sm:text-5xl lg:text-6xl font-medium font-heading tracking-tight normal-case text-zinc-900 leading-[1.08] mb-6">
+            <h2 className="text-3xl sm:text-5xl lg:text-6xl font-medium font-heading tracking-tight !normal-case text-zinc-900 leading-[1.08] mb-6">
               <span className="flex justify-center mb-4 sm:mb-6">
                 <Image
                   src="/logos/logo-hover-menu-cropped.png"

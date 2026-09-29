@@ -257,7 +257,7 @@ export default function CompanyPage() {
       </section>
 
       {/* 03 — DETAILED TABS & COMPANY ECOSYSTEM */}
-      <section id="company-details" className="pt-12 pb-0">
+      <section id="company-details" className="pt-12 pb-10">
         <div className="container max-w-6xl mx-auto px-6">
           <CompanyClient />
         </div>

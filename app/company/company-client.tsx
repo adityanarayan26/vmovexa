@@ -315,9 +315,9 @@ export function CompanyClient() {
 
           {/* TAB: CAREERS */}
           {activeTab === "Careers" && (
-            <div className="py-12 flex flex-col items-center justify-center text-center">
-              <EditorialTabItem delayOffset={0.1}>
-                <h2 className="text-4xl sm:text-6xl font-semibold tracking-tight uppercase mb-6">
+            <div className="py-12 w-full flex flex-col items-center justify-center text-center">
+              <EditorialTabItem delayOffset={0.1} className="w-full text-center">
+                <h2 className="text-4xl sm:text-6xl font-semibold tracking-tight uppercase mb-6 text-center w-full">
                   Build With <span className="gradient-text">VMOVEXA.</span>
                 </h2>
               </EditorialTabItem>

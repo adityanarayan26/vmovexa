@@ -547,7 +547,7 @@ export default function HomePage() {
             </EditorialLine>
             <CubertoLines
               as="h2"
-              className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-semibold tracking-tight leading-[1.08] text-white normal-case"
+              className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-semibold tracking-tight leading-[1.08] text-white !normal-case"
               delay={0.1}
               stagger={0.1}
               lines={[
@@ -733,7 +733,7 @@ export default function HomePage() {
             </EditorialLine>
             <CubertoLines
               as="h2"
-              className="text-4xl sm:text-5xl lg:text-6xl font-semibold tracking-tight leading-[1.05] text-white normal-case"
+              className="text-4xl sm:text-5xl lg:text-6xl font-semibold tracking-tight leading-[1.05] text-white !normal-case"
               delay={0.1}
               stagger={0.1}
               lines={[
@@ -976,7 +976,7 @@ export default function HomePage() {
               
               <CubertoLines
                 as="h2"
-                className="text-4xl sm:text-5xl lg:text-[56px] xl:text-[64px] font-semibold tracking-tight leading-[1.05] text-white mb-8 normal-case"
+                className="text-4xl sm:text-5xl lg:text-[56px] xl:text-[64px] font-semibold tracking-tight leading-[1.05] text-white mb-8 !normal-case"
                 delay={0.1}
                 stagger={0.1}
                 lines={[
@@ -1038,7 +1038,7 @@ export default function HomePage() {
             </EditorialLine>
             <CubertoLines
               as="h2"
-              className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-semibold tracking-tight leading-[1.08] text-zinc-900 normal-case"
+              className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-semibold tracking-tight leading-[1.08] text-zinc-900 !normal-case"
               delay={0.1}
               stagger={0.1}
               lines={[
@@ -1116,7 +1116,7 @@ export default function HomePage() {
             </EditorialLine>
             <CubertoLines
               as="h2"
-              className="text-4xl sm:text-5xl lg:text-6xl font-semibold tracking-tight leading-[1.05] text-white normal-case"
+              className="text-4xl sm:text-5xl lg:text-6xl font-semibold tracking-tight leading-[1.05] text-white !normal-case"
               delay={0.1}
               stagger={0.1}
               lines={[
@@ -1218,7 +1218,7 @@ export default function HomePage() {
           {/* Headline */}
           <CubertoLines
             as="h2"
-            className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-semibold tracking-tight text-zinc-900 leading-tight mb-6 normal-case"
+            className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-semibold tracking-tight text-zinc-900 leading-tight mb-6 !normal-case"
             delay={0.1}
             stagger={0.1}
             lines={[
