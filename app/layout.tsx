@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Space_Grotesk, IBM_Plex_Sans, IBM_Plex_Mono } from "next/font/google";
+import localFont from "next/font/local";
 import "./globals.css";
 import { SmoothScroll } from "@/components/animations/smooth-scroll";
 import { SiteFooter } from "@/components/layout/site-footer";
@@ -10,28 +10,18 @@ import { WhatsAppFloat } from "@/components/ui/whatsapp-float";
 import { site } from "@/lib/site";
 import Script from "next/script";
 
-// Brand headlines / emotional moments
-const spaceGrotesk = Space_Grotesk({
-  subsets: ["latin"],
-  variable: "--font-space-grotesk",
-  weight: ["400", "500", "600", "700"],
+const sfProHeading = localFont({
+  src: "./fonts/sf-pro-text_semibold.woff2",
+  variable: "--font-heading-local",
   display: "swap",
+  weight: "600",
 });
 
-// Enterprise / product / website body
-const ibmPlexSans = IBM_Plex_Sans({
-  subsets: ["latin"],
-  variable: "--font-ibm-plex-sans",
-  weight: ["300", "400", "500", "600", "700"],
+const sfProSans = localFont({
+  src: "./fonts/sf-pro-text_regular.woff2",
+  variable: "--font-sans-local",
   display: "swap",
-});
-
-// Deep-tech / data / engineering / plain text
-const ibmPlexMono = IBM_Plex_Mono({
-  subsets: ["latin"],
-  variable: "--font-ibm-plex-mono",
-  weight: ["400", "500", "600"],
-  display: "swap",
+  weight: "400",
 });
 
 export const metadata: Metadata = {
@@ -100,7 +90,7 @@ export default function RootLayout({
     },
   };
   return (
-    <html lang="en" className={`${spaceGrotesk.variable} ${ibmPlexSans.variable} ${ibmPlexMono.variable}`} suppressHydrationWarning>
+    <html lang="en" className={`${sfProHeading.variable} ${sfProSans.variable}`} suppressHydrationWarning>
       <body suppressHydrationWarning>
         <LanguageProvider>
           <SmoothScroll />

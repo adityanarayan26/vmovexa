@@ -97,8 +97,8 @@ export default function CompanyPage() {
                 </p>
               </BlurReveal>
 
-              <EditorialLine delay={0.4}>
-                <div className="flex items-center gap-4 mb-6">
+              <GsapScrollReveal delay={0.4}>
+                <div className="flex items-center gap-4 mb-6 py-4 -my-4 overflow-visible">
                   <MagneticElement strength={0.3}>
                     <Link
                       href="#company-details"
@@ -109,7 +109,7 @@ export default function CompanyPage() {
                     </Link>
                   </MagneticElement>
                 </div>
-              </EditorialLine>
+              </GsapScrollReveal>
             </div>
 
             {/* Right Side Vertical Floating Tags (Screen 07) */}
@@ -305,7 +305,13 @@ export default function CompanyPage() {
                   </div>
                 </div>
                 <div className="text-center md:text-left space-y-4 px-4 sm:px-0">
-                  <h3 className="text-2xl font-bold text-white tracking-wide uppercase">THE ICONIC “V”</h3>
+                  <h3 className="text-2xl font-bold text-white tracking-wide uppercase flex items-center gap-3">
+                    THE ICONIC 
+                    <span className="relative inline-flex items-center justify-center -top-0.5 ml-1">
+                      <div className="absolute inset-1 bg-white blur-[8px] opacity-25 rounded-full" />
+                      <Image src="/logos/vmovexa-icon-dark.svg" alt="V" width={32} height={32} className="relative z-10" />
+                    </span>
+                  </h3>
                   <div className="font-mono text-xs tracking-widest text-cyan-400 uppercase">
                     Three ideas. One identity.
                   </div>
@@ -315,7 +321,9 @@ export default function CompanyPage() {
                     A symbol for the movement of what comes next.
                   </p>
                   <div className="pt-4 border-t border-white/10">
-                    <div className="font-bold text-white text-xl tracking-wider">VMOVEXA</div>
+                    <div className="font-bold text-white text-xl tracking-wider">
+                      <Image src="/logos/vmovexa-wordmark-light.svg" alt="VMOVEXA" width={140} height={24} />
+                    </div>
                     <div className="text-sm text-white/50">The Soul of Intelligent Movement.</div>
                   </div>
                 </div>
@@ -337,7 +345,13 @@ export default function CompanyPage() {
                   </div>
                 </div>
                 <div className="text-center md:text-left space-y-4 px-4 sm:px-0">
-                  <h3 className="text-2xl font-bold text-white tracking-wide uppercase">AND “X”</h3>
+                  <h3 className="text-2xl font-bold text-white tracking-wide uppercase flex items-center gap-3">
+                    AND 
+                    <span className="relative inline-flex items-center justify-center -top-0.5 ml-1">
+                      <div className="absolute inset-1 bg-white blur-[10px] opacity-25 rounded-full" />
+                      <Image src="/images/X.png" alt="X" width={32} height={32} className="relative z-10" />
+                    </span>
+                  </h3>
                   <div className="font-mono text-xs tracking-widest text-indigo-400 uppercase">
                     Digital Intelligent Media.
                   </div>
@@ -348,7 +362,13 @@ export default function CompanyPage() {
                     Moves with the world.
                   </p>
                   <div className="pt-4 border-t border-white/10">
-                    <div className="font-bold text-white text-xl tracking-wider"><span className="text-white">VMOVEXA</span> <span className="text-indigo-400">X</span></div>
+                    <div className="font-bold text-white text-xl tracking-wider flex items-center gap-3">
+                      <Image src="/logos/vmovexa-wordmark-light.svg" alt="VMOVEXA" width={120} height={20} />
+                      <span className="relative inline-flex items-center justify-center -top-0.5">
+                        <div className="absolute inset-0 bg-white blur-[8px] opacity-25 rounded-full" />
+                        <Image src="/images/X.png" alt="X" width={24} height={24} className="relative z-10" />
+                      </span>
+                    </div>
                     <div className="text-sm text-white/50">Where movement becomes experience.</div>
                   </div>
                 </div>

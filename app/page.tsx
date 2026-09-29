@@ -38,6 +38,7 @@ import { MagneticElement, GsapScrollReveal, ParallaxElement } from "@/components
 import { MediaSlot } from "@/components/ui/media-slot";
 import { CloudEdgeArchitectureAnimation } from "@/components/visuals/cloud-edge-architecture-animation";
 import { SpotlightCard } from "@/components/visuals/spotlight-card";
+import { HeroWatchVideoButton } from "@/components/ui/hero-watch-video-button";
 import { TextDecrypt } from "@/components/animations/text-decrypt";
 import { BlurReveal } from "@/components/animations/blur-reveal";
 import { ImageCurtainReveal, ModernImageSheen, FloatingElement } from "@/components/animations/image-reveal";
@@ -362,14 +363,7 @@ export default function HomePage() {
                     </Link>
                   </MagneticElement>
                   <MagneticElement strength={0.3}>
-                    <Link
-                      href="/videos/vmovexa-transit-demo.mp4"
-                      target="_blank"
-                      className="inline-flex items-center gap-2.5 px-7 py-3.5 rounded-full bg-white/[0.08] backdrop-blur-md border border-white/25 text-white font-semibold text-sm tracking-wide transition-all duration-300 hover:bg-white/15 hover:border-cyan-400/50 hover:shadow-[0_0_25px_rgba(34,211,238,0.2)]"
-                    >
-                      <span className="w-2.5 h-2.5 rounded-full bg-cyan-400 animate-pulse" />
-                      Watch Video
-                    </Link>
+                    <HeroWatchVideoButton videoSrc="/videos/big.MOV" />
                   </MagneticElement>
                   <MagneticElement strength={0.3}>
                     <a
@@ -495,7 +489,7 @@ export default function HomePage() {
               </div>
             </EditorialLine>
             <EditorialLine delay={0.1}>
-              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight uppercase text-zinc-900 leading-tight mb-4">
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-semibold tracking-tight text-zinc-900 leading-tight mb-4">
                 A VEHICLE CAN BE <span className="gradient-text">MORE.</span>
               </h2>
             </EditorialLine>
@@ -553,7 +547,7 @@ export default function HomePage() {
             </EditorialLine>
             <CubertoLines
               as="h2"
-              className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight uppercase leading-[1.08] text-white"
+              className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-semibold tracking-tight leading-[1.08] text-white"
               delay={0.1}
               stagger={0.1}
               lines={[
@@ -652,7 +646,7 @@ export default function HomePage() {
                 <span>IN-VEHICLE COMPUTING</span>
               </div>
             </EditorialLine>
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight uppercase text-zinc-900 leading-tight mb-4">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-semibold tracking-tight text-zinc-900 leading-tight mb-4">
               THE VEHICLE BECOMES <span className="gradient-text">THE EDGE.</span>
             </h2>
             <EditorialLine delay={0.2}>
@@ -739,7 +733,7 @@ export default function HomePage() {
             </EditorialLine>
             <CubertoLines
               as="h2"
-              className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight uppercase leading-[1.05] text-white"
+              className="text-4xl sm:text-5xl lg:text-6xl font-semibold tracking-tight leading-[1.05] text-white"
               delay={0.1}
               stagger={0.1}
               lines={[
@@ -775,7 +769,7 @@ export default function HomePage() {
               </div>
             </EditorialLine>
             <EditorialLine delay={0.1}>
-              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight uppercase text-zinc-900 leading-tight mb-4">
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-semibold tracking-tight text-zinc-900 leading-tight mb-4">
                 MOVEMENT CREATES <span className="gradient-text">CONTEXT.</span>
               </h2>
             </EditorialLine>
@@ -841,7 +835,7 @@ export default function HomePage() {
                 </div>
               </EditorialLine>
 
-              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight uppercase text-white leading-tight">
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-semibold tracking-tight text-white leading-tight">
                 MEDIA THAT <span className="gradient-text">MOVES.</span>
               </h2>
 
@@ -982,7 +976,7 @@ export default function HomePage() {
               
               <CubertoLines
                 as="h2"
-                className="text-4xl sm:text-5xl lg:text-[56px] xl:text-[64px] font-extrabold tracking-tight uppercase leading-[1.05] text-white mb-8"
+                className="text-4xl sm:text-5xl lg:text-[56px] xl:text-[64px] font-semibold tracking-tight leading-[1.05] text-white mb-8"
                 delay={0.1}
                 stagger={0.1}
                 lines={[
@@ -1044,7 +1038,7 @@ export default function HomePage() {
             </EditorialLine>
             <CubertoLines
               as="h2"
-              className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight uppercase leading-[1.08] text-zinc-900"
+              className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-semibold tracking-tight leading-[1.08] text-zinc-900"
               delay={0.1}
               stagger={0.1}
               lines={[
@@ -1122,7 +1116,7 @@ export default function HomePage() {
             </EditorialLine>
             <CubertoLines
               as="h2"
-              className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight uppercase leading-[1.05] text-white"
+              className="text-4xl sm:text-5xl lg:text-6xl font-semibold tracking-tight leading-[1.05] text-white"
               delay={0.1}
               stagger={0.1}
               lines={[
@@ -1219,7 +1213,7 @@ export default function HomePage() {
           {/* Headline */}
           <CubertoLines
             as="h2"
-            className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight uppercase text-zinc-900 leading-tight mb-6"
+            className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-semibold tracking-tight text-zinc-900 leading-tight mb-6"
             delay={0.1}
             stagger={0.1}
             lines={[

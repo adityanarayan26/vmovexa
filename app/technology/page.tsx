@@ -90,7 +90,7 @@ export default function TechnologyPage() {
 
               <CubertoLines
                 as="h1"
-                className="text-4xl sm:text-5xl lg:text-7xl font-extrabold tracking-tight uppercase leading-[1.05] max-w-4xl mb-6 text-white"
+                className="text-4xl sm:text-5xl lg:text-7xl font-semibold tracking-tight leading-[1.05] max-w-4xl mb-6 text-white"
                 delay={0.15}
                 lines={[
                   "BUILT FOR THE",

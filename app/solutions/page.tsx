@@ -207,11 +207,11 @@ export default function SolutionsPage() {
                   Transform raw mechanical fleets into software-defined, connected networks with full operational observability.
                 </p>
               </EditorialLine>
-              <EditorialLine delay={0.4}>
-                <div className="pt-2">
+              <GsapScrollReveal delay={0.4}>
+                <div className="pt-2 py-4 -my-4 overflow-visible">
                   <MagneticElement strength={0.2}>
                     <Link
-                      href="/contact"
+                      href="/technology"
                       className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-black text-white font-semibold text-xs uppercase tracking-wider hover:scale-105 active:scale-95 transition-transform shadow-md hover:bg-zinc-800"
                     >
                       <span>Explore Fleet Technology</span>
@@ -219,7 +219,7 @@ export default function SolutionsPage() {
                     </Link>
                   </MagneticElement>
                 </div>
-              </EditorialLine>
+              </GsapScrollReveal>
             </div>
 
             <div className="lg:col-span-6">
@@ -266,8 +266,8 @@ export default function SolutionsPage() {
                   Move beyond static posters. Program dynamic campaigns triggered by geographic zones, time of day, passenger demographics, and road routes with verifiable proof-of-play.
                 </p>
               </EditorialLine>
-              <EditorialLine delay={0.4}>
-                <div className="pt-2">
+              <GsapScrollReveal delay={0.4}>
+                <div className="pt-2 py-4 -my-4 overflow-visible">
                   <MagneticElement strength={0.2}>
                     <Link
                       href="/media"
@@ -278,7 +278,7 @@ export default function SolutionsPage() {
                     </Link>
                   </MagneticElement>
                 </div>
-              </EditorialLine>
+              </GsapScrollReveal>
             </div>
 
             <div className="lg:col-span-6 lg:order-1 space-y-3">
