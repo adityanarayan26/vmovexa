@@ -275,13 +275,13 @@ export function WhyVmovexaSection() {
   return (
     <section className="relative pt-6 pb-10 sm:pt-8 sm:pb-12 overflow-hidden bg-white">
       {/* Cyber Grid Texture Overlay on Pure White */}
-      <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(0,0,0,0.035)_1px,transparent_1px),linear-gradient(to_bottom,rgba(0,0,0,0.035)_1px,transparent_1px)] bg-[size:3.5rem_3.5rem] [mask-image:radial-gradient(ellipse_80%_65%_at_50%_50%,#000_70%,transparent_100%)] pointer-events-none" />
+      <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(0,0,0,0.04)_1px,transparent_1px),linear-gradient(to_bottom,rgba(0,0,0,0.04)_1px,transparent_1px)] bg-[size:3.5rem_3.5rem] [mask-image:radial-gradient(ellipse_95%_90%_at_50%_50%,#000_80%,transparent_100%)] pointer-events-none" />
 
       <div className="container max-w-7xl mx-auto px-6 relative z-10">
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-8 sm:mb-10">
           <EditorialLine>
-            <div className="inline-flex items-center gap-2 px-4 py-1 rounded-full bg-white border border-cyan-200/80 text-cyan-800 font-mono text-xs tracking-wider mb-2.5 shadow-[0_2px_12px_rgba(6,182,212,0.08),inset_0_1px_1px_rgba(255,255,255,1)]">
+            <div className="inline-flex items-center gap-2 px-4 py-1 rounded-full bg-white/80 border border-cyan-200/80 text-cyan-800 font-mono text-xs tracking-wider mb-2.5 shadow-sm">
               <span className="w-1.5 h-1.5 rounded-full bg-gradient-to-r from-cyan-400 to-purple-400 animate-pulse" />
               <span className="uppercase tracking-[0.25em] text-[11px] font-semibold text-cyan-800">
                 WHY VMOVEXA
@@ -302,38 +302,27 @@ export function WhyVmovexaSection() {
           </div>
         </div>
 
-        {/* 5 Ultra-Premium Glossy Pillars Layout */}
+        {/* 5 Transparent Glass Pillars Layout */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6">
           {pillars.map((pillar, idx) => (
             <GsapScrollReveal key={pillar.title} delay={idx * 0.08}>
               <div className="relative group h-full">
-                {/* Primary Premium Glossy Card */}
+                {/* Transparent Glass Card */}
                 <div
-                  className="relative h-full py-9 px-5 sm:py-11 sm:px-6 flex flex-col items-center text-center cursor-default transition-all duration-300 rounded-[2rem] overflow-hidden justify-between
-                    bg-gradient-to-b from-white via-slate-50/40 to-zinc-100/50
-                    border border-zinc-200/70 hover:border-zinc-300
-                    shadow-[0_10px_30px_-5px_rgba(0,0,0,0.05),0_1px_3px_rgba(0,0,0,0.02),inset_0_2px_2px_rgba(255,255,255,1),inset_0_0_0_1px_rgba(255,255,255,0.9),inset_0_-2px_3px_rgba(0,0,0,0.02)]
-                    hover:shadow-[0_22px_45px_-10px_rgba(0,0,0,0.08),inset_0_2px_3px_rgba(255,255,255,1)]
-                    hover:-translate-y-2
+                  className="relative h-full py-9 px-5 sm:py-11 sm:px-6 flex flex-col items-center text-center cursor-default transition-all duration-500 rounded-[2rem] overflow-hidden justify-between
+                    bg-white/[0.08] hover:bg-white/[0.22]
+                    border border-zinc-200/80 hover:border-cyan-400/50
+                    shadow-[0_4px_24px_rgba(0,0,0,0.02)] hover:shadow-[0_8px_30px_rgba(6,182,212,0.12)]
+                    hover:-translate-y-1.5
                   "
                 >
-                  {/* Curved Glass Specular Sheen Arc (Authentic Liquid Glass Reflection) */}
-                  <div className="absolute -top-16 -left-16 -right-16 h-64 rounded-[50%] bg-gradient-to-b from-white via-white/50 to-transparent pointer-events-none" />
+                  {/* Subtle Top Glowing Line on Hover */}
+                  <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-cyan-400/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
 
-                  {/* Diagonal Glass Specular Glaze */}
-                  <div className="absolute inset-0 bg-gradient-to-br from-white/80 via-white/10 to-transparent pointer-events-none rounded-[2rem]" />
-
-                  {/* Top Edge Specular White Rim with Glow */}
-                  <div className="absolute top-0 inset-x-6 h-[2px] bg-gradient-to-r from-transparent via-white to-transparent shadow-[0_1px_4px_rgba(255,255,255,1)] pointer-events-none" />
-
-                  {/* 3D Glossy Jewel Icon Pod */}
+                  {/* Transparent Icon Pod */}
                   <div className="relative mb-6 flex items-center justify-center">
-                    {/* Outer Pod */}
-                    <div className="relative z-10 w-20 h-20 sm:w-22 sm:h-22 rounded-2xl sm:rounded-3xl flex items-center justify-center transition-all duration-300 bg-gradient-to-b from-white via-slate-50/90 to-zinc-100/80 border border-white shadow-[0_8px_20px_-4px_rgba(0,0,0,0.07),inset_0_2px_4px_rgba(255,255,255,1),inset_0_-2px_4px_rgba(0,0,0,0.03)] group-hover:scale-105 group-hover:shadow-[0_12px_26px_-4px_rgba(0,0,0,0.1),inset_0_2px_4px_rgba(255,255,255,1)]">
-                      {/* Inner concentric refined hairline ring */}
-                      <div className="absolute inset-1.5 rounded-[1.1rem] sm:rounded-[1.4rem] border border-zinc-200/50 pointer-events-none" />
-                      {/* Top curved reflection inside icon pod */}
-                      <div className="absolute inset-x-0 top-0 h-1/2 bg-gradient-to-b from-white via-white/40 to-transparent rounded-t-2xl sm:rounded-t-3xl pointer-events-none" />
+                    <div className="relative z-10 w-20 h-20 sm:w-22 sm:h-22 rounded-2xl sm:rounded-3xl flex items-center justify-center transition-all duration-300 bg-white/[0.12] group-hover:bg-white/[0.28] border border-zinc-200/60 shadow-sm group-hover:scale-105 group-hover:border-cyan-400/40">
+                      <div className="absolute inset-1.5 rounded-[1.1rem] sm:rounded-[1.4rem] border border-zinc-200/40 pointer-events-none" />
                       {pillar.renderIcon(pillar.gradientId)}
                     </div>
                   </div>
@@ -343,7 +332,7 @@ export function WhyVmovexaSection() {
                     <h3 className="text-sm sm:text-base font-heading font-bold text-zinc-900 mb-2.5 tracking-tight uppercase group-hover:text-cyan-600 transition-colors duration-200">
                       {pillar.title}
                     </h3>
-                    <p className="text-xs sm:text-[13px] text-zinc-500 leading-relaxed font-normal group-hover:text-zinc-700 transition-colors duration-200">
+                    <p className="text-xs sm:text-[13px] text-zinc-600 leading-relaxed font-normal group-hover:text-zinc-800 transition-colors duration-200">
                       {pillar.desc}
                     </p>
                   </div>
