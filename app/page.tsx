@@ -1049,7 +1049,9 @@ export default function HomePage() {
               stagger={0.1}
               lines={[
                 <div key="l1">One Platform.</div>,
-                <div key="l2" className="mt-1 sm:mt-2 gradient-text">Many Mobility Environments.</div>,
+                <div key="l2" className="mt-1 sm:mt-2">
+                  <span className="gradient-text">Many Mobility Environments.</span>
+                </div>,
               ]}
             />
             <EditorialLine delay={0.2}>
