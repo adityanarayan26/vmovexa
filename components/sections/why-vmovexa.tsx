@@ -75,8 +75,8 @@ const pillars: PillarItem[] = [
       >
         <defs>
           <linearGradient id={gradId} x1="0%" y1="0%" x2="100%" y2="100%">
-            <stop offset="0%" stopColor="#818cf8" />
-            <stop offset="50%" stopColor="#c084fc" />
+            <stop offset="0%" stopColor="#38bdf8" />
+            <stop offset="50%" stopColor="#a855f7" />
             <stop offset="100%" stopColor="#ec4899" />
           </linearGradient>
         </defs>
@@ -180,7 +180,7 @@ const pillars: PillarItem[] = [
         <defs>
           <linearGradient id={gradId} x1="0%" y1="0%" x2="100%" y2="100%">
             <stop offset="0%" stopColor="#38bdf8" />
-            <stop offset="50%" stopColor="#818cf8" />
+            <stop offset="50%" stopColor="#a855f7" />
             <stop offset="100%" stopColor="#ec4899" />
           </linearGradient>
         </defs>
@@ -219,8 +219,8 @@ const pillars: PillarItem[] = [
       >
         <defs>
           <linearGradient id={gradId} x1="0%" y1="0%" x2="100%" y2="100%">
-            <stop offset="0%" stopColor="#34d399" />
-            <stop offset="50%" stopColor="#38bdf8" />
+            <stop offset="0%" stopColor="#38bdf8" />
+            <stop offset="50%" stopColor="#a855f7" />
             <stop offset="100%" stopColor="#ec4899" />
           </linearGradient>
         </defs>
