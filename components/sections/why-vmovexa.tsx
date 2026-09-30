@@ -3,6 +3,7 @@
 import React from "react";
 import { EditorialLine } from "@/components/animations/editorial-text";
 import { GsapScrollReveal } from "@/components/animations/gsap-scroll-fx";
+
 interface PillarItem {
   number: string;
   title: string;
@@ -18,13 +19,13 @@ const pillars: PillarItem[] = [
     title: "Smarter Operations",
     desc: "Optimize fleets, reduce costs and improve efficiency.",
     gradientId: "grad-smarter-ops",
-    glowColor: "rgba(56, 189, 248, 0.28)",
+    glowColor: "rgba(56, 189, 248, 0.3)",
     renderIcon: (gradId) => (
       <svg
         viewBox="0 0 56 56"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
-        className="w-14 h-14 sm:w-16 sm:h-16 transition-transform duration-500 group-hover:scale-110 drop-shadow-[0_0_16px_rgba(56,189,248,0.4)]"
+        className="w-14 h-14 sm:w-16 sm:h-16 transition-transform duration-500 group-hover:scale-110"
       >
         <defs>
           <linearGradient id={gradId} x1="0%" y1="0%" x2="100%" y2="100%">
@@ -65,13 +66,13 @@ const pillars: PillarItem[] = [
     title: "Safer Journeys",
     desc: "Advanced safety systems ensuring passenger protection.",
     gradientId: "grad-safer-journeys",
-    glowColor: "rgba(168, 85, 247, 0.28)",
+    glowColor: "rgba(168, 85, 247, 0.3)",
     renderIcon: (gradId) => (
       <svg
         viewBox="0 0 56 56"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
-        className="w-14 h-14 sm:w-16 sm:h-16 transition-transform duration-500 group-hover:scale-110 drop-shadow-[0_0_16px_rgba(168,85,247,0.4)]"
+        className="w-14 h-14 sm:w-16 sm:h-16 transition-transform duration-500 group-hover:scale-110"
       >
         <defs>
           <linearGradient id={gradId} x1="0%" y1="0%" x2="100%" y2="100%">
@@ -103,8 +104,8 @@ const pillars: PillarItem[] = [
           strokeWidth="2"
           strokeLinecap="round"
         />
-        {/* Security badge at top-right */}
-        <circle cx="40" cy="14" r="5.5" stroke={`url(#${gradId})`} strokeWidth="2" fill="#090a0f" />
+        {/* Security badge at top-right with crisp white fill */}
+        <circle cx="40" cy="14" r="5.5" stroke={`url(#${gradId})`} strokeWidth="2" fill="white" />
         <path
           d="M38 14 L39.5 15.5 L42.5 12.5"
           stroke={`url(#${gradId})`}
@@ -120,13 +121,13 @@ const pillars: PillarItem[] = [
     title: "New Revenue Streams",
     desc: "Unlock advertising and partnership opportunities at scale.",
     gradientId: "grad-new-revenue",
-    glowColor: "rgba(236, 72, 153, 0.28)",
+    glowColor: "rgba(236, 72, 153, 0.3)",
     renderIcon: (gradId) => (
       <svg
         viewBox="0 0 56 56"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
-        className="w-14 h-14 sm:w-16 sm:h-16 transition-transform duration-500 group-hover:scale-110 drop-shadow-[0_0_16px_rgba(236,72,153,0.4)]"
+        className="w-14 h-14 sm:w-16 sm:h-16 transition-transform duration-500 group-hover:scale-110"
       >
         <defs>
           <linearGradient id={gradId} x1="0%" y1="0%" x2="100%" y2="100%">
@@ -169,13 +170,13 @@ const pillars: PillarItem[] = [
     title: "Connected Infrastructure",
     desc: "Seamless connectivity across vehicles, cities and systems.",
     gradientId: "grad-connected-infra",
-    glowColor: "rgba(59, 130, 246, 0.28)",
+    glowColor: "rgba(59, 130, 246, 0.3)",
     renderIcon: (gradId) => (
       <svg
         viewBox="0 0 56 56"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
-        className="w-14 h-14 sm:w-16 sm:h-16 transition-transform duration-500 group-hover:scale-110 drop-shadow-[0_0_16px_rgba(59,130,246,0.4)]"
+        className="w-14 h-14 sm:w-16 sm:h-16 transition-transform duration-500 group-hover:scale-110"
       >
         <defs>
           <linearGradient id={gradId} x1="0%" y1="0%" x2="100%" y2="100%">
@@ -191,16 +192,16 @@ const pillars: PillarItem[] = [
         <line x1="28" y1="28" x2="17" y2="40" stroke={`url(#${gradId})`} strokeWidth="2" strokeLinecap="round" />
         <line x1="28" y1="28" x2="14" y2="18" stroke={`url(#${gradId})`} strokeWidth="2" strokeLinecap="round" />
 
-        {/* Central Core Hub */}
-        <circle cx="28" cy="28" r="5.5" stroke={`url(#${gradId})`} strokeWidth="2.6" fill="#090a0f" />
-        <circle cx="28" cy="28" r="2.2" fill={`url(#${gradId})`} />
+        {/* Central Core Hub with crisp white fill */}
+        <circle cx="28" cy="28" r="5.5" stroke={`url(#${gradId})`} strokeWidth="2.6" fill="white" />
+        <circle cx="28" cy="28" r="2.5" fill={`url(#${gradId})`} />
 
-        {/* Satellite distributed nodes */}
-        <circle cx="28" cy="12" r="3.5" stroke={`url(#${gradId})`} strokeWidth="2.2" fill="#090a0f" />
-        <circle cx="42" cy="18" r="3.5" stroke={`url(#${gradId})`} strokeWidth="2.2" fill="#090a0f" />
-        <circle cx="39" cy="40" r="3.5" stroke={`url(#${gradId})`} strokeWidth="2.2" fill="#090a0f" />
-        <circle cx="17" cy="40" r="3.5" stroke={`url(#${gradId})`} strokeWidth="2.2" fill="#090a0f" />
-        <circle cx="14" cy="18" r="3.5" stroke={`url(#${gradId})`} strokeWidth="2.2" fill="#090a0f" />
+        {/* Satellite distributed nodes with clean white fills */}
+        <circle cx="28" cy="12" r="3.5" stroke={`url(#${gradId})`} strokeWidth="2.2" fill="white" />
+        <circle cx="42" cy="18" r="3.5" stroke={`url(#${gradId})`} strokeWidth="2.2" fill="white" />
+        <circle cx="39" cy="40" r="3.5" stroke={`url(#${gradId})`} strokeWidth="2.2" fill="white" />
+        <circle cx="17" cy="40" r="3.5" stroke={`url(#${gradId})`} strokeWidth="2.2" fill="white" />
+        <circle cx="14" cy="18" r="3.5" stroke={`url(#${gradId})`} strokeWidth="2.2" fill="white" />
       </svg>
     ),
   },
@@ -209,13 +210,13 @@ const pillars: PillarItem[] = [
     title: "Sustainable Future",
     desc: "Solar-powered mobility for a cleaner, greener planet.",
     gradientId: "grad-sustainable-future",
-    glowColor: "rgba(52, 211, 153, 0.28)",
+    glowColor: "rgba(16, 185, 129, 0.3)",
     renderIcon: (gradId) => (
       <svg
         viewBox="0 0 56 56"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
-        className="w-14 h-14 sm:w-16 sm:h-16 transition-transform duration-500 group-hover:scale-110 drop-shadow-[0_0_16px_rgba(52,211,153,0.4)]"
+        className="w-14 h-14 sm:w-16 sm:h-16 transition-transform duration-500 group-hover:scale-110"
       >
         <defs>
           <linearGradient id={gradId} x1="0%" y1="0%" x2="100%" y2="100%">
@@ -272,19 +273,20 @@ const pillars: PillarItem[] = [
 
 export function WhyVmovexaSection() {
   return (
-    <section className="relative py-24 sm:py-28 overflow-hidden bg-white">
-      {/* Dynamic Background Ambient Glow */}
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[850px] h-[380px] bg-gradient-to-b from-cyan-500/10 via-purple-500/10 to-transparent blur-[130px] pointer-events-none -z-10" />
-      <div className="absolute bottom-0 right-1/4 w-[400px] h-[250px] bg-pink-500/5 blur-[120px] pointer-events-none -z-10" />
+    <section className="relative py-24 sm:py-32 overflow-hidden bg-white transform-gpu">
+      {/* Full-Bleed Seamless Background Ambient Mesh (Spans 100% width, zero edge cuts) */}
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_85%_65%_at_50%_45%,rgba(56,189,248,0.18)_0%,rgba(168,85,247,0.15)_40%,rgba(236,72,153,0.12)_70%,transparent_100%)] pointer-events-none z-0" />
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_40%,rgba(56,189,248,0.14)_0%,transparent_60%)] pointer-events-none z-0" />
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_80%_45%,rgba(236,72,153,0.12)_0%,transparent_60%)] pointer-events-none z-0" />
 
       {/* Cyber Grid Texture Overlay */}
-      <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(0,0,0,0.03)_1px,transparent_1px),linear-gradient(to_bottom,rgba(0,0,0,0.03)_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_70%_55%_at_50%_40%,#000_65%,transparent_100%)] pointer-events-none" />
+      <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(0,0,0,0.035)_1px,transparent_1px),linear-gradient(to_bottom,rgba(0,0,0,0.035)_1px,transparent_1px)] bg-[size:3.5rem_3.5rem] [mask-image:radial-gradient(ellipse_75%_60%_at_50%_50%,#000_70%,transparent_100%)] pointer-events-none z-0" />
 
       <div className="container max-w-7xl mx-auto px-6 relative z-10">
         {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto mb-14 sm:mb-16">
+        <div className="text-center max-w-3xl mx-auto mb-16 sm:mb-20">
           <EditorialLine>
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-cyan-50 border border-cyan-200 text-cyan-800 font-mono text-xs tracking-wider mb-5 shadow-sm">
+            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/90 border border-cyan-200/80 text-cyan-800 font-mono text-xs tracking-wider mb-5 shadow-[0_4px_16px_rgba(6,182,212,0.1),inset_0_1px_1px_rgba(255,255,255,1)]">
               <span className="w-1.5 h-1.5 rounded-full bg-gradient-to-r from-cyan-400 to-purple-400 animate-pulse" />
               <span className="uppercase tracking-[0.25em] text-[11px] font-semibold text-cyan-800">
                 WHY VMOVEXA
@@ -300,53 +302,80 @@ export function WhyVmovexaSection() {
 
           {/* Sleek Brand Gradient Accent Divider */}
           <div className="flex justify-center mt-5">
-            <div className="w-16 sm:w-20 h-1 rounded-full bg-gradient-to-r from-cyan-400 via-purple-500 to-pink-500 shadow-[0_0_12px_rgba(168,85,247,0.45)]" />
+            <div className="w-20 sm:w-24 h-1 rounded-full bg-gradient-to-r from-cyan-400 via-purple-500 to-pink-500 shadow-[0_0_14px_rgba(168,85,247,0.5)]" />
           </div>
         </div>
 
-        {/* 5 Pillars Layout */}
-        <div className="rounded-3xl border border-zinc-200/70 bg-white shadow-[0_8px_30px_rgba(0,0,0,0.04)] overflow-hidden">
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 divide-y sm:divide-y-0 sm:divide-x divide-zinc-200/70">
-            {pillars.map((pillar, idx) => (
-              <GsapScrollReveal key={pillar.title} delay={idx * 0.08}>
-                <div className="relative py-10 px-5 sm:py-12 sm:px-6 flex flex-col items-center text-center group cursor-default transition-all duration-300 hover:bg-zinc-50/50 h-full justify-between">
-                  {/* Subtle hover backlight glow */}
-                  <div
-                    className="absolute -top-10 left-1/2 -translate-x-1/2 w-36 h-36 rounded-full blur-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"
-                    style={{ background: pillar.glowColor }}
-                  />
+        {/* 5 Ultra-Premium Glossy Pillars Layout */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6">
+          {pillars.map((pillar, idx) => (
+            <GsapScrollReveal key={pillar.title} delay={idx * 0.08}>
+              <div className="relative group h-full transform-gpu">
+                {/* Individual Ambient Backlight Glow behind each card (native radial gradient, zero filter cost) */}
+                <div
+                  className="absolute -inset-2 rounded-[2.5rem] opacity-50 pointer-events-none transform-gpu"
+                  style={{ background: `radial-gradient(ellipse at center, ${pillar.glowColor} 0%, transparent 70%)` }}
+                />
 
-                  {/* Icon with interactive scaling & glow */}
-                  <div className="relative mb-6 flex items-center justify-center">
+                {/* Primary Premium Glossy Card */}
+                <div
+                  className="relative h-full py-9 px-5 sm:py-11 sm:px-6 flex flex-col items-center text-center cursor-default transition-all duration-300 rounded-[2rem] overflow-hidden justify-between
+                    bg-gradient-to-b from-white via-white/95 to-zinc-50/50
+                    border border-zinc-200/70 hover:border-zinc-300/90
+                    shadow-[0_4px_20px_-4px_rgba(0,0,0,0.04),0_12px_36px_-6px_rgba(0,0,0,0.03),inset_0_1.5px_2px_rgba(255,255,255,1),inset_0_0_0_1px_rgba(255,255,255,0.8)]
+                    hover:shadow-[0_20px_45px_-10px_rgba(0,0,0,0.08),0_4px_16px_rgba(0,0,0,0.02),inset_0_2px_3px_rgba(255,255,255,1)]
+                    hover:-translate-y-2
+                    transform-gpu
+                  "
+                >
+                  {/* Diagonal Gloss Specular Glaze (Liquid Glass reflection) */}
+                  <div className="absolute inset-0 bg-gradient-to-br from-white/90 via-white/20 to-transparent pointer-events-none rounded-[2rem]" />
+
+                  {/* Top Curved Specular Gloss Highlight */}
+                  <div className="absolute inset-x-0 top-0 h-44 bg-gradient-to-b from-white via-white/30 to-transparent pointer-events-none rounded-t-[2rem]" />
+
+                  {/* Top Edge Specular White Rim */}
+                  <div className="absolute top-0 inset-x-8 h-[1.5px] bg-gradient-to-r from-transparent via-white to-transparent pointer-events-none" />
+
+                  {/* 3D Glossy Jewel Icon Pod */}
+                  <div className="relative mb-6 flex items-center justify-center transform-gpu">
+                    {/* Ambient Glow behind icon */}
                     <div
-                      className="absolute inset-0 rounded-3xl blur-2xl opacity-0 group-hover:opacity-60 transition-opacity duration-500 pointer-events-none"
-                      style={{ background: pillar.glowColor }}
+                      className="absolute -inset-3 rounded-full opacity-40 pointer-events-none transform-gpu"
+                      style={{ background: `radial-gradient(circle at center, ${pillar.glowColor} 0%, transparent 70%)` }}
                     />
-                    <div className="relative z-10 w-20 h-20 sm:w-24 sm:h-24 rounded-3xl bg-white border border-zinc-200 group-hover:border-cyan-200 flex items-center justify-center transition-all duration-500 shadow-sm group-hover:scale-105 group-hover:shadow-[0_8px_32px_rgba(6,182,212,0.12)]">
+
+                    {/* Outer Pod */}
+                    <div className="relative z-10 w-20 h-20 sm:w-22 sm:h-22 rounded-2xl sm:rounded-3xl flex items-center justify-center transition-all duration-300 bg-gradient-to-b from-white via-zinc-50/80 to-white border border-zinc-200/60 shadow-[0_10px_25px_-5px_rgba(0,0,0,0.05),inset_0_2px_4px_rgba(255,255,255,1),inset_0_-2px_4px_rgba(0,0,0,0.02)] group-hover:scale-105 group-hover:border-cyan-200/80 group-hover:shadow-[0_14px_30px_-5px_rgba(56,189,248,0.18),inset_0_2px_4px_rgba(255,255,255,1)]">
+                      {/* Inner concentric refined hairline ring */}
+                      <div className="absolute inset-1.5 rounded-[1.1rem] sm:rounded-[1.4rem] border border-zinc-100/80 pointer-events-none" />
+                      {/* Top curved reflection inside icon pod */}
+                      <div className="absolute inset-x-0 top-0 h-1/2 bg-gradient-to-b from-white via-white/20 to-transparent rounded-t-2xl sm:rounded-t-3xl pointer-events-none" />
                       {pillar.renderIcon(pillar.gradientId)}
                     </div>
                   </div>
 
                   {/* Title & Description */}
-                  <div className="flex-1 flex flex-col items-center justify-start max-w-[220px]">
-                    <h3 className="text-base sm:text-lg font-heading font-semibold text-zinc-900 mb-2.5 tracking-tight group-hover:text-cyan-600 transition-colors">
+                  <div className="relative z-10 flex-1 flex flex-col items-center justify-start max-w-[210px]">
+                    <h3 className="text-sm sm:text-base font-heading font-bold text-zinc-900 mb-2.5 tracking-tight uppercase group-hover:text-cyan-600 transition-colors duration-200">
                       {pillar.title}
                     </h3>
-                    <p className="text-xs sm:text-[13px] text-zinc-600 leading-relaxed font-light group-hover:text-zinc-800 transition-colors">
+                    <p className="text-xs sm:text-[13px] text-zinc-500 leading-relaxed font-normal group-hover:text-zinc-700 transition-colors duration-200">
                       {pillar.desc}
                     </p>
                   </div>
 
-                  {/* Subtle Expanding Bottom Accent Line on Hover */}
-                  <div className="w-full flex justify-center pt-6 mt-2">
-                    <div className="h-[2px] w-0 group-hover:w-12 transition-all duration-300 bg-gradient-to-r from-cyan-400 via-purple-500 to-pink-500 rounded-full" />
+                  {/* Bottom Accent Glow Indicator */}
+                  <div className="relative z-10 w-full flex justify-center pt-6 mt-auto">
+                    <div className="h-[3px] w-7 group-hover:w-16 transition-all duration-300 rounded-full bg-gradient-to-r from-cyan-400 via-purple-500 to-pink-500 shadow-[0_2px_8px_rgba(168,85,247,0.4)]" />
                   </div>
                 </div>
-              </GsapScrollReveal>
-            ))}
-          </div>
+              </div>
+            </GsapScrollReveal>
+          ))}
         </div>
       </div>
     </section>
   );
 }
+
