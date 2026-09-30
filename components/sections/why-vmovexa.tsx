@@ -273,15 +273,15 @@ const pillars: PillarItem[] = [
 
 export function WhyVmovexaSection() {
   return (
-    <section className="relative py-24 sm:py-32 overflow-hidden bg-white">
+    <section className="relative pt-6 pb-10 sm:pt-8 sm:pb-12 overflow-hidden bg-white">
       {/* Cyber Grid Texture Overlay on Pure White */}
       <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(0,0,0,0.035)_1px,transparent_1px),linear-gradient(to_bottom,rgba(0,0,0,0.035)_1px,transparent_1px)] bg-[size:3.5rem_3.5rem] [mask-image:radial-gradient(ellipse_80%_65%_at_50%_50%,#000_70%,transparent_100%)] pointer-events-none" />
 
       <div className="container max-w-7xl mx-auto px-6 relative z-10">
         {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto mb-16 sm:mb-20">
+        <div className="text-center max-w-3xl mx-auto mb-8 sm:mb-10">
           <EditorialLine>
-            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white border border-cyan-200/80 text-cyan-800 font-mono text-xs tracking-wider mb-5 shadow-[0_2px_12px_rgba(6,182,212,0.08),inset_0_1px_1px_rgba(255,255,255,1)]">
+            <div className="inline-flex items-center gap-2 px-4 py-1 rounded-full bg-white border border-cyan-200/80 text-cyan-800 font-mono text-xs tracking-wider mb-2.5 shadow-[0_2px_12px_rgba(6,182,212,0.08),inset_0_1px_1px_rgba(255,255,255,1)]">
               <span className="w-1.5 h-1.5 rounded-full bg-gradient-to-r from-cyan-400 to-purple-400 animate-pulse" />
               <span className="uppercase tracking-[0.25em] text-[11px] font-semibold text-cyan-800">
                 WHY VMOVEXA
@@ -290,13 +290,14 @@ export function WhyVmovexaSection() {
           </EditorialLine>
 
           <EditorialLine delay={0.1}>
-            <h2 className="text-3xl sm:text-5xl lg:text-6xl font-heading font-semibold tracking-tight text-zinc-900 leading-tight mb-4 uppercase">
-              Transportation <span className="gradient-text font-semibold">Deserves Better.</span>
+            <h2 className="text-3xl sm:text-5xl lg:text-6xl font-heading font-bold tracking-tight text-zinc-900 leading-[0.95] sm:leading-[0.98] mb-3 uppercase">
+              Transportation <br className="hidden sm:inline" />
+              <span className="gradient-text font-bold">Deserves Better.</span>
             </h2>
           </EditorialLine>
 
           {/* Sleek Brand Gradient Accent Divider */}
-          <div className="flex justify-center mt-5">
+          <div className="flex justify-center mt-3">
             <div className="w-20 sm:w-24 h-1 rounded-full bg-gradient-to-r from-cyan-400 via-purple-500 to-pink-500 shadow-[0_0_14px_rgba(168,85,247,0.5)]" />
           </div>
         </div>
