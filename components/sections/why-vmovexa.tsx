@@ -272,28 +272,28 @@ const pillars: PillarItem[] = [
 
 export function WhyVmovexaSection() {
   return (
-    <section className="relative py-24 sm:py-28 overflow-hidden bg-black">
+    <section className="relative py-24 sm:py-28 overflow-hidden bg-white">
       {/* Dynamic Background Ambient Glow */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[850px] h-[380px] bg-gradient-to-b from-cyan-500/10 via-purple-500/10 to-transparent blur-[130px] pointer-events-none -z-10" />
       <div className="absolute bottom-0 right-1/4 w-[400px] h-[250px] bg-pink-500/5 blur-[120px] pointer-events-none -z-10" />
 
       {/* Cyber Grid Texture Overlay */}
-      <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(255,255,255,0.02)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.02)_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_70%_55%_at_50%_40%,#000_65%,transparent_100%)] pointer-events-none" />
+      <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(0,0,0,0.03)_1px,transparent_1px),linear-gradient(to_bottom,rgba(0,0,0,0.03)_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_70%_55%_at_50%_40%,#000_65%,transparent_100%)] pointer-events-none" />
 
       <div className="container max-w-7xl mx-auto px-6 relative z-10">
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-14 sm:mb-16">
           <EditorialLine>
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/[0.04] border border-white/10 text-white/80 font-mono text-xs tracking-wider mb-5 shadow-[0_0_20px_rgba(255,255,255,0.03)] backdrop-blur-md">
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-cyan-50 border border-cyan-200 text-cyan-800 font-mono text-xs tracking-wider mb-5 shadow-sm">
               <span className="w-1.5 h-1.5 rounded-full bg-gradient-to-r from-cyan-400 to-purple-400 animate-pulse" />
-              <span className="uppercase tracking-[0.25em] text-[11px] font-semibold text-white/70">
+              <span className="uppercase tracking-[0.25em] text-[11px] font-semibold text-cyan-800">
                 WHY VMOVEXA
               </span>
             </div>
           </EditorialLine>
 
           <EditorialLine delay={0.1}>
-            <h2 className="text-3xl sm:text-5xl lg:text-6xl font-heading font-semibold tracking-tight text-white leading-tight mb-4 uppercase">
+            <h2 className="text-3xl sm:text-5xl lg:text-6xl font-heading font-semibold tracking-tight text-zinc-900 leading-tight mb-4 uppercase">
               Transportation <span className="gradient-text font-semibold">Deserves Better.</span>
             </h2>
           </EditorialLine>
@@ -305,11 +305,11 @@ export function WhyVmovexaSection() {
         </div>
 
         {/* 5 Pillars Layout */}
-        <div className="rounded-3xl border border-white/[0.08] bg-[#07080d]/80 backdrop-blur-md shadow-[0_12px_40px_rgba(0,0,0,0.6)] overflow-hidden">
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 divide-y sm:divide-y-0 sm:divide-x divide-white/[0.06]">
+        <div className="rounded-3xl border border-zinc-200/70 bg-white shadow-[0_8px_30px_rgba(0,0,0,0.04)] overflow-hidden">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 divide-y sm:divide-y-0 sm:divide-x divide-zinc-200/70">
             {pillars.map((pillar, idx) => (
               <GsapScrollReveal key={pillar.title} delay={idx * 0.08}>
-                <div className="relative py-10 px-5 sm:py-12 sm:px-6 flex flex-col items-center text-center group cursor-default transition-all duration-300 hover:bg-white/[0.025] h-full justify-between">
+                <div className="relative py-10 px-5 sm:py-12 sm:px-6 flex flex-col items-center text-center group cursor-default transition-all duration-300 hover:bg-zinc-50/50 h-full justify-between">
                   {/* Subtle hover backlight glow */}
                   <div
                     className="absolute -top-10 left-1/2 -translate-x-1/2 w-36 h-36 rounded-full blur-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"
@@ -319,20 +319,20 @@ export function WhyVmovexaSection() {
                   {/* Icon with interactive scaling & glow */}
                   <div className="relative mb-6 flex items-center justify-center">
                     <div
-                      className="absolute inset-0 rounded-3xl blur-2xl opacity-0 group-hover:opacity-80 transition-opacity duration-500 pointer-events-none"
+                      className="absolute inset-0 rounded-3xl blur-2xl opacity-0 group-hover:opacity-60 transition-opacity duration-500 pointer-events-none"
                       style={{ background: pillar.glowColor }}
                     />
-                    <div className="relative z-10 w-20 h-20 sm:w-24 sm:h-24 rounded-3xl bg-white/[0.045] border border-white/[0.12] group-hover:border-white/30 flex items-center justify-center transition-all duration-500 shadow-[0_8px_32px_rgba(0,0,0,0.6)] group-hover:scale-105 group-hover:bg-white/[0.08]">
+                    <div className="relative z-10 w-20 h-20 sm:w-24 sm:h-24 rounded-3xl bg-white border border-zinc-200 group-hover:border-cyan-200 flex items-center justify-center transition-all duration-500 shadow-sm group-hover:scale-105 group-hover:shadow-[0_8px_32px_rgba(6,182,212,0.12)]">
                       {pillar.renderIcon(pillar.gradientId)}
                     </div>
                   </div>
 
                   {/* Title & Description */}
                   <div className="flex-1 flex flex-col items-center justify-start max-w-[220px]">
-                    <h3 className="text-base sm:text-lg font-heading font-semibold text-white mb-2.5 tracking-tight group-hover:text-cyan-300 transition-colors">
+                    <h3 className="text-base sm:text-lg font-heading font-semibold text-zinc-900 mb-2.5 tracking-tight group-hover:text-cyan-600 transition-colors">
                       {pillar.title}
                     </h3>
-                    <p className="text-xs sm:text-[13px] text-zinc-400 leading-relaxed font-light group-hover:text-zinc-300 transition-colors">
+                    <p className="text-xs sm:text-[13px] text-zinc-600 leading-relaxed font-light group-hover:text-zinc-800 transition-colors">
                       {pillar.desc}
                     </p>
                   </div>

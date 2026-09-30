@@ -97,14 +97,14 @@ const ecosystemOutputs = [
 
 export function WhatIsVmovexaSection() {
   return (
-    <section className="py-24 sm:py-28 relative overflow-hidden bg-white">
+    <section className="py-24 sm:py-28 relative overflow-hidden bg-[#020610]">
       <GridWaveBackground variant="purple" />
 
       <div className="container max-w-7xl mx-auto px-6 relative z-10">
         {/* Section Header: 10-Second Clarity */}
         <div className="text-center max-w-3xl mx-auto mb-16">
           <EditorialLine>
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-cyan-50 border border-cyan-200 text-cyan-800 font-mono text-xs tracking-wider mb-4 shadow-sm">
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-cyan-500/10 border border-cyan-500/30 text-cyan-400 font-mono text-xs tracking-wider mb-4 shadow-sm">
               <span>THE INTELLIGENCE LAYER</span>
             </div>
           </EditorialLine>
@@ -113,21 +113,24 @@ export function WhatIsVmovexaSection() {
             <h2 className="text-3xl sm:text-5xl lg:text-6xl font-medium font-heading tracking-tight uppercase text-zinc-900 leading-[1.08] mb-6">
               <span className="flex justify-center mb-4 sm:mb-6">
                 <Image
-                  src="/logos/logo-hover-menu-cropped.png"
+                  src="/logos/vmovexa-wordmark-dark.svg"
                   alt="VMOVEXA Logo"
                   width={360}
                   height={30}
                   className="h-8 sm:h-10 lg:h-12 w-auto"
                 />
               </span>
-              <span className="gradient-text font-semibold">
-                The Intelligence Layer For Moving Infrastructure.
+              <span className="gradient-text font-semibold uppercase">
+                The Intelligence Layer
+              </span>
+              <span className="text-white font-semibold uppercase">
+                {" "}For Moving Infrastructure.
               </span>
             </h2>
           </EditorialLine>
 
           <BlurReveal delay={0.2}>
-            <p className="text-base sm:text-lg text-zinc-600 font-sans font-light leading-relaxed max-w-2xl mx-auto">
+            <p className="text-base sm:text-lg text-white/70 font-sans font-light leading-relaxed max-w-2xl mx-auto">
               We connect physical vehicles, screens, edge computing, and centralized cloud systems into one unified mobility intelligence stack.
             </p>
           </BlurReveal>
@@ -141,17 +144,17 @@ export function WhatIsVmovexaSection() {
               <GsapScrollReveal key={pillar.title} delay={i * 0.08}>
                 <TiltCard maxTilt={5} className="h-full">
                   <div
-                    className={`p-6 rounded-2xl bg-white/[0.12] hover:bg-white/[0.28] backdrop-blur-[2px] border border-zinc-200/70 hover:border-cyan-400/50 hover:-translate-y-1 hover:shadow-[0_8px_30px_rgba(6,182,212,0.12)] transition-all duration-300 flex flex-col justify-between group cursor-default shadow-[0_4px_24px_rgba(0,0,0,0.02)] h-full`}
+                    className={`p-6 rounded-2xl bg-white/[0.02] hover:bg-white/[0.05] backdrop-blur-[2px] border border-white/10 hover:border-cyan-400/50 hover:-translate-y-1 hover:shadow-[0_8px_30px_rgba(6,182,212,0.12)] transition-all duration-300 flex flex-col justify-between group cursor-default shadow-[0_4px_24px_rgba(0,0,0,0.02)] h-full`}
                     style={{ backdropFilter: 'blur(2px)', WebkitBackdropFilter: 'blur(2px)' }}
                   >
                     <div>
-                      <div className={`w-11 h-11 rounded-xl bg-white/60 backdrop-blur-sm border border-zinc-200/70 ${pillar.accent} flex items-center justify-center mb-5 group-hover:scale-110 transition-transform duration-300 shadow-sm`}>
+                      <div className={`w-11 h-11 rounded-xl bg-white/[0.05] backdrop-blur-sm border border-white/10 ${pillar.accent} flex items-center justify-center mb-5 group-hover:scale-110 transition-transform duration-300 shadow-sm`}>
                         <Icon size={22} />
                       </div>
-                      <h3 className="text-lg font-bold text-zinc-900 mb-2 tracking-tight group-hover:text-cyan-600 transition-colors">
+                      <h3 className="text-lg font-bold text-white mb-2 tracking-tight group-hover:text-cyan-400 transition-colors">
                         {pillar.title}
                       </h3>
-                      <p className="text-xs text-zinc-600 leading-relaxed font-light group-hover:text-zinc-800">
+                      <p className="text-xs text-white/60 leading-relaxed font-light group-hover:text-white/80">
                         {pillar.desc}
                       </p>
                     </div>
@@ -166,12 +169,12 @@ export function WhatIsVmovexaSection() {
         <GsapScrollReveal delay={0.25}>
           <div className="pt-12 mt-20 border-t border-zinc-200 relative">
             {/* Flow Eyebrow */}
-            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-8 mb-8 border-b border-zinc-200">
+            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-8 mb-8 border-b border-white/10">
               <div>
-                <span className="font-mono text-xs uppercase tracking-widest text-cyan-600 block mb-1">
+                <span className="font-mono text-xs uppercase tracking-widest text-cyan-400 block mb-1">
                   Ecosystem Architecture
                 </span>
-                <h4 className="text-xl sm:text-2xl font-bold text-zinc-900 tracking-tight">
+                <h4 className="text-xl sm:text-2xl font-bold text-white tracking-tight">
                   How Intelligence Moves Through The Physical World
                 </h4>
               </div>
@@ -184,87 +187,87 @@ export function WhatIsVmovexaSection() {
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 relative mb-8">
               {/* Node 1: VEHICLE */}
               <div 
-                className="p-6 rounded-2xl bg-white/[0.12] hover:bg-white/[0.28] backdrop-blur-[2px] border border-zinc-200/70 relative group hover:border-cyan-400 hover:shadow-[0_8px_30px_rgba(6,182,212,0.12)] transition-all duration-500 shadow-[0_4px_24px_rgba(0,0,0,0.02)] cursor-default"
+                className="p-6 rounded-2xl bg-white/[0.02] hover:bg-white/[0.05] backdrop-blur-[2px] border border-white/10 relative group hover:border-cyan-400 hover:shadow-[0_8px_30px_rgba(6,182,212,0.12)] transition-all duration-500 shadow-[0_4px_24px_rgba(0,0,0,0.02)] cursor-default"
                 style={{ backdropFilter: 'blur(2px)', WebkitBackdropFilter: 'blur(2px)' }}
               >
                 <div className="flex items-center justify-between mb-4">
-                  <span className="text-[11px] font-mono text-cyan-600 uppercase tracking-widest font-semibold">
+                  <span className="text-[11px] font-mono text-cyan-400 uppercase tracking-widest font-semibold">
                     Level 01
                   </span>
                   <span className="w-2 h-2 rounded-full bg-cyan-500" />
                 </div>
                 <div className="flex items-center gap-3.5 mb-3">
-                  <div className="w-12 h-12 rounded-xl bg-cyan-50 border border-cyan-200 flex items-center justify-center text-cyan-600 shadow-sm">
+                  <div className="w-12 h-12 rounded-xl bg-cyan-500/10 border border-cyan-500/30 flex items-center justify-center text-cyan-400 shadow-sm">
                     <RiBusLine size={24} />
                   </div>
                   <div>
-                    <h5 className="text-xl font-bold text-zinc-900  tracking-wide">
+                    <h5 className="text-xl font-bold text-white  tracking-wide">
                       Vehicle
                     </h5>
-                    <div className="text-xs text-zinc-500 font-mono">
+                    <div className="text-xs text-zinc-400 font-mono">
                       Physical Moving Fleets
                     </div>
                   </div>
                 </div>
-                <p className="text-xs text-zinc-600 leading-relaxed font-light">
+                <p className="text-xs text-white/60 leading-relaxed font-light">
                   Buses, shuttles, and commercial transit fleets traveling through urban corridors.
                 </p>
               </div>
 
               {/* Node 2: VMOVEXA CORE */}
               <div 
-                className="p-6 rounded-2xl bg-white/[0.12] hover:bg-white/[0.28] backdrop-blur-[2px] border border-zinc-200/70 relative group hover:border-indigo-400 hover:shadow-[0_8px_30px_rgba(99,102,241,0.12)] transition-all duration-500 shadow-[0_4px_24px_rgba(0,0,0,0.02)] cursor-default"
+                className="p-6 rounded-2xl bg-white/[0.02] hover:bg-white/[0.05] backdrop-blur-[2px] border border-white/10 relative group hover:border-indigo-400 hover:shadow-[0_8px_30px_rgba(99,102,241,0.12)] transition-all duration-500 shadow-[0_4px_24px_rgba(0,0,0,0.02)] cursor-default"
                 style={{ backdropFilter: 'blur(2px)', WebkitBackdropFilter: 'blur(2px)' }}
               >
                 <div className="flex items-center justify-between mb-4">
-                  <span className="text-[11px] font-mono text-indigo-600 uppercase tracking-widest font-semibold">
+                  <span className="text-[11px] font-mono text-indigo-400 uppercase tracking-widest font-semibold">
                     Level 02
                   </span>
                   <span className="w-2 h-2 rounded-full bg-indigo-500 animate-pulse" />
                 </div>
                 <div className="flex items-center gap-3.5 mb-3">
-                  <div className="w-12 h-12 rounded-xl bg-indigo-50 border border-indigo-200 flex items-center justify-center text-indigo-600 shadow-sm">
+                  <div className="w-12 h-12 rounded-xl bg-indigo-500/10 border border-indigo-500/30 flex items-center justify-center text-indigo-400 shadow-sm">
                     <FiCpu size={24} />
                   </div>
                   <div>
-                    <h5 className="text-xl font-bold text-zinc-900  tracking-wide">
+                    <h5 className="text-xl font-bold text-white  tracking-wide">
                       VMOVEXA Core
                     </h5>
-                    <div className="text-xs text-indigo-600 font-mono font-medium">
+                    <div className="text-xs text-indigo-400 font-mono font-medium">
                       In-Vehicle Edge Compute
                     </div>
                   </div>
                 </div>
-                <p className="text-xs text-zinc-600 leading-relaxed font-light">
+                <p className="text-xs text-white/60 leading-relaxed font-light">
                   Vehicle-side operating runtime that evaluates location logic and syncs digital screens locally.
                 </p>
               </div>
 
               {/* Node 3: CLOUD */}
               <div 
-                className="p-6 rounded-2xl bg-white/[0.12] hover:bg-white/[0.28] backdrop-blur-[2px] border border-zinc-200/70 relative group hover:border-purple-400 hover:shadow-[0_8px_30px_rgba(168,85,247,0.12)] transition-all duration-500 shadow-[0_4px_24px_rgba(0,0,0,0.02)] cursor-default"
+                className="p-6 rounded-2xl bg-white/[0.02] hover:bg-white/[0.05] backdrop-blur-[2px] border border-white/10 relative group hover:border-purple-400 hover:shadow-[0_8px_30px_rgba(168,85,247,0.12)] transition-all duration-500 shadow-[0_4px_24px_rgba(0,0,0,0.02)] cursor-default"
                 style={{ backdropFilter: 'blur(2px)', WebkitBackdropFilter: 'blur(2px)' }}
               >
                 <div className="flex items-center justify-between mb-4">
-                  <span className="text-[11px] font-mono text-purple-600 uppercase tracking-widest font-semibold">
+                  <span className="text-[11px] font-mono text-purple-400 uppercase tracking-widest font-semibold">
                     Level 03
                   </span>
                   <span className="w-2 h-2 rounded-full bg-purple-500" />
                 </div>
                 <div className="flex items-center gap-3.5 mb-3">
-                  <div className="w-12 h-12 rounded-xl bg-purple-50 border border-purple-200 flex items-center justify-center text-purple-600 shadow-sm">
+                  <div className="w-12 h-12 rounded-xl bg-purple-500/10 border border-purple-500/30 flex items-center justify-center text-purple-400 shadow-sm">
                     <FiCloud size={24} />
                   </div>
                   <div>
-                    <h5 className="text-xl font-bold text-zinc-900  tracking-wide">
+                    <h5 className="text-xl font-bold text-white  tracking-wide">
                       Cloud
                     </h5>
-                    <div className="text-xs text-purple-600 font-mono font-medium">
+                    <div className="text-xs text-purple-400 font-mono font-medium">
                       Global Control &amp; Scale
                     </div>
                   </div>
                 </div>
-                <p className="text-xs text-zinc-600 leading-relaxed font-light">
+                <p className="text-xs text-white/60 leading-relaxed font-light">
                   Centralized platform defining fleet policies, campaign rules, and telemetry models across the world.
                 </p>
               </div>
@@ -272,7 +275,7 @@ export function WhatIsVmovexaSection() {
 
             {/* Connecting Transition Divider with Flow Pulse */}
             <div className="flex items-center justify-center py-2 mb-8">
-              <div className="flex items-center gap-2 px-4 py-1.5 rounded-full bg-zinc-50 border border-zinc-200 font-mono text-[11px] text-zinc-500 shadow-sm">
+              <div className="flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/[0.05] border border-white/10 font-mono text-[11px] text-zinc-400 shadow-sm">
                 <span className="text-cyan-600">↓</span>
                 <span>Powering Enterprise Mobility Dimensions</span>
                 <span className="text-cyan-600">↓</span>
@@ -286,16 +289,16 @@ export function WhatIsVmovexaSection() {
                 return (
                   <div
                     key={item.title}
-                    className="p-4 rounded-xl bg-white/[0.12] hover:bg-white/[0.28] backdrop-blur-[2px] border border-zinc-200/70 hover:border-cyan-400/50 hover:shadow-[0_8px_30px_rgba(6,182,212,0.12)] transition-all duration-300 group cursor-default shadow-[0_4px_24px_rgba(0,0,0,0.02)]"
+                    className="p-4 rounded-xl bg-white/[0.02] hover:bg-white/[0.05] backdrop-blur-[2px] border border-white/10 hover:border-cyan-400/50 hover:shadow-[0_8px_30px_rgba(6,182,212,0.12)] transition-all duration-300 group cursor-default shadow-[0_4px_24px_rgba(0,0,0,0.02)]"
                     style={{ backdropFilter: 'blur(2px)', WebkitBackdropFilter: 'blur(2px)' }}
                   >
                     <div className={`${item.color} mb-2.5`}>
                       <ItemIcon size={18} />
                     </div>
-                    <div className="text-xs font-semibold text-zinc-900 mb-1 group-hover:text-cyan-700 transition-colors">
+                    <div className="text-xs font-semibold text-white mb-1 group-hover:text-cyan-400 transition-colors">
                       {item.title}
                     </div>
-                    <div className="text-[11px] text-zinc-500 leading-snug font-light">
+                    <div className="text-[11px] text-white/60 leading-snug font-light">
                       {item.desc}
                     </div>
                   </div>
