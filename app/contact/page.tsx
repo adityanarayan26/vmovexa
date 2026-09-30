@@ -186,7 +186,7 @@ export default function ContactPage() {
 
           <CubertoLines
             as="h1"
-            className="text-4xl sm:text-5xl lg:text-7xl font-extrabold tracking-tight uppercase leading-[1.05] max-w-4xl mb-6 text-white"
+            className="text-4xl sm:text-5xl lg:text-7xl font-extrabold tracking-tight uppercase leading-[0.98] sm:leading-[1.02] max-w-4xl mb-6 text-white"
             delay={0.1}
             lines={[
               "Connect With",

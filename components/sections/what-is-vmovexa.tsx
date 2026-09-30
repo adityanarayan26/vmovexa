@@ -110,7 +110,7 @@ export function WhatIsVmovexaSection() {
           </EditorialLine>
 
           <EditorialLine delay={0.1}>
-            <h2 className="text-3xl sm:text-5xl lg:text-6xl font-medium font-heading tracking-tight uppercase text-zinc-900 leading-[1.08] mb-6">
+            <h2 className="text-3xl sm:text-5xl lg:text-6xl font-medium font-heading tracking-tight uppercase text-zinc-900 leading-[0.98] sm:leading-[1.02] mb-6">
               <span className="flex justify-center mb-4 sm:mb-6">
                 <Image
                   src="/logos/vmovexa-wordmark-dark.svg"
@@ -260,7 +260,7 @@ export function WhatIsVmovexaSection() {
                   </div>
                   <div>
                     <h5 className="text-xl font-bold text-white  tracking-wide">
-                      Cloud
+                      VMOVEXA ONE
                     </h5>
                     <div className="text-xs text-purple-400 font-mono font-medium">
                       Global Control &amp; Scale

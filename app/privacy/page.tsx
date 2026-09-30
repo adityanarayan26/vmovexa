@@ -23,7 +23,7 @@ export default function PrivacyPage() {
           </Reveal>
           <CubertoLines
             as="h1"
-            className="text-4xl sm:text-5xl font-semibold tracking-tight text-white"
+            className="text-4xl sm:text-5xl font-semibold tracking-tight text-white leading-[0.98] sm:leading-[1.02]"
             delay={0.1}
             lines={[
               "Privacy Policy &",

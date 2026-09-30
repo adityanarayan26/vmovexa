@@ -141,7 +141,7 @@ export function CubertoLines({
         return (
           <div
             key={idx}
-            className="overflow-hidden pt-1 pb-2 block"
+            className="overflow-hidden py-0.5 block"
           >
             <motion.div
               initial={{ y: "115%", rotate, opacity: 0 }}

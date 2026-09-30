@@ -62,11 +62,11 @@ export default function SolutionsPage() {
 
               <CubertoLines
                 as="h1"
-                className="text-4xl sm:text-5xl lg:text-[68px] font-extrabold tracking-tight uppercase leading-[1.05] max-w-5xl mb-6 text-white"
+                className="text-4xl sm:text-5xl lg:text-[68px] font-extrabold tracking-tight uppercase leading-[0.98] sm:leading-[1.02] max-w-5xl mb-6 text-white"
                 delay={0.15}
                 lines={[
                   <span key="1" className="block">Technology That Moves</span>,
-                  <span key="sub" className="block mt-1">
+                  <span key="sub" className="block">
                     With <span className="gradient-text">The World.</span>
                   </span>
                 ]}

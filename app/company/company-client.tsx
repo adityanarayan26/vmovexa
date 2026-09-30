@@ -224,7 +224,7 @@ export function CompanyClient() {
             <div className="space-y-12">
               <EditorialTabItem delayOffset={0.1}>
                 <div className="max-w-3xl mb-8">
-                  <h2 className="text-4xl sm:text-6xl font-semibold tracking-tight  leading-[1.1] mb-5 text-balance">
+                  <h2 className="text-4xl sm:text-6xl font-semibold tracking-tight leading-[0.98] sm:leading-[1.02] mb-5 text-balance">
                     Build the Moving <br />
                     <span className="gradient-text">Ecosystem.</span>
                   </h2>
@@ -265,7 +265,7 @@ export function CompanyClient() {
             <div className="space-y-16">
               <EditorialTabItem delayOffset={0.1}>
                 <div className="max-w-3xl mb-8">
-                  <h2 className="text-3xl sm:text-5xl lg:text-[3.5rem] font-bold tracking-tight  leading-[1.1] mb-5 text-balance max-w-4xl">
+                  <h2 className="text-3xl sm:text-5xl lg:text-[3.5rem] font-bold tracking-tight leading-[0.98] sm:leading-[1.02] mb-5 text-balance max-w-4xl">
                     Building a New Digital Layer{" "}
                     <span className="gradient-text block sm:inline">Across Mobility.</span>
                   </h2>

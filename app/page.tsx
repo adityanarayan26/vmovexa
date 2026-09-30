@@ -45,6 +45,7 @@ import { ImageCurtainReveal, ModernImageSheen, FloatingElement } from "@/compone
 import { TiltCard } from "@/components/animations/tilt-card";
 import { WhatIsVmovexaSection } from "@/components/sections/what-is-vmovexa";
 import { WhyVmovexaSection } from "@/components/sections/why-vmovexa";
+import { MarketingComparisonSection } from "@/components/sections/marketing-comparison";
 import { OurEcosystemSection } from "@/components/sections/our-ecosystem";
 import { BlueprintFlowAnimation } from "@/components/visuals/blueprint-flow";
 import { GridWaveBackground } from "@/components/visuals/grid-wave-background";
@@ -326,7 +327,7 @@ export default function HomePage() {
 
               {/* Headline: Space Grotesk */}
               <EditorialLine delay={0.15}>
-                <h1 className="text-4xl sm:text-5xl md:text-5xl lg:text-[56px] xl:text-[66px] font-extrabold font-heading tracking-tight leading-[1.05] max-w-lg xl:max-w-xl mb-6 text-white drop-shadow-lg" style={{ WebkitTextStroke: "1px currentColor" }}>
+                <h1 className="text-4xl sm:text-5xl md:text-5xl lg:text-[56px] xl:text-[66px] font-extrabold font-heading tracking-tight leading-[0.98] sm:leading-[1.02] max-w-lg xl:max-w-xl mb-6 text-white drop-shadow-lg" style={{ WebkitTextStroke: "1px currentColor" }}>
                   Intelligence In{" "}
                   <span className="inline-flex overflow-visible">
                     {"Motion.".split("").map((letter, idx) => (
@@ -471,7 +472,12 @@ export default function HomePage() {
       <WhatIsVmovexaSection />
 
       {/* ========================================================================= */}
-      {/* 04 // OUR ECOSYSTEM — ONE PLATFORM. Infinite possibilities.                */}
+      {/* 04 // MARKETING COMPARISON — TRADITIONAL VS VMOVEXA                        */}
+      {/* ========================================================================= */}
+      <MarketingComparisonSection />
+
+      {/* ========================================================================= */}
+      {/* 05 // OUR ECOSYSTEM — ONE PLATFORM. Infinite possibilities.                */}
       {/* ========================================================================= */}
       <OurEcosystemSection />
 
@@ -489,7 +495,7 @@ export default function HomePage() {
               </div>
             </EditorialLine>
             <EditorialLine delay={0.1}>
-              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-semibold tracking-tight text-zinc-900 leading-tight mb-4">
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-semibold tracking-tight text-zinc-900 leading-[0.98] sm:leading-[1.02] mb-4">
                 A Vehicle Can Be <span className="gradient-text">More.</span>
               </h2>
             </EditorialLine>
@@ -646,7 +652,7 @@ export default function HomePage() {
                 <span>IN-VEHICLE COMPUTING</span>
               </div>
             </EditorialLine>
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-semibold tracking-tight text-zinc-900 leading-tight mb-4">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-semibold tracking-tight text-zinc-900 leading-[0.98] sm:leading-[1.02] mb-4">
               The Vehicle Becomes <span className="gradient-text">The Edge.</span>
             </h2>
             <EditorialLine delay={0.2}>
@@ -769,7 +775,7 @@ export default function HomePage() {
               </div>
             </EditorialLine>
             <EditorialLine delay={0.1}>
-              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-semibold tracking-tight text-zinc-900 leading-tight mb-4">
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-semibold tracking-tight text-zinc-900 leading-[0.98] sm:leading-[1.02] mb-4">
                 Movement Creates <span className="gradient-text">Context.</span>
               </h2>
             </EditorialLine>
@@ -835,7 +841,7 @@ export default function HomePage() {
                 </div>
               </EditorialLine>
 
-              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-semibold tracking-tight text-white leading-tight">
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-semibold tracking-tight text-white leading-[0.98] sm:leading-[1.02]">
                 Media That <span className="gradient-text">Moves.</span>
               </h2>
 
@@ -911,7 +917,7 @@ export default function HomePage() {
               </div>
             </EditorialLine>
             <EditorialLine delay={0.1}>
-              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight leading-tight text-zinc-900 mb-6">
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight leading-[0.98] sm:leading-[1.02] text-zinc-900 mb-6">
                 Smarter Mobility.<br/>
                 <span className="gradient-text">Stronger Governance.</span>
               </h2>

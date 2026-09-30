@@ -242,9 +242,9 @@ export function OurEcosystemSection() {
         </EditorialLine>
 
         <EditorialLine delay={0.1} className="mb-4 sm:mb-5">
-          <h2 className="text-3xl sm:text-5xl lg:text-6xl font-heading font-semibold tracking-tight text-white leading-tight uppercase">
+          <h2 className="text-3xl sm:text-5xl lg:text-6xl font-heading font-semibold tracking-tight text-white leading-[0.98] sm:leading-[1.02] uppercase">
             <span className="block">One Platform.</span>
-            <span className="block mt-1 sm:mt-2 gradient-text">Infinite Possibilities.</span>
+            <span className="block text-cyan-400">Infinite Possibilities.</span>
           </h2>
         </EditorialLine>
 
