@@ -273,20 +273,15 @@ const pillars: PillarItem[] = [
 
 export function WhyVmovexaSection() {
   return (
-    <section className="relative py-24 sm:py-32 overflow-hidden bg-white transform-gpu">
-      {/* Full-Bleed Seamless Background Ambient Mesh (Spans 100% width, zero edge cuts) */}
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_85%_65%_at_50%_45%,rgba(56,189,248,0.18)_0%,rgba(168,85,247,0.15)_40%,rgba(236,72,153,0.12)_70%,transparent_100%)] pointer-events-none z-0" />
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_40%,rgba(56,189,248,0.14)_0%,transparent_60%)] pointer-events-none z-0" />
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_80%_45%,rgba(236,72,153,0.12)_0%,transparent_60%)] pointer-events-none z-0" />
-
-      {/* Cyber Grid Texture Overlay */}
-      <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(0,0,0,0.035)_1px,transparent_1px),linear-gradient(to_bottom,rgba(0,0,0,0.035)_1px,transparent_1px)] bg-[size:3.5rem_3.5rem] [mask-image:radial-gradient(ellipse_75%_60%_at_50%_50%,#000_70%,transparent_100%)] pointer-events-none z-0" />
+    <section className="relative py-24 sm:py-32 overflow-hidden bg-white">
+      {/* Cyber Grid Texture Overlay on Pure White */}
+      <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(0,0,0,0.035)_1px,transparent_1px),linear-gradient(to_bottom,rgba(0,0,0,0.035)_1px,transparent_1px)] bg-[size:3.5rem_3.5rem] [mask-image:radial-gradient(ellipse_80%_65%_at_50%_50%,#000_70%,transparent_100%)] pointer-events-none" />
 
       <div className="container max-w-7xl mx-auto px-6 relative z-10">
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16 sm:mb-20">
           <EditorialLine>
-            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/90 border border-cyan-200/80 text-cyan-800 font-mono text-xs tracking-wider mb-5 shadow-[0_4px_16px_rgba(6,182,212,0.1),inset_0_1px_1px_rgba(255,255,255,1)]">
+            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white border border-cyan-200/80 text-cyan-800 font-mono text-xs tracking-wider mb-5 shadow-[0_2px_12px_rgba(6,182,212,0.08),inset_0_1px_1px_rgba(255,255,255,1)]">
               <span className="w-1.5 h-1.5 rounded-full bg-gradient-to-r from-cyan-400 to-purple-400 animate-pulse" />
               <span className="uppercase tracking-[0.25em] text-[11px] font-semibold text-cyan-800">
                 WHY VMOVEXA
@@ -310,47 +305,34 @@ export function WhyVmovexaSection() {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6">
           {pillars.map((pillar, idx) => (
             <GsapScrollReveal key={pillar.title} delay={idx * 0.08}>
-              <div className="relative group h-full transform-gpu">
-                {/* Individual Ambient Backlight Glow behind each card (native radial gradient, zero filter cost) */}
-                <div
-                  className="absolute -inset-2 rounded-[2.5rem] opacity-50 pointer-events-none transform-gpu"
-                  style={{ background: `radial-gradient(ellipse at center, ${pillar.glowColor} 0%, transparent 70%)` }}
-                />
-
+              <div className="relative group h-full">
                 {/* Primary Premium Glossy Card */}
                 <div
                   className="relative h-full py-9 px-5 sm:py-11 sm:px-6 flex flex-col items-center text-center cursor-default transition-all duration-300 rounded-[2rem] overflow-hidden justify-between
-                    bg-gradient-to-b from-white via-white/95 to-zinc-50/50
-                    border border-zinc-200/70 hover:border-zinc-300/90
-                    shadow-[0_4px_20px_-4px_rgba(0,0,0,0.04),0_12px_36px_-6px_rgba(0,0,0,0.03),inset_0_1.5px_2px_rgba(255,255,255,1),inset_0_0_0_1px_rgba(255,255,255,0.8)]
-                    hover:shadow-[0_20px_45px_-10px_rgba(0,0,0,0.08),0_4px_16px_rgba(0,0,0,0.02),inset_0_2px_3px_rgba(255,255,255,1)]
+                    bg-gradient-to-b from-white via-slate-50/40 to-zinc-100/50
+                    border border-zinc-200/70 hover:border-zinc-300
+                    shadow-[0_10px_30px_-5px_rgba(0,0,0,0.05),0_1px_3px_rgba(0,0,0,0.02),inset_0_2px_2px_rgba(255,255,255,1),inset_0_0_0_1px_rgba(255,255,255,0.9),inset_0_-2px_3px_rgba(0,0,0,0.02)]
+                    hover:shadow-[0_22px_45px_-10px_rgba(0,0,0,0.08),inset_0_2px_3px_rgba(255,255,255,1)]
                     hover:-translate-y-2
-                    transform-gpu
                   "
                 >
-                  {/* Diagonal Gloss Specular Glaze (Liquid Glass reflection) */}
-                  <div className="absolute inset-0 bg-gradient-to-br from-white/90 via-white/20 to-transparent pointer-events-none rounded-[2rem]" />
+                  {/* Curved Glass Specular Sheen Arc (Authentic Liquid Glass Reflection) */}
+                  <div className="absolute -top-16 -left-16 -right-16 h-64 rounded-[50%] bg-gradient-to-b from-white via-white/50 to-transparent pointer-events-none" />
 
-                  {/* Top Curved Specular Gloss Highlight */}
-                  <div className="absolute inset-x-0 top-0 h-44 bg-gradient-to-b from-white via-white/30 to-transparent pointer-events-none rounded-t-[2rem]" />
+                  {/* Diagonal Glass Specular Glaze */}
+                  <div className="absolute inset-0 bg-gradient-to-br from-white/80 via-white/10 to-transparent pointer-events-none rounded-[2rem]" />
 
-                  {/* Top Edge Specular White Rim */}
-                  <div className="absolute top-0 inset-x-8 h-[1.5px] bg-gradient-to-r from-transparent via-white to-transparent pointer-events-none" />
+                  {/* Top Edge Specular White Rim with Glow */}
+                  <div className="absolute top-0 inset-x-6 h-[2px] bg-gradient-to-r from-transparent via-white to-transparent shadow-[0_1px_4px_rgba(255,255,255,1)] pointer-events-none" />
 
                   {/* 3D Glossy Jewel Icon Pod */}
-                  <div className="relative mb-6 flex items-center justify-center transform-gpu">
-                    {/* Ambient Glow behind icon */}
-                    <div
-                      className="absolute -inset-3 rounded-full opacity-40 pointer-events-none transform-gpu"
-                      style={{ background: `radial-gradient(circle at center, ${pillar.glowColor} 0%, transparent 70%)` }}
-                    />
-
+                  <div className="relative mb-6 flex items-center justify-center">
                     {/* Outer Pod */}
-                    <div className="relative z-10 w-20 h-20 sm:w-22 sm:h-22 rounded-2xl sm:rounded-3xl flex items-center justify-center transition-all duration-300 bg-gradient-to-b from-white via-zinc-50/80 to-white border border-zinc-200/60 shadow-[0_10px_25px_-5px_rgba(0,0,0,0.05),inset_0_2px_4px_rgba(255,255,255,1),inset_0_-2px_4px_rgba(0,0,0,0.02)] group-hover:scale-105 group-hover:border-cyan-200/80 group-hover:shadow-[0_14px_30px_-5px_rgba(56,189,248,0.18),inset_0_2px_4px_rgba(255,255,255,1)]">
+                    <div className="relative z-10 w-20 h-20 sm:w-22 sm:h-22 rounded-2xl sm:rounded-3xl flex items-center justify-center transition-all duration-300 bg-gradient-to-b from-white via-slate-50/90 to-zinc-100/80 border border-white shadow-[0_8px_20px_-4px_rgba(0,0,0,0.07),inset_0_2px_4px_rgba(255,255,255,1),inset_0_-2px_4px_rgba(0,0,0,0.03)] group-hover:scale-105 group-hover:shadow-[0_12px_26px_-4px_rgba(0,0,0,0.1),inset_0_2px_4px_rgba(255,255,255,1)]">
                       {/* Inner concentric refined hairline ring */}
-                      <div className="absolute inset-1.5 rounded-[1.1rem] sm:rounded-[1.4rem] border border-zinc-100/80 pointer-events-none" />
+                      <div className="absolute inset-1.5 rounded-[1.1rem] sm:rounded-[1.4rem] border border-zinc-200/50 pointer-events-none" />
                       {/* Top curved reflection inside icon pod */}
-                      <div className="absolute inset-x-0 top-0 h-1/2 bg-gradient-to-b from-white via-white/20 to-transparent rounded-t-2xl sm:rounded-t-3xl pointer-events-none" />
+                      <div className="absolute inset-x-0 top-0 h-1/2 bg-gradient-to-b from-white via-white/40 to-transparent rounded-t-2xl sm:rounded-t-3xl pointer-events-none" />
                       {pillar.renderIcon(pillar.gradientId)}
                     </div>
                   </div>
