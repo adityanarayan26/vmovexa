@@ -230,7 +230,7 @@ export function MarketingComparisonSection() {
                             }`}
                           >
                             <div className="relative z-10 flex items-center gap-3.5">
-                              <div className="w-6 h-6 rounded-full bg-gradient-to-r from-cyan-500 to-indigo-600 text-white flex items-center justify-center shrink-0 shadow-[0_2px_8px_rgba(6,182,212,0.35)] group-hover:scale-105 transition-transform duration-300">
+                              <div className="w-6 h-6 rounded-full bg-gradient-to-r from-cyan-400 via-indigo-500 to-purple-500 text-white flex items-center justify-center shrink-0 shadow-[0_2px_8px_rgba(6,182,212,0.4)] group-hover:scale-110 transition-transform duration-300">
                                 <Check size={12} strokeWidth={3} />
                               </div>
                               <span className="text-[13.5px] sm:text-[14px] font-semibold text-zinc-900 group-hover:text-cyan-950 transition-colors">

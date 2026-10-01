@@ -53,16 +53,22 @@ export const metadata: Metadata = {
     url: site.url,
     images: [
       {
-        url: "/images/og-banner-hero.jpg",
+        url: "/images/vmovexa-share-square.png",
         width: 1200,
-        height: 630,
-        alt: "VMOVEXA - The Iconic V",
+        height: 1200,
+        alt: "VMOVEXA",
       },
       {
-        url: "/images/iconic-v.jpg",
-        width: 2560,
-        height: 2560,
-        alt: "VMOVEXA - The Iconic V",
+        url: "/images/vmovexa-share-banner.png",
+        width: 1200,
+        height: 630,
+        alt: "VMOVEXA",
+      },
+      {
+        url: "/logos/vmovexa-icon-dark.png",
+        width: 625,
+        height: 428,
+        alt: "VMOVEXA",
       },
     ],
   },
@@ -70,7 +76,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "VMOVEXA | Cloud-to-Edge Mobility Intelligence Platform",
     description: site.description,
-    images: ["/images/og-banner-hero.jpg"],
+    images: ["/images/vmovexa-share-banner.png"],
   },
   icons: {
     icon: [
