@@ -316,12 +316,6 @@ export default function CompanyPage() {
                     Move + Nexus.<br />
                     A symbol for the movement of what comes next.
                   </p>
-                  <div className="pt-4 border-t border-white/10">
-                    <div className="font-bold text-white text-xl tracking-wider">
-                      <Image src="/logos/vmovexa-wordmark-light.svg" alt="VMOVEXA" width={140} height={24} />
-                    </div>
-                    <div className="text-sm text-white/50">The Soul of Intelligent Movement.</div>
-                  </div>
                 </div>
               </div>
             </GsapScrollReveal>
@@ -353,13 +347,6 @@ export default function CompanyPage() {
                     Understands the context.<br />
                     Moves with the world.
                   </p>
-                  <div className="pt-4 border-t border-white/10">
-                    <div className="font-bold text-white text-xl tracking-wider flex items-center gap-2">
-                      <Image src="/logos/vmovexa-wordmark-light.svg" alt="VMOVEXA" width={120} height={20} />
-                      <span>X</span>
-                    </div>
-                    <div className="text-sm text-white/50">Where movement becomes experience.</div>
-                  </div>
                 </div>
               </div>
             </GsapScrollReveal>

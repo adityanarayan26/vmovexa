@@ -51,11 +51,26 @@ export const metadata: Metadata = {
     title: "VMOVEXA | Cloud-to-Edge Mobility Intelligence Platform",
     description: site.description,
     url: site.url,
+    images: [
+      {
+        url: "/images/og-banner-hero.jpg",
+        width: 1200,
+        height: 630,
+        alt: "VMOVEXA - The Iconic V",
+      },
+      {
+        url: "/images/iconic-v.jpg",
+        width: 2560,
+        height: 2560,
+        alt: "VMOVEXA - The Iconic V",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
     title: "VMOVEXA | Cloud-to-Edge Mobility Intelligence Platform",
     description: site.description,
+    images: ["/images/og-banner-hero.jpg"],
   },
   icons: {
     icon: [
