@@ -123,7 +123,7 @@ const row2Cards = [...row2Items, ...row2Items];
 
 function CardItem({ card }: { card: EcosystemCard }) {
   return (
-    <div className="w-full rounded-[24px] bg-[#050508]/80 border border-white/[0.06] hover:border-white/[0.15] transition-all duration-500 flex flex-col group/card hover:shadow-[0_8px_40px_-12px_rgba(168,85,247,0.2)] hover:-translate-y-1.5 relative overflow-hidden backdrop-blur-xl">
+    <div className="w-full rounded-[24px] bg-[#050508]/60 hover:bg-[#050508]/80 border border-white/[0.08] hover:border-cyan-500/30 transition-all duration-500 flex flex-col group/card hover:shadow-[0_8px_40px_-12px_rgba(6,182,212,0.25)] hover:-translate-y-1.5 relative overflow-hidden backdrop-blur-xl">
       {/* Corner Ambient Glow */}
       <div className="absolute -top-20 -right-20 w-56 h-56 bg-gradient-to-br from-cyan-500/15 via-purple-500/10 to-transparent blur-3xl opacity-0 group-hover/card:opacity-100 transition-opacity duration-700 pointer-events-none" />
 
@@ -220,10 +220,15 @@ function CardItem({ card }: { card: EcosystemCard }) {
 
 export function OurEcosystemSection() {
   return (
-    <section className="relative py-16 sm:py-20 overflow-hidden bg-black">
-      {/* Background Lighting & Grid */}
-      <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[900px] h-[450px] bg-gradient-to-b from-blue-500/10 via-purple-500/10 to-transparent blur-[140px] pointer-events-none -z-10" />
-      <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(255,255,255,0.02)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.02)_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_75%_55%_at_50%_40%,#000_70%,transparent_100%)] pointer-events-none" />
+    <section className="relative py-16 sm:py-24 overflow-hidden bg-black">
+      {/* Ambient Radial Glowing Flares */}
+      <div className="absolute top-12 left-1/2 -translate-x-1/2 w-[1100px] h-[550px] bg-gradient-to-b from-cyan-500/15 via-indigo-500/10 to-transparent blur-[140px] pointer-events-none -z-10" />
+      <div className="absolute top-1/2 left-1/4 -translate-x-1/2 w-[800px] h-[600px] bg-purple-500/12 blur-[150px] pointer-events-none -z-10" />
+      <div className="absolute bottom-10 right-1/4 translate-x-1/2 w-[700px] h-[500px] bg-cyan-500/10 blur-[130px] pointer-events-none -z-10" />
+
+      {/* Prominent High-Tech Cyber Grid */}
+      <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(255,255,255,0.07)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.07)_1px,transparent_1px)] bg-[size:3.5rem_3.5rem] [mask-image:radial-gradient(ellipse_95%_90%_at_50%_45%,#000_80%,transparent_100%)] pointer-events-none" />
+      <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(34,211,238,0.05)_1px,transparent_1px),linear-gradient(to_bottom,rgba(34,211,238,0.05)_1px,transparent_1px)] bg-[size:14rem_14rem] [mask-image:radial-gradient(ellipse_95%_90%_at_50%_45%,#000_80%,transparent_100%)] pointer-events-none" />
 
       {/* Header Container */}
       <div className="container max-w-7xl mx-auto px-6 relative z-10 mb-16 sm:mb-20 text-center">
