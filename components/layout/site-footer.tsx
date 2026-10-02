@@ -204,7 +204,7 @@ export function SiteFooter() {
         {/* Bottom Legal Row */}
         <div className="pt-6 flex flex-col md:flex-row items-center justify-between gap-6 text-xs text-white/50 font-mono">
           <div className="flex-shrink-0 text-center md:text-left">
-            Copyright ©️ 2026 VMOVEXA Inc. All rights reserved.
+            Copyright <span className="text-white font-sans">©</span> 2026 VMOVEXA Inc. All rights reserved.
           </div>
           <div className="flex flex-wrap items-center justify-center gap-x-2.5 gap-y-1 text-xs">
             <Link href="/faq" className="hover:text-cyan-400 transition-colors">

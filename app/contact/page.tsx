@@ -515,7 +515,7 @@ export default function ContactPage() {
                   {/* Submission Form Footer: Copyright & Social Icons */}
                   <div className="pt-6 mt-6 border-t border-white/[0.08] flex flex-col sm:flex-row items-center justify-between gap-4 text-center sm:text-left">
                     <p className="font-mono text-[11px] text-white/50 tracking-wider">
-                      Copyright ©️ 2026 VMOVEXA Inc. All rights reserved.
+                      Copyright <span className="text-white font-sans">©</span> 2026 VMOVEXA Inc. All rights reserved.
                     </p>
                     <div className="flex items-center gap-2.5">
                       {[
