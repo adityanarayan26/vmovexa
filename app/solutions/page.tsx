@@ -94,7 +94,7 @@ export default function SolutionsPage() {
             </div>
           </div>
 
-          {/* 2x2 Visual Cards Grid with Technical Illustrations */}
+          {/* 2x2 Visual Cards Grid with 4 Distinct Logo Shades */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-16">
             {[
               {
@@ -103,6 +103,11 @@ export default function SolutionsPage() {
                 illustration: <FleetOperatorsIllustration />,
                 href: "#fleet-operators",
                 tag: "CORE ARCHITECTURE",
+                color: "cyan",
+                hoverBorder: "hover:border-cyan-400/60 hover:shadow-[0_20px_50px_rgba(6,182,212,0.2)]",
+                tagHover: "group-hover:text-cyan-400",
+                titleHover: "group-hover:text-cyan-300",
+                btnHover: "group-hover:bg-cyan-400 group-hover:border-cyan-400 group-hover:text-black",
               },
               {
                 title: "Mobility Media",
@@ -110,6 +115,11 @@ export default function SolutionsPage() {
                 illustration: <MobilityMediaIllustration />,
                 href: "#mobility-media",
                 tag: "MOVING INVENTORY",
+                color: "pink",
+                hoverBorder: "hover:border-pink-500/60 hover:shadow-[0_20px_50px_rgba(236,72,153,0.2)]",
+                tagHover: "group-hover:text-pink-400",
+                titleHover: "group-hover:text-pink-300",
+                btnHover: "group-hover:bg-pink-500 group-hover:border-pink-500 group-hover:text-white",
               },
               {
                 title: "Smart Cities",
@@ -117,6 +127,11 @@ export default function SolutionsPage() {
                 illustration: <SmartCitiesIllustration />,
                 href: "#smart-cities",
                 tag: "URBAN INFRASTRUCTURE",
+                color: "blue",
+                hoverBorder: "hover:border-blue-500/60 hover:shadow-[0_20px_50px_rgba(37,99,235,0.2)]",
+                tagHover: "group-hover:text-blue-400",
+                titleHover: "group-hover:text-blue-300",
+                btnHover: "group-hover:bg-blue-500 group-hover:border-blue-500 group-hover:text-white",
               },
               {
                 title: "Enterprise Mobility",
@@ -124,6 +139,11 @@ export default function SolutionsPage() {
                 illustration: <EnterpriseMobilityIllustration />,
                 href: "#enterprise-mobility",
                 tag: "CORPORATE MOBILITY",
+                color: "purple",
+                hoverBorder: "hover:border-purple-500/60 hover:shadow-[0_20px_50px_rgba(139,92,246,0.2)]",
+                tagHover: "group-hover:text-purple-400",
+                titleHover: "group-hover:text-purple-300",
+                btnHover: "group-hover:bg-purple-500 group-hover:border-purple-500 group-hover:text-white",
               },
             ].map((card, i) => (
               <GsapScrollReveal key={card.title} delay={i * 0.1}>
@@ -131,7 +151,7 @@ export default function SolutionsPage() {
                   <MagneticElement strength={0.02} className="w-full h-full block">
                     <Link
                       href={card.href}
-                      className="group block rounded-3xl overflow-hidden border border-white/10 hover:border-cyan-400/50 transition-all duration-500 bg-[#090b14]/90 backdrop-blur-xl shadow-[0_20px_40px_rgba(0,0,0,0.6)] hover:shadow-[0_20px_50px_rgba(34,211,238,0.2)] hover:-translate-y-1 h-full flex flex-col justify-between relative"
+                      className={`group block rounded-3xl overflow-hidden border border-white/10 ${card.hoverBorder} transition-all duration-500 bg-[#090b14]/90 backdrop-blur-xl shadow-[0_20px_40px_rgba(0,0,0,0.6)] hover:-translate-y-1 h-full flex flex-col justify-between relative`}
                     >
                       {/* Top Visual Technical Illustration */}
                       {card.illustration}
@@ -139,7 +159,7 @@ export default function SolutionsPage() {
                       {/* Content Bottom Bar */}
                       <div className="p-6 sm:p-7 flex flex-col justify-between flex-1 bg-gradient-to-b from-[#090b14]/90 to-[#06080e] relative z-20 border-t border-white/[0.06]">
                         <div className="flex items-center justify-between mb-3">
-                          <span className="font-mono text-[9px] tracking-widest uppercase text-white/50 group-hover:text-cyan-400 transition-colors">
+                          <span className={`font-mono text-[9px] tracking-widest uppercase text-white/50 ${card.tagHover} transition-colors`}>
                             {card.tag}
                           </span>
                           <span className="text-[10px] font-mono text-zinc-500">
@@ -149,15 +169,15 @@ export default function SolutionsPage() {
 
                         <div className="flex items-end justify-between gap-4">
                           <div>
-                            <h3 className="text-xl sm:text-2xl font-semibold !text-white tracking-tight group-hover:text-cyan-300 transition-colors duration-300">
+                            <h3 className={`text-xl sm:text-2xl font-semibold !text-white tracking-tight ${card.titleHover} transition-colors duration-300`}>
                               {card.title}
                             </h3>
                             <p className="text-xs sm:text-sm !text-white/70 mt-1 max-w-sm group-hover:!text-white/90 transition-colors duration-300 leading-relaxed">
                               {card.desc}
                             </p>
                           </div>
-                          <div className="w-10 h-10 rounded-full bg-white/10 border border-white/20 backdrop-blur-md flex items-center justify-center !text-white group-hover:bg-cyan-400 group-hover:border-cyan-400 group-hover:!text-black group-hover:scale-110 transition-all duration-300 shrink-0 shadow-md">
-                            <FiArrowRight className="w-4 h-4 text-white group-hover:text-black transition-colors" />
+                          <div className={`w-10 h-10 rounded-full bg-white/10 border border-white/20 backdrop-blur-md flex items-center justify-center !text-white ${card.btnHover} group-hover:scale-110 transition-all duration-300 shrink-0 shadow-md`}>
+                            <FiArrowRight className="w-4 h-4 text-white group-hover:text-inherit transition-colors" />
                           </div>
                         </div>
                       </div>
