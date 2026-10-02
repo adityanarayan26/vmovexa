@@ -38,66 +38,66 @@ export default function IndustriesPage() {
   const sectors = [
     {
       title: "Public Transportation",
-      desc: "Modern connected fleets.",
+      desc: "Modern connected fleets & automated passenger telemetry.",
       icon: RiBusLine,
-      color: "text-blue-400",
-      badgeBg: "bg-blue-500/10 border-blue-500/25 shadow-[0_0_15px_rgba(59,130,246,0.18)]",
+      color: "text-blue-500",
+      badgeBg: "bg-blue-50 border-blue-200/80 shadow-sm",
     },
     {
       title: "Government",
-      desc: "Citizen communication network.",
+      desc: "Citizen communication network & civic alert broadcasts.",
       icon: RiGovernmentLine,
-      color: "text-indigo-400",
-      badgeBg: "bg-indigo-500/10 border-indigo-500/25 shadow-[0_0_15px_rgba(99,102,241,0.18)]",
+      color: "text-indigo-600",
+      badgeBg: "bg-indigo-50 border-indigo-200/80 shadow-sm",
     },
     {
       title: "Smart Cities",
-      desc: "Digital urban infrastructure.",
+      desc: "Digital urban infrastructure & spatial intelligence.",
       icon: RiBuilding4Line,
-      color: "text-cyan-400",
-      badgeBg: "bg-cyan-500/10 border-cyan-500/25 shadow-[0_0_15px_rgba(6,182,212,0.18)]",
+      color: "text-cyan-500",
+      badgeBg: "bg-cyan-50 border-cyan-200/80 shadow-sm",
     },
     {
       title: "Tourism",
-      desc: "Destination promotion.",
+      desc: "Dynamic cultural discovery & location-aware guides.",
       icon: FiCompass,
-      color: "text-purple-400",
-      badgeBg: "bg-purple-500/10 border-purple-500/25 shadow-[0_0_15px_rgba(168,85,247,0.18)]",
+      color: "text-purple-600",
+      badgeBg: "bg-purple-50 border-purple-200/80 shadow-sm",
     },
     {
       title: "Retail",
-      desc: "Location-based advertising.",
+      desc: "Contextual location-based advertising & verified footfall.",
       icon: FiZap,
-      color: "text-pink-400",
-      badgeBg: "bg-pink-500/10 border-pink-500/25 shadow-[0_0_15px_rgba(236,72,153,0.18)]",
+      color: "text-pink-500",
+      badgeBg: "bg-pink-50 border-pink-200/80 shadow-sm",
     },
     {
       title: "Education",
-      desc: "Institution communication.",
+      desc: "Institution transit, student safety & campus mobility.",
       icon: FiUsers,
-      color: "text-sky-400",
-      badgeBg: "bg-sky-500/10 border-sky-500/25 shadow-[0_0_15px_rgba(56,189,248,0.18)]",
+      color: "text-blue-600",
+      badgeBg: "bg-blue-50 border-blue-200/80 shadow-sm",
     },
     {
       title: "Healthcare",
-      desc: "Emergency awareness.",
+      desc: "Emergency corridor priority & health awareness relays.",
       icon: FiShield,
-      color: "text-emerald-400",
-      badgeBg: "bg-emerald-500/10 border-emerald-500/25 shadow-[0_0_15px_rgba(16,185,129,0.18)]",
+      color: "text-cyan-600",
+      badgeBg: "bg-cyan-50 border-cyan-200/80 shadow-sm",
     },
     {
       title: "Airports",
-      desc: "Premium advertising platform.",
+      desc: "Airside ground fleet orchestration & gate synchronization.",
       icon: RiFlightTakeoffLine,
-      color: "text-amber-400",
-      badgeBg: "bg-amber-500/10 border-amber-500/25 shadow-[0_0_15px_rgba(245,158,11,0.18)]",
+      color: "text-purple-600",
+      badgeBg: "bg-purple-50 border-purple-200/80 shadow-sm",
     },
     {
       title: "Enterprise Brands",
-      desc: "National brand campaigns.",
+      desc: "National brand campaigns & moving digital inventory.",
       icon: RiTruckLine,
-      color: "text-orange-400",
-      badgeBg: "bg-orange-500/10 border-orange-500/25 shadow-[0_0_15px_rgba(249,115,22,0.18)]",
+      color: "text-pink-600",
+      badgeBg: "bg-pink-50 border-pink-200/80 shadow-sm",
     },
   ];
 
@@ -263,123 +263,179 @@ export default function IndustriesPage() {
         
       </section>
 
-      {/* 02 — 9 SECTORS GRID */}
-      <section className="py-28 relative overflow-hidden bg-white">
+      {/* 02 — 9 SECTORS GRID (White Background with Interactive Mobility Mesh) */}
+      <section className="py-16 sm:py-20 relative overflow-hidden bg-white text-zinc-900 border-t border-zinc-200">
+        <style>{`
+          @keyframes dashStreamLine {
+            to { stroke-dashoffset: -32; }
+          }
+          .animate-dash-stream-line {
+            animation: dashStreamLine 2s linear infinite;
+          }
+        `}</style>
+
         <GridWaveBackground variant="cyan" />
-        {/* Decorative Background Elements */}
-        <div className="absolute inset-0 pointer-events-none">
-            
-            {/* Abstract Glowing Orbs */}
-            <div className="absolute top-[-10%] right-[-5%] w-[800px] h-[800px] rounded-full bg-cyan-400/[0.04] blur-[100px]" />
-            <div className="absolute bottom-[-10%] left-[-10%] w-[600px] h-[600px] rounded-full bg-indigo-500/[0.03] blur-[120px]" />
-            <div className="absolute top-[40%] right-[20%] w-[500px] h-[500px] rounded-full bg-rose-400/[0.03] blur-[100px]" />
+        
+        {/* Dynamic Connected Mobility Network Background Animation */}
+        <div className="absolute inset-0 pointer-events-none overflow-hidden">
+          {/* Subtle Ambient Radial Tints in Brand Colors */}
+          <div className="absolute top-[-5%] right-[-5%] w-[600px] h-[600px] rounded-full bg-cyan-400/[0.05] blur-[100px]" />
+          <div className="absolute bottom-[-5%] left-[-5%] w-[600px] h-[600px] rounded-full bg-purple-500/[0.04] blur-[120px]" />
 
-            {/* Conceptual Mobility Routes with Animated Data Packets (Buses) */}
-            <svg className="absolute top-0 w-full h-[150%] opacity-40 pointer-events-none" viewBox="0 0 1440 1000" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
-               <defs>
-                 <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
-                   <feGaussianBlur stdDeviation="4" result="blur" />
-                   <feComposite in="SourceGraphic" in2="blur" operator="over" />
-                 </filter>
-                 <linearGradient id="route-gradient-1" x1="0%" y1="0%" x2="100%" y2="0%">
-                   <stop offset="0%" stopColor="#06b6d4" stopOpacity="0.1" />
-                   <stop offset="50%" stopColor="#8b5cf6" stopOpacity="0.5" />
-                   <stop offset="100%" stopColor="#ec4899" stopOpacity="0.1" />
-                 </linearGradient>
-                 <linearGradient id="route-gradient-2" x1="0%" y1="0%" x2="100%" y2="0%">
-                   <stop offset="0%" stopColor="#ec4899" stopOpacity="0.1" />
-                   <stop offset="50%" stopColor="#06b6d4" stopOpacity="0.4" />
-                   <stop offset="100%" stopColor="#8b5cf6" stopOpacity="0.1" />
-                 </linearGradient>
-                 
-                 <g id="micro-bus">
-                   {/* Classic Front-Facing Bus Icon centered and scaled up */}
-                   <path d="M4 16c0 .88.39 1.67 1 2.22V20c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-1h8v1c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-1.78c.61-.55 1-1.34 1-2.22V6c0-3.5-3.58-4-8-4s-8 .5-8 4v10zm3.5 1c-.83 0-1.5-.67-1.5-1.5S6.67 14 7.5 14s1.5.67 1.5 1.5S8.33 17 7.5 17zm9 0c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5zm1.5-6H6V6h12v5z" transform="scale(1.4) translate(-12, -16)" filter="url(#glow)" />
-                 </g>
-               </defs>
+          {/* Connected Vector Routes with Directional Shuttles & Particle Beams */}
+          <svg className="absolute inset-0 w-full h-full opacity-60 pointer-events-none" viewBox="0 0 1440 900" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <linearGradient id="ind-route-grad-1" x1="0%" y1="0%" x2="100%" y2="0%">
+                <stop offset="0%" stopColor="#06b6d4" stopOpacity="0.2" />
+                <stop offset="50%" stopColor="#8b5cf6" stopOpacity="0.6" />
+                <stop offset="100%" stopColor="#ec4899" stopOpacity="0.2" />
+              </linearGradient>
+              <linearGradient id="ind-route-grad-2" x1="0%" y1="0%" x2="100%" y2="0%">
+                <stop offset="0%" stopColor="#3b82f6" stopOpacity="0.3" />
+                <stop offset="50%" stopColor="#06b6d4" stopOpacity="0.5" />
+                <stop offset="100%" stopColor="#a855f7" stopOpacity="0.3" />
+              </linearGradient>
 
-               {/* Glowing Paths */}
-               <path d="M-100,200 C300,400 500,50 900,200 C1300,350 1500,100 1600,150" fill="none" stroke="url(#route-gradient-1)" strokeWidth="2" strokeDasharray="8 8" />
-               <path d="M-100,400 C200,600 600,200 1000,400 C1400,600 1500,300 1600,350" fill="none" stroke="url(#route-gradient-2)" strokeWidth="1.5" />
-               <path d="M-100,600 C400,800 700,400 1100,600 C1500,800 1500,500 1600,550" fill="none" stroke="url(#route-gradient-1)" strokeWidth="1" />
-               <path d="M-100,800 C300,1000 800,600 1200,800 C1600,1000 1500,700 1600,750" fill="none" stroke="url(#route-gradient-2)" strokeWidth="2" strokeDasharray="12 6" />
+              {/* Crisp Vector Transit Shuttle Marker (Directional) */}
+              <g id="sleek-shuttle">
+                <rect x="-14" y="-8" width="28" height="16" rx="4" fill="#0f172a" stroke="#06b6d4" strokeWidth="1.2" />
+                <rect x="-11" y="-5.5" width="6" height="11" rx="1.5" fill="#38bdf8" />
+                <rect x="-2" y="-5.5" width="13" height="11" rx="1.5" fill="#38bdf8" fillOpacity="0.4" />
+                <circle cx="-11" cy="-7" r="1.2" fill="#fff" />
+                <circle cx="-11" cy="7" r="1.2" fill="#fff" />
+                <circle cx="11" cy="-7" r="1.2" fill="#f43f5e" />
+                <circle cx="11" cy="7" r="1.2" fill="#f43f5e" />
+              </g>
 
-               {/* Connected Hubs (Data Nodes) */}
-               <circle cx="200" cy="320" r="4" fill="#06b6d4" opacity="0.6" />
-               <circle cx="500" cy="50" r="6" fill="#8b5cf6" opacity="0.6" />
-               <circle cx="900" cy="200" r="5" fill="#ec4899" opacity="0.6" />
-               <circle cx="1500" cy="100" r="4" fill="#06b6d4" opacity="0.6" />
-               
-               <circle cx="600" cy="200" r="4" fill="#ec4899" opacity="0.5" />
-               <circle cx="1000" cy="400" r="5" fill="#06b6d4" opacity="0.5" />
-               
-               <circle cx="700" cy="400" r="4" fill="#8b5cf6" opacity="0.5" />
-               <circle cx="1100" cy="600" r="6" fill="#ec4899" opacity="0.5" />
+              {/* Violet Shuttle Marker */}
+              <g id="violet-shuttle">
+                <rect x="-14" y="-8" width="28" height="16" rx="4" fill="#1e1035" stroke="#a855f7" strokeWidth="1.2" />
+                <rect x="-11" y="-5.5" width="6" height="11" rx="1.5" fill="#c084fc" />
+                <rect x="-2" y="-5.5" width="13" height="11" rx="1.5" fill="#c084fc" fillOpacity="0.4" />
+                <circle cx="-11" cy="-7" r="1.2" fill="#fff" />
+                <circle cx="-11" cy="7" r="1.2" fill="#fff" />
+                <circle cx="11" cy="-7" r="1.2" fill="#ec4899" />
+                <circle cx="11" cy="7" r="1.2" fill="#ec4899" />
+              </g>
 
-               {/* Animated Buses along Routes - Slowed Down */}
-               <use href="#micro-bus" fill="#06b6d4">
-                 <animateMotion dur="50s" repeatCount="indefinite" path="M-100,200 C300,400 500,50 900,200 C1300,350 1500,100 1600,150" />
-               </use>
-               <use href="#micro-bus" fill="#8b5cf6">
-                 <animateMotion dur="50s" begin="16s" repeatCount="indefinite" path="M-100,200 C300,400 500,50 900,200 C1300,350 1500,100 1600,150" />
-               </use>
-               
-               <use href="#micro-bus" fill="#ec4899">
-                 <animateMotion dur="70s" begin="4s" repeatCount="indefinite" path="M-100,400 C200,600 600,200 1000,400 C1400,600 1500,300 1600,350" />
-               </use>
-               <use href="#micro-bus" fill="#0ea5e9">
-                 <animateMotion dur="70s" begin="30s" repeatCount="indefinite" path="M-100,400 C200,600 600,200 1000,400 C1400,600 1500,300 1600,350" />
-               </use>
+              {/* Magenta Shuttle Marker */}
+              <g id="magenta-shuttle">
+                <rect x="-14" y="-8" width="28" height="16" rx="4" fill="#24071b" stroke="#ec4899" strokeWidth="1.2" />
+                <rect x="-11" y="-5.5" width="6" height="11" rx="1.5" fill="#f472b6" />
+                <rect x="-2" y="-5.5" width="13" height="11" rx="1.5" fill="#f472b6" fillOpacity="0.4" />
+                <circle cx="-11" cy="-7" r="1.2" fill="#fff" />
+                <circle cx="-11" cy="7" r="1.2" fill="#fff" />
+                <circle cx="11" cy="-7" r="1.2" fill="#38bdf8" />
+                <circle cx="11" cy="7" r="1.2" fill="#38bdf8" />
+              </g>
+            </defs>
 
-               <use href="#micro-bus" fill="#8b5cf6">
-                 <animateMotion dur="60s" begin="10s" repeatCount="indefinite" path="M-100,600 C400,800 700,400 1100,600 C1500,800 1500,500 1600,550" />
-               </use>
+            {/* Highway Routes with Active Animated Dashes */}
+            <path id="ind-path-1" d="M-100,180 C300,320 600,60 1000,180 C1300,280 1500,120 1600,160" fill="none" stroke="url(#ind-route-grad-1)" strokeWidth="1.8" strokeDasharray="6 6" className="animate-dash-stream-line" />
+            <path id="ind-path-2" d="M-100,420 C250,580 650,240 1050,420 C1350,540 1500,300 1600,340" fill="none" stroke="url(#ind-route-grad-2)" strokeWidth="1.5" strokeDasharray="6 6" className="animate-dash-stream-line" />
+            <path id="ind-path-3" d="M-100,640 C350,780 700,440 1100,600 C1400,720 1500,500 1600,540" fill="none" stroke="url(#ind-route-grad-1)" strokeWidth="1.5" />
+            <path id="ind-path-4" d="M-100,820 C300,960 800,620 1200,760 C1500,900 1550,700 1600,720" fill="none" stroke="url(#ind-route-grad-2)" strokeWidth="1.8" strokeDasharray="8 8" className="animate-dash-stream-line" />
 
-               <use href="#micro-bus" fill="#06b6d4">
-                 <animateMotion dur="80s" begin="0s" repeatCount="indefinite" path="M-100,800 C300,1000 800,600 1200,800 C1600,1000 1500,700 1600,750" />
-               </use>
-            </svg>
-         </div>
+            {/* Smart City Telemetry Nodes with Radar Rings */}
+            <g>
+              <circle cx="300" cy="320" r="12" stroke="#06b6d4" strokeWidth="0.8" opacity="0.4" className="animate-ping" style={{ animationDuration: "3s" }} />
+              <circle cx="300" cy="320" r="4" fill="#06b6d4" />
+            </g>
+            <g>
+              <circle cx="650" cy="240" r="14" stroke="#8b5cf6" strokeWidth="0.8" opacity="0.4" className="animate-ping" style={{ animationDuration: "2.8s" }} />
+              <circle cx="650" cy="240" r="5" fill="#8b5cf6" />
+            </g>
+            <g>
+              <circle cx="1050" cy="420" r="12" stroke="#ec4899" strokeWidth="0.8" opacity="0.4" className="animate-ping" style={{ animationDuration: "3.2s" }} />
+              <circle cx="1050" cy="420" r="4.5" fill="#ec4899" />
+            </g>
+
+            {/* Active Moving Vehicles with Directional Orientation (rotate="auto") */}
+            <use href="#sleek-shuttle">
+              <animateMotion dur="22s" repeatCount="indefinite" rotate="auto" path="M-100,180 C300,320 600,60 1000,180 C1300,280 1500,120 1600,160" />
+            </use>
+            <use href="#violet-shuttle">
+              <animateMotion dur="22s" begin="11s" repeatCount="indefinite" rotate="auto" path="M-100,180 C300,320 600,60 1000,180 C1300,280 1500,120 1600,160" />
+            </use>
+
+            <use href="#magenta-shuttle">
+              <animateMotion dur="26s" begin="4s" repeatCount="indefinite" rotate="auto" path="M-100,420 C250,580 650,240 1050,420 C1350,540 1500,300 1600,340" />
+            </use>
+            <use href="#sleek-shuttle">
+              <animateMotion dur="26s" begin="17s" repeatCount="indefinite" rotate="auto" path="M-100,420 C250,580 650,240 1050,420 C1350,540 1500,300 1600,340" />
+            </use>
+
+            <use href="#violet-shuttle">
+              <animateMotion dur="28s" begin="2s" repeatCount="indefinite" rotate="auto" path="M-100,640 C350,780 700,440 1100,600 C1400,720 1500,500 1600,540" />
+            </use>
+
+            {/* High-speed Particle Packets Darting Along Corridors */}
+            <g>
+              <animateMotion dur="7s" repeatCount="indefinite" path="M-100,180 C300,320 600,60 1000,180 C1300,280 1500,120 1600,160" />
+              <circle r="3" fill="#06b6d4" />
+              <circle r="7" stroke="#06b6d4" strokeWidth="1" opacity="0.6" />
+            </g>
+            <g>
+              <animateMotion dur="8s" begin="3s" repeatCount="indefinite" path="M-100,420 C250,580 650,240 1050,420 C1350,540 1500,300 1600,340" />
+              <circle r="3" fill="#ec4899" />
+              <circle r="7" stroke="#ec4899" strokeWidth="1" opacity="0.6" />
+            </g>
+          </svg>
+        </div>
 
         <div className="container max-w-6xl mx-auto px-6 relative z-10">
-          <div className="max-w-2xl mb-8 text-center md:text-left">
+          <div className="max-w-2xl mb-10 text-center md:text-left">
             <EditorialLine>
-              <div className="font-mono text-xs uppercase tracking-widest text-cyan-600 mb-3">
-                Industry Sectors
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-50/90 border border-cyan-200 text-cyan-800 font-mono text-xs tracking-wider mb-3 shadow-sm">
+                <span className="w-1.5 h-1.5 rounded-full bg-gradient-to-r from-cyan-500 to-purple-500 animate-pulse" />
+                <span className="text-[10.5px] font-semibold uppercase tracking-[0.2em]">Industry Sectors</span>
               </div>
             </EditorialLine>
             <EditorialLine delay={0.1}>
-              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight leading-tight text-zinc-900">
-                Powering <span className="gradient-text">Every Industry Everywhere</span>
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight leading-tight text-zinc-950 uppercase">
+                Powering <br />
+                <span className="bg-gradient-to-r from-[#3b9eff] via-[#8b5cf6] to-[#ec4899] text-transparent bg-clip-text">
+                  Every Industry Everywhere
+                </span>
               </h2>
             </EditorialLine>
             <EditorialLine delay={0.2}>
-              <p className="mt-4 text-base sm:text-lg text-zinc-600 leading-relaxed max-w-3xl">
+              <p className="mt-3 text-sm sm:text-base text-zinc-600 leading-relaxed max-w-2xl font-normal">
                 Empowering industries with intelligent mobility, targeted communication, digital engagement, and scalable advertising across connected ecosystems.
               </p>
             </EditorialLine>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-10 lg:gap-12">
+          {/* Compact, Sleek 3x3 Grid with Balanced Proportions */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5">
             {sectors.map((sec, idx) => {
               const IconComp = sec.icon;
               return (
-                <GsapScrollReveal key={sec.title} delay={idx * 0.05} className="h-full flex flex-col">
-                  <MagneticElement strength={0.05} className="h-full block">
+                <GsapScrollReveal key={sec.title} delay={idx * 0.04} className="h-full flex flex-col">
+                  <MagneticElement strength={0.03} className="h-full block">
                     <div 
-                      className="min-h-[220px] p-7 rounded-2xl bg-white/[0.12] hover:bg-white/[0.28] backdrop-blur-[2px] border border-zinc-200/70 hover:border-cyan-400/50 shadow-[0_4px_24px_rgba(0,0,0,0.02)] hover:shadow-[0_8px_30px_rgba(6,182,212,0.12)] hover:-translate-y-1 transition-all duration-500 h-full flex flex-col justify-between group overflow-hidden relative cursor-default"
-                      style={{ backdropFilter: 'blur(2px)', WebkitBackdropFilter: 'blur(2px)' }}
+                      className="p-5 sm:p-5.5 rounded-2xl bg-white/90 hover:bg-white backdrop-blur-md border border-zinc-200/80 hover:border-purple-300/80 shadow-[0_4px_16px_rgba(0,0,0,0.03)] hover:shadow-[0_12px_30px_rgba(139,92,246,0.12)] hover:-translate-y-1 transition-all duration-300 h-full flex flex-col justify-between group overflow-hidden relative cursor-default"
                     >
-                      <div className="absolute top-0 left-0 w-full h-[3px] bg-gradient-to-r from-transparent via-cyan-400 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                      <div className="relative z-10">
-                        <div className="flex items-center justify-between mb-5">
-                          <span className="font-mono text-xs text-zinc-400 group-hover:text-zinc-600 transition-colors">{String(idx + 1).padStart(2, '0')}</span>
-                          <div className={`w-11 h-11 rounded-xl border ${sec.badgeBg} bg-white/60 backdrop-blur-sm flex items-center justify-center ${sec.color} group-hover:scale-110 transition-all duration-500 shadow-sm`}>
-                             <IconComp className="w-5 h-5" />
-                          </div>
+                      <div className="absolute top-0 left-0 w-full h-[2.5px] bg-gradient-to-r from-cyan-400 via-indigo-500 to-pink-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                      
+                      {/* Top Row: Number & Icon */}
+                      <div className="flex items-center justify-between mb-3.5">
+                        <span className="font-mono text-xs font-semibold text-zinc-400 group-hover:text-zinc-600 transition-colors">
+                          {String(idx + 1).padStart(2, '0')}
+                        </span>
+                        <div className={`w-9 h-9 rounded-xl border ${sec.badgeBg} flex items-center justify-center ${sec.color} group-hover:scale-110 transition-all duration-300`}>
+                          <IconComp className="w-4 h-4" />
                         </div>
-                        <h3 className="text-lg font-semibold text-zinc-900 mb-2 group-hover:text-cyan-700 transition-colors">{sec.title}</h3>
-                        <p className="text-xs text-zinc-500 leading-relaxed font-normal group-hover:text-zinc-700 transition-colors">{sec.desc}</p>
+                      </div>
+
+                      {/* Content: Title & Description with Tight, Balanced Hierarchy */}
+                      <div>
+                        <h3 className="text-[15px] sm:text-base font-bold text-zinc-900 mb-1 tracking-tight group-hover:text-indigo-600 transition-colors">
+                          {sec.title}
+                        </h3>
+                        <p className="text-xs text-zinc-500 leading-relaxed font-normal group-hover:text-zinc-700 transition-colors">
+                          {sec.desc}
+                        </p>
                       </div>
                     </div>
                   </MagneticElement>
@@ -388,7 +444,6 @@ export default function IndustriesPage() {
             })}
           </div>
         </div>
-        
       </section>
 
       {/* CTA */}
