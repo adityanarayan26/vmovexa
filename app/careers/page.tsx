@@ -141,29 +141,39 @@ export default function CareersPage() {
         </div>
       </section>
 
-      {/* 02 — CORE CULTURE & VALUES */}
-      <section className="pt-8 pb-10 sm:pt-10 sm:pb-12 bg-black">
-        <div className="container max-w-6xl mx-auto px-6">
-          <div className="text-center max-w-2xl mx-auto mb-8 sm:mb-10">
-            <span className="font-mono text-xs uppercase tracking-widest text-cyan-400 block mb-2">
-              Engineering Culture
-            </span>
-            <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-white ">
-              Why Build With <span className="gradient-text">VMOVEXA?</span>
+      {/* 02 — CORE CULTURE & VALUES (White Background with Grid) */}
+      <section className="relative py-14 sm:py-16 overflow-hidden bg-white text-zinc-900 border-y border-zinc-200">
+        {/* Cyber Grid Texture Overlay on White */}
+        <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(0,0,0,0.04)_1px,transparent_1px),linear-gradient(to_bottom,rgba(0,0,0,0.04)_1px,transparent_1px)] bg-[size:3.5rem_3.5rem] [mask-image:radial-gradient(ellipse_90%_80%_at_50%_50%,#000_70%,transparent_100%)] pointer-events-none" />
+
+        <div className="container max-w-6xl mx-auto px-6 relative z-10">
+          <div className="text-center max-w-2xl mx-auto mb-10 sm:mb-12">
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-cyan-50/90 border border-cyan-200/90 text-cyan-800 font-mono text-xs tracking-wider mb-4 shadow-sm">
+              <span className="w-1.5 h-1.5 rounded-full bg-gradient-to-r from-cyan-500 to-purple-500 animate-pulse" />
+              <span className="text-[11px] font-semibold uppercase tracking-[0.2em]">
+                Engineering Culture
+              </span>
+            </div>
+            <h2 className="text-2xl sm:text-4xl font-extrabold tracking-tight text-zinc-950 uppercase">
+              Why Build With <span className="bg-gradient-to-r from-cyan-500 via-indigo-600 to-purple-600 text-transparent bg-clip-text">VMOVEXA?</span>
             </h2>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {values.map((v, i) => (
-              <TiltCard key={i} maxTilt={8} glare={true} className="h-full">
+              <TiltCard key={i} maxTilt={8} glare={false} className="h-full">
                 <div
-                  className="p-8 rounded-2xl bg-white/[0.02] border border-white/10 space-y-4 hover:border-cyan-400/30 hover:bg-white/[0.03] transition-all h-full"
+                  className="p-8 rounded-2xl bg-white/95 border border-zinc-200/90 shadow-[0_10px_30px_-8px_rgba(0,0,0,0.06),0_0_1px_1px_rgba(0,0,0,0.02)] hover:border-cyan-400/80 hover:shadow-[0_20px_40px_-10px_rgba(6,182,212,0.18)] hover:-translate-y-1 transition-all duration-300 h-full flex flex-col justify-start group"
                 >
-                  <div className="w-10 h-10 rounded-xl bg-cyan-500/10 border border-cyan-500/20 text-cyan-400 flex items-center justify-center font-mono font-bold text-sm">
+                  <div className="w-11 h-11 rounded-xl bg-cyan-50 border border-cyan-200/80 text-cyan-700 flex items-center justify-center font-mono font-bold text-sm shadow-sm group-hover:bg-gradient-to-r group-hover:from-cyan-500 group-hover:to-blue-600 group-hover:text-white group-hover:border-transparent transition-all duration-300 mb-5">
                     0{i + 1}
                   </div>
-                  <h3 className="text-lg font-bold text-white  tracking-tight">{v.title}</h3>
-                  <p className="text-xs sm:text-sm text-white/65 leading-relaxed font-normal">{v.desc}</p>
+                  <h3 className="text-lg sm:text-xl font-bold text-zinc-900 tracking-tight group-hover:text-cyan-700 transition-colors mb-3">
+                    {v.title}
+                  </h3>
+                  <p className="text-xs sm:text-sm text-zinc-600 leading-relaxed font-normal">
+                    {v.desc}
+                  </p>
                 </div>
               </TiltCard>
             ))}
