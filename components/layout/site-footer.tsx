@@ -202,23 +202,27 @@ export function SiteFooter() {
         </div>
 
         {/* Bottom Legal Row */}
-        <div className="pt-6 flex flex-col md:flex-row items-center justify-between gap-6 text-xs text-white/40 font-mono">
-          <div className="flex-shrink-0">
-            © {new Date().getFullYear()} VMOVEXA. All rights reserved.
+        <div className="pt-6 flex flex-col md:flex-row items-center justify-between gap-6 text-xs text-white/50 font-mono">
+          <div className="flex-shrink-0 text-center md:text-left">
+            Copyright ©️ 2026 VMOVEXA Inc. All rights reserved.
           </div>
-          <div className="flex flex-wrap items-center justify-center gap-6">
+          <div className="flex flex-wrap items-center justify-center gap-x-2.5 gap-y-1 text-xs">
             <Link href="/faq" className="hover:text-cyan-400 transition-colors">
               FAQ
             </Link>
+            <span className="text-white/20 select-none">|</span>
             <Link href="/careers" className="hover:text-cyan-400 transition-colors">
               Careers
             </Link>
+            <span className="text-white/20 select-none">|</span>
             <Link href="/privacy" className="hover:text-white/80 transition-colors">
               Privacy Policy
             </Link>
+            <span className="text-white/20 select-none">|</span>
             <Link href="/privacy#terms" className="hover:text-white/80 transition-colors">
               Terms of Use
             </Link>
+            <span className="text-white/20 select-none">|</span>
             <Link href="/privacy#cookies" className="hover:text-white/80 transition-colors">
               Cookie Policy
             </Link>
