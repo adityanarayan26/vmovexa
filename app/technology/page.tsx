@@ -352,7 +352,7 @@ export default function TechnologyPage() {
                 type="image"
                 src="/images/new3.PNG"
                 alt="VMOVEXA Satellite GPS & In-Chassis Edge Computing Architecture"
-                badge="Dual-Satellite GPS & In-Vehicle Edge Processor"
+                badge="Satellite GPS & In-Vehicle Edge Processor"
                 caption="Real-Time Orbital GPS Positioning, In-Chassis VMOVEXA Hardware & Dynamic Polygon Geofence Triggers"
                 aspectRatio="16/9"
                 objectFit="contain"
