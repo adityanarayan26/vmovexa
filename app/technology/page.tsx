@@ -24,6 +24,7 @@ import { BlurReveal } from "@/components/animations/blur-reveal";
 import { TiltCard } from "@/components/animations/tilt-card";
 import { FloatingElement } from "@/components/animations/image-reveal";
 import { GridWaveBackground } from "@/components/visuals/grid-wave-background";
+import { SmartEmergencyExitSection } from "@/components/sections/smart-emergency-exit-section";
 export const metadata: Metadata = {
   title: "VMOVEXA Technology | Edge Computing, IoT & Connected Mobility",
   description:
@@ -216,66 +217,8 @@ export default function TechnologyPage() {
         </div>
       </section>
 
-      {/* SMART EMERGENCY EXIT SECTION */}
-      <section className="py-24 relative overflow-hidden bg-black">
-        <div className="w-[95%] max-w-[1600px] mx-auto px-4 sm:px-6 relative z-10">
-          <GsapScrollReveal delay={0.2}>
-            <div className="rounded-[2.5rem] bg-[#0a0a0d] overflow-hidden relative shadow-2xl">
-              <div className="grid grid-cols-1 lg:grid-cols-12 h-full gap-8 lg:gap-12">
-                <div className="lg:col-span-5 p-8 lg:p-16 flex flex-col justify-center relative z-10 order-2 lg:order-1">
-                  <div className="font-mono text-xs uppercase tracking-widest text-cyan-400 mb-4">
-                    SMART EMERGENCY EXIT
-                  </div>
-                  <h3 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-white mb-6 leading-[1.15]">
-                    Revenue When Closed.<br />
-                    <span className="gradient-text">Safety When Needed.</span>
-                  </h3>
-                  <p className="text-white/70 text-sm sm:text-base leading-relaxed mb-8">
-                    A first-of-its-kind concept that transforms the emergency exit into an intelligent digital revenue surface.
-                  </p>
-
-                  <div className="space-y-4 mb-8">
-                    <div className="p-4 rounded-xl bg-white/[0.03]">
-                      <div className="font-mono text-[11px] text-cyan-400 mb-2 uppercase tracking-wider flex items-center gap-2">
-                        <span className="w-1.5 h-1.5 rounded-full bg-cyan-400" /> NORMAL MODE
-                      </div>
-                      <div className="text-white/90 text-sm">Premium content • Digital advertising • Contextual media</div>
-                    </div>
-                    <div className="p-4 rounded-xl bg-rose-500/10">
-                      <div className="font-mono text-[11px] text-rose-400 mb-2 uppercase tracking-wider flex items-center gap-2">
-                        <span className="w-1.5 h-1.5 rounded-full bg-rose-400 animate-pulse" /> EMERGENCY MODE
-                      </div>
-                      <div className="text-white/90 text-sm">Display turns transparent • Exit unlocks • Passengers evacuate</div>
-                    </div>
-                  </div>
-
-                  <div className="flex flex-wrap gap-2 mt-auto pt-6 border-t border-white/5">
-                    <span className="font-mono text-[10px] uppercase text-white/60 px-2.5 py-1 rounded bg-white/5">
-                      ONE SURFACE. TWO PURPOSES.
-                    </span>
-                    <span className="font-mono text-[10px] uppercase text-white/60 px-2.5 py-1 rounded bg-white/5">
-                      PATENT-PROTECTED TECHNOLOGY
-                    </span>
-                    <span className="font-mono text-[10px] uppercase text-cyan-400/80 px-2.5 py-1 rounded bg-cyan-500/10">
-                      VMOVEXA — REINVENTING THE EMERGENCY EXIT.
-                    </span>
-                  </div>
-                </div>
-                <div className="lg:col-span-7 w-full h-80 lg:h-auto min-h-[500px] lg:min-h-[600px] order-1 lg:order-2 py-8 pr-4 lg:py-12 lg:pr-12 flex items-center justify-center">
-                  <div className="relative w-full h-full min-h-[400px]">
-                    <Image
-                      src="/images/2.jpg"
-                      alt="Smart Emergency Exit"
-                      fill
-                      className="object-contain object-right lg:scale-105 origin-right"
-                    />
-                  </div>
-                </div>
-              </div>
-            </div>
-          </GsapScrollReveal>
-        </div>
-      </section>
+      {/* SMART EMERGENCY EXIT SECTION (Interactive Simulation & Architecture) */}
+      <SmartEmergencyExitSection />
 
       {/* Cloud Scale. Edge Speed. Section with Motion Trails Visual */}
       <section className="py-24 relative overflow-hidden bg-white">
