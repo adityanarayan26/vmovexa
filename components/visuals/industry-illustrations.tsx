@@ -32,7 +32,7 @@ function BlueprintBg({ stroke = "#ffffff", opacity = 0.08 }) {
 }
 
 // ============================================================================
-// 1. PUBLIC TRANSPORT ILLUSTRATION
+// 1. PUBLIC TRANSPORT ILLUSTRATION — Cyan & Blue
 // ============================================================================
 export function PublicTransportIllustration() {
   return (
@@ -46,7 +46,7 @@ export function PublicTransportIllustration() {
           <span className="w-1.5 h-1.5 rounded-full bg-cyan-400 animate-pulse" />
           TRANSIT LINE // R-104
         </span>
-        <span className="text-zinc-400">NEXT: 2 MIN</span>
+        <span className="text-blue-300">NEXT: 2 MIN</span>
       </div>
 
       {/* Schematic Graphic */}
@@ -80,14 +80,14 @@ export function PublicTransportIllustration() {
       {/* Micro Status Badge */}
       <div className="absolute bottom-2 left-3 right-3 flex items-center justify-between text-[8px] font-mono text-zinc-400 bg-white/[0.04] border border-white/[0.06] rounded-md px-2 py-0.5 backdrop-blur-sm">
         <span className="text-cyan-300">PASSENGERS: 78%</span>
-        <span className="text-emerald-400">ON-TIME</span>
+        <span className="text-blue-400">ON-TIME</span>
       </div>
     </div>
   );
 }
 
 // ============================================================================
-// 2. PRIVATE FLEETS ILLUSTRATION
+// 2. PRIVATE FLEETS ILLUSTRATION — Indigo & Royal Blue
 // ============================================================================
 export function PrivateFleetsIllustration() {
   return (
@@ -101,7 +101,7 @@ export function PrivateFleetsIllustration() {
           <span className="w-1.5 h-1.5 rounded-full bg-indigo-400 animate-pulse" />
           COMMERCIAL FLEET MESH
         </span>
-        <span className="text-zinc-400">120 UNITS ACTIVE</span>
+        <span className="text-blue-300">120 UNITS ACTIVE</span>
       </div>
 
       {/* Radar Matrix Graphic */}
@@ -138,14 +138,14 @@ export function PrivateFleetsIllustration() {
       {/* Micro Status Badge */}
       <div className="absolute bottom-2 left-3 right-3 flex items-center justify-between text-[8px] font-mono text-zinc-400 bg-white/[0.04] border border-white/[0.06] rounded-md px-2 py-0.5 backdrop-blur-sm">
         <span className="text-indigo-300">DISPATCH SYNC</span>
-        <span className="text-emerald-400">100% HEALTH</span>
+        <span className="text-blue-400">100% HEALTH</span>
       </div>
     </div>
   );
 }
 
 // ============================================================================
-// 3. AIRPORT MOBILITY ILLUSTRATION
+// 3. AIRPORT MOBILITY ILLUSTRATION — Sky Blue & Cyan
 // ============================================================================
 export function AirportMobilityIllustration() {
   return (
@@ -159,7 +159,7 @@ export function AirportMobilityIllustration() {
           <span className="w-1.5 h-1.5 rounded-full bg-sky-400 animate-pulse" />
           AIRPORT TARMAC LOOP // T1-T3
         </span>
-        <span className="text-zinc-400">GATE SYNC</span>
+        <span className="text-blue-300">GATE SYNC</span>
       </div>
 
       {/* Terminal Corridor & Flight Vector */}
@@ -194,14 +194,14 @@ export function AirportMobilityIllustration() {
       {/* Micro Status Badge */}
       <div className="absolute bottom-2 left-3 right-3 flex items-center justify-between text-[8px] font-mono text-zinc-400 bg-white/[0.04] border border-white/[0.06] rounded-md px-2 py-0.5 backdrop-blur-sm">
         <span className="text-sky-300">FLIGHT DISPLAY API</span>
-        <span className="text-emerald-400">PUNCTUAL</span>
+        <span className="text-blue-400">PUNCTUAL</span>
       </div>
     </div>
   );
 }
 
 // ============================================================================
-// 4. EMPLOYEE TRANSPORT ILLUSTRATION
+// 4. EMPLOYEE TRANSPORT ILLUSTRATION — Violet & Purple
 // ============================================================================
 export function EmployeeTransportIllustration() {
   return (
@@ -215,7 +215,7 @@ export function EmployeeTransportIllustration() {
           <span className="w-1.5 h-1.5 rounded-full bg-purple-400 animate-pulse" />
           CAMPUS TRANSIT // SHIFT COMMUTE
         </span>
-        <span className="text-zinc-400">ON-TIME: 99.4%</span>
+        <span className="text-pink-300">ON-TIME: 99.4%</span>
       </div>
 
       {/* Corporate Campus Mesh */}
@@ -246,65 +246,65 @@ export function EmployeeTransportIllustration() {
       {/* Micro Status Badge */}
       <div className="absolute bottom-2 left-3 right-3 flex items-center justify-between text-[8px] font-mono text-zinc-400 bg-white/[0.04] border border-white/[0.06] rounded-md px-2 py-0.5 backdrop-blur-sm">
         <span className="text-purple-300">BADGE AUTH: 100%</span>
-        <span className="text-emerald-400">TELEMETRY LIVE</span>
+        <span className="text-pink-400">TELEMETRY LIVE</span>
       </div>
     </div>
   );
 }
 
 // ============================================================================
-// 5. SCHOOL TRANSPORT ILLUSTRATION
+// 5. SCHOOL TRANSPORT ILLUSTRATION — Royal Blue & Cyan Shield (NO ORANGE/AMBER)
 // ============================================================================
 export function SchoolTransportIllustration() {
   return (
-    <div className="relative w-full h-44 overflow-hidden rounded-t-2xl bg-gradient-to-b from-[#241708] via-[#140c04] to-[#0c0d14] flex items-center justify-center p-3">
-      <BlueprintBg stroke="#d97706" opacity={0.12} />
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(217,119,6,0.18)_0%,transparent_70%)] pointer-events-none" />
+    <div className="relative w-full h-44 overflow-hidden rounded-t-2xl bg-gradient-to-b from-[#091530] via-[#050e21] to-[#0c0d14] flex items-center justify-center p-3">
+      <BlueprintBg stroke="#3b82f6" opacity={0.12} />
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(59,130,246,0.18)_0%,transparent_70%)] pointer-events-none" />
 
       {/* Top HUD Line */}
-      <div className="absolute top-2.5 left-3 right-3 flex items-center justify-between text-[8px] font-mono text-amber-400/80 border-b border-amber-500/20 pb-1 z-10">
+      <div className="absolute top-2.5 left-3 right-3 flex items-center justify-between text-[8px] font-mono text-blue-400/90 border-b border-blue-500/20 pb-1 z-10">
         <span className="flex items-center gap-1">
-          <span className="w-1.5 h-1.5 rounded-full bg-amber-400 animate-pulse" />
+          <span className="w-1.5 h-1.5 rounded-full bg-blue-400 animate-pulse" />
           GEOFENCE SAFETY ZONE
         </span>
-        <span className="text-zinc-400">SPEED: &lt;40 KM/H</span>
+        <span className="text-cyan-300">SPEED: &lt;40 KM/H</span>
       </div>
 
-      {/* Safety Perimeter Shield Schematic */}
+      {/* Safety Perimeter Shield Schematic in Royal Blue & Cyan */}
       <div className="relative z-10 w-full max-w-[220px] h-full flex items-center justify-center pt-3">
         <svg viewBox="0 0 220 100" className="w-full h-full" fill="none" xmlns="http://www.w3.org/2000/svg">
           {/* Safety Shield Outline in Center */}
-          <path d="M110 24 L142 36 V58 C142 74 110 88 110 88 C110 88 78 74 78 58 V36 Z" fill="#451a03" stroke="#f59e0b" strokeWidth="1.5" />
-          <path d="M110 32 L134 42 V58 C134 70 110 80 110 80 C110 80 86 70 86 58 V42 Z" stroke="#fbbf24" strokeWidth="0.8" opacity="0.6" />
+          <path d="M110 24 L142 36 V58 C142 74 110 88 110 88 C110 88 78 74 78 58 V36 Z" fill="#172554" stroke="#3b82f6" strokeWidth="1.5" />
+          <path d="M110 32 L134 42 V58 C134 70 110 80 110 80 C110 80 86 70 86 58 V42 Z" stroke="#60a5fa" strokeWidth="0.8" opacity="0.6" />
           
           {/* Checkmark in shield */}
-          <path d="M102 54 L107 59 L118 48" stroke="#34d399" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" />
+          <path d="M102 54 L107 59 L118 48" stroke="#38bdf8" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" />
 
           {/* School Geofence Ring */}
-          <circle cx="110" cy="56" r="38" stroke="#f59e0b" strokeWidth="0.8" strokeDasharray="4 3" opacity="0.4" />
+          <circle cx="110" cy="56" r="38" stroke="#3b82f6" strokeWidth="0.8" strokeDasharray="4 3" opacity="0.4" />
 
-          {/* School Icon on Left */}
-          <rect x="25" y="44" width="26" height="20" rx="3" fill="#1c1917" stroke="#f59e0b" strokeWidth="1" />
-          <path d="M23 44 L38 32 L53 44" stroke="#f59e0b" strokeWidth="1" />
-          <text x="28" y="72" fill="#fde68a" fontSize="6.5" fontFamily="monospace">CAMPUS</text>
+          {/* School Campus Icon on Left */}
+          <rect x="25" y="44" width="26" height="20" rx="3" fill="#0f172a" stroke="#60a5fa" strokeWidth="1" />
+          <path d="M23 44 L38 32 L53 44" stroke="#60a5fa" strokeWidth="1" />
+          <text x="28" y="72" fill="#bfdbfe" fontSize="6.5" fontFamily="monospace">CAMPUS</text>
 
           {/* Real-time Telemetry on Right */}
-          <circle cx="185" cy="54" r="10" fill="#1c1917" stroke="#34d399" strokeWidth="1" />
-          <text x="178" y="57" fill="#86efac" fontSize="7" fontFamily="monospace">SAFE</text>
+          <circle cx="185" cy="54" r="10" fill="#0f172a" stroke="#38bdf8" strokeWidth="1" />
+          <text x="178" y="57" fill="#93c5fd" fontSize="7" fontFamily="monospace">SAFE</text>
         </svg>
       </div>
 
       {/* Micro Status Badge */}
       <div className="absolute bottom-2 left-3 right-3 flex items-center justify-between text-[8px] font-mono text-zinc-400 bg-white/[0.04] border border-white/[0.06] rounded-md px-2 py-0.5 backdrop-blur-sm">
-        <span className="text-amber-300">PARENT NOTIFICATION</span>
-        <span className="text-emerald-400">SOS ACTIVE</span>
+        <span className="text-blue-300">PARENT NOTIFICATION</span>
+        <span className="text-cyan-400">SOS ACTIVE</span>
       </div>
     </div>
   );
 }
 
 // ============================================================================
-// 6. TOURISM MOBILITY ILLUSTRATION
+// 6. TOURISM MOBILITY ILLUSTRATION — Pink & Magenta
 // ============================================================================
 export function TourismMobilityIllustration() {
   return (
@@ -318,7 +318,7 @@ export function TourismMobilityIllustration() {
           <span className="w-1.5 h-1.5 rounded-full bg-pink-400 animate-pulse" />
           CULTURAL DISCOVERY // POI RADAR
         </span>
-        <span className="text-zinc-400">AUDIO: READY</span>
+        <span className="text-fuchsia-300">AUDIO: READY</span>
       </div>
 
       {/* Landmark POI Radar Map */}
@@ -353,105 +353,105 @@ export function TourismMobilityIllustration() {
       {/* Micro Status Badge */}
       <div className="absolute bottom-2 left-3 right-3 flex items-center justify-between text-[8px] font-mono text-zinc-400 bg-white/[0.04] border border-white/[0.06] rounded-md px-2 py-0.5 backdrop-blur-sm">
         <span className="text-pink-300">LOCATION CONTEXT</span>
-        <span className="text-emerald-400">GUIDE SYNCED</span>
+        <span className="text-fuchsia-400">GUIDE SYNCED</span>
       </div>
     </div>
   );
 }
 
 // ============================================================================
-// 7. ELECTRIC MOBILITY ILLUSTRATION
+// 7. ELECTRIC MOBILITY ILLUSTRATION — Electric Cyan & Neon Blue (NO GREEN)
 // ============================================================================
 export function ElectricMobilityIllustration() {
   return (
-    <div className="relative w-full h-44 overflow-hidden rounded-t-2xl bg-gradient-to-b from-[#061e14] via-[#03120c] to-[#0c0d14] flex items-center justify-center p-3">
-      <BlueprintBg stroke="#059669" opacity={0.12} />
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(5,150,105,0.18)_0%,transparent_70%)] pointer-events-none" />
+    <div className="relative w-full h-44 overflow-hidden rounded-t-2xl bg-gradient-to-b from-[#08182b] via-[#050f1c] to-[#0c0d14] flex items-center justify-center p-3">
+      <BlueprintBg stroke="#06b6d4" opacity={0.12} />
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(6,182,212,0.2)_0%,transparent_70%)] pointer-events-none" />
 
       {/* Top HUD Line */}
-      <div className="absolute top-2.5 left-3 right-3 flex items-center justify-between text-[8px] font-mono text-emerald-400/80 border-b border-emerald-500/20 pb-1 z-10">
+      <div className="absolute top-2.5 left-3 right-3 flex items-center justify-between text-[8px] font-mono text-cyan-400/90 border-b border-cyan-500/20 pb-1 z-10">
         <span className="flex items-center gap-1">
-          <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
+          <span className="w-1.5 h-1.5 rounded-full bg-cyan-400 animate-pulse" />
           EV POWERTRAIN // CHARGING MESH
         </span>
-        <span className="text-emerald-300 font-semibold">SOC: 88%</span>
+        <span className="text-blue-300 font-semibold">SOC: 88%</span>
       </div>
 
-      {/* Battery Cell & Charging Flow Graphic */}
+      {/* Battery Cell & Charging Flow Graphic in Electric Cyan */}
       <div className="relative z-10 w-full max-w-[220px] h-full flex items-center justify-center pt-3">
         <svg viewBox="0 0 220 100" className="w-full h-full" fill="none" xmlns="http://www.w3.org/2000/svg">
           {/* Main EV Battery Frame */}
-          <rect x="40" y="32" width="130" height="38" rx="8" fill="#022c22" stroke="#10b981" strokeWidth="1.5" />
-          <rect x="170" y="44" width="8" height="14" rx="2" fill="#10b981" />
+          <rect x="40" y="32" width="130" height="38" rx="8" fill="#08223d" stroke="#38bdf8" strokeWidth="1.5" />
+          <rect x="170" y="44" width="8" height="14" rx="2" fill="#38bdf8" />
 
-          {/* Battery Level Segments (88%) */}
-          <rect x="48" y="38" width="24" height="26" rx="3" fill="#34d399" />
-          <rect x="76" y="38" width="24" height="26" rx="3" fill="#34d399" />
-          <rect x="104" y="38" width="24" height="26" rx="3" fill="#34d399" />
-          <rect x="132" y="38" width="20" height="26" rx="3" fill="#10b981" fillOpacity="0.4" />
+          {/* Battery Level Segments (88%) in Electric Cyan/Blue */}
+          <rect x="48" y="38" width="24" height="26" rx="3" fill="#06b6d4" />
+          <rect x="76" y="38" width="24" height="26" rx="3" fill="#06b6d4" />
+          <rect x="104" y="38" width="24" height="26" rx="3" fill="#38bdf8" />
+          <rect x="132" y="38" width="20" height="26" rx="3" fill="#0284c7" fillOpacity="0.4" />
 
-          {/* Lightning Bolt Bolt */}
-          <path d="M104 22 L94 40 H106 L96 58" stroke="#facc15" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
+          {/* Lightning Bolt in Purple/Cyan Accent */}
+          <path d="M104 22 L94 40 H106 L96 58" stroke="#c084fc" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
 
           {/* Energy Telemetry */}
-          <text x="44" y="82" fill="#a7f3d0" fontSize="7" fontFamily="monospace">150 KW FAST CHARGE</text>
-          <text x="144" y="82" fill="#6ee7b7" fontSize="7" fontFamily="monospace">REGEN: +14%</text>
+          <text x="44" y="82" fill="#bae6fd" fontSize="7" fontFamily="monospace">150 KW FAST CHARGE</text>
+          <text x="144" y="82" fill="#7dd3fc" fontSize="7" fontFamily="monospace">REGEN: +14%</text>
         </svg>
       </div>
 
       {/* Micro Status Badge */}
       <div className="absolute bottom-2 left-3 right-3 flex items-center justify-between text-[8px] font-mono text-zinc-400 bg-white/[0.04] border border-white/[0.06] rounded-md px-2 py-0.5 backdrop-blur-sm">
-        <span className="text-emerald-300">THERMAL: OPTIMAL</span>
-        <span className="text-emerald-400 font-semibold">RANGE: 320 KM</span>
+        <span className="text-cyan-300">THERMAL: OPTIMAL</span>
+        <span className="text-blue-400 font-semibold">RANGE: 320 KM</span>
       </div>
     </div>
   );
 }
 
 // ============================================================================
-// 8. LOGISTICS & CARGO ILLUSTRATION
+// 8. LOGISTICS & CARGO ILLUSTRATION — Deep Indigo & Cobalt Blue (NO TEAL/GREEN)
 // ============================================================================
 export function LogisticsCargoIllustration() {
   return (
-    <div className="relative w-full h-44 overflow-hidden rounded-t-2xl bg-gradient-to-b from-[#061817] via-[#030e0e] to-[#0c0d14] flex items-center justify-center p-3">
-      <BlueprintBg stroke="#0d9488" opacity={0.12} />
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(13,148,136,0.18)_0%,transparent_70%)] pointer-events-none" />
+    <div className="relative w-full h-44 overflow-hidden rounded-t-2xl bg-gradient-to-b from-[#0c1033] via-[#070a21] to-[#0c0d14] flex items-center justify-center p-3">
+      <BlueprintBg stroke="#6366f1" opacity={0.12} />
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(99,102,241,0.18)_0%,transparent_70%)] pointer-events-none" />
 
       {/* Top HUD Line */}
-      <div className="absolute top-2.5 left-3 right-3 flex items-center justify-between text-[8px] font-mono text-teal-400/80 border-b border-teal-500/20 pb-1 z-10">
+      <div className="absolute top-2.5 left-3 right-3 flex items-center justify-between text-[8px] font-mono text-indigo-400/90 border-b border-indigo-500/20 pb-1 z-10">
         <span className="flex items-center gap-1">
-          <span className="w-1.5 h-1.5 rounded-full bg-teal-400 animate-pulse" />
+          <span className="w-1.5 h-1.5 rounded-full bg-indigo-400 animate-pulse" />
           CARGO TELEMETRY // HIGHWAY MESH
         </span>
-        <span className="text-zinc-400">SEAL: INTACT</span>
+        <span className="text-blue-300">SEAL: INTACT</span>
       </div>
 
-      {/* Container Corridor & Tracking Grid */}
+      {/* Container Corridor & Tracking Grid in Indigo */}
       <div className="relative z-10 w-full max-w-[220px] h-full flex items-center justify-center pt-3">
         <svg viewBox="0 0 220 100" className="w-full h-full" fill="none" xmlns="http://www.w3.org/2000/svg">
           {/* Highway Transit Corridor */}
-          <line x1="20" y1="65" x2="200" y2="65" stroke="#0d9488" strokeWidth="1.5" strokeDasharray="4 2" />
+          <line x1="20" y1="65" x2="200" y2="65" stroke="#6366f1" strokeWidth="1.5" strokeDasharray="4 2" />
 
           {/* Intermodal Cargo Container */}
-          <rect x="55" y="32" width="90" height="34" rx="4" fill="#042f2e" stroke="#2dd4bf" strokeWidth="1.2" />
-          <line x1="75" y1="32" x2="75" y2="66" stroke="#14b8a6" strokeWidth="0.8" opacity="0.6" />
-          <line x1="95" y1="32" x2="95" y2="66" stroke="#14b8a6" strokeWidth="0.8" opacity="0.6" />
-          <line x1="115" y1="32" x2="115" y2="66" stroke="#14b8a6" strokeWidth="0.8" opacity="0.6" />
-          <line x1="135" y1="32" x2="135" y2="66" stroke="#14b8a6" strokeWidth="0.8" opacity="0.6" />
+          <rect x="55" y="32" width="90" height="34" rx="4" fill="#171c42" stroke="#818cf8" strokeWidth="1.2" />
+          <line x1="75" y1="32" x2="75" y2="66" stroke="#6366f1" strokeWidth="0.8" opacity="0.6" />
+          <line x1="95" y1="32" x2="95" y2="66" stroke="#6366f1" strokeWidth="0.8" opacity="0.6" />
+          <line x1="115" y1="32" x2="115" y2="66" stroke="#6366f1" strokeWidth="0.8" opacity="0.6" />
+          <line x1="135" y1="32" x2="135" y2="66" stroke="#6366f1" strokeWidth="0.8" opacity="0.6" />
 
-          {/* Digital Security Seal */}
-          <circle cx="160" cy="49" r="8" fill="#134e4a" stroke="#2dd4bf" strokeWidth="1.2" />
-          <path d="M157 49 L159 51 L163 47" stroke="#2dd4bf" strokeWidth="1.5" strokeLinecap="round" />
-          <text x="150" y="65" fill="#99f6e4" fontSize="5.5" fontFamily="monospace">LOCK</text>
+          {/* Digital Security Seal in Cyan/Blue */}
+          <circle cx="160" cy="49" r="8" fill="#1e1b4b" stroke="#818cf8" strokeWidth="1.2" />
+          <path d="M157 49 L159 51 L163 47" stroke="#38bdf8" strokeWidth="1.5" strokeLinecap="round" />
+          <text x="150" y="65" fill="#c7d2fe" fontSize="5.5" fontFamily="monospace">LOCK</text>
 
-          <text x="65" y="52" fill="#99f6e4" fontSize="7" fontFamily="monospace">CARGO ID #904</text>
+          <text x="65" y="52" fill="#c7d2fe" fontSize="7" fontFamily="monospace">CARGO ID #904</text>
         </svg>
       </div>
 
       {/* Micro Status Badge */}
       <div className="absolute bottom-2 left-3 right-3 flex items-center justify-between text-[8px] font-mono text-zinc-400 bg-white/[0.04] border border-white/[0.06] rounded-md px-2 py-0.5 backdrop-blur-sm">
-        <span className="text-teal-300">WEIGHT: 24.5 T</span>
-        <span className="text-emerald-400">GPS TRACKING</span>
+        <span className="text-indigo-300">WEIGHT: 24.5 T</span>
+        <span className="text-blue-400">GPS TRACKING</span>
       </div>
     </div>
   );
