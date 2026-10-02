@@ -8,14 +8,12 @@ import {
   Unlock,
   Eye,
   CheckCircle2,
-  Play,
-  RotateCcw,
   Zap,
   ShieldAlert,
   ArrowRight,
-  Sparkles,
   Layers,
-  Radio,
+  ChevronRight,
+  Sparkles,
 } from "lucide-react";
 
 interface SmartEmergencyDoorAnimationProps {
@@ -41,7 +39,7 @@ export function SmartEmergencyDoorAnimation({
     if (onModeChange) onModeChange(newMode);
   };
 
-  // Auto-play cycle between normal and emergency every 9 seconds if autoPlay is enabled
+  // Auto-play toggle: cycles smoothly between modes every 9 seconds
   useEffect(() => {
     if (!isAutoPlaying) return;
     const interval = setInterval(() => {
@@ -50,13 +48,13 @@ export function SmartEmergencyDoorAnimation({
     return () => clearInterval(interval);
   }, [isAutoPlaying, mode]);
 
-  // Handle phase steps when entering emergency
+  // Sequenced technical progression when emergency is triggered
   useEffect(() => {
     if (mode === "emergency") {
-      setStepPhase(1); // 0s: Emergency signal received
-      const t1 = setTimeout(() => setStepPhase(2), 700); // 0.7s: Display transparent
-      const t2 = setTimeout(() => setStepPhase(3), 1400); // 1.4s: Latch disengages
-      const t3 = setTimeout(() => setStepPhase(4), 2200); // 2.2s: Door opens & egress
+      setStepPhase(1); // 0s: Sensor / Manual override signal
+      const t1 = setTimeout(() => setStepPhase(2), 600); // 0.6s: Display de-energizes & turns 100% transparent
+      const t2 = setTimeout(() => setStepPhase(3), 1300); // 1.3s: Mechanical failsafe lock releases
+      const t3 = setTimeout(() => setStepPhase(4), 2100); // 2.1s: Door opens wide for evacuation
       return () => {
         clearTimeout(t1);
         clearTimeout(t2);
@@ -69,26 +67,47 @@ export function SmartEmergencyDoorAnimation({
 
   return (
     <div className="w-full rounded-[2rem] bg-[#07090e] border border-white/10 shadow-[0_25px_60px_-15px_rgba(0,0,0,0.9)] overflow-hidden flex flex-col relative select-none">
-      {/* Simulation Controls Header */}
-      <div className="px-5 py-4 bg-[#0a0d14] border-b border-white/[0.08] flex flex-wrap items-center justify-between gap-3 relative z-30">
+      <style>{`
+        @keyframes adShimmer {
+          0% { transform: translateX(-100%); }
+          100% { transform: translateX(200%); }
+        }
+        .animate-ad-shimmer {
+          animation: adShimmer 3.5s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+        }
+        @keyframes egressFlow {
+          0% { opacity: 0.3; transform: translateX(0); }
+          50% { opacity: 1; }
+          100% { opacity: 0.3; transform: translateX(12px); }
+        }
+        .animate-egress-arrow {
+          animation: egressFlow 1.2s ease-in-out infinite;
+        }
+      `}</style>
+
+      {/* Top Simulation Control Bar */}
+      <div className="px-5 py-3.5 bg-[#0a0d14] border-b border-white/[0.08] flex flex-wrap items-center justify-between gap-3 relative z-30">
         <div className="flex items-center gap-2.5">
           <span
-            className={`w-2.5 h-2.5 rounded-full ${
-              mode === "normal" ? "bg-cyan-400 shadow-[0_0_10px_#06b6d4]" : "bg-rose-500 animate-ping shadow-[0_0_12px_#f43f5e]"
+            className={`w-2.5 h-2.5 rounded-full transition-all duration-300 ${
+              mode === "normal"
+                ? "bg-cyan-400 shadow-[0_0_10px_#06b6d4]"
+                : "bg-rose-500 animate-ping shadow-[0_0_12px_#f43f5e]"
             }`}
           />
           <span className="font-mono text-xs font-semibold uppercase tracking-wider text-white">
-            {mode === "normal" ? "STATE: COMMERCIAL REVENUE MODE" : "STATE: EMERGENCY FAILSAFE TRIGGERED"}
+            {mode === "normal" ? "Commercial Display Mode" : "Emergency Failsafe Active"}
           </span>
           <span className="hidden sm:inline-block px-2 py-0.5 rounded text-[10px] font-mono text-zinc-400 bg-white/5 border border-white/10">
-            SIMULATION V4.2
+            {mode === "normal" ? "4K DOOH Active" : "100% Transparent Glass"}
           </span>
         </div>
 
         <div className="flex items-center gap-2">
-          {/* Mode Switcher Buttons */}
-          <div className="inline-flex rounded-xl p-1 bg-black/60 border border-white/10">
+          {/* Mode Switch Buttons */}
+          <div className="inline-flex rounded-xl p-1 bg-black/70 border border-white/10">
             <button
+              type="button"
               onClick={() => {
                 setIsAutoPlaying(false);
                 setShowSchematic(false);
@@ -101,9 +120,10 @@ export function SmartEmergencyDoorAnimation({
               }`}
             >
               <Zap className="w-3.5 h-3.5" />
-              Normal Display
+              <span>Normal</span>
             </button>
             <button
+              type="button"
               onClick={() => {
                 setIsAutoPlaying(false);
                 setShowSchematic(false);
@@ -116,29 +136,30 @@ export function SmartEmergencyDoorAnimation({
               }`}
             >
               <AlertTriangle className="w-3.5 h-3.5" />
-              Trigger Emergency
+              <span>Emergency</span>
             </button>
           </div>
 
-          {/* Schematic Diagram Toggle */}
+          {/* Schematic Blueprint Toggle */}
           <button
+            type="button"
             onClick={() => setShowSchematic(!showSchematic)}
             title="Toggle between Live Simulation and Architecture Blueprint"
             className={`px-3 py-1.5 rounded-xl border text-xs font-mono transition-all cursor-pointer flex items-center gap-1.5 ${
               showSchematic
-                ? "bg-purple-600 text-white border-purple-500"
+                ? "bg-purple-600 text-white border-purple-500 shadow-md"
                 : "bg-white/[0.04] text-zinc-300 border-white/10 hover:bg-white/[0.08]"
             }`}
           >
             <Layers className="w-3.5 h-3.5" />
-            <span className="hidden md:inline">{showSchematic ? "Live Sim" : "Blueprint"}</span>
+            <span className="hidden sm:inline">{showSchematic ? "Live Sim" : "Blueprint"}</span>
           </button>
         </div>
       </div>
 
-      {/* Main Simulation Viewport */}
+      {/* Main Simulation Stage Viewport */}
       {showSchematic ? (
-        <div className="relative w-full h-[380px] sm:h-[440px] bg-black flex items-center justify-center p-4">
+        <div className="relative w-full h-[380px] sm:h-[430px] bg-black flex items-center justify-center p-4">
           <Image
             src="/images/2.jpg"
             alt="Smart Emergency Exit Architecture Blueprint"
@@ -147,89 +168,99 @@ export function SmartEmergencyDoorAnimation({
           />
         </div>
       ) : (
-        <div className="relative w-full h-[380px] sm:h-[440px] overflow-hidden bg-gradient-to-b from-[#06080e] via-[#090d16] to-[#04060a]">
-          {/* Ambient Lighting Background: Changes dramatically based on mode */}
+        <div className="relative w-full h-[380px] sm:h-[430px] overflow-hidden bg-gradient-to-b from-[#05070c] via-[#080c15] to-[#040508] flex flex-col justify-between p-4 sm:p-6">
+          {/* Ambient Lighting Background */}
           <div
             className={`absolute inset-0 transition-opacity duration-700 pointer-events-none ${
               mode === "normal"
-                ? "opacity-100 bg-[radial-gradient(ellipse_at_center,rgba(6,182,212,0.1)_0%,transparent_70%)]"
-                : "opacity-100 bg-[radial-gradient(ellipse_at_center,rgba(239,68,68,0.18)_0%,transparent_70%)]"
+                ? "opacity-100 bg-[radial-gradient(ellipse_at_center,rgba(6,182,212,0.12)_0%,transparent_70%)]"
+                : "opacity-100 bg-[radial-gradient(ellipse_at_center,rgba(239,68,68,0.2)_0%,transparent_70%)]"
             }`}
           />
 
-          {/* Emergency Alert Strobes along top & bottom */}
+          {/* Emergency Alert Perimeter Flashes */}
           {mode === "emergency" && (
-            <>
-              <div className="absolute top-0 inset-x-0 h-1 bg-gradient-to-r from-red-600 via-rose-500 to-red-600 animate-pulse z-20 shadow-[0_0_20px_#f43f5e]" />
-              <div className="absolute bottom-0 inset-x-0 h-1 bg-gradient-to-r from-red-600 via-rose-500 to-red-600 animate-pulse z-20 shadow-[0_0_20px_#f43f5e]" />
-            </>
+            <div className="absolute top-0 inset-x-0 h-1 bg-gradient-to-r from-red-600 via-rose-500 to-red-600 animate-pulse z-20 shadow-[0_0_20px_#f43f5e]" />
           )}
 
-          {/* BACKGROUND LAYER: The Outside Street World / Rescue Team */}
-          {/* In Normal mode, this is hidden by the opaque DOOH content. In Emergency mode, it becomes 100% visible through the transparent glass! */}
-          <div className="absolute inset-0 z-0 flex items-center justify-center pointer-events-none">
-            {/* Street / Road Horizon Backdrop */}
-            <div className="absolute inset-0 bg-[#070b14] overflow-hidden">
-              {/* Outside City Lights / Street Asphalt */}
-              <div className="absolute bottom-0 inset-x-0 h-36 bg-gradient-to-t from-[#0e1726] to-transparent border-t border-cyan-500/20" />
-              <div className="absolute bottom-12 inset-x-0 h-[2px] bg-dashed-line opacity-40 bg-[linear-gradient(90deg,#3b82f6_50%,transparent_50%)] bg-[size:24px_2px]" />
-
-              {/* Outside Rescue Team / First Responders (Visible through transparent glass in emergency) */}
-              <div
-                className={`absolute bottom-16 right-16 sm:right-28 transition-all duration-700 flex items-end gap-3 ${
-                  mode === "emergency" ? "opacity-90 translate-y-0 scale-100" : "opacity-0 translate-y-4 scale-95"
+          {/* TOP HUD ROW: Clean status indicators (No overlap with door) */}
+          <div className="relative z-20 flex items-center justify-between gap-3">
+            <div className="flex items-center gap-2">
+              <span className="font-mono text-[10px] uppercase tracking-wider text-zinc-400">BUS SIDE PROFILE:</span>
+              <span
+                className={`font-mono text-[10px] font-bold px-2 py-0.5 rounded border ${
+                  mode === "normal"
+                    ? "bg-cyan-950/60 border-cyan-500/40 text-cyan-300"
+                    : "bg-red-950/60 border-red-500/50 text-red-300 animate-pulse"
                 }`}
               >
-                {/* Emergency Response Vehicle with flashing beacon */}
-                <div className="w-24 sm:w-32 h-14 rounded-lg bg-slate-900 border border-red-500/40 relative flex items-center justify-center shadow-[0_0_30px_rgba(239,68,68,0.3)]">
-                  <div className="absolute -top-3 w-5 h-3 rounded-full bg-red-500 animate-ping shadow-[0_0_15px_#ef4444]" />
-                  <div className="text-[9px] font-mono text-red-400 font-bold tracking-widest text-center">
-                    RESCUE UNIT<br />
-                    <span className="text-white text-[8px]">ACTIVE EGRESS</span>
-                  </div>
-                </div>
+                {mode === "normal" ? "BAY-04 // CLOSED & SEALED" : "BAY-04 // EMERGENCY PROTOCOL"}
+              </span>
+            </div>
 
-                {/* Responders Silhouette */}
-                <div className="flex items-center gap-1.5 text-rose-400">
-                  <div className="w-5 h-14 rounded-t-full bg-rose-500/70 shadow-[0_0_10px_#f43f5e]" />
-                  <div className="w-5 h-16 rounded-t-full bg-rose-400/80 shadow-[0_0_12px_#f43f5e]" />
-                </div>
-              </div>
-
-              {/* Inside Passengers waiting to evacuate (Visible through transparent glass in emergency) */}
-              <div
-                className={`absolute bottom-16 left-16 sm:left-24 transition-all duration-700 flex items-end gap-2 ${
-                  mode === "emergency" ? "opacity-90 translate-x-0" : "opacity-0 -translate-x-4"
+            <div className="flex items-center gap-2 font-mono text-[10px]">
+              <span className="text-zinc-500">LOCK:</span>
+              <span
+                className={`font-bold flex items-center gap-1 ${
+                  mode === "normal" ? "text-cyan-400" : "text-emerald-400"
                 }`}
               >
-                <div className="w-4 h-12 rounded-t-full bg-cyan-400/70 shadow-[0_0_8px_#06b6d4]" />
-                <div className="w-4 h-15 rounded-t-full bg-indigo-400/80 shadow-[0_0_8px_#6366f1]" />
-                <div className="w-4 h-11 rounded-t-full bg-purple-400/70 shadow-[0_0_8px_#a855f7]" />
-              </div>
+                {mode === "normal" ? (
+                  <>
+                    <Lock className="w-3 h-3 text-cyan-400" /> SECURED
+                  </>
+                ) : (
+                  <>
+                    <Unlock className="w-3 h-3 text-emerald-400" /> UNLOCKED
+                  </>
+                )}
+              </span>
             </div>
           </div>
 
-          {/* STAGE CENTER: The Bus Wall Frame & Smart Emergency Door Aperture */}
-          <div className="relative z-10 w-full h-full flex items-center justify-center px-4 sm:px-12">
-            {/* Bus Wall Outer Chassis */}
-            <div className="w-full max-w-xl h-[310px] sm:h-[350px] rounded-2xl bg-[#0b0f19] border-2 border-white/15 shadow-[inset_0_2px_15px_rgba(0,0,0,0.8)] relative flex items-center justify-center p-3 sm:p-5 overflow-hidden">
-              {/* Bus Exterior Decal Details */}
-              <div className="absolute top-3 left-4 flex items-center gap-2">
-                <span className="font-mono text-[9px] text-zinc-500 tracking-wider">TRANSIT VEHICLE // BAY-04</span>
-                <span className="w-1.5 h-1.5 rounded-full bg-cyan-400" />
+          {/* CENTER STAGE: Bus Chassis with Emergency Door in Context */}
+          <div className="relative z-10 w-full max-w-2xl mx-auto h-[260px] sm:h-[290px] flex items-center justify-center my-auto">
+            {/* Outside World visible behind the bus window in Emergency Mode */}
+            <div className="absolute inset-x-4 inset-y-2 rounded-2xl bg-[#090e1a] border border-white/5 overflow-hidden flex items-end justify-between px-6 pb-4">
+              {/* Road Asphalt & Distance Markers */}
+              <div className="absolute bottom-0 inset-x-0 h-24 bg-gradient-to-t from-slate-950 via-slate-900/80 to-transparent border-t border-cyan-500/10" />
+
+              {/* Inside Bus Cabin Silhouettes (Left side window) */}
+              <div className="relative z-0 flex items-end gap-1.5 opacity-40">
+                <div className="w-4 h-12 rounded-t-lg bg-cyan-600/50" />
+                <div className="w-4 h-15 rounded-t-lg bg-indigo-600/50" />
+                <span className="font-mono text-[8px] text-zinc-500 ml-1">CABIN</span>
               </div>
 
-              {/* Door Frame Surround (Glows Red in Emergency) */}
+              {/* Outside Rescue Team (Visible on right side in emergency) */}
               <div
-                className={`w-[220px] sm:w-[260px] h-[270px] sm:h-[300px] rounded-xl border-2 transition-all duration-700 relative p-1.5 flex items-center justify-center ${
-                  mode === "normal"
-                    ? "border-cyan-500/40 bg-black/40 shadow-[0_0_25px_rgba(6,182,212,0.15)]"
-                    : "border-red-500 bg-red-950/20 shadow-[0_0_35px_rgba(239,68,68,0.45)] ring-4 ring-red-500/20"
+                className={`relative z-0 flex items-end gap-2.5 transition-all duration-700 ${
+                  mode === "emergency" ? "opacity-100 translate-y-0" : "opacity-0 translate-y-3 pointer-events-none"
                 }`}
               >
-                {/* Emergency Sign Header on Top of Door */}
+                <div className="text-right">
+                  <div className="inline-flex items-center gap-1 px-2 py-0.5 rounded bg-red-600/80 text-white text-[8px] font-mono font-bold tracking-wider">
+                    <span className="w-1.5 h-1.5 rounded-full bg-white animate-ping" /> RESCUE SQUAD
+                  </div>
+                  <div className="text-[9px] font-mono text-zinc-400 mt-0.5">UNOBSTRUCTED VIEW</div>
+                </div>
+                <div className="w-5 h-16 rounded-t-lg bg-rose-500/80 shadow-[0_0_12px_#f43f5e]" />
+              </div>
+            </div>
+
+            {/* THE BUS BODY CHASSIS & EMERGENCY DOOR ASSEMBLY */}
+            <div className="relative z-10 w-full h-full flex items-center justify-center">
+              {/* Central Emergency Exit Door Frame */}
+              <div
+                className={`w-[210px] sm:w-[240px] h-[240px] sm:h-[265px] rounded-2xl border-2 transition-all duration-700 relative p-1.5 flex items-center justify-center ${
+                  mode === "normal"
+                    ? "border-cyan-500/40 bg-black/60 shadow-[0_0_25px_rgba(6,182,212,0.15)]"
+                    : "border-red-500 bg-red-950/20 shadow-[0_0_35px_rgba(239,68,68,0.5)] ring-4 ring-red-500/20"
+                }`}
+              >
+                {/* Door Frame Top Beacon Badge */}
                 <div
-                  className={`absolute -top-3.5 px-3 py-0.5 rounded-full border text-[9px] font-mono tracking-widest font-bold uppercase transition-all duration-500 z-30 shadow-md flex items-center gap-1.5 ${
+                  className={`absolute -top-3 px-3 py-0.5 rounded-full border text-[8.5px] font-mono tracking-wider font-bold uppercase transition-all duration-500 z-30 shadow-md flex items-center gap-1.5 ${
                     mode === "normal"
                       ? "bg-slate-900 border-cyan-500/40 text-cyan-400"
                       : "bg-red-600 border-red-400 text-white animate-bounce shadow-[0_0_15px_#ef4444]"
@@ -238,205 +269,189 @@ export function SmartEmergencyDoorAnimation({
                   {mode === "normal" ? (
                     <>
                       <Lock className="w-2.5 h-2.5 text-cyan-400" />
-                      SMART EXIT • LOCKED
+                      DOOR LOCKED // DOOH ACTIVE
                     </>
                   ) : (
                     <>
                       <Unlock className="w-2.5 h-2.5 text-white" />
-                      FAILSAFE OPEN • EVACUATION
+                      FAILSAFE UNLOCKED // EGRESS
                     </>
                   )}
                 </div>
 
-                {/* THE SMART DOOR LEAF (Physical Moving Glass Door) */}
+                {/* THE MOVING GLASS DOOR LEAF */}
                 <div
-                  className={`w-full h-full rounded-lg relative overflow-hidden transition-all duration-1000 ${
+                  className={`w-full h-full rounded-xl relative overflow-hidden transition-all duration-1000 ${
                     mode === "emergency" && stepPhase >= 3
-                      ? "translate-x-6 sm:translate-x-10 -rotate-3 scale-[0.98] shadow-[-10px_0_30px_rgba(0,0,0,0.8)] border-2 border-red-400"
+                      ? "translate-x-8 sm:translate-x-12 -rotate-2 scale-[0.98] border-2 border-red-400 shadow-[-10px_0_30px_rgba(0,0,0,0.9)]"
                       : "translate-x-0 rotate-0 border border-white/20"
                   }`}
                   style={{ transformOrigin: "right center" }}
                 >
-                  {/* GLASS LAYER 1: 100% Transparent Base Glass */}
-                  <div
-                    className={`absolute inset-0 transition-all duration-500 ${
-                      mode === "normal"
-                        ? "bg-black"
-                        : "bg-cyan-500/[0.04] backdrop-blur-[0.5px] border border-cyan-400/30"
-                    }`}
-                  >
-                    {/* Glass Reflection Sheen in Emergency Mode to show real glass clarity */}
-                    {mode === "emergency" && (
-                      <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-white/10 to-transparent pointer-events-none" />
-                    )}
+                  {/* GLASS LAYER: Crystal Clear Optical Glass (Always present underneath) */}
+                  <div className="absolute inset-0 bg-cyan-400/[0.03] backdrop-blur-[0.5px]">
+                    {/* Glass Glare Highlights */}
+                    <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-white/[0.08] to-transparent pointer-events-none" />
                   </div>
 
-                  {/* GLASS LAYER 2: Commercial DOOH Video Content (ACTIVE in Normal Mode, OVERRIDDEN & DISSOLVED in Emergency Mode) */}
+                  {/* ADVERTISING DISPLAY LAYER (Active in Normal Mode, Fades to 0% in Emergency) */}
                   <div
-                    className={`absolute inset-0 transition-all duration-700 overflow-hidden flex flex-col justify-between p-3.5 z-10 ${
-                      mode === "normal"
-                        ? "opacity-100 scale-100 pointer-events-auto"
-                        : "opacity-0 scale-105 pointer-events-none"
+                    className={`absolute inset-0 transition-opacity duration-700 flex flex-col justify-between p-3.5 z-10 ${
+                      mode === "normal" ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
                     }`}
                     style={{
                       background: "linear-gradient(135deg, #0f172a 0%, #1e1b4b 50%, #311042 100%)",
                     }}
                   >
-                    {/* High-Impact Commercial Display Visual simulation */}
-                    <div className="absolute inset-0 opacity-80 mix-blend-screen overflow-hidden">
-                      <div className="absolute -top-10 -right-10 w-44 h-44 rounded-full bg-cyan-400/30 blur-2xl animate-pulse" />
-                      <div className="absolute -bottom-10 -left-10 w-44 h-44 rounded-full bg-pink-500/30 blur-2xl animate-pulse" />
-                      <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.08)_1px,transparent_1px)] bg-[size:100%_4px] pointer-events-none opacity-40" />
+                    {/* Shimmer Light Bar */}
+                    <div className="absolute inset-0 overflow-hidden pointer-events-none">
+                      <div className="w-1/2 h-full bg-gradient-to-r from-transparent via-white/15 to-transparent skew-x-[-20deg] animate-ad-shimmer" />
                     </div>
 
                     {/* Top Ad Ticker */}
-                    <div className="relative z-10 flex items-center justify-between">
-                      <span className="px-2 py-0.5 rounded bg-black/60 border border-cyan-400/40 text-[9px] font-mono font-semibold text-cyan-300">
+                    <div className="flex items-center justify-between text-[8px] font-mono">
+                      <span className="px-2 py-0.5 rounded bg-black/60 border border-cyan-400/40 text-cyan-300 font-bold">
                         VMOVEXA DOOH
                       </span>
-                      <span className="text-[8px] font-mono text-cyan-200/80 bg-cyan-950/60 px-1.5 py-0.5 rounded border border-cyan-500/20">
-                        LIVE 4K MATRIX
+                      <span className="text-pink-300 bg-pink-950/60 px-1.5 py-0.5 rounded border border-pink-500/30">
+                        MONETIZED
                       </span>
                     </div>
 
-                    {/* Center Brand Advertisement Display */}
-                    <div className="relative z-10 text-center my-auto py-2">
-                      <div className="inline-flex items-center gap-1 text-[9px] font-mono uppercase tracking-widest text-pink-400 mb-1">
-                        <Sparkles className="w-3 h-3 text-pink-400" /> SPONSORED CAMPAIGN
+                    {/* Center Commercial Ad Visual */}
+                    <div className="my-auto text-center py-1">
+                      <div className="inline-flex items-center gap-1 text-[8.5px] font-mono text-cyan-300 uppercase tracking-widest mb-1">
+                        <Sparkles className="w-2.5 h-2.5 text-cyan-300" />
+                        AD REVENUE SURFACE
                       </div>
-                      <h4 className="text-base sm:text-lg font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-cyan-300 via-indigo-200 to-pink-300 uppercase tracking-tight leading-tight">
-                        REVENUE GENERATING
-                      </h4>
-                      <p className="text-[10px] text-zinc-300 mt-1 font-mono">
-                        Targeted Digital Advertising Playing on Emergency Glass
-                      </p>
+                      <div className="text-sm sm:text-base font-extrabold text-white uppercase tracking-tight leading-tight">
+                        Targeted Ads <br />
+                        <span className="bg-gradient-to-r from-cyan-300 via-indigo-300 to-pink-300 bg-clip-text text-transparent">
+                          In Motion
+                        </span>
+                      </div>
+                      <div className="text-[9px] text-zinc-400 font-mono mt-1">
+                        High-Definition Screen
+                      </div>
                     </div>
 
-                    {/* Bottom Telemetry Bar */}
-                    <div className="relative z-10 flex items-center justify-between pt-2 border-t border-white/10 text-[8px] font-mono text-zinc-400">
-                      <span>AUDIENCE: 28.4K IMP/H</span>
-                      <span className="text-cyan-400">LOCKED & SECURED</span>
+                    {/* Bottom Status Row */}
+                    <div className="pt-1.5 border-t border-white/10 flex items-center justify-between text-[7.5px] font-mono text-zinc-400">
+                      <span>IMPRESSIONS ACTIVE</span>
+                      <span className="text-cyan-400 font-bold">LOCKED & SECURED</span>
                     </div>
                   </div>
 
-                  {/* EMERGENCY OVERLAY LAYER: Appears immediately upon trigger */}
+                  {/* EMERGENCY OVERLAY (Appears in Emergency Mode through the transparent glass) */}
                   <div
-                    className={`absolute inset-0 transition-all duration-500 flex flex-col justify-between p-3.5 z-20 pointer-events-none ${
+                    className={`absolute inset-0 transition-opacity duration-500 flex flex-col justify-between p-3 z-20 pointer-events-none ${
                       mode === "emergency" ? "opacity-100" : "opacity-0"
                     }`}
                   >
-                    {/* Top Emergency Status */}
+                    {/* Top Tag */}
                     <div className="flex items-center justify-between">
-                      <div className="px-2 py-0.5 rounded bg-red-600/90 text-white text-[9px] font-mono font-bold tracking-widest flex items-center gap-1 shadow-md">
-                        <AlertTriangle className="w-3 h-3 text-white" /> FAILSAFE ACTIVE
-                      </div>
-                      <span className="text-[9px] font-mono text-white bg-black/60 px-2 py-0.5 rounded border border-red-500/50">
-                        DISPLAY: TRANSPARENT
+                      <span className="px-2 py-0.5 rounded bg-red-600/90 text-white text-[8px] font-mono font-bold tracking-widest">
+                        FAILSAFE OVERRIDE
+                      </span>
+                      <span className="px-1.5 py-0.5 rounded bg-black/60 border border-cyan-400/40 text-cyan-300 text-[8px] font-mono">
+                        GLASS: 100% CLEAR
                       </span>
                     </div>
 
-                    {/* Center Clear Visual Guidance */}
-                    <div className="text-center my-auto bg-black/60 backdrop-blur-md p-3 rounded-xl border border-red-500/60 shadow-[0_0_20px_rgba(239,68,68,0.3)]">
-                      <Eye className="w-6 h-6 text-cyan-300 mx-auto mb-1 animate-pulse" />
-                      <div className="text-xs sm:text-sm font-bold text-white uppercase tracking-wider">
-                        100% CLEAR OPTICAL GLASS
+                    {/* Center Directional Prompt */}
+                    <div className="my-auto text-center p-2.5 rounded-xl bg-black/70 backdrop-blur-md border border-red-500/50">
+                      <Eye className="w-5 h-5 text-cyan-300 mx-auto mb-1 animate-pulse" />
+                      <div className="text-xs font-bold text-white uppercase tracking-wider">
+                        Full Transparency
                       </div>
-                      <p className="text-[10px] text-zinc-300 mt-1 leading-snug">
-                        Immediate bidirectional visibility: Passengers see escape route, First-responders see inside cabin.
-                      </p>
+                      <div className="text-[9px] text-zinc-300 mt-0.5 font-mono">
+                        Outside rescue visible from inside
+                      </div>
                     </div>
 
-                    {/* Evacuation Directional Arrow */}
-                    <div className="flex items-center justify-center gap-2 py-1 bg-green-500/20 rounded border border-green-500/40 text-green-400 font-mono text-[9px] font-bold uppercase tracking-wider">
-                      <span>EGRESS ROUTE UNBLOCKED</span>
-                      <ArrowRight className="w-3.5 h-3.5 animate-pulse" />
+                    {/* Evacuation Flow Indicator */}
+                    <div className="flex items-center justify-center gap-1.5 py-1 rounded bg-emerald-500/20 border border-emerald-500/40 text-emerald-400 text-[8.5px] font-mono font-bold uppercase tracking-wider">
+                      <span>EGRESS ROUTE OPEN</span>
+                      <ArrowRight className="w-3 h-3 animate-egress-arrow" />
                     </div>
                   </div>
                 </div>
 
-                {/* Mechanical Failsafe Latch Cylinder (Right Side of Door Frame) */}
+                {/* Mechanical Solenoid Deadbolt (Right side) */}
                 <div
-                  className={`absolute right-1 top-1/2 -translate-y-1/2 w-4 h-16 rounded border transition-all duration-500 flex flex-col items-center justify-center gap-1 z-30 ${
+                  className={`absolute right-1 top-1/2 -translate-y-1/2 w-3.5 h-14 rounded border transition-all duration-500 flex flex-col items-center justify-center gap-1 z-30 ${
                     mode === "normal"
-                      ? "bg-slate-800 border-cyan-400 shadow-[0_0_10px_#06b6d4]"
-                      : "bg-red-950 border-red-500 translate-x-2 shadow-[0_0_15px_#ef4444]"
+                      ? "bg-slate-800 border-cyan-400 shadow-[0_0_8px_#06b6d4]"
+                      : "bg-red-950 border-red-500 translate-x-2 shadow-[0_0_12px_#ef4444]"
                   }`}
-                  title="Failsafe Mechanical Deadbolt / Solenoid"
+                  title="Failsafe Mechanical Latch"
                 >
                   <div
-                    className={`w-2 h-4 rounded-sm transition-all duration-300 ${
+                    className={`w-1.5 h-3 rounded-sm transition-all duration-300 ${
                       mode === "normal" ? "bg-cyan-400" : "bg-red-500 -translate-x-1"
                     }`}
                   />
-                  <span className="text-[6px] font-mono text-zinc-300 -rotate-90">
-                    {mode === "normal" ? "LOCK" : "FREE"}
-                  </span>
                 </div>
               </div>
             </div>
           </div>
 
-          {/* Bottom Overlay Status Toast */}
-          <div className="absolute bottom-3 inset-x-4 sm:inset-x-8 z-20 flex flex-col sm:flex-row items-center justify-between gap-2 px-4 py-2 rounded-xl bg-black/80 backdrop-blur-md border border-white/10 text-xs font-mono text-zinc-300">
-            <div className="flex items-center gap-2">
-              <span className="text-zinc-500 font-bold">CORE PRINCIPLE:</span>
-              <span className={mode === "normal" ? "text-cyan-400 font-semibold" : "text-rose-400 font-semibold"}>
+          {/* BOTTOM HUD ROW: Clear Explanation Banner (Zero overlapping text) */}
+          <div className="relative z-20 px-3.5 py-2 rounded-xl bg-black/70 border border-white/10 flex flex-col sm:flex-row items-center justify-between gap-2 text-xs font-mono">
+            <div className="flex items-center gap-2 text-[11px]">
+              <span className="text-zinc-500 font-bold">CORE CONCEPT:</span>
+              <span className={mode === "normal" ? "text-cyan-400 font-medium" : "text-rose-400 font-medium"}>
                 {mode === "normal"
-                  ? "• 100% Commercial Monetization when closed & moving"
-                  : "• Instant Failsafe Transparency & Unlock on Emergency Trigger"}
+                  ? "Revenue DOOH media while in motion & safely locked"
+                  : "Failsafe de-energizes display to 100% optical clarity & unlocks for evacuation"}
               </span>
             </div>
-
-            <div className="flex items-center gap-3 text-[10px] text-zinc-400">
-              <span className="flex items-center gap-1">
-                <ShieldAlert className="w-3 h-3 text-cyan-400" />
-                Zero Power Dependency
-              </span>
-              <span className="hidden md:inline">•</span>
-              <span className="hidden md:inline">Hardware Override Priority</span>
+            <div className="text-[10px] text-zinc-400 flex items-center gap-1.5">
+              <ShieldAlert className="w-3 h-3 text-cyan-400" />
+              <span>Zero-Power Mechanical Egress</span>
             </div>
           </div>
         </div>
       )}
 
-      {/* 4-Step Technical Pipeline Indicators (Interactive Walkthrough) */}
-      <div className="p-4 sm:p-6 bg-[#0a0e17] border-t border-white/[0.08]">
-        <div className="text-[11px] font-mono uppercase tracking-widest text-zinc-400 mb-3 flex items-center justify-between">
-          <span>FAILSAFE PROTOCOL WORKFLOW</span>
-          <span className="text-zinc-500">SYNCHRONIZED TIMELINE</span>
+      {/* 4-Step Technical Pipeline Indicators (Walkthrough Grid) */}
+      <div className="p-4 sm:p-5 bg-[#0a0e17] border-t border-white/[0.08]">
+        <div className="text-[10.5px] font-mono uppercase tracking-widest text-zinc-400 mb-2.5 flex items-center justify-between">
+          <span>FAILSAFE TIMELINE SEQUENCE</span>
+          <span className="text-zinc-500">REAL-TIME HARDWARE PROGRESSION</span>
         </div>
 
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-2.5 sm:gap-3">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-2.5">
           {[
             {
               step: "01",
               title: "Signal Override",
-              desc: "Accident / crash sensors or manual lever overrides DOOH loop.",
+              desc: "Accident / crash telemetry immediately overrides the DOOH loop.",
               activeIn: mode === "emergency" && stepPhase >= 1,
               dotColor: "bg-red-500",
             },
             {
               step: "02",
               title: "Glass De-Energizes",
-              desc: "Display panel turns 100% crystal-clear transparent in <30ms.",
+              desc: "Display matrix turns 100% crystal-clear transparent in <30ms.",
               activeIn: mode === "emergency" && stepPhase >= 2,
               dotColor: "bg-cyan-400",
             },
             {
               step: "03",
               title: "Failsafe Unlocks",
-              desc: "Pneumatic & magnetic latches disengage without electrical power.",
+              desc: "Mechanical & pneumatic latches disengage without battery power.",
               activeIn: mode === "emergency" && stepPhase >= 3,
               dotColor: "bg-purple-400",
             },
             {
               step: "04",
               title: "Seamless Egress",
-              desc: "Door opens wide; outside rescuers and inside passengers coordinate.",
+              desc: "Door opens outwards; rescue crew and passengers coordinate.",
               activeIn: mode === "emergency" && stepPhase >= 4,
-              dotColor: "bg-green-400",
+              dotColor: "bg-emerald-400",
             },
-          ].map((item, i) => (
+          ].map((item) => (
             <div
               key={item.step}
               className={`p-3 rounded-xl border transition-all duration-300 ${
