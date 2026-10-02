@@ -90,7 +90,7 @@ export default function CareersPage() {
   return (
     <main className="min-h-screen bg-black text-white">
       {/* 01 — HERO */}
-      <section className="relative pt-36 pb-20 overflow-hidden bg-black">
+      <section className="relative pt-32 sm:pt-36 pb-8 sm:pb-10 overflow-hidden bg-black">
         <div className="container relative z-10 max-w-6xl mx-auto px-6">
           <Reveal>
             <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/[0.04] border border-white/15 backdrop-blur-md mb-8">
@@ -142,9 +142,9 @@ export default function CareersPage() {
       </section>
 
       {/* 02 — CORE CULTURE & VALUES */}
-      <section className="py-20 bg-black">
+      <section className="pt-8 pb-10 sm:pt-10 sm:pb-12 bg-black">
         <div className="container max-w-6xl mx-auto px-6">
-          <div className="text-center max-w-2xl mx-auto mb-14">
+          <div className="text-center max-w-2xl mx-auto mb-8 sm:mb-10">
             <span className="font-mono text-xs uppercase tracking-widest text-cyan-400 block mb-2">
               Engineering Culture
             </span>
@@ -172,9 +172,9 @@ export default function CareersPage() {
       </section>
 
       {/* 03 — OPEN ROLES & APPLICATION */}
-      <section className="py-24 bg-black" id="open-positions">
+      <section className="pt-8 pb-20 sm:pt-10 sm:pb-24 bg-black" id="open-positions">
         <div className="container max-w-6xl mx-auto px-6">
-          <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
+          <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-8 sm:mb-10">
             <div>
               <span className="font-mono text-xs uppercase tracking-widest text-cyan-400 block mb-2">
                 Opportunities
