@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 import { FiArrowRight, FiMail, FiPhone, FiMapPin, FiSend, FiCheckCircle, FiCheck } from "react-icons/fi";
 import { RiBuilding4Line, RiMegaphoneLine, RiCpuLine, RiFundsLine } from "react-icons/ri";
 import { Reveal } from "@/components/animations/reveal";
@@ -510,6 +511,33 @@ export default function ContactPage() {
                       </button>
                     </form>
                   )}
+
+                  {/* Submission Form Footer: Copyright & Social Icons */}
+                  <div className="pt-6 mt-6 border-t border-white/[0.08] flex flex-col sm:flex-row items-center justify-between gap-4 text-center sm:text-left">
+                    <p className="font-mono text-[11px] text-white/50 tracking-wider">
+                      Copyright ©️ 2026 VMOVEXA Inc. All rights reserved.
+                    </p>
+                    <div className="flex items-center gap-2.5">
+                      {[
+                        { name: "LinkedIn", icon: "/images/social/linkedin.png", href: "https://www.linkedin.com/company/vmovexa" },
+                        { name: "X", icon: "/images/social/twitter.png", href: "https://x.com/vmovexa" },
+                        { name: "Instagram", icon: "/images/social/instagram.png", href: "https://www.instagram.com/vmovexa" },
+                        { name: "Facebook", icon: "/images/social/facebook.png", href: "https://www.facebook.com/vmovexa" },
+                        { name: "YouTube", icon: "/images/social/youtube.png", href: "https://www.youtube.com/@vmovexa" },
+                      ].map((s) => (
+                        <a
+                          key={s.name}
+                          href={s.href}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="w-7 h-7 rounded-lg bg-white/[0.04] border border-white/10 flex items-center justify-center p-1.5 hover:bg-white/10 hover:border-cyan-400/50 hover:scale-110 transition-all duration-200"
+                          title={s.name}
+                        >
+                          <Image src={s.icon} alt={s.name} width={16} height={16} className="w-full h-full object-contain opacity-75 hover:opacity-100" />
+                        </a>
+                      ))}
+                    </div>
+                  </div>
                 </div>
               </Reveal>
             </div>

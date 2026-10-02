@@ -110,6 +110,11 @@ export async function POST(req: Request) {
 
     const logoPath = process.cwd() + '/public/logos/vmovexa-wordmark-dark.png';
     const iconPath = process.cwd() + '/public/logos/vmovexa-icon-dark.png';
+    const linkedinIcon = process.cwd() + '/public/images/social/linkedin.png';
+    const twitterIcon = process.cwd() + '/public/images/social/twitter.png';
+    const instagramIcon = process.cwd() + '/public/images/social/instagram.png';
+    const facebookIcon = process.cwd() + '/public/images/social/facebook.png';
+    const youtubeIcon = process.cwd() + '/public/images/social/youtube.png';
     
     const attachments = [
       {
@@ -121,6 +126,31 @@ export async function POST(req: Request) {
         filename: 'vmovexa-icon-dark.png',
         path: iconPath,
         cid: 'vmovexa-icon'
+      },
+      {
+        filename: 'linkedin.png',
+        path: linkedinIcon,
+        cid: 'social-linkedin'
+      },
+      {
+        filename: 'twitter.png',
+        path: twitterIcon,
+        cid: 'social-twitter'
+      },
+      {
+        filename: 'instagram.png',
+        path: instagramIcon,
+        cid: 'social-instagram'
+      },
+      {
+        filename: 'facebook.png',
+        path: facebookIcon,
+        cid: 'social-facebook'
+      },
+      {
+        filename: 'youtube.png',
+        path: youtubeIcon,
+        cid: 'social-youtube'
       }
     ];
 
@@ -179,8 +209,42 @@ export async function POST(req: Request) {
                 </div>
                 <p>If you have any urgent details to share, feel free to reply directly to this email or reach us at <a href="mailto:hello@vmovexa.com" style="color: #3b82f6;">hello@vmovexa.com</a>.</p>
               </div>
-              <div class="footer">
-                VMOVEXA • hello@vmovexa.com
+              <div class="footer" style="padding: 24px 28px; background: #f8fafc; border-top: 1px solid #e2e8f0; text-align: center;">
+                <table align="center" cellpadding="0" cellspacing="0" border="0" style="margin: 0 auto 14px auto;">
+                  <tr>
+                    <td style="padding: 0 8px;">
+                      <a href="https://www.linkedin.com/company/vmovexa" target="_blank" style="text-decoration: none; display: inline-block;">
+                        <img src="cid:social-linkedin" alt="LinkedIn" width="20" height="20" style="display: block; border: 0;" />
+                      </a>
+                    </td>
+                    <td style="padding: 0 8px;">
+                      <a href="https://x.com/vmovexa" target="_blank" style="text-decoration: none; display: inline-block;">
+                        <img src="cid:social-twitter" alt="X" width="20" height="20" style="display: block; border: 0;" />
+                      </a>
+                    </td>
+                    <td style="padding: 0 8px;">
+                      <a href="https://www.instagram.com/vmovexa" target="_blank" style="text-decoration: none; display: inline-block;">
+                        <img src="cid:social-instagram" alt="Instagram" width="20" height="20" style="display: block; border: 0;" />
+                      </a>
+                    </td>
+                    <td style="padding: 0 8px;">
+                      <a href="https://www.facebook.com/vmovexa" target="_blank" style="text-decoration: none; display: inline-block;">
+                        <img src="cid:social-facebook" alt="Facebook" width="20" height="20" style="display: block; border: 0;" />
+                      </a>
+                    </td>
+                    <td style="padding: 0 8px;">
+                      <a href="https://www.youtube.com/@vmovexa" target="_blank" style="text-decoration: none; display: inline-block;">
+                        <img src="cid:social-youtube" alt="YouTube" width="20" height="20" style="display: block; border: 0;" />
+                      </a>
+                    </td>
+                  </tr>
+                </table>
+                <p style="margin: 0 0 6px 0; font-size: 12px; color: #475569; font-weight: 500; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;">
+                  Copyright ©️ 2026 VMOVEXA Inc. All rights reserved.
+                </p>
+                <p style="margin: 0; font-size: 11px; color: #94a3b8; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;">
+                  <a href="https://vmovexa.com" style="color: #64748b; text-decoration: none;">vmovexa.com</a> • <a href="mailto:hello@vmovexa.com" style="color: #64748b; text-decoration: none;">hello@vmovexa.com</a>
+                </p>
               </div>
             </div>
           </body>
