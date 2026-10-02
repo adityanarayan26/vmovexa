@@ -163,12 +163,12 @@ export default function CareersPage() {
             {values.map((v, i) => (
               <TiltCard key={i} maxTilt={8} glare={false} className="h-full">
                 <div
-                  className="p-8 rounded-2xl bg-white/95 border border-zinc-200/90 shadow-[0_10px_30px_-8px_rgba(0,0,0,0.06),0_0_1px_1px_rgba(0,0,0,0.02)] hover:border-cyan-400/80 hover:shadow-[0_20px_40px_-10px_rgba(6,182,212,0.18)] hover:-translate-y-1 transition-all duration-300 h-full flex flex-col justify-start group"
+                  className="p-8 rounded-2xl bg-white/95 border border-zinc-200/90 shadow-[0_10px_30px_-8px_rgba(0,0,0,0.06),0_0_1px_1px_rgba(0,0,0,0.02)] hover:border-blue-500/50 hover:shadow-[0_20px_40px_-10px_rgba(37,99,235,0.12)] hover:-translate-y-1 transition-all duration-300 h-full flex flex-col justify-start group"
                 >
-                  <div className="w-11 h-11 rounded-xl bg-cyan-50 border border-cyan-200/80 text-cyan-700 flex items-center justify-center font-mono font-bold text-sm shadow-sm group-hover:bg-gradient-to-r group-hover:from-cyan-500 group-hover:to-blue-600 group-hover:text-white group-hover:border-transparent transition-all duration-300 mb-5">
+                  <div className="w-11 h-11 rounded-xl bg-blue-50 border border-blue-200/80 text-blue-600 flex items-center justify-center font-mono font-bold text-sm shadow-sm group-hover:bg-blue-600 group-hover:text-white group-hover:border-blue-600 transition-all duration-300 mb-5">
                     0{i + 1}
                   </div>
-                  <h3 className="text-lg sm:text-xl font-bold text-zinc-900 tracking-tight group-hover:text-cyan-700 transition-colors mb-3">
+                  <h3 className="text-lg sm:text-xl font-bold text-zinc-900 tracking-tight group-hover:text-blue-600 transition-colors mb-3">
                     {v.title}
                   </h3>
                   <p className="text-xs sm:text-sm text-zinc-600 leading-relaxed font-normal">
