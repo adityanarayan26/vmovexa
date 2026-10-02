@@ -11,6 +11,16 @@ import { BlurReveal } from "@/components/animations/blur-reveal";
 import { ImageCurtainReveal, FloatingElement } from "@/components/animations/image-reveal";
 import { TiltCard } from "@/components/animations/tilt-card";
 import { GridWaveBackground } from "@/components/visuals/grid-wave-background";
+import { 
+  PublicTransportIllustration,
+  PrivateFleetsIllustration,
+  AirportMobilityIllustration,
+  EmployeeTransportIllustration,
+  SchoolTransportIllustration,
+  TourismMobilityIllustration,
+  ElectricMobilityIllustration,
+  LogisticsCargoIllustration
+} from "@/components/visuals/industry-illustrations";
 export const metadata: Metadata = {
   title: "VMOVEXA Industries | Connected Mobility Across Sectors",
   description:
@@ -134,53 +144,61 @@ export default function IndustriesPage() {
             </div>
           </div>
 
-          {/* 8 Industry Visual Cards Grid from Mockup Screen 05 (2 rows x 4 cols) */}
+          {/* 8 Industry Visual Cards Grid with Technical Illustrations (2 rows x 4 cols) */}
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 mb-16">
             {[
               {
                 title: "Public Transport",
-                img: "/images/industry-public-transport.png",
+                illustration: <PublicTransportIllustration />,
                 id: "public-transport",
+                tag: "TRANSIT NETWORK",
               },
               {
                 title: "Private Fleets",
-                img: "/images/industry-private-fleets.png",
+                illustration: <PrivateFleetsIllustration />,
                 id: "private-fleets",
+                tag: "COMMERCIAL FLEET",
               },
               {
                 title: "Airport Mobility",
-                img: "/images/industry-airport-mobility.png",
+                illustration: <AirportMobilityIllustration />,
                 id: "airport-mobility",
+                tag: "CAMPUS & TARMAC",
               },
               {
                 title: "Employee Transport",
-                img: "/images/industry-employee-transport.png",
+                illustration: <EmployeeTransportIllustration />,
                 id: "employee-transport",
+                tag: "CORPORATE SHUTTLE",
               },
               {
                 title: "School Transport",
-                img: "/images/industry-school-transport.png",
+                illustration: <SchoolTransportIllustration />,
                 id: "school-transport",
+                tag: "SAFETY GEOFENCE",
               },
               {
                 title: "Tourism Mobility",
-                img: "/images/industry-tourism-mobility.png",
+                illustration: <TourismMobilityIllustration />,
                 id: "tourism",
+                tag: "CULTURAL DISCOVERY",
               },
               {
                 title: "Electric Mobility",
-                img: "/images/industry-electric-mobility.png",
+                illustration: <ElectricMobilityIllustration />,
                 id: "electric-mobility",
                 active: true,
+                tag: "EV TELEMETRY",
               },
               {
                 title: "Logistics & Cargo",
-                img: "/images/industry-logistics-cargo.png",
+                illustration: <LogisticsCargoIllustration />,
                 id: "logistics",
+                tag: "FREIGHT MESH",
               },
             ].map((ind, i) => (
               <GsapScrollReveal key={ind.title} delay={i * 0.05} className="h-full flex flex-col">
-                <TiltCard maxTilt={6} className="h-full">
+                <TiltCard maxTilt={5} className="h-full">
                   <MagneticElement strength={0.03} className="w-full h-full block">
                     <Link
                       href={`#${ind.id}`}
@@ -188,28 +206,27 @@ export default function IndustriesPage() {
                         ind.active
                           ? "border-cyan-500/80 shadow-[0_0_25px_rgba(6,182,212,0.25)]"
                           : "border-white/10 hover:border-cyan-500/40"
-                      } bg-[#0c0d12] transition-all duration-300 shadow-lg h-full flex flex-col justify-between relative`}
+                      } bg-[#0c0d14] transition-all duration-300 shadow-lg h-full flex flex-col justify-between relative`}
                     >
-                      <ImageCurtainReveal delay={i * 0.05} direction="up" className="relative h-48 w-full bg-black/40">
-                        <Image
-                          src={ind.img}
-                          alt={ind.title}
-                          fill
-                          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw"
-                          className="object-cover group-hover:scale-105 transition-transform duration-500"
-                        />
-                        <div className="absolute inset-0 bg-gradient-to-t from-[#0c0d12] via-transparent to-transparent opacity-60 pointer-events-none z-10" />
-                      </ImageCurtainReveal>
-                      <div className="px-5 py-4 flex items-center justify-between relative z-20 bg-[#0c0d12]">
-                        <h4
-                          className={`text-sm font-semibold tracking-wide transition-colors duration-300 ${
-                            ind.active ? "text-cyan-400" : "text-white group-hover:text-cyan-400"
-                          }`}
-                        >
-                          {ind.title}
-                        </h4>
-                        <div className="w-8 h-8 rounded-full bg-white text-black flex items-center justify-center group-hover:bg-cyan-400 group-hover:scale-110 transition-all duration-300 shrink-0 shadow-md">
-                          <FiArrowRight size={13} className="text-black" />
+                      {/* Technical Illustration Vector Canvas */}
+                      {ind.illustration}
+
+                      {/* Content Bottom Bar */}
+                      <div className="px-5 py-3.5 flex items-center justify-between relative z-20 bg-[#0c0d14] border-t border-white/[0.06]">
+                        <div>
+                          <div className="text-[9px] font-mono text-zinc-500 uppercase tracking-widest mb-0.5 group-hover:text-cyan-400/80 transition-colors">
+                            {ind.tag}
+                          </div>
+                          <h4
+                            className={`text-sm font-semibold tracking-wide transition-colors duration-300 ${
+                              ind.active ? "text-cyan-400" : "text-white group-hover:text-cyan-400"
+                            }`}
+                          >
+                            {ind.title}
+                          </h4>
+                        </div>
+                        <div className="w-8 h-8 rounded-full bg-white/10 border border-white/20 text-white flex items-center justify-center group-hover:bg-cyan-400 group-hover:border-cyan-400 group-hover:text-black group-hover:scale-110 transition-all duration-300 shrink-0 shadow-md">
+                          <FiArrowRight size={13} className="text-white group-hover:text-black transition-colors" />
                         </div>
                       </div>
                     </Link>
