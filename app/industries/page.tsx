@@ -187,7 +187,6 @@ export default function IndustriesPage() {
                 title: "Electric Mobility",
                 illustration: <ElectricMobilityIllustration />,
                 id: "electric-mobility",
-                active: true,
                 tag: "EV TELEMETRY",
               },
               {
@@ -202,11 +201,7 @@ export default function IndustriesPage() {
                   <MagneticElement strength={0.03} className="w-full h-full block">
                     <Link
                       href={`#${ind.id}`}
-                      className={`group block rounded-2xl overflow-hidden border ${
-                        ind.active
-                          ? "border-cyan-500/80 shadow-[0_0_25px_rgba(6,182,212,0.25)]"
-                          : "border-white/10 hover:border-cyan-500/40"
-                      } bg-[#0c0d14] transition-all duration-300 shadow-lg h-full flex flex-col justify-between relative`}
+                      className="group block rounded-2xl overflow-hidden border border-white/10 hover:border-cyan-500/50 hover:shadow-[0_0_25px_rgba(6,182,212,0.15)] bg-[#0c0d14] transition-all duration-300 shadow-lg h-full flex flex-col justify-between relative"
                     >
                       {/* Technical Illustration Vector Canvas */}
                       {ind.illustration}
@@ -217,11 +212,7 @@ export default function IndustriesPage() {
                           <div className="text-[9px] font-mono text-zinc-500 uppercase tracking-widest mb-0.5 group-hover:text-cyan-400/80 transition-colors">
                             {ind.tag}
                           </div>
-                          <h4
-                            className={`text-sm font-semibold tracking-wide transition-colors duration-300 ${
-                              ind.active ? "text-cyan-400" : "text-white group-hover:text-cyan-400"
-                            }`}
-                          >
+                          <h4 className="text-sm font-semibold tracking-wide text-white group-hover:text-cyan-400 transition-colors duration-300">
                             {ind.title}
                           </h4>
                         </div>
