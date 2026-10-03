@@ -5,6 +5,7 @@ interface GridWaveBackgroundProps {
   className?: string;
   gridOpacity?: string;
   waveOpacity?: string;
+  showNodes?: boolean;
 }
 
 export function GridWaveBackground({
@@ -12,6 +13,7 @@ export function GridWaveBackground({
   className = "",
   gridOpacity = "opacity-[0.03]",
   waveOpacity = "opacity-20",
+  showNodes = false,
 }: GridWaveBackgroundProps) {
   const glowMap = {
     cyan: "bg-[radial-gradient(ellipse_at_top,rgba(6,182,212,0.05)_0%,transparent_70%)]",
@@ -56,10 +58,14 @@ export function GridWaveBackground({
             stroke="#6366f1"
             strokeWidth="0.5"
           />
-          <circle cx="350" cy="530" r="4" fill="#3b82f6" className="animate-pulse" />
-          <circle cx="850" cy="270" r="4" fill="#6366f1" className="animate-pulse" />
-          <circle cx="200" cy="630" r="2" fill="#8b5cf6" />
-          <circle cx="1000" cy="300" r="2" fill="#0ea5e9" />
+          {showNodes && (
+            <>
+              <circle cx="350" cy="530" r="4" fill="#3b82f6" className="animate-pulse" />
+              <circle cx="850" cy="270" r="4" fill="#6366f1" className="animate-pulse" />
+              <circle cx="200" cy="630" r="2" fill="#8b5cf6" />
+              <circle cx="1000" cy="300" r="2" fill="#0ea5e9" />
+            </>
+          )}
         </svg>
       </div>
     </div>

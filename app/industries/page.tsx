@@ -296,37 +296,46 @@ export default function IndustriesPage() {
                 <stop offset="100%" stopColor="#a855f7" stopOpacity="0.3" />
               </linearGradient>
 
-              {/* Crisp Vector Transit Shuttle Marker (Directional) */}
-              <g id="sleek-shuttle">
-                <rect x="-14" y="-8" width="28" height="16" rx="4" fill="#0f172a" stroke="#06b6d4" strokeWidth="1.2" />
-                <rect x="-11" y="-5.5" width="6" height="11" rx="1.5" fill="#38bdf8" />
-                <rect x="-2" y="-5.5" width="13" height="11" rx="1.5" fill="#38bdf8" fillOpacity="0.4" />
-                <circle cx="-11" cy="-7" r="1.2" fill="#fff" />
-                <circle cx="-11" cy="7" r="1.2" fill="#fff" />
-                <circle cx="11" cy="-7" r="1.2" fill="#f43f5e" />
-                <circle cx="11" cy="7" r="1.2" fill="#f43f5e" />
+              {/* Vector Smart Bus - Cyan Variant */}
+              <g id="smart-bus-cyan">
+                <rect x="-16" y="-8" width="32" height="16" rx="3" fill="#090e18" stroke="#06b6d4" strokeWidth="1.2" />
+                <rect x="-6" y="-2.5" width="12" height="5" rx="1.5" fill="#06b6d4" fillOpacity="0.25" stroke="#06b6d4" strokeWidth="0.5" />
+                <rect x="7" y="-6" width="6.5" height="12" rx="1.5" fill="#38bdf8" fillOpacity="0.9" />
+                <rect x="-1" y="-6" width="6" height="12" rx="1" fill="#38bdf8" fillOpacity="0.45" />
+                <rect x="-8.5" y="-6" width="6" height="12" rx="1" fill="#38bdf8" fillOpacity="0.45" />
+                <rect x="-14.5" y="-5" width="3.5" height="10" rx="1" fill="#38bdf8" fillOpacity="0.3" />
+                <circle cx="16" cy="-5.5" r="1.3" fill="#ffffff" />
+                <circle cx="16" cy="5.5" r="1.3" fill="#ffffff" />
+                <circle cx="-16" cy="-5.5" r="1.3" fill="#f43f5e" />
+                <circle cx="-16" cy="5.5" r="1.3" fill="#f43f5e" />
               </g>
 
-              {/* Violet Shuttle Marker */}
-              <g id="violet-shuttle">
-                <rect x="-14" y="-8" width="28" height="16" rx="4" fill="#1e1035" stroke="#a855f7" strokeWidth="1.2" />
-                <rect x="-11" y="-5.5" width="6" height="11" rx="1.5" fill="#c084fc" />
-                <rect x="-2" y="-5.5" width="13" height="11" rx="1.5" fill="#c084fc" fillOpacity="0.4" />
-                <circle cx="-11" cy="-7" r="1.2" fill="#fff" />
-                <circle cx="-11" cy="7" r="1.2" fill="#fff" />
-                <circle cx="11" cy="-7" r="1.2" fill="#ec4899" />
-                <circle cx="11" cy="7" r="1.2" fill="#ec4899" />
+              {/* Vector Smart Bus - Purple Variant */}
+              <g id="smart-bus-purple">
+                <rect x="-16" y="-8" width="32" height="16" rx="3" fill="#140b25" stroke="#a855f7" strokeWidth="1.2" />
+                <rect x="-6" y="-2.5" width="12" height="5" rx="1.5" fill="#a855f7" fillOpacity="0.25" stroke="#a855f7" strokeWidth="0.5" />
+                <rect x="7" y="-6" width="6.5" height="12" rx="1.5" fill="#c084fc" fillOpacity="0.9" />
+                <rect x="-1" y="-6" width="6" height="12" rx="1" fill="#c084fc" fillOpacity="0.45" />
+                <rect x="-8.5" y="-6" width="6" height="12" rx="1" fill="#c084fc" fillOpacity="0.45" />
+                <rect x="-14.5" y="-5" width="3.5" height="10" rx="1" fill="#c084fc" fillOpacity="0.3" />
+                <circle cx="16" cy="-5.5" r="1.3" fill="#ffffff" />
+                <circle cx="16" cy="5.5" r="1.3" fill="#ffffff" />
+                <circle cx="-16" cy="-5.5" r="1.3" fill="#f43f5e" />
+                <circle cx="-16" cy="5.5" r="1.3" fill="#f43f5e" />
               </g>
 
-              {/* Magenta Shuttle Marker */}
-              <g id="magenta-shuttle">
-                <rect x="-14" y="-8" width="28" height="16" rx="4" fill="#24071b" stroke="#ec4899" strokeWidth="1.2" />
-                <rect x="-11" y="-5.5" width="6" height="11" rx="1.5" fill="#f472b6" />
-                <rect x="-2" y="-5.5" width="13" height="11" rx="1.5" fill="#f472b6" fillOpacity="0.4" />
-                <circle cx="-11" cy="-7" r="1.2" fill="#fff" />
-                <circle cx="-11" cy="7" r="1.2" fill="#fff" />
-                <circle cx="11" cy="-7" r="1.2" fill="#38bdf8" />
-                <circle cx="11" cy="7" r="1.2" fill="#38bdf8" />
+              {/* Vector Smart Bus - Indigo Variant */}
+              <g id="smart-bus-indigo">
+                <rect x="-16" y="-8" width="32" height="16" rx="3" fill="#0d1127" stroke="#6366f1" strokeWidth="1.2" />
+                <rect x="-6" y="-2.5" width="12" height="5" rx="1.5" fill="#6366f1" fillOpacity="0.25" stroke="#6366f1" strokeWidth="0.5" />
+                <rect x="7" y="-6" width="6.5" height="12" rx="1.5" fill="#818cf8" fillOpacity="0.9" />
+                <rect x="-1" y="-6" width="6" height="12" rx="1" fill="#818cf8" fillOpacity="0.45" />
+                <rect x="-8.5" y="-6" width="6" height="12" rx="1" fill="#818cf8" fillOpacity="0.45" />
+                <rect x="-14.5" y="-5" width="3.5" height="10" rx="1" fill="#818cf8" fillOpacity="0.3" />
+                <circle cx="16" cy="-5.5" r="1.3" fill="#ffffff" />
+                <circle cx="16" cy="5.5" r="1.3" fill="#ffffff" />
+                <circle cx="-16" cy="-5.5" r="1.3" fill="#f43f5e" />
+                <circle cx="-16" cy="5.5" r="1.3" fill="#f43f5e" />
               </g>
             </defs>
 
@@ -336,50 +345,27 @@ export default function IndustriesPage() {
             <path id="ind-path-3" d="M-100,640 C350,780 700,440 1100,600 C1400,720 1500,500 1600,540" fill="none" stroke="url(#ind-route-grad-1)" strokeWidth="1.5" />
             <path id="ind-path-4" d="M-100,820 C300,960 800,620 1200,760 C1500,900 1550,700 1600,720" fill="none" stroke="url(#ind-route-grad-2)" strokeWidth="1.8" strokeDasharray="8 8" className="animate-dash-stream-line" />
 
-            {/* Smart City Telemetry Nodes with Radar Rings */}
-            <g>
-              <circle cx="300" cy="320" r="12" stroke="#06b6d4" strokeWidth="0.8" opacity="0.4" className="animate-ping" style={{ animationDuration: "3s" }} />
-              <circle cx="300" cy="320" r="4" fill="#06b6d4" />
-            </g>
-            <g>
-              <circle cx="650" cy="240" r="14" stroke="#8b5cf6" strokeWidth="0.8" opacity="0.4" className="animate-ping" style={{ animationDuration: "2.8s" }} />
-              <circle cx="650" cy="240" r="5" fill="#8b5cf6" />
-            </g>
-            <g>
-              <circle cx="1050" cy="420" r="12" stroke="#ec4899" strokeWidth="0.8" opacity="0.4" className="animate-ping" style={{ animationDuration: "3.2s" }} />
-              <circle cx="1050" cy="420" r="4.5" fill="#ec4899" />
-            </g>
-
-            {/* Active Moving Vehicles with Directional Orientation (rotate="auto") */}
-            <use href="#sleek-shuttle">
+            {/* Active Moving Smart Buses Cruising along Routes (Zero Bubbles) */}
+            <use href="#smart-bus-cyan">
               <animateMotion dur="22s" repeatCount="indefinite" rotate="auto" path="M-100,180 C300,320 600,60 1000,180 C1300,280 1500,120 1600,160" />
             </use>
-            <use href="#violet-shuttle">
+            <use href="#smart-bus-purple">
               <animateMotion dur="22s" begin="11s" repeatCount="indefinite" rotate="auto" path="M-100,180 C300,320 600,60 1000,180 C1300,280 1500,120 1600,160" />
             </use>
 
-            <use href="#magenta-shuttle">
-              <animateMotion dur="26s" begin="4s" repeatCount="indefinite" rotate="auto" path="M-100,420 C250,580 650,240 1050,420 C1350,540 1500,300 1600,340" />
+            <use href="#smart-bus-indigo">
+              <animateMotion dur="26s" begin="3s" repeatCount="indefinite" rotate="auto" path="M-100,420 C250,580 650,240 1050,420 C1350,540 1500,300 1600,340" />
             </use>
-            <use href="#sleek-shuttle">
-              <animateMotion dur="26s" begin="17s" repeatCount="indefinite" rotate="auto" path="M-100,420 C250,580 650,240 1050,420 C1350,540 1500,300 1600,340" />
-            </use>
-
-            <use href="#violet-shuttle">
-              <animateMotion dur="28s" begin="2s" repeatCount="indefinite" rotate="auto" path="M-100,640 C350,780 700,440 1100,600 C1400,720 1500,500 1600,540" />
+            <use href="#smart-bus-cyan">
+              <animateMotion dur="26s" begin="16s" repeatCount="indefinite" rotate="auto" path="M-100,420 C250,580 650,240 1050,420 C1350,540 1500,300 1600,340" />
             </use>
 
-            {/* High-speed Particle Packets Darting Along Corridors */}
-            <g>
-              <animateMotion dur="7s" repeatCount="indefinite" path="M-100,180 C300,320 600,60 1000,180 C1300,280 1500,120 1600,160" />
-              <circle r="3" fill="#06b6d4" />
-              <circle r="7" stroke="#06b6d4" strokeWidth="1" opacity="0.6" />
-            </g>
-            <g>
-              <animateMotion dur="8s" begin="3s" repeatCount="indefinite" path="M-100,420 C250,580 650,240 1050,420 C1350,540 1500,300 1600,340" />
-              <circle r="3" fill="#ec4899" />
-              <circle r="7" stroke="#ec4899" strokeWidth="1" opacity="0.6" />
-            </g>
+            <use href="#smart-bus-purple">
+              <animateMotion dur="28s" begin="4s" repeatCount="indefinite" rotate="auto" path="M-100,640 C350,780 700,440 1100,600 C1400,720 1500,500 1600,540" />
+            </use>
+            <use href="#smart-bus-indigo">
+              <animateMotion dur="30s" begin="8s" repeatCount="indefinite" rotate="auto" path="M-100,820 C300,960 800,620 1200,760 C1500,900 1550,700 1600,720" />
+            </use>
           </svg>
         </div>
 
@@ -394,7 +380,7 @@ export default function IndustriesPage() {
             <EditorialLine delay={0.1}>
               <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight leading-tight text-zinc-950 uppercase">
                 Powering <br />
-                <span className="bg-gradient-to-r from-[#3b9eff] via-[#8b5cf6] to-[#ec4899] text-transparent bg-clip-text">
+                <span className="gradient-text">
                   Every Industry Everywhere
                 </span>
               </h2>
