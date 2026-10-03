@@ -764,12 +764,13 @@ export default function HomePage() {
       {/* ========================================================================= */}
       {/* 06 // SYSTEM BLUEPRINT: HOW IT WORKS                                      */}
       {/* ========================================================================= */}
-      <section className="py-20 relative overflow-hidden bg-black">
+      <section id="ecosystem" className="pt-28 pb-24 sm:pt-36 sm:pb-32 relative overflow-hidden bg-black scroll-mt-28">
         <div className="container max-w-7xl mx-auto px-6 relative z-10">
           <div className="text-center max-w-4xl mx-auto mb-16">
             <EditorialLine>
-              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/[0.05] border border-white/10 text-white/80 font-mono text-xs tracking-wider mb-5">
-                <span>SYSTEM BLUEPRINT</span>
+              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-cyan-950/60 border border-cyan-500/30 text-cyan-300 font-mono text-xs tracking-wider mb-5 shadow-[0_0_15px_rgba(6,182,212,0.15)]">
+                <span className="w-2 h-2 rounded-full bg-cyan-400 animate-pulse" />
+                <span>VMOVEXA ECOSYSTEM SIMULATION</span>
               </div>
             </EditorialLine>
             <CubertoLines
@@ -783,8 +784,8 @@ export default function HomePage() {
               ]}
             />
             <EditorialLine delay={0.2}>
-              <p className="text-base sm:text-lg text-white/70 max-w-2xl mx-auto mt-6 font-light leading-relaxed">
-                From cloud orchestration down to edge execution. See exactly how VMOVEXA ONE controls the VMOVEXA CORE, manages the smart glass windows, generates proof-of-play, and sends analytics back.
+              <p className="text-base sm:text-lg text-white/70 max-w-3xl mx-auto mt-6 font-light leading-relaxed">
+                From cloud campaign orchestration down to edge execution. Experience how VMOVEXA ONE dispatches campaigns, how dynamic geofencing switches advertisements in real-time, how emergency broadcasting overrides content, and how VMOVEXA CORE generates cryptographic Proof of Play.
               </p>
             </EditorialLine>
           </div>
