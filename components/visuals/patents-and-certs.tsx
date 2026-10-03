@@ -33,6 +33,18 @@ const certifications = [
     glow: "shadow-sm",
     iconColor: "text-emerald-600",
   },
+  {
+    title: "ISO 9001:2015",
+    subtitle: "Quality Management System",
+    badge: "078CEB5B",
+    accreditation: "IAF Approved • EGAC",
+    desc: "Certified for design & provision of AI-powered mobility intelligence, SaaS & cloud-based software platforms.",
+    icon: FiAward,
+    color: "from-blue-50 to-white",
+    border: "border-blue-200",
+    glow: "shadow-sm",
+    iconColor: "text-blue-600",
+  },
 ];
 
 const patents = [
@@ -137,8 +149,20 @@ export function PatentsAndCerts() {
                     <div className="flex-1 mt-1">
                       <div className="text-[11px] font-mono uppercase tracking-wider text-zinc-500 mb-1.5">{cert.subtitle}</div>
                       <div className="text-[17px] font-bold text-zinc-900 tracking-wide leading-tight">{cert.title}</div>
+                      {cert.badge && (
+                        <div className="mt-2.5 flex flex-wrap items-center gap-1.5">
+                          <span className="inline-flex items-center px-2 py-0.5 rounded text-[10px] font-mono font-semibold bg-blue-100/80 text-blue-800 border border-blue-200">
+                            CERT: {cert.badge}
+                          </span>
+                          {cert.accreditation && (
+                            <span className="inline-flex items-center px-2 py-0.5 rounded text-[10px] font-mono font-medium bg-emerald-100/80 text-emerald-800 border border-emerald-200">
+                              {cert.accreditation}
+                            </span>
+                          )}
+                        </div>
+                      )}
                       {cert.desc && (
-                        <p className="mt-3 text-xs text-zinc-600 leading-relaxed">{cert.desc}</p>
+                        <p className="mt-2.5 text-xs text-zinc-600 leading-relaxed">{cert.desc}</p>
                       )}
                     </div>
                   </div>

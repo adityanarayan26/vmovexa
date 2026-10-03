@@ -9,7 +9,6 @@ import { Reveal } from "@/components/animations/reveal";
 import { CubertoLines } from "@/components/animations/cuberto-text-reveal";
 import { TextDecrypt } from "@/components/animations/text-decrypt";
 import { BlurReveal } from "@/components/animations/blur-reveal";
-import { TiltCard } from "@/components/animations/tilt-card";
 
 interface FAQItem {
   question: string;
@@ -228,53 +227,53 @@ export default function FAQPage() {
         </div>
       </section>
 
-      {/* 03 — STILL HAVE QUESTIONS CTA (White Background with Grid, Balanced Spacing) */}
-      <section className="relative py-14 sm:py-20 overflow-hidden bg-white text-zinc-900">
+      {/* 03 — STILL HAVE QUESTIONS CTA (Directly on White Cyber Grid, No Box/Borders) */}
+      <section className="relative py-16 sm:py-24 overflow-hidden bg-white text-zinc-900">
         {/* Cyber Grid Texture Overlay on Pure White */}
-        <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(0,0,0,0.04)_1px,transparent_1px),linear-gradient(to_bottom,rgba(0,0,0,0.04)_1px,transparent_1px)] bg-[size:3.5rem_3.5rem] [mask-image:radial-gradient(ellipse_95%_90%_at_50%_50%,#000_80%,transparent_100%)] pointer-events-none" />
+        <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(0,0,0,0.06)_1px,transparent_1px),linear-gradient(to_bottom,rgba(0,0,0,0.06)_1px,transparent_1px)] bg-[size:3.5rem_3.5rem] [mask-image:radial-gradient(ellipse_95%_90%_at_50%_50%,#000_80%,transparent_100%)] pointer-events-none" />
 
-        <div className="container max-w-4xl mx-auto px-6 relative z-10 text-center">
+        <div className="container max-w-3xl mx-auto px-6 relative z-10 text-center space-y-6">
           <Reveal>
-            <TiltCard maxTilt={4} glare={true}>
-              <div className="rounded-[2.2rem] p-1 sm:p-1.5 bg-gradient-to-b from-zinc-200/90 via-zinc-100/60 to-zinc-200/80 border border-zinc-200/90 shadow-[0_24px_70px_-15px_rgba(0,0,0,0.08)] relative">
-                <div className="rounded-[1.9rem] p-8 sm:p-12 bg-white/95 border border-zinc-200/70 relative space-y-6">
-                  {/* Subtle Top Pill */}
-                  <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-cyan-50 border border-cyan-200/80 text-cyan-800 font-mono text-[11px] uppercase tracking-wider font-semibold mx-auto">
-                    <span className="w-1.5 h-1.5 rounded-full bg-cyan-500 animate-pulse" />
-                    DIRECT ARCHITECTURE ACCESS
-                  </div>
+            {/* Subtle Top Pill */}
+            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-cyan-50 border border-cyan-200/80 text-cyan-800 font-mono text-[11px] uppercase tracking-wider font-semibold mx-auto">
+              <span className="w-1.5 h-1.5 rounded-full bg-cyan-500 animate-pulse" />
+              DIRECT ARCHITECTURE ACCESS
+            </div>
+          </Reveal>
 
-                  <h2 className="text-2xl sm:text-4xl font-heading font-bold tracking-tight text-zinc-900 uppercase">
-                    Still have questions about{" "}
-                    <span className="gradient-text font-bold">VMOVEXA?</span>
-                  </h2>
+          <Reveal delay={0.08}>
+            <h2 className="text-3xl sm:text-5xl font-heading font-extrabold tracking-tight text-zinc-900 uppercase leading-[1.12]">
+              Still have questions about{" "}
+              <span className="gradient-text font-extrabold">VMOVEXA?</span>
+            </h2>
+          </Reveal>
 
-                  <p className="text-xs sm:text-base text-zinc-600 max-w-xl mx-auto leading-relaxed font-normal">
-                    Our solutions engineering group is available to answer deep architectural questions, discuss fleet pilots, and provide live dashboard walkthroughs.
-                  </p>
+          <Reveal delay={0.14}>
+            <p className="text-sm sm:text-base text-zinc-600 max-w-xl mx-auto leading-relaxed font-normal">
+              Our solutions engineering group is available to answer deep architectural questions, discuss fleet pilots, and provide live dashboard walkthroughs.
+            </p>
+          </Reveal>
 
-                  <div className="flex flex-wrap items-center justify-center gap-4 pt-2">
-                    <a
-                      href="https://wa.me/919390393994?text=Hello!%20I%20have%20questions%20about%20VMOVEXA%20platform."
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center gap-2 px-7 py-3.5 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-700 hover:bg-emerald-500/20 text-xs font-mono font-semibold uppercase tracking-wider transition-all hover:scale-105 shadow-xs"
-                    >
-                      <RiWhatsappLine size={16} />
-                      <span>Chat on WhatsApp</span>
-                    </a>
+          <Reveal delay={0.2}>
+            <div className="flex flex-wrap items-center justify-center gap-4 pt-2">
+              <a
+                href="https://wa.me/919390393994?text=Hello!%20I%20have%20questions%20about%20VMOVEXA%20platform."
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 px-7 py-3.5 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-700 hover:bg-emerald-500/20 text-xs font-mono font-semibold uppercase tracking-wider transition-all hover:scale-105 shadow-xs"
+              >
+                <RiWhatsappLine size={16} />
+                <span>Chat on WhatsApp</span>
+              </a>
 
-                    <Link
-                      href="/contact"
-                      className="inline-flex items-center gap-2 px-7 py-3.5 rounded-full bg-zinc-950 text-white font-semibold text-xs uppercase tracking-wider hover:bg-zinc-800 transition-all hover:scale-105 shadow-[0_8px_20px_rgba(0,0,0,0.18)]"
-                    >
-                      <span>Contact Solutions Team</span>
-                      <FiArrowRight size={14} />
-                    </Link>
-                  </div>
-                </div>
-              </div>
-            </TiltCard>
+              <Link
+                href="/contact"
+                className="inline-flex items-center gap-2 px-7 py-3.5 rounded-full bg-zinc-950 text-white font-semibold text-xs uppercase tracking-wider hover:bg-zinc-800 transition-all hover:scale-105 shadow-[0_8px_20px_rgba(0,0,0,0.18)]"
+              >
+                <span>Contact Solutions Team</span>
+                <FiArrowRight size={14} />
+              </Link>
+            </div>
           </Reveal>
         </div>
       </section>
