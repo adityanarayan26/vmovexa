@@ -183,23 +183,23 @@ export function SmartEmergencyDoorAnimation({
             <div className="absolute top-0 inset-x-0 h-1 bg-gradient-to-r from-red-600 via-rose-500 to-red-600 animate-pulse z-20 shadow-[0_0_20px_#f43f5e]" />
           )}
 
-          {/* TOP HUD ROW: Status Indicators */}
-          <div className="relative z-20 flex items-center justify-between gap-3">
+          {/* TOP HUD ROW: Status Indicators with clean spacing */}
+          <div className="relative z-20 flex items-center justify-between gap-3 px-1">
             <div className="flex items-center gap-2">
               <span className="font-mono text-[10px] uppercase tracking-wider text-zinc-400">BUS EXIT PORTAL:</span>
               <span
-                className={`font-mono text-[10px] font-bold px-2 py-0.5 rounded border ${
+                className={`font-mono text-[10px] font-bold px-2.5 py-0.5 rounded border transition-all duration-300 ${
                   mode === "normal"
                     ? "bg-cyan-950/60 border-cyan-500/40 text-cyan-300"
                     : "bg-red-950/60 border-red-500/50 text-red-300 animate-pulse"
                 }`}
               >
-                {mode === "normal" ? "DUAL-LEAF PLUG DOOR // SEALED" : "OUTWARD SWING // EVACUATION"}
+                {mode === "normal" ? "DUAL-LEAF PLUG DOOR // LOCKED" : "FAILSAFE OUTWARD SWING // EGRESS"}
               </span>
             </div>
 
             <div className="flex items-center gap-2 font-mono text-[10px]">
-              <span className="text-zinc-500">PNEUMATIC ACTUATOR:</span>
+              <span className="text-zinc-500">ACTUATOR:</span>
               <span
                 className={`font-bold flex items-center gap-1 ${
                   mode === "normal" ? "text-cyan-400" : "text-emerald-400"
@@ -207,11 +207,11 @@ export function SmartEmergencyDoorAnimation({
               >
                 {mode === "normal" ? (
                   <>
-                    <Lock className="w-3 h-3 text-cyan-400" /> LOCKED
+                    <Lock className="w-3 h-3 text-cyan-400" /> SECURED
                   </>
                 ) : (
                   <>
-                    <Unlock className="w-3 h-3 text-emerald-400" /> DISENGAGED
+                    <Unlock className="w-3 h-3 text-emerald-400" /> RELEASED
                   </>
                 )}
               </span>
@@ -219,65 +219,45 @@ export function SmartEmergencyDoorAnimation({
           </div>
 
           {/* CENTER STAGE: Bus Chassis with Real Dual-Leaf Transit Emergency Door Assembly */}
-          <div className="relative z-10 w-full max-w-xl mx-auto h-[290px] sm:h-[320px] flex items-center justify-center my-auto">
+          <div className="relative z-10 w-full max-w-xl mx-auto h-[265px] sm:h-[295px] flex items-center justify-center my-1 sm:my-2">
             {/* Outside World visible behind the bus window in Emergency Mode */}
-            <div className="absolute inset-x-2 inset-y-1 rounded-2xl bg-[#090e1a] border border-white/5 overflow-hidden flex items-end justify-between px-6 pb-4">
+            <div className="absolute inset-x-2 inset-y-0 rounded-2xl bg-[#090e1a] border border-white/5 overflow-hidden flex items-end justify-between px-6 pb-4">
               {/* Road Asphalt & Distance Markers */}
-              <div className="absolute bottom-0 inset-x-0 h-28 bg-gradient-to-t from-slate-950 via-slate-900/80 to-transparent border-t border-cyan-500/10" />
+              <div className="absolute bottom-0 inset-x-0 h-24 bg-gradient-to-t from-slate-950 via-slate-900/80 to-transparent border-t border-cyan-500/10" />
 
               {/* Inside Bus Cabin Silhouettes (Left side window) */}
-              <div className="relative z-0 flex items-end gap-1.5 opacity-35">
-                <div className="w-4 h-14 rounded-t-lg bg-cyan-600/50" />
-                <div className="w-4 h-18 rounded-t-lg bg-indigo-600/50" />
+              <div className="relative z-0 flex items-end gap-1.5 opacity-30">
+                <div className="w-4 h-12 rounded-t-lg bg-cyan-600/50" />
+                <div className="w-4 h-16 rounded-t-lg bg-indigo-600/50" />
                 <span className="font-mono text-[8px] text-zinc-500 ml-1">CABIN</span>
               </div>
 
               {/* Outside Rescue Squad (Visible on right side in emergency) */}
               <div
-                className={`relative z-0 flex items-end gap-2.5 transition-all duration-700 ${
+                className={`absolute right-4 bottom-4 z-0 flex items-end gap-2 transition-all duration-700 ${
                   mode === "emergency" ? "opacity-100 translate-y-0" : "opacity-0 translate-y-3 pointer-events-none"
                 }`}
               >
                 <div className="text-right">
-                  <div className="inline-flex items-center gap-1 px-2 py-0.5 rounded bg-red-600/80 text-white text-[8px] font-mono font-bold tracking-wider">
+                  <div className="inline-flex items-center gap-1 px-2 py-0.5 rounded bg-red-600/90 text-white text-[7.5px] font-mono font-bold tracking-wider shadow-[0_0_10px_#f43f5e]">
                     <span className="w-1.5 h-1.5 rounded-full bg-white animate-ping" /> RESCUE SQUAD
                   </div>
-                  <div className="text-[9px] font-mono text-zinc-400 mt-0.5">DIRECT LINE OF SIGHT</div>
+                  <div className="text-[8px] font-mono text-zinc-400 mt-0.5">DIRECT LINE OF SIGHT</div>
                 </div>
-                <div className="w-5 h-20 rounded-t-lg bg-rose-500/80 shadow-[0_0_12px_#f43f5e]" />
+                <div className="w-4 h-16 rounded-t-lg bg-rose-500/80 shadow-[0_0_12px_#f43f5e]" />
               </div>
             </div>
 
             {/* THE TALL DUAL-LEAF TRANSIT BUS DOOR FRAME */}
             <div className="relative z-10 w-full h-full flex items-center justify-center">
-              {/* Door Surround Frame */}
+              {/* Door Surround Frame (Clean header without protruding badge) */}
               <div
-                className={`w-[230px] sm:w-[260px] h-[280px] sm:h-[310px] rounded-2xl border-2 transition-all duration-700 relative p-2 flex flex-col justify-between ${
+                className={`w-[220px] sm:w-[245px] h-[255px] sm:h-[285px] rounded-2xl border-2 transition-all duration-700 relative p-2 flex flex-col justify-between ${
                   mode === "normal"
                     ? "border-cyan-500/40 bg-black/60 shadow-[0_0_25px_rgba(6,182,212,0.15)]"
                     : "border-red-500 bg-red-950/20 shadow-[0_0_35px_rgba(239,68,68,0.5)] ring-4 ring-red-500/20"
                 }`}
               >
-                {/* Door Frame Top Header Badge */}
-                <div
-                  className={`absolute -top-3 left-1/2 -translate-x-1/2 px-3 py-0.5 rounded-full border text-[8.5px] font-mono tracking-wider font-bold uppercase transition-all duration-500 z-40 shadow-md flex items-center gap-1.5 whitespace-nowrap ${
-                    mode === "normal"
-                      ? "bg-slate-900 border-cyan-500/40 text-cyan-400"
-                      : "bg-red-600 border-red-400 text-white animate-bounce shadow-[0_0_15px_#ef4444]"
-                  }`}
-                >
-                  {mode === "normal" ? (
-                    <>
-                      <Lock className="w-2.5 h-2.5 text-cyan-400" />
-                      DUAL-LEAF SMART EXIT // LOCKED
-                    </>
-                  ) : (
-                    <>
-                      <Unlock className="w-2.5 h-2.5 text-white" />
-                      FAILSAFE OUTWARD SWING // EGRESS
-                    </>
-                  )}
-                </div>
 
                 {/* TOP ROTARY MECHANISM (Mechanical arms & chassis mounts like in reference photo) */}
                 <div className="w-full h-4 relative flex items-center justify-between px-1 z-30">
@@ -310,20 +290,18 @@ export function SmartEmergencyDoorAnimation({
                   {/* Vertical Rotary Torque Shaft (Right Exterior) */}
                   <div className="absolute right-[-5px] inset-y-0 w-1.5 rounded-full bg-gradient-to-r from-zinc-400 via-slate-100 to-zinc-500 z-30 shadow-[0_0_4px_rgba(0,0,0,0.5)]" />
 
-                  {/* Center Evacuation Corridor Guide (Visible when doors swing open) */}
+                  {/* Center Evacuation Corridor Guide (Clean floor-level strip without blocking glass) */}
                   <div
-                    className={`absolute inset-0 flex flex-col items-center justify-center transition-opacity duration-700 z-10 pointer-events-none ${
-                      isDoorSwungOpen ? "opacity-100" : "opacity-0"
+                    className={`absolute bottom-3 inset-x-0 mx-auto w-fit transition-all duration-700 z-20 pointer-events-none ${
+                      isDoorSwungOpen ? "opacity-100 translate-y-0" : "opacity-0 translate-y-2"
                     }`}
                   >
-                    <div className="px-3 py-1.5 rounded-lg bg-black/80 backdrop-blur-md border border-emerald-500/50 shadow-[0_0_20px_rgba(16,185,129,0.3)] text-center">
-                      <div className="flex items-center justify-center gap-1.5 text-emerald-400 font-mono text-[9px] font-bold tracking-widest uppercase">
-                        <span>OPEN EVACUATION APERTURE</span>
-                        <ArrowRight className="w-3 h-3 animate-egress-arrow" />
-                      </div>
-                      <div className="text-[8px] font-mono text-zinc-300 mt-0.5">
-                        Clear Bidirectional Ground Egress
-                      </div>
+                    <div className="px-2.5 py-1 rounded-full bg-emerald-950/90 border border-emerald-500/70 shadow-[0_0_15px_rgba(16,185,129,0.35)] flex items-center gap-1.5 whitespace-nowrap">
+                      <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-ping" />
+                      <span className="text-[8px] font-mono text-emerald-300 font-bold uppercase tracking-wider">
+                        OPEN EVACUATION APERTURE
+                      </span>
+                      <ArrowRight className="w-2.5 h-2.5 text-emerald-400 animate-egress-arrow" />
                     </div>
                   </div>
 
@@ -386,24 +364,15 @@ export function SmartEmergencyDoorAnimation({
                         </div>
                       </div>
 
-                      {/* Emergency Clear Guidance (Left Pane) */}
+                      {/* Emergency Clear Indicator (Left Pane - completely clean glass) */}
                       <div
-                        className={`absolute inset-0 transition-opacity duration-500 flex flex-col justify-between p-2 z-20 pointer-events-none ${
+                        className={`absolute top-2 left-2 transition-opacity duration-500 z-20 pointer-events-none ${
                           mode === "emergency" ? "opacity-100" : "opacity-0"
                         }`}
                       >
-                        <span className="px-1.5 py-0.5 rounded bg-red-600/90 text-white text-[7.5px] font-mono font-bold tracking-wider">
+                        <span className="px-1.5 py-0.5 rounded bg-red-600/90 text-white text-[7px] font-mono font-bold tracking-wider shadow-sm">
                           100% CLEAR
                         </span>
-                        <div className="my-auto text-center">
-                          <Eye className="w-4 h-4 text-cyan-300 mx-auto mb-1 animate-pulse" />
-                          <span className="text-[8px] font-mono text-white font-bold uppercase">
-                            SEE OUTSIDE
-                          </span>
-                        </div>
-                        <div className="text-[7px] font-mono text-emerald-400">
-                          SWUNG OUT
-                        </div>
                       </div>
                     </div>
                   </div>
@@ -466,26 +435,15 @@ export function SmartEmergencyDoorAnimation({
                         </div>
                       </div>
 
-                      {/* Emergency Clear Guidance (Right Pane) */}
+                      {/* Emergency Clear Indicator (Right Pane - completely clean glass) */}
                       <div
-                        className={`absolute inset-0 transition-opacity duration-500 flex flex-col justify-between p-2 z-20 pointer-events-none ${
+                        className={`absolute top-2 right-2 transition-opacity duration-500 z-20 pointer-events-none ${
                           mode === "emergency" ? "opacity-100" : "opacity-0"
                         }`}
                       >
-                        <div className="text-right">
-                          <span className="px-1.5 py-0.5 rounded bg-red-600/90 text-white text-[7.5px] font-mono font-bold tracking-wider">
-                            TRANSPARENT
-                          </span>
-                        </div>
-                        <div className="my-auto text-center">
-                          <Eye className="w-4 h-4 text-cyan-300 mx-auto mb-1 animate-pulse" />
-                          <span className="text-[8px] font-mono text-white font-bold uppercase">
-                            RESCUE VISIBLE
-                          </span>
-                        </div>
-                        <div className="text-[7px] font-mono text-emerald-400 text-right">
-                          SWUNG OUT
-                        </div>
+                        <span className="px-1.5 py-0.5 rounded bg-red-600/90 text-white text-[7px] font-mono font-bold tracking-wider shadow-sm">
+                          TRANSPARENT
+                        </span>
                       </div>
                     </div>
                   </div>
