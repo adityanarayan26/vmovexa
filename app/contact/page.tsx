@@ -35,8 +35,8 @@ export default function ContactPage() {
       badgeBorder: "border-cyan-200/80 shadow-[0_4px_16px_rgba(6,182,212,0.12)]",
       gradientBar: "from-cyan-400 via-blue-500 to-indigo-500",
       glowBg: "from-cyan-500/20 via-blue-500/5 to-transparent",
-      ringActive: "border-cyan-400 ring-2 ring-cyan-400/40 shadow-[0_16px_40px_rgba(6,182,212,0.16)]",
-      ringHover: "hover:border-cyan-400 hover:ring-2 hover:ring-cyan-400/40 hover:shadow-[0_16px_40px_rgba(6,182,212,0.16)]",
+      ringActive: "border-cyan-400 shadow-[0_12px_32px_rgba(6,182,212,0.14)]",
+      ringHover: "hover:border-cyan-400 hover:shadow-[0_12px_32px_rgba(6,182,212,0.14)]",
     },
     {
       title: "Media & Brands",
@@ -56,8 +56,8 @@ export default function ContactPage() {
       badgeBorder: "border-pink-200/80 shadow-[0_4px_16px_rgba(236,72,153,0.12)]",
       gradientBar: "from-pink-400 via-rose-500 to-purple-500",
       glowBg: "from-pink-500/20 via-rose-500/5 to-transparent",
-      ringActive: "border-pink-400 ring-2 ring-pink-400/40 shadow-[0_16px_40px_rgba(236,72,153,0.16)]",
-      ringHover: "hover:border-pink-400 hover:ring-2 hover:ring-pink-400/40 hover:shadow-[0_16px_40px_rgba(236,72,153,0.16)]",
+      ringActive: "border-pink-400 shadow-[0_12px_32px_rgba(236,72,153,0.14)]",
+      ringHover: "hover:border-pink-400 hover:shadow-[0_12px_32px_rgba(236,72,153,0.14)]",
     },
     {
       title: "Technology Partners",
@@ -77,8 +77,8 @@ export default function ContactPage() {
       badgeBorder: "border-indigo-200/80 shadow-[0_4px_16px_rgba(99,102,241,0.12)]",
       gradientBar: "from-indigo-400 via-purple-500 to-pink-500",
       glowBg: "from-indigo-500/20 via-purple-500/5 to-transparent",
-      ringActive: "border-indigo-400 ring-2 ring-indigo-400/40 shadow-[0_16px_40px_rgba(99,102,241,0.16)]",
-      ringHover: "hover:border-indigo-400 hover:ring-2 hover:ring-indigo-400/40 hover:shadow-[0_16px_40px_rgba(99,102,241,0.16)]",
+      ringActive: "border-indigo-400 shadow-[0_12px_32px_rgba(99,102,241,0.14)]",
+      ringHover: "hover:border-indigo-400 hover:shadow-[0_12px_32px_rgba(99,102,241,0.14)]",
     },
     {
       title: "Investors",
@@ -98,8 +98,8 @@ export default function ContactPage() {
       badgeBorder: "border-emerald-200/80 shadow-[0_4px_16px_rgba(16,185,129,0.12)]",
       gradientBar: "from-emerald-400 via-teal-500 to-cyan-500",
       glowBg: "from-emerald-500/20 via-teal-500/5 to-transparent",
-      ringActive: "border-emerald-400 ring-2 ring-emerald-400/40 shadow-[0_16px_40px_rgba(16,185,129,0.16)]",
-      ringHover: "hover:border-emerald-400 hover:ring-2 hover:ring-emerald-400/40 hover:shadow-[0_16px_40px_rgba(16,185,129,0.16)]",
+      ringActive: "border-emerald-400 shadow-[0_12px_32px_rgba(16,185,129,0.14)]",
+      ringHover: "hover:border-emerald-400 hover:shadow-[0_12px_32px_rgba(16,185,129,0.14)]",
     },
   ];
 
@@ -257,7 +257,7 @@ export default function ContactPage() {
                       style={{ backdropFilter: 'blur(2px)', WebkitBackdropFilter: 'blur(2px)' }}
                     >
                       {/* Top Luminous Light Bar */}
-                      <div className={`absolute top-0 inset-x-0 h-[3.5px] bg-gradient-to-r ${t.gradientBar} transition-all duration-500 group-hover:h-[5px]`} />
+                      <div className={`absolute top-0 inset-x-0 h-[2px] bg-gradient-to-r ${t.gradientBar} transition-all duration-300`} />
                       
                       {/* Soft Ambient Radial Corner Flare */}
                       <div className={`absolute -top-14 -right-14 w-40 h-40 bg-gradient-to-br ${t.glowBg} rounded-full blur-3xl opacity-0 group-hover:opacity-90 transition-opacity duration-700 pointer-events-none`} />
