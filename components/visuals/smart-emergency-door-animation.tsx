@@ -32,6 +32,35 @@ export function SmartEmergencyDoorAnimation({
 
   const mode = activeModeOverride !== undefined ? activeModeOverride : internalMode;
 
+  const leftVideoRef = React.useRef<HTMLVideoElement>(null);
+  const rightVideoRef = React.useRef<HTMLVideoElement>(null);
+
+  // Synchronize playback between left and right door leaves
+  useEffect(() => {
+    const v1 = leftVideoRef.current;
+    const v2 = rightVideoRef.current;
+    if (!v1 || !v2) return;
+
+    const syncVideos = () => {
+      if (Math.abs(v1.currentTime - v2.currentTime) > 0.05) {
+        v2.currentTime = v1.currentTime;
+      }
+    };
+
+    v1.addEventListener("timeupdate", syncVideos);
+    return () => {
+      v1.removeEventListener("timeupdate", syncVideos);
+    };
+  }, []);
+
+  // Ensure continuous play in normal mode
+  useEffect(() => {
+    if (mode === "normal") {
+      leftVideoRef.current?.play().catch(() => {});
+      rightVideoRef.current?.play().catch(() => {});
+    }
+  }, [mode]);
+
   const setMode = (newMode: "normal" | "emergency") => {
     setInternalMode(newMode);
     if (onModeChange) onModeChange(newMode);
@@ -326,41 +355,52 @@ export function SmartEmergencyDoorAnimation({
                         <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-white/[0.08] to-transparent pointer-events-none" />
                       </div>
 
-                      {/* DOOH Active Layer (Left Pane) */}
+                      {/* DOOH Active Video Layer (Left Pane) */}
                       <div
-                        className={`absolute inset-0 transition-opacity duration-700 flex flex-col justify-between p-2.5 z-10 ${
+                        className={`absolute inset-0 transition-opacity duration-500 overflow-hidden flex flex-col justify-between z-10 ${
                           mode === "normal" ? "opacity-100" : "opacity-0 pointer-events-none"
                         }`}
-                        style={{
-                          background: "linear-gradient(135deg, #090e18 0%, #15102a 60%, #1e0926 100%)",
-                        }}
                       >
+                        <video
+                          ref={leftVideoRef}
+                          autoPlay
+                          muted
+                          loop
+                          playsInline
+                          poster="/videos/small-poster.jpg"
+                          className="absolute top-0 bottom-0 left-0 w-[206%] max-w-none h-full object-cover select-none pointer-events-none"
+                        >
+                          <source src="/videos/small.mp4" type="video/mp4" />
+                          <source src="/videos/small.MOV" type="video/quicktime" />
+                        </video>
+
+                        {/* Video overlay scrim for crisp badge readability */}
+                        <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-transparent to-black/70 pointer-events-none" />
+
                         {/* Shimmer Light Bar */}
                         <div className="absolute inset-0 overflow-hidden pointer-events-none">
-                          <div className="w-full h-full bg-gradient-to-r from-transparent via-white/15 to-transparent skew-x-[-20deg] animate-ad-shimmer" />
+                          <div className="w-full h-full bg-gradient-to-r from-transparent via-white/10 to-transparent skew-x-[-20deg] animate-ad-shimmer" />
                         </div>
 
-                        <div className="flex items-center justify-between text-[7px] font-mono">
-                          <span className="px-1.5 py-0.5 rounded bg-black/60 border border-cyan-400/40 text-cyan-300 font-bold">
+                        {/* Top HUD badge */}
+                        <div className="relative z-10 flex items-center justify-between p-1.5 text-[7px] font-mono">
+                          <span className="px-1.5 py-0.5 rounded bg-black/75 backdrop-blur-md border border-cyan-400/40 text-cyan-300 font-bold flex items-center gap-1 shadow-sm">
+                            <span className="w-1.5 h-1.5 rounded-full bg-cyan-400 animate-pulse" />
                             DOOH L-PANEL
                           </span>
                         </div>
 
-                        <div className="my-auto text-left py-1">
-                          <div className="inline-flex items-center gap-1 text-[7.5px] font-mono text-cyan-300 uppercase tracking-wider mb-0.5">
-                            <Sparkles className="w-2 h-2 text-cyan-300" />
-                            DOOH ACTIVE
-                          </div>
-                          <div className="text-xs sm:text-sm font-extrabold text-white uppercase tracking-tight leading-tight">
-                            VMOVEXA <br />
-                            <span className="bg-gradient-to-r from-cyan-300 to-indigo-300 bg-clip-text text-transparent">
-                              REVENUE
-                            </span>
-                          </div>
+                        {/* Center brand watermark (minimalist, does not obscure video) */}
+                        <div className="relative z-10 px-2 py-0.5 pointer-events-none">
+                          <span className="text-[8px] font-mono text-cyan-200/90 tracking-wider uppercase font-semibold drop-shadow-[0_1px_2px_rgba(0,0,0,0.9)]">
+                            VMOVEXA ONE
+                          </span>
                         </div>
 
-                        <div className="text-[7px] font-mono text-zinc-400 border-t border-white/10 pt-1">
-                          TRANSIT MEDIA
+                        {/* Bottom HUD tag */}
+                        <div className="relative z-10 p-1.5 text-[7px] font-mono border-t border-white/10 bg-black/40 backdrop-blur-sm flex items-center justify-between">
+                          <span className="text-zinc-300 font-medium">TRANSIT MEDIA</span>
+                          <span className="text-emerald-400 font-bold flex items-center gap-0.5">● LIVE</span>
                         </div>
                       </div>
 
@@ -398,40 +438,51 @@ export function SmartEmergencyDoorAnimation({
                         <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-white/[0.08] to-transparent pointer-events-none" />
                       </div>
 
-                      {/* DOOH Active Layer (Right Pane) */}
+                      {/* DOOH Active Video Layer (Right Pane) */}
                       <div
-                        className={`absolute inset-0 transition-opacity duration-700 flex flex-col justify-between p-2.5 z-10 ${
+                        className={`absolute inset-0 transition-opacity duration-500 overflow-hidden flex flex-col justify-between z-10 ${
                           mode === "normal" ? "opacity-100" : "opacity-0 pointer-events-none"
                         }`}
-                        style={{
-                          background: "linear-gradient(135deg, #15102a 0%, #1a0b27 50%, #280b2a 100%)",
-                        }}
                       >
+                        <video
+                          ref={rightVideoRef}
+                          autoPlay
+                          muted
+                          loop
+                          playsInline
+                          poster="/videos/small-poster.jpg"
+                          className="absolute top-0 bottom-0 right-0 w-[206%] max-w-none h-full object-cover select-none pointer-events-none"
+                        >
+                          <source src="/videos/small.mp4" type="video/mp4" />
+                          <source src="/videos/small.MOV" type="video/quicktime" />
+                        </video>
+
+                        {/* Video overlay scrim for crisp badge readability */}
+                        <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-transparent to-black/70 pointer-events-none" />
+
                         {/* Shimmer Light Bar */}
                         <div className="absolute inset-0 overflow-hidden pointer-events-none">
-                          <div className="w-full h-full bg-gradient-to-r from-transparent via-white/15 to-transparent skew-x-[-20deg] animate-ad-shimmer" />
+                          <div className="w-full h-full bg-gradient-to-r from-transparent via-white/10 to-transparent skew-x-[-20deg] animate-ad-shimmer" />
                         </div>
 
-                        <div className="flex items-center justify-end text-[7px] font-mono">
-                          <span className="px-1.5 py-0.5 rounded bg-pink-950/60 border border-pink-500/30 text-pink-300 font-bold">
+                        {/* Top HUD badge */}
+                        <div className="relative z-10 flex items-center justify-end p-1.5 text-[7px] font-mono">
+                          <span className="px-1.5 py-0.5 rounded bg-black/75 backdrop-blur-md border border-pink-500/40 text-pink-300 font-bold flex items-center gap-1 shadow-sm">
+                            <span className="w-1.5 h-1.5 rounded-full bg-pink-400 animate-pulse" />
                             4K MATRIX
                           </span>
                         </div>
 
-                        <div className="my-auto text-right py-1">
-                          <div className="inline-flex items-center gap-1 text-[7.5px] font-mono text-pink-300 uppercase tracking-wider mb-0.5">
+                        {/* Center brand watermark (minimalist, does not obscure video) */}
+                        <div className="relative z-10 px-2 py-0.5 text-right pointer-events-none">
+                          <span className="text-[8px] font-mono text-pink-200/90 tracking-wider uppercase font-semibold drop-shadow-[0_1px_2px_rgba(0,0,0,0.9)]">
                             MONETIZED
-                          </div>
-                          <div className="text-xs sm:text-sm font-extrabold text-white uppercase tracking-tight leading-tight">
-                            TARGETED <br />
-                            <span className="bg-gradient-to-r from-indigo-300 to-pink-300 bg-clip-text text-transparent">
-                              IN MOTION
-                            </span>
-                          </div>
+                          </span>
                         </div>
 
-                        <div className="text-[7px] font-mono text-cyan-400 text-right border-t border-white/10 pt-1">
-                          LOCKED • SECURE
+                        {/* Bottom HUD tag */}
+                        <div className="relative z-10 p-1.5 text-[7px] font-mono border-t border-white/10 bg-black/40 backdrop-blur-sm flex items-center justify-end">
+                          <span className="text-cyan-300 font-bold">LOCKED • SECURE</span>
                         </div>
                       </div>
 
