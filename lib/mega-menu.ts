@@ -135,7 +135,7 @@ export const megaMenuData: Record<string, MegaMenuItem> = {
       {
         title: "Deep-Tech Mobility Thesis",
         subtitle: "Convergence of Physical Mobility & Computing",
-        image: "/images/nav/2.png",
+        image: "/images/nav/vmovexa-bus.png",
         primaryLink: { label: "Learn", href: "/company#thesis" },
         secondaryLink: { label: "Order", href: "/company#order" },
       }
