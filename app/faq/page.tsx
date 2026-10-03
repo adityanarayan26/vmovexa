@@ -98,10 +98,10 @@ export default function FAQPage() {
   return (
     <main className="min-h-screen bg-black text-white">
       {/* 01 — HERO */}
-      <section className="relative pt-36 pb-20 overflow-hidden bg-black">
+      <section className="relative pt-32 sm:pt-36 pb-8 sm:pb-10 overflow-hidden bg-black">
         <div className="container relative z-10 max-w-6xl mx-auto px-6">
           <Reveal>
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/[0.04] border border-white/15 backdrop-blur-md mb-8">
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/[0.04] border border-white/15 backdrop-blur-md mb-6">
               <span className="w-2 h-2 rounded-full bg-cyan-400" />
               <span className="font-mono text-xs uppercase tracking-[0.16em] text-white/80">
                 <TextDecrypt text="Knowledge & Support" delay={150} />
@@ -111,7 +111,7 @@ export default function FAQPage() {
 
           <CubertoLines
             as="h1"
-            className="text-4xl sm:text-5xl lg:text-7xl font-extrabold tracking-tight uppercase leading-[0.98] sm:leading-[1.02] max-w-4xl mb-6 text-white"
+            className="text-4xl sm:text-5xl lg:text-7xl font-extrabold tracking-tight uppercase leading-[0.98] sm:leading-[1.02] max-w-4xl mb-5 text-white"
             delay={0.1}
             lines={[
               "Frequently Asked",
@@ -120,7 +120,7 @@ export default function FAQPage() {
           />
 
           <BlurReveal delay={0.2} blurAmount={10}>
-            <p className="text-base sm:text-lg text-white/70 font-normal leading-relaxed max-w-3xl mb-8">
+            <p className="text-base sm:text-lg text-white/70 font-normal leading-relaxed max-w-3xl mb-7">
               Everything you need to know about VMOVEXA&apos;s cloud-to-edge mobility intelligence platform, vehicle hardware, digital DOOH media, and smart city infrastructure.
             </p>
           </BlurReveal>
@@ -141,11 +141,11 @@ export default function FAQPage() {
         </div>
       </section>
 
-      {/* 02 — CATEGORIES & ACCORDION */}
-      <section className="py-20 bg-black">
+      {/* 02 — CATEGORIES & ACCORDION (Reduced sectional gaps) */}
+      <section className="pt-2 pb-14 sm:pb-16 bg-black">
         <div className="container max-w-5xl mx-auto px-6">
           {/* Category Filter Pills */}
-          <div className="flex flex-wrap gap-2.5 mb-12">
+          <div className="flex flex-wrap gap-2.5 mb-8">
             {categories.map((cat) => (
               <button
                 key={cat}
@@ -228,37 +228,50 @@ export default function FAQPage() {
         </div>
       </section>
 
-      {/* 03 — STILL HAVE QUESTIONS CTA */}
-      <section className="py-24 text-center relative overflow-hidden bg-black">
-        <div className="container max-w-4xl mx-auto px-6 relative z-10">
+      {/* 03 — STILL HAVE QUESTIONS CTA (White Background with Grid, Balanced Spacing) */}
+      <section className="relative py-14 sm:py-20 overflow-hidden bg-white text-zinc-900">
+        {/* Cyber Grid Texture Overlay on Pure White */}
+        <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(0,0,0,0.04)_1px,transparent_1px),linear-gradient(to_bottom,rgba(0,0,0,0.04)_1px,transparent_1px)] bg-[size:3.5rem_3.5rem] [mask-image:radial-gradient(ellipse_95%_90%_at_50%_50%,#000_80%,transparent_100%)] pointer-events-none" />
+
+        <div className="container max-w-4xl mx-auto px-6 relative z-10 text-center">
           <Reveal>
-            <TiltCard maxTilt={5} glare={true}>
-              <div className="p-10 rounded-3xl bg-white/[0.02] border border-white/10 shadow-2xl space-y-6">
-                <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-white ">
-                  Still have questions about <span className="gradient-text">VMOVEXA?</span>
-                </h2>
-                <p className="text-xs sm:text-sm text-white/70 max-w-xl mx-auto leading-relaxed">
-                  Our solutions engineering group is available to answer deep architectural questions, discuss fleet pilots, and provide live dashboard walkthroughs.
-                </p>
+            <TiltCard maxTilt={4} glare={true}>
+              <div className="rounded-[2.2rem] p-1 sm:p-1.5 bg-gradient-to-b from-zinc-200/90 via-zinc-100/60 to-zinc-200/80 border border-zinc-200/90 shadow-[0_24px_70px_-15px_rgba(0,0,0,0.08)] relative">
+                <div className="rounded-[1.9rem] p-8 sm:p-12 bg-white/95 border border-zinc-200/70 relative space-y-6">
+                  {/* Subtle Top Pill */}
+                  <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-cyan-50 border border-cyan-200/80 text-cyan-800 font-mono text-[11px] uppercase tracking-wider font-semibold mx-auto">
+                    <span className="w-1.5 h-1.5 rounded-full bg-cyan-500 animate-pulse" />
+                    DIRECT ARCHITECTURE ACCESS
+                  </div>
 
-                <div className="flex flex-wrap items-center justify-center gap-4 pt-2">
-                  <a
-                    href="https://wa.me/919390393994?text=Hello!%20I%20have%20questions%20about%20VMOVEXA%20platform."
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 px-7 py-3.5 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 hover:bg-emerald-500/20 text-xs font-mono font-semibold uppercase tracking-wider transition-all hover:scale-105"
-                  >
-                    <RiWhatsappLine size={16} />
-                    <span>Chat on WhatsApp</span>
-                  </a>
+                  <h2 className="text-2xl sm:text-4xl font-heading font-bold tracking-tight text-zinc-900 uppercase">
+                    Still have questions about{" "}
+                    <span className="gradient-text font-bold">VMOVEXA?</span>
+                  </h2>
 
-                  <Link
-                    href="/contact"
-                    className="inline-flex items-center gap-2 px-7 py-3.5 rounded-full bg-white text-black font-semibold text-xs uppercase tracking-wider hover:bg-zinc-200 transition-all hover:scale-105 shadow-[0_0_20px_rgba(255,255,255,0.2)]"
-                  >
-                    <span>Contact Solutions Team</span>
-                    <FiArrowRight size={14} />
-                  </Link>
+                  <p className="text-xs sm:text-base text-zinc-600 max-w-xl mx-auto leading-relaxed font-normal">
+                    Our solutions engineering group is available to answer deep architectural questions, discuss fleet pilots, and provide live dashboard walkthroughs.
+                  </p>
+
+                  <div className="flex flex-wrap items-center justify-center gap-4 pt-2">
+                    <a
+                      href="https://wa.me/919390393994?text=Hello!%20I%20have%20questions%20about%20VMOVEXA%20platform."
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-2 px-7 py-3.5 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-700 hover:bg-emerald-500/20 text-xs font-mono font-semibold uppercase tracking-wider transition-all hover:scale-105 shadow-xs"
+                    >
+                      <RiWhatsappLine size={16} />
+                      <span>Chat on WhatsApp</span>
+                    </a>
+
+                    <Link
+                      href="/contact"
+                      className="inline-flex items-center gap-2 px-7 py-3.5 rounded-full bg-zinc-950 text-white font-semibold text-xs uppercase tracking-wider hover:bg-zinc-800 transition-all hover:scale-105 shadow-[0_8px_20px_rgba(0,0,0,0.18)]"
+                    >
+                      <span>Contact Solutions Team</span>
+                      <FiArrowRight size={14} />
+                    </Link>
+                  </div>
                 </div>
               </div>
             </TiltCard>
